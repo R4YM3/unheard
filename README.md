@@ -21,14 +21,8 @@ Plaats een Markdown-bestand in `src/content/articles/` met gevalideerde frontmat
 
 GitHub Actions controleert elke pull request en bouwt/publiceert bij elke push naar `main` naar GitHub Pages. De pagina-instellingen gebruiken de Actions-workflow als publicatiebron. Configureer `SITE_URL` pas op `https://unheard.support` zodra het domein actief is.
 
-## Referenties
+De statische Pages-host kan geen `Accept-Language`-header op de server lezen. Daarom kiest alleen de rootpagina in de browser een taal op basis van: expliciete URL, opgeslagen keuze, browservoorkeuren en ten slotte Engels. Een expliciete locale-URL wordt nooit automatisch overschreven. De volledige, redactioneel beoordeelde inhoud is momenteel Nederlands; EN en AR zijn heldere startpagina's met een beperking, geen ongecontroleerde vertalingen.
 
-Files:
-- `AGENTS.md`: persistent constraints for coding agent
-- `CODEX_GOAL.md`: initial Codex task
-- `PROJECT_BRIEF.md`: approved product, design and UX rules
-- `ROADMAP.md`: phased delivery and acceptance
-- `EDITORIAL_POLICY.md`: accuracy/privacy/health safeguards
-- `references/`: actual HTML/MD prototypes as source material
+## Projectafspraken
 
-Several references are single-file mobile friendly HTML, not connected application routes. No production translation or real photography is included. Domain registration remains unverified and out of scope.
+`PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md` en `QUALITY_GATE.md` bevatten de inhoudelijke en veiligheidsgrenzen. Er worden geen onbevestigde feiten, persoonlijke details of medische/juridische conclusies gepubliceerd. Domeinregistratie en DNS zijn nog niet geverifieerd.

@@ -12,6 +12,9 @@ const dir = locale === 'ar' ? 'rtl' : 'ltr';
 const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, inLanguage: locale, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Ongehoord', url: site.href } };
 const hasHomeTranslations = ['/nl/', '/en/', '/ar/'].includes(canonicalPath);
 const alternateUrl = (language: Locale) => new URL(`${import.meta.env.BASE_URL}${language}/`, site).href;
+const navigation = locale === 'nl'
+  ? [['nl/wat-voel-ik/', 'Wat voel ik?'], ['nl/begrippen/', 'Begrijp het'], ['nl/herstel/', 'Herstel'], ['nl/mijn-verhaal/', 'Mijn verhaal'], ['nl/hulp-vinden/', 'Hulp vinden']]
+  : [[`${locale}/`, locale === 'ar' ? 'الصفحة الرئيسية' : 'Home']];
 ---
 <!doctype html>
 <html lang={locale} dir={dir} data-theme="light">
@@ -36,11 +39,10 @@ const alternateUrl = (language: Locale) => new URL(`${import.meta.env.BASE_URL}$
     <a class="skip" href="#main">Direct naar inhoud</a>
     <header class="site-header"><div class="wrap header-row">
       <a class="brand" href="nl/">Ongehoord<span>.</span></a>
-      <nav class="nav" aria-label="Hoofdnavigatie"><a href="nl/wat-voel-ik/">Wat voel ik?</a><a href="nl/begrippen/">Begrijp het</a><a href="nl/herstel/">Herstel</a><a href="nl/mijn-verhaal/">Mijn verhaal</a><a href="nl/hulp-vinden/">Hulp vinden</a></nav>
+      <nav class="nav" aria-label={locale === 'ar' ? 'التنقل الرئيسي' : locale === 'en' ? 'Main navigation' : 'Hoofdnavigatie'}>{navigation.map(([href, label]) => <a href={href}>{label}</a>)}</nav>
       <LocaleSelector /><ThemeToggle />
     </div></header>
     <main id="main"><slot /></main>
     <footer class="site-footer"><div class="wrap"><strong>Ongehoord.</strong> Voor alles wat je voelt, maar nog niet kunt verwoorden.</div></footer>
-    <script is:inline>{`document.addEventListener('click',e=>{const b=e.target.closest('[data-theme-toggle]');if(!b)return;const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ongehoord-theme',n)}catch{}})`}</script>
   </body>
 </html>
