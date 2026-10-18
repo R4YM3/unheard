@@ -25,10 +25,10 @@ GitHub Actions checks every pull request and builds/deploys to GitHub Pages on e
 
 The temporary deployment is protected with `noindex, nofollow` and a blocking `robots.txt`. This is controlled by the `NO_INDEX` Actions variable, which defaults to `true`; set it to `false` only when the site is ready to be discoverable.
 
-After the custom domain is active, add a GitHub repository Actions variable named `SITE_URL` with the full origin (for example, `https://unheard.support`) and configure the same custom domain in GitHub Pages. The next deployment then uses `/` as its base path automatically.
+The GitHub Pages configuration uses `unheard.support` and the `SITE_URL` Actions variable to produce root-relative custom-domain URLs. DNS and the TLS certificate can take time to propagate; verify the Pages domain status in GitHub before treating the custom domain as live. The GitHub project URL may redirect before the domain itself resolves.
 
 A static Pages host cannot read the `Accept-Language` header on the server. The root page therefore selects a language in the browser using: explicit URL, saved preference, browser preferences, and English as a final fallback. An explicit locale URL is never overwritten. Fully reviewed content is currently Dutch; EN and AR are clear landing pages with a limitation notice, not uncontrolled translations.
 
 ## Project policies
 
-`PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md`, and `QUALITY_GATE.md` define the editorial and safety boundaries. Do not publish unverified facts, personal details, or medical/legal conclusions. Domain registration and DNS are not yet verified.
+`PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md`, and `QUALITY_GATE.md` define the editorial and safety boundaries. Do not publish unverified facts, personal details, or medical/legal conclusions. Keep `NO_INDEX=true` until editorial and safety review explicitly approves discovery.
