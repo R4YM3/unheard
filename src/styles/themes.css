@@ -11,6 +11,8 @@
   --link: #763b2c;
   --safe: #e4ebe2;
   --story: #f6eee5;
+  --tension: #f8f3ed;
+  --tension-border: #baa49a;
 }
 [data-theme='dark'] {
   color-scheme: dark;
@@ -24,4 +26,6 @@
   --link: #ffd1c3;
   --safe: #35463d;
   --story: #39332e;
+  --tension: #3e302b;
+  --tension-border: #a98e84;
 }

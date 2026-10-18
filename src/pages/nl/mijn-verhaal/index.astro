@@ -6,26 +6,36 @@ import Timeline from '../../../components/Timeline.astro';
 <BaseLayout
   title="Mijn verhaal"
   description="Een persoonlijk verhaal in lagen, met ruimte voor wat nog niet gedeeld kan of wil worden."
-  ><section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Mijn verhaal</p><h1>Een verhaal dat ik zorgvuldig vertel.</h1><p
-        class="lead"
-      >
-        Dit is een persoonlijke route naar woorden, geen bewijsstuk en geen compleet levensverhaal.
-      </p>
+  ><section class="hero hero--story-page">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Mijn verhaal · Ongehoord</p><h1>
+          Een verhaal dat ik zorgvuldig vertel.
+        </h1><p class="lead">
+          Dit is een persoonlijke route naar woorden, geen bewijsstuk en geen compleet
+          levensverhaal.
+        </p>
+      </div>
+      <div class="story-hero-visual" aria-hidden="true"></div>
     </div>
   </section><section class="section">
     <div class="wrap reading">
+      <p class="eyebrow">Mijn leven in lagen</p>
+      <h2>De weg waarop ik mezelf opnieuw leerde kennen.</h2>
+      <p>
+        Grote momenten blijven zichtbaar. Verdere details komen alleen online als ik ze zelf
+        zorgvuldig en verantwoord wil delen.
+      </p>
       <Timeline label="Mijlpalen in mijn verhaal">
         <li>
-          <article class="card card--story">
-            <p class="eyebrow">Voor de relatie</p><h2>Het verhaal begon eerder.</h2><p>
+          <article class="card">
+            <p class="eyebrow">Voor de relatie</p><h3>Het verhaal begon eerder.</h3><p>
               Dit deel wordt alleen aangevuld met gebeurtenissen die ik zelf verantwoord wil delen.
             </p>
           </article>
         </li><li>
-          <article class="card card--story">
-            <p class="eyebrow">De verschuiving</p><h2>Mezelf langzaam kwijtraken.</h2><p>
+          <article class="card">
+            <p class="eyebrow">De verschuiving</p><h3>Mezelf langzaam kwijtraken.</h3><p>
               Ik merkte dat ik me vaker aanpaste en mijn eigen gevoel begon te wantrouwen.
             </p><details>
               <summary>Vier lagen van dit moment</summary><h3>Wat gebeurde er?</h3><p>
@@ -40,8 +50,8 @@ import Timeline from '../../../components/Timeline.astro';
             </details>
           </article>
         </li><li>
-          <article class="card card--story">
-            <p class="eyebrow">Vandaag</p><h2>Een leven dat ik opnieuw vormgeef.</h2><p>
+          <article class="card">
+            <p class="eyebrow">Vandaag</p><h3>Een leven dat ik opnieuw vormgeef.</h3><p>
               Herstel is niet af. Vaderschap, plezier en moeilijke dagen kunnen naast elkaar
               bestaan.
             </p>

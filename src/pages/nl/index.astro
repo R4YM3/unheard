@@ -8,23 +8,27 @@ import HelpBlock from '../../components/HelpBlock.astro';
   title="Voor alles wat je voelt"
   description="Herkenning, begrip en herstel na emotioneel of financieel misbruik."
 >
-  <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Herkennen · Begrijpen · Herstellen</p><h1>
-        Voor alles wat je voelt, maar nog niet kunt verwoorden.
-      </h1><p class="lead">
-        Ongehoord biedt woorden, herkenning en praktische vervolgstappen bij emotioneel of
-        financieel misbruik. Met bijzondere aandacht voor de stilte die veel mannen ervaren — en
-        ruimte voor iedereen.
-      </p><div class="actions">
-        <a class="button" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/">Begin bij wat je voelt</a><a
-          class="button button--quiet"
-          href="nl/hulp-vinden/">Hulp vinden</a
-        >
+  <section class="hero hero--home">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Emotioneel &amp; financieel misbruik · Herkenning · Herstel</p><h1>
+          Voor alles wat je voelt, maar nog niet kunt verwoorden.
+        </h1><p class="lead">
+          Soms raak je jezelf langzaam kwijt in een relatie. Je twijfelt aan jezelf, past je steeds
+          meer aan of begrijpt niet waarom je voortdurend gespannen bent.
+        </p><p>
+          Ongehoord biedt woorden, herkenning en praktische vervolgstappen bij emotioneel of
+          financieel misbruik. Met bijzondere aandacht voor de stilte die veel mannen ervaren — en
+          ruimte voor iedereen.
+        </p><div class="actions">
+          <a class="button" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/">Begin bij wat je voelt</a
+          ><a class="button button--quiet" href="nl/hulp-vinden/">Hulp vinden</a>
+        </div>
       </div>
+      <div class="hero-visual" aria-hidden="true"></div>
     </div>
   </section>
-  <section class="section">
+  <section class="section intro-section">
     <div class="wrap reading">
       <p class="eyebrow">Welkom bij Ongehoord</p>
       <h2>Je hoeft het nog geen misbruik te noemen.</h2>
@@ -41,18 +45,22 @@ import HelpBlock from '../../components/HelpBlock.astro';
       </p>
     </div>
   </section>
-  <section class="section">
+  <section class="section feeling-section">
     <div class="wrap">
-      <p class="eyebrow">Een rustige eerste stap</p><h2>Wat herken jij?</h2><div class="grid">
-        <Card href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
+      <div class="section-heading">
+        <div><p class="eyebrow">01 · Begin bij jezelf</p><h2>Wat herken jij?</h2></div>
+        <p>Je hoeft het antwoord nog niet te weten. Kies wat het dichtst bij jouw ervaring komt.</p>
+      </div>
+      <div class="grid feeling-grid">
+        <Card class="feeling-card" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
           ><h3>Ik twijfel aan mezelf</h3><p>
             Waarom blijf ik gesprekken herhalen en mijn gevoel controleren?
           </p></Card
-        ><Card tone="tension" href="nl/begrippen/darvo/"
+        ><Card class="feeling-card" tone="tension" href="nl/begrippen/darvo/"
           ><h3>Ik moet mezelf verdedigen</h3><p>
             Wanneer een gesprek over jouw pijn verschuift naar jouw gedrag.
           </p></Card
-        ><Card tone="tension" href="nl/financieel-misbruik/"
+        ><Card class="feeling-card" tone="tension" href="nl/financieel-misbruik/"
           ><h3>Ik maak me zorgen om geld</h3><p>
             Wanneer geld, schulden of toegang tot middelen je vrijheid raken.
           </p></Card
@@ -60,9 +68,10 @@ import HelpBlock from '../../components/HelpBlock.astro';
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="wrap grid grid--story">
-      <Card tone="story">
+  <section class="section story-section">
+    <div class="wrap story-layout">
+      <div class="story-visual" aria-hidden="true"></div>
+      <div class="story-copy">
         <p class="eyebrow">Waarom Ongehoord bestaat</p>
         <h2>Ook ik zocht woorden voor wat ik voelde.</h2>
         <p>
@@ -75,34 +84,36 @@ import HelpBlock from '../../components/HelpBlock.astro';
           schrijf ik over wat ik heb ervaren en geleerd, zodat anderen zich mogelijk herkennen.
         </p>
         <a class="button" href="nl/mijn-verhaal/">Lees mijn verhaal</a>
-      </Card>
-      <div class="story-aside">
-        <p class="eyebrow">Een verhaal in verschillende lagen</p>
-        <h2>Van toen tot nu.</h2>
-        <p>
-          Een persoonlijke tijdlijn over wat er gebeurde, wat ik voelde, hoe ik veranderde en wat ik
-          vandaag begrijp.
-        </p>
-        <a href="nl/mijn-verhaal/">Ontdek de tijdlijn</a>
       </div>
     </div>
   </section>
-  <section class="section section--soft">
+  <section class="section timeline-teaser">
+    <div class="wrap reading">
+      <p class="eyebrow">Een verhaal in verschillende lagen</p>
+      <h2>Van toen tot nu.</h2>
+      <p>
+        Een persoonlijke tijdlijn over wat er gebeurde, wat ik voelde, hoe ik veranderde en wat ik
+        vandaag begrijp.
+      </p>
+      <a href="nl/mijn-verhaal/">Ontdek de tijdlijn</a>
+    </div>
+  </section>
+  <section class="section resources-section">
     <div class="wrap">
       <p class="eyebrow">Herstel &amp; hulpmiddelen</p>
       <h2>Er mag weer ruimte ontstaan.</h2>
-      <div class="grid">
-        <Card tone="safe" href="nl/herstel/therapie/">
+      <div class="grid resource-grid">
+        <Card class="resource-card" tone="safe" href="nl/herstel/therapie/">
           <p class="eyebrow">Therapie</p>
           <h3>Je hoeft niet alles alleen te begrijpen.</h3>
           <p>Verken vormen van ondersteuning en persoonlijke herstelervaringen.</p>
         </Card>
-        <Card tone="safe" href="nl/hulpmiddelen/">
+        <Card class="resource-card" tone="safe" href="nl/hulpmiddelen/">
           <p class="eyebrow">Vragenkaarten</p>
           <h3>Vragen die je ogen kunnen openen.</h3>
           <p>Reflecties voor jezelf, gesprekken met een professional en veilige gesprekken.</p>
         </Card>
-        <Card tone="safe" href="nl/ik-maak-me-zorgen-om-iemand/">
+        <Card class="resource-card" tone="safe" href="nl/ik-maak-me-zorgen-om-iemand/">
           <p class="eyebrow">Voor naasten</p>
           <h3>Maak je je zorgen om iemand?</h3>
           <p>Hoe steun je zonder druk uit te oefenen of conclusies op te leggen?</p>
@@ -110,7 +121,7 @@ import HelpBlock from '../../components/HelpBlock.astro';
       </div>
     </div>
   </section>
-  <section class="section section--soft">
+  <section class="section section--soft knowledge-section">
     <div class="wrap grid">
       <div>
         <p class="eyebrow">Begrijpen zonder etiketten</p><h2>Wat gebeurt er met mij?</h2><p>
