@@ -68,6 +68,26 @@ for (const file of files) {
   if (hasContentArticle && file.includes('/begrippen/') && !types.has('DefinedTerm'))
     bad.push(`${file}: concept article missing DefinedTerm JSON-LD`);
 
+  const headingLevels = [...html.matchAll(/<h([1-6])\b/gi)].map((match) => Number(match[1]));
+  for (let index = 1; index < headingLevels.length; index += 1) {
+    if (headingLevels[index] > headingLevels[index - 1] + 1) {
+      bad.push(
+        `${file}: heading level skips from h${headingLevels[index - 1]} to h${headingLevels[index]}`,
+      );
+    }
+  }
+
+  const tabs = [
+    ...html.matchAll(/<button\b(?=[^>]*\brole="tab")(?=[^>]*\baria-controls="([^"]+)")[^>]*>/gi),
+  ];
+  for (const tab of tabs) {
+    const panelId = tab[1];
+    const escapedPanelId = panelId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (!new RegExp(`<[^>]+\\bid="${escapedPanelId}"[^>]*\\brole="tabpanel"`, 'i').test(html)) {
+      bad.push(`${file}: tab controls missing panel ${panelId}`);
+    }
+  }
+
   const base = html.match(/<base href="([^"]+)"/i)?.[1];
   if (!base) continue;
   if (!base.endsWith('/')) bad.push(`${file}: base URL must end with a slash`);
