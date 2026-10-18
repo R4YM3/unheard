@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-interface Props { entry: CollectionEntry<'articles'>; Content: any; }
+interface Props { entry: CollectionEntry<'articles'>; Content: any; related?: CollectionEntry<'articles'>[]; locale: string; }
 const { entry, Content } = Astro.props;
 const { data } = entry;
 ---

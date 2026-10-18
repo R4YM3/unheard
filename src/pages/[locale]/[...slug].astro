@@ -3,12 +3,15 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Article from '../../components/Article.astro';
 import PerspectiveSwitch from '../../components/PerspectiveSwitch.astro';
+import RelatedContent from '../../components/RelatedContent.astro';
 import { isLocale } from '../../i18n/config';
 export async function getStaticPaths() { const entries = await getCollection('articles', ({data}) => data.published); return entries.map(entry => ({ params: { locale: entry.data.locale, slug: entry.data.slug }, props: { entry } })); }
 const { entry } = Astro.props; const { Content } = await render(entry); const locale = Astro.params.locale ?? 'nl';
 if (!isLocale(locale)) return new Response(null,{status:404});
 const path = `/${locale}/${Astro.params.slug}/`;
+const related = (await getCollection('articles', ({ data }) => data.published && data.locale === locale)).filter(candidate => entry.data.related.includes(candidate.data.translationKey));
 ---
 <BaseLayout title={entry.data.title} description={entry.data.description} locale={locale} canonicalPath={path}>
-  {entry.data.translationKey === 'zelftwijfel' ? <><Article entry={entry} Content={Content} /><PerspectiveSwitch /><section class="section section--soft"><div class="wrap reading"><h2>Je hoeft het niet alleen uit te zoeken.</h2><p>Wat je voelt verdient aandacht, ook wanneer je nog geen woorden hebt voor wat er gebeurt.</p><a class="button" href="nl/hulp-vinden/">Hulp en veiligheid</a></div></section></> : <Article entry={entry} Content={Content} />}
+  {entry.data.translationKey === 'zelftwijfel' ? <><Article entry={entry} Content={Content} locale={locale} /><PerspectiveSwitch /><section class="section section--soft"><div class="wrap reading"><h2>Je hoeft het niet alleen uit te zoeken.</h2><p>Wat je voelt verdient aandacht, ook wanneer je nog geen woorden hebt voor wat er gebeurt.</p><a class="button" href="nl/hulp-vinden/">Hulp en veiligheid</a></div></section></> : <Article entry={entry} Content={Content} locale={locale} />}
+  <RelatedContent entries={related} locale={locale} />
 </BaseLayout>
