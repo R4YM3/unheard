@@ -7,6 +7,7 @@ const walk = async (d) => {
   ).flat();
 };
 const files = (await walk('dist')).filter((f) => f.endsWith('.html'));
+const noIndex = process.env.NO_INDEX === 'true';
 const routeForFile = (file) => {
   const route = file
     .replace(/^dist/, '')
@@ -35,6 +36,8 @@ for (const file of files) {
   if (!root && html.includes('example.github.io')) bad.push(`${file}: placeholder canonical URL`);
   if (!root && !html.includes('application/ld+json')) bad.push(`${file}: missing JSON-LD`);
   if (!root && !html.includes('property="og:title"')) bad.push(`${file}: missing Open Graph title`);
+  if (noIndex && !html.includes('name="robots" content="noindex, nofollow"'))
+    bad.push(`${file}: missing temporary noindex directive`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
   if (!root && !html.includes('href="#main"')) bad.push(`${file}: missing skip link`);
   if (!root && !html.includes('<main id="main"')) bad.push(`${file}: missing main landmark target`);
@@ -70,6 +73,10 @@ for (const file of files) {
     if (!publishedRoutes.has(route))
       bad.push(`${file}: broken internal link ${href} (resolved ${route})`);
   }
+}
+if (noIndex) {
+  const robots = await readFile('dist/robots.txt', 'utf8');
+  if (!robots.includes('Disallow: /')) bad.push('dist/robots.txt: expected global crawl block');
 }
 if (bad.length) throw new Error(bad.join('\n'));
 console.log(`Audited ${files.length} HTML pages.`);

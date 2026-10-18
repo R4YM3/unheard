@@ -27,6 +27,7 @@ const schema = {
   isPartOf: { '@type': 'WebSite', name: 'Ongehoord', url: site.href },
 };
 const hasHomeTranslations = ['/nl/', '/en/', '/ar/'].includes(canonicalPath);
+const noIndex = process.env.NO_INDEX === 'true';
 const alternateUrl = (language: Locale) => new URL(`${basePath}${language}/`, site).href;
 const navigation =
   locale === 'nl'
@@ -46,6 +47,7 @@ const navigation =
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ongehoord" />
     <meta property="og:title" content={`${title} — Ongehoord`} />

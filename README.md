@@ -23,6 +23,8 @@ Add a Markdown file under `src/content/articles/` with schema-validated frontmat
 
 GitHub Actions checks every pull request and builds/deploys to GitHub Pages on each push to `main`. Pages uses the Actions workflow as its publishing source. While it is hosted at the GitHub project URL, the build uses the repository subpath automatically.
 
+The temporary deployment is protected with `noindex, nofollow` and a blocking `robots.txt`. This is controlled by the `NO_INDEX` Actions variable, which defaults to `true`; set it to `false` only when the site is ready to be discoverable.
+
 After the custom domain is active, add a GitHub repository Actions variable named `SITE_URL` with the full origin (for example, `https://unheard.support`) and configure the same custom domain in GitHub Pages. The next deployment then uses `/` as its base path automatically.
 
 A static Pages host cannot read the `Accept-Language` header on the server. The root page therefore selects a language in the browser using: explicit URL, saved preference, browser preferences, and English as a final fallback. An explicit locale URL is never overwritten. Fully reviewed content is currently Dutch; EN and AR are clear landing pages with a limitation notice, not uncontrolled translations.
