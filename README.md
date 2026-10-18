@@ -1,6 +1,6 @@
-# Ongehoord / Unheard
+# Project
 
-A public, statically generated Astro website. The Dutch brand remains **Ongehoord**; the technical repository and future domain use **unheard**.
+A public, statically generated Astro website.
 
 ## Local development
 
