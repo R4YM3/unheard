@@ -19,6 +19,12 @@ const alternateUrl = (language: Locale) => new URL(`${import.meta.env.BASE_URL}$
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ongehoord" />
+    <meta property="og:title" content={`${title} — Ongehoord`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
     <base href={import.meta.env.BASE_URL} />
     <link rel="canonical" href={canonical} />
     {hasHomeTranslations && <><link rel="alternate" hreflang="nl" href={alternateUrl('nl')} /><link rel="alternate" hreflang="en" href={alternateUrl('en')} /><link rel="alternate" hreflang="ar" href={alternateUrl('ar')} /><link rel="alternate" hreflang="x-default" href={alternateUrl('en')} /></>}
