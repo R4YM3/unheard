@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Hulpmiddelen om rustig te ordenen"
+  description="Printbare kaarten om woorden te vinden voor wat je voelt, voor een gesprek met hulp, of om iemand te steunen."
+  canonicalPath="/nl/hulpmiddelen/"
+>
+  <section class="hero">
+    <div class="wrap reading">
+      <p class="eyebrow">Hulpmiddelen</p>
+      <h1>Een kleine kaart kan genoeg zijn voor vandaag.</h1>
+      <p class="lead">
+        Deze hulpmiddelen vragen niets van je en slaan niets op. Lees, print of neem alleen mee wat
+        voor jou veilig voelt.
+      </p>
+      <div class="actions">
+        <button class="button" type="button" onclick="window.print()">Print deze kaarten</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid">
+      <article class="card">
+        <p class="eyebrow">Voor mezelf</p>
+        <h2>Even onderscheiden</h2>
+        <ul>
+          <li>Wat gebeurde er, zo feitelijk mogelijk?</li>
+          <li>Wat voelde ik in dat moment?</li>
+          <li>Wat heb ik nu nodig om veilig of rustiger te zijn?</li>
+        </ul>
+        <p>Je hoeft geen conclusie te trekken. Stop als schrijven of bewaren onveilig voelt.</p>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Voor hulp zoeken</p>
+        <h2>Een gesprek openen</h2>
+        <ul>
+          <li>Waar loop ik het meest op vast?</li>
+          <li>Welke vorm van steun zoek ik op dit moment?</li>
+          <li>Wat moet een hulpverlener weten over mijn veiligheid of privacy?</li>
+        </ul>
+        <p>Je mag een kaart meenemen, voorlezen of alleen als geheugensteun gebruiken.</p>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Voor een vriend of familielid</p>
+        <h2>Er zijn zonder over te nemen</h2>
+        <ul>
+          <li>Wil je vertellen wat er speelt, of zal ik vooral luisteren?</li>
+          <li>Wat zou vandaag een kleine, veilige steun zijn?</li>
+          <li>Is er iemand of een plek waar je je veilig voelt?</li>
+        </ul>
+        <p>Vermijd druk, diagnoses en confrontaties die het risico voor iemand kunnen vergroten.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap reading help">
+      <h2>Veiligheid gaat voor een gesprek</h2>
+      <p>
+        Bij direct gevaar bel je <a href="tel:112">112</a>. Voor advies over huiselijk geweld of
+        misbruik kun je Veilig Thuis bereiken via <a href="tel:08002000">0800-2000</a>.
+      </p>
+      <a class="button" href="nl/hulp-vinden/">Bekijk alle hulpopties</a>
+    </div>
+  </section>
+</BaseLayout>

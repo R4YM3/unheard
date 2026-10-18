@@ -31,3 +31,7 @@ Neem direct contact op met **113 Zelfmoordpreventie** via **[113](tel:113)** of 
 ## Denk aan je privacy
 
 Als iemand je apparaat, browser of accounts mogelijk controleert, zoek dan als het kan hulp via een veilig apparaat. Geen website kan browsergeschiedenis voor je verwijderen.
+
+## Rustig ordenen of printen
+
+Je kunt ook kijken naar [printbare hulpmiddelen](nl/hulpmiddelen/) die geen antwoorden opslaan.
