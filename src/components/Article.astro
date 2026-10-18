@@ -32,6 +32,11 @@ const schema = [
       url: site.href,
       logo: { '@type': 'ImageObject', url: logoUrl, width: 256, height: 256 },
     },
+    citation: data.sources.map((source) => ({
+      '@type': 'CreativeWork',
+      name: source.label,
+      url: source.url,
+    })),
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
   },
   {

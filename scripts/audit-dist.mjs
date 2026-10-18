@@ -69,6 +69,8 @@ for (const file of files) {
     bad.push(`${file}: article missing BreadcrumbList JSON-LD`);
   if (hasContentArticle && !html.includes('id="sources-heading"'))
     bad.push(`${file}: article missing visible source attribution`);
+  if (hasContentArticle && !html.includes('"citation":['))
+    bad.push(`${file}: article missing structured-data citations`);
   if (hasContentArticle && file.includes('/begrippen/') && !types.has('DefinedTerm'))
     bad.push(`${file}: concept article missing DefinedTerm JSON-LD`);
 
