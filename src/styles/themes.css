@@ -8,6 +8,7 @@
   --border: #a8b0a6;
   --action: var(--palette-terracotta);
   --action-text: #fff;
+  --link: #763b2c;
   --safe: #e4ebe2;
 }
 [data-theme='dark'] {
@@ -19,5 +20,6 @@
   --border: #819084;
   --action: #dc9a85;
   --action-text: #1c211f;
+  --link: #ffd1c3;
   --safe: #35463d;
 }
