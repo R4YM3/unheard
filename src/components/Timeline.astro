@@ -1,0 +1,11 @@
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<ol class="timeline" aria-label={label}>
+  <slot />
+</ol>

@@ -57,9 +57,20 @@ const scenarios = [
       <p class="eyebrow">De binnenkant</p><p data-inside>{scenarios[0].inside}</p>
     </div>
     <div class="print-only">
-      <h3>Wat er gezegd wordt</h3><p>{scenarios[0].outside}</p><h3>Wat ik vanbinnen voel</h3><p>
-        {scenarios[0].inside}
-      </p>
+      <h3>Alle voorbeeldsituaties</h3>
+      {
+        scenarios.map((scenario) => (
+          <section>
+            <h4>{scenario.label}</h4>
+            <p>
+              <strong>Wat er gezegd wordt:</strong> {scenario.outside}
+            </p>
+            <p>
+              <strong>Wat ik vanbinnen voel:</strong> {scenario.inside}
+            </p>
+          </section>
+        ))
+      }
     </div>
   </div>
 </section>

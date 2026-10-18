@@ -43,6 +43,9 @@
   [hidden] {
     display: block !important;
   }
+  details:not([open]) > :not(summary) {
+    display: block !important;
+  }
   .timeline {
     border-color: #000;
   }
