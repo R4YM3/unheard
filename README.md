@@ -29,6 +29,10 @@ The GitHub Pages configuration uses `unheard.support` and the `SITE_URL` Actions
 
 A static Pages host cannot read the `Accept-Language` header on the server. The root page therefore selects a language in the browser using: explicit URL, saved preference, browser preferences, and English as a final fallback. An explicit locale URL is never overwritten. Fully reviewed content is currently Dutch; EN and AR are clear landing pages with a limitation notice, not uncontrolled translations.
 
+## Privacy-friendly analytics
+
+The layout supports Cloudflare Web Analytics without a cookie banner or visitor profiling. It remains inactive unless the repository Actions variable `PUBLIC_CLOUDFLARE_BEACON_TOKEN` is configured with the site token supplied by Cloudflare. The workflow passes that value to the static build; no analytics identifier is stored in the repository.
+
 ## Project policies
 
 `PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md`, and `QUALITY_GATE.md` define the editorial and safety boundaries. Do not publish unverified facts, personal details, or medical/legal conclusions. Keep `NO_INDEX=true` until editorial and safety review explicitly approves discovery.

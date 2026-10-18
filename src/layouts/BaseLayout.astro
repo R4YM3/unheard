@@ -52,6 +52,7 @@ const schema = [
 ];
 const hasHomeTranslations = ['/nl/', '/en/', '/ar/'].includes(canonicalPath);
 const noIndex = process.env.NO_INDEX === 'true';
+const cloudflareBeaconToken = import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN;
 const skipLabel =
   locale === 'nl'
     ? 'Direct naar inhoud'
@@ -100,6 +101,15 @@ const navigation =
       )
     }
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {
+      cloudflareBeaconToken && (
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: cloudflareBeaconToken, spa: false })}
+        />
+      )
+    }
     <title>{title} — {brandName}</title>
     <script
       is:inline
@@ -127,15 +137,13 @@ const navigation =
             ))
           }
         </nav>
-        <div class="header-controls">
-          <LocaleSelector locale={locale} /><ThemeToggle locale={locale} />
-        </div>
+        <div class="header-controls"><LocaleSelector locale={locale} /></div>
       </div>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer">
       <div class="wrap footer-row">
-        <strong>{brandName}.</strong>
+        <strong>◒ {brandName}.</strong>
         <span>
           {
             locale === 'nl'
@@ -148,13 +156,14 @@ const navigation =
         <span>
           {
             locale === 'nl'
-              ? 'Persoonlijk initiatief · inhoud in ontwikkeling'
+              ? 'Persoonlijk initiatief · conceptsite · beeld en content in ontwikkeling'
               : locale === 'ar'
-                ? 'مبادرة شخصية · المحتوى قيد التطوير'
-                : 'Personal initiative · content in development'
+                ? 'مبادرة شخصية · موقع تجريبي · الصور والمحتوى قيد التطوير'
+                : 'Personal initiative · concept site · visuals and content in development'
           }
         </span>
       </div>
     </footer>
+    <ThemeToggle locale={locale} />
   </body>
 </html>

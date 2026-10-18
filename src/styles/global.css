@@ -17,21 +17,17 @@
   white-space: nowrap;
 }
 .locale-selector {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
+  display: block;
   font-size: 0.84rem;
   font-weight: 650;
-}
-.locale-selector select {
   border: 1px solid var(--border);
   border-radius: 0.35rem;
   background: var(--surface);
   color: var(--text);
   font: inherit;
-  padding: 0.3rem 0.45rem;
+  padding: 0.3rem 1.5rem 0.3rem 0.45rem;
 }
-.locale-selector select:focus-visible {
+.locale-selector:focus-visible {
   outline: 3px solid var(--action);
   outline-offset: 2px;
 }
@@ -103,9 +99,13 @@ summary:focus-visible {
   color: var(--action);
 }
 .theme-toggle {
+  position: fixed;
+  z-index: 4;
+  inset-inline-end: 1rem;
+  inset-block-end: 1rem;
   display: grid;
-  width: 2.35rem;
-  height: 2.15rem;
+  width: 2.55rem;
+  height: 2.45rem;
   place-items: center;
   border: 1px solid #829188;
   border-radius: 0.35rem;
@@ -139,13 +139,10 @@ summary:focus-visible {
   align-items: center;
   gap: 0.6rem;
 }
-.site-header .locale-selector select {
+.site-header .locale-selector {
   border-color: #829188;
   background: #34413b;
   color: #fff;
-}
-.site-header .locale-selector {
-  color: #dce5dc;
 }
 .reading :is(p, li) a:not(.button),
 .help :is(p, li) a:not(.button),
@@ -158,7 +155,7 @@ summary:focus-visible {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 1.35rem;
+  gap: 1rem;
   font-size: 0.88rem;
   font-weight: 650;
 }
@@ -399,7 +396,7 @@ a.card:hover {
 }
 .card--tension::before {
   position: absolute;
-  inset-block: 0.85rem;
+  inset-block: 0;
   inset-inline-start: 0;
   width: 0.4rem;
   background: var(--action);
@@ -467,8 +464,9 @@ a.card:hover {
   flex-wrap: wrap;
 }
 .site-footer {
-  padding: 3rem 0;
-  background: var(--palette-charcoal);
+  padding: 1.75rem 0;
+  border-top: 1px solid #43504a;
+  background: #17201e;
   color: #e8ede7;
 }
 .footer-row {
