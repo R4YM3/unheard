@@ -1,8 +1,8 @@
 # Ongehoord / Unheard
 
-Een publieke, statisch gegenereerde Astro-website. De Nederlandse merknaam blijft **Ongehoord**; de technische repository en toekomstige domeinnaam gebruiken **unheard**.
+A public, statically generated Astro website. The Dutch brand remains **Ongehoord**; the technical repository and future domain use **unheard**.
 
-## Lokaal ontwikkelen
+## Local development
 
 ```sh
 npm install
@@ -11,18 +11,20 @@ npm run check
 npm run build
 ```
 
-`check` voert typecontrole, contentvalidatie en taalrouteringstests uit. `build` controleert daarnaast de statische HTML, metadata, JSON-LD, taal-attributen en GitHub-Pages-veilige links.
+`check` runs Astro type checking, ESLint, Prettier verification, content validation, and language-routing tests. `build` additionally audits static HTML, metadata, JSON-LD, language attributes, and GitHub Pages-safe links.
 
-## Content toevoegen
+Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 
-Plaats een Markdown-bestand in `src/content/articles/` met gevalideerde frontmatter. Vul `locale`, een stabiele `translationKey`, route-`slug`, `published`, auteur, datum en bronnen in. Een nieuwe pagina verschijnt bij de build alleen wanneer `published: true` is. Onbeoordeelde vertalingen worden niet als volledig artikel gepubliceerd.
+## Adding content
 
-## Publicatie
+Add a Markdown file under `src/content/articles/` with schema-validated frontmatter. Include a `locale`, stable `translationKey`, route `slug`, `published` flag, author, date, related content keys, and sources. A page is generated only when `published: true`. Do not publish unreviewed translations as full articles.
 
-GitHub Actions controleert elke pull request en bouwt/publiceert bij elke push naar `main` naar GitHub Pages. De pagina-instellingen gebruiken de Actions-workflow als publicatiebron. Configureer `SITE_URL` pas op `https://unheard.support` zodra het domein actief is.
+## Publishing
 
-De statische Pages-host kan geen `Accept-Language`-header op de server lezen. Daarom kiest alleen de rootpagina in de browser een taal op basis van: expliciete URL, opgeslagen keuze, browservoorkeuren en ten slotte Engels. Een expliciete locale-URL wordt nooit automatisch overschreven. De volledige, redactioneel beoordeelde inhoud is momenteel Nederlands; EN en AR zijn heldere startpagina's met een beperking, geen ongecontroleerde vertalingen.
+GitHub Actions checks every pull request and builds/deploys to GitHub Pages on each push to `main`. Pages uses the Actions workflow as its publishing source. Set `SITE_URL` to `https://unheard.support` only after the domain is active.
 
-## Projectafspraken
+A static Pages host cannot read the `Accept-Language` header on the server. The root page therefore selects a language in the browser using: explicit URL, saved preference, browser preferences, and English as a final fallback. An explicit locale URL is never overwritten. Fully reviewed content is currently Dutch; EN and AR are clear landing pages with a limitation notice, not uncontrolled translations.
 
-`PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md` en `QUALITY_GATE.md` bevatten de inhoudelijke en veiligheidsgrenzen. Er worden geen onbevestigde feiten, persoonlijke details of medische/juridische conclusies gepubliceerd. Domeinregistratie en DNS zijn nog niet geverifieerd.
+## Project policies
+
+`PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md`, and `QUALITY_GATE.md` define the editorial and safety boundaries. Do not publish unverified facts, personal details, or medical/legal conclusions. Domain registration and DNS are not yet verified.

@@ -1,6 +1,6 @@
 ---
-title: "Financieel misbruik: wanneer geld je vrijheid raakt"
-description: "Herken signalen van financiële controle en ontdek welke veilige vervolgstappen je kunt overwegen."
+title: 'Financieel misbruik: wanneer geld je vrijheid raakt'
+description: 'Herken signalen van financiële controle en ontdek welke veilige vervolgstappen je kunt overwegen.'
 locale: nl
 translationKey: financieel-misbruik
 slug: financieel-misbruik

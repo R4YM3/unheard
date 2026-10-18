@@ -1,4 +1,5 @@
 # Sensitive content & editorial policy
+
 - Emphasize emotional validation and non-diagnostic self-reflection, not confirmation that someone's partner has a disorder.
 - Distinguish personal first-person testimony, fictional illustrations, professional clinical evidence and editorial interpretation.
 - Founder shared these therapy experiences: schematherapie (self discovery), group schematherapie, EMDR (found insufficient personally, then exposure), cognitive therapy (handling thoughts), boxing with emotions (feeling how much energy emotions cost), visual arts therapy (uncovering internal wants), psychologist, meditation. Do NOT invent efficacy, chronology, dates or insights for unelaborated therapies.

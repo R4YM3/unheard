@@ -1,6 +1,6 @@
 ---
-title: "Herstel: ruimte maken voor wat jij nodig hebt"
-description: "Herstel hoeft geen rechte lijn te zijn. Verken rustige, veilige manieren om steun en woorden te vinden."
+title: 'Herstel: ruimte maken voor wat jij nodig hebt'
+description: 'Herstel hoeft geen rechte lijn te zijn. Verken rustige, veilige manieren om steun en woorden te vinden.'
 locale: nl
 translationKey: herstel
 slug: herstel

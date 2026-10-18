@@ -1,6 +1,30 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-interface Props { entries: CollectionEntry<'articles'>[]; locale: string; }
+interface Props {
+  entries: CollectionEntry<'articles'>[];
+  locale: string;
+}
 const { entries, locale } = Astro.props;
 ---
-{entries.length > 0 && <section class="section section--soft"><div class="wrap"><p class="eyebrow">Verder lezen</p><h2>Misschien helpt dit ook</h2><div class="grid">{entries.map(entry => <a class="card" href={`${locale}/${entry.data.slug}/`}><p class="eyebrow">{entry.data.kind}</p><h3>{entry.data.title}</h3><p>{entry.data.description}</p></a>)}</div></div></section>}
+
+{
+  entries.length > 0 && (
+    <section class="section section--soft">
+      <div class="wrap">
+        <>
+          <p class="eyebrow">Verder lezen</p>
+          <h2>Misschien helpt dit ook</h2>
+          <div class="grid">
+            {entries.map((entry) => (
+              <a class="card" href={`${locale}/${entry.data.slug}/`}>
+                <p class="eyebrow">{entry.data.kind}</p>
+                <h3>{entry.data.title}</h3>
+                <p>{entry.data.description}</p>
+              </a>
+            ))}
+          </div>
+        </>
+      </div>
+    </section>
+  )
+}

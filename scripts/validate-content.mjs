@@ -1,6 +1,86 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-const walk = async d => (await Promise.all((await readdir(d,{withFileTypes:true})).map(e => e.isDirectory() ? walk(join(d,e.name)) : join(d,e.name)))).flat();
-const files = await walk('src/content/articles');
-for (const file of files) { const text = await readFile(file,'utf8'); if (!text.startsWith('---') || !/^published: (true|false)$/m.test(text)) throw new Error(`Invalid frontmatter: ${file}`); }
-console.log(`Validated ${files.length} content files.`);
+import { parseDocument } from 'yaml';
+
+const contentDirectory = 'src/content/articles';
+const supportedLocales = new Set(['nl', 'en', 'ar']);
+const walk = async (directory) =>
+  (
+    await Promise.all(
+      (await readdir(directory, { withFileTypes: true })).map((entry) =>
+        entry.isDirectory() ? walk(join(directory, entry.name)) : join(directory, entry.name),
+      ),
+    )
+  ).flat();
+const parseFrontmatter = async (file) => {
+  const text = await readFile(file, 'utf8');
+  const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*(?:\n|$)/);
+  if (!match) throw new Error(`${file}: missing YAML frontmatter`);
+  const document = parseDocument(match[1]);
+  if (document.errors.length > 0) {
+    throw new Error(
+      `${file}: invalid YAML — ${document.errors.map(({ message }) => message).join(', ')}`,
+    );
+  }
+  return document.toJS();
+};
+
+const errors = [];
+const files = (await walk(contentDirectory)).filter((file) => /\.mdx?$/.test(file));
+const articles = await Promise.all(
+  files.map(async (file) => ({ file, data: await parseFrontmatter(file) })),
+);
+const publishedByKey = new Map();
+const slugs = new Set();
+for (const { file, data } of articles) {
+  if (!data || typeof data !== 'object') {
+    errors.push(`${file}: frontmatter must be an object`);
+    continue;
+  }
+  const required = [
+    'title',
+    'description',
+    'locale',
+    'translationKey',
+    'slug',
+    'kind',
+    'published',
+    'author',
+    'updatedAt',
+  ];
+  for (const field of required) if (!(field in data)) errors.push(`${file}: missing ${field}`);
+  if (!supportedLocales.has(data.locale)) errors.push(`${file}: locale must be nl, en, or ar`);
+  if (
+    typeof data.slug !== 'string' ||
+    !/^[a-z0-9]+(?:[a-z0-9-]*\/)*[a-z0-9]+(?:[a-z0-9-]*)?$/.test(data.slug)
+  ) {
+    errors.push(`${file}: slug must use lowercase URL-safe segments without a leading slash`);
+  } else {
+    const key = `${data.locale}:${data.slug}`;
+    if (slugs.has(key)) errors.push(`${file}: duplicate route ${key}`);
+    slugs.add(key);
+  }
+  if (typeof data.updatedAt !== 'string' || Number.isNaN(Date.parse(data.updatedAt)))
+    errors.push(`${file}: updatedAt must be an ISO date`);
+  if (!Array.isArray(data.related)) errors.push(`${file}: related must be an array`);
+  if (!Array.isArray(data.sources)) errors.push(`${file}: sources must be an array`);
+  for (const source of data.sources ?? []) {
+    if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
+      errors.push(`${file}: every source needs a label and HTTPS URL`);
+  }
+  if (data.published === true && typeof data.translationKey === 'string') {
+    const key = `${data.locale}:${data.translationKey}`;
+    if (publishedByKey.has(key)) errors.push(`${file}: duplicate published translation key ${key}`);
+    publishedByKey.set(key, file);
+  }
+}
+for (const { file, data } of articles.filter(({ data }) => data?.published === true)) {
+  for (const relatedKey of data.related ?? []) {
+    if (!publishedByKey.has(`${data.locale}:${relatedKey}`))
+      errors.push(`${file}: related entry ${relatedKey} is not a published ${data.locale} article`);
+  }
+}
+if (errors.length > 0) throw new Error(`Content validation failed:\n${errors.join('\n')}`);
+console.log(
+  `Validated ${articles.length} content files and ${publishedByKey.size} published relations.`,
+);

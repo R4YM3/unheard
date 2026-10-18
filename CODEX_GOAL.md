@@ -12,7 +12,6 @@ Never invent biography, statistics, sourced claims, diagnoses, testimonials or e
 
 When done, provide a concise summary of completed routes, how to run/build/test, known content-review blockers, and exact outstanding tasks. Do not claim a phase is complete until its checks pass.
 
-
 ## Non-negotiable engineering contract (v2)
 
 - Astro static output by default; TypeScript strict mode; Astro content collections with schema-validated Markdown and MDX only when components are needed; generate content routes at build-time.
@@ -27,6 +26,7 @@ When done, provide a concise summary of completed routes, how to run/build/test,
 - Content maintenance: typed frontmatter schema, documented naming rules, sample copy-ready Markdown content file, published/draft flags, author/source attribution, updated/review dates, and related content IDs. Production build must reject broken content relations.
 
 ## Release gates
+
 1. `npm run check` and production build pass.
 2. Route/link and metadata audits pass, no broken internal links or invalid schema.
 3. Axe accessibility checks plus manual tab/keyboard, high zoom and screen-reader smoke checks; contrast verified in light/dark.

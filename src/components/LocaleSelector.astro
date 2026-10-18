@@ -1,2 +1,12 @@
-<label class="locale-selector">Taal <select data-locale-select aria-label="Kies taal"><option value="nl">Nederlands</option><option value="en">English</option><option value="ar">العربية</option></select></label>
-<script is:inline>{`(()=>{const select=document.querySelector('[data-locale-select]');if(!select)return;const supported=['nl','en','ar'];const base='${import.meta.env.BASE_URL}';const local=location.pathname.startsWith(base)?location.pathname.slice(base.length):location.pathname.slice(1);const parts=local.split('/').filter(Boolean);const current=supported.includes(parts[0])?parts.shift():'en';select.value=current;select.addEventListener('change',()=>{const next=select.value;try{localStorage.setItem('ongehoord-language',next)}catch{};const knownHome=parts.length===0;location.assign(base+next+'/'+(knownHome?'': '')+location.search+location.hash)})})()`}</script>
+<label class="locale-selector"
+  >Taal <select data-locale-select aria-label="Kies taal"
+    ><option value="nl">Nederlands</option><option value="en">English</option><option value="ar"
+      >العربية</option
+    ></select
+  ></label
+>
+<script is:inline>
+  {
+    `(()=>{const select=document.querySelector('[data-locale-select]');if(!select)return;const supported=['nl','en','ar'];const base='${import.meta.env.BASE_URL}';const local=location.pathname.startsWith(base)?location.pathname.slice(base.length):location.pathname.slice(1);const parts=local.split('/').filter(Boolean);const current=supported.includes(parts[0])?parts.shift():'en';select.value=current;select.addEventListener('change',()=>{const next=select.value;try{localStorage.setItem('ongehoord-language',next)}catch{};const knownHome=parts.length===0;location.assign(base+next+'/'+(knownHome?'': '')+location.search+location.hash)})})()`;
+  }
+</script>

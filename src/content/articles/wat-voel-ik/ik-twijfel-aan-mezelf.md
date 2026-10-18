@@ -1,6 +1,6 @@
 ---
-title: "Waarom twijfel ik steeds aan mezelf?"
-description: "Verken herkenbare zelftwijfel na moeilijke gesprekken, zonder dat je iemand een etiket hoeft te geven."
+title: 'Waarom twijfel ik steeds aan mezelf?'
+description: 'Verken herkenbare zelftwijfel na moeilijke gesprekken, zonder dat je iemand een etiket hoeft te geven.'
 locale: nl
 translationKey: zelftwijfel
 slug: wat-voel-ik/ik-twijfel-aan-mezelf

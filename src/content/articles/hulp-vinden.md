@@ -1,6 +1,6 @@
 ---
-title: "Hulp vinden en veilig advies vragen"
-description: "Nederlandse hulpopties bij direct gevaar, zorgen over misbruik en gedachten aan zelfdoding."
+title: 'Hulp vinden en veilig advies vragen'
+description: 'Nederlandse hulpopties bij direct gevaar, zorgen over misbruik en gedachten aan zelfdoding.'
 locale: nl
 translationKey: hulp-vinden
 slug: hulp-vinden
@@ -10,10 +10,10 @@ author: Ongehoord
 updatedAt: 2026-10-19
 related: [zelftwijfel, financieel-misbruik]
 sources:
-  - label: "Veilig Thuis — contact"
-    url: "https://www.veiligthuis.nl/nl/contact"
-  - label: "113 Zelfmoordpreventie"
-    url: "https://www.113.nl/"
+  - label: 'Veilig Thuis — contact'
+    url: 'https://www.veiligthuis.nl/nl/contact'
+  - label: '113 Zelfmoordpreventie'
+    url: 'https://www.113.nl/'
 ---
 
 ## Bij direct gevaar

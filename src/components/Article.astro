@@ -1,11 +1,47 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-interface Props { entry: CollectionEntry<'articles'>; Content: any; related?: CollectionEntry<'articles'>[]; locale: string; }
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+interface Props {
+  entry: CollectionEntry<'articles'>;
+  Content: AstroComponentFactory;
+  related?: CollectionEntry<'articles'>[];
+  locale: string;
+}
 const { entry, Content } = Astro.props;
 const { data } = entry;
 ---
+
 <article>
-  <section class="hero"><div class="wrap"><p class="eyebrow">{data.kind} · {data.updatedAt.toLocaleDateString('nl-NL')}</p><h1>{data.title}</h1><p class="lead">{data.description}</p></div></section>
-  <section class="section"><div class="wrap reading"><Content /><p class="eyebrow">Bijgewerkt {data.updatedAt.toLocaleDateString('nl-NL')} · {data.author}</p></div></section>
-  {data.sources.length > 0 && <section class="section section--soft"><div class="wrap reading"><h2>Bronnen</h2><ul>{data.sources.map(source => <li><a href={source.url}>{source.label}</a></li>)}</ul></div></section>}
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">{data.kind} · {data.updatedAt.toLocaleDateString('nl-NL')}</p><h1>
+        {data.title}
+      </h1><p class="lead">{data.description}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap reading">
+      <Content /><p class="eyebrow">
+        Bijgewerkt {data.updatedAt.toLocaleDateString('nl-NL')} · {data.author}
+      </p>
+    </div>
+  </section>
+  {
+    data.sources.length > 0 && (
+      <section class="section section--soft">
+        <div class="wrap reading">
+          <>
+            <h2>Bronnen</h2>
+            <ul>
+              {data.sources.map((source) => (
+                <li>
+                  <a href={source.url}>{source.label}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        </div>
+      </section>
+    )
+  }
 </article>

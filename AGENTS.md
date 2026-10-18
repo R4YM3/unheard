@@ -3,6 +3,7 @@
 You are implementing a real, production-oriented multilingual content platform from the supplied `PROJECT_BRIEF.md` and `references/`. Work autonomously in clear vertical slices, run tests and build after meaningful changes, and do not stop after making a plan. Do not deploy or publish without approval.
 
 ## Priorities
+
 1. Read PROJECT_BRIEF.md, ROADMAP.md, EDITORIAL_POLICY.md and inspect references before writing code.
 2. Latest authority for look and feel: `references/homepage.html`, `references/mijn-verhaal.html`, `references/zelftwijfel.html`, `references/design-system.html`. Earlier articles are content references, not design authorities.
 3. Create clean Astro + TypeScript project (unless this repo already has a mature compatible stack). Organize content separately, componentize interactive UX, use native HTML and progressive enhancement.
@@ -15,8 +16,8 @@ You are implementing a real, production-oriented multilingual content platform f
 10. Deliver validated build, accessible keyboard flows, meaningful tests, print screenshots or print checks, and accurate README for local dev.
 
 ## Working practice
-Implement roadmap phase by phase. At the end of each phase, run `npm run build`, lint/typecheck/test if configured, and report what is complete vs blocked. Request author/legal/clinical review on sensitive passages before real publication. Don't overwrite source prototypes; preserve them as references.
 
+Implement roadmap phase by phase. At the end of each phase, run `npm run build`, lint/typecheck/test if configured, and report what is complete vs blocked. Request author/legal/clinical review on sensitive passages before real publication. Don't overwrite source prototypes; preserve them as references.
 
 ## Non-negotiable engineering contract (v2)
 
@@ -32,6 +33,7 @@ Implement roadmap phase by phase. At the end of each phase, run `npm run build`,
 - Content maintenance: typed frontmatter schema, documented naming rules, sample copy-ready Markdown content file, published/draft flags, author/source attribution, updated/review dates, and related content IDs. Production build must reject broken content relations.
 
 ## Release gates
+
 1. `npm run check` and production build pass.
 2. Route/link and metadata audits pass, no broken internal links or invalid schema.
 3. Axe accessibility checks plus manual tab/keyboard, high zoom and screen-reader smoke checks; contrast verified in light/dark.
