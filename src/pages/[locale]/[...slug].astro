@@ -32,7 +32,7 @@ const related = (
     entry.data.translationKey === 'zelftwijfel' ? (
       <>
         <>
-          <Article entry={entry} Content={Content} locale={locale} />
+          <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
           <PerspectiveSwitch />
           <section class="section section--soft">
             <div class="wrap reading">
@@ -51,7 +51,7 @@ const related = (
         </>
       </>
     ) : (
-      <Article entry={entry} Content={Content} locale={locale} />
+      <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
     )
   }
   <RelatedContent entries={related} locale={locale} />

@@ -18,6 +18,10 @@ const publishedRoutes = new Set(files.map(routeForFile));
 const internalHrefs = (html) =>
   [...html.matchAll(/<a\b[^>]*\bhref=(['"])(.*?)\1/gi)].map((match) => match[2]);
 const isExternalHref = (href) => /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href);
+const jsonLdBlocks = (html) =>
+  [...html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)].map(
+    (match) => match[1],
+  );
 const bad = [];
 for (const file of files) {
   const html = await readFile(file, 'utf8');
@@ -32,6 +36,26 @@ for (const file of files) {
   if (!root && !html.includes('application/ld+json')) bad.push(`${file}: missing JSON-LD`);
   if (!root && !html.includes('property="og:title"')) bad.push(`${file}: missing Open Graph title`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
+  if (!root && !html.includes('href="#main"')) bad.push(`${file}: missing skip link`);
+  if (!root && !html.includes('<main id="main"')) bad.push(`${file}: missing main landmark target`);
+  if (/<img\b(?![^>]*\balt=)[^>]*>/i.test(html)) bad.push(`${file}: image without alt attribute`);
+  if (/<html lang="ar"(?![^>]*\bdir="rtl")/i.test(html))
+    bad.push(`${file}: Arabic page missing RTL direction`);
+
+  const types = new Set();
+  for (const block of jsonLdBlocks(html)) {
+    try {
+      const parsed = JSON.parse(block);
+      for (const item of Array.isArray(parsed) ? parsed : [parsed]) types.add(item['@type']);
+    } catch {
+      bad.push(`${file}: invalid JSON-LD`);
+    }
+  }
+  const hasContentArticle = html.includes('class="breadcrumbs"');
+  if (hasContentArticle && !types.has('Article'))
+    bad.push(`${file}: article missing Article JSON-LD`);
+  if (hasContentArticle && !types.has('BreadcrumbList'))
+    bad.push(`${file}: article missing BreadcrumbList JSON-LD`);
 
   const base = html.match(/<base href="([^"]+)"/i)?.[1];
   if (!base) continue;

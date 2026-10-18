@@ -1,5 +1,21 @@
 @import './tokens.css';
 @import './themes.css';
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+}
+.breadcrumbs a {
+  color: inherit;
+}
+.breadcrumbs span:last-child {
+  max-width: 42rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .theme-toggle,
 .locale-selector {
   display: flex;
