@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 const articles = defineCollection({
   loader: glob({ base: './src/content/articles', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
@@ -14,7 +15,7 @@ const articles = defineCollection({
     reviewedAt: z.coerce.date().optional(),
     updatedAt: z.coerce.date(),
     related: z.array(z.string()).default([]),
-    sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
+    sources: z.array(z.object({ label: z.string(), url: z.url() })).default([]),
   }),
 });
 export const collections = { articles };
