@@ -24,6 +24,13 @@ const jsonLdBlocks = (html) =>
     (match) => match[1],
   );
 const bad = [];
+const requiredDutchNavigation = [
+  ['Wat voel ik?', 'nl/wat-voel-ik/'],
+  ['Begrijp het', 'nl/begrippen/'],
+  ['Herstel', 'nl/herstel/'],
+  ['Mijn verhaal', 'nl/mijn-verhaal/'],
+  ['Hulp vinden', 'nl/hulp-vinden/'],
+];
 for (const file of files) {
   const html = await readFile(file, 'utf8');
   const root = file.endsWith('/index.html') && file === 'dist/index.html';
@@ -49,6 +56,20 @@ for (const file of files) {
   if (/<img\b(?![^>]*\balt=)[^>]*>/i.test(html)) bad.push(`${file}: image without alt attribute`);
   if (/<html lang="ar"(?![^>]*\bdir="rtl")/i.test(html))
     bad.push(`${file}: Arabic page missing RTL direction`);
+
+  if (file.includes('/nl/')) {
+    const navigation = html.match(/<nav class="nav"[^>]*>([\s\S]*?)<\/nav>/i)?.[1] ?? '';
+    const navigationLinks = [
+      ...navigation.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi),
+    ].map(([, renderedHref, text]) => [renderedHref, text.replace(/<[^>]+>/g, '').trim()]);
+    for (const [label, href] of requiredDutchNavigation) {
+      if (
+        !navigationLinks.some(([renderedHref, text]) => renderedHref === href && text === label)
+      ) {
+        bad.push(`${file}: missing Dutch navigation link ${label}`);
+      }
+    }
+  }
 
   const types = new Set();
   for (const block of jsonLdBlocks(html)) {

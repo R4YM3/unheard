@@ -161,6 +161,9 @@ summary:focus-visible {
   font-weight: 650;
 }
 .nav a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.15;
   text-decoration: none;
 }
 .nav a:hover {
