@@ -9,7 +9,9 @@ published: true
 author: Ongehoord
 updatedAt: 2026-10-19
 related: [hulp-vinden]
-sources: []
+sources:
+  - label: 'Rijksoverheid — hulp bij vermoedens van huiselijk geweld'
+    url: 'https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/vraag-en-antwoord/huiselijk-geweld/wat-moet-ik-doen-bij-huiselijk-geweld'
 ---
 
 ## Geld kan ook een middel van controle worden

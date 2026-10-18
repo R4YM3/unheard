@@ -9,7 +9,9 @@ published: true
 author: Ongehoord
 updatedAt: 2026-10-19
 related: [darvo, hulp-vinden]
-sources: []
+sources:
+  - label: 'Thuisarts — mishandeling door partner of ex-partner'
+    url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
 ---
 
 ## Je blijft het gesprek opnieuw voeren. Maar dan in je hoofd.

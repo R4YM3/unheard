@@ -9,7 +9,9 @@ published: true
 author: Ongehoord
 updatedAt: 2026-10-19
 related: [zelftwijfel, hulp-vinden]
-sources: []
+sources:
+  - label: 'Thuisarts — hulp bij psychische klachten'
+    url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'
 ---
 
 ## Herstel begint niet met alles weten

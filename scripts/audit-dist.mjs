@@ -36,6 +36,10 @@ for (const file of files) {
   if (!root && html.includes('example.github.io')) bad.push(`${file}: placeholder canonical URL`);
   if (!root && !html.includes('application/ld+json')) bad.push(`${file}: missing JSON-LD`);
   if (!root && !html.includes('property="og:title"')) bad.push(`${file}: missing Open Graph title`);
+  if (!root && !html.includes('property="og:description"'))
+    bad.push(`${file}: missing Open Graph description`);
+  if (!root && !html.includes('property="og:url"')) bad.push(`${file}: missing Open Graph URL`);
+  if (!root && !html.includes('rel="canonical"')) bad.push(`${file}: missing canonical URL`);
   if (noIndex && !html.includes('name="robots" content="noindex, nofollow"'))
     bad.push(`${file}: missing temporary noindex directive`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
@@ -59,6 +63,10 @@ for (const file of files) {
     bad.push(`${file}: article missing Article JSON-LD`);
   if (hasContentArticle && !types.has('BreadcrumbList'))
     bad.push(`${file}: article missing BreadcrumbList JSON-LD`);
+  if (hasContentArticle && !html.includes('id="sources-heading"'))
+    bad.push(`${file}: article missing visible source attribution`);
+  if (hasContentArticle && file.includes('/begrippen/') && !types.has('DefinedTerm'))
+    bad.push(`${file}: concept article missing DefinedTerm JSON-LD`);
 
   const base = html.match(/<base href="([^"]+)"/i)?.[1];
   if (!base) continue;

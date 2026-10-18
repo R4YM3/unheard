@@ -64,6 +64,8 @@ for (const { file, data } of articles) {
     errors.push(`${file}: updatedAt must be an ISO date`);
   if (!Array.isArray(data.related)) errors.push(`${file}: related must be an array`);
   if (!Array.isArray(data.sources)) errors.push(`${file}: sources must be an array`);
+  if (data.published === true && data.sources?.length === 0)
+    errors.push(`${file}: published content needs at least one source`);
   for (const source of data.sources ?? []) {
     if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
       errors.push(`${file}: every source needs a label and HTTPS URL`);
