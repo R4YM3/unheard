@@ -1,14 +1,17 @@
 ---
 import '../styles/global.css';
 import '../styles/print.css';
-import { localeNames, type Locale } from '../i18n/config';
+import { type Locale } from '../i18n/config';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import LocaleSelector from '../components/LocaleSelector.astro';
 interface Props { title: string; description: string; locale?: Locale; canonicalPath?: string; }
 const { title, description, locale = 'nl', canonicalPath = '/' } = Astro.props;
-const site = new URL(import.meta.env.SITE ?? 'https://example.github.io');
-const canonical = new URL(canonicalPath, site).href;
+const site = Astro.site ?? new URL('https://r4ym3.github.io');
+const canonical = new URL(`${import.meta.env.BASE_URL}${canonicalPath.replace(/^\//, '')}`, site).href;
 const dir = locale === 'ar' ? 'rtl' : 'ltr';
 const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, inLanguage: locale, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Ongehoord', url: site.href } };
+const hasHomeTranslations = ['/nl/', '/en/', '/ar/'].includes(canonicalPath);
+const alternateUrl = (language: Locale) => new URL(`${import.meta.env.BASE_URL}${language}/`, site).href;
 ---
 <!doctype html>
 <html lang={locale} dir={dir} data-theme="light">
@@ -16,7 +19,9 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: tit
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <base href={import.meta.env.BASE_URL} />
     <link rel="canonical" href={canonical} />
+    {hasHomeTranslations && <><link rel="alternate" hreflang="nl" href={alternateUrl('nl')} /><link rel="alternate" hreflang="en" href={alternateUrl('en')} /><link rel="alternate" hreflang="ar" href={alternateUrl('ar')} /><link rel="alternate" hreflang="x-default" href={alternateUrl('en')} /></>}
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <title>{title} — Ongehoord</title>
     <script is:inline>{`(()=>{try{const t=localStorage.getItem('ongehoord-theme');const d=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=d}catch{}})()`}</script>
@@ -24,9 +29,9 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: tit
   <body>
     <a class="skip" href="#main">Direct naar inhoud</a>
     <header class="site-header"><div class="wrap header-row">
-      <a class="brand" href="/nl/">Ongehoord<span>.</span></a>
-      <nav class="nav" aria-label="Hoofdnavigatie"><a href="/nl/wat-voel-ik/">Wat voel ik?</a><a href="/nl/begrippen/">Begrijp het</a><a href="/nl/herstel/">Herstel</a><a href="/nl/mijn-verhaal/">Mijn verhaal</a><a href="/nl/hulp-vinden/">Hulp vinden</a></nav>
-      <span aria-label={`${localeNames[locale]}; andere talen volgen`}>NL</span><ThemeToggle />
+      <a class="brand" href="nl/">Ongehoord<span>.</span></a>
+      <nav class="nav" aria-label="Hoofdnavigatie"><a href="nl/wat-voel-ik/">Wat voel ik?</a><a href="nl/begrippen/">Begrijp het</a><a href="nl/herstel/">Herstel</a><a href="nl/mijn-verhaal/">Mijn verhaal</a><a href="nl/hulp-vinden/">Hulp vinden</a></nav>
+      <LocaleSelector /><ThemeToggle />
     </div></header>
     <main id="main"><slot /></main>
     <footer class="site-footer"><div class="wrap"><strong>Ongehoord.</strong> Voor alles wat je voelt, maar nog niet kunt verwoorden.</div></footer>

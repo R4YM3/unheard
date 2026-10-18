@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { normaliseLocale, preferredLocale, targetForLocale } from '../src/i18n/language.mjs';
+test('normalises supported regional locales and falls back to English', () => { assert.equal(normaliseLocale('nl-BE'), 'nl'); assert.equal(normaliseLocale('en-US'), 'en'); assert.equal(normaliseLocale('ar-SA'), 'ar'); assert.equal(normaliseLocale('de-DE'), 'en'); assert.equal(normaliseLocale(undefined), 'en'); });
+test('saved preference wins and browser order is preserved', () => { assert.equal(preferredLocale({ saved: 'ar', languages: ['nl-NL'] }), 'ar'); assert.equal(preferredLocale({ languages: ['de-DE', 'ar-SA', 'nl-NL'] }), 'ar'); assert.equal(preferredLocale({ languages: ['fr-FR', 'nl-BE'] }), 'nl'); assert.equal(preferredLocale({ languages: ['de-DE', 'fr-FR'] }), 'en'); });
+test('language switches retain translated home route and avoid arbitrary routes', () => { assert.equal(targetForLocale('ar', '/ongehoord/nl/', '/ongehoord/'), '/ongehoord/ar/'); assert.equal(targetForLocale('nl', '/ongehoord/nl/begrippen/darvo/', '/ongehoord/'), '/ongehoord/nl/'); assert.equal(targetForLocale('de', '/ongehoord/ar/', '/ongehoord/'), '/ongehoord/en/'); });

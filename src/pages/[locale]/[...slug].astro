@@ -10,5 +10,5 @@ if (!isLocale(locale)) return new Response(null,{status:404});
 const path = `/${locale}/${Astro.params.slug}/`;
 ---
 <BaseLayout title={entry.data.title} description={entry.data.description} locale={locale} canonicalPath={path}>
-  {entry.data.translationKey === 'zelftwijfel' ? <><Article entry={entry} Content={Content} /><PerspectiveSwitch /><section class="section section--soft"><div class="wrap reading"><h2>Je hoeft het niet alleen uit te zoeken.</h2><p>Wat je voelt verdient aandacht, ook wanneer je nog geen woorden hebt voor wat er gebeurt.</p><a class="button" href="/nl/hulp-vinden/">Hulp en veiligheid</a></div></section></> : <Article entry={entry} Content={Content} />}
+  {entry.data.translationKey === 'zelftwijfel' ? <><Article entry={entry} Content={Content} /><PerspectiveSwitch /><section class="section section--soft"><div class="wrap reading"><h2>Je hoeft het niet alleen uit te zoeken.</h2><p>Wat je voelt verdient aandacht, ook wanneer je nog geen woorden hebt voor wat er gebeurt.</p><a class="button" href="nl/hulp-vinden/">Hulp en veiligheid</a></div></section></> : <Article entry={entry} Content={Content} />}
 </BaseLayout>
