@@ -1,9 +1,33 @@
+---
+interface Props {
+  locale: 'nl' | 'en' | 'ar';
+}
+const { locale } = Astro.props;
+const labels = {
+  nl: {
+    setting: 'Weergave',
+    activate: 'Klik voor',
+    names: { light: 'licht', dark: 'donker', system: 'systeem' },
+  },
+  en: {
+    setting: 'Appearance',
+    activate: 'Activate',
+    names: { light: 'light', dark: 'dark', system: 'system' },
+  },
+  ar: {
+    setting: 'المظهر',
+    activate: 'اضغط لاختيار',
+    names: { light: 'فاتح', dark: 'داكن', system: 'النظام' },
+  },
+};
+---
+
 <button
   type="button"
   class="theme-toggle"
   data-theme-toggle
-  aria-label="Weergave: systeem"
-  title="Weergave: systeem"
+  aria-label={`${labels[locale].setting}: ${labels[locale].names.system}`}
+  title={`${labels[locale].setting}: ${labels[locale].names.system}`}
 >
   <svg data-theme-icon="light" aria-hidden="true" viewBox="0 0 24 24" focusable="false"
     ><circle cx="12" cy="12" r="4"></circle><path
@@ -19,5 +43,5 @@
 </button>
 <script
   is:inline
-  set:html={`(()=>{const button=document.querySelector('[data-theme-toggle]');if(!button)return;const key='ongehoord-theme';const media=matchMedia('(prefers-color-scheme: dark)');const names={light:'licht',dark:'donker',system:'systeem'};const next={light:'dark',dark:'system',system:'light'};const stored=()=>{try{const value=localStorage.getItem(key);return value==='light'||value==='dark'||value==='system'?value:'system'}catch{return'system'}};const apply=(choice)=>{const theme=choice==='system'?(media.matches?'dark':'light'):choice;document.documentElement.dataset.theme=theme;button.dataset.themeChoice=choice;const label='Weergave: '+names[choice]+'. Klik voor '+names[next[choice]];button.setAttribute('aria-label',label);button.title=label};let choice=stored();apply(choice);button.addEventListener('click',()=>{choice=next[choice];try{localStorage.setItem(key,choice)}catch{}apply(choice)});media.addEventListener('change',()=>{if(choice==='system')apply(choice)})})()`}
+  set:html={`(()=>{const button=document.querySelector('[data-theme-toggle]');if(!button)return;const key='ongehoord-theme';const media=matchMedia('(prefers-color-scheme: dark)');const labels=${JSON.stringify(labels[locale])};const next={light:'dark',dark:'system',system:'light'};const stored=()=>{try{const value=localStorage.getItem(key);return value==='light'||value==='dark'||value==='system'?value:'system'}catch{return'system'}};const apply=(choice)=>{const theme=choice==='system'?(media.matches?'dark':'light'):choice;document.documentElement.dataset.theme=theme;button.dataset.themeChoice=choice;const label=labels.setting+': '+labels.names[choice]+'. '+labels.activate+' '+labels.names[next[choice]];button.setAttribute('aria-label',label);button.title=label};let choice=stored();apply(choice);button.addEventListener('click',()=>{choice=next[choice];try{localStorage.setItem(key,choice)}catch{}apply(choice)});media.addEventListener('change',()=>{if(choice==='system')apply(choice)})})()`}
 />

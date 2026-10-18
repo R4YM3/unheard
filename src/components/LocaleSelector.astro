@@ -1,11 +1,21 @@
 ---
+interface Props {
+  locale: 'nl' | 'en' | 'ar';
+}
+const { locale } = Astro.props;
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const labels = {
+  nl: { label: 'Taal', select: 'Kies taal' },
+  en: { label: 'Language', select: 'Choose language' },
+  ar: { label: 'اللغة', select: 'اختر اللغة' },
+};
 ---
 
 <label class="locale-selector"
-  >Taal <select data-locale-select aria-label="Kies taal"
+  >{labels[locale].label}
+  <select data-locale-select aria-label={labels[locale].select}
     ><option value="nl">Nederlands</option><option value="en">English</option><option value="ar"
       >العربية</option
     ></select

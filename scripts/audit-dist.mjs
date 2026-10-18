@@ -40,6 +40,7 @@ for (const file of files) {
     bad.push(`${file}: missing Open Graph description`);
   if (!root && !html.includes('property="og:url"')) bad.push(`${file}: missing Open Graph URL`);
   if (!root && !html.includes('rel="canonical"')) bad.push(`${file}: missing canonical URL`);
+  if (!root && !html.includes('logo.svg')) bad.push(`${file}: missing structured-data logo URL`);
   if (noIndex && !html.includes('name="robots" content="noindex, nofollow"'))
     bad.push(`${file}: missing temporary noindex directive`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
@@ -59,6 +60,9 @@ for (const file of files) {
     }
   }
   const hasContentArticle = html.includes('class="breadcrumbs"');
+  if (!root && !types.has('Organization')) bad.push(`${file}: missing Organization JSON-LD`);
+  if (!root && !types.has('WebSite')) bad.push(`${file}: missing WebSite JSON-LD`);
+  if (!root && !types.has('WebPage')) bad.push(`${file}: missing WebPage JSON-LD`);
   if (hasContentArticle && !types.has('Article'))
     bad.push(`${file}: article missing Article JSON-LD`);
   if (hasContentArticle && !types.has('BreadcrumbList'))

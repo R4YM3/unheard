@@ -17,17 +17,47 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
   : `${import.meta.env.BASE_URL}/`;
 const canonical = new URL(`${basePath}${canonicalPath.replace(/^\//, '')}`, site).href;
 const dir = locale === 'ar' ? 'rtl' : 'ltr';
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: title,
-  description,
-  inLanguage: locale,
-  url: canonical,
-  isPartOf: { '@type': 'WebSite', name: 'Ongehoord', url: site.href },
-};
+const brandName = locale === 'nl' ? 'Ongehoord' : 'Unheard';
+const websiteId = new URL('#website', site).href;
+const organizationId = new URL('#organization', site).href;
+const logoUrl = new URL(`${basePath}logo.svg`, site).href;
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': organizationId,
+    name: 'Unheard',
+    url: site.href,
+    logo: { '@type': 'ImageObject', url: logoUrl, width: 256, height: 256 },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': websiteId,
+    name: brandName,
+    url: site.href,
+    inLanguage: locale,
+    publisher: { '@id': organizationId },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': canonical,
+    name: title,
+    description,
+    inLanguage: locale,
+    url: canonical,
+    isPartOf: { '@id': websiteId },
+  },
+];
 const hasHomeTranslations = ['/nl/', '/en/', '/ar/'].includes(canonicalPath);
 const noIndex = process.env.NO_INDEX === 'true';
+const skipLabel =
+  locale === 'nl'
+    ? 'Direct naar inhoud'
+    : locale === 'ar'
+      ? 'انتقل إلى المحتوى'
+      : 'Skip to content';
 const alternateUrl = (language: Locale) => new URL(`${basePath}${language}/`, site).href;
 const navigation =
   locale === 'nl'
@@ -49,8 +79,8 @@ const navigation =
     <meta name="description" content={description} />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Ongehoord" />
-    <meta property="og:title" content={`${title} — Ongehoord`} />
+    <meta property="og:site_name" content={brandName} />
+    <meta property="og:title" content={`${title} — ${brandName}`} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
@@ -70,17 +100,17 @@ const navigation =
       )
     }
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    <title>{title} — Ongehoord</title>
+    <title>{title} — {brandName}</title>
     <script
       is:inline
       set:html={`(()=>{try{const t=localStorage.getItem('ongehoord-theme');const d=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=d}catch{}})()`}
     />
   </head>
   <body>
-    <a class="skip" href="#main">Direct naar inhoud</a>
+    <a class="skip" href="#main">{skipLabel}</a>
     <header class="site-header">
       <div class="wrap header-row">
-        <a class="brand" href="nl/">Ongehoord<span>.</span></a>
+        <a class="brand" href={`${locale}/`}>{brandName}<span>.</span></a>
         <nav
           class="nav"
           aria-label={locale === 'ar'
@@ -91,13 +121,22 @@ const navigation =
         >
           {navigation.map(([href, label]) => <a href={href}>{label}</a>)}
         </nav>
-        <div class="header-controls"><LocaleSelector /><ThemeToggle /></div>
+        <div class="header-controls">
+          <LocaleSelector locale={locale} /><ThemeToggle locale={locale} />
+        </div>
       </div>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer">
       <div class="wrap">
-        <strong>Ongehoord.</strong> Voor alles wat je voelt, maar nog niet kunt verwoorden.
+        <strong>{brandName}.</strong>
+        {
+          locale === 'nl'
+            ? ' Voor alles wat je voelt, maar nog niet kunt verwoorden.'
+            : locale === 'ar'
+              ? ' مساحة لما تشعر به ولا تستطيع وصفه بعد.'
+              : ' For everything you feel but cannot yet put into words.'
+        }
       </div>
     </footer>
   </body>

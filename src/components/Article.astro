@@ -15,6 +15,7 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
   : `${import.meta.env.BASE_URL}/`;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const articleUrl = new URL(`${basePath}${canonicalPath.replace(/^\//, '')}`, site).href;
+const logoUrl = new URL(`${basePath}logo.svg`, site).href;
 const homeLabel = locale === 'ar' ? 'الرئيسية' : 'Home';
 const schema = [
   {
@@ -25,6 +26,12 @@ const schema = [
     inLanguage: locale,
     dateModified: data.updatedAt.toISOString(),
     author: { '@type': 'Organization', name: data.author },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Unheard',
+      url: site.href,
+      logo: { '@type': 'ImageObject', url: logoUrl, width: 256, height: 256 },
+    },
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
   },
   {
