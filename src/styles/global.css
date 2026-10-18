@@ -422,6 +422,15 @@ a.card:hover {
 .card--safe {
   background: var(--safe);
 }
+.resource-card {
+  min-height: 13.75rem;
+  border-color: #b5c2b7;
+  background: #f7f9f4;
+}
+[data-theme='dark'] .resource-card {
+  border-color: var(--border);
+  background: var(--safe);
+}
 .card-link-label {
   display: inline-block;
   margin-top: auto;
