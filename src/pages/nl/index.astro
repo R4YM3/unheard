@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
-import HelpBlock from '../../components/HelpBlock.astro';
 ---
 
 <BaseLayout
@@ -53,18 +52,46 @@ import HelpBlock from '../../components/HelpBlock.astro';
       </div>
       <div class="grid feeling-grid">
         <Card class="feeling-card" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
-          ><h3>Ik twijfel aan mezelf</h3><p>
-            Waarom blijf ik gesprekken herhalen en mijn gevoel controleren?
-          </p></Card
-        ><Card class="feeling-card" tone="tension" href="nl/begrippen/darvo/"
-          ><h3>Ik moet mezelf verdedigen</h3><p>
-            Wanneer een gesprek over jouw pijn verschuift naar jouw gedrag.
-          </p></Card
-        ><Card class="feeling-card" tone="tension" href="nl/financieel-misbruik/"
-          ><h3>Ik maak me zorgen om geld</h3><p>
-            Wanneer geld, schulden of toegang tot middelen je vrijheid raken.
-          </p></Card
+          ><p class="eyebrow">01 / Zelftwijfel</p><h3>Ik twijfel steeds aan mezelf.</h3></Card
+        ><Card class="feeling-card" href="nl/hulp-vinden/"
+          ><p class="eyebrow">02 / Schuld</p><h3>Ik voel me verantwoordelijk voor alles.</h3></Card
+        ><Card class="feeling-card" href="nl/mijn-verhaal/"
+          ><p class="eyebrow">03 / Identiteit</p><h3>Ik herken mezelf niet meer.</h3></Card
+        ><Card class="feeling-card" href="nl/herstel/"
+          ><p class="eyebrow">04 / Herstel</p><h3>
+            Ik begrijp het, maar het blijft pijn doen.
+          </h3></Card
+        ><Card class="feeling-card" href="nl/hulpmiddelen/"
+          ><p class="eyebrow">05 / Controle</p><h3>Ik durf geen nee te zeggen.</h3></Card
+        ><Card class="feeling-card" href="nl/financieel-misbruik/"
+          ><p class="eyebrow">06 / Financieel</p><h3>Ik voel me niet vrij met geld.</h3></Card
         >
+      </div>
+    </div>
+  </section>
+  <section class="section tension-section">
+    <div class="wrap">
+      <p class="eyebrow">02 · Begrijp het</p>
+      <h2>Er bestaan woorden voor wat je meemaakt.</h2>
+      <div class="grid tension-grid">
+        <Card tone="tension" href="nl/begrippen/darvo/">
+          <p class="eyebrow">Patronen / Darvo</p>
+          <h3>Waarom moet ik mezelf ineens verdedigen?</h3>
+          <p>
+            Je probeert iets bespreekbaar te maken, maar het gesprek verschuift. Je voelt je
+            uiteindelijk degene die iets verkeerd heeft gedaan.
+          </p>
+          <p class="note">Dit patroon betekent niet dat de ander een diagnose heeft.</p>
+        </Card>
+        <Card tone="tension" href="nl/financieel-misbruik/">
+          <p class="eyebrow">Patronen / Geld &amp; controle</p>
+          <h3>Wanneer geld je vrijheid raakt.</h3>
+          <p>
+            Financiële controle kan je zeggenschap, veiligheid en vertrouwen in jezelf beperken —
+            ook wanneer je zelf inkomen hebt.
+          </p>
+          <p class="note">Verschillen over geld zijn niet automatisch misbruik.</p>
+        </Card>
       </div>
     </div>
   </section>
@@ -107,32 +134,21 @@ import HelpBlock from '../../components/HelpBlock.astro';
           <p class="eyebrow">Therapie</p>
           <h3>Je hoeft niet alles alleen te begrijpen.</h3>
           <p>Verken vormen van ondersteuning en persoonlijke herstelervaringen.</p>
+          <span class="card-link-label">Over ondersteuning ↗</span>
         </Card>
         <Card class="resource-card" tone="safe" href="nl/hulpmiddelen/">
           <p class="eyebrow">Vragenkaarten</p>
           <h3>Vragen die je ogen kunnen openen.</h3>
           <p>Reflecties voor jezelf, gesprekken met een professional en veilige gesprekken.</p>
+          <span class="card-link-label">Ontdek hulpmiddelen ↗</span>
         </Card>
         <Card class="resource-card" tone="safe" href="nl/ik-maak-me-zorgen-om-iemand/">
           <p class="eyebrow">Voor naasten</p>
           <h3>Maak je je zorgen om iemand?</h3>
           <p>Hoe steun je zonder druk uit te oefenen of conclusies op te leggen?</p>
+          <span class="card-link-label">Hoe kun je helpen? ↗</span>
         </Card>
       </div>
-    </div>
-  </section>
-  <section class="section section--soft knowledge-section">
-    <div class="wrap grid">
-      <div>
-        <p class="eyebrow">Begrijpen zonder etiketten</p><h2>Wat gebeurt er met mij?</h2><p>
-          Je hoeft de ander niet te diagnosticeren om serieus te nemen wat een patroon met jou doet.
-        </p><a class="button" href="nl/begrippen/">Bekijk begrippen</a>
-      </div><HelpBlock title="Hulp en veiligheid">
-        <p>
-          Bij direct gevaar bel je 112. Voor advies over huiselijk geweld of misbruik: Veilig Thuis,
-          0800-2000.
-        </p><a href="nl/hulp-vinden/">Bekijk hulpopties</a>
-      </HelpBlock>
     </div>
   </section>
   <section class="section closing-section">

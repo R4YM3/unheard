@@ -119,7 +119,13 @@ const navigation =
               ? 'Main navigation'
               : 'Hoofdnavigatie'}
         >
-          {navigation.map(([href, label]) => <a href={href}>{label}</a>)}
+          {
+            navigation.map(([href, label]) => (
+              <a class:list={{ 'nav-help': label === 'Hulp vinden' }} href={href}>
+                {label}
+              </a>
+            ))
+          }
         </nav>
         <div class="header-controls">
           <LocaleSelector locale={locale} /><ThemeToggle locale={locale} />
@@ -128,15 +134,26 @@ const navigation =
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer">
-      <div class="wrap">
+      <div class="wrap footer-row">
         <strong>{brandName}.</strong>
-        {
-          locale === 'nl'
-            ? ' Voor alles wat je voelt, maar nog niet kunt verwoorden.'
-            : locale === 'ar'
-              ? ' مساحة لما تشعر به ولا تستطيع وصفه بعد.'
-              : ' For everything you feel but cannot yet put into words.'
-        }
+        <span>
+          {
+            locale === 'nl'
+              ? ' Voor alles wat je voelt, maar nog niet kunt verwoorden.'
+              : locale === 'ar'
+                ? ' مساحة لما تشعر به ولا تستطيع وصفه بعد.'
+                : ' For everything you feel but cannot yet put into words.'
+          }
+        </span>
+        <span>
+          {
+            locale === 'nl'
+              ? 'Persoonlijk initiatief · inhoud in ontwikkeling'
+              : locale === 'ar'
+                ? 'مبادرة شخصية · المحتوى قيد التطوير'
+                : 'Personal initiative · content in development'
+          }
+        </span>
       </div>
     </footer>
   </body>

@@ -13,6 +13,7 @@
   --story: #f6eee5;
   --tension: #f8f3ed;
   --tension-border: #baa49a;
+  --tension-section: #eee9e3;
 }
 [data-theme='dark'] {
   color-scheme: dark;
@@ -28,4 +29,5 @@
   --story: #39332e;
   --tension: #3e302b;
   --tension-border: #a98e84;
+  --tension-section: #302d2a;
 }

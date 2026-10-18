@@ -5,6 +5,7 @@ import Article from '../../components/Article.astro';
 import PerspectiveSwitch from '../../components/PerspectiveSwitch.astro';
 import RelatedContent from '../../components/RelatedContent.astro';
 import EmotionImpact from '../../components/EmotionImpact.astro';
+import FinancialExperience from '../../components/FinancialExperience.astro';
 import { isLocale } from '../../i18n/config';
 export async function getStaticPaths() {
   const entries = await getCollection('articles', ({ data }) => data.published);
@@ -51,6 +52,11 @@ const related = (
             </div>
           </section>
         </>
+      </>
+    ) : entry.data.translationKey === 'financieel-misbruik' ? (
+      <>
+        <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
+        <FinancialExperience />
       </>
     ) : (
       <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />

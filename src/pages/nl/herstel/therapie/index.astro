@@ -1,30 +1,199 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Card from '../../../../components/Card.astro';
+
+const therapies = [
+  [
+    'Jezelf ontdekken',
+    'Schematherapie',
+    'Ik volgde schematherapie om mezelf te ontdekken, patronen te onderzoeken en te begrijpen waarom ik op bepaalde manieren reageerde.',
+    'Onderzoekt terugkerende patronen, overtuigingen en emotionele behoeften.',
+  ],
+  [
+    'Patronen in contact',
+    'Groepsschematherapie',
+    'Ook groepsschematherapie maakte deel uit van mijn zoektocht. Wat dit mij persoonlijk bracht, werk ik later verder uit.',
+    'Schematherapeutisch werken in een groepssetting, onder begeleiding.',
+  ],
+  [
+    'Belastende herinneringen',
+    'EMDR',
+    'Ik heb EMDR gevolgd. Voor mij voelde deze behandeling niet voldoende; daarna volgde ik ook exposuretherapie.',
+    'Een traumagerichte methode waarbij aan belastende herinneringen wordt gewerkt.',
+  ],
+  [
+    'Omgaan met herinneringen',
+    'Exposuretherapie',
+    'Ik ging door met exposuretherapie omdat EMDR voor mij niet voldoende voelde. Hoe ik exposure ervoer, beschrijf ik later uitgebreider.',
+    'Onder begeleiding stapsgewijs werken met herinneringen of situaties die spanning oproepen.',
+  ],
+  [
+    'Gedachten hanteren',
+    'Cognitieve therapie',
+    'Ik volgde cognitieve therapie om mijn gedachten beter te leren hanteren.',
+    'Onderzoekt en helpt bijstellen hoe je gebeurtenissen interpreteert.',
+  ],
+  [
+    'Wat emoties kosten',
+    'Boksen met emoties',
+    'Door te boksen onderzocht ik wat emoties met me doen en hoeveel fysieke en mentale energie ze kunnen kosten.',
+    'Ervaringsgerichte oefeningen met beweging; de concrete aanpak verschilt per begeleider.',
+  ],
+  [
+    'Ontdekken wat ik wilde',
+    'Beeldende therapie',
+    'Via beeldende therapie wilde ik ontdekken wat ik vanbinnen wilde, terwijl ik dat zelf nog niet goed begreep.',
+    'Onderzoekt ervaringen via creatieve materialen en beeldend werken.',
+  ],
+  [
+    'Gesprekken en reflectie',
+    'Psycholoog',
+    'Gesprekken met een psycholoog maakten deel uit van mijn traject. Specifieke inzichten voeg ik later toe.',
+    'Professionele psychologische ondersteuning, afhankelijk van hulpvraag en behandelaar.',
+  ],
+  [
+    'Stilstaan bij gedachten',
+    'Meditatie',
+    'Meditatie maakte deel uit van mijn herstel. Hoe dit voor mij werkte, beschrijf ik later verder.',
+    'Oefeningen in aandacht en bewust opmerken van ervaringen.',
+  ],
+];
 ---
 
 <BaseLayout
   title="Herstel en therapie"
   description="Persoonlijke ervaringen met therapie, duidelijk gescheiden van algemeen behandeladvies."
-  ><section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Herstel</p><h1>Mijn ervaringen zijn geen recept voor een ander.</h1><p
-        class="lead"
-      >
-        Ondersteuning kan helpen, maar wat passend is wordt samen met een professional onderzocht.
-      </p>
-    </div>
-  </section><section class="section">
-    <div class="wrap reading">
-      <h2>Vormen die deel uitmaakten van mijn zoektocht</h2><p>
-        Ik heb onder meer schematherapie, groepsschematherapie, cognitieve therapie, gesprekken met
-        een psycholoog, EMDR, exposure, beeldende therapie, boksen met emoties en meditatie ervaren.
-        Over effect, volgorde en betekenis voor anderen doe ik geen uitspraken.
-      </p><div class="help">
-        <h3>Professionele hulp</h3><p>
-          Bespreek klachten, veiligheid en opties met je huisarts of behandelaar. Deze pagina biedt
-          geen diagnose of therapiekeuze.
+  canonicalPath="/nl/herstel/therapie/"
+>
+  <section class="hero hero--story-page">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Herstel / begrijpen en ervaren</p>
+        <h1>Herstellen is meer dan begrijpen.</h1>
+        <p class="lead">
+          Je kunt precies weten wat je hebt meegemaakt, en toch nog worstelen met wat je voelt.
+          Herstel is niet één gesprek, één inzicht of één therapie.
         </p>
+        <p class="lead">Soms begint het pas wanneer je ontdekt wat je zelf nodig hebt.</p>
+        <a class="button" href="#ervaringen">Ontdek mijn ervaringen</a>
+      </div>
+      <div class="story-hero-visual" aria-hidden="true"></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap reading">
+      <p class="eyebrow">01 / Mijn zoektocht</p><h2>
+        Ik zocht niet één antwoord. Ik zocht mezelf.
+      </h2>
+      <p>
+        Ik heb verschillende therapieën en vormen van begeleiding gevolgd. Niet allemaal met
+        hetzelfde doel. Sommige hielpen mij nadenken over patronen, andere lieten mij ontdekken wat
+        emoties met me doen, hoeveel energie ze kosten en wat ik diep vanbinnen wilde.
+      </p>
+      <p>
+        Met schematherapie wilde ik mezelf ontdekken. Met beeldende therapie probeerde ik te
+        begrijpen wat ik zelf wilde. Cognitieve therapie gebruikte ik om beter met mijn gedachten om
+        te gaan. Tijdens boksen met emoties onderzocht ik de energie die gevoelens van me vroegen.
+      </p>
+      <p>
+        Ik heb EMDR gevolgd en daarna exposuretherapie, omdat EMDR voor mij niet voldoende voelde.
+        Dat is mijn persoonlijke ervaring; het betekent niet dat de ene behandeling in het algemeen
+        beter is dan de andere.
+      </p>
+      <blockquote class="quote">
+        Ik wilde niet alleen begrijpen wat ik voelde. Ik wilde ook ontdekken wat het met me deed.
+      </blockquote>
+      <aside class="help">
+        Dit is een persoonlijke ervaring. Het zegt niet welke therapie voor jou passend is. De keuze
+        voor begeleiding hangt af van je situatie en bespreek je bij voorkeur met een deskundige.
+      </aside>
+    </div>
+  </section>
+  <section class="section section--soft" id="ervaringen">
+    <div class="wrap">
+      <p class="eyebrow">02 / Mijn ervaringen</p><h2>Verschillende wegen naar zelfinzicht.</h2>
+      <p class="reading">
+        Geen ranglijst en geen wondermiddelen. Per vorm vertel ik waarom ik eraan begon. De algemene
+        uitleg is bewust gescheiden van mijn persoonlijke verhaal.
+      </p>
+      <div class="grid therapy-grid">
+        {
+          therapies.map(([eyebrow, title, personal, explanation]) => (
+            <Card>
+              <>
+                <p class="eyebrow">{eyebrow}</p>
+                <h3>{title}</h3>
+                <p>
+                  <br />
+                  {personal}
+                </p>
+              </>
+              <details>
+                <>
+                  <summary>Wat houdt het in?</summary>
+                  <p>{explanation}</p>
+                  <p class="note">
+                    Algemene uitleg; geen persoonlijk behandeladvies. Bespreek keuzes met een
+                    gekwalificeerde professional.
+                  </p>
+                </>
+              </details>
+            </Card>
+          ))
+        }
       </div>
     </div>
-  </section></BaseLayout
->
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">03 / Begin bij je gevoel</p><h2>
+        Je hoeft de naam van een therapie niet te kennen.
+      </h2>
+      <p class="reading">
+        Misschien herken je vooral een vraag. Dat kan een beginpunt zijn voor een gesprek met een
+        hulpverlener, niet een automatische behandelingskeuze.
+      </p>
+      <div class="grid question-grid">
+        <Card href="#ervaringen"
+          ><h3>Ik herken mezelf niet meer.</h3><p>Lees over zelfonderzoek en patronen.</p></Card
+        >
+        <Card href="#ervaringen"
+          ><h3>Mijn gedachten blijven maar doorgaan.</h3><p>
+            Lees over gedachten en het leren hanteren ervan.
+          </p></Card
+        >
+        <Card href="#ervaringen"
+          ><h3>Ik weet niet goed wat ik voel of wil.</h3><p>
+            Verken creatieve en ervaringsgerichte benaderingen.
+          </p></Card
+        >
+        <Card href="#ervaringen"
+          ><h3>Herinneringen blijven me raken.</h3><p>
+            Lees over traumagerichte behandelvormen.
+          </p></Card
+        >
+      </div>
+    </div>
+  </section>
+  <section class="section closing-section">
+    <div class="wrap reading">
+      <p class="eyebrow">04 / Inzicht is geen eindpunt</p><h2>
+        Weten wat er gebeurd is, maakt het gevoel niet meteen stil.
+      </h2><p>
+        Je kunt verder zijn dan vroeger en tegelijkertijd nog iets moeilijks voelen. Je hoeft daar
+        geen oordeel over jezelf aan te verbinden.
+      </p><p class="quote">Herstel hoeft niet in een rechte lijn te lopen.</p>
+    </div>
+  </section>
+  <section class="section section--soft">
+    <div class="wrap reading">
+      <p class="eyebrow">05 / Begeleiding vinden</p><h2>
+        Je hoeft dit niet alleen uit te zoeken.
+      </h2><p>
+        Je kunt met je huisarts of behandelaar bespreken wat je ervaart, wat eerdere hulp je bracht
+        en wat je nu nodig hebt. Niet iedere aanpak past bij iedereen; een gekwalificeerde
+        professional kan samen met jou mogelijkheden afwegen.
+      </p><a class="button" href="nl/hulp-vinden/">Hulp en veiligheid</a>
+    </div>
+  </section>
+</BaseLayout>

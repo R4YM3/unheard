@@ -1,0 +1,168 @@
+---
+import Card from './Card.astro';
+
+const recognitions = [
+  [
+    'Ik moet voor elke uitgave toestemming vragen',
+    'Weinig zeggenschap over geld kan je zelfstandigheid beperken. Kijk naar afspraken, vrijheid en eventuele gevolgen wanneer je nee zegt.',
+  ],
+  [
+    'Ik weet niet welke schulden of verplichtingen er zijn',
+    'Onduidelijkheid over gezamenlijke financiën kan onzekerheid en risico’s veroorzaken. Onderzoek veilig welke informatie toegankelijk is.',
+  ],
+  [
+    'Ik voel me schuldig als ik iets voor mezelf koop',
+    'Schaamte en schuld kunnen blijven hangen wanneer geld herhaaldelijk onderwerp van druk of verwijt is.',
+  ],
+  [
+    'Ik ben bang voor de financiële gevolgen van weggaan',
+    'Afhankelijkheid en dreiging met geld kunnen keuzes beperken. Maak niet impulsief grote wijzigingen; vraag vertrouwelijk advies.',
+  ],
+  [
+    'Ik draag steeds kosten waarover ik niet kon meebeslissen',
+    'Beslissingen over verplichtingen zonder vrijwillige instemming verdienen aandacht; bewaar feiten waar dat veilig en toegestaan is.',
+  ],
+];
+---
+
+<section class="section section--soft" aria-labelledby="financial-recognition">
+  <div class="wrap">
+    <p class="eyebrow">02 · Herkenning</p><h2 id="financial-recognition">Wat herken jij?</h2>
+    <div class="grid financial-recognition-grid">
+      {
+        recognitions.map(([title, copy]) => (
+          <Card>
+            <>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </>
+          </Card>
+        ))
+      }
+    </div>
+    <p class="note wrap--reading">
+      Deze voorbeelden zijn bedoeld voor reflectie. Eén ervaring is niet genoeg om een situatie als
+      misbruik te beoordelen.
+    </p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="financial-perspective">
+  <div class="wrap reading">
+    <p class="eyebrow">03 · Twee perspectieven</p><h2 id="financial-perspective">
+      Hetzelfde geldgesprek. Twee werkelijkheden.
+    </h2>
+    <p>
+      Dit is een fictief voorbeeld. De bedoeling van een ander kan niet op afstand worden
+      vastgesteld.
+    </p>
+    <div class="tabs" role="tablist" aria-label="Perspectief bij een geldgesprek">
+      <button
+        role="tab"
+        id="financial-outside-tab"
+        aria-selected="true"
+        aria-controls="financial-outside">Wat er gezegd wordt</button
+      >
+      <button
+        role="tab"
+        id="financial-inside-tab"
+        aria-selected="false"
+        aria-controls="financial-inside"
+        tabindex="-1">Hoe het voelt</button
+      >
+    </div>
+    <div
+      class="tabpanel"
+      id="financial-outside"
+      role="tabpanel"
+      aria-labelledby="financial-outside-tab"
+    >
+      <p class="eyebrow">De buitenkant</p><h3>
+        Je hoeft die bankrekening niet te bekijken. Ik regel alles.
+      </h3><p>
+        Financiële taken verdelen is normaal, zolang dat vrijwillig is en beide mensen toegang en
+        zeggenschap behouden.
+      </p>
+    </div>
+    <div
+      class="tabpanel"
+      id="financial-inside"
+      role="tabpanel"
+      aria-labelledby="financial-inside-tab"
+      hidden
+    >
+      <p class="eyebrow">De binnenkant</p><h3>
+        Waarom durf ik niet eens te vragen wat er met ons geld gebeurt?
+      </h3><p>
+        Je kunt je klein, afhankelijk, wantrouwig of bang voelen voor de reactie als je om inzicht
+        vraagt.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="financial-steps">
+  <div class="wrap reading">
+    <p class="eyebrow">04 · Wat kan helpen?</p><h2 id="financial-steps">
+      Een veilige eerste stap is genoeg.
+    </h2>
+    <ol class="steps">
+      <li>
+        <strong>Breng je gevoel onder woorden.</strong> Wat maakt je onzeker: geen toegang, onverwachte
+        verplichtingen, druk of de reactie op je vragen?
+      </li>
+      <li>
+        <strong>Onderzoek je veiligheid.</strong> Als iemand meekijkt met apparaten of financiën, kan
+        zelfstandig accounts wijzigen of bewijs verzamelen risico geven. Overleg zo nodig eerst vertrouwelijk
+        met een deskundige.
+      </li>
+      <li>
+        <strong>Zoek onafhankelijke informatie.</strong> Bespreek gezamenlijke verplichtingen met een
+        juridisch adviseur, schuldhulpverlener of andere gekwalificeerde professional voordat je ingrijpende
+        stappen zet.
+      </li>
+      <li>
+        <strong>Maak de volgende stap klein.</strong> Je hoeft niet vandaag de volledige situatie te beoordelen
+        of op te lossen.
+      </li>
+    </ol>
+    <aside class="help">
+      <h3>Vragen om mee te nemen</h3><p>
+        Welke financiële keuzes kan ik vrij maken? Begrijp ik welke verplichtingen op mijn naam
+        staan? Kan ik veilig om uitleg vragen? Wat zou ik van een onafhankelijke hulpverlener willen
+        weten?
+      </p><button class="button" type="button" onclick="window.print()"
+        >Print deze vragen en uitleg</button
+      >
+    </aside>
+  </div>
+</section>
+
+<script>
+  const tabs = [
+    document.getElementById('financial-outside-tab'),
+    document.getElementById('financial-inside-tab'),
+  ].filter((tab): tab is HTMLButtonElement => tab instanceof HTMLButtonElement);
+  const panels = tabs.map((tab) => {
+    const id = tab.getAttribute('aria-controls');
+    return id ? document.getElementById(id) : null;
+  });
+  const selectTab = (index: number) => {
+    tabs.forEach((tab, tabIndex) => {
+      tab.setAttribute('aria-selected', String(tabIndex === index));
+      tab.tabIndex = tabIndex === index ? 0 : -1;
+      const panel = panels[tabIndex];
+      if (panel) panel.hidden = tabIndex !== index;
+    });
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectTab(index));
+    tab.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const next = (index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+      tabs[next].focus();
+      selectTab(next);
+    });
+  });
+</script>
