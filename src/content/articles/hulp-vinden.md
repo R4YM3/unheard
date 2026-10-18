@@ -18,15 +18,15 @@ sources:
 
 ## Bij direct gevaar
 
-Bel **112** als er direct gevaar of onmiddellijk levensgevaar is.
+Bel **[112](tel:112)** als er direct gevaar of onmiddellijk levensgevaar is.
 
 ## Advies over huiselijk geweld of misbruik
 
-Veilig Thuis is dag en nacht bereikbaar via **0800-2000** voor advies en ondersteuning bij zorgen over huiselijk geweld of misbruik. Controleer actuele contactinformatie altijd op de officiële website.
+Veilig Thuis is dag en nacht bereikbaar via **[0800-2000](tel:08002000)** voor advies en ondersteuning bij zorgen over huiselijk geweld of misbruik. Controleer actuele contactinformatie altijd op de officiële website.
 
 ## Bij gedachten aan zelfdoding
 
-Neem direct contact op met **113 Zelfmoordpreventie** via **113** of gratis **0800-0113**, of via de chat op 113.nl. Bij onmiddellijk gevaar bel je 112.
+Neem direct contact op met **113 Zelfmoordpreventie** via **[113](tel:113)** of gratis **[0800-0113](tel:08000113)**, of via de [chat op 113.nl](https://www.113.nl/). Bij onmiddellijk gevaar bel je [112](tel:112).
 
 ## Denk aan je privacy
 
