@@ -27,3 +27,21 @@ Create a clear content-editing workflow and TODO list of questions for founder/c
 ## Explicit out of scope for v1
 
 AI chatbot, story submission, community forums, user accounts, automated therapy recommendations, diagnoses, analytics storing reflection responses, automatic translation publication.
+
+## Current delivery status — 2026-10-19
+
+Completed:
+
+- Astro static build, typed Content Collection, semantic token system, theme selection, reduced-motion styling, print stylesheet, and public GitHub Pages workflow.
+- Dutch home, self-doubt, DARVO, financial abuse, recovery, therapy, founder-story, help, friends/family, and printable support-tools routes.
+- Native keyboard-operable perspective tabs, related-content cards, safety links, direct-call help contacts, source lists, and no stored reflection data.
+- Locale architecture for NL/EN/AR, client-side root-language choice for static hosting, RTL readiness, and reviewed-content limitation messages for EN/AR.
+- Canonical URLs, Open Graph metadata, sitemap, robots, JSON-LD for pages/articles/breadcrumbs, build-time route/link/schema/a11y checks, ESLint, Prettier, language tests, and GitHub Pages deployment.
+- Live Lighthouse baseline: 100 in Performance, Accessibility, Best Practices, and SEO after the Pages routing and favicon fixes.
+
+Still required before declaring an editorial launch complete:
+
+- Founder, clinical, and legal review of all sensitive wording and personal-story material.
+- Manual visual QA at the specified mobile/desktop zoom levels and print-to-PDF checks in Chrome and Safari.
+- Review and publish any additional Dutch articles, then add only approved EN/AR translations and their equivalent routes.
+- Configure the custom domain only after ownership and DNS are confirmed.
