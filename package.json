@@ -1,0 +1,9 @@
+{
+  "name": "ongehoord",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {"dev":"astro dev","build":"astro check && astro build && node scripts/audit-dist.mjs","check":"astro check && node scripts/validate-content.mjs","preview":"astro preview"},
+  "dependencies": {"@astrojs/sitemap":"^3.3.0","astro":"^5.0.0"},
+  "devDependencies": {"@astrojs/check":"^0.9.0","typescript":"^5.7.0"}
+}

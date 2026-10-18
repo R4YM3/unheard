@@ -1,0 +1,24 @@
+---
+const scenarios = [
+  {label:'Een gesprek begrijpen', outside:'“Zo heb ik dat niet bedoeld. Jij maakt het altijd groter dan het is.”', inside:'Ik probeer uit te leggen waarom dit me raakte, maar ik vraag me af of ik het verkeerd heb onthouden.'},
+  {label:'Een grens aangeven', outside:'“Waarom doe je nu zo moeilijk? Ik vraag toch niet veel?”', inside:'Ik voel spanning als ik nee wil zeggen en ben bang voor wat er daarna gebeurt.'},
+  {label:'Bevestiging zoeken', outside:'“Je hoeft niet overal iets achter te zoeken.”', inside:'Ik zoek geruststelling, maar voel me daarna nog onzekerder over mijn eigen gevoel.'}
+];
+---
+<section class="section" aria-labelledby="perspective-title"><div class="wrap reading">
+  <p class="eyebrow">Twee kanten van één gesprek</p><h2 id="perspective-title">Wat je hoort. Wat je voelt.</h2>
+  <p>Dit zijn fictieve voorbeelden, geen diagnose of bewijs van de bedoeling van een ander.</p>
+  <div class="scenario" role="group" aria-label="Kies een voorbeeldsituatie">
+    {scenarios.map((item, index) => <button class="button button--quiet" type="button" data-scene={index} aria-pressed={index === 0 ? 'true' : 'false'}>{item.label}</button>)}
+  </div>
+  <div class="tabs" role="tablist" aria-label="Perspectief"><button role="tab" id="outside-tab" aria-selected="true" aria-controls="outside-panel">Wat er gezegd wordt</button><button role="tab" id="inside-tab" aria-selected="false" aria-controls="inside-panel" tabindex="-1">Wat ik vanbinnen voel</button></div>
+  <div class="tabpanel" id="outside-panel" role="tabpanel" aria-labelledby="outside-tab"><p class="eyebrow">De buitenkant</p><p data-outside>{scenarios[0].outside}</p></div>
+  <div class="tabpanel" id="inside-panel" role="tabpanel" aria-labelledby="inside-tab" hidden><p class="eyebrow">De binnenkant</p><p data-inside>{scenarios[0].inside}</p></div>
+  <div class="print-only"><h3>Wat er gezegd wordt</h3><p>{scenarios[0].outside}</p><h3>Wat ik vanbinnen voel</h3><p>{scenarios[0].inside}</p></div>
+</div></section>
+<script define:vars={{ scenarios }}>
+  let current = 0; const tabs=[...document.querySelectorAll('[role="tab"]')]; const panels=tabs.map(t=>document.getElementById(t.getAttribute('aria-controls')));
+  const selectTab=(index)=>{tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.tabIndex=i===index?0:-1;panels[i].hidden=i!==index})};
+  tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectTab(index));tab.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const n=(index+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;tabs[n].focus();selectTab(n)})});
+  document.querySelectorAll('[data-scene]').forEach(button=>button.addEventListener('click',()=>{current=Number(button.dataset.scene);document.querySelectorAll('[data-scene]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelector('[data-outside]').textContent=scenarios[current].outside;document.querySelector('[data-inside]').textContent=scenarios[current].inside}));
+</script>
