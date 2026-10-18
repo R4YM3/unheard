@@ -91,7 +91,7 @@ const navigation =
         >
           {navigation.map(([href, label]) => <a href={href}>{label}</a>)}
         </nav>
-        <div class="header-controls"><ThemeToggle /><LocaleSelector /></div>
+        <div class="header-controls"><LocaleSelector /><ThemeToggle /></div>
       </div>
     </header>
     <main id="main"><slot /></main>
