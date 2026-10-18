@@ -5,8 +5,7 @@
     ></select
   ></label
 >
-<script is:inline>
-  {
-    `(()=>{const s=document.querySelector('[data-theme-select]');if(!s)return;const saved=localStorage.getItem('ongehoord-theme')||'system';s.value=saved;s.addEventListener('change',()=>{const v=s.value;localStorage.setItem('ongehoord-theme',v);document.documentElement.dataset.theme=v==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):v})})()`;
-  }
-</script>
+<script
+  is:inline
+  set:html={`(()=>{const s=document.querySelector('[data-theme-select]');if(!s)return;const saved=localStorage.getItem('ongehoord-theme')||'system';s.value=saved;s.addEventListener('change',()=>{const v=s.value;localStorage.setItem('ongehoord-theme',v);document.documentElement.dataset.theme=v==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):v})})()`}
+/>

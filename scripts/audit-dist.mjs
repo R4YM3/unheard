@@ -35,6 +35,7 @@ for (const file of files) {
 
   const base = html.match(/<base href="([^"]+)"/i)?.[1];
   if (!base) continue;
+  if (!base.endsWith('/')) bad.push(`${file}: base URL must end with a slash`);
   const pageUrl = new URL(base, 'https://audit.invalid');
   for (const href of internalHrefs(html)) {
     if (!href || href.startsWith('#') || href.startsWith('?') || isExternalHref(href)) continue;

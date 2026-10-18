@@ -12,8 +12,10 @@ interface Props {
 }
 const { title, description, locale = 'nl', canonicalPath = '/' } = Astro.props;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
-const canonical = new URL(`${import.meta.env.BASE_URL}${canonicalPath.replace(/^\//, '')}`, site)
-  .href;
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const canonical = new URL(`${basePath}${canonicalPath.replace(/^\//, '')}`, site).href;
 const dir = locale === 'ar' ? 'rtl' : 'ltr';
 const schema = {
   '@context': 'https://schema.org',
@@ -25,8 +27,7 @@ const schema = {
   isPartOf: { '@type': 'WebSite', name: 'Ongehoord', url: site.href },
 };
 const hasHomeTranslations = ['/nl/', '/en/', '/ar/'].includes(canonicalPath);
-const alternateUrl = (language: Locale) =>
-  new URL(`${import.meta.env.BASE_URL}${language}/`, site).href;
+const alternateUrl = (language: Locale) => new URL(`${basePath}${language}/`, site).href;
 const navigation =
   locale === 'nl'
     ? [
@@ -51,7 +52,8 @@ const navigation =
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
-    <base href={import.meta.env.BASE_URL} />
+    <base href={basePath} />
+    <link rel="icon" href={`${basePath}favicon.svg`} type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
     {
       hasHomeTranslations && (
@@ -67,11 +69,10 @@ const navigation =
     }
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <title>{title} — Ongehoord</title>
-    <script is:inline>
-      {
-        `(()=>{try{const t=localStorage.getItem('ongehoord-theme');const d=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=d}catch{}})()`;
-      }
-    </script>
+    <script
+      is:inline
+      set:html={`(()=>{try{const t=localStorage.getItem('ongehoord-theme');const d=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=d}catch{}})()`}
+    />
   </head>
   <body>
     <a class="skip" href="#main">Direct naar inhoud</a>
