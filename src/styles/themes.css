@@ -10,6 +10,7 @@
   --action-text: #fff;
   --link: #763b2c;
   --safe: #e4ebe2;
+  --story: #f6eee5;
 }
 [data-theme='dark'] {
   color-scheme: dark;
@@ -22,4 +23,5 @@
   --action-text: #1c211f;
   --link: #ffd1c3;
   --safe: #35463d;
+  --story: #39332e;
 }

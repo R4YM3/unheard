@@ -221,7 +221,44 @@ a.card:hover {
   box-shadow: 0 0.4rem 1.1rem color-mix(in srgb, var(--text) 12%, transparent);
 }
 .card--tension {
-  border-left: 6px solid var(--action);
+  position: relative;
+  overflow: hidden;
+  border-inline-start: 0;
+  padding-inline-start: calc(1.4rem + 0.55rem);
+}
+.card--tension::before {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 0.65rem;
+  background: var(--action);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    63% 8%,
+    100% 16%,
+    63% 24%,
+    100% 32%,
+    63% 40%,
+    100% 48%,
+    63% 56%,
+    100% 64%,
+    63% 72%,
+    100% 80%,
+    63% 88%,
+    100% 100%,
+    0 100%
+  );
+  content: '';
+}
+.card--safe {
+  background: var(--safe);
+}
+.card--alert {
+  border-inline-start: 0.35rem solid var(--action);
+}
+.card--story {
+  background: var(--story);
 }
 .button {
   display: inline-block;

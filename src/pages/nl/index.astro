@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
 ---
 
 <BaseLayout
@@ -27,18 +28,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <p class="eyebrow">Een rustige eerste stap</p><h2>
         Je hoeft het nog geen misbruik te noemen.
       </h2><div class="grid">
-        <a class="card" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
+        <Card href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
           ><h3>Ik twijfel aan mezelf</h3><p>
             Waarom blijf ik gesprekken herhalen en mijn gevoel controleren?
-          </p></a
-        ><a class="card" href="nl/begrippen/darvo/"
+          </p></Card
+        ><Card tone="tension" href="nl/begrippen/darvo/"
           ><h3>Ik moet mezelf verdedigen</h3><p>
             Wanneer een gesprek over jouw pijn verschuift naar jouw gedrag.
-          </p></a
-        ><a class="card" href="nl/financieel-misbruik/"
+          </p></Card
+        ><Card tone="tension" href="nl/financieel-misbruik/"
           ><h3>Ik maak me zorgen om geld</h3><p>
             Wanneer geld, schulden of toegang tot middelen je vrijheid raken.
-          </p></a
+          </p></Card
         >
       </div>
     </div>

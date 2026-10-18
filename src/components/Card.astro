@@ -1,0 +1,22 @@
+---
+interface Props {
+  href?: string;
+  tone?: 'neutral' | 'safe' | 'tension' | 'alert' | 'story';
+  class?: string;
+}
+
+const { href, tone = 'neutral', class: className = '' } = Astro.props;
+const classes = `card card--${tone} ${className}`.trim();
+---
+
+{
+  href ? (
+    <a class={classes} href={href}>
+      <slot />
+    </a>
+  ) : (
+    <article class={classes}>
+      <slot />
+    </article>
+  )
+}

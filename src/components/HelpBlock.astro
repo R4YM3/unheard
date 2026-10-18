@@ -6,7 +6,7 @@ interface Props {
 const { title, label } = Astro.props;
 ---
 
-<aside class="help" aria-label={title}>
+<aside class="card card--alert help" aria-label={title}>
   {label && <p class="eyebrow">{label}</p>}
   <h2>{title}</h2>
   <slot />
