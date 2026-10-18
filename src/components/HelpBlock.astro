@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+  label?: string;
+}
+const { title, label } = Astro.props;
+---
+
+<aside class="help" aria-label={title}>
+  {label && <p class="eyebrow">{label}</p>}
+  <h2>{title}</h2>
+  <slot />
+</aside>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HelpBlock from '../../../components/HelpBlock.astro';
 ---
 
 <BaseLayout
@@ -59,13 +60,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   </section>
 
   <section class="section section--soft">
-    <div class="wrap reading help">
-      <h2>Veiligheid gaat voor een gesprek</h2>
-      <p>
-        Bij direct gevaar bel je <a href="tel:112">112</a>. Voor advies over huiselijk geweld of
-        misbruik kun je Veilig Thuis bereiken via <a href="tel:08002000">0800-2000</a>.
-      </p>
-      <a class="button" href="nl/hulp-vinden/">Bekijk alle hulpopties</a>
+    <div class="wrap reading">
+      <HelpBlock title="Veiligheid gaat voor een gesprek">
+        <p>
+          Bij direct gevaar bel je <a href="tel:112">112</a>. Voor advies over huiselijk geweld of
+          misbruik kun je Veilig Thuis bereiken via <a href="tel:08002000">0800-2000</a>.
+        </p>
+        <a class="button" href="nl/hulp-vinden/">Bekijk alle hulpopties</a>
+      </HelpBlock>
     </div>
   </section>
 </BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import SourceList from './SourceList.astro';
 interface Props {
   entry: CollectionEntry<'articles'>;
   Content: AstroComponentFactory;
@@ -62,23 +63,6 @@ const schema = [
       </p>
     </div>
   </section>
-  {
-    data.sources.length > 0 && (
-      <section class="section section--soft">
-        <div class="wrap reading">
-          <>
-            <h2>Bronnen</h2>
-            <ul>
-              {data.sources.map((source) => (
-                <li>
-                  <a href={source.url}>{source.label}</a>
-                </li>
-              ))}
-            </ul>
-          </>
-        </div>
-      </section>
-    )
-  }
+  <SourceList sources={data.sources} />
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </article>
