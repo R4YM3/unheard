@@ -76,6 +76,10 @@ summary:focus-visible {
 .reading {
   max-width: var(--reading);
 }
+.wrap--reading {
+  max-width: var(--reading);
+  margin-inline: 0;
+}
 .site-header {
   border-bottom: 1px solid var(--border);
   padding: 1rem 0;

@@ -1,0 +1,72 @@
+---
+import Card from './Card.astro';
+
+const impacts = [
+  ['In je gedachten', 'Gesprekken analyseren, jezelf corrigeren, blijven zoeken naar zekerheid.'],
+  ['In je gevoel', 'Schuld, schaamte, verdriet of het idee dat jouw emoties te veel zijn.'],
+  ['In je gedrag', 'Je aanpassen, confrontaties vermijden of moeite krijgen met nee zeggen.'],
+  ['In je lichaam', 'Alertheid, spanning, vermoeidheid of slecht slapen.'],
+  ['In je relaties', 'Bevestiging zoeken of voorzichtiger worden met anderen vertrouwen.'],
+  ['In je zelfbeeld', 'Je minder vrij, spontaan of zeker voelen dan je eerder deed.'],
+];
+
+const actions = [
+  [
+    'Maak onderscheid tussen feit en gevoel',
+    'Wat werd er gezegd? Wat merkte je bij jezelf? Wat weet je zeker en wat is jouw interpretatie?',
+  ],
+  [
+    'Zoek een veilige gesprekspartner',
+    'Iemand die luistert zonder voor jou te beslissen wat je moet denken of doen.',
+  ],
+  [
+    'Sta stil bij je grenzen',
+    'Wat zou je willen zeggen wanneer je niet bang hoefde te zijn voor een reactie?',
+  ],
+  [
+    'Neem je spanning serieus',
+    'Je hoeft niets meteen op te lossen. Rust en afstand kunnen een eerste stap zijn.',
+  ],
+];
+---
+
+<section class="section" aria-labelledby="impact-title">
+  <div class="wrap">
+    <p class="eyebrow">Wat het met je kan doen</p>
+    <h2 id="impact-title">Langzaam raak je je eigen kompas kwijt.</h2>
+    <div class="grid">
+      {
+        impacts.map(([title, description]) => (
+          <Card tone="neutral">
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <p class="note wrap--reading">
+      Dit zijn mogelijke reacties, geen checklist waarmee misbruik wordt vastgesteld.
+    </p>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="support-title">
+  <div class="wrap reading">
+    <p class="eyebrow">Wat helpt?</p>
+    <h2 id="support-title">Je hoeft niet elk gesprek te bewijzen of te winnen.</h2>
+    <p>
+      Je mag onderzoeken wat er gebeurde, wat jij voelde en wat je nu nodig hebt — zonder eerst een
+      etiket te plakken op iemand anders.
+    </p>
+    <div class="grid">
+      {
+        actions.map(([title, description]) => (
+          <Card tone="safe">
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
