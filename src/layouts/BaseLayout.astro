@@ -62,13 +62,21 @@ const skipLabel =
 const alternateUrl = (language: Locale) => new URL(`${basePath}${language}/`, site).href;
 const navigation =
   locale === 'nl'
-    ? [
-        ['nl/wat-voel-ik/', 'Wat voel ik?'],
-        ['nl/begrippen/', 'Begrijp het'],
-        ['nl/herstel/', 'Herstel'],
-        ['nl/mijn-verhaal/', 'Mijn verhaal'],
-        ['nl/hulp-vinden/', 'Hulp vinden'],
-      ]
+    ? canonicalPath === '/nl/'
+      ? [
+          ['#gevoelens', 'Wat voel ik?'],
+          ['#patronen', 'Begrijp het'],
+          ['#herstel', 'Herstel'],
+          ['#verhaal', 'Mijn verhaal'],
+          ['#hulp', 'Hulp vinden ↗'],
+        ]
+      : [
+          ['nl/wat-voel-ik/', 'Wat voel ik?'],
+          ['nl/begrippen/', 'Begrijp het'],
+          ['nl/herstel/', 'Herstel'],
+          ['nl/mijn-verhaal/', 'Mijn verhaal'],
+          ['nl/hulp-vinden/', 'Hulp vinden'],
+        ]
     : [[`${locale}/`, locale === 'ar' ? 'الصفحة الرئيسية' : 'Home']];
 ---
 
@@ -131,7 +139,7 @@ const navigation =
         >
           {
             navigation.map(([href, label]) => (
-              <a class:list={{ 'nav-help': label === 'Hulp vinden' }} href={href}>
+              <a class:list={{ 'nav-help': label.startsWith('Hulp vinden') }} href={href}>
                 {label}
               </a>
             ))

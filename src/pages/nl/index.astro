@@ -6,8 +6,9 @@ import Card from '../../components/Card.astro';
 <BaseLayout
   title="Voor alles wat je voelt"
   description="Herkenning, begrip en herstel na emotioneel of financieel misbruik."
+  canonicalPath="/nl/"
 >
-  <section class="hero hero--home">
+  <section class="hero hero--home" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Emotioneel &amp; financieel misbruik · Herkenning · Herstel</p><h1>
@@ -21,7 +22,7 @@ import Card from '../../components/Card.astro';
           ruimte voor iedereen.
         </p><div class="actions">
           <a class="button" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/">Begin bij wat je voelt</a
-          ><a class="button button--quiet" href="#waarom">Waarom deze plek bestaat</a>
+          ><a class="button button--quiet" href="#verhaal">Waarom deze plek bestaat</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true"></div>
@@ -44,7 +45,7 @@ import Card from '../../components/Card.astro';
       </p>
     </div>
   </section>
-  <section class="section feeling-section">
+  <section class="section feeling-section" id="gevoelens">
     <div class="wrap">
       <div class="section-heading">
         <div><p class="eyebrow">01 · Begin bij jezelf</p><h2>Wat herken jij?</h2></div>
@@ -69,7 +70,7 @@ import Card from '../../components/Card.astro';
       </div>
     </div>
   </section>
-  <section class="section tension-section">
+  <section class="section tension-section" id="patronen">
     <div class="wrap">
       <p class="eyebrow">02 · Begrijp het</p>
       <h2>Er bestaan woorden voor wat je meemaakt.</h2>
@@ -97,7 +98,7 @@ import Card from '../../components/Card.astro';
       </div>
     </div>
   </section>
-  <section class="section story-section" id="waarom">
+  <section class="section story-section" id="verhaal">
     <div class="wrap story-layout">
       <div class="story-visual" aria-hidden="true"></div>
       <div class="story-copy">
@@ -127,7 +128,7 @@ import Card from '../../components/Card.astro';
       <a href="nl/mijn-verhaal/">Ontdek de tijdlijn</a>
     </div>
   </section>
-  <section class="section resources-section">
+  <section class="section resources-section" id="herstel">
     <div class="wrap">
       <p class="eyebrow">Herstel &amp; hulpmiddelen</p>
       <h2>Er mag weer ruimte ontstaan.</h2>
@@ -153,7 +154,7 @@ import Card from '../../components/Card.astro';
       </div>
     </div>
   </section>
-  <section class="section closing-section">
+  <section class="section closing-section" id="hulp">
     <div class="wrap reading">
       <p class="eyebrow">Je staat er niet alleen voor</p>
       <h2>Je hoeft niet te wachten tot het ernstig genoeg voelt.</h2>
