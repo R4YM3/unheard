@@ -82,8 +82,8 @@ summary:focus-visible {
   background: var(--bg);
 }
 .header-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 1rem;
 }
@@ -96,28 +96,17 @@ summary:focus-visible {
   color: var(--action);
 }
 .theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  background: var(--surface);
-}
-.theme-toggle__option {
   display: grid;
   width: 2.35rem;
   height: 2.15rem;
   place-items: center;
-  border: 0;
-  border-inline-end: 1px solid var(--border);
-  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
   color: var(--text);
   cursor: pointer;
 }
-.theme-toggle__option:last-child {
-  border-inline-end: 0;
-}
-.theme-toggle__option svg {
+.theme-toggle svg {
   width: 1.05rem;
   height: 1.05rem;
   fill: none;
@@ -126,12 +115,22 @@ summary:focus-visible {
   stroke-linejoin: round;
   stroke-width: 1.8;
 }
-.theme-toggle__option[aria-pressed='true'] {
-  background: var(--action);
-  color: var(--action-text);
+.theme-toggle [data-theme-icon] {
+  display: none;
 }
-.theme-toggle__option:hover:not([aria-pressed='true']) {
+.theme-toggle[data-theme-choice='light'] [data-theme-icon='light'],
+.theme-toggle[data-theme-choice='dark'] [data-theme-icon='dark'],
+.theme-toggle[data-theme-choice='system'] [data-theme-icon='system'] {
+  display: block;
+}
+.theme-toggle:hover {
   background: var(--safe);
+}
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.6rem;
 }
 .reading :is(p, li) a:not(.button),
 .help :is(p, li) a:not(.button),
@@ -143,6 +142,7 @@ summary:focus-visible {
 .nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 1rem;
   font-size: 0.95rem;
 }
@@ -156,6 +156,12 @@ summary:focus-visible {
   padding: clamp(4rem, 12vw, 9rem) 0;
   background: var(--palette-charcoal);
   color: #f4f0e9;
+}
+.hero--article {
+  padding-block: 1.25rem clamp(3rem, 8vw, 6rem);
+}
+.article-hero__content {
+  margin-top: clamp(3rem, 9vw, 7rem);
 }
 .hero .lead {
   font-size: clamp(1.15rem, 2vw, 1.4rem);
@@ -317,9 +323,12 @@ summary {
 @media (max-width: 42rem) {
   .header-row {
     align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
   .nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
     gap: 0.6rem;
   }
   .nav a {

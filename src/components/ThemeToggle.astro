@@ -1,45 +1,23 @@
-<div class="theme-toggle" role="group" aria-label="Weergave">
-  <button
-    type="button"
-    class="theme-toggle__option"
-    data-theme-option="light"
-    aria-label="Lichte weergave"
-    aria-pressed="false"
-    title="Lichte weergave"
+<button
+  type="button"
+  class="theme-toggle"
+  data-theme-toggle
+  aria-label="Weergave: systeem"
+  title="Weergave: systeem"
+>
+  <svg data-theme-icon="light" aria-hidden="true" viewBox="0 0 24 24" focusable="false"
+    ><circle cx="12" cy="12" r="4"></circle><path
+      d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+    ></path></svg
   >
-    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"
-      ><circle cx="12" cy="12" r="4"></circle><path
-        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-      ></path></svg
-    >
-  </button>
-  <button
-    type="button"
-    class="theme-toggle__option"
-    data-theme-option="dark"
-    aria-label="Donkere weergave"
-    aria-pressed="false"
-    title="Donkere weergave"
+  <svg data-theme-icon="dark" aria-hidden="true" viewBox="0 0 24 24" focusable="false"
+    ><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path></svg
   >
-    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"
-      ><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path></svg
-    >
-  </button>
-  <button
-    type="button"
-    class="theme-toggle__option"
-    data-theme-option="system"
-    aria-label="Systeemweergave"
-    aria-pressed="false"
-    title="Systeemweergave"
+  <svg data-theme-icon="system" aria-hidden="true" viewBox="0 0 24 24" focusable="false"
+    ><rect x="3" y="4" width="18" height="12" rx="1.5"></rect><path d="M8 20h8M12 16v4"></path></svg
   >
-    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"
-      ><rect x="3" y="4" width="18" height="12" rx="1.5"></rect><path d="M8 20h8M12 16v4"
-      ></path></svg
-    >
-  </button>
-</div>
+</button>
 <script
   is:inline
-  set:html={`(()=>{const options=[...document.querySelectorAll('[data-theme-option]')];if(!options.length)return;const key='ongehoord-theme';const media=matchMedia('(prefers-color-scheme: dark)');const stored=()=>{try{const value=localStorage.getItem(key);return value==='light'||value==='dark'||value==='system'?value:'system'}catch{return'system'}};const apply=(choice)=>{const theme=choice==='system'?(media.matches?'dark':'light'):choice;document.documentElement.dataset.theme=theme;options.forEach((option)=>option.setAttribute('aria-pressed',String(option.dataset.themeOption===choice)))};let choice=stored();apply(choice);options.forEach((option)=>option.addEventListener('click',()=>{choice=option.dataset.themeOption;try{localStorage.setItem(key,choice)}catch{}apply(choice)}));media.addEventListener('change',()=>{if(choice==='system')apply(choice)})})()`}
+  set:html={`(()=>{const button=document.querySelector('[data-theme-toggle]');if(!button)return;const key='ongehoord-theme';const media=matchMedia('(prefers-color-scheme: dark)');const names={light:'licht',dark:'donker',system:'systeem'};const next={light:'dark',dark:'system',system:'light'};const stored=()=>{try{const value=localStorage.getItem(key);return value==='light'||value==='dark'||value==='system'?value:'system'}catch{return'system'}};const apply=(choice)=>{const theme=choice==='system'?(media.matches?'dark':'light'):choice;document.documentElement.dataset.theme=theme;button.dataset.themeChoice=choice;const label='Weergave: '+names[choice]+'. Klik voor '+names[next[choice]];button.setAttribute('aria-label',label);button.title=label};let choice=stored();apply(choice);button.addEventListener('click',()=>{choice=next[choice];try{localStorage.setItem(key,choice)}catch{}apply(choice)});media.addEventListener('change',()=>{if(choice==='system')apply(choice)})})()`}
 />
