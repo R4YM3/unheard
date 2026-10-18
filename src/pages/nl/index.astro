@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
+import HelpBlock from '../../components/HelpBlock.astro';
 ---
 
 <BaseLayout
@@ -24,10 +25,25 @@ import Card from '../../components/Card.astro';
     </div>
   </section>
   <section class="section">
+    <div class="wrap reading">
+      <p class="eyebrow">Welkom bij Ongehoord</p>
+      <h2>Je hoeft het nog geen misbruik te noemen.</h2>
+      <p>
+        Misschien heb je nog geen woorden voor wat je meemaakt. Dat betekent niet dat je gevoel er
+        niet mag zijn. Hier kun je herkennen, onderzoeken en begrijpen — zonder dat iemand voor jou
+        bepaalt wat je hebt ervaren.
+      </p>
+      <p>
+        Ik bouw Ongehoord vanuit mijn eigen ervaringen en herstel. Je vindt hier mijn verhaal,
+        uitleg over patronen en gevolgen, en hulpmiddelen om je gevoelens te onderzoeken. De
+        aandacht gaat vooral uit naar mannen, omdat stigma het moeilijk kan maken om te praten.
+        Iedereen is welkom.
+      </p>
+    </div>
+  </section>
+  <section class="section">
     <div class="wrap">
-      <p class="eyebrow">Een rustige eerste stap</p><h2>
-        Je hoeft het nog geen misbruik te noemen.
-      </h2><div class="grid">
+      <p class="eyebrow">Een rustige eerste stap</p><h2>Wat herken jij?</h2><div class="grid">
         <Card href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
           ><h3>Ik twijfel aan mezelf</h3><p>
             Waarom blijf ik gesprekken herhalen en mijn gevoel controleren?
@@ -44,18 +60,83 @@ import Card from '../../components/Card.astro';
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="wrap grid grid--story">
+      <Card tone="story">
+        <p class="eyebrow">Waarom Ongehoord bestaat</p>
+        <h2>Ook ik zocht woorden voor wat ik voelde.</h2>
+        <p>
+          Ik begreep lange tijd niet waarom ik aan mezelf twijfelde en opnieuw bevestiging zocht.
+          Door mijn ervaringen te onderzoeken en beter naar mezelf te luisteren, begon ik meer te
+          begrijpen.
+        </p>
+        <p>
+          Ik ben vader. Ik bouw mijn leven opnieuw op. Sommige dingen blijven moeilijk. Daarom
+          schrijf ik over wat ik heb ervaren en geleerd, zodat anderen zich mogelijk herkennen.
+        </p>
+        <a class="button" href="nl/mijn-verhaal/">Lees mijn verhaal</a>
+      </Card>
+      <div class="story-aside">
+        <p class="eyebrow">Een verhaal in verschillende lagen</p>
+        <h2>Van toen tot nu.</h2>
+        <p>
+          Een persoonlijke tijdlijn over wat er gebeurde, wat ik voelde, hoe ik veranderde en wat ik
+          vandaag begrijp.
+        </p>
+        <a href="nl/mijn-verhaal/">Ontdek de tijdlijn</a>
+      </div>
+    </div>
+  </section>
+  <section class="section section--soft">
+    <div class="wrap">
+      <p class="eyebrow">Herstel &amp; hulpmiddelen</p>
+      <h2>Er mag weer ruimte ontstaan.</h2>
+      <div class="grid">
+        <Card tone="safe" href="nl/herstel/therapie/">
+          <p class="eyebrow">Therapie</p>
+          <h3>Je hoeft niet alles alleen te begrijpen.</h3>
+          <p>Verken vormen van ondersteuning en persoonlijke herstelervaringen.</p>
+        </Card>
+        <Card tone="safe" href="nl/hulpmiddelen/">
+          <p class="eyebrow">Vragenkaarten</p>
+          <h3>Vragen die je ogen kunnen openen.</h3>
+          <p>Reflecties voor jezelf, gesprekken met een professional en veilige gesprekken.</p>
+        </Card>
+        <Card tone="safe" href="nl/ik-maak-me-zorgen-om-iemand/">
+          <p class="eyebrow">Voor naasten</p>
+          <h3>Maak je je zorgen om iemand?</h3>
+          <p>Hoe steun je zonder druk uit te oefenen of conclusies op te leggen?</p>
+        </Card>
+      </div>
+    </div>
+  </section>
   <section class="section section--soft">
     <div class="wrap grid">
       <div>
         <p class="eyebrow">Begrijpen zonder etiketten</p><h2>Wat gebeurt er met mij?</h2><p>
           Je hoeft de ander niet te diagnosticeren om serieus te nemen wat een patroon met jou doet.
         </p><a class="button" href="nl/begrippen/">Bekijk begrippen</a>
-      </div><div class="help">
-        <h3>Hulp en veiligheid</h3><p>
+      </div><HelpBlock title="Hulp en veiligheid">
+        <p>
           Bij direct gevaar bel je 112. Voor advies over huiselijk geweld of misbruik: Veilig Thuis,
           0800-2000.
         </p><a href="nl/hulp-vinden/">Bekijk hulpopties</a>
-      </div>
+      </HelpBlock>
+    </div>
+  </section>
+  <section class="section closing-section">
+    <div class="wrap reading">
+      <p class="eyebrow">Je staat er niet alleen voor</p>
+      <h2>Je hoeft niet te wachten tot het ernstig genoeg voelt.</h2>
+      <p>
+        Bij vragen over veiligheid of misbruik kun je ook als man anoniem advies vragen bij Veilig
+        Thuis. Bij onmiddellijk gevaar bel je 112.
+      </p>
+      <a class="button" href="nl/hulp-vinden/">Hulp en informatie</a>
+      <p class="note">
+        Bij zorgen over controle: gebruik zo mogelijk een veilig apparaat en denk na voordat je iets
+        afdrukt of deelt.
+      </p>
     </div>
   </section>
 </BaseLayout>

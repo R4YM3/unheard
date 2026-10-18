@@ -205,6 +205,24 @@ h3 {
   gap: var(--space);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
 }
+.grid--story {
+  align-items: center;
+}
+.story-aside {
+  max-width: 32rem;
+}
+.closing-section {
+  background: var(--palette-charcoal);
+  color: #f4f0e9;
+}
+.closing-section .eyebrow,
+.closing-section .note {
+  color: #c5d1c4;
+}
+.note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
