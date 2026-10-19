@@ -34,6 +34,7 @@ const requiredDutchNavigation = [
 for (const file of files) {
   const html = await readFile(file, 'utf8');
   const root = file.endsWith('/index.html') && file === 'dist/index.html';
+  const unpublishedLocaleReviewRoute = /\/dist\/(?:en|ar)\/index\.html$/.test(file);
   if (!html.includes('http-equiv="refresh"') && !html.includes('<main'))
     bad.push(`${file}: missing main`);
   if (!html.includes('<title>')) bad.push(`${file}: missing title`);
@@ -48,8 +49,11 @@ for (const file of files) {
   if (!root && !html.includes('property="og:url"')) bad.push(`${file}: missing Open Graph URL`);
   if (!root && !html.includes('rel="canonical"')) bad.push(`${file}: missing canonical URL`);
   if (!root && !html.includes('logo.svg')) bad.push(`${file}: missing structured-data logo URL`);
-  if (noIndex && !html.includes('name="robots" content="noindex, nofollow"'))
-    bad.push(`${file}: missing temporary noindex directive`);
+  if (
+    (noIndex || unpublishedLocaleReviewRoute) &&
+    !html.includes('name="robots" content="noindex, nofollow"')
+  )
+    bad.push(`${file}: missing required noindex directive`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
   if (!root && !html.includes('href="#main"')) bad.push(`${file}: missing skip link`);
   if (!root && !html.includes('<main id="main"')) bad.push(`${file}: missing main landmark target`);
@@ -132,6 +136,13 @@ for (const file of files) {
 if (noIndex) {
   const robots = await readFile('dist/robots.txt', 'utf8');
   if (!robots.includes('Disallow: /')) bad.push('dist/robots.txt: expected global crawl block');
+}
+if (!noIndex) {
+  const robots = await readFile('dist/robots.txt', 'utf8');
+  for (const route of ['/en/', '/ar/']) {
+    if (!robots.includes(`Disallow: ${route}`))
+      bad.push(`dist/robots.txt: expected ${route} review block`);
+  }
 }
 if (bad.length) throw new Error(bad.join('\n'));
 console.log(`Audited ${files.length} HTML pages.`);

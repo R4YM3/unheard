@@ -9,6 +9,6 @@ export default defineConfig({
       ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''}`
       : '/',
   output: 'static',
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !/\/(?:en|ar)\/$/.test(page) })],
   build: { format: 'directory' },
 });

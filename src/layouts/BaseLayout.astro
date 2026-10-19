@@ -9,8 +9,9 @@ interface Props {
   description: string;
   locale?: Locale;
   canonicalPath?: string;
+  indexable?: boolean;
 }
-const { title, description, locale = 'nl', canonicalPath = '/' } = Astro.props;
+const { title, description, locale = 'nl', canonicalPath = '/', indexable = true } = Astro.props;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -50,7 +51,7 @@ const schema = [
     isPartOf: { '@id': websiteId },
   },
 ];
-const noIndex = process.env.NO_INDEX === 'true';
+const noIndex = process.env.NO_INDEX === 'true' || !indexable;
 const cloudflareBeaconToken = import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN;
 const skipLabel =
   locale === 'nl'
