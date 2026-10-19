@@ -643,6 +643,7 @@ a.card:hover {
 }
 .self-doubt-story {
   background: var(--palette-paper);
+  color: #202725;
 }
 .support-guidance {
   margin-top: 1.5rem;
