@@ -5,20 +5,99 @@ const base = import.meta.env.BASE_URL.endsWith('/')
 ---
 
 <!doctype html>
-<html lang="en">
-  <head
-    ><meta charset="utf-8" /><meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    /><meta name="robots" content="noindex, nofollow" /><base href={base} /><title>
-      Ongehoord
-    </title></head
-  ><body
-    ><main>
-      <p>Opening the Dutch edition… <a href="nl/">Doorgaan in het Nederlands</a></p>
-    </main><script
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <base href={base} />
+    <title>Ongehoord</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        background: #242a29;
+        color: #f4f0e9;
+        font-family: Inter, 'Avenir Next', 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100svh;
+        margin: 0;
+      }
+      main {
+        display: grid;
+        min-height: 100svh;
+        place-items: center;
+        padding: 1.5rem;
+      }
+      .redirect {
+        display: grid;
+        max-width: 22rem;
+        justify-items: center;
+        gap: 1.1rem;
+        text-align: center;
+      }
+      .spinner {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 0.24rem solid #708178;
+        border-top-color: #d9917d;
+        border-radius: 50%;
+        animation: spin 750ms linear infinite;
+      }
+      p {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 650;
+      }
+      a {
+        color: #f4f0e9;
+        text-underline-offset: 0.2em;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .spinner {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main aria-live="polite">
+      <div class="redirect">
+        <div class="spinner" aria-hidden="true"></div>
+        <p id="redirect-message">We sturen je door…</p>
+        <a id="continue-link" href="nl/">Doorgaan in het Nederlands</a>
+      </div>
+    </main>
+    <script
       is:inline
-      set:html={`(()=>{const base=${JSON.stringify(base)};location.replace(base+'nl/'+location.search+location.hash)})()`}
-    /></body
-  >
+      set:html={`(()=>{
+        const base=${JSON.stringify(base)};
+        const messages={
+          nl:{message:'We sturen je door…',link:'Doorgaan in het Nederlands'},
+          en:{message:'We’re taking you there…',link:'Continue in Dutch'},
+          ar:{message:'نقوم بتحويلك الآن…',link:'المتابعة باللغة الهولندية'}
+        };
+        const language=(navigator.languages||[navigator.language])
+          .map(value=>String(value).toLowerCase().split('-')[0])
+          .find(value=>Object.hasOwn(messages,value))||'nl';
+        const copy=messages[language];
+        document.documentElement.lang=language;
+        if(language==='ar') document.documentElement.dir='rtl';
+        document.querySelector('#redirect-message').textContent=copy.message;
+        const link=document.querySelector('#continue-link');
+        link.textContent=copy.link;
+        const target=base+'nl/'+location.search+location.hash;
+        link.href=target;
+        window.setTimeout(()=>location.replace(target),450);
+      })()`}
+    />
+  </body>
 </html>
