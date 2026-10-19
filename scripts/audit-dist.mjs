@@ -41,6 +41,16 @@ for (const file of files) {
   if (!html.includes('<base href=')) bad.push(`${file}: missing base URL`);
   if (/href="\/nl\//.test(html)) bad.push(`${file}: GitHub Pages-unsafe root link`);
   if (!root && !/<html lang="(nl|en|ar)"/.test(html)) bad.push(`${file}: invalid html language`);
+  if (root) {
+    if (!html.includes('name="robots" content="noindex, nofollow"'))
+      bad.push(`${file}: root redirect must stay noindex`);
+    if (!html.includes('class="spinner"'))
+      bad.push(`${file}: root redirect is missing its loading indicator`);
+    if (!/background:\s*#242a29/.test(html))
+      bad.push(`${file}: root redirect must retain the site-colour background`);
+    if (!html.includes('setTimeout(()=>location.replace(target),450)'))
+      bad.push(`${file}: root redirect is missing its controlled hand-off`);
+  }
   if (!root && html.includes('example.github.io')) bad.push(`${file}: placeholder canonical URL`);
   if (!root && !html.includes('application/ld+json')) bad.push(`${file}: missing JSON-LD`);
   if (!root && !html.includes('property="og:title"')) bad.push(`${file}: missing Open Graph title`);
