@@ -279,6 +279,12 @@ h3 {
 .section--soft {
   background: var(--safe);
 }
+.section--children {
+  background: var(--safe);
+}
+.section--paper {
+  background: var(--bg);
+}
 .intro-section,
 .timeline-teaser {
   background: var(--safe);
@@ -577,6 +583,24 @@ summary {
   top: 0.4rem;
   transform: translateX(-50%);
 }
+.timeline-between {
+  margin: -0.65rem 0 1.5rem;
+}
+.timeline-between__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.timeline-between__item {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.timeline-between__item p {
+  margin-bottom: 0;
+}
 [dir='rtl'] .timeline article::before {
   transform: translateX(50%);
 }
@@ -603,6 +627,9 @@ summary {
     gap: 0;
   }
   .article-hero__grid--visual {
+    grid-template-columns: 1fr;
+  }
+  .timeline-between__grid {
     grid-template-columns: 1fr;
   }
   .article-hero-visual {

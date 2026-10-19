@@ -21,18 +21,18 @@ const story = data.story;
       <p class="eyebrow">{data.eyebrow}</p>
       <h1>{data.heading}</h1>
       <p class="lead">{data.lead}</p>
-      <p>{story.introduction.paragraphs[0]}</p>
+      <p>{story.heroPersonal}</p>
       <a class="button" href="#tijdlijn">Ontdek mijn tijdlijn</a>
     </div>
     <div class="story-hero-visual" aria-hidden="true"></div>
   </div>
 </section>
-<section class="section">
+<section class="section section--children">
   <div class="wrap reading">
     <p class="eyebrow">{story.introduction.eyebrow}</p>
     <h2>{story.introduction.heading}</h2>
     <p class="lead">{story.introduction.lead}</p>
-    {story.introduction.paragraphs.slice(1).map((paragraph) => <p>{paragraph}</p>)}
+    {story.introduction.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
     <p class="note">{story.introduction.note}</p>
   </div>
 </section>
@@ -59,6 +59,19 @@ const story = data.story;
                 ))}
               </details>
             </article>
+            {milestone.between.length > 0 && (
+              <details class="timeline-between">
+                <summary>Ontdek {milestone.between.length} tussenmomenten</summary>
+                <div class="timeline-between__grid">
+                  {milestone.between.map((moment) => (
+                    <details class="timeline-between__item">
+                      <summary>{moment.title}</summary>
+                      <p>{moment.text}</p>
+                    </details>
+                  ))}
+                </div>
+              </details>
+            )}
           </li>
         ))
       }
@@ -67,7 +80,7 @@ const story = data.story;
   </div>
 </section>
 <section class="section">
-  <div class="wrap">
+  <div class="wrap" id="vaderschap">
     <p class="eyebrow">{story.fatherhood.eyebrow}</p>
     <h2>{story.fatherhood.heading}</h2>
     <div class="grid">
@@ -85,7 +98,7 @@ const story = data.story;
   </div>
 </section>
 <section class="section section--soft">
-  <div class="wrap">
+  <div class="wrap" id="therapie">
     <p class="eyebrow">{story.recovery.eyebrow}</p>
     <h2>{story.recovery.heading}</h2>
     <div class="grid">
@@ -103,12 +116,24 @@ const story = data.story;
     <a class="button" href={story.recovery.href}>{story.recovery.label}</a>
   </div>
 </section>
-<section class="section">
+<section class="section section--children">
   <div class="wrap reading">
     <section class="card card--story">
       <p class="eyebrow">{story.letter.eyebrow}</p>
       <h2>{story.letter.heading}</h2>
-      <p>{story.letter.body}</p>
+      {story.letter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <p><strong>{story.letter.signature}</strong></p>
     </section>
+  </div>
+</section>
+<section class="section section--paper">
+  <div class="wrap reading">
+    <p class="eyebrow">{story.closing.eyebrow}</p>
+    <h2>{story.closing.heading}</h2>
+    {story.closing.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    <div class="actions">
+      <a class="button" href="nl/wat-voel-ik/">Begin bij wat je voelt</a>
+      <a class="button button--quiet" href="nl/begrippen/darvo/">Begrijp patronen</a>
+    </div>
   </div>
 </section>

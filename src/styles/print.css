@@ -1,3 +1,8 @@
+@page {
+  size: A4;
+  margin: 16mm;
+}
+
 @media print {
   :root {
     color-scheme: light;
@@ -11,7 +16,12 @@
   .skip,
   .actions,
   .scenario,
-  .tabs {
+  .tabs,
+  .theme-toggle,
+  .hero-visual,
+  .story-visual,
+  .story-hero-visual,
+  .article-hero-visual {
     display: none !important;
   }
   body {
@@ -19,14 +29,38 @@
     background: #fff;
     color: #000;
   }
-  .hero {
+  .hero,
+  .closing-section,
+  .section--soft,
+  .intro-section,
+  .timeline-teaser,
+  .tension-section,
+  .resources-section {
     background: #fff !important;
     color: #000 !important;
     padding: 1cm 0;
   }
+  .hero-grid,
+  .article-hero__grid--visual {
+    display: block;
+  }
+  .hero-copy {
+    padding: 0;
+  }
+  .hero-copy > p:not(.eyebrow),
   .hero .lead,
-  .hero .eyebrow {
-    color: #000;
+  .hero .eyebrow,
+  .closing-section :is(p, h1, h2, h3, h4, li, .eyebrow, .note) {
+    color: #000 !important;
+  }
+  h1 {
+    font-size: 30pt;
+  }
+  h2 {
+    font-size: 22pt;
+  }
+  h3 {
+    font-size: 16pt;
   }
   .section {
     padding: 0.6cm 0;

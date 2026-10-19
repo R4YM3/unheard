@@ -98,6 +98,7 @@ const pages = defineCollection({
       .optional(),
     story: z
       .object({
+        heroPersonal: z.string().min(20),
         introduction: z.object({
           eyebrow: z.string().min(2),
           heading: z.string().min(8),
@@ -119,6 +120,10 @@ const pages = defineCollection({
                 lenses: z
                   .array(z.object({ heading: z.string().min(4), text: z.string().min(10) }))
                   .length(4),
+                between: z
+                  .array(z.object({ title: z.string().min(4), text: z.string().min(10) }))
+                  .max(2)
+                  .default([]),
               }),
             )
             .min(1),
@@ -143,7 +148,13 @@ const pages = defineCollection({
         letter: z.object({
           eyebrow: z.string().min(2),
           heading: z.string().min(4),
-          body: z.string().min(20),
+          paragraphs: z.array(z.string().min(20)).min(1),
+          signature: z.string().min(2),
+        }),
+        closing: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          paragraphs: z.array(z.string().min(20)).min(1),
         }),
       })
       .optional(),
