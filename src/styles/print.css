@@ -24,6 +24,9 @@
   .article-hero-visual {
     display: none !important;
   }
+  .hero .button {
+    display: none !important;
+  }
   body {
     font-size: 11pt;
     background: #fff;
@@ -31,6 +34,8 @@
   }
   .hero,
   .closing-section,
+  .section--children,
+  .section--paper,
   .section--soft,
   .intro-section,
   .timeline-teaser,
@@ -67,9 +72,16 @@
     break-inside: avoid;
   }
   .card,
+  .card--story,
   .tabpanel,
   .help {
     border: 1px solid #555;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .button,
+  .button--quiet {
+    border: 1px solid #000 !important;
     background: #fff !important;
     color: #000 !important;
   }
