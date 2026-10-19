@@ -27,6 +27,12 @@ const parseFrontmatter = async (file) => {
 };
 
 const errors = [];
+const rejectUnknownKeys = (file, path, value, allowed) => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return;
+  for (const key of Object.keys(value)) {
+    if (!allowed.includes(key)) errors.push(`${file}: ${path} has unexpected field ${key}`);
+  }
+};
 const files = (await walk(articleDirectory)).filter((file) => /\.mdx?$/.test(file));
 const articles = await Promise.all(
   files.map(async (file) => ({ file, data: await parseFrontmatter(file) })),
@@ -221,6 +227,18 @@ for (const { file, data } of pages) {
       ]) {
         if (!Array.isArray(cards) || cards.length === 0)
           errors.push(`${file}: home ${name} needs cards`);
+        for (const [index, card] of (cards ?? []).entries()) {
+          rejectUnknownKeys(
+            file,
+            `home.${name}.cards[${index}]`,
+            card,
+            name === 'patterns'
+              ? ['eyebrow', 'title', 'description', 'note', 'label', 'href']
+              : name === 'resources'
+                ? ['eyebrow', 'title', 'description', 'label', 'href']
+                : ['eyebrow', 'title', 'description', 'href'],
+          );
+        }
       }
     }
   }
