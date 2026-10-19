@@ -12,6 +12,10 @@ const chromePath =
     ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
     : '/usr/bin/google-chrome');
 const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
+const themes = [
+  { name: 'light', media: 'light', choice: 'light' },
+  { name: 'dark', media: 'dark', choice: 'dark' },
+];
 
 const walk = async (directory) => {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -65,20 +69,32 @@ let browser;
 try {
   await waitForServer();
   browser = await puppeteer.launch({ executablePath: chromePath, headless: true });
-  const page = await browser.newPage();
-  await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }]);
   const failures = [];
 
-  for (const route of routes) {
-    await page.goto(`${origin}${route}`, { waitUntil: 'networkidle0' });
-    await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
-    const result = await page.evaluate(
-      async (tags) =>
-        globalThis.axe.run(globalThis.document, { runOnly: { type: 'tag', values: tags } }),
-      wcagTags,
+  for (const theme of themes) {
+    const page = await browser.newPage();
+    await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: theme.media }]);
+    await page.evaluateOnNewDocument(
+      (choice) => globalThis.localStorage.setItem('ongehoord-theme', choice),
+      theme.choice,
     );
-    failures.push(...result.violations.map((violation) => formatViolation(route, violation)));
-    console.log(`Axe ${route}: ${result.violations.length} violations`);
+
+    for (const route of routes) {
+      await page.goto(`${origin}${route}`, { waitUntil: 'networkidle0' });
+      await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
+      const result = await page.evaluate(
+        async (tags) =>
+          globalThis.axe.run(globalThis.document, { runOnly: { type: 'tag', values: tags } }),
+        wcagTags,
+      );
+      failures.push(
+        ...result.violations.map((violation) =>
+          formatViolation(`${theme.name} ${route}`, violation),
+        ),
+      );
+      console.log(`Axe ${theme.name} ${route}: ${result.violations.length} violations`);
+    }
+    await page.close();
   }
 
   if (failures.length) throw new Error(failures.join('\n'));
