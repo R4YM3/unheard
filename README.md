@@ -21,6 +21,9 @@ Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite 
 
 Add an article Markdown file under `src/content/articles/` with schema-validated frontmatter. Include a `locale`, stable `translationKey`, route `slug`, `published` flag, author, date, related content keys, and sources. An article page is generated only when `published: true`. Do not publish unreviewed translations as full articles.
 
+Start from the copy-ready [article template](docs/ARTICLE_TEMPLATE.md). It includes the required
+frontmatter, safe-copy constraints, and the local validation steps.
+
 Reusable home, hub, tool, support, therapy, and founder-story copy lives in `src/content/pages/`. Its validated frontmatter keeps document metadata (`title` and `description`) separate from visible headings, leads, cards, timeline layers, and safety callouts. The Astro templates render this content but do not own its copy.
 
 ## Publishing
