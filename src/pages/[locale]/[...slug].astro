@@ -9,6 +9,7 @@ import FinancialExperience from '../../components/FinancialExperience.astro';
 import DarvoReflection from '../../components/DarvoReflection.astro';
 import DarvoGuide from '../../components/DarvoGuide.astro';
 import SelfDoubtStoryTeaser from '../../components/SelfDoubtStoryTeaser.astro';
+import SourceList from '../../components/SourceList.astro';
 import { isLocale } from '../../i18n/config';
 export async function getStaticPaths() {
   const entries = await getCollection('articles', ({ data }) => data.published);
@@ -25,6 +26,7 @@ const path = `/${locale}/${Astro.params.slug}/`;
 const related = (
   await getCollection('articles', ({ data }) => data.published && data.locale === locale)
 ).filter((candidate) => entry.data.related.includes(candidate.data.translationKey));
+const isSelfDoubt = entry.data.translationKey === 'zelftwijfel';
 ---
 
 <BaseLayout
@@ -34,10 +36,16 @@ const related = (
   canonicalPath={path}
 >
   {
-    entry.data.translationKey === 'zelftwijfel' ? (
+    isSelfDoubt ? (
       <>
         <>
-          <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
+          <Article
+            entry={entry}
+            Content={Content}
+            locale={locale}
+            canonicalPath={path}
+            showSources={false}
+          />
           <PerspectiveSwitch />
           <EmotionImpact />
           <SelfDoubtStoryTeaser />
@@ -73,4 +81,5 @@ const related = (
     )
   }
   <RelatedContent entries={related} locale={locale} />
+  {isSelfDoubt && <SourceList sources={entry.data.sources} />}
 </BaseLayout>

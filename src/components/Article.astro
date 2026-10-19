@@ -7,8 +7,9 @@ interface Props {
   Content: AstroComponentFactory;
   locale: string;
   canonicalPath: string;
+  showSources?: boolean;
 }
-const { entry, Content, locale, canonicalPath } = Astro.props;
+const { entry, Content, locale, canonicalPath, showSources = true } = Astro.props;
 const { data } = entry;
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -150,6 +151,6 @@ const schema = [
       </p>
     </div>
   </section>
-  <SourceList sources={data.sources} />
+  {showSources && <SourceList sources={data.sources} />}
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </article>
