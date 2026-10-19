@@ -95,7 +95,7 @@ const schema = [
       <div
         class:list={[
           'article-hero__grid',
-          { 'article-hero__grid--visual': data.kind === 'emotion' },
+          { 'article-hero__grid--visual': data.kind === 'emotion' || Boolean(hero?.visualNote) },
         ]}
       >
         <div class="article-hero__content">
@@ -125,7 +125,7 @@ const schema = [
           }
         </div>
         {
-          data.kind === 'emotion' && (
+          (data.kind === 'emotion' || hero?.visualNote) && (
             <div class="article-hero-visual" aria-hidden="true">
               {hero?.visualNote && <span class="article-hero-visual__note">{hero.visualNote}</span>}
             </div>

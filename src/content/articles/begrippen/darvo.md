@@ -14,6 +14,18 @@ sources:
     url: 'https://www.jjfreyd.com/darvo/'
   - label: 'Harsey, Zurbriggen & Freyd (2017)'
     url: 'https://doi.org/10.1080/10926771.2017.1320777'
+hero:
+  eyebrow: Begrijp het / Patronen / DARVO
+  paragraphs:
+    - Je probeert te vertellen wat je pijn heeft gedaan. Maar voor je het weet gaat het over wat jij verkeerd zou hebben gedaan.
+    - 'Dat kan heel verwarrend zijn. Er bestaat een begrip voor een specifiek patroon: DARVO.'
+  actions:
+    - href: '#wat-betekent-darvo'
+      label: Wat betekent DARVO? ↓
+    - href: '#een-veilige-volgende-stap'
+      label: Wat kan helpen?
+      quiet: true
+  visualNote: Beeldruimte in ontwikkeling.
 ---
 
 ## Wat betekent DARVO?

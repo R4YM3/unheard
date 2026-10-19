@@ -12,6 +12,18 @@ related: [hulp-vinden]
 sources:
   - label: 'Rijksoverheid — hulp bij vermoedens van huiselijk geweld'
     url: 'https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/vraag-en-antwoord/huiselijk-geweld/wat-moet-ik-doen-bij-huiselijk-geweld'
+hero:
+  eyebrow: Begrijp het / Financieel misbruik
+  paragraphs:
+    - Misschien betaal je je eigen rekeningen, maar voel je weinig vrijheid om financiële keuzes te maken. Misschien zijn er verplichtingen waarover je nooit echt kon meebeslissen.
+    - Financieel misbruik gaat niet alleen over geld. Het kan ook raken aan vertrouwen, veiligheid en eigenwaarde.
+  actions:
+    - href: '#geld-kan-ook-een-middel-van-controle-worden'
+      label: Wat is het? ↓
+    - href: '#begin-klein-en-veilig'
+      label: Veilige eerste stappen
+      quiet: true
+  visualNote: Beeldruimte in ontwikkeling.
 ---
 
 ## Geld kan ook een middel van controle worden
