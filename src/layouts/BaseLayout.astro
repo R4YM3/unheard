@@ -62,6 +62,7 @@ const skipLabel =
 const navigation =
   locale === 'nl'
     ? [
+        ['nl/', 'Home'],
         ['nl/wat-voel-ik/', 'Wat voel ik?'],
         ['nl/begrippen/', 'Begrijp het'],
         ['nl/herstel/', 'Herstel'],
@@ -124,6 +125,30 @@ const navigation =
             ))
           }
         </nav>
+        <details class="mobile-menu">
+          <summary
+            aria-label={locale === 'nl'
+              ? 'Menu openen'
+              : locale === 'ar'
+                ? 'فتح القائمة'
+                : 'Open menu'}
+          >
+            <span></span><span></span><span></span>
+            <span class="sr-only"
+              >{locale === 'nl' ? 'Menu' : locale === 'ar' ? 'القائمة' : 'Menu'}</span
+            >
+          </summary>
+          <nav
+            class="mobile-menu__panel"
+            aria-label={locale === 'ar'
+              ? 'التنقل الرئيسي'
+              : locale === 'en'
+                ? 'Main navigation'
+                : 'Hoofdnavigatie'}
+          >
+            {navigation.map(([href, label]) => <a href={href}>{label}</a>)}
+          </nav>
+        </details>
         <div class="header-controls"><LocaleSelector locale={locale} /></div>
       </div>
     </header>
