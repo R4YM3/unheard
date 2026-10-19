@@ -113,8 +113,8 @@ for (const { file, data } of pages) {
     if (pageRoutes.has(route)) errors.push(`${file}: duplicate page route ${route}`);
     pageRoutes.add(route);
   }
-  if (!['hub', 'tools', 'support'].includes(data.kind))
-    errors.push(`${file}: kind must be hub, tools, or support`);
+  if (!['hub', 'tools', 'support', 'therapy'].includes(data.kind))
+    errors.push(`${file}: kind must be hub, tools, support, or therapy`);
   if (!Array.isArray(data.sources) || data.sources.length === 0)
     errors.push(`${file}: content pages need at least one source`);
   for (const source of data.sources ?? []) {
@@ -133,6 +133,24 @@ for (const { file, data } of pages) {
   if (data.safety) {
     for (const field of ['title', 'description', 'href', 'label']) {
       if (!data.safety[field]) errors.push(`${file}: safety needs ${field}`);
+    }
+  }
+  if (data.kind === 'therapy') {
+    const therapy = data.therapy;
+    const sections = ['introduction', 'experiences', 'questions', 'closing', 'support'];
+    if (!therapy || typeof therapy !== 'object') {
+      errors.push(`${file}: therapy pages need therapy content`);
+    } else {
+      for (const section of sections) {
+        if (!therapy[section] || typeof therapy[section] !== 'object')
+          errors.push(`${file}: therapy content needs ${section}`);
+      }
+      if (!Array.isArray(therapy.experiences?.items) || therapy.experiences.items.length === 0)
+        errors.push(`${file}: therapy experiences need at least one item`);
+      if (!Array.isArray(therapy.questions?.items) || therapy.questions.items.length === 0)
+        errors.push(`${file}: therapy questions need at least one item`);
+      if (therapy.support?.href && /^(?:https?:)?\/\//i.test(therapy.support.href))
+        errors.push(`${file}: therapy support link must be an internal route`);
     }
   }
 }

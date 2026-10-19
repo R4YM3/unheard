@@ -28,7 +28,7 @@ const pages = defineCollection({
     slug: z.string().min(2),
     eyebrow: z.string().min(2),
     lead: z.string().min(20),
-    kind: z.enum(['hub', 'tools', 'support']),
+    kind: z.enum(['hub', 'tools', 'support', 'therapy']),
     sources: z.array(z.object({ label: z.string().min(2), url: z.url() })).min(1),
     cards: z
       .array(
@@ -47,6 +47,53 @@ const pages = defineCollection({
         description: z.string().min(10),
         href: z.string().min(1),
         label: z.string().min(2),
+      })
+      .optional(),
+    therapy: z
+      .object({
+        introduction: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          paragraphs: z.array(z.string().min(20)).min(1),
+          quote: z.string().min(8),
+          notice: z.string().min(20),
+        }),
+        experiences: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          lead: z.string().min(20),
+          items: z
+            .array(
+              z.object({
+                eyebrow: z.string().min(2),
+                title: z.string().min(2),
+                personal: z.string().min(20),
+                explanation: z.string().min(20),
+              }),
+            )
+            .min(1),
+        }),
+        questions: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          lead: z.string().min(20),
+          items: z
+            .array(z.object({ title: z.string().min(5), description: z.string().min(10) }))
+            .min(1),
+        }),
+        closing: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          paragraphs: z.array(z.string().min(20)).min(1),
+          quote: z.string().min(8),
+        }),
+        support: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          paragraphs: z.array(z.string().min(20)).min(1),
+          href: z.string().min(1),
+          label: z.string().min(2),
+        }),
       })
       .optional(),
   }),
