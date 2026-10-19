@@ -35,7 +35,7 @@ Completed:
 - Astro static build, typed Content Collection, semantic token system, theme selection, reduced-motion styling, print stylesheet, and public GitHub Pages workflow.
 - Dutch home, self-doubt, DARVO, financial abuse, recovery, therapy, founder-story, help, friends/family, and printable support-tools routes.
 - Native keyboard-operable perspective tabs, related-content cards, safety links, direct-call help contacts, source lists, and no stored reflection data.
-- Locale architecture for NL/EN/AR, client-side root-language choice for static hosting, RTL readiness, and reviewed-content limitation messages for EN/AR.
+- Locale architecture for NL/EN/AR, NL-only public entry while translations are incomplete, RTL readiness, and noindex review stubs for EN/AR.
 - Canonical URLs, Open Graph metadata, sitemap, robots, JSON-LD for pages/articles/breadcrumbs, build-time route/link/schema/a11y checks, ESLint, Prettier, language tests, and GitHub Pages deployment.
 - Live Lighthouse baseline: 100 in Performance, Accessibility, Best Practices, and SEO after the Pages routing and favicon fixes.
 
