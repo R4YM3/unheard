@@ -645,6 +645,9 @@ a.card:hover {
   background: var(--palette-paper);
   color: #202725;
 }
+.self-doubt-story .eyebrow {
+  color: #4d5a54;
+}
 .support-guidance {
   margin-top: 1.5rem;
   padding: clamp(1.25rem, 3vw, 1.75rem);
