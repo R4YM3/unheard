@@ -141,13 +141,13 @@ summary:focus-visible {
 }
 .site-header .locale-selector {
   display: inline-flex;
-  min-height: 2.9rem;
-  min-inline-size: 8.8rem;
+  inline-size: 7.1rem;
   align-items: center;
   justify-content: center;
   border-color: #829188;
   background: #34413b;
   color: #fff;
+  padding: 0.56rem 0.82rem;
 }
 .mobile-menu {
   display: none;
@@ -179,6 +179,8 @@ summary:focus-visible {
   text-decoration: underline;
 }
 .nav .nav-help {
+  inline-size: 7.1rem;
+  justify-content: center;
   border: 1px solid #c0cec2;
   border-radius: 0.35rem;
   padding: 0.56rem 0.82rem;
