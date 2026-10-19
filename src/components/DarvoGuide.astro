@@ -1,0 +1,153 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Card from './Card.astro';
+
+interface Props {
+  entry: CollectionEntry<'articles'>;
+}
+
+const { entry } = Astro.props;
+const guide = entry.data.darvo;
+if (!guide) throw new Error(`DarvoGuide requires DARVO content; received ${entry.id}.`);
+---
+
+<section class="section section--soft" aria-labelledby="darvo-steps-title">
+  <div class="wrap">
+    <p class="eyebrow">02 / De drie onderdelen</p>
+    <h2 id="darvo-steps-title">Hoe kan het eruitzien?</h2>
+    <div class="grid">
+      {
+        guide.steps.map((step) => (
+          <Card>
+            <p class="eyebrow">{step.label}</p>
+            <h3>{step.title}</h3>
+            <p>
+              <q>{step.quote}</q>
+            </p>
+            <p class="note">Mogelijke beleving: {step.experience}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <p class="note">
+      Deze voorbeelden zijn verzonnen om het patroon te illustreren. Ze zijn geen test voor de
+      bedoelingen of persoonlijkheid van een ander.
+    </p>
+  </div>
+</section>
+<section class="section" aria-labelledby="darvo-perspectives-title">
+  <div class="wrap reading">
+    <p class="eyebrow">03 / Twee kanten</p>
+    <h2 id="darvo-perspectives-title">Wat wordt er gezegd? Wat gebeurt er in jou?</h2>
+    <div class="tabs" role="tablist" aria-label="Twee perspectieven op een gesprek">
+      <button role="tab" id="darvo-outside-tab" aria-selected="true" aria-controls="darvo-outside">
+        De buitenkant
+      </button>
+      <button
+        role="tab"
+        id="darvo-inside-tab"
+        aria-selected="false"
+        aria-controls="darvo-inside"
+        tabindex="-1"
+      >
+        De binnenkant
+      </button>
+    </div>
+    <div class="tabpanel" id="darvo-outside" role="tabpanel" aria-labelledby="darvo-outside-tab">
+      <p>{guide.perspectives.outside}</p>
+    </div>
+    <div
+      class="tabpanel"
+      id="darvo-inside"
+      role="tabpanel"
+      aria-labelledby="darvo-inside-tab"
+      hidden
+    >
+      <p>{guide.perspectives.inside}</p>
+    </div>
+    <div class="print-only">
+      <h3>De buitenkant</h3><p>{guide.perspectives.outside}</p>
+      <h3>De binnenkant</h3><p>{guide.perspectives.inside}</p>
+    </div>
+    <p>
+      De buitenkant en de binnenkant kunnen tegelijk waar zijn. Je gevoel verdient aandacht, ook
+      wanneer niet vaststaat hoe het gedrag van de ander bedoeld was.
+    </p>
+  </div>
+</section>
+<section class="section section--soft" aria-labelledby="darvo-impact-title">
+  <div class="wrap">
+    <p class="eyebrow">04 / De impact</p>
+    <h2 id="darvo-impact-title">Wat kan het met je doen?</h2>
+    <p class="reading">
+      Bij herhaalde ervaringen kun je jezelf steeds meer gaan controleren. In onderzoek naar DARVO
+      werd een verband gevonden met zelfbeschuldiging na een confrontatie; dat zegt niet dat
+      iedereen dezelfde gevolgen ervaart.
+    </p>
+    <div class="grid">
+      {
+        guide.impacts.map((impact) => (
+          <Card>
+            <>
+              <h3>{impact.title}</h3>
+              <p>{impact.text}</p>
+            </>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<section class="section closing-section" aria-labelledby="darvo-why-title">
+  <div class="wrap reading">
+    <p class="eyebrow">05 / Waarom het zo kan raken</p>
+    <h2 id="darvo-why-title">Je wilt gehoord worden, niet winnen.</h2>
+    {guide.why.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+</section>
+<section class="section" aria-labelledby="darvo-help-title">
+  <div class="wrap">
+    <p class="eyebrow">06 / Wat kan helpen?</p>
+    <h2 id="darvo-help-title">Begin bij wat jij nodig hebt.</h2>
+    <div class="grid">
+      <Card
+        ><h3>Een veilige reflectie</h3><ol>{guide.reflection.map((item) => <li>{item}</li>)}</ol><p
+          class="note"
+        >
+          Je hoeft niets in te vullen of te bewaren, zeker niet op een apparaat dat mogelijk
+          gecontroleerd wordt.
+        </p></Card
+      >
+      <Card><h3>Een volgende stap</h3>{guide.nextStep.map((paragraph) => <p>{paragraph}</p>)}</Card>
+    </div>
+  </div>
+</section>
+<script>
+  const tabs = [...document.querySelectorAll('#darvo-outside-tab, #darvo-inside-tab')].filter(
+    (tab): tab is HTMLButtonElement => tab instanceof HTMLButtonElement,
+  );
+  const selectTab = (index: number) => {
+    tabs.forEach((tab, tabIndex) => {
+      const selected = tabIndex === index;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(tab.getAttribute('aria-controls') ?? '');
+      if (panel) panel.hidden = !selected;
+    });
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectTab(index));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const next =
+        event.key === 'Home'
+          ? 0
+          : event.key === 'End'
+            ? tabs.length - 1
+            : (index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+      tabs[next].focus();
+      selectTab(next);
+    });
+  });
+</script>

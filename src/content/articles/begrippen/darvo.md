@@ -26,20 +26,47 @@ hero:
       label: Wat kan helpen?
       quiet: true
   visualNote: Beeldruimte in ontwikkeling.
+darvo:
+  steps:
+    - label: D — Deny
+      title: Ontkennen
+      quote: Dat is helemaal niet gebeurd.
+      experience: Je begint uit te leggen wat je bedoelde en vraagt je af of je herinnering klopt.
+    - label: A — Attack
+      title: Aanvallen
+      quote: Jij maakt altijd overal een probleem van.
+      experience: Het gesprek verschuift van de gebeurtenis naar jouw karakter of geloofwaardigheid.
+    - label: RVO — Reverse Victim and Offender
+      title: De rollen omdraaien
+      quote: Ik ben degene die hier door jou gekwetst wordt.
+      experience: Je voelt de neiging om de ander gerust te stellen en raakt je oorspronkelijke vraag kwijt.
+  perspectives:
+    outside: Waarom begin je hier weer over? Jij maakt alles moeilijk. Het onderwerp verandert van de oorspronkelijke gebeurtenis naar jouw manier van praten.
+    inside: Misschien had ik niets moeten zeggen. Ik probeer mezelf te verklaren, maar mijn pijn lijkt verdwenen uit het gesprek.
+  impacts:
+    - title: Zelftwijfel
+      text: Heb ik het verkeerd onthouden? Stel ik me aan?
+    - title: Schuldgevoel
+      text: Je voelt je verantwoordelijk voor het herstellen van een gesprek dat je begon omdat je gekwetst was.
+    - title: Vermijding
+      text: Je stelt lastige onderwerpen steeds minder snel aan de orde.
+    - title: Uitputting
+      text: Je blijft gesprekken herhalen en zoeken naar woorden die eindelijk wel begrepen worden.
+  why:
+    - Wanneer het gesprek steeds verschuift, kan het voelen alsof jouw ervaring geen plaats krijgt. Dan kan het logisch zijn dat je terugkomt op het gesprek, om bevestiging vraagt of je woorden zorgvuldig probeert te kiezen.
+    - Je hoeft een ander geen etiket te geven om stil te mogen staan bij wat deze interacties met jou doen.
+  reflection:
+    - Wat wilde ik oorspronkelijk bespreekbaar maken?
+    - Waar ging het gesprek uiteindelijk over?
+    - Hoe voelde ik me na afloop?
+    - Is dit een terugkerend patroon?
+  nextStep:
+    - Zoek steun bij een betrouwbaar persoon of hulpverlener als gesprekken je steeds ontregelen. Een gesprek afbreken of een grens aangeven kan helpen wanneer dat veilig is. Bij dreiging of controle is veiligheid belangrijker dan de ander overtuigen.
+    - Je hoeft de term DARVO niet te gebruiken in een gesprek met je partner om je grens serieus te nemen.
 ---
 
 ## Wat betekent DARVO?
 
 DARVO is een afkorting van _Deny, Attack, Reverse Victim and Offender_: ontkennen, aanvallen en de rollen van degene die schade aankaart en degene die erop wordt aangesproken omdraaien. Het beschrijft een reactiepatroon, geen diagnose.
 
-## Hoe kan het eruitzien?
-
-Een gesprek kan beginnen met iets dat jou raakte. Daarna verschuift het onderwerp naar jouw toon, karakter of geloofwaardigheid. Je kunt dan de neiging krijgen om de ander gerust te stellen en je oorspronkelijke vraag kwijt te raken.
-
-## Wat kan het met je doen?
-
-Bij herhaalde ervaringen kun je jezelf meer gaan controleren, schuldgevoel voelen of moeilijke onderwerpen vermijden. Je hoeft een ander geen etiket te geven om stil te mogen staan bij wat een gesprek met jou doet.
-
-## Een veilige volgende stap
-
-Vraag jezelf af: wat wilde ik oorspronkelijk bespreekbaar maken, waar ging het gesprek uiteindelijk over, en hoe voelde ik me na afloop? Bij dreiging of controle is veiligheid belangrijker dan iemand overtuigen.
+Het beschrijft een reactiepatroon waarbij iemand verantwoordelijkheid probeert af te weren. Het is geen diagnose. Niet iedere ontkenning, ruzie of defensieve reactie is DARVO; context en herhaling zijn belangrijk.

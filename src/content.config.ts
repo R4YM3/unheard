@@ -32,6 +32,25 @@ const articles = defineCollection({
         visualNote: z.string().min(10).optional(),
       })
       .optional(),
+    darvo: z
+      .object({
+        steps: z
+          .array(
+            z.object({
+              label: z.string().min(2),
+              title: z.string().min(2),
+              quote: z.string().min(8),
+              experience: z.string().min(20),
+            }),
+          )
+          .length(3),
+        perspectives: z.object({ outside: z.string().min(20), inside: z.string().min(20) }),
+        impacts: z.array(z.object({ title: z.string().min(3), text: z.string().min(10) })).min(1),
+        why: z.array(z.string().min(20)).min(1),
+        reflection: z.array(z.string().min(10)).min(1),
+        nextStep: z.array(z.string().min(20)).min(1),
+      })
+      .optional(),
   }),
 });
 const pages = defineCollection({

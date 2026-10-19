@@ -7,6 +7,7 @@ import RelatedContent from '../../components/RelatedContent.astro';
 import EmotionImpact from '../../components/EmotionImpact.astro';
 import FinancialExperience from '../../components/FinancialExperience.astro';
 import DarvoReflection from '../../components/DarvoReflection.astro';
+import DarvoGuide from '../../components/DarvoGuide.astro';
 import { isLocale } from '../../i18n/config';
 export async function getStaticPaths() {
   const entries = await getCollection('articles', ({ data }) => data.published);
@@ -57,6 +58,7 @@ const related = (
     ) : entry.data.translationKey === 'darvo' ? (
       <>
         <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
+        <DarvoGuide entry={entry} />
         <DarvoReflection />
       </>
     ) : entry.data.translationKey === 'financieel-misbruik' ? (
