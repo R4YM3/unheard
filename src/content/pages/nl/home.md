@@ -34,15 +34,23 @@ home:
       - {
           eyebrow: 02 / Schuld,
           title: Ik voel me verantwoordelijk voor alles.,
-          href: nl/hulp-vinden/,
+          href: nl/wat-voel-ik/ik-voel-me-schuldig/,
         }
-      - { eyebrow: 03 / Identiteit, title: Ik herken mezelf niet meer., href: nl/mijn-verhaal/ }
+      - {
+          eyebrow: 03 / Identiteit,
+          title: Ik herken mezelf niet meer.,
+          href: nl/wat-voel-ik/ik-herken-mezelf-niet-meer/,
+        }
       - {
           eyebrow: 04 / Herstel,
           title: 'Ik begrijp het, maar het blijft pijn doen.',
-          href: nl/herstel/,
+          href: nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/,
         }
-      - { eyebrow: 05 / Controle, title: Ik durf geen nee te zeggen., href: nl/hulpmiddelen/ }
+      - {
+          eyebrow: 05 / Controle,
+          title: Ik durf geen nee te zeggen.,
+          href: nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/,
+        }
       - {
           eyebrow: 06 / Financieel,
           title: Ik voel me niet vrij met geld.,

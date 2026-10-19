@@ -16,7 +16,7 @@ Confirm, page by page:
 1. The personal story, timeline, therapy experiences, and letter to children still sound like the founder.
 2. Each personal statement is safe to publish anonymously and contains no identifying detail about children, a former partner, family, treatment provider, workplace, or ongoing proceeding.
 3. Any proposed detail in the currently reserved timeline sections is explicitly approved before it is added.
-4. The following future feeling pages have founder-approved purpose and copy: guilt, loss of self, boundaries, persistent pain after insight, and concerns about money.
+4. The purpose and copy on the published feeling pages about guilt, boundaries, loss of self, and persistent pain after insight are approved. The existing financial-abuse page remains the route for money concerns.
 
 ## Clinical review
 
@@ -39,7 +39,6 @@ Confirm that:
 
 Do not create these as placeholder public pages. Add one only after the relevant review is complete.
 
-- Feelings: guilt, boundaries, identity/loss of self, persistent pain after insight, and money concerns.
 - Glossary: gaslighting, triangulation, framing, hoovering, blame shifting, love bombing, isolation, financial control, hypervigilance, and trauma bonding.
 - Evidence page: `mannen-in-cijfers` with a dated methodology and source review; do not use suicide statistics as evidence that abuse caused an outcome.
 - Translations: complete EN and AR equivalents with native-language editorial review, then enable the language switch and `hreflang` for exact published pairs.
