@@ -18,4 +18,36 @@ const articles = defineCollection({
     sources: z.array(z.object({ label: z.string(), url: z.url() })).default([]),
   }),
 });
-export const collections = { articles };
+const pages = defineCollection({
+  loader: glob({ base: './src/content/pages', pattern: '**/*.{md,mdx}' }),
+  schema: z.object({
+    title: z.string().min(8),
+    description: z.string().min(30),
+    heading: z.string().min(8),
+    locale: z.enum(['nl', 'en', 'ar']),
+    slug: z.string().min(2),
+    eyebrow: z.string().min(2),
+    lead: z.string().min(20),
+    kind: z.enum(['hub', 'tools', 'support']),
+    cards: z
+      .array(
+        z.object({
+          eyebrow: z.string().min(2).optional(),
+          title: z.string().min(4),
+          description: z.string().min(10),
+          href: z.string().min(1).optional(),
+          items: z.array(z.string().min(3)).default([]),
+        }),
+      )
+      .default([]),
+    safety: z
+      .object({
+        title: z.string().min(4),
+        description: z.string().min(10),
+        href: z.string().min(1),
+        label: z.string().min(2),
+      })
+      .optional(),
+  }),
+});
+export const collections = { articles, pages };

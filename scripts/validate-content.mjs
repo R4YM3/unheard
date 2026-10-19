@@ -2,7 +2,8 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parseDocument } from 'yaml';
 
-const contentDirectory = 'src/content/articles';
+const articleDirectory = 'src/content/articles';
+const pageDirectory = 'src/content/pages';
 const supportedLocales = new Set(['nl', 'en', 'ar']);
 const walk = async (directory) =>
   (
@@ -26,7 +27,7 @@ const parseFrontmatter = async (file) => {
 };
 
 const errors = [];
-const files = (await walk(contentDirectory)).filter((file) => /\.mdx?$/.test(file));
+const files = (await walk(articleDirectory)).filter((file) => /\.mdx?$/.test(file));
 const articles = await Promise.all(
   files.map(async (file) => ({ file, data: await parseFrontmatter(file) })),
 );
@@ -82,7 +83,54 @@ for (const { file, data } of articles.filter(({ data }) => data?.published === t
       errors.push(`${file}: related entry ${relatedKey} is not a published ${data.locale} article`);
   }
 }
+const pageFiles = (await walk(pageDirectory)).filter((file) => /\.mdx?$/.test(file));
+const pages = await Promise.all(
+  pageFiles.map(async (file) => ({ file, data: await parseFrontmatter(file) })),
+);
+const pageRoutes = new Set();
+for (const { file, data } of pages) {
+  if (!data || typeof data !== 'object') {
+    errors.push(`${file}: frontmatter must be an object`);
+    continue;
+  }
+  for (const field of [
+    'title',
+    'description',
+    'heading',
+    'locale',
+    'slug',
+    'eyebrow',
+    'lead',
+    'kind',
+  ]) {
+    if (!(field in data)) errors.push(`${file}: missing ${field}`);
+  }
+  if (!supportedLocales.has(data.locale)) errors.push(`${file}: locale must be nl, en, or ar`);
+  if (typeof data.slug !== 'string' || !/^[a-z0-9]+(?:[a-z0-9-]*\/)*[a-z0-9-]+$/.test(data.slug)) {
+    errors.push(`${file}: slug must use lowercase URL-safe segments without a leading slash`);
+  } else {
+    const route = `${data.locale}:${data.slug}`;
+    if (pageRoutes.has(route)) errors.push(`${file}: duplicate page route ${route}`);
+    pageRoutes.add(route);
+  }
+  if (!['hub', 'tools', 'support'].includes(data.kind))
+    errors.push(`${file}: kind must be hub, tools, or support`);
+  if ('cards' in data && !Array.isArray(data.cards)) errors.push(`${file}: cards must be an array`);
+  for (const card of data.cards ?? []) {
+    if (!card?.title || !card?.description)
+      errors.push(`${file}: every card needs title and description`);
+    if (card.href && /^(?:https?:)?\/\//i.test(card.href))
+      errors.push(`${file}: card links must be internal routes`);
+    if (card.items && !Array.isArray(card.items))
+      errors.push(`${file}: card items must be an array`);
+  }
+  if (data.safety) {
+    for (const field of ['title', 'description', 'href', 'label']) {
+      if (!data.safety[field]) errors.push(`${file}: safety needs ${field}`);
+    }
+  }
+}
 if (errors.length > 0) throw new Error(`Content validation failed:\n${errors.join('\n')}`);
 console.log(
-  `Validated ${articles.length} content files and ${publishedByKey.size} published relations.`,
+  `Validated ${articles.length} articles, ${pages.length} pages, and ${publishedByKey.size} published relations.`,
 );

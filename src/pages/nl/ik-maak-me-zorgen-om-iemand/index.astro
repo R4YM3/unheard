@@ -1,18 +1,20 @@
 ---
+import { getCollection, render } from 'astro:content';
+import ContentPage from '../../../components/ContentPage.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const [entry] = await getCollection(
+  'pages',
+  ({ data }) => data.locale === 'nl' && data.slug === 'ik-maak-me-zorgen-om-iemand',
+);
+if (!entry) throw new Error('Missing content entry: nl/ik-maak-me-zorgen-om-iemand');
+const { Content } = await render(entry);
 ---
 
 <BaseLayout
-  title="Ik maak me zorgen om iemand"
-  description="Steun iemand zonder druk uit te oefenen, een partner te diagnosticeren of veiligheid te vergroten."
-  ><section class="section">
-    <div class="wrap reading">
-      <p class="eyebrow">Voor vrienden en familie</p><h1>
-        Je hoeft niet alles op te lossen om er te kunnen zijn.
-      </h1><p>
-        Luister, stel rustige open vragen en respecteer het tempo van de ander. Vermijd het
-        diagnosticeren van een partner of het afdwingen van een beslissing.
-      </p><p>Als er acuut gevaar is, bel 112. Voor advies kun je Veilig Thuis raadplegen.</p>
-    </div>
-  </section></BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonicalPath="/nl/ik-maak-me-zorgen-om-iemand/"
 >
+  <ContentPage entry={entry} Content={Content} />
+</BaseLayout>

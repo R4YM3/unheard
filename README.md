@@ -17,7 +17,9 @@ Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite 
 
 ## Adding content
 
-Add a Markdown file under `src/content/articles/` with schema-validated frontmatter. Include a `locale`, stable `translationKey`, route `slug`, `published` flag, author, date, related content keys, and sources. A page is generated only when `published: true`. Do not publish unreviewed translations as full articles.
+Add an article Markdown file under `src/content/articles/` with schema-validated frontmatter. Include a `locale`, stable `translationKey`, route `slug`, `published` flag, author, date, related content keys, and sources. An article page is generated only when `published: true`. Do not publish unreviewed translations as full articles.
+
+Reusable hub, tool, and support-page copy lives in `src/content/pages/`. Its validated frontmatter keeps document metadata (`title` and `description`) separate from the visible `heading`, lead text, cards, and optional safety callout. The Astro templates render this content but do not own its copy.
 
 ## Publishing
 

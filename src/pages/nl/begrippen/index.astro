@@ -1,29 +1,20 @@
 ---
+import { getCollection, render } from 'astro:content';
+import ContentPage from '../../../components/ContentPage.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const [entry] = await getCollection(
+  'pages',
+  ({ data }) => data.locale === 'nl' && data.slug === 'begrippen',
+);
+if (!entry) throw new Error('Missing content entry: nl/begrippen');
+const { Content } = await render(entry);
 ---
 
 <BaseLayout
-  title="Begrippen"
-  description="Begrippen die kunnen helpen om terugkerende patronen te onderzoeken, zonder diagnoses te stellen."
-  ><section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Begrijp het</p><h1>Woorden kunnen helpen om te ordenen.</h1><p
-        class="lead"
-      >
-        Een begrip beschrijft een mogelijk patroon; het vertelt niet wie iemand is.
-      </p>
-    </div>
-  </section><section class="section">
-    <div class="wrap grid">
-      <a class="card" href="nl/begrippen/darvo/"
-        ><h2>DARVO</h2><p>
-          Wanneer een gesprek over jouw pijn verschuift naar het verdedigen van jezelf.
-        </p></a
-      ><div class="card">
-        <h2>Meer begrippen volgen</h2><p>
-          Gaslighting, triangulatie en financiële controle verschijnen na redactionele review.
-        </p>
-      </div>
-    </div>
-  </section></BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonicalPath="/nl/begrippen/"
 >
+  <ContentPage entry={entry} Content={Content} />
+</BaseLayout>

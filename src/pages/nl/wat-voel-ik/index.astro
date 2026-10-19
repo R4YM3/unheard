@@ -1,28 +1,20 @@
 ---
+import { getCollection, render } from 'astro:content';
+import ContentPage from '../../../components/ContentPage.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const [entry] = await getCollection(
+  'pages',
+  ({ data }) => data.locale === 'nl' && data.slug === 'wat-voel-ik',
+);
+if (!entry) throw new Error('Missing content entry: nl/wat-voel-ik');
+const { Content } = await render(entry);
 ---
 
 <BaseLayout
-  title="Wat voel ik?"
-  description="Begin bij herkenning, zonder dat je meteen hoeft te weten hoe je ervaring heet."
-  ><section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Wat voel ik?</p><h1>Begin bij wat je voelt.</h1><p class="lead">
-        Misschien zoek je geen label, maar woorden voor wat er in jou gebeurt.
-      </p>
-    </div>
-  </section><section class="section">
-    <div class="wrap grid">
-      <a class="card" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
-        ><h2>Ik twijfel aan mezelf</h2><p>
-          Ik blijf gesprekken terughalen en vraag me af of mijn gevoel klopt.
-        </p></a
-      ><div class="card">
-        <h2>Andere gevoelens volgen</h2><p>
-          Schuldgevoel, grenzen, verlies van jezelf en zorgen over geld worden pas toegevoegd na
-          inhoudelijke review.
-        </p>
-      </div>
-    </div>
-  </section></BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonicalPath="/nl/wat-voel-ik/"
 >
+  <ContentPage entry={entry} Content={Content} />
+</BaseLayout>
