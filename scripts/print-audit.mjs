@@ -25,6 +25,11 @@ const routes = [
     required: ['Wat er gezegd wordt', 'Wat ik vanbinnen voel'],
   },
   {
+    id: 'emotion',
+    route: '/nl/wat-voel-ik/ik-voel-me-schuldig/',
+    required: ['Schuld zonder conclusie', 'Drie rustige vragen'],
+  },
+  {
     id: 'darvo',
     route: '/nl/begrippen/darvo/',
     required: ['Wat betekent DARVO?', 'Begin bij wat jij nodig hebt.'],

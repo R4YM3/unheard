@@ -5,7 +5,7 @@ import { parseDocument } from 'yaml';
 const articleDirectory = 'src/content/articles';
 const pageDirectory = 'src/content/pages';
 const supportedLocales = new Set(['nl', 'en', 'ar']);
-const editorialReviewRequired = process.env.NO_INDEX !== 'true';
+const editorialReviewRequired = process.env.NO_INDEX === 'false';
 const walk = async (directory) =>
   (
     await Promise.all(

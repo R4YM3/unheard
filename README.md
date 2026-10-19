@@ -17,7 +17,7 @@ Run `npm run audit:lighthouse` after a build for a local desktop Lighthouse audi
 
 Run `npm run audit:a11y` for an Axe WCAG 2.0/2.1/2.2 A/AA audit of every generated HTML route in both light and dark themes. It requires Chrome and runs entirely locally.
 
-Run `npm run audit:print` to create and check A4 PDFs for the home, founder-story, self-doubt, DARVO, financial-abuse, and therapy templates. It verifies that navigation and fixed controls are absent while tab and timeline content remain printable. PDFs are written to ignored `work/print-audit/`.
+Run `npm run audit:print` to create and check A4 PDFs for the home, founder-story, generic emotion, self-doubt, DARVO, financial-abuse, and therapy templates. It verifies that navigation and fixed controls are absent while tab and timeline content remain printable. PDFs are written to ignored `work/print-audit/`.
 
 Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 
