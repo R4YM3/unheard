@@ -1,0 +1,114 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Card from './Card.astro';
+import Timeline from './Timeline.astro';
+
+interface Props {
+  entry: CollectionEntry<'pages'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+if (data.kind !== 'story' || !data.story) {
+  throw new Error(`FounderStoryPage requires a story page entry; received ${entry.id}.`);
+}
+const story = data.story;
+---
+
+<section class="hero hero--story-page">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{data.eyebrow}</p>
+      <h1>{data.heading}</h1>
+      <p class="lead">{data.lead}</p>
+      <p>{story.introduction.paragraphs[0]}</p>
+      <a class="button" href="#tijdlijn">Ontdek mijn tijdlijn</a>
+    </div>
+    <div class="story-hero-visual" aria-hidden="true"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap reading">
+    <p class="eyebrow">{story.introduction.eyebrow}</p>
+    <h2>{story.introduction.heading}</h2>
+    <p class="lead">{story.introduction.lead}</p>
+    {story.introduction.paragraphs.slice(1).map((paragraph) => <p>{paragraph}</p>)}
+    <p class="note">{story.introduction.note}</p>
+  </div>
+</section>
+<section class="section section--soft" id="tijdlijn">
+  <div class="wrap reading">
+    <p class="eyebrow">{story.timeline.eyebrow}</p>
+    <h2>{story.timeline.heading}</h2>
+    <p>{story.timeline.lead}</p>
+    <Timeline label={story.timeline.label}>
+      {
+        story.timeline.milestones.map((milestone) => (
+          <li>
+            <article class="card">
+              <p class="eyebrow">{milestone.eyebrow}</p>
+              <h3>{milestone.title}</h3>
+              <p>{milestone.description}</p>
+              <details>
+                <summary>Lees de vier perspectieven</summary>
+                {milestone.lenses.map((lens) => (
+                  <>
+                    <h4>{lens.heading}</h4>
+                    <p>{lens.text}</p>
+                  </>
+                ))}
+              </details>
+            </article>
+          </li>
+        ))
+      }
+    </Timeline>
+    <p class="note">{story.timeline.note}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">{story.fatherhood.eyebrow}</p>
+    <h2>{story.fatherhood.heading}</h2>
+    <div class="grid">
+      {
+        story.fatherhood.cards.map((card) => (
+          <Card>
+            <>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<section class="section section--soft">
+  <div class="wrap">
+    <p class="eyebrow">{story.recovery.eyebrow}</p>
+    <h2>{story.recovery.heading}</h2>
+    <div class="grid">
+      {
+        story.recovery.cards.map((card) => (
+          <Card>
+            <>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </>
+          </Card>
+        ))
+      }
+    </div>
+    <a class="button" href={story.recovery.href}>{story.recovery.label}</a>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap reading">
+    <section class="card card--story">
+      <p class="eyebrow">{story.letter.eyebrow}</p>
+      <h2>{story.letter.heading}</h2>
+      <p>{story.letter.body}</p>
+    </section>
+  </div>
+</section>

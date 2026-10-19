@@ -28,8 +28,8 @@ const pages = defineCollection({
     slug: z.string().min(2),
     eyebrow: z.string().min(2),
     lead: z.string().min(20),
-    kind: z.enum(['hub', 'tools', 'support', 'therapy']),
-    sources: z.array(z.object({ label: z.string().min(2), url: z.url() })).min(1),
+    kind: z.enum(['hub', 'tools', 'support', 'therapy', 'story']),
+    sources: z.array(z.object({ label: z.string().min(2), url: z.url() })).default([]),
     cards: z
       .array(
         z.object({
@@ -93,6 +93,57 @@ const pages = defineCollection({
           paragraphs: z.array(z.string().min(20)).min(1),
           href: z.string().min(1),
           label: z.string().min(2),
+        }),
+      })
+      .optional(),
+    story: z
+      .object({
+        introduction: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          lead: z.string().min(20),
+          paragraphs: z.array(z.string().min(20)).min(1),
+          note: z.string().min(20),
+        }),
+        timeline: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          lead: z.string().min(20),
+          label: z.string().min(4),
+          milestones: z
+            .array(
+              z.object({
+                eyebrow: z.string().min(2),
+                title: z.string().min(8),
+                description: z.string().min(20),
+                lenses: z
+                  .array(z.object({ heading: z.string().min(4), text: z.string().min(10) }))
+                  .length(4),
+              }),
+            )
+            .min(1),
+          note: z.string().min(20),
+        }),
+        fatherhood: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          cards: z
+            .array(z.object({ title: z.string().min(4), description: z.string().min(20) }))
+            .min(1),
+        }),
+        recovery: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          cards: z
+            .array(z.object({ title: z.string().min(4), description: z.string().min(20) }))
+            .min(1),
+          href: z.string().min(1),
+          label: z.string().min(2),
+        }),
+        letter: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(4),
+          body: z.string().min(20),
         }),
       })
       .optional(),

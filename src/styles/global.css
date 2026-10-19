@@ -264,7 +264,7 @@ h3 {
   margin: 0 0 0.75rem;
 }
 h1 {
-  font-size: clamp(2.9rem, 6.2vw, 5.6rem);
+  font-size: clamp(2.9rem, 6.2vw, 4rem);
   max-width: 16ch;
 }
 h2 {

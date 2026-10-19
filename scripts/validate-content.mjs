@@ -113,10 +113,10 @@ for (const { file, data } of pages) {
     if (pageRoutes.has(route)) errors.push(`${file}: duplicate page route ${route}`);
     pageRoutes.add(route);
   }
-  if (!['hub', 'tools', 'support', 'therapy'].includes(data.kind))
-    errors.push(`${file}: kind must be hub, tools, support, or therapy`);
-  if (!Array.isArray(data.sources) || data.sources.length === 0)
-    errors.push(`${file}: content pages need at least one source`);
+  if (!['hub', 'tools', 'support', 'therapy', 'story'].includes(data.kind))
+    errors.push(`${file}: kind must be hub, tools, support, therapy, or story`);
+  if (!Array.isArray(data.sources) || (data.kind !== 'story' && data.sources.length === 0))
+    errors.push(`${file}: non-story content pages need at least one source`);
   for (const source of data.sources ?? []) {
     if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
       errors.push(`${file}: every source needs a label and HTTPS URL`);
@@ -151,6 +151,24 @@ for (const { file, data } of pages) {
         errors.push(`${file}: therapy questions need at least one item`);
       if (therapy.support?.href && /^(?:https?:)?\/\//i.test(therapy.support.href))
         errors.push(`${file}: therapy support link must be an internal route`);
+    }
+  }
+  if (data.kind === 'story') {
+    const story = data.story;
+    const sections = ['introduction', 'timeline', 'fatherhood', 'recovery', 'letter'];
+    if (!story || typeof story !== 'object') {
+      errors.push(`${file}: story pages need story content`);
+    } else {
+      for (const section of sections) {
+        if (!story[section] || typeof story[section] !== 'object')
+          errors.push(`${file}: story content needs ${section}`);
+      }
+      for (const milestone of story.timeline?.milestones ?? []) {
+        if (!Array.isArray(milestone.lenses) || milestone.lenses.length !== 4)
+          errors.push(`${file}: every story milestone needs four lenses`);
+      }
+      if (story.recovery?.href && /^(?:https?:)?\/\//i.test(story.recovery.href))
+        errors.push(`${file}: story recovery link must be an internal route`);
     }
   }
 }
