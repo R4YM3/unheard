@@ -46,7 +46,7 @@ Do not create these as placeholder public pages. Add one only after the relevant
 
 ## Final release checks
 
-1. Run `npm run check`, `NO_INDEX=true npm run build`, and `NO_INDEX=true npm run audit:lighthouse`.
+1. Run `npm run check`, `NO_INDEX=true npm run build`, `NO_INDEX=true npm run audit:lighthouse`, and `npm run audit:print`.
 2. Manually check keyboard navigation, 200% zoom, 320px and desktop widths, light/dark/system modes, and print previews in Chrome and Safari.
 3. Verify the GitHub Pages custom-domain certificate before directing anyone to HTTPS.
 4. Only after the approvals above, change the `NO_INDEX` Actions variable to `false` and verify robots, sitemap, canonicals, and the live HTTPS certificate.
