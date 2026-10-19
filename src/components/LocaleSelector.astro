@@ -3,21 +3,13 @@ interface Props {
   locale: 'nl' | 'en' | 'ar';
 }
 const { locale } = Astro.props;
-const base = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL
-  : `${import.meta.env.BASE_URL}/`;
 const labels = {
-  nl: { select: 'Kies taal' },
-  en: { select: 'Choose language' },
-  ar: { select: 'اختر اللغة' },
+  nl: 'Nederlands',
+  en: 'English',
+  ar: 'العربية',
 };
 ---
 
-<select class="locale-selector" data-locale-select aria-label={labels[locale].select}
-  ><option value="nl">NL</option><option value="en">EN</option><option value="ar">العربية</option
-  ></select
+<span class="locale-selector" aria-label={labels[locale]} title={labels[locale]}
+  >{locale.toUpperCase()}</span
 >
-<script
-  is:inline
-  set:html={`(()=>{const select=document.querySelector('[data-locale-select]');if(!select)return;const supported=['nl','en','ar'];const base=${JSON.stringify(base)};const local=location.pathname.startsWith(base)?location.pathname.slice(base.length):location.pathname.slice(1);const parts=local.split('/').filter(Boolean);const current=supported.includes(parts[0])?parts.shift():'en';select.value=current;select.addEventListener('change',()=>{const next=select.value;try{localStorage.setItem('ongehoord-language',next)}catch{};const knownHome=parts.length===0;location.assign(base+next+'/'+(knownHome?'': '')+location.search+location.hash)})})()`}
-/>

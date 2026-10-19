@@ -50,7 +50,6 @@ const schema = [
     isPartOf: { '@id': websiteId },
   },
 ];
-const hasHomeTranslations = ['/nl/', '/en/', '/ar/'].includes(canonicalPath);
 const noIndex = process.env.NO_INDEX === 'true';
 const cloudflareBeaconToken = import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN;
 const skipLabel =
@@ -59,7 +58,6 @@ const skipLabel =
     : locale === 'ar'
       ? 'انتقل إلى المحتوى'
       : 'Skip to content';
-const alternateUrl = (language: Locale) => new URL(`${basePath}${language}/`, site).href;
 const navigation =
   locale === 'nl'
     ? [
@@ -88,18 +86,6 @@ const navigation =
     <base href={basePath} />
     <link rel="icon" href={`${basePath}favicon.svg`} type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
-    {
-      hasHomeTranslations && (
-        <>
-          <>
-            <link rel="alternate" hreflang="nl" href={alternateUrl('nl')} />
-            <link rel="alternate" hreflang="en" href={alternateUrl('en')} />
-            <link rel="alternate" hreflang="ar" href={alternateUrl('ar')} />
-            <link rel="alternate" hreflang="x-default" href={alternateUrl('en')} />
-          </>
-        </>
-      )
-    }
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     {
       cloudflareBeaconToken && (
