@@ -71,6 +71,21 @@ for (const { file, data } of articles) {
     if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
       errors.push(`${file}: every source needs a label and HTTPS URL`);
   }
+  if (data.hero) {
+    if (
+      !data.hero.eyebrow ||
+      !Array.isArray(data.hero.paragraphs) ||
+      data.hero.paragraphs.length === 0
+    )
+      errors.push(`${file}: hero needs an eyebrow and at least one paragraph`);
+    if (!Array.isArray(data.hero.actions)) errors.push(`${file}: hero actions must be an array`);
+    for (const action of data.hero.actions ?? []) {
+      if (!action?.href || !action?.label)
+        errors.push(`${file}: every hero action needs href and label`);
+      if (/^(?:https?:)?\/\//i.test(action?.href ?? ''))
+        errors.push(`${file}: hero actions must use internal routes or anchors`);
+    }
+  }
   if (data.published === true && typeof data.translationKey === 'string') {
     const key = `${data.locale}:${data.translationKey}`;
     if (publishedByKey.has(key)) errors.push(`${file}: duplicate published translation key ${key}`);
@@ -158,7 +173,7 @@ for (const { file, data } of pages) {
   }
   if (data.kind === 'story') {
     const story = data.story;
-    const sections = ['introduction', 'timeline', 'fatherhood', 'recovery', 'letter'];
+    const sections = ['introduction', 'timeline', 'fatherhood', 'recovery', 'letter', 'closing'];
     if (!story || typeof story !== 'object') {
       errors.push(`${file}: story pages need story content`);
     } else {
@@ -169,7 +184,13 @@ for (const { file, data } of pages) {
       for (const milestone of story.timeline?.milestones ?? []) {
         if (!Array.isArray(milestone.lenses) || milestone.lenses.length !== 4)
           errors.push(`${file}: every story milestone needs four lenses`);
+        if (milestone.between && !Array.isArray(milestone.between))
+          errors.push(`${file}: story milestone between moments must be an array`);
       }
+      if (!story.heroPersonal) errors.push(`${file}: story needs heroPersonal`);
+      if (!Array.isArray(story.letter?.paragraphs) || story.letter.paragraphs.length === 0)
+        errors.push(`${file}: story letter needs paragraphs`);
+      if (!story.letter?.signature) errors.push(`${file}: story letter needs a signature`);
       if (story.recovery?.href && /^(?:https?:)?\/\//i.test(story.recovery.href))
         errors.push(`${file}: story recovery link must be an internal route`);
     }
