@@ -7,6 +7,7 @@ slug: financieel-misbruik
 kind: concept
 published: true
 author: Ongehoord
+publishedAt: 2026-10-19
 updatedAt: 2026-10-19
 related: [hulp-vinden]
 sources:

@@ -7,6 +7,7 @@ slug: hulp-vinden
 kind: resource
 published: true
 author: Ongehoord
+publishedAt: 2026-10-19
 updatedAt: 2026-10-19
 related: [zelftwijfel, financieel-misbruik]
 sources:

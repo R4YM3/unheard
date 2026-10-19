@@ -7,6 +7,7 @@ slug: wat-voel-ik/ik-twijfel-aan-mezelf
 kind: emotion
 published: true
 author: Ongehoord
+publishedAt: 2026-10-19
 updatedAt: 2026-10-19
 related: [darvo, hulp-vinden]
 sources:

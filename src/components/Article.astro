@@ -31,6 +31,7 @@ const schema = [
     headline: data.title,
     description: data.description,
     inLanguage: locale,
+    datePublished: data.publishedAt.toISOString(),
     dateModified: data.updatedAt.toISOString(),
     author: { '@type': 'Organization', name: data.author },
     publisher: {
@@ -141,12 +142,11 @@ const schema = [
         data.darvo && (
           <>
             <blockquote class="article-quote">{data.darvo.quote.text}</blockquote>
-            <p class="note">{data.darvo.quote.note}</p>
           </>
         )
       }
       <p class="eyebrow">
-        Bijgewerkt {data.updatedAt.toLocaleDateString('nl-NL')} · {data.author}
+        Gepubliceerd {data.publishedAt.toLocaleDateString('nl-NL')} · {data.author}
       </p>
     </div>
   </section>

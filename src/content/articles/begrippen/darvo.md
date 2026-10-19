@@ -7,6 +7,7 @@ slug: begrippen/darvo
 kind: concept
 published: true
 author: Ongehoord
+publishedAt: 2026-10-19
 updatedAt: 2026-10-19
 related: [zelftwijfel, hulp-vinden]
 sources:
@@ -29,7 +30,6 @@ hero:
 darvo:
   quote:
     text: '“Ik wilde alleen uitleggen wat me had geraakt. Hoe kan het dat ik nu degene ben die sorry wil zeggen?”'
-    note: Fictieve zin ter herkenning; geen persoonlijk citaat.
   steps:
     - label: D — Deny
       title: Ontkennen

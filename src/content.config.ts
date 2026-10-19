@@ -12,6 +12,7 @@ const articles = defineCollection({
     kind: z.enum(['emotion', 'concept', 'recovery', 'resource']),
     published: z.boolean(),
     author: z.string(),
+    publishedAt: z.coerce.date(),
     reviewedAt: z.coerce.date().optional(),
     updatedAt: z.coerce.date(),
     related: z.array(z.string()).default([]),
@@ -34,7 +35,7 @@ const articles = defineCollection({
       .optional(),
     darvo: z
       .object({
-        quote: z.object({ text: z.string().min(20), note: z.string().min(10) }),
+        quote: z.object({ text: z.string().min(20) }),
         steps: z
           .array(
             z.object({
