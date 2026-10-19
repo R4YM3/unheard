@@ -23,6 +23,12 @@ const jsonLdBlocks = (html) =>
   [...html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)].map(
     (match) => match[1],
   );
+const remoteScriptSources = (html) =>
+  [...html.matchAll(/<script\b[^>]*\bsrc=(['"])(https?:\/\/.*?)\1/gi)].map((match) => match[2]);
+const localStorageKeys = (html) =>
+  [...html.matchAll(/localStorage\.(?:getItem|setItem|removeItem)\((?:'|")([^'"]+)(?:'|")/g)].map(
+    (match) => match[1],
+  );
 const bad = [];
 const requiredDutchNavigation = [
   ['Wat voel ik?', 'nl/wat-voel-ik/'],
@@ -77,6 +83,14 @@ for (const file of files) {
   if (/<img\b(?![^>]*\balt=)[^>]*>/i.test(html)) bad.push(`${file}: image without alt attribute`);
   if (/<html lang="ar"(?![^>]*\bdir="rtl")/i.test(html))
     bad.push(`${file}: Arabic page missing RTL direction`);
+  for (const source of remoteScriptSources(html)) {
+    if (source !== 'https://static.cloudflareinsights.com/beacon.min.js')
+      bad.push(`${file}: unapproved external script ${source}`);
+  }
+  for (const key of localStorageKeys(html)) {
+    if (key !== 'ongehoord-theme')
+      bad.push(`${file}: persistent browser storage is not permitted for ${key}`);
+  }
 
   if (file.includes('/nl/')) {
     const navigation = html.match(/<nav class="nav"[^>]*>([\s\S]*?)<\/nav>/i)?.[1] ?? '';
