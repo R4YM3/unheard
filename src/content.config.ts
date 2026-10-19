@@ -67,6 +67,7 @@ const pages = defineCollection({
       .optional(),
     therapy: z
       .object({
+        heroParagraphs: z.array(z.string().min(20)).min(1).optional(),
         introduction: z.object({
           eyebrow: z.string().min(2),
           heading: z.string().min(8),

@@ -13,6 +13,9 @@ sources:
   - label: GGZ Standaarden — psychotrauma- en stressorgerelateerde stoornissen
     url: https://www.ggzstandaarden.nl/zorgstandaarden/psychotrauma-en-stressorgerelateerde-stoornissen
 therapy:
+  heroParagraphs:
+    - Je kunt precies weten wat je hebt meegemaakt, en toch nog worstelen met wat je voelt. Herstel is niet één gesprek, één inzicht of één therapie.
+    - Soms begint het pas wanneer je ontdekt wat je zelf nodig hebt.
   introduction:
     eyebrow: 01 / Mijn zoektocht
     heading: Ik zocht niet één antwoord. Ik zocht mezelf.

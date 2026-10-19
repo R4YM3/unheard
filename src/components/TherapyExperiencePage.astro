@@ -20,7 +20,11 @@ const therapy = data.therapy;
     <div class="hero-copy">
       <p class="eyebrow">{data.eyebrow}</p>
       <h1>{data.heading}</h1>
-      <p class="lead">{data.lead}</p>
+      {
+        (therapy.heroParagraphs ?? [data.lead]).map((paragraph, index) => (
+          <p class:list={{ lead: index === 0 }}>{paragraph}</p>
+        ))
+      }
       <a class="button" href="#ervaringen">Ontdek mijn ervaringen</a>
     </div>
     <div class="story-hero-visual" aria-hidden="true"></div>
