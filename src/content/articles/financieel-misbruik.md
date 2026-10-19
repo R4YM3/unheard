@@ -18,22 +18,16 @@ hero:
     - Misschien betaal je je eigen rekeningen, maar voel je weinig vrijheid om financiële keuzes te maken. Misschien zijn er verplichtingen waarover je nooit echt kon meebeslissen.
     - Financieel misbruik gaat niet alleen over geld. Het kan ook raken aan vertrouwen, veiligheid en eigenwaarde.
   actions:
-    - href: '#geld-kan-ook-een-middel-van-controle-worden'
+    - href: '#het-verschil-tussen-geldzorgen-en-financiële-controle'
       label: Wat is het? ↓
-    - href: '#begin-klein-en-veilig'
+    - href: '#financial-steps'
       label: Veilige eerste stappen
       quiet: true
   visualNote: Beeldruimte in ontwikkeling.
 ---
 
-## Geld kan ook een middel van controle worden
+## Het verschil tussen geldzorgen en financiële controle
 
-Financiële zorgen kunnen veel vormen aannemen: geen inzicht hebben in gezamenlijke rekeningen, onder druk schulden aangaan, toegang tot geld verliezen of steeds verantwoording moeten afleggen. Niet elke financiële spanning is misbruik. Wat telt is het patroon en wat het met jouw vrijheid en veiligheid doet.
+Partners kunnen oneens zijn over geld of verschillende inkomens hebben. Dat is op zichzelf geen financieel misbruik. Het wordt zorgelijk wanneer iemand door dwang, misleiding, bedreiging of structurele controle de financiële keuzevrijheid van een ander aantast.
 
-## Begin klein en veilig
-
-Als het veilig is, kan het helpen om overzicht te krijgen van rekeningen, schulden en documenten. Bewaar informatie alleen wanneer dat geen risico geeft. Zoek zo nodig advies via een veilig apparaat of bij een professional die je vertrouwt.
-
-## Je hoeft niet eerst zekerheid te hebben
-
-Twijfel is genoeg om advies te vragen. Bij zorgen over controle of huiselijk geweld kun je anoniem overleggen met Veilig Thuis.
+Ook na een scheiding kan financiële druk een rol blijven spelen. Bij gezamenlijke schulden en eigendom zijn de feiten, toestemming en juridische afspraken belangrijk.
