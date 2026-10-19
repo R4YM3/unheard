@@ -12,11 +12,27 @@ related: [darvo, hulp-vinden]
 sources:
   - label: 'Thuisarts — mishandeling door partner of ex-partner'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
+hero:
+  eyebrow: Wat voel ik? / Zelftwijfel
+  paragraphs:
+    - Je weet wat je voelde. Maar na een gesprek vraag je je opnieuw af of je misschien hebt overdreven, iets verkeerd hebt onthouden of zelf het probleem bent.
+    - Misschien kun je nog niet verklaren waarom. Dat hoeft ook niet om jouw gevoel serieus te nemen.
+  actions:
+    - href: '#herkenning'
+      label: Herken je dit? ↓
+    - href: '#patronen'
+      label: Wat kan er gebeuren?
+      quiet: true
+  visualNote: Fotografie volgt later. De ruimte en stilte zijn onderdeel van het ontwerp.
 ---
 
 ## Je blijft het gesprek opnieuw voeren. Maar dan in je hoofd.
 
-Je weet wat je voelde. Maar na een gesprek vraag je je opnieuw af of je misschien hebt overdreven, iets verkeerd hebt onthouden of zelf het probleem bent. Misschien kun je nog niet verklaren waarom. Dat hoeft ook niet om jouw gevoel serieus te nemen.
+Je zoekt naar het ene zinnetje waarmee je het anders had kunnen zeggen. Je vraagt iemand anders of je reactie normaal was. Of je zegt uiteindelijk maar niets meer, omdat je bang bent opnieuw verkeerd begrepen te worden.
+
+Misschien ligt het aan mij. Waarom denk ik dat steeds?
+
+Zelftwijfel hoort soms bij het leven en bij relaties. Maar als je merkt dat je steeds minder vertrouwen hebt in wat je waarneemt, voelt of nodig hebt, verdient dat aandacht.
 
 ## Wat kan achter die twijfel zitten?
 

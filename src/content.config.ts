@@ -16,6 +16,22 @@ const articles = defineCollection({
     updatedAt: z.coerce.date(),
     related: z.array(z.string()).default([]),
     sources: z.array(z.object({ label: z.string(), url: z.url() })).default([]),
+    hero: z
+      .object({
+        eyebrow: z.string().min(2),
+        paragraphs: z.array(z.string().min(20)).min(1),
+        actions: z
+          .array(
+            z.object({
+              href: z.string().min(1),
+              label: z.string().min(2),
+              quiet: z.boolean().default(false),
+            }),
+          )
+          .default([]),
+        visualNote: z.string().min(10).optional(),
+      })
+      .optional(),
   }),
 });
 const pages = defineCollection({

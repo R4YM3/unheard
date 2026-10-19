@@ -23,6 +23,7 @@ const kindLabels = {
   ar: { emotion: 'شعور', concept: 'مفهوم', recovery: 'تعافٍ', resource: 'مورد' },
 };
 const kindLabel = kindLabels[locale as keyof typeof kindLabels]?.[data.kind] ?? data.kind;
+const hero = data.hero;
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -80,11 +81,17 @@ const schema = [
 <article>
   <section class="hero hero--article">
     <div class="wrap">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href={`${locale}/`}>{homeLabel}</a><span aria-hidden="true">/</span><span
-          >{data.title}</span
-        >
-      </nav>
+      {
+        !hero && (
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <>
+              <a href={`${locale}/`}>{homeLabel}</a>
+              <span aria-hidden="true">/</span>
+              <span>{data.title}</span>
+            </>
+          </nav>
+        )
+      }
       <div
         class:list={[
           'article-hero__grid',
@@ -92,11 +99,38 @@ const schema = [
         ]}
       >
         <div class="article-hero__content">
-          <p class="eyebrow">{kindLabel} · {data.updatedAt.toLocaleDateString('nl-NL')}</p><h1>
+          <p class="eyebrow">
+            {hero?.eyebrow ?? `${kindLabel} · ${data.updatedAt.toLocaleDateString('nl-NL')}`}
+          </p><h1>
             {data.title}
-          </h1><p class="lead">{data.description}</p>
+          </h1>{
+            hero ? (
+              hero.paragraphs.map((paragraph, index) => (
+                <p class:list={{ lead: index === 0 }}>{paragraph}</p>
+              ))
+            ) : (
+              <p class="lead">{data.description}</p>
+            )
+          }
+          {
+            hero?.actions.length ? (
+              <div class="actions">
+                {hero.actions.map((action) => (
+                  <a class:list={['button', { 'button--quiet': action.quiet }]} href={action.href}>
+                    {action.label}
+                  </a>
+                ))}
+              </div>
+            ) : null
+          }
         </div>
-        {data.kind === 'emotion' && <div class="article-hero-visual" aria-hidden="true" />}
+        {
+          data.kind === 'emotion' && (
+            <div class="article-hero-visual" aria-hidden="true">
+              {hero?.visualNote && <span class="article-hero-visual__note">{hero.visualNote}</span>}
+            </div>
+          )
+        }
       </div>
     </div>
   </section>
