@@ -290,6 +290,11 @@ h2 {
 h3 {
   font-size: clamp(1.35rem, 2vw, 1.8rem);
 }
+.article--concept :is(h1, h2, h3) {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
 .section {
   padding: clamp(3.6rem, 8vw, 6.25rem) 0;
 }
@@ -297,10 +302,13 @@ h3 {
   background: var(--safe);
 }
 .section--children {
-  background: var(--safe);
+  /* The letter to the children has its own, quieter sage panel in the reference. */
+  background: var(--children);
 }
 .section--paper {
-  background: var(--bg);
+  /* Keep the closing chapter on paper: it must not visually merge with the letter. */
+  background: var(--palette-paper);
+  color: #202725;
 }
 .intro-section,
 .timeline-teaser {
@@ -475,7 +483,14 @@ a.card:hover {
 .card--story {
   border: 0;
   border-radius: 0.15rem 1.5rem 1.5rem 0.15rem;
-  background: var(--safe);
+  background: #f9f8f3;
+}
+[data-theme='dark'] .section--paper {
+  background: var(--bg);
+  color: var(--text);
+}
+[data-theme='dark'] .card--story {
+  background: var(--surface);
 }
 .button {
   display: inline-block;

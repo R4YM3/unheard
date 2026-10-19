@@ -1,5 +1,5 @@
 ---
-title: 'DARVO: waarom moet ik mezelf ineens verdedigen?'
+title: 'Waarom moet ik mezelf ineens verdedigen?'
 description: 'Een heldere uitleg van DARVO, de mogelijke impact en veilige manieren om bij je eigen ervaring stil te staan.'
 locale: nl
 translationKey: darvo
