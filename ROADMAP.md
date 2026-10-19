@@ -42,6 +42,6 @@ Completed:
 Still required before declaring an editorial launch complete:
 
 - Founder, clinical, and legal review of all sensitive wording and personal-story material.
-- Manual visual QA at the specified mobile/desktop zoom levels and print-to-PDF checks in Chrome and Safari.
+- Manual visual QA at the specified mobile/desktop zoom levels and print-to-PDF checks in Safari. Chrome A4 PDF smoke checks passed for the home, founder-story, therapy and article templates on 2026-10-19.
 - Review and publish any additional Dutch articles, then add only approved EN/AR translations and their equivalent routes.
 - Verify the custom-domain TLS certificate before directing anyone to HTTPS; DNS can be correct while GitHub Pages is still provisioning that certificate.
