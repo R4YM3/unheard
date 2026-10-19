@@ -36,6 +36,8 @@ GitHub Actions checks every pull request and builds/deploys to GitHub Pages on e
 
 The temporary deployment is protected with `noindex, nofollow` and a blocking `robots.txt`. This is controlled by the `NO_INDEX` Actions variable, which defaults to `true`; set it to `false` only when the site is ready to be discoverable.
 
+Before changing `NO_INDEX` to `false`, add a real ISO `reviewedAt` date to every published article after founder, clinical, and legal review. Content validation deliberately fails if a discoverable build contains an unreviewed published article.
+
 The GitHub Pages configuration uses `unheard.support` and the `SITE_URL` Actions variable to produce root-relative custom-domain URLs. DNS and the TLS certificate can take time to propagate; verify the Pages domain status in GitHub before treating the custom domain as live. The GitHub project URL may redirect before the domain itself resolves.
 
 The published edition is Dutch only. The root page therefore opens `/nl/`, and the visible language marker is deliberately non-interactive until a complete translation is approved. EN and AR routes remain technical, `noindex` review stubs with RTL readiness; they are not advertised in navigation or `hreflang`.

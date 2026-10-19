@@ -5,6 +5,7 @@ import { parseDocument } from 'yaml';
 const articleDirectory = 'src/content/articles';
 const pageDirectory = 'src/content/pages';
 const supportedLocales = new Set(['nl', 'en', 'ar']);
+const editorialReviewRequired = process.env.NO_INDEX !== 'true';
 const walk = async (directory) =>
   (
     await Promise.all(
@@ -69,6 +70,13 @@ for (const { file, data } of articles) {
   }
   if (typeof data.updatedAt !== 'string' || Number.isNaN(Date.parse(data.updatedAt)))
     errors.push(`${file}: updatedAt must be an ISO date`);
+  if (
+    data.reviewedAt !== undefined &&
+    (typeof data.reviewedAt !== 'string' || Number.isNaN(Date.parse(data.reviewedAt)))
+  )
+    errors.push(`${file}: reviewedAt must be an ISO date when present`);
+  if (data.published === true && editorialReviewRequired && !data.reviewedAt)
+    errors.push(`${file}: published content needs reviewedAt before NO_INDEX can be disabled`);
   if (!Array.isArray(data.related)) errors.push(`${file}: related must be an array`);
   if (!Array.isArray(data.sources)) errors.push(`${file}: sources must be an array`);
   if (data.published === true && data.sources?.length === 0)
