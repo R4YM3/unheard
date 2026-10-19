@@ -1,0 +1,122 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Card from './Card.astro';
+
+interface Props {
+  entry: CollectionEntry<'pages'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+if (data.kind !== 'home' || !data.home)
+  throw new Error(`HomePage requires a home entry; received ${entry.id}.`);
+const home = data.home;
+---
+
+<section class="hero hero--home" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{home.hero.eyebrow}</p><h1>{data.heading}</h1><p class="lead">
+        {home.hero.lead}
+      </p><p>{home.hero.description}</p>
+      <div class="actions">
+        <a class="button" href={home.hero.primary.href}>{home.hero.primary.label}</a><a
+          class="button button--quiet"
+          href={home.hero.secondary.href}>{home.hero.secondary.label}</a
+        >
+      </div>
+    </div><div class="hero-visual" aria-hidden="true"></div>
+  </div>
+</section>
+<section class="section intro-section">
+  <div class="wrap reading">
+    <p class="eyebrow">{home.introduction.eyebrow}</p><h2>{home.introduction.heading}</h2>{
+      home.introduction.paragraphs.map((paragraph) => <p>{paragraph}</p>)
+    }
+  </div>
+</section>
+<section class="section feeling-section" id="gevoelens">
+  <div class="wrap">
+    <div class="section-heading">
+      <div><p class="eyebrow">{home.feelings.eyebrow}</p><h2>{home.feelings.heading}</h2></div><p>
+        {home.feelings.lead}
+      </p>
+    </div><div class="grid feeling-grid">
+      {
+        home.feelings.cards.map((card) => (
+          <Card class="feeling-card" href={card.href}>
+            <>
+              <p class="eyebrow">{card.eyebrow}</p>
+              <h3>{card.title}</h3>
+            </>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<section class="section tension-section" id="patronen">
+  <div class="wrap">
+    <p class="eyebrow">{home.patterns.eyebrow}</p><h2>{home.patterns.heading}</h2><div
+      class="grid tension-grid"
+    >
+      {
+        home.patterns.cards.map((card) => (
+          <Card tone="tension" href={card.href}>
+            <>
+              <p class="eyebrow">{card.eyebrow}</p>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <p class="note">{card.note}</p>
+              <span class="card-link-label">{card.label} ↗</span>
+            </>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<section class="section story-section" id="verhaal">
+  <div class="wrap story-layout">
+    <div class="story-visual" aria-hidden="true"></div><div class="story-copy">
+      <p class="eyebrow">{home.storyTeaser.eyebrow}</p><h2>{home.storyTeaser.heading}</h2>{
+        home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)
+      }<a class="button" href={home.storyTeaser.href}>{home.storyTeaser.label}</a>
+    </div>
+  </div>
+</section>
+<section class="section timeline-teaser">
+  <div class="wrap reading">
+    <p class="eyebrow">{home.timelineTeaser.eyebrow}</p><h2>{home.timelineTeaser.heading}</h2><p>
+      {home.timelineTeaser.description}
+    </p><a href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a>
+  </div>
+</section>
+<section class="section resources-section" id="herstel">
+  <div class="wrap">
+    <p class="eyebrow">{home.resources.eyebrow}</p><h2>{home.resources.heading}</h2><div
+      class="grid resource-grid"
+    >
+      {
+        home.resources.cards.map((card) => (
+          <Card class="resource-card" tone="safe" href={card.href}>
+            <>
+              <p class="eyebrow">{card.eyebrow}</p>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <span class="card-link-label">{card.label} ↗</span>
+            </>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<section class="section closing-section" id="hulp">
+  <div class="wrap reading">
+    <p class="eyebrow">{home.closing.eyebrow}</p><h2>{home.closing.heading}</h2><p>
+      {home.closing.description}
+    </p><a class="button" href={home.closing.href}>{home.closing.label}</a><p class="note">
+      {home.closing.note}
+    </p>
+  </div>
+</section>

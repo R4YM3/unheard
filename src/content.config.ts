@@ -28,7 +28,7 @@ const pages = defineCollection({
     slug: z.string().min(2),
     eyebrow: z.string().min(2),
     lead: z.string().min(20),
-    kind: z.enum(['hub', 'tools', 'support', 'therapy', 'story']),
+    kind: z.enum(['hub', 'tools', 'support', 'therapy', 'story', 'home']),
     sources: z.array(z.object({ label: z.string().min(2), url: z.url() })).default([]),
     cards: z
       .array(
@@ -144,6 +144,89 @@ const pages = defineCollection({
           eyebrow: z.string().min(2),
           heading: z.string().min(4),
           body: z.string().min(20),
+        }),
+      })
+      .optional(),
+    home: z
+      .object({
+        hero: z.object({
+          eyebrow: z.string().min(2),
+          lead: z.string().min(20),
+          description: z.string().min(20),
+          primary: z.object({ href: z.string().min(1), label: z.string().min(2) }),
+          secondary: z.object({ href: z.string().min(1), label: z.string().min(2) }),
+        }),
+        introduction: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          paragraphs: z.array(z.string().min(20)).min(1),
+        }),
+        feelings: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(4),
+          lead: z.string().min(10),
+          cards: z
+            .array(
+              z.object({
+                eyebrow: z.string().min(2),
+                title: z.string().min(5),
+                href: z.string().min(1),
+              }),
+            )
+            .min(1),
+        }),
+        patterns: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          cards: z
+            .array(
+              z.object({
+                eyebrow: z.string().min(2),
+                title: z.string().min(8),
+                description: z.string().min(20),
+                note: z.string().min(10),
+                label: z.string().min(2),
+                href: z.string().min(1),
+              }),
+            )
+            .min(1),
+        }),
+        storyTeaser: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          paragraphs: z.array(z.string().min(20)).min(1),
+          href: z.string().min(1),
+          label: z.string().min(2),
+        }),
+        timelineTeaser: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(4),
+          description: z.string().min(20),
+          href: z.string().min(1),
+          label: z.string().min(2),
+        }),
+        resources: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          cards: z
+            .array(
+              z.object({
+                eyebrow: z.string().min(2),
+                title: z.string().min(8),
+                description: z.string().min(20),
+                label: z.string().min(2),
+                href: z.string().min(1),
+              }),
+            )
+            .min(1),
+        }),
+        closing: z.object({
+          eyebrow: z.string().min(2),
+          heading: z.string().min(8),
+          description: z.string().min(20),
+          href: z.string().min(1),
+          label: z.string().min(2),
+          note: z.string().min(20),
         }),
       })
       .optional(),

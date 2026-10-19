@@ -113,10 +113,13 @@ for (const { file, data } of pages) {
     if (pageRoutes.has(route)) errors.push(`${file}: duplicate page route ${route}`);
     pageRoutes.add(route);
   }
-  if (!['hub', 'tools', 'support', 'therapy', 'story'].includes(data.kind))
-    errors.push(`${file}: kind must be hub, tools, support, therapy, or story`);
-  if (!Array.isArray(data.sources) || (data.kind !== 'story' && data.sources.length === 0))
-    errors.push(`${file}: non-story content pages need at least one source`);
+  if (!['hub', 'tools', 'support', 'therapy', 'story', 'home'].includes(data.kind))
+    errors.push(`${file}: kind must be hub, tools, support, therapy, story, or home`);
+  if (
+    !Array.isArray(data.sources) ||
+    (!['story', 'home'].includes(data.kind) && data.sources.length === 0)
+  )
+    errors.push(`${file}: non-story/non-home content pages need at least one source`);
   for (const source of data.sources ?? []) {
     if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
       errors.push(`${file}: every source needs a label and HTTPS URL`);
@@ -169,6 +172,35 @@ for (const { file, data } of pages) {
       }
       if (story.recovery?.href && /^(?:https?:)?\/\//i.test(story.recovery.href))
         errors.push(`${file}: story recovery link must be an internal route`);
+    }
+  }
+  if (data.kind === 'home') {
+    const home = data.home;
+    const sections = [
+      'hero',
+      'introduction',
+      'feelings',
+      'patterns',
+      'storyTeaser',
+      'timelineTeaser',
+      'resources',
+      'closing',
+    ];
+    if (!home || typeof home !== 'object') {
+      errors.push(`${file}: home pages need home content`);
+    } else {
+      for (const section of sections) {
+        if (!home[section] || typeof home[section] !== 'object')
+          errors.push(`${file}: home content needs ${section}`);
+      }
+      for (const [name, cards] of [
+        ['feelings', home.feelings?.cards],
+        ['patterns', home.patterns?.cards],
+        ['resources', home.resources?.cards],
+      ]) {
+        if (!Array.isArray(cards) || cards.length === 0)
+          errors.push(`${file}: home ${name} needs cards`);
+      }
     }
   }
 }
