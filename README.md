@@ -15,6 +15,8 @@ npm run build
 
 Run `npm run audit:lighthouse` after a build for a local desktop Lighthouse audit of `/nl/`. It requires Chrome. The script requires accessibility 100 and performance at least 90. While `NO_INDEX=true`, its lower SEO result is expected and does not fail the audit.
 
+Run `npm run audit:a11y` for an Axe WCAG 2.0/2.1/2.2 A/AA audit of every generated HTML route. It requires Chrome and runs entirely locally.
+
 Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 
 ## Adding content
