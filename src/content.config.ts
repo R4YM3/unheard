@@ -34,6 +34,7 @@ const articles = defineCollection({
       .optional(),
     darvo: z
       .object({
+        quote: z.object({ text: z.string().min(20), note: z.string().min(10) }),
         steps: z
           .array(
             z.object({

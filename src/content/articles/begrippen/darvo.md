@@ -27,6 +27,9 @@ hero:
       quiet: true
   visualNote: Beeldruimte in ontwikkeling.
 darvo:
+  quote:
+    text: '“Ik wilde alleen uitleggen wat me had geraakt. Hoe kan het dat ik nu degene ben die sorry wil zeggen?”'
+    note: Fictieve zin ter herkenning; geen persoonlijk citaat.
   steps:
     - label: D — Deny
       title: Ontkennen

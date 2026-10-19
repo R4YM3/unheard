@@ -92,8 +92,7 @@ home:
       - {
           eyebrow: Vragenkaarten,
           title: Vragen die je ogen kunnen openen.,
-          description: Reflecties voor jezelf,
-          gesprekken met een professional en veilige gesprekken.,
+          description: 'Reflecties voor jezelf, gesprekken met een professional en veilige gesprekken met anderen.',
           label: Ontdek hulpmiddelen,
           href: nl/hulpmiddelen/,
         }
