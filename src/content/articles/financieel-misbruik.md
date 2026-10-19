@@ -17,6 +17,7 @@ hero:
   paragraphs:
     - Misschien betaal je je eigen rekeningen, maar voel je weinig vrijheid om financiële keuzes te maken. Misschien zijn er verplichtingen waarover je nooit echt kon meebeslissen.
     - Financieel misbruik gaat niet alleen over geld. Het kan ook raken aan vertrouwen, veiligheid en eigenwaarde.
+    - Vooral aandacht voor mannen; herkenning en hulp zijn er voor iedereen.
   actions:
     - href: '#het-verschil-tussen-geldzorgen-en-financiële-controle'
       label: Wat is het? ↓
