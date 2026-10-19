@@ -5,16 +5,22 @@ const scenarios = [
     outside: '“Zo heb ik dat niet bedoeld. Jij maakt het altijd groter dan het is.”',
     inside:
       'Ik probeer uit te leggen waarom dit me raakte, maar ik vraag me af of ik het verkeerd heb onthouden.',
+    context:
+      'Verschillen in interpretatie zijn normaal. Wanneer jouw beleving herhaaldelijk terzijde wordt geschoven, kan je vertrouwen in je eigen gevoel afnemen.',
   },
   {
     label: 'Een grens aangeven',
     outside: '“Waarom doe je nu zo moeilijk? Ik vraag toch niet veel?”',
     inside: 'Ik voel spanning als ik nee wil zeggen en ben bang voor wat er daarna gebeurt.',
+    context:
+      'Een grens hoeft niet door iedereen prettig gevonden te worden om toch geldig te zijn. Let op of er ruimte is voor jouw keuze.',
   },
   {
     label: 'Bevestiging zoeken',
     outside: '“Je hoeft niet overal iets achter te zoeken.”',
     inside: 'Ik zoek geruststelling, maar voel me daarna nog onzekerder over mijn eigen gevoel.',
+    context:
+      'Verwijzen naar de mening van anderen kan extra druk oproepen. Je mag onderzoeken of er werkelijk naar jouw ervaring geluisterd wordt.',
   },
 ];
 ---
@@ -24,7 +30,6 @@ const scenarios = [
     <p class="eyebrow">Twee kanten van één gesprek</p><h2 id="perspective-title">
       Wat je hoort. Wat je voelt.
     </h2>
-    <p>Dit zijn fictieve voorbeelden, geen diagnose of bewijs van de bedoeling van een ander.</p>
     <div class="scenario" role="group" aria-label="Kies een voorbeeldsituatie">
       {
         scenarios.map((item, index) => (
@@ -56,6 +61,7 @@ const scenarios = [
     <div class="tabpanel" id="inside-panel" role="tabpanel" aria-labelledby="inside-tab" hidden>
       <p class="eyebrow">De binnenkant</p><p data-inside>{scenarios[0].inside}</p>
     </div>
+    <p class="perspective-context" data-context aria-live="polite">{scenarios[0].context}</p>
     <div class="print-only">
       <h3>Alle voorbeeldsituaties</h3>
       {
@@ -67,6 +73,9 @@ const scenarios = [
             </p>
             <p>
               <strong>Wat ik vanbinnen voel:</strong> {scenario.inside}
+            </p>
+            <p>
+              <strong>Duiding:</strong> {scenario.context}
             </p>
           </section>
         ))
@@ -108,6 +117,7 @@ const scenarios = [
         .forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
       document.querySelector('[data-outside]').textContent = scenarios[current].outside;
       document.querySelector('[data-inside]').textContent = scenarios[current].inside;
+      document.querySelector('[data-context]').textContent = scenarios[current].context;
     }),
   );
 </script>

@@ -613,6 +613,12 @@ a.card:hover {
 .tabpanel + .print-only {
   margin-top: clamp(2rem, 5vw, 3.5rem);
 }
+.perspective-context {
+  margin: 1rem 0 0;
+  padding: 1.15rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--safe);
+}
 .scenario {
   display: flex;
   gap: 0.6rem;
@@ -625,6 +631,23 @@ a.card:hover {
 .scenario button[aria-pressed='true'] {
   background: var(--action);
   color: var(--action-text);
+}
+.support-guidance {
+  margin-top: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid #b7c7b8;
+  border-radius: var(--radius);
+  background: var(--safe);
+}
+.support-guidance h3 {
+  margin-top: 0;
+}
+.reflection-details {
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
 }
 details {
   padding: 0.8rem 0;
