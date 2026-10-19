@@ -88,7 +88,9 @@ const home = data.home;
   <div class="wrap reading">
     <p class="eyebrow">{home.timelineTeaser.eyebrow}</p><h2>{home.timelineTeaser.heading}</h2><p>
       {home.timelineTeaser.description}
-    </p><a href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a>
+    </p>{home.timelineTeaser.note && <p>{home.timelineTeaser.note}</p>}<a
+      href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a
+    >
   </div>
 </section>
 <section class="section resources-section" id="herstel">

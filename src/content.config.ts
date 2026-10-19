@@ -250,6 +250,7 @@ const pages = defineCollection({
           eyebrow: z.string().min(2),
           heading: z.string().min(4),
           description: z.string().min(20),
+          note: z.string().min(20).optional(),
           href: z.string().min(1),
           label: z.string().min(2),
         }),
