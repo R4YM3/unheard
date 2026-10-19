@@ -310,6 +310,9 @@ h3 {
   background: var(--palette-paper);
   color: #202725;
 }
+.section--therapy {
+  background: var(--therapy);
+}
 .intro-section,
 .timeline-teaser {
   background: var(--safe);
