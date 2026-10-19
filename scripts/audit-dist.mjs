@@ -48,6 +48,13 @@ for (const file of files) {
     bad.push(`${file}: missing Open Graph description`);
   if (!root && !html.includes('property="og:url"')) bad.push(`${file}: missing Open Graph URL`);
   if (!root && !html.includes('rel="canonical"')) bad.push(`${file}: missing canonical URL`);
+  const hreflangLinks = [
+    ...html.matchAll(/<link\b[^>]*\brel="alternate"[^>]*\bhreflang="([^"]+)"[^>]*>/gi),
+  ];
+  for (const link of hreflangLinks) {
+    if (!['nl', 'en', 'ar', 'x-default'].includes(link[1]))
+      bad.push(`${file}: unsupported hreflang ${link[1]}`);
+  }
   if (!root && !html.includes('logo.svg')) bad.push(`${file}: missing structured-data logo URL`);
   if (
     (noIndex || unpublishedLocaleReviewRoute) &&

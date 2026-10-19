@@ -26,6 +26,15 @@ const path = `/${locale}/${Astro.params.slug}/`;
 const related = (
   await getCollection('articles', ({ data }) => data.published && data.locale === locale)
 ).filter((candidate) => entry.data.related.includes(candidate.data.translationKey));
+const translations = (
+  await getCollection(
+    'articles',
+    ({ data }) => data.published && data.translationKey === entry.data.translationKey,
+  )
+).map((candidate) => ({
+  locale: candidate.data.locale,
+  path: `${candidate.data.locale}/${candidate.data.slug}/`,
+}));
 const isSelfDoubt = entry.data.translationKey === 'zelftwijfel';
 ---
 
@@ -34,6 +43,7 @@ const isSelfDoubt = entry.data.translationKey === 'zelftwijfel';
   description={entry.data.description}
   locale={locale}
   canonicalPath={path}
+  alternates={translations}
 >
   {
     isSelfDoubt ? (
