@@ -11,7 +11,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "audit:lighthouse": "npm run build && node scripts/lighthouse.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -22,6 +23,7 @@
     "@eslint/js": "^9.39.5",
     "eslint": "^9.39.5",
     "eslint-plugin-astro": "^1.7.0",
+    "lighthouse": "^13.5.0",
     "prettier": "^3.9.10",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.7.0",

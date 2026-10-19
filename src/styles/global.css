@@ -285,6 +285,13 @@ h3 {
 }
 .resources-section {
   background: var(--palette-paper);
+  color: #202725;
+}
+.resources-section .eyebrow {
+  color: #4d5a54;
+}
+.resources-section .card-link-label {
+  color: #763b2c;
 }
 .section-heading {
   display: flex;
@@ -426,14 +433,10 @@ a.card:hover {
 .card--safe {
   background: var(--safe);
 }
-.resource-card {
+.resources-section .resource-card {
   min-height: 13.75rem;
   border-color: #b5c2b7;
   background: #f7f9f4;
-}
-[data-theme='dark'] .resource-card {
-  border-color: var(--border);
-  background: var(--safe);
 }
 .card-link-label {
   display: inline-block;

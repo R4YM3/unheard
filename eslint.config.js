@@ -6,7 +6,13 @@ export default [
   { ignores: ['.astro/', 'dist/', 'node_modules/', 'references/'] },
   {
     languageOptions: {
-      globals: { console: 'readonly', process: 'readonly', URL: 'readonly' },
+      globals: {
+        console: 'readonly',
+        fetch: 'readonly',
+        process: 'readonly',
+        setTimeout: 'readonly',
+        URL: 'readonly',
+      },
     },
   },
   js.configs.recommended,

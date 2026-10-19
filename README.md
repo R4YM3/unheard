@@ -13,6 +13,8 @@ npm run build
 
 `check` runs Astro type checking, ESLint, Prettier verification, content validation, and language-routing tests. `build` additionally audits static HTML, metadata, JSON-LD, language attributes, and GitHub Pages-safe links.
 
+Run `npm run audit:lighthouse` after a build for a local desktop Lighthouse audit of `/nl/`. It requires Chrome. The script requires accessibility 100 and performance at least 90. While `NO_INDEX=true`, its lower SEO result is expected and does not fail the audit.
+
 Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 
 ## Adding content

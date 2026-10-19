@@ -17,7 +17,7 @@
 
 1. `npm run check` and production build pass.
 2. Route/link and metadata audits pass, no broken internal links or invalid schema.
-3. Axe accessibility checks plus manual tab/keyboard, high zoom and screen-reader smoke checks; contrast verified in light/dark.
+3. Run `NO_INDEX=true npm run audit:lighthouse` for the local desktop Lighthouse gate (accessibility 100, performance >=90), plus manual tab/keyboard, high zoom and screen-reader smoke checks; contrast verified in light/dark. SEO is intentionally not gated until temporary `noindex` is removed.
 4. Mobile viewports and print-to-PDF visual QA for all content templates.
 5. Documented content editing workflow: add Markdown file -> validate -> build -> route appears with nav/search relation when published.
 6. Deploy only after user's explicit approval.
