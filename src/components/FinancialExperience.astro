@@ -158,9 +158,14 @@ const recognitions = [
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => selectTab(index));
     tab.addEventListener('keydown', (event: KeyboardEvent) => {
-      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
-      const next = (index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+      const next =
+        event.key === 'Home'
+          ? 0
+          : event.key === 'End'
+            ? tabs.length - 1
+            : (index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
       tabs[next].focus();
       selectTab(next);
     });

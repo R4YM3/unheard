@@ -88,9 +88,14 @@ const scenarios = [
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => selectTab(index));
     tab.addEventListener('keydown', (e) => {
-      if (!['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
       e.preventDefault();
-      const n = (index + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+      const n =
+        e.key === 'Home'
+          ? 0
+          : e.key === 'End'
+            ? tabs.length - 1
+            : (index + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
       tabs[n].focus();
       selectTab(n);
     });
