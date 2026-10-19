@@ -7,6 +7,9 @@ slug: hulpmiddelen
 eyebrow: Hulpmiddelen
 lead: Deze hulpmiddelen vragen niets van je en slaan niets op. Lees, print of neem alleen mee wat voor jou veilig voelt.
 kind: tools
+sources:
+  - label: Veilig Thuis — advies en hulp bij huiselijk geweld
+    url: https://www.veiligthuis.nl/
 cards:
   - eyebrow: Voor mezelf
     title: Even onderscheiden

@@ -115,6 +115,12 @@ for (const { file, data } of pages) {
   }
   if (!['hub', 'tools', 'support'].includes(data.kind))
     errors.push(`${file}: kind must be hub, tools, or support`);
+  if (!Array.isArray(data.sources) || data.sources.length === 0)
+    errors.push(`${file}: content pages need at least one source`);
+  for (const source of data.sources ?? []) {
+    if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
+      errors.push(`${file}: every source needs a label and HTTPS URL`);
+  }
   if ('cards' in data && !Array.isArray(data.cards)) errors.push(`${file}: cards must be an array`);
   for (const card of data.cards ?? []) {
     if (!card?.title || !card?.description)

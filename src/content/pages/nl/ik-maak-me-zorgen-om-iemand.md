@@ -7,6 +7,9 @@ slug: ik-maak-me-zorgen-om-iemand
 eyebrow: Voor vrienden en familie
 lead: Luister, stel rustige open vragen en respecteer het tempo van de ander. Vermijd het diagnosticeren van een partner of het afdwingen van een beslissing.
 kind: support
+sources:
+  - label: Veilig Thuis — advies en hulp bij huiselijk geweld
+    url: https://www.veiligthuis.nl/
 ---
 
 Als er acuut gevaar is, bel 112. Voor advies kun je Veilig Thuis raadplegen.

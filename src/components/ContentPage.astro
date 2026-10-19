@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import HelpBlock from './HelpBlock.astro';
+import SourceList from './SourceList.astro';
 
 interface Props {
   entry: CollectionEntry<'pages'>;
@@ -92,3 +93,5 @@ const hasBody = Boolean(entry.body?.trim());
     </section>
   )
 }
+
+<SourceList sources={data.sources} />

@@ -7,6 +7,9 @@ slug: wat-voel-ik
 eyebrow: Wat voel ik?
 lead: Misschien zoek je geen label, maar woorden voor wat er in jou gebeurt.
 kind: hub
+sources:
+  - label: Veilig Thuis — advies en hulp bij huiselijk geweld
+    url: https://www.veiligthuis.nl/
 cards:
   - title: Ik twijfel aan mezelf
     description: Ik blijf gesprekken terughalen en vraag me af of mijn gevoel klopt.

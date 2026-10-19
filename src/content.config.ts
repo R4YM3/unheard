@@ -29,6 +29,7 @@ const pages = defineCollection({
     eyebrow: z.string().min(2),
     lead: z.string().min(20),
     kind: z.enum(['hub', 'tools', 'support']),
+    sources: z.array(z.object({ label: z.string().min(2), url: z.url() })).min(1),
     cards: z
       .array(
         z.object({
