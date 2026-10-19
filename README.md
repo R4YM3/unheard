@@ -39,4 +39,4 @@ The layout supports Cloudflare Web Analytics without a cookie banner or visitor 
 
 ## Project policies
 
-`PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md`, and `QUALITY_GATE.md` define the editorial and safety boundaries. Do not publish unverified facts, personal details, or medical/legal conclusions. Keep `NO_INDEX=true` until editorial and safety review explicitly approves discovery.
+`PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md`, `QUALITY_GATE.md`, and `EDITORIAL_HANDOFF.md` define the editorial and safety boundaries. Do not publish unverified facts, personal details, or medical/legal conclusions. Keep `NO_INDEX=true` until editorial and safety review explicitly approves discovery.
