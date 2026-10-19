@@ -84,7 +84,7 @@ for (const file of files) {
       bad.push(`${file}: invalid JSON-LD`);
     }
   }
-  const hasContentArticle = html.includes('class="breadcrumbs"');
+  const hasContentArticle = types.has('Article');
   if (!root && !types.has('Organization')) bad.push(`${file}: missing Organization JSON-LD`);
   if (!root && !types.has('WebSite')) bad.push(`${file}: missing WebSite JSON-LD`);
   if (!root && !types.has('WebPage')) bad.push(`${file}: missing WebPage JSON-LD`);
@@ -96,6 +96,8 @@ for (const file of files) {
     bad.push(`${file}: article missing visible source attribution`);
   if (hasContentArticle && !html.includes('"citation":['))
     bad.push(`${file}: article missing structured-data citations`);
+  if (hasContentArticle && !html.includes('"datePublished":'))
+    bad.push(`${file}: article missing structured-data publication date`);
   if (hasContentArticle && file.includes('/begrippen/') && !types.has('DefinedTerm'))
     bad.push(`${file}: concept article missing DefinedTerm JSON-LD`);
 
