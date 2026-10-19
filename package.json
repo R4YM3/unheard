@@ -12,7 +12,8 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "preview": "astro preview",
-    "audit:lighthouse": "npm run build && node scripts/lighthouse.mjs"
+    "audit:lighthouse": "npm run build && node scripts/lighthouse.mjs",
+    "audit:visual": "node scripts/visual-audit.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

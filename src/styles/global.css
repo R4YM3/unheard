@@ -583,7 +583,7 @@ a.card:hover {
   display: flex;
   width: 100%;
   gap: 0;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 .tabs button {
   flex: 1 1 0;
@@ -613,6 +613,9 @@ a.card:hover {
 .tabpanel + .print-only {
   margin-top: clamp(2rem, 5vw, 3.5rem);
 }
+.perspective-intro {
+  max-width: var(--reading);
+}
 .perspective-context {
   margin: 1rem 0 0;
   padding: 1.15rem 1.25rem;
@@ -620,17 +623,26 @@ a.card:hover {
   background: var(--safe);
 }
 .scenario {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.85rem;
 }
 .scenario .button {
-  flex: 1 1 12rem;
-  text-align: start;
+  min-height: 4rem;
+  border-color: #a7b5a8;
+  background: var(--surface);
+  color: var(--text);
+  text-align: center;
 }
 .scenario button[aria-pressed='true'] {
-  background: var(--action);
-  color: var(--action-text);
+  border-color: var(--palette-forest);
+  background: var(--safe);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--palette-forest);
+}
+.self-doubt-story {
+  background: var(--palette-paper);
 }
 .support-guidance {
   margin-top: 1.5rem;
@@ -835,6 +847,9 @@ summary {
   .financial-recognition-grid,
   .therapy-grid,
   .question-grid {
+    grid-template-columns: 1fr;
+  }
+  .scenario {
     grid-template-columns: 1fr;
   }
 }
