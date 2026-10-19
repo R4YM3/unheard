@@ -85,11 +85,17 @@ therapy:
     paragraphs:
       - Je kunt verder zijn dan vroeger en tegelijkertijd nog iets moeilijks voelen. Je hoeft daar geen oordeel over jezelf aan te verbinden.
     quote: Herstel hoeft niet in een rechte lijn te lopen.
+  reflection:
+    questions:
+      - Wat kost me op dit moment de meeste energie?
+      - Wat zou me op dit moment iets meer ruimte geven?
+    notice: Gebruik deze reflectie alleen op een apparaat waarop je je veilig voelt. De antwoorden worden niet verzonden of opgeslagen.
   support:
-    eyebrow: 05 / Begeleiding vinden
+    eyebrow: 06 / Begeleiding vinden
     heading: Je hoeft dit niet alleen uit te zoeken.
     paragraphs:
       - Je kunt met je huisarts of behandelaar bespreken wat je ervaart, wat eerdere hulp je bracht en wat je nu nodig hebt. Niet iedere aanpak past bij iedereen; een gekwalificeerde professional kan samen met jou mogelijkheden afwegen.
+      - Voor betrouwbare algemene informatie over traumagerichte zorg verwijzen we naar Thuisarts en de GGZ-zorgstandaard. Een diagnose van PTSS is niet nodig om zorgen te bespreken. Als je je onveilig voelt in je relatie, kun je in Nederland terecht bij Veilig Thuis (0800-2000). Bij direct gevaar bel je 112.
     href: nl/hulp-vinden/
     label: Hulp en veiligheid
 ---

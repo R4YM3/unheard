@@ -124,6 +124,12 @@ const pages = defineCollection({
           paragraphs: z.array(z.string().min(20)).min(1),
           quote: z.string().min(8),
         }),
+        reflection: z
+          .object({
+            questions: z.tuple([z.string().min(10), z.string().min(10)]),
+            notice: z.string().min(20),
+          })
+          .optional(),
         support: z.object({
           eyebrow: z.string().min(2),
           heading: z.string().min(8),

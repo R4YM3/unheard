@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import Card from './Card.astro';
 import SourceList from './SourceList.astro';
+import TherapyReflection from './TherapyReflection.astro';
 
 interface Props {
   entry: CollectionEntry<'pages'>;
@@ -92,6 +93,14 @@ const therapy = data.therapy;
     <p class="quote">{therapy.closing.quote}</p>
   </div>
 </section>
+{
+  therapy.reflection && (
+    <TherapyReflection
+      questions={therapy.reflection.questions}
+      notice={therapy.reflection.notice}
+    />
+  )
+}
 <section class="section section--soft">
   <div class="wrap reading">
     <p class="eyebrow">{therapy.support.eyebrow}</p>

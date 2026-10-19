@@ -1,0 +1,49 @@
+---
+interface Props {
+  questions: [string, string];
+  notice: string;
+}
+
+const { questions, notice } = Astro.props;
+---
+
+<section class="section section--soft" aria-labelledby="therapy-reflection-title">
+  <div class="wrap reading">
+    <p class="eyebrow">05 / Kleine oefening</p>
+    <h2 id="therapy-reflection-title">Wat vraagt vandaag energie van mij?</h2>
+    <p>
+      Niet iedere gedachte hoeft meteen opgelost te worden. Soms helpt het om op te merken wat veel
+      van je vraagt, en welke kleine stap je ruimte geeft.
+    </p>
+    <p class="note">{notice}</p>
+    <div class="reflection-form">
+      <label for="therapy-energy">{questions[0]}</label>
+      <textarea id="therapy-energy" rows="4"></textarea>
+      <label for="therapy-space">{questions[1]}</label>
+      <textarea id="therapy-space" rows="4"></textarea>
+      <button class="button button--quiet" type="button" data-copy-reflection>
+        Kopieer mijn reflectie
+      </button>
+      <p class="note" data-copy-status aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ questions }}>
+  const copyButton = document.querySelector('[data-copy-reflection]');
+  const status = document.querySelector('[data-copy-status]');
+  const energy = document.querySelector('#therapy-energy');
+  const space = document.querySelector('#therapy-space');
+
+  copyButton?.addEventListener('click', async () => {
+    if (!(energy instanceof HTMLTextAreaElement) || !(space instanceof HTMLTextAreaElement)) return;
+    const text = `${questions[0]}\n${energy.value}\n\n${questions[1]}\n${space.value}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      if (status) status.textContent = 'Je reflectie staat alleen op je klembord.';
+    } catch {
+      if (status)
+        status.textContent = 'Kopiëren lukt niet in deze browser. Je tekst is niet opgeslagen.';
+    }
+  });
+</script>

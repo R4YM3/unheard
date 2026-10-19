@@ -24,6 +24,9 @@
   .article-hero-visual {
     display: none !important;
   }
+  .reflection-form {
+    display: none !important;
+  }
   .hero .button {
     display: none !important;
   }
