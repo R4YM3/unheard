@@ -153,6 +153,7 @@ summary:focus-visible {
 }
 .nav {
   display: flex;
+  min-width: 0;
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -196,7 +197,11 @@ summary:focus-visible {
   gap: clamp(1.5rem, 4vw, 4rem);
 }
 .hero-copy {
+  min-width: 0;
   padding-block: clamp(4.5rem, 8vw, 7rem);
+}
+.article-hero__content {
+  min-width: 0;
 }
 .hero-copy > p:not(.eyebrow) {
   max-width: 42rem;
@@ -617,6 +622,9 @@ summary {
   transform: translateX(50%);
 }
 @media (max-width: 42rem) {
+  body {
+    overflow-x: clip;
+  }
   .wrap {
     width: min(calc(100% - 2.25rem), var(--content));
   }
@@ -625,10 +633,24 @@ summary {
     grid-template-columns: minmax(0, 1fr) auto;
   }
   .nav {
+    width: 100%;
     grid-column: 1 / -1;
     grid-row: 2;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 0.6rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 0.7rem;
+    scrollbar-width: thin;
+  }
+  .nav .nav-help {
+    padding: 0.42rem 0.62rem;
+  }
+  .hero h1,
+  .article-hero__content h1 {
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
   }
   .nav a {
     font-size: 0.88rem;
