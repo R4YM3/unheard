@@ -4,17 +4,28 @@ description: 'Een heldere uitleg van DARVO, de mogelijke impact en veilige manie
 locale: nl
 translationKey: darvo
 slug: begrippen/darvo
-kind: concept
+status: draft
 published: true
-author: Ongehoord
+author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-10-19
-related: [zelftwijfel, hulp-vinden]
+updatedAt: 2026-10-20
+reviewedAt: null
+glossary:
+  term: DARVO
+  definition: 'Deny, Attack, Reverse Victim and Offender: een reactiepatroon waarbij iemand die op schade wordt aangesproken ontkent, aanvalt en de rollen omdraait.'
+  aliases: [Rollen omdraaien]
+  category: patroon
+related: [zelftwijfel, schuldgevoel, conflict-of-patroon, hulp-vinden]
 sources:
   - label: 'Jennifer Freyd — DARVO'
     url: 'https://www.jjfreyd.com/darvo/'
+    publisher: Jennifer J. Freyd
+    checkedAt: 2026-10-20
   - label: 'Harsey, Zurbriggen & Freyd (2017)'
     url: 'https://doi.org/10.1080/10926771.2017.1320777'
+    publisher: Journal of Aggression, Maltreatment & Trauma
+reviewNotes:
+  - 'Term-artikel valt onder de branch content/begrippen; inhoud is ongewijzigd overgenomen uit de vorige versie.'
 hero:
   eyebrow: Begrijp het / Patronen / DARVO
   paragraphs:
