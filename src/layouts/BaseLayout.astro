@@ -82,9 +82,11 @@ const skipLabel =
     : locale === 'ar'
       ? 'انتقل إلى المحتوى'
       : 'Skip to content';
+const homeHref = `${locale}/`;
 const navigation: Array<[string, string]> =
   locale === 'nl'
     ? [
+        [homeHref, 'Home'],
         ['nl/wat-voel-ik/', 'Wat voel ik?'],
         ['nl/begrijp-het/', 'Begrijp het'],
         ['nl/herstel/', 'Herstel'],
@@ -92,11 +94,13 @@ const navigation: Array<[string, string]> =
         ['nl/hulpmiddelen/', 'Hulpmiddelen'],
         ['nl/hulp-vinden/', 'Hulp vinden'],
       ]
-    : [[`${locale}/`, locale === 'ar' ? 'الصفحة الرئيسية' : 'Home']];
-const isCurrent = (href: string) =>
-  href === 'nl/begrijp-het/'
-    ? localPath.startsWith(href) || localPath.startsWith('nl/begrippen/')
-    : localPath.startsWith(href) && href !== `${locale}/`;
+    : [[homeHref, locale === 'ar' ? 'الصفحة الرئيسية' : 'Home']];
+const isCurrent = (href: string) => {
+  if (href === homeHref) return localPath === homeHref;
+  if (href === 'nl/begrijp-het/')
+    return localPath.startsWith(href) || localPath.startsWith('nl/begrippen/');
+  return localPath.startsWith(href);
+};
 const sectionGroups =
   locale === 'nl'
     ? [
@@ -222,7 +226,10 @@ const footerGroups =
           {
             navigation.map(([href, label]) => (
               <a
-                class:list={{ 'nav-help': href === 'nl/hulp-vinden/' }}
+                class:list={{
+                  'nav-home': href === homeHref,
+                  'nav-help': href === 'nl/hulp-vinden/',
+                }}
                 href={href}
                 aria-current={isCurrent(href) ? 'page' : undefined}
               >

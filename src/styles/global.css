@@ -147,6 +147,7 @@ mark.review-marker {
 .nav a[aria-current] {
   text-decoration: underline;
 }
+.nav .nav-home,
 .nav .nav-help,
 .locale-selector {
   display: inline-flex;
