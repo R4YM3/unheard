@@ -4,7 +4,6 @@
  * JSON-LD), hero, review status, summary, related links, sources and the quiet help route.
  */
 import BaseLayout from './BaseLayout.astro';
-import ArticleMeta from '../components/ArticleMeta.astro';
 import HelpBlock from '../components/HelpBlock.astro';
 import PageHero from '../components/PageHero.astro';
 import RelatedContent from '../components/RelatedContent.astro';
@@ -120,7 +119,6 @@ const heroData = 'hero' in data ? data.hero : undefined;
       />
     )
   }
-  {hero && <ArticleMeta entry={entry} />}
   <slot name="before-summary" />
   {
     showSummary && (data.summary || data.glossary) && (

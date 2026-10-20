@@ -2,7 +2,6 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
-import ArticleMeta from '../components/ArticleMeta.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Timeline from '../components/Timeline.astro';
@@ -37,7 +36,6 @@ const hasBody = Boolean(entry.body?.trim());
       </div>
     </div>
   </section>
-  <ArticleMeta entry={entry} />
   <section class="section" aria-labelledby="intro-heading">
     <div class="wrap reading">
       <p class="eyebrow">{data.introduction.eyebrow}</p>
