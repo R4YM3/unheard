@@ -5,7 +5,7 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Timeline from '../components/Timeline.astro';
-import { breadcrumbsFor } from '../lib/content';
+import { breadcrumbsFor, routeFor } from '../lib/content';
 
 interface Props {
   entry: CollectionEntry<'story'>;
@@ -14,6 +14,7 @@ const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 const crumbs = await breadcrumbsFor(entry);
+const route = routeFor(entry);
 const hasBody = Boolean(entry.body?.trim());
 ---
 
@@ -28,8 +29,10 @@ const hasBody = Boolean(entry.body?.trim());
           <p class="lead">{data.lead}</p>
           <p>{data.heroPersonal}</p>
           <div class="actions">
-            <a class="button" href="#tijdlijn">Bekijk de tijdlijn</a>
-            <a class="button button--quiet" href="#voor-mijn-kinderen">Een boodschap voor later</a>
+            <a class="button" href={`${route}#tijdlijn`}>Bekijk de tijdlijn</a>
+            <a class="button button--quiet" href={`${route}#voor-mijn-kinderen`}
+              >Een boodschap voor later</a
+            >
           </div>
         </div>
         <div class="hero-art hero-art--story" aria-hidden="true"></div>

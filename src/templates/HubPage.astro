@@ -95,7 +95,11 @@ const isEmptyBody = !entry.body?.trim();
       </section>
     )
   }
-  {data.glossaryIndex && <GlossaryIndex locale={data.locale} />}
+  {
+    data.glossaryIndex && (
+      <GlossaryIndex locale={data.locale} pagePath={`${data.locale}/${data.slug}/`} />
+    )
+  }
   {data.stats && <StatsList />}
   {data.searchIndex && <SearchIndex locale={data.locale} />}
   {data.scenarios.length > 0 && <PerspectiveSwitch scenarios={data.scenarios} />}

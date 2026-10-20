@@ -88,7 +88,8 @@ for (const file of files) {
   if ((html.match(/name="robots"/g) || []).length > 1)
     bad.push(`${file}: duplicate robots meta tags`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
-  if (!root && !html.includes('href="#main"')) bad.push(`${file}: missing skip link`);
+  if (!root && !/<a class="skip" href="[^"]*#main"/.test(html))
+    bad.push(`${file}: missing skip link`);
   if (!root && !html.includes('<main id="main"')) bad.push(`${file}: missing main landmark target`);
   if (/<img\b(?![^>]*\balt=)[^>]*>/i.test(html)) bad.push(`${file}: image without alt attribute`);
   if (/<html lang="ar"(?![^>]*\bdir="rtl")/i.test(html))
