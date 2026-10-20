@@ -23,7 +23,13 @@ listings:
     heading: 'Zes kaarten om zelf in te vullen'
     lead: 'Elke kaart is een aparte pagina. Je kiest zelf of je hem leest, invult of print.'
     tone: safe
-related: [hulp-vinden, herstel, wat-voel-ik]
+cards:
+  - eyebrow: 'Rustige route'
+    title: 'Help me woorden vinden'
+    text: 'Zes korte vragen, één voor één. Je krijgt een eigen overzicht met pagina’s om te lezen, open vragen en mogelijke volgende stappen. Geen test en geen score.'
+    href: 'nl/hulpmiddelen/help-me-woorden-vinden/'
+    label: 'Begin met de vragen'
+related: [woorden-vinden, hulp-vinden, herstel, wat-voel-ik]
 reviewNotes:
   - 'Redactie: is de zin over browsers die tekst terugzetten nauwkeurig genoeg, of moet die alleen op veilig-gebruik staan?'
 ---

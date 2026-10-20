@@ -240,6 +240,83 @@ const stats = defineCollection({
   }),
 });
 
+const routeId = z.enum([
+  'zelftwijfel',
+  'schuld',
+  'grenzen',
+  'controle',
+  'identiteit',
+  'spanning',
+  'financieel',
+  'eenzaamheid',
+]);
+
+/** "Help me woorden vinden": questions, routes and texts. Rules live in lib/word-finder.mjs. */
+const finder = defineCollection({
+  loader: glob({ base: './src/content/finder', pattern: '**/*.{yaml,yml}' }),
+  schema: z.object({
+    id: key,
+    status: z.enum(['draft', 'in_review', 'approved']).default('draft'),
+    can: z.array(z.string().min(20)).min(1),
+    cannot: z.array(z.string().min(20)).min(1),
+    privacy: z.string().min(40),
+    questions: z
+      .array(
+        z.object({
+          id: key,
+          prompt: z.string().min(10).max(90),
+          hint: z.string().min(10).max(120).optional(),
+          multiple: z.boolean().default(true),
+          options: z
+            .array(
+              z.object({
+                id: key,
+                label: z.string().min(8).max(90),
+                ack: z.string().min(10).max(110).optional(),
+                routes: z.array(routeId).default([]),
+                exclusive: z.boolean().default(false),
+                safety: z.enum(['concern', 'danger', 'crisis']).optional(),
+              }),
+            )
+            .min(2)
+            .max(6),
+        }),
+      )
+      .min(5)
+      .max(7),
+    routes: z
+      .array(
+        z.object({
+          id: routeId,
+          title: z.string().min(4).max(40),
+          recognition: z.string().min(40).max(260),
+          feelings: z.array(key).default([]),
+          patterns: z.array(key).min(1),
+          reflections: z.array(z.string().min(15)).min(2).max(3),
+          next: z.array(key).min(1),
+        }),
+      )
+      .length(8),
+    general: z.object({
+      reading: z.array(key).min(1),
+      reflections: z.array(z.string().min(15)).min(2).max(3),
+      next: z.array(key).min(1),
+    }),
+    empty: z.string().min(40),
+    safety: z.object({
+      concern: z.string().min(40),
+      danger: z.string().min(40),
+      crisis: z.string().min(40),
+    }),
+    deepening: z.object({
+      heading: z.string().min(8),
+      intro: z.string().min(20),
+      prompts: z.array(z.string().min(10)).min(3).max(6),
+      closing: z.string().min(20),
+    }),
+  }),
+});
+
 const listing = z.object({
   collection: z.enum(['emotions', 'patterns', 'articles', 'therapies', 'tools']),
   prefix: z.string().optional(),
@@ -273,6 +350,7 @@ const hubs = defineCollection({
     glossaryIndex: z.boolean().default(false),
     stats: z.boolean().default(false),
     searchIndex: z.boolean().default(false),
+    finder: key.optional(),
     founderNote: founderNote.optional(),
     home: z
       .object({
@@ -419,4 +497,14 @@ const story = defineCollection({
   }),
 });
 
-export const collections = { emotions, patterns, articles, therapies, tools, stats, hubs, story };
+export const collections = {
+  emotions,
+  patterns,
+  articles,
+  therapies,
+  tools,
+  stats,
+  finder,
+  hubs,
+  story,
+};

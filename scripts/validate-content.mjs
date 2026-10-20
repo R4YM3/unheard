@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parseDocument } from 'yaml';
+import { validateModel } from '../src/lib/word-finder.mjs';
 
 /**
  * Fast pre-build checks across all content collections. The Zod schemas in
@@ -173,6 +174,26 @@ for (const file of statsFiles) {
     errors.push(`${file}: url must be HTTPS`);
 }
 
+const finderFiles = (await walk(join(root, 'finder')).catch(() => [])).filter((file) =>
+  /\.ya?ml$/.test(file),
+);
+const nlKeys = new Set(
+  [...keys.keys()].filter((id) => id.startsWith('nl:')).map((id) => id.slice(3)),
+);
+for (const file of finderFiles) {
+  const document = parseDocument(await readFile(file, 'utf8'));
+  if (document.errors.length > 0) {
+    errors.push(`${file}: invalid YAML`);
+    continue;
+  }
+  const model = document.toJS();
+  for (const question of model.questions ?? [])
+    for (const option of question.options ?? []) option.routes ??= [];
+  for (const problem of validateModel(model, nlKeys)) errors.push(`${file}: ${problem}`);
+  for (const [pattern, reason] of forbidden)
+    if (pattern.test(JSON.stringify(model))) errors.push(`${file}: editorial lint — ${reason}`);
+}
+
 const reported = onlyFiles.size
   ? errors.filter((message) => [...onlyFiles].some((file) => message.startsWith(file)))
   : errors;
@@ -181,5 +202,5 @@ if (reported.length > 0) {
   process.exit(1);
 }
 console.log(
-  `Validated ${entries.length} content files (${keys.size} published keys) and ${statsFiles.length} figures.`,
+  `Validated ${entries.length} content files (${keys.size} published keys), ${statsFiles.length} figures and ${finderFiles.length} word finder.`,
 );

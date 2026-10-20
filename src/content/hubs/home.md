@@ -117,6 +117,13 @@ home:
     heading: 'Er mag weer ruimte ontstaan.'
     cards:
       - {
+          eyebrow: 'Woorden vinden',
+          title: 'Weet je nog niet hoe je het moet noemen?',
+          description: 'Zes korte vragen over wat je voelt. Je krijgt een eigen overzicht met pagina’s om te lezen. Geen test en niets wordt opgeslagen.',
+          label: 'Help me woorden vinden',
+          href: 'nl/hulpmiddelen/help-me-woorden-vinden/',
+        }
+      - {
           eyebrow: 'Herstel',
           title: 'Herstel hoeft geen rechte lijn te zijn.',
           description: 'Over erkenning, grenzen, rouw en leren voelen, en over therapievormen die je met een professional kunt bespreken.',

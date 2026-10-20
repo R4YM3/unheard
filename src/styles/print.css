@@ -211,6 +211,36 @@
     appearance: auto;
     -webkit-appearance: checkbox;
   }
+  /* Word finder: print the overview once it exists, otherwise every question on paper */
+  .finder-nav,
+  .finder-actions,
+  .finder[data-state='result'] .finder-about,
+  .finder[data-state='result'] .finder-form,
+  .finder[data-state='result'] + .finder-all {
+    display: none !important;
+  }
+  .finder:not([data-state='result']) .finder-step[hidden] {
+    display: block !important;
+  }
+  .finder-form,
+  .finder-result,
+  .finder-alert,
+  .finder-deepening details {
+    border: 1px solid #777 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .finder-option {
+    min-height: 0;
+    padding: 1mm 0;
+    border: 0;
+    background: none;
+  }
+  .finder-result section,
+  .finder-route,
+  .finder-step {
+    break-inside: avoid;
+  }
   .tool-card {
     border: 2px solid #000 !important;
     break-before: page;

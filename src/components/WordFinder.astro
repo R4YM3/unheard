@@ -1,0 +1,276 @@
+---
+/**
+ * "Help me woorden vinden". Without JavaScript every question and every route is readable on
+ * the page. With JavaScript the questions appear one at a time and the reader gets a personal
+ * overview. Answers stay in the page: nothing is stored, counted or sent.
+ */
+import { getEntry } from 'astro:content';
+import { cardFor, getPublishedEntries, routeFor } from '../lib/content';
+
+interface Props {
+  id: string;
+  locale: string;
+}
+const { id, locale } = Astro.props;
+const finder = await getEntry('finder', id);
+if (!finder) throw new Error(`Unknown finder "${id}"`);
+const { data } = finder;
+
+const published = await getPublishedEntries();
+const keys = [
+  ...new Set([
+    ...data.routes.flatMap((route) => [...route.feelings, ...route.patterns, ...route.next]),
+    ...data.general.reading,
+    ...data.general.next,
+  ]),
+];
+const pages = Object.fromEntries(
+  keys.map((key) => {
+    const entry = published.find(
+      (candidate) => candidate.data.locale === locale && candidate.data.translationKey === key,
+    );
+    if (!entry) throw new Error(`finder "${id}" links to unpublished page "${key}"`);
+    const card = cardFor(entry);
+    return [key, { href: routeFor(entry), title: card.title, text: card.text }];
+  }),
+);
+const model = {
+  questions: data.questions,
+  routes: data.routes,
+  general: data.general,
+  empty: data.empty,
+  safety: data.safety,
+};
+const payload = JSON.stringify({ model, pages, deepening: data.deepening.prompts }).replaceAll(
+  '<',
+  '\\u003c',
+);
+const total = data.questions.length;
+const linksFor = (route: (typeof data.routes)[number]) =>
+  [...new Set([...route.feelings, ...route.patterns, ...route.next])].map((key) => pages[key]);
+---
+
+<section class="section finder" data-finder data-state="start" aria-labelledby="finder-about">
+  <div class="wrap reading">
+    <div class="finder-about">
+      <h2 id="finder-about">Wat dit wel en niet is</h2>
+      <div class="finder-limits">
+        <div>
+          <h3>Wat het kan</h3>
+          <ul>{data.can.map((line) => <li>{line}</li>)}</ul>
+        </div>
+        <div>
+          <h3>Wat het niet kan</h3>
+          <ul>{data.cannot.map((line) => <li>{line}</li>)}</ul>
+        </div>
+      </div>
+      <p class="note" id="finder-privacy">{data.privacy}</p>
+      <p class="finder-help-strip">
+        Direct gevaar: bel <a href="tel:112">112</a>. Gedachten aan zelfdoding: bel{' '}
+        <a href="tel:113">113</a>. Zorgen over huiselijk geweld: Veilig Thuis,{' '}
+        <a href="tel:08002000">0800-2000</a>.
+      </p>
+    </div>
+
+    <form
+      class="finder-form"
+      method="dialog"
+      autocomplete="off"
+      aria-labelledby="finder-questions"
+      aria-describedby="finder-privacy"
+      data-finder-form
+    >
+      <h2 id="finder-questions">De vragen</h2>
+      <p class="note" data-finder-nojs>
+        Je kunt de vragen hieronder rustig lezen en voor jezelf beantwoorden. Daaronder staan alle
+        onderwerpen waar de route naartoe kan leiden, zodat je zelf kunt kiezen wat je leest.
+      </p>
+      {
+        data.questions.map((question, index) => (
+          <fieldset
+            class="finder-step"
+            data-step={index}
+            aria-describedby={question.hint ? `finder-${question.id}-hint` : undefined}
+          >
+            <legend>
+              <span class="finder-count">
+                Vraag {index + 1} van {total}
+              </span>
+              <span class="finder-prompt" tabindex="-1" data-step-focus>
+                {question.prompt}
+              </span>
+            </legend>
+            {question.hint && (
+              <p class="note" id={`finder-${question.id}-hint`}>
+                {question.hint}
+              </p>
+            )}
+            <div class="finder-options">
+              {question.options.map((option) => (
+                <label class="finder-option">
+                  <input
+                    type={question.multiple ? 'checkbox' : 'radio'}
+                    name={question.id}
+                    value={option.id}
+                    data-exclusive={option.exclusive ? '' : undefined}
+                  />
+                  <span>{option.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))
+      }
+      <div class="finder-nav" data-finder-controls hidden>
+        <button class="button button--quiet" type="button" data-finder-prev>Vorige vraag</button>
+        <button class="button button--quiet" type="button" data-finder-skip>
+          Sla deze vraag over
+        </button>
+        <button class="button" type="button" data-finder-next>Volgende vraag</button>
+      </div>
+    </form>
+
+    <section
+      class="finder-result"
+      aria-labelledby="finder-result-heading"
+      data-finder-result
+      hidden
+    >
+      <p class="eyebrow">Alleen voor jou, op dit scherm</p>
+      <h2 id="finder-result-heading" tabindex="-1">Jouw overzicht</h2>
+      <p>
+        Dit is geen uitslag en geen diagnose. Het zijn woorden en pagina’s die bij je antwoorden
+        kunnen passen. Neem mee wat helpt en laat de rest liggen.
+      </p>
+      <div class="finder-alert" data-result="safety" hidden>
+        <h3>Eerst je veiligheid</h3>
+        <div data-result-list></div>
+        <p class="finder-alert__links">
+          <a class="button" href="tel:112">Bel 112</a>
+          <a class="button button--quiet" href="tel:08002000">Veilig Thuis 0800-2000</a>
+          <a class="button button--quiet" href="tel:113">113 Zelfmoordpreventie</a>
+        </p>
+      </div>
+      <p data-result="empty" hidden>{data.empty}</p>
+      <section data-result="acknowledged" hidden aria-labelledby="finder-ack">
+        <h3 id="finder-ack">Wat je herkende</h3>
+        <ul data-result-list></ul>
+      </section>
+      <section data-result="routes" hidden aria-labelledby="finder-routes">
+        <h3 id="finder-routes">Mogelijke patronen om over te lezen</h3>
+        <p class="note">
+          Deze woorden kunnen bij je antwoorden passen. Ze zeggen niet wat er bij jou gebeurt, en
+          niets over wat iemand anders bedoelt of voor iemand is.
+        </p>
+        <div class="finder-route-list" data-result-list></div>
+      </section>
+      <section data-result="reading" hidden aria-labelledby="finder-reading">
+        <h3 id="finder-reading">Om verder te lezen</h3>
+        <ul class="finder-links" data-result-list></ul>
+      </section>
+      <section data-result="reflections" hidden aria-labelledby="finder-reflections">
+        <h3 id="finder-reflections">Vragen om bij stil te staan</h3>
+        <ol data-result-list></ol>
+      </section>
+      <section data-result="next" hidden aria-labelledby="finder-next">
+        <h3 id="finder-next">Mogelijke volgende stappen</h3>
+        <p class="note">Je hoeft niets te besluiten. Dit zijn plekken waar je verder kunt.</p>
+        <ul class="finder-links" data-result-list></ul>
+      </section>
+      <div class="finder-actions" data-finder-actions>
+        <button class="button button--quiet" type="button" data-finder-edit>
+          Pas mijn antwoorden aan
+        </button>
+        <button class="button button--quiet" type="button" data-finder-print>
+          Print mijn overzicht
+        </button>
+        <button class="button button--quiet" type="button" data-finder-download>
+          Download als tekstbestand
+        </button>
+        <button class="button button--quiet" type="button" data-finder-clear>
+          Wis alles en begin opnieuw
+        </button>
+      </div>
+      <p class="note">
+        Een download of afdruk staat daarna op je apparaat of op papier. Verwijder het bestand als
+        iemand anders dit apparaat gebruikt.
+      </p>
+    </section>
+    <p class="sr-only" role="status" aria-live="polite" data-finder-status></p>
+
+    <section class="finder-deepening" aria-labelledby="finder-deepening-heading" data-print-answers>
+      <details data-finder-deepening>
+        <summary>
+          <span class="eyebrow">Verdieping, als je wilt</span>
+          <span class="finder-deepening__title" id="finder-deepening-heading">
+            {data.deepening.heading}
+          </span>
+        </summary>
+        <div class="finder-deepening__body">
+          <p>{data.deepening.intro}</p>
+          <form class="reflection-form" method="dialog" autocomplete="off" data-finder-notes>
+            {
+              data.deepening.prompts.map((prompt, index) => (
+                <div>
+                  <label for={`finder-note-${index}`}>{prompt}</label>
+                  <textarea
+                    id={`finder-note-${index}`}
+                    rows="2"
+                    autocomplete="off"
+                    spellcheck="false"
+                    autocapitalize="off"
+                  />
+                  <span class="print-lines" style="--lines: 2" aria-hidden="true" />
+                </div>
+              ))
+            }
+            <div class="form-row">
+              <label class="check-label print-toggle">
+                <input type="checkbox" data-finder-include /> Neem mijn eigen tekst mee als ik print of
+                download
+              </label>
+            </div>
+          </form>
+          <p class="note">{data.deepening.closing}</p>
+        </div>
+      </details>
+    </section>
+  </div>
+</section>
+
+<section class="section section--soft finder-all" aria-labelledby="finder-all-heading">
+  <div class="wrap">
+    <p class="eyebrow">Liever zelf kiezen</p>
+    <h2 id="finder-all-heading">Alle onderwerpen uit deze route</h2>
+    <p class="reading">
+      Je hoeft de vragen niet te beantwoorden. Hier staan alle onderwerpen waar de route naartoe kan
+      leiden, met de pagina’s die erbij horen.
+    </p>
+    <div class="grid grid--2 finder-all__grid">
+      {
+        data.routes.map((route) => (
+          <article class="card finder-all__card">
+            <h3>{route.title}</h3>
+            <p>{route.recognition}</p>
+            <ul class="finder-links">
+              {linksFor(route).map((page) => (
+                <li>
+                  <a class="text-link" href={page.href}>
+                    {page.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script type="application/json" data-finder-data set:html={payload} />
+
+<script>
+  import { enhanceWordFinder } from '../scripts/word-finder';
+  enhanceWordFinder();
+</script>

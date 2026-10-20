@@ -49,6 +49,11 @@ const routes = [
     route: '/nl/hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig/',
     required: ['vragenkaart'],
   },
+  {
+    id: 'word-finder',
+    route: '/nl/hulpmiddelen/help-me-woorden-vinden/',
+    required: ['Vraag 1 van 6', 'Vraag 6 van 6', 'Wat heb ik eigenlijk meegemaakt?', '112'],
+  },
   { id: 'help', route: '/nl/hulp-vinden/', required: ['112', '113', '0800-2000'] },
   { id: 'stats', route: '/nl/mannen-in-cijfers/', required: ['Beperkingen', '4,9%'] },
   { id: 'search', route: '/nl/zoeken/', required: ['Alle pagina’s'] },
@@ -137,6 +142,45 @@ try {
     if (file.size < 10_000) throw new Error(`${item.route}: generated PDF is unexpectedly small.`);
     console.log(`Print ${item.route}: ${file.size} bytes`);
   }
+
+  // The word finder overview prints on its own; private notes only after an explicit opt-in.
+  const finder = '/nl/hulpmiddelen/help-me-woorden-vinden/';
+  await page.emulateMediaType('screen');
+  await page.goto(`${origin}${finder}`, { waitUntil: 'networkidle0' });
+  await page.click('input[value="twijfel"]');
+  for (let step = 0; step < 6; step += 1) await page.click('[data-finder-next]');
+  await page.click('[data-finder-deepening] summary');
+  await page.type('#finder-note-0', 'moe');
+  await page.emulateMediaType('print');
+  const overview = await page.evaluate(() => {
+    const shown = (selector) =>
+      [...globalThis.document.querySelectorAll(selector)].some(
+        (element) => globalThis.getComputedStyle(element).display !== 'none',
+      );
+    return {
+      result: shown('[data-finder-result]'),
+      questions: shown('.finder-form'),
+      buttons: shown('.finder-actions'),
+      notes: shown('[data-finder-notes] textarea'),
+      text: globalThis.document.body.innerText,
+    };
+  });
+  if (!overview.result || overview.questions || overview.buttons)
+    throw new Error(`${finder}: print must show only the overview once it exists.`);
+  if (overview.notes) throw new Error(`${finder}: private notes printed without opt-in.`);
+  for (const expected of ['Jouw overzicht', 'Wat je herkende', 'Twijfel aan jezelf'])
+    if (!overview.text.includes(expected))
+      throw new Error(`${finder}: overview print misses ${expected}`);
+  await page.emulateMediaType('screen');
+  await page.click('[data-finder-include]');
+  await page.emulateMediaType('print');
+  const optedIn = await page.$eval(
+    '#finder-note-0',
+    (element) => globalThis.getComputedStyle(element).display !== 'none',
+  );
+  if (!optedIn) throw new Error(`${finder}: opted-in notes are missing from print.`);
+  await page.pdf({ path: `${outputDirectory}/word-finder-overview.pdf`, format: 'A4' });
+  console.log(`Print ${finder} overview: ok`);
 } finally {
   await browser?.close();
   server.kill();

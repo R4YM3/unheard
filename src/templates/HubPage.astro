@@ -10,6 +10,7 @@ import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
 import SearchIndex from '../components/SearchIndex.astro';
 import StartChooser from '../components/StartChooser.astro';
 import StatsList from '../components/StatsList.astro';
+import WordFinder from '../components/WordFinder.astro';
 import { cardFor, glossaryItems, listCollection, routeFor, searchItems } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 
@@ -106,7 +107,7 @@ const mainEntityId = termSet
   heading={data.heading}
   eyebrow={data.hero?.eyebrow ?? data.eyebrow}
   lead={data.lead}
-  pageType="CollectionPage"
+  pageType={data.finder ? 'WebPage' : 'CollectionPage'}
   articleType={false}
   showSources={data.sources.length > 0}
   showHelp={data.translationKey !== 'zoeken'}
@@ -121,6 +122,7 @@ const mainEntityId = termSet
     )
   }
   {data.chooser && <StartChooser locale={data.locale} />}
+  {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
   {
     listings.map((listing, index) => (
       <section

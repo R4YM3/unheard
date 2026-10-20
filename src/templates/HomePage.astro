@@ -165,6 +165,7 @@ const homeLists = [
       <p class="eyebrow">{home.resources.eyebrow}</p>
       <h2 id="herstel-heading">{home.resources.heading}</h2>
       <CardGrid
+        columns={home.resources.cards.length % 3 === 0 ? 3 : 2}
         items={home.resources.cards.map((card) => ({
           eyebrow: card.eyebrow,
           title: card.title,

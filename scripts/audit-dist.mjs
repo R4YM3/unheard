@@ -102,6 +102,8 @@ for (const file of files) {
     if (key !== 'ongehoord-theme')
       bad.push(`${file}: persistent browser storage is not permitted for ${key}`);
   }
+  for (const glued of html.matchAll(/[\p{L},:]<a\s[^>]*>([^<]{0,30})/gu))
+    bad.push(`${file}: missing space before link “${glued[1]}”`);
 
   if (file.includes('/nl/')) {
     const navigation = html.match(/<nav class="nav"[^>]*>([\s\S]*?)<\/nav>/i)?.[1] ?? '';
@@ -194,6 +196,28 @@ for (const file of files) {
     if (!publishedRoutes.has(route))
       bad.push(`${file}: broken internal link ${href} (resolved ${route})`);
   }
+}
+// Bundled client scripts: no network calls, no storage beyond the theme choice.
+for (const file of (await walk('dist')).filter((name) => name.endsWith('.js'))) {
+  const js = await readFile(file, 'utf8');
+  for (const [pattern, reason] of [
+    [/\bfetch\s*\(|XMLHttpRequest|sendBeacon|WebSocket|EventSource/, 'network request'],
+    [/sessionStorage|indexedDB|document\.cookie/, 'browser storage'],
+  ])
+    if (pattern.test(js)) bad.push(`${file}: client script contains a ${reason}`);
+  for (const key of localStorageKeys(js))
+    if (key !== 'ongehoord-theme') bad.push(`${file}: persistent storage for ${key}`);
+}
+const finderPage = 'dist/nl/hulpmiddelen/help-me-woorden-vinden/index.html';
+const finderHtml = await readFile(finderPage, 'utf8').catch(() => '');
+if (!finderHtml) bad.push(`${finderPage}: word finder page missing`);
+else {
+  for (const required of ['tel:112', 'tel:113', 'tel:08002000', 'data-finder-data'])
+    if (!finderHtml.includes(required)) bad.push(`${finderPage}: missing ${required}`);
+  if (!/<form class="finder-form" method="dialog"/.test(finderHtml))
+    bad.push(`${finderPage}: answers must never submit as a GET/POST request`);
+  if (!/data-finder-controls hidden/.test(finderHtml))
+    bad.push(`${finderPage}: step controls must be hidden without JavaScript`);
 }
 const sitemapFiles = (await readdir('dist')).filter((name) => /^sitemap.*\.xml$/.test(name));
 for (const name of sitemapFiles) {

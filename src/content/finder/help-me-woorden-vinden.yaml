@@ -1,0 +1,260 @@
+# Inhoud van "Help me woorden vinden". De logica staat in src/lib/word-finder.mjs; deze file
+# bevat alleen tekst en verwijzingen naar bestaande pagina's (translationKey). Elke tekst hier
+# staat ook in docs/REFLECTION_CONTENT_REVIEW.md en wacht op redactionele en klinische review.
+id: help-me-woorden-vinden
+status: draft
+can:
+  - 'Je helpt jezelf woorden te vinden voor wat je voelt en meemaakt.'
+  - 'Je krijgt pagina’s om over te lezen die passen bij wat je aanklikt.'
+  - 'Je krijgt een paar open vragen en mogelijke volgende stappen.'
+cannot:
+  - 'Dit is geen test. Er komt geen score, geen percentage en geen uitslag uit.'
+  - 'Het zegt niet of er wel of geen sprake is van misbruik.'
+  - 'Het zegt niets over wat iemand anders bedoelt of wat voor persoon diegene is.'
+  - 'Het vervangt geen gesprek met een huisarts, therapeut of Veilig Thuis.'
+privacy: 'Je antwoorden blijven in dit tabblad. Ze worden niet opgeslagen, niet verstuurd en niet geteld. Ververs je de pagina, ga je weg of klik je op ‘Wis alles’, dan zijn ze weg. Op een gedeeld apparaat kan iemand je scherm, een download of een afdruk zien.'
+questions:
+  - id: gevoel
+    prompt: 'Wat voel je de laatste tijd vaak?'
+    hint: 'Kies wat past. Meer dan één mag. Niets kiezen mag ook.'
+    multiple: true
+    options:
+      - id: twijfel
+        label: 'Ik twijfel aan wat ik zelf heb meegemaakt of gezegd.'
+        ack: 'Je twijfelt soms aan je eigen herinnering of oordeel.'
+        routes: [zelftwijfel]
+      - id: schuldig
+        label: 'Ik voel me snel schuldig, ook als ik niet weet waarom.'
+        ack: 'Je voelt je vaak schuldig, ook zonder duidelijke reden.'
+        routes: [schuld]
+      - id: aan
+        label: 'Ik sta voortdurend aan, alsof ik moet opletten.'
+        ack: 'Je lichaam lijkt voortdurend op scherp te staan.'
+        routes: [spanning]
+      - id: kwijt
+        label: 'Ik herken mezelf niet meer.'
+        ack: 'Je herkent jezelf minder dan vroeger.'
+        routes: [identiteit]
+      - id: alleen
+        label: 'Ik voel me alleen met wat er gebeurt.'
+        ack: 'Je voelt je alleen met wat er gebeurt.'
+        routes: [eenzaamheid]
+      - id: gevoel-geen
+        label: 'Geen van deze past.'
+        exclusive: true
+        routes: []
+  - id: na-ruzie
+    prompt: 'Wat gebeurt er vaak na een gesprek dat misging?'
+    hint: 'Het gaat om wat jij merkt, niet om wie er gelijk had.'
+    multiple: true
+    options:
+      - id: herhalen
+        label: 'Ik speel het gesprek steeds opnieuw af in mijn hoofd.'
+        ack: 'Je blijft gesprekken in je hoofd herhalen.'
+        routes: [spanning, zelftwijfel]
+      - id: excuses
+        label: 'Ik bied excuses aan om de rust terug te krijgen.'
+        ack: 'Je biedt excuses aan om de rust terug te krijgen.'
+        routes: [schuld, grenzen]
+      - id: anders-onthouden
+        label: 'Ik hoor dat het anders ging dan ik het me herinner.'
+        ack: 'Je hoort vaak dat het anders ging dan jij het je herinnert.'
+        routes: [zelftwijfel]
+      - id: stilte
+        label: 'Er valt een lange stilte en ik wacht tot het weer goed is.'
+        ack: 'Je wacht na een conflict soms lang tot het weer goed is.'
+        routes: [grenzen, spanning]
+      - id: ruzie-geen
+        label: 'Geen van deze past.'
+        exclusive: true
+        routes: []
+  - id: nee-zeggen
+    prompt: 'Hoe is het om nee te zeggen of iets voor jezelf te vragen?'
+    hint: 'Er is geen goed of fout antwoord.'
+    multiple: true
+    options:
+      - id: zelden
+        label: 'Dat doe ik bijna niet meer.'
+        ack: 'Je zegt bijna geen nee meer.'
+        routes: [grenzen, identiteit]
+      - id: bang-daarna
+        label: 'Ik zie op tegen wat er daarna gebeurt.'
+        ack: 'Je ziet op tegen wat er gebeurt als je iets voor jezelf vraagt.'
+        routes: [grenzen, spanning]
+      - id: aanpassen
+        label: 'Ik pas me aan om een conflict te voorkomen.'
+        ack: 'Je past je vaak aan om een conflict te voorkomen.'
+        routes: [grenzen, identiteit]
+      - id: nee-lukt
+        label: 'Dat lukt meestal wel.'
+        exclusive: true
+        routes: []
+  - id: vrijheid
+    prompt: 'Hoe vrij voel je je in je dagelijkse keuzes?'
+    hint: 'Denk aan afspraken, vrienden, familie, je telefoon of je tijd.'
+    multiple: true
+    options:
+      - id: uitleggen
+        label: 'Ik moet vaak uitleggen waar ik ben of met wie.'
+        ack: 'Je moet vaak verantwoorden waar je bent of met wie.'
+        routes: [controle]
+      - id: minder-mensen
+        label: 'Ik zie minder mensen dan vroeger.'
+        ack: 'Je ziet minder mensen dan vroeger.'
+        routes: [eenzaamheid, controle]
+      - id: meekijken
+        label: 'Er wordt meegekeken in mijn telefoon, berichten of plannen.'
+        ack: 'Er wordt meegekeken in je telefoon, berichten of plannen.'
+        routes: [controle]
+      - id: niemand
+        label: 'Ik weet niet goed bij wie ik dit kan vertellen.'
+        ack: 'Je weet niet goed bij wie je hiermee terechtkunt.'
+        routes: [eenzaamheid]
+      - id: vrij
+        label: 'Ik voel me vrij genoeg.'
+        exclusive: true
+        routes: []
+  - id: geld
+    prompt: 'Hoe gaat het met geld en papieren?'
+    hint: 'Je hoeft geen bedragen of namen te noemen.'
+    multiple: true
+    options:
+      - id: geen-zicht
+        label: 'Ik heb weinig zicht op ons geld of onze afspraken.'
+        ack: 'Je hebt weinig zicht op geld of financiële afspraken.'
+        routes: [financieel]
+      - id: toestemming
+        label: 'Ik moet toestemming vragen of verantwoorden wat ik uitgeef.'
+        ack: 'Je moet toestemming vragen of verantwoorden wat je uitgeeft.'
+        routes: [financieel, controle]
+      - id: op-naam
+        label: 'Er staan contracten of schulden op mijn naam waar ik weinig van weet.'
+        ack: 'Er staan contracten of schulden op je naam waar je weinig van weet.'
+        routes: [financieel]
+      - id: niet-over-praten
+        label: 'Ik durf niet over geld te beginnen.'
+        ack: 'Je durft niet goed over geld te beginnen.'
+        routes: [financieel, spanning]
+      - id: geld-geen
+        label: 'Geld speelt hier geen grote rol.'
+        exclusive: true
+        routes: []
+  - id: veiligheid
+    prompt: 'Hoe veilig voel je je op dit moment?'
+    hint: 'Dit bepaalt alleen welke hulp bovenaan je overzicht staat.'
+    multiple: true
+    options:
+      - id: veilig
+        label: 'Ik voel me veilig genoeg.'
+        exclusive: true
+        routes: []
+      - id: soms-bang
+        label: 'Ik ben thuis soms gespannen of bang.'
+        ack: 'Je bent thuis soms gespannen of bang.'
+        routes: [spanning]
+        safety: concern
+      - id: niet-veilig
+        label: 'Ik voel me nu niet veilig.'
+        ack: 'Je voelt je op dit moment niet veilig.'
+        routes: []
+        safety: danger
+      - id: niet-meer-willen
+        label: 'Ik denk soms dat ik er niet meer wil zijn.'
+        ack: 'Je hebt soms gedachten dat je er niet meer wilt zijn.'
+        routes: []
+        safety: crisis
+routes:
+  - id: zelftwijfel
+    title: 'Twijfel aan jezelf'
+    recognition: 'Als je ervaring vaak wordt tegengesproken, kun je gaan twijfelen aan je eigen geheugen. Dat zegt iets over wat er gebeurt, niet over je verstand.'
+    feelings: [zelftwijfel]
+    patterns: [gaslighting, begrip-zelftwijfel, framing]
+    reflections:
+      - 'Wanneer vertrouw je je eigen herinnering wel, en wanneer niet?'
+      - 'Wat zou je opschrijven als niemand het hoefde te lezen?'
+    next: [herstel-zelfvertrouwen, kaart-zelfreflectie]
+  - id: schuld
+    title: 'Schuld'
+    recognition: 'Schuldgevoel kan ook ontstaan als je steeds de verantwoordelijkheid krijgt voor hoe het gaat. Een gevoel van schuld is geen bewijs dat je iets fout deed.'
+    feelings: [schuldgevoel]
+    patterns: [schuldverschuiving, darvo, projectie]
+    reflections:
+      - 'Waarvoor voel je je verantwoordelijk, en is dat ook van jou?'
+      - 'Wat zou je zeggen tegen een vriend die zich zo schuldig voelt?'
+    next: [herstel-erkenning, kaart-pijn-na-inzicht]
+  - id: grenzen
+    title: 'Grenzen'
+    recognition: 'Wie vaak merkt dat nee zeggen onrust geeft, gaat zich soms vanzelf aanpassen. Dat is een manier om de rust te bewaren, geen zwakte.'
+    feelings: [grenzen]
+    patterns: [fawn-respons, silent-treatment]
+    reflections:
+      - 'Waar zeg je ja terwijl je nee bedoelt?'
+      - 'Wat gebeurt er in je lichaam als je overweegt nee te zeggen?'
+    next: [herstel-grenzen, kaart-zelfreflectie]
+  - id: controle
+    title: 'Controle'
+    recognition: 'Weinig ruimte voor eigen keuzes kan langzaam normaal gaan voelen. Het helpt om te zien welke keuzes nog van jou zijn.'
+    feelings: []
+    patterns: [dwingende-controle, isolatie, macht-en-afhankelijkheid]
+    reflections:
+      - 'Welke keuzes maak je nog helemaal zelf?'
+      - 'Wat zou je doen als je niemand iets hoefde uit te leggen?'
+    next: [conflict-of-patroon, veilig-gebruik]
+  - id: identiteit
+    title: 'Jezelf kwijtraken'
+    recognition: 'Door je lang aan te passen kun je het contact met wat je zelf wilt of voelt verliezen. Dat kan terugkomen, stap voor stap.'
+    feelings: [identiteit]
+    patterns: [emotionele-uitputting, traumabinding]
+    reflections:
+      - 'Wat deed je vroeger graag, en wanneer ben je daarmee gestopt?'
+      - 'Wanneer voelde je je de laatste keer even jezelf?'
+    next: [herstel-leren-voelen, herstel-rouw]
+  - id: spanning
+    title: 'Spanning'
+    recognition: 'Als je lang op je hoede moet zijn, blijft je lichaam alert. Dat is geen overdrijving, maar een lichaam dat zich probeert te beschermen.'
+    feelings: [spanning]
+    patterns: [hyperwaakzaamheid, emotionele-uitputting]
+    reflections:
+      - 'Op welke momenten word je rustiger, al is het maar even?'
+      - 'Waar let je op als je thuiskomt?'
+    next: [herstel-triggers, kaart-hulpverlener]
+  - id: financieel
+    title: 'Financiële afhankelijkheid'
+    recognition: 'Weinig zicht of zeggenschap over geld kan je klem zetten, ook als je zelf werkt. Overzicht krijgen kan in kleine, veilige stappen.'
+    feelings: [geld-praten]
+    patterns: [economisch-misbruik, controle-over-uitgaven, schulden-op-naam]
+    reflections:
+      - 'Welke informatie over geld of papieren zou je graag zelf hebben?'
+      - 'Bij wie zou je veilig een vraag over geld kunnen stellen?'
+    next: [financieel-signalen, kaart-financieel, financieel-advies]
+  - id: eenzaamheid
+    title: 'Eenzaamheid'
+    recognition: 'Je kunt je alleen voelen, ook met mensen om je heen. Vooral als het lastig is om uit te leggen wat er gebeurt.'
+    feelings: []
+    patterns: [isolatie, sociale-druk]
+    reflections:
+      - 'Wie zou je kunnen bellen zonder dat je alles hoeft uit te leggen?'
+      - 'Welk contact mis je het meest?'
+    next: [herstel-steunnetwerk, hulp-vinden]
+general:
+  reading: [wat-het-met-je-kan-doen, conflict-of-patroon, wat-voel-ik]
+  reflections:
+    - 'Wat heb je vandaag nodig, ook als het klein is?'
+    - 'Met wie zou je één zin hiervan kunnen delen?'
+    - 'Wat wil je onthouden van wat je hier las?'
+  next: [hulp-vinden, kaart-hulpverlener]
+empty: 'Je hebt niets aangeklikt. Dat is ook goed. Misschien past geen van de woorden, of is dit niet het moment. Hieronder staan een paar plekken om rustig verder te lezen.'
+safety:
+  concern: 'Je gaf aan dat je thuis soms gespannen of bang bent. Je mag daar met iemand over praten, ook als je nog niet weet wat het is. Veilig Thuis denkt anoniem met je mee: 0800-2000, gratis.'
+  danger: 'Je gaf aan dat je je nu niet veilig voelt. Ben je in direct gevaar, bel dan 112. Wil je advies of meedenken, bel Veilig Thuis: 0800-2000, gratis en anoniem.'
+  crisis: 'Je gaf aan dat je soms denkt dat je er niet meer wilt zijn. Je hoeft daar niet alleen mee te blijven. Bel 113 of 0800-0113, of chat via 113.nl. Gratis, dag en nacht.'
+deepening:
+  heading: 'Wat heb ik eigenlijk meegemaakt?'
+  intro: 'Een optionele verdieping. Je hoeft geen details te noemen en niets te bewijzen. Een woord of een halve zin is genoeg.'
+  prompts:
+    - 'Welk woord past het best bij hoe het voelde?'
+    - 'Wat deed je vaak om de rust te bewaren?'
+    - 'Wat ben je kwijtgeraakt dat je terug wilt?'
+    - 'Wat zou je zeggen tegen iemand die jou dit vertelde?'
+    - 'Wat heb je nu het meest nodig?'
+  closing: 'Wat je hier schrijft, is van jou. Je hoeft het aan niemand te laten zien.'

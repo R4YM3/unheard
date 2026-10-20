@@ -101,9 +101,12 @@ try {
         panels: all('.pv-panel').length,
         hiddenPanels: all('.pv-panel, [data-pv-panel]').filter((element) => !visible(element))
           .length,
-        visibleControls: all('[data-pv-tabs], [data-pv-choice], [data-filter]').filter(visible)
-          .length,
-        hiddenItems: all('[data-filter-item]').filter((element) => !visible(element)).length,
+        visibleControls: all(
+          '[data-pv-tabs], [data-pv-choice], [data-filter], [data-finder-controls]',
+        ).filter(visible).length,
+        hiddenItems: all('[data-filter-item], .finder-step, .finder-all__card').filter(
+          (element) => !visible(element),
+        ).length,
       };
     });
     if (state.hiddenPanels)
@@ -165,6 +168,96 @@ try {
     await page.close();
   }
   console.log(`Perspective checks: ${pvRoutes.length} routes × 2 themes`);
+
+  // 4. Word finder: keyboard-only route, overview, privacy and contrast in both themes.
+  const finderRoute = '/nl/hulpmiddelen/help-me-woorden-vinden/';
+  for (const theme of ['light', 'dark']) {
+    const page = await browser.newPage();
+    await page.setViewport({ width: 375, height: 800 });
+    await page.emulateMediaFeatures([
+      { name: 'prefers-color-scheme', value: theme },
+      { name: 'prefers-reduced-motion', value: 'reduce' },
+    ]);
+    await page.evaluateOnNewDocument(
+      (choice) => globalThis.localStorage.setItem('ongehoord-theme', choice),
+      theme,
+    );
+    await page.goto(`${origin}${finderRoute}`, { waitUntil: 'networkidle0' });
+    const lateRequests = [];
+    page.on('request', (request) => lateRequests.push(request.url()));
+    const fail = (message) => failures.push(`${finderRoute} ${theme}: ${message}`);
+    const press = async (selector, key = 'Space') => {
+      await page.focus(selector);
+      await page.keyboard.press(key);
+    };
+    const visibleStep = () =>
+      page.$$eval('[data-step]', (steps) =>
+        steps.filter((step) => !step.hidden).map((step) => step.dataset.step),
+      );
+    if ((await visibleStep()).join() !== '0') fail('expected only the first question');
+    await press('input[value="twijfel"]');
+    await press('[data-finder-next]', 'Enter');
+    const focused = await page.evaluate(() =>
+      globalThis.document.activeElement?.hasAttribute('data-step-focus'),
+    );
+    if (!focused) fail('focus did not move to the next question');
+    await press('[data-finder-skip]', 'Enter');
+    await press('[data-finder-prev]', 'Enter');
+    if ((await visibleStep()).join() !== '1') fail('back button did not return a step');
+    for (let step = 1; step < 4; step += 1) await press('[data-finder-next]', 'Enter');
+    await press('input[value="geen-zicht"]');
+    await press('[data-finder-next]', 'Enter');
+    await press('input[value="niet-veilig"]');
+    await press('[data-finder-next]', 'Enter');
+    const overview = await page.evaluate(() => {
+      const doc = globalThis.document;
+      const result = doc.querySelector('[data-finder-result]');
+      return {
+        shown: !result.hidden,
+        focus: doc.activeElement?.id,
+        text: result.innerText,
+        url: globalThis.location.href,
+        storage: Object.keys(globalThis.localStorage).filter((key) => key !== 'ongehoord-theme'),
+        session: Object.keys(globalThis.sessionStorage),
+        links: [...result.querySelectorAll('a[href^="nl/"]')].map((link) => link.href),
+      };
+    });
+    if (!overview.shown) fail('overview did not appear');
+    if (overview.focus !== 'finder-result-heading') fail('focus did not move to the overview');
+    for (const expected of [
+      'Eerst je veiligheid',
+      'Wat je herkende',
+      'Vragen om bij stil te staan',
+    ])
+      if (!overview.text.includes(expected)) fail(`overview misses “${expected}”`);
+    const verdict = overview.text
+      .replace(/geen (?:uitslag|score)/gi, '')
+      .match(/\d+\s?%|\bscore\b|\buitslag\b/i);
+    if (verdict) fail(`overview contains a score or percentage (“${verdict[0]}”)`);
+    if (overview.url !== `${origin}${finderRoute}`) fail('answers leaked into the URL');
+    if (overview.storage.length || overview.session.length) fail('answers were stored');
+    if (lateRequests.length) fail(`network requests during the route: ${lateRequests.join(', ')}`);
+    for (const link of overview.links) {
+      const response = await fetch(link);
+      if (!response.ok) fail(`overview link ${link} returned ${response.status}`);
+    }
+    await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
+    const axe = await page.evaluate(() =>
+      globalThis.axe.run(globalThis.document.querySelector('[data-finder]'), {
+        runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'] },
+      }),
+    );
+    for (const violation of axe.violations)
+      fail(`${violation.id} at ${violation.nodes.map((node) => node.target.join(' ')).join(', ')}`);
+    await press('[data-finder-clear]', 'Enter');
+    const cleared = await page.evaluate(() => ({
+      checked: globalThis.document.querySelectorAll('[data-finder] input:checked').length,
+      resultHidden: globalThis.document.querySelector('[data-finder-result]').hidden,
+    }));
+    if (cleared.checked || !cleared.resultHidden) fail('“Wis alles” did not clear the answers');
+    await page.close();
+  }
+  console.log('Word finder checks: keyboard route, privacy and contrast × 2 themes');
 } finally {
   await browser?.close();
   server.kill();
