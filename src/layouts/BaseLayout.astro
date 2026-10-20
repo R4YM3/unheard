@@ -13,6 +13,12 @@ interface Props {
   alternates?: Array<{ locale: Locale; path: string }>;
   /** Additional JSON-LD nodes; they must describe content that is visible on the page. */
   schema?: Array<Record<string, unknown>>;
+  /** Visible page heading, when it differs from the document title. */
+  schemaName?: string;
+  /** @id of the node that is the main content of this page. */
+  mainEntityId?: string;
+  /** Sources visible on the page. */
+  citations?: Array<Record<string, unknown>>;
   pageType?: 'WebPage' | 'CollectionPage' | 'AboutPage';
 }
 const {
@@ -23,6 +29,9 @@ const {
   indexable = true,
   alternates = [],
   schema: extraSchema = [],
+  schemaName,
+  mainEntityId,
+  citations = [],
   pageType = 'WebPage',
 } = Astro.props;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
@@ -44,36 +53,55 @@ const siteRoot = new URL(basePath, site).href;
 const websiteId = `${siteRoot}#website`;
 const organizationId = `${siteRoot}#organization`;
 const logoUrl = new URL(`${basePath}logo.svg`, site).href;
-const schema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': organizationId,
-    name: 'Ongehoord',
-    url: siteRoot,
-    logo: { '@type': 'ImageObject', url: logoUrl, width: 256, height: 256 },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    '@id': websiteId,
-    name: brandName,
-    url: siteRoot,
-    inLanguage: locale,
-    publisher: { '@id': organizationId },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': ['WebPage', pageType].filter((type, index, all) => all.indexOf(type) === index),
-    '@id': canonical,
-    name: title,
-    description,
-    inLanguage: locale,
-    url: canonical,
-    isPartOf: { '@id': websiteId },
-  },
-  ...extraSchema.map((node) => ({ '@context': 'https://schema.org', ...node })),
-];
+const organizationDescription =
+  locale === 'nl'
+    ? 'Voor alles wat je voelt, maar nog niet kunt verwoorden. Een persoonlijk initiatief van één persoon, geen hulporganisatie.'
+    : locale === 'ar'
+      ? 'مساحة لما تشعر به ولا تستطيع وصفه بعد.'
+      : 'For everything you feel but cannot yet put into words.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: brandName,
+      description: organizationDescription,
+      url: siteRoot,
+      logo: { '@type': 'ImageObject', url: logoUrl, width: 256, height: 256 },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      name: brandName,
+      url: siteRoot,
+      inLanguage: 'nl',
+      publisher: { '@id': organizationId },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${siteRoot}nl/zoeken/?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@type': ['WebPage', pageType].filter((type, index, all) => all.indexOf(type) === index),
+      '@id': canonical,
+      name: schemaName || title,
+      description,
+      inLanguage: locale,
+      url: canonical,
+      isPartOf: { '@id': websiteId },
+      creativeWorkStatus: 'Conceptversie',
+      ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
+      ...(citations.length > 0 ? { citation: citations } : {}),
+    },
+    ...extraSchema,
+  ],
+};
+const schemaJson = JSON.stringify(schema).replaceAll('<', '\\u003c');
 const noIndex = process.env.NO_INDEX === 'true' || !indexable;
 const cloudflareBeaconToken = import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN;
 const skipLabel =
@@ -197,7 +225,7 @@ const footerGroups =
       ))
     }
     {defaultAlternate && <link rel="alternate" hreflang="x-default" href={defaultAlternate.href} />}
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={schemaJson} />
     {
       cloudflareBeaconToken && (
         <script

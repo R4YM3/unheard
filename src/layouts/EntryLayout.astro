@@ -8,13 +8,7 @@ import HelpBlock from '../components/HelpBlock.astro';
 import PageHero from '../components/PageHero.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import SourceList from '../components/SourceList.astro';
-import {
-  breadcrumbsFor,
-  isoDate,
-  resolveRelated,
-  routeFor,
-  type RoutedEntry,
-} from '../lib/content';
+import { breadcrumbsFor, resolveRelated, routeFor, type RoutedEntry } from '../lib/content';
 
 interface Props {
   entry: RoutedEntry;
@@ -28,6 +22,9 @@ interface Props {
   showSummary?: boolean;
   showSources?: boolean;
   showHelp?: boolean;
+  /** Extra JSON-LD for visible lists on this page. */
+  extraSchema?: Array<Record<string, unknown>>;
+  mainEntityId?: string;
 }
 const {
   entry,
@@ -40,6 +37,8 @@ const {
   showSummary = true,
   showSources = true,
   showHelp = true,
+  extraSchema = [],
+  mainEntityId,
 } = Astro.props;
 const { data } = entry;
 const route = routeFor(entry);
@@ -51,11 +50,22 @@ const basePath = import.meta.env.BASE_URL.endsWith('/')
   : `${import.meta.env.BASE_URL}/`;
 const absolute = (path: string) => new URL(`${basePath}${path}`, site).href;
 const organizationId = `${new URL(basePath, site).href}#organization`;
+const pageId = absolute(route);
+const articleId = `${pageId}#artikel`;
+const termId = `${pageId}#begrip`;
+const visibleHeading = heading ?? data.title;
+const citations = data.sources.map((source) => ({
+  '@type': 'CreativeWork',
+  name: source.label,
+  url: source.url,
+  ...(source.publisher ? { publisher: { '@type': 'Organization', name: source.publisher } } : {}),
+}));
 
 const schema: Array<Record<string, unknown>> = [];
 if (crumbs.length > 1) {
   schema.push({
     '@type': 'BreadcrumbList',
+    '@id': `${pageId}#kruimelpad`,
     itemListElement: crumbs.map((crumb, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -64,36 +74,31 @@ if (crumbs.length > 1) {
     })),
   });
 }
-if (articleType) {
-  schema.push({
-    '@type': articleType,
-    headline: heading ?? data.title,
-    description: data.description,
-    inLanguage: data.locale,
-    datePublished: isoDate(data.publishedAt),
-    dateModified: isoDate(data.updatedAt),
-    author: { '@id': organizationId },
-    publisher: { '@id': organizationId },
-    mainEntityOfPage: absolute(route),
-    citation: data.sources.map((source) => ({
-      '@type': 'CreativeWork',
-      name: source.label,
-      url: source.url,
-      ...(source.publisher
-        ? { publisher: { '@type': 'Organization', name: source.publisher } }
-        : {}),
-    })),
-  });
-}
 if (data.glossary) {
   schema.push({
     '@type': 'DefinedTerm',
+    '@id': termId,
     name: data.glossary.term,
     description: data.glossary.definition,
-    url: absolute(route),
-    inDefinedTermSet: absolute(`${data.locale}/begrippen/`),
+    url: pageId,
+    inDefinedTermSet: { '@id': absolute(`${data.locale}/begrippen/#termen`) },
   });
 }
+if (articleType) {
+  schema.push({
+    '@type': articleType,
+    '@id': articleId,
+    headline: visibleHeading,
+    description: data.description,
+    inLanguage: data.locale,
+    author: { '@id': organizationId },
+    publisher: { '@id': organizationId },
+    mainEntityOfPage: { '@id': pageId },
+    ...(data.glossary ? { about: { '@id': termId } } : {}),
+    citation: citations,
+  });
+}
+schema.push(...extraSchema);
 const heroData = 'hero' in data ? data.hero : undefined;
 ---
 
@@ -103,6 +108,9 @@ const heroData = 'hero' in data ? data.hero : undefined;
   locale={data.locale}
   canonicalPath={`/${route}`}
   schema={schema}
+  schemaName={visibleHeading}
+  mainEntityId={mainEntityId ?? (data.glossary ? termId : articleType ? articleId : undefined)}
+  citations={showSources ? citations : []}
   pageType={pageType}
 >
   {

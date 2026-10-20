@@ -118,10 +118,14 @@ for (const file of files) {
   }
 
   const types = new Set();
+  const schemaNodes = (parsed) => {
+    const items = Array.isArray(parsed) ? parsed : [parsed];
+    return items.flatMap((item) => (Array.isArray(item?.['@graph']) ? item['@graph'] : [item]));
+  };
   for (const block of jsonLdBlocks(html)) {
     try {
       const parsed = JSON.parse(block);
-      for (const item of Array.isArray(parsed) ? parsed : [parsed]) {
+      for (const item of schemaNodes(parsed)) {
         for (const type of [item['@type']].flat()) types.add(type);
         if (item['@type'] === 'BreadcrumbList') {
           const urls = item.itemListElement.map((crumb) => crumb.item);
@@ -144,10 +148,18 @@ for (const file of files) {
     bad.push(`${file}: article missing visible source attribution`);
   if (hasContentArticle && !html.includes('"citation":['))
     bad.push(`${file}: article missing structured-data citations`);
-  if (hasContentArticle && !html.includes('"datePublished":'))
-    bad.push(`${file}: article missing structured-data publication date`);
+  if (hasContentArticle && html.includes('"datePublished":'))
+    bad.push(`${file}: article date is not visible on the page`);
   if (hasContentArticle && file.includes('/begrippen/') && !types.has('DefinedTerm'))
     bad.push(`${file}: concept article missing DefinedTerm JSON-LD`);
+  if (file.includes('/nl/') && !html.includes('"@type":"SearchAction"'))
+    bad.push(`${file}: missing site search action`);
+  if (file.endsWith('/nl/begrippen/index.html') && !types.has('DefinedTermSet'))
+    bad.push(`${file}: glossary index missing DefinedTermSet`);
+  if (file.endsWith('/nl/index.html') && !types.has('ItemList'))
+    bad.push(`${file}: home missing ItemList`);
+  if (file.includes('/nl/') && !html.includes('geen hulporganisatie'))
+    bad.push(`${file}: organization description does not match the visible footer`);
 
   const headingLevels = [...html.matchAll(/<h([1-6])\b/gi)].map((match) => Number(match[1]));
   for (let index = 1; index < headingLevels.length; index += 1) {

@@ -4,6 +4,8 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
 import StartChooser from '../components/StartChooser.astro';
+import { routeFor } from '../lib/content';
+import { itemList, type SchemaNode } from '../lib/schema';
 
 interface Props {
   entry: CollectionEntry<'hubs'>;
@@ -12,9 +14,55 @@ const { entry } = Astro.props;
 const { data } = entry;
 const home = data.home;
 if (!home) throw new Error(`HomePage requires a home block; received ${entry.id}.`);
+const site = Astro.site ?? new URL('https://r4ym3.github.io');
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const absolute = (path: string) => new URL(`${basePath}${path}`, site).href;
+const pageId = absolute(routeFor(entry));
+const homeLists = [
+  itemList(
+    `${pageId}#gevoelens`,
+    home.feelings.heading,
+    home.feelings.cards.map((card) => ({ href: card.href, title: card.title })),
+    pageId,
+    absolute,
+  ),
+  itemList(
+    `${pageId}#onderwerpen`,
+    home.topics.heading,
+    home.topics.cards.map((card) => ({
+      href: card.href,
+      title: card.title,
+      text: [card.description, card.note].filter(Boolean).join(' '),
+    })),
+    pageId,
+    absolute,
+  ),
+  itemList(
+    `${pageId}#herstel`,
+    home.resources.heading,
+    home.resources.cards.map((card) => ({
+      href: card.href,
+      title: card.title,
+      text: card.description,
+    })),
+    pageId,
+    absolute,
+  ),
+].filter((node): node is SchemaNode => Boolean(node));
 ---
 
-<EntryLayout entry={entry} hero={false} articleType={false} showSummary={false} showHelp={false}>
+<EntryLayout
+  entry={entry}
+  hero={false}
+  heading={data.heading}
+  articleType={false}
+  showSummary={false}
+  showHelp={false}
+  extraSchema={homeLists}
+  mainEntityId={homeLists[0] ? `${pageId}#gevoelens` : undefined}
+>
   <section class="hero" id="top">
     <div class="wrap home-hero__grid">
       <div class="home-hero__copy">
