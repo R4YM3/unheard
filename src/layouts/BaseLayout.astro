@@ -11,6 +11,9 @@ interface Props {
   canonicalPath?: string;
   indexable?: boolean;
   alternates?: Array<{ locale: Locale; path: string }>;
+  /** Additional JSON-LD nodes; they must describe content that is visible on the page. */
+  schema?: Array<Record<string, unknown>>;
+  pageType?: 'WebPage' | 'CollectionPage' | 'AboutPage';
 }
 const {
   title,
@@ -19,12 +22,15 @@ const {
   canonicalPath = '/',
   indexable = true,
   alternates = [],
+  schema: extraSchema = [],
+  pageType = 'WebPage',
 } = Astro.props;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const canonical = new URL(`${basePath}${canonicalPath.replace(/^\//, '')}`, site).href;
+const localPath = canonicalPath.replace(/^\//, '');
+const canonical = new URL(`${basePath}${localPath}`, site).href;
 const alternateUrls = alternates.map(({ locale: alternateLocale, path }) => ({
   locale: alternateLocale,
   href: new URL(`${basePath}${path.replace(/^\//, '')}`, site).href,
@@ -34,16 +40,17 @@ const defaultAlternate = alternateUrls.find(
 );
 const dir = locale === 'ar' ? 'rtl' : 'ltr';
 const brandName = locale === 'nl' ? 'Ongehoord' : 'Unheard';
-const websiteId = new URL('#website', site).href;
-const organizationId = new URL('#organization', site).href;
+const siteRoot = new URL(basePath, site).href;
+const websiteId = `${siteRoot}#website`;
+const organizationId = `${siteRoot}#organization`;
 const logoUrl = new URL(`${basePath}logo.svg`, site).href;
 const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': organizationId,
-    name: 'Unheard',
-    url: site.href,
+    name: 'Ongehoord',
+    url: siteRoot,
     logo: { '@type': 'ImageObject', url: logoUrl, width: 256, height: 256 },
   },
   {
@@ -51,13 +58,13 @@ const schema = [
     '@type': 'WebSite',
     '@id': websiteId,
     name: brandName,
-    url: site.href,
+    url: siteRoot,
     inLanguage: locale,
     publisher: { '@id': organizationId },
   },
   {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
+    '@type': ['WebPage', pageType].filter((type, index, all) => all.indexOf(type) === index),
     '@id': canonical,
     name: title,
     description,
@@ -65,6 +72,7 @@ const schema = [
     url: canonical,
     isPartOf: { '@id': websiteId },
   },
+  ...extraSchema.map((node) => ({ '@context': 'https://schema.org', ...node })),
 ];
 const noIndex = process.env.NO_INDEX === 'true' || !indexable;
 const cloudflareBeaconToken = import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN;
@@ -74,17 +82,50 @@ const skipLabel =
     : locale === 'ar'
       ? 'انتقل إلى المحتوى'
       : 'Skip to content';
-const navigation =
+const navigation: Array<[string, string]> =
   locale === 'nl'
     ? [
-        ['nl/', 'Home'],
         ['nl/wat-voel-ik/', 'Wat voel ik?'],
-        ['nl/begrippen/', 'Begrijp het'],
+        ['nl/begrijp-het/', 'Begrijp het'],
         ['nl/herstel/', 'Herstel'],
         ['nl/mijn-verhaal/', 'Mijn verhaal'],
+        ['nl/hulpmiddelen/', 'Hulpmiddelen'],
         ['nl/hulp-vinden/', 'Hulp vinden'],
       ]
     : [[`${locale}/`, locale === 'ar' ? 'الصفحة الرئيسية' : 'Home']];
+const isCurrent = (href: string) =>
+  href === 'nl/begrijp-het/'
+    ? localPath.startsWith(href) || localPath.startsWith('nl/begrippen/')
+    : localPath.startsWith(href) && href !== `${locale}/`;
+const navLabel =
+  locale === 'ar' ? 'التنقل الرئيسي' : locale === 'en' ? 'Main navigation' : 'Hoofdnavigatie';
+const footerGroups =
+  locale === 'nl'
+    ? [
+        {
+          heading: 'Ontdek',
+          links: [
+            ['nl/wat-voel-ik/', 'Wat voel ik?'],
+            ['nl/begrijp-het/', 'Begrijp het'],
+            ['nl/begrippen/', 'Begrippen van A tot Z'],
+            ['nl/herstel/', 'Herstel'],
+            ['nl/hulpmiddelen/', 'Hulpmiddelen'],
+            ['nl/mannen-in-cijfers/', 'Mannen in cijfers'],
+            ['nl/zoeken/', 'Zoeken'],
+          ],
+        },
+        {
+          heading: 'Over deze site',
+          links: [
+            ['nl/over/', 'Over Ongehoord'],
+            ['nl/werkwijze/', 'Werkwijze en bronnen'],
+            ['nl/veilig-gebruik/', 'Privacy en veilig gebruik'],
+            ['nl/toegankelijkheid/', 'Toegankelijkheid'],
+            ['nl/ik-maak-me-zorgen-om-iemand/', 'Voor naasten'],
+          ],
+        },
+      ]
+    : [];
 ---
 
 <!doctype html>
@@ -93,7 +134,7 @@ const navigation =
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    {noIndex && <meta name="robots" content="noindex,nofollow" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={brandName} />
     <meta property="og:title" content={`${title} — ${brandName}`} />
@@ -130,17 +171,14 @@ const navigation =
     <header class="site-header">
       <div class="wrap header-row">
         <a class="brand" href={`${locale}/`}>{brandName}<span>.</span></a>
-        <nav
-          class="nav"
-          aria-label={locale === 'ar'
-            ? 'التنقل الرئيسي'
-            : locale === 'en'
-              ? 'Main navigation'
-              : 'Hoofdnavigatie'}
-        >
+        <nav class="nav" aria-label={navLabel}>
           {
             navigation.map(([href, label]) => (
-              <a class:list={{ 'nav-help': label === 'Hulp vinden' }} href={href}>
+              <a
+                class:list={{ 'nav-help': href === 'nl/hulp-vinden/' }}
+                href={href}
+                aria-current={isCurrent(href) ? 'page' : undefined}
+              >
                 {label}
               </a>
             ))
@@ -155,19 +193,16 @@ const navigation =
                 : 'Open menu'}
           >
             <span></span><span></span><span></span>
-            <span class="sr-only"
-              >{locale === 'nl' ? 'Menu' : locale === 'ar' ? 'القائمة' : 'Menu'}</span
-            >
           </summary>
-          <nav
-            class="mobile-menu__panel"
-            aria-label={locale === 'ar'
-              ? 'التنقل الرئيسي'
-              : locale === 'en'
-                ? 'Main navigation'
-                : 'Hoofdnavigatie'}
-          >
-            {navigation.map(([href, label]) => <a href={href}>{label}</a>)}
+          <nav class="mobile-menu__panel" aria-label={`${navLabel} (mobiel)`}>
+            {
+              navigation.map(([href, label]) => (
+                <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>
+                  {label}
+                </a>
+              ))
+            }
+            {locale === 'nl' && <a href="nl/zoeken/">Zoeken</a>}
           </nav>
         </details>
         <div class="header-controls"><LocaleSelector locale={locale} /></div>
@@ -175,37 +210,62 @@ const navigation =
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer">
-      <div class="wrap footer-row">
-        <strong>◒ {brandName}.</strong>
-        <span>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <p><strong>◒ {brandName}.</strong></p>
+            {
+              locale === 'nl' ? (
+                <>
+                  <p>
+                    Voor alles wat je voelt, maar nog niet kunt verwoorden. Een persoonlijk
+                    initiatief van één persoon, geen hulporganisatie.
+                  </p>
+                  <p class="footer-help">
+                    Direct gevaar? Bel <a href="tel:112">112</a>. Zorgen over huiselijk geweld?
+                    Veilig Thuis <a href="tel:08002000">0800-2000</a>.{' '}
+                    <a href="nl/hulp-vinden/">Alle hulp</a>
+                  </p>
+                </>
+              ) : (
+                <p>
+                  {locale === 'ar'
+                    ? 'مساحة لما تشعر به ولا تستطيع وصفه بعد.'
+                    : 'For everything you feel but cannot yet put into words.'}
+                </p>
+              )
+            }
+          </div>
+          {
+            footerGroups.map((group) => (
+              <nav aria-label={group.heading}>
+                <h2>{group.heading}</h2>
+                <ul>
+                  {group.links.map(([href, label]) => (
+                    <li>
+                      <a href={href}>{label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))
+          }
+        </div>
+        <p class="footer-meta">
           {
             locale === 'nl'
-              ? ' Voor alles wat je voelt, maar nog niet kunt verwoorden.'
+              ? 'Conceptsite in ontwikkeling. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.'
               : locale === 'ar'
-                ? ' مساحة لما تشعر به ولا تستطيع وصفه بعد.'
-                : ' For everything you feel but cannot yet put into words.'
+                ? 'موقع تجريبي قيد التطوير.'
+                : 'Concept site in development.'
           }
-        </span>
-        <span>
-          {
-            locale === 'nl'
-              ? 'Persoonlijk initiatief · conceptsite · beeld en content in ontwikkeling'
-              : locale === 'ar'
-                ? 'مبادرة شخصية · موقع تجريبي · الصور والمحتوى قيد التطوير'
-                : 'Personal initiative · concept site · visuals and content in development'
-          }
-        </span>
-        <small>
-          {
-            locale === 'nl'
-              ? 'Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.'
-              : locale === 'ar'
-                ? 'تساعد الأمثلة والمفاهيم على استكشاف الأنماط؛ وهي ليست تشخيصاً أو حكماً على أي شخص.'
-                : 'Examples and concepts help explore patterns; they are not a diagnosis or a judgement about anyone.'
-          }
-        </small>
+        </p>
       </div>
     </footer>
     <ThemeToggle locale={locale} />
+    <script
+      is:inline
+      set:html={`addEventListener('beforeprint',()=>{document.querySelectorAll('main details:not([open])').forEach(d=>{d.dataset.printName=d.name||'';d.name='';d.open=true})});addEventListener('afterprint',()=>{document.querySelectorAll('main details[data-print-name]').forEach(d=>{d.open=false;d.name=d.dataset.printName;delete d.dataset.printName})})`}
+    />
   </body>
 </html>

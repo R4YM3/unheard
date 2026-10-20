@@ -1,0 +1,53 @@
+---
+import { startChooser } from '../data/start-chooser';
+import { cardFor, findByKey, type LinkCard } from '../lib/content';
+
+interface Props {
+  locale?: string;
+}
+const { locale = 'nl' } = Astro.props;
+const options = await Promise.all(
+  startChooser.map(async (option) => {
+    const links: LinkCard[] = [];
+    for (const key of option.keys) {
+      const entry = await findByKey(locale, key);
+      if (!entry) throw new Error(`StartChooser: unknown or unpublished key "${key}"`);
+      links.push(cardFor(entry));
+    }
+    return { ...option, links };
+  }),
+);
+---
+
+<section class="section section--soft" aria-labelledby="start-heading" id="beginnen">
+  <div class="wrap reading">
+    <p class="eyebrow">Geen test, geen diagnose</p>
+    <h2 id="start-heading">Waar kan ik beginnen?</h2>
+    <p>
+      Kies wat het dichtst bij jouw situatie komt. Je krijgt een paar pagina’s om mee te beginnen.
+      Je kunt altijd iets anders kiezen.
+    </p>
+    <div class="start-chooser">
+      {
+        options.map((option) => (
+          <details name="start-chooser">
+            <summary>{option.question}</summary>
+            <div class="start-chooser__body">
+              <p>{option.intro}</p>
+              <ul>
+                {option.links.map((link) => (
+                  <li>
+                    <a class="text-link" href={link.href}>
+                      {link.title}
+                    </a>
+                    <span class="note"> · {link.eyebrow}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

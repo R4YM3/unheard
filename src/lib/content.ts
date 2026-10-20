@@ -63,8 +63,7 @@ export const getPublishedEntries = () => {
     const all = (
       await Promise.all(
         routedCollections.map(
-          (name) =>
-            getCollection(name, ({ data }) => data.published) as Promise<RoutedEntry[]>,
+          (name) => getCollection(name, ({ data }) => data.published) as Promise<RoutedEntry[]>,
         ),
       )
     ).flat();
@@ -134,19 +133,115 @@ export const resolveRelated = async (entry: RoutedEntry) => {
     .map(cardFor);
 };
 
+const byOrder = (a: RoutedEntry, b: RoutedEntry) =>
+  (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title, 'nl');
+
+/** Published entries of a collection; with a prefix, only direct children (`prefix/<segment>`). */
 export const listCollection = async (
   collection: RoutedCollection,
   locale: Locale | string,
   prefix?: string,
 ) =>
   (await getPublishedEntries())
+    .filter((entry) => {
+      if (entry.collection !== collection || entry.data.locale !== locale) return false;
+      if (!prefix) return true;
+      const rest = entry.data.slug.slice(prefix.length);
+      return entry.data.slug.startsWith(prefix) && rest.length > 0 && !rest.includes('/');
+    })
+    .sort(byOrder);
+
+export interface GlossaryItem {
+  term: string;
+  definition: string;
+  aliases: string[];
+  category: string;
+  href: string;
+  letter: string;
+}
+
+const letterFor = (term: string) => {
+  const first = term
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .charAt(0)
+    .toUpperCase();
+  return /[A-Z]/.test(first) ? first : '#';
+};
+
+/** Glossary blocks from every published entry, alphabetised. */
+export const glossaryItems = async (locale: Locale | string): Promise<GlossaryItem[]> =>
+  (await getPublishedEntries())
+    .filter((entry) => entry.data.locale === locale && entry.data.glossary)
+    .map((entry) => {
+      const glossary = entry.data.glossary!;
+      return {
+        term: glossary.term,
+        definition: glossary.definition,
+        aliases: glossary.aliases,
+        category: glossary.category,
+        href: routeFor(entry),
+        letter: letterFor(glossary.term),
+      };
+    })
+    .sort((a, b) => a.term.localeCompare(b.term, 'nl', { sensitivity: 'base' }));
+
+export const glossaryCategoryLabels: Record<string, string> = {
+  patroon: 'Patroon',
+  controle: 'Controle',
+  financieel: 'Financieel',
+  impact: 'Mogelijke impact',
+  labels: 'Labels en diagnoses',
+  basis: 'Basisbegrip',
+};
+
+export interface SearchItem extends LinkCard {
+  keywords: string;
+}
+
+/** Every published page except home and the search page itself, for the static search list. */
+export const searchItems = async (locale: Locale | string): Promise<SearchItem[]> =>
+  (await getPublishedEntries())
     .filter(
       (entry) =>
-        entry.collection === collection &&
         entry.data.locale === locale &&
-        (!prefix || entry.data.slug.startsWith(prefix)),
+        entry.data.slug !== 'home' &&
+        entry.data.translationKey !== 'zoeken',
     )
-    .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title, 'nl'));
+    .sort(byOrder)
+    .map((entry) => ({
+      ...cardFor(entry),
+      keywords: [
+        entry.data.title,
+        entry.data.cardTitle,
+        entry.data.description,
+        entry.data.glossary?.term,
+        ...(entry.data.glossary?.aliases ?? []),
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase(),
+    }));
+
+export const statusLabels = {
+  draft: 'Concept',
+  in_review: 'In review',
+  approved: 'Gecontroleerd',
+} as const;
+
+export const authorLabels = {
+  founder: 'De oprichter van Ongehoord (persoonlijke ervaring)',
+  editorial: 'Ongehoord (algemene uitleg)',
+} as const;
+
+const dateFormat = new Intl.DateTimeFormat('nl-NL', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+export const formatDate = (date: Date) => dateFormat.format(date);
+export const isoDate = (date: Date) => date.toISOString().slice(0, 10);
 
 /** Hub titles used to build breadcrumbs from route segments. */
 export const breadcrumbsFor = async (entry: RoutedEntry) => {

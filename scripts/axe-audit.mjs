@@ -1,4 +1,4 @@
-import { readdir } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
@@ -53,10 +53,14 @@ const formatViolation = (route, violation) => {
   return `${route}: ${violation.id} (${violation.help}) at ${targets}`;
 };
 
-const routes = (await walk('dist'))
-  .filter((file) => file.endsWith('.html'))
-  .map(routeForFile)
-  .sort();
+const htmlFiles = (await walk('dist')).filter((file) => file.endsWith('.html'));
+const routes = [];
+for (const file of htmlFiles) {
+  const html = await readFile(file, 'utf8');
+  if (file !== join('dist', 'index.html') && html.includes('http-equiv="refresh"')) continue;
+  routes.push(routeForFile(file));
+}
+routes.sort();
 const server = spawn(
   'python3',
   ['-m', 'http.server', `${port}`, '--bind', '127.0.0.1', '--directory', 'dist'],

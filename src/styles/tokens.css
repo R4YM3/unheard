@@ -1,11 +1,56 @@
+/* Primitive tokens: raw palette and scale. Components never use these directly. */
 :root {
-  --palette-charcoal: #242a29;
+  --palette-ink-950: #101614;
+  --palette-ink-900: #17201e;
+  --palette-ink-850: #1d2422;
+  --palette-ink-800: #242a29;
+  --palette-ink-750: #2b3430;
+  --palette-ink-700: #34413b;
+  --palette-ink-600: #43504a;
+  --palette-ink-500: #4d5a54;
+  --palette-grey-400: #819084;
+  --palette-grey-300: #a8b0a6;
+  --palette-grey-200: #c5d1c4;
+  --palette-grey-150: #d6e2d8;
+  --palette-grey-100: #e8ede7;
   --palette-paper: #f1eee7;
+  --palette-paper-light: #fffdfa;
+  --palette-paper-warm: #f8f3ed;
+  --palette-sage-100: #e4ebe2;
+  --palette-sage-150: #e1e7de;
+  --palette-sage-200: #dce5db;
+  --palette-sage-300: #b7c7b8;
   --palette-sage: #a6ada0;
+  --palette-sage-700: #35463d;
   --palette-forest: #465a50;
+  --palette-forest-300: #cfdcd1;
   --palette-terracotta: #9d5846;
+  --palette-terracotta-500: #b16b57;
+  --palette-terracotta-300: #dc9a85;
+  --palette-terracotta-100: #ffd1c3;
+  --palette-terracotta-900: #763b2c;
+  --palette-clay-300: #baa49a;
+  --palette-clay-500: #a98e84;
+  --palette-text-light: #202725;
+  --palette-text-dark: #f4f0e9;
+
+  --art-article:
+    radial-gradient(ellipse at 72% 19%, rgb(185 197 180 / 54%), transparent 31%),
+    radial-gradient(ellipse at 26% 67%, rgb(155 175 164 / 33%), transparent 34%),
+    linear-gradient(145deg, #6b8479, #2b4239 61%, #172622);
+  --art-story:
+    radial-gradient(circle at 65% 25%, rgb(188 200 182 / 27%), transparent 25%),
+    linear-gradient(147deg, #75897b, #40564d 60%, #26332c);
+  --art-home:
+    radial-gradient(ellipse at 65% 20%, rgb(205 213 207 / 55%), transparent 32%),
+    radial-gradient(ellipse at 60% 60%, rgb(117 136 126 / 32%), transparent 35%),
+    linear-gradient(135deg, #7d9187 0%, #5f756d 36%, #32453f 68%, #1f2c28 100%);
+  --art-note-bg: rgb(23 38 34 / 78%);
+
+  --radius-sm: 0.35rem;
   --radius: 0.75rem;
   --content: 73.75rem;
   --reading: 47.5rem;
   --space: clamp(1rem, 2vw, 2rem);
+  --tension-edge-width: 6px;
 }

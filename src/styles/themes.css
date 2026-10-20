@@ -1,37 +1,88 @@
+/* Semantic tokens. Light is the default; dark applies via data-theme (set before first paint). */
 :root,
 [data-theme='light'] {
   color-scheme: light;
   --bg: var(--palette-paper);
-  --surface: #fffdfa;
-  --text: #202725;
-  --muted: #4d5a54;
-  --border: #a8b0a6;
+  --surface: var(--palette-paper-light);
+  --text: var(--palette-text-light);
+  --muted: var(--palette-ink-500);
+  --border: var(--palette-grey-300);
   --action: var(--palette-terracotta);
   --action-text: #fff;
-  --link: #763b2c;
-  --safe: #e4ebe2;
-  --children: #e1e7de;
+  --focus: var(--palette-terracotta);
+  --link: var(--palette-terracotta-900);
+  --safe: var(--palette-sage-100);
+  --safe-border: var(--palette-sage-300);
+  --children: var(--palette-sage-150);
   --therapy: #f5f0eb;
-  --story: #f6eee5;
-  --tension: #f8f3ed;
-  --tension-border: #baa49a;
+  --story: #f9f8f3;
+  --paper-section: var(--palette-paper);
+  --tension: var(--palette-paper-warm);
+  --tension-border: var(--palette-clay-300);
+  --tension-edge: var(--palette-terracotta-500);
   --tension-section: #eee9e3;
+  --badge: var(--palette-sage-200);
+  --badge-text: var(--palette-text-light);
+  --review-mark: #fbe6c9;
+
+  /* Dark "chrome" bands (header, heroes, closing) stay dark in both themes. */
+  --chrome-bg: var(--palette-ink-800);
+  --chrome-bg-strong: var(--palette-ink-900);
+  --chrome-text: var(--palette-text-dark);
+  --chrome-muted: #d7ded8;
+  --chrome-eyebrow: var(--palette-grey-200);
+  --chrome-border: var(--palette-ink-600);
+  --chrome-control: var(--palette-ink-700);
+  --chrome-control-hover: var(--palette-forest);
+  --chrome-control-border: var(--palette-grey-400);
+
+  /* Perspective switch */
+  --tab-bg: var(--palette-sage-100);
+  --tab-text: var(--palette-text-light);
+  --tab-active-bg: var(--palette-forest);
+  --tab-active-text: #fff;
+  --scene-pressed: var(--palette-sage-200);
+  --scene-pressed-border: var(--palette-forest);
+  --inside-bg: var(--palette-ink-800);
+  --inside-text: var(--palette-paper);
+  --inside-eyebrow: var(--palette-grey-150);
 }
+
 [data-theme='dark'] {
   color-scheme: dark;
-  --bg: #1d2422;
-  --surface: #2b3430;
-  --text: #f4f0e9;
+  --bg: var(--palette-ink-850);
+  --surface: var(--palette-ink-750);
+  --text: var(--palette-text-dark);
   --muted: #d1d9d1;
-  --border: #819084;
-  --action: #dc9a85;
+  --border: var(--palette-grey-400);
+  --action: var(--palette-terracotta-300);
   --action-text: #1c211f;
-  --link: #ffd1c3;
-  --safe: #35463d;
+  --focus: var(--palette-terracotta-300);
+  --link: var(--palette-terracotta-100);
+  --safe: var(--palette-sage-700);
+  --safe-border: #5d7265;
   --children: #304039;
   --therapy: #3b3530;
-  --story: #39332e;
+  --story: var(--palette-ink-750);
+  --paper-section: var(--palette-ink-850);
   --tension: #3e302b;
-  --tension-border: #a98e84;
+  --tension-border: var(--palette-clay-500);
+  --tension-edge: var(--palette-terracotta-300);
   --tension-section: #302d2a;
+  --badge: var(--palette-sage-700);
+  --badge-text: var(--palette-text-dark);
+  --review-mark: #5a4630;
+
+  --chrome-bg: var(--palette-ink-800);
+  --chrome-bg-strong: var(--palette-ink-900);
+
+  --tab-bg: var(--palette-sage-700);
+  --tab-text: var(--palette-text-dark);
+  --tab-active-bg: var(--palette-forest-300);
+  --tab-active-text: var(--palette-ink-850);
+  --scene-pressed: var(--palette-sage-700);
+  --scene-pressed-border: var(--palette-forest-300);
+  --inside-bg: var(--palette-ink-950);
+  --inside-text: var(--palette-text-dark);
+  --inside-eyebrow: var(--palette-grey-150);
 }

@@ -1,0 +1,85 @@
+---
+import { glossaryCategoryLabels, glossaryItems } from '../lib/content';
+
+interface Props {
+  locale?: string;
+}
+const { locale = 'nl' } = Astro.props;
+const items = await glossaryItems(locale);
+const alphabet = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const letters = [...new Set(items.map((item) => item.letter))];
+const groups = letters.map((letter) => ({
+  letter,
+  items: items.filter((item) => item.letter === letter),
+}));
+---
+
+<section class="section glossary-index" aria-labelledby="index-heading" id="index">
+  <div class="wrap reading">
+    <p class="eyebrow">Van A tot Z</p>
+    <h2 id="index-heading">Alle begrippen</h2>
+    <p>
+      Korte, voorzichtige omschrijvingen. Een begrip helpt om iets onder woorden te brengen; het is
+      geen oordeel over een persoon.
+    </p>
+    <nav class="az-nav" aria-label="Begrippen per letter">
+      <ul>
+        {
+          alphabet.map((letter) => (
+            <li>
+              {letters.includes(letter) ? (
+                <a href={`#letter-${letter.toLowerCase()}`}>{letter}</a>
+              ) : (
+                <span aria-hidden="true">{letter}</span>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="filter-field" hidden data-filter>
+      <label for="glossary-filter">Filter begrippen</label>
+      <input id="glossary-filter" type="search" autocomplete="off" spellcheck="false" />
+      <p class="note" aria-live="polite" data-filter-status></p>
+    </div>
+    {
+      groups.map((group) => (
+        <section
+          class="glossary-letter"
+          aria-labelledby={`letter-${group.letter.toLowerCase()}`}
+          data-filter-group
+        >
+          <h3 id={`letter-${group.letter.toLowerCase()}`}>{group.letter}</h3>
+          <dl>
+            {group.items.map((item) => (
+              <div
+                class="glossary-item"
+                data-filter-item
+                data-terms={[item.term, ...item.aliases, item.definition].join(' ').toLowerCase()}
+              >
+                <dt>
+                  <a class="text-link" href={item.href}>
+                    {item.term}
+                  </a>
+                </dt>
+                <dd>
+                  {item.definition}
+                  <p class="note">
+                    {glossaryCategoryLabels[item.category]}
+                    {item.aliases.length > 0 && <> · ook: {item.aliases.join(', ')}</>}
+                  </p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ))
+    }
+    {items.length === 0 && <p>Er zijn nog geen begrippen gepubliceerd.</p>}
+  </div>
+</section>
+
+<script>
+  import { enhanceFilter } from '../scripts/filter';
+  enhanceFilter('.glossary-index', 'begrip', 'begrippen');
+</script>

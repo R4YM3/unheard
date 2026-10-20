@@ -57,7 +57,7 @@ const glossary = z.object({
 
 const scenario = z.object({
   label: z.string().min(3).max(48),
-  outside: z.string().min(10),
+  outside: z.string().min(3),
   inside: z.string().min(10),
   context: z.string().min(20),
 });

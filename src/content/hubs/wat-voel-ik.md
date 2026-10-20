@@ -1,29 +1,44 @@
 ---
-title: Wat voel ik?
-description: Begin bij herkenning, zonder dat je meteen hoeft te weten hoe je ervaring heet.
-heading: Begin bij wat je voelt.
+title: 'Wat voel ik? Begin bij herkenning'
+description: 'Negen gevoelens als startpunt, zonder dat je eerst hoeft te weten hoe je ervaring heet. Geen test en geen diagnose.'
 locale: nl
+translationKey: wat-voel-ik
 slug: wat-voel-ik
-eyebrow: Wat voel ik?
-lead: Misschien zoek je geen label, maar woorden voor wat er in jou gebeurt.
-kind: hub
-sources:
-  - label: Veilig Thuis — advies en hulp bij huiselijk geweld
-    url: https://www.veiligthuis.nl/
-cards:
-  - title: Ik twijfel aan mezelf
-    description: Ik blijf gesprekken terughalen en vraag me af of mijn gevoel klopt.
-    href: nl/wat-voel-ik/ik-twijfel-aan-mezelf/
-  - title: Ik voel me verantwoordelijk voor alles
-    description: Ik eindig na een moeilijk gesprek met het gevoel dat ik het moet oplossen.
-    href: nl/wat-voel-ik/ik-voel-me-schuldig/
-  - title: Ik durf geen nee te zeggen
-    description: Ik weet wat ik niet wil, maar grenzen aangeven voelt niet veilig of haalbaar.
-    href: nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/
-  - title: Ik herken mezelf niet meer
-    description: Ik weet minder goed wat ik voel, wil of nodig heb.
-    href: nl/wat-voel-ik/ik-herken-mezelf-niet-meer/
-  - title: Ik begrijp het, maar het blijft pijn doen
-    description: Inzicht brengt niet altijd direct rust of herstel.
-    href: nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/
+status: in_review
+published: true
+author: editorial
+publishedAt: 2026-10-19
+updatedAt: 2026-10-20
+reviewedAt: null
+cardTitle: 'Wat voel ik?'
+cardText: 'Begin bij wat je voelt, zonder dat je meteen een naam hoeft te hebben voor wat je meemaakt.'
+heading: 'Begin bij wat je voelt.'
+eyebrow: 'Wat voel ik?'
+lead: 'Misschien zoek je geen label, maar woorden voor wat er in jou gebeurt.'
+summary: 'Op deze pagina staan negen gevoelens die mensen kunnen herkennen na of tijdens een relatie waarin ze zichzelf kwijtraakten. Kies wat het dichtst bij jou komt. Een gevoel bewijst niets over een ander, maar het verdient wel aandacht.'
+chooser: true
+listings:
+  - collection: emotions
+    prefix: 'wat-voel-ik/'
+    eyebrow: 'Negen startvragen'
+    heading: 'Wat herken jij?'
+    lead: 'Je hoeft het antwoord nog niet te weten. Je kunt ook meerdere pagina’s lezen; gevoelens lopen vaak door elkaar.'
+    tone: neutral
+related: [begrijp-het, herstel, hulp-vinden]
+reviewNotes:
+  - 'Controleer of de volgorde van de negen gevoelens klopt met de prioriteit die de oprichter wil geven.'
 ---
+
+## Waarom beginnen bij een gevoel?
+
+Veel mensen zoeken eerst naar een woord voor wat de ander doet. Dat is begrijpelijk: je wilt weten wat er aan de hand is. Maar vaak is het eerste wat je zeker weet niet wat de ander bedoelt, maar wat het met jou doet. Je twijfelt meer aan jezelf. Je voelt je schuldig zonder te weten waarom. Je bent moe van het steeds opletten.
+
+Daarom begint Ongehoord bij jou. Elke pagina hieronder beschrijft een gevoel, wat er om je heen kan gebeuren, wat het kan verklaren en wat kan helpen. Er staan fictieve voorbeelden bij en vragen die je vrijblijvend kunt beantwoorden.
+
+## Wat deze pagina’s niet doen
+
+Deze pagina’s stellen geen diagnose, niet over jou en niet over iemand anders. Ze zeggen ook niet dat er sprake is van misbruik als je iets herkent. Gevoelens kunnen veel oorzaken hebben, en relaties zijn ingewikkeld. Wat ze wel doen: woorden geven, zodat je kunt onderzoeken wat er speelt en met wie je daarover wilt praten.
+
+Ongehoord heeft bijzondere aandacht voor mannen, omdat het voor hen vaak extra moeilijk voelt om hierover te praten. Maar iedereen is welkom, ongeacht gender of relatievorm.
+
+Wil je eerst meer weten over patronen? Kijk dan bij [Begrijp het](nl/begrijp-het/). Heb je nu hulp nodig? Ga naar [Hulp vinden](nl/hulp-vinden/).

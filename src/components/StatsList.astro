@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import { formatDate, isoDate } from '../lib/content';
+
+const stats = (await getCollection('stats', ({ data }) => data.verified)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section class="section section--soft" aria-labelledby="cijfers-heading" id="cijfers">
+  <div class="wrap reading">
+    <p class="eyebrow">Gecontroleerde cijfers</p>
+    <h2 id="cijfers-heading">De cijfers, met hun grenzen</h2>
+    <p>Bij elk cijfer staat wat er precies gemeten is, bij wie, wanneer en wat het niet zegt.</p>
+    {
+      stats.map(({ data }) => (
+        <article class="stat">
+          <p class="stat__value">{data.value}</p>
+          <h3>{data.label}</h3>
+          <p>{data.explanation}</p>
+          <dl>
+            <dt>Onderzoek</dt>
+            <dd>
+              {data.study} ({data.publisher}, {data.year})
+            </dd>
+            <dt>Wat is gemeten</dt>
+            <dd>{data.definition}</dd>
+            <dt>Wie</dt>
+            <dd>{data.population}</dd>
+            <dt>Periode</dt>
+            <dd>{data.period}</dd>
+            <dt>Beperkingen</dt>
+            <dd>
+              <ul>
+                {data.limitations.map((limitation) => (
+                  <li>{limitation}</li>
+                ))}
+              </ul>
+            </dd>
+            <dt>Bron</dt>
+            <dd>
+              <a class="text-link" href={data.url} rel="noopener">
+                {data.publisher}
+              </a>{' '}
+              · geraadpleegd op{' '}
+              <time datetime={isoDate(data.checkedAt)}>{formatDate(data.checkedAt)}</time>
+            </dd>
+          </dl>
+        </article>
+      ))
+    }
+    {stats.length === 0 && <p>Er zijn nog geen gecontroleerde cijfers gepubliceerd.</p>}
+  </div>
+</section>

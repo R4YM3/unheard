@@ -32,24 +32,35 @@ const localStorageKeys = (html) =>
 const bad = [];
 const requiredDutchNavigation = [
   ['Wat voel ik?', 'nl/wat-voel-ik/'],
-  ['Begrijp het', 'nl/begrippen/'],
+  ['Begrijp het', 'nl/begrijp-het/'],
   ['Herstel', 'nl/herstel/'],
   ['Mijn verhaal', 'nl/mijn-verhaal/'],
+  ['Hulpmiddelen', 'nl/hulpmiddelen/'],
   ['Hulp vinden', 'nl/hulp-vinden/'],
 ];
+const robotsNoIndex = 'name="robots" content="noindex,nofollow"';
 for (const file of files) {
   const html = await readFile(file, 'utf8');
   const root = file.endsWith('/index.html') && file === 'dist/index.html';
-  const unpublishedLocaleReviewRoute = /\/dist\/(?:en|ar)\/index\.html$/.test(file);
+  const unpublishedLocaleReviewRoute = /^dist\/(?:en|ar)\/index\.html$/.test(file);
+  if (!root && html.includes('http-equiv="refresh"')) {
+    if (!html.includes(robotsNoIndex)) bad.push(`${file}: redirect page must be noindex`);
+    if (!html.includes('rel="canonical"')) bad.push(`${file}: redirect page missing canonical`);
+    const target = html.match(/http-equiv="refresh" content="0; url=([^"]+)"/)?.[1];
+    const base = html.match(/<base href="([^"]+)"/i)?.[1] ?? '/';
+    const targetRoute = target ? `/${target.slice(base.length)}` : '';
+    if (!publishedRoutes.has(targetRoute)) bad.push(`${file}: redirect target ${target} missing`);
+    continue;
+  }
   if (!html.includes('http-equiv="refresh"') && !html.includes('<main'))
     bad.push(`${file}: missing main`);
+  if (/lorem ipsum/i.test(html)) bad.push(`${file}: placeholder text`);
   if (!html.includes('<title>')) bad.push(`${file}: missing title`);
   if (!html.includes('<base href=')) bad.push(`${file}: missing base URL`);
   if (/href="\/nl\//.test(html)) bad.push(`${file}: GitHub Pages-unsafe root link`);
   if (!root && !/<html lang="(nl|en|ar)"/.test(html)) bad.push(`${file}: invalid html language`);
   if (root) {
-    if (!html.includes('name="robots" content="noindex, nofollow"'))
-      bad.push(`${file}: root redirect must stay noindex`);
+    if (!html.includes(robotsNoIndex)) bad.push(`${file}: root redirect must stay noindex`);
     if (!html.includes('class="spinner"'))
       bad.push(`${file}: root redirect is missing its loading indicator`);
     if (!/background:\s*#242a29/.test(html))
@@ -72,11 +83,10 @@ for (const file of files) {
       bad.push(`${file}: unsupported hreflang ${link[1]}`);
   }
   if (!root && !html.includes('logo.svg')) bad.push(`${file}: missing structured-data logo URL`);
-  if (
-    (noIndex || unpublishedLocaleReviewRoute) &&
-    !html.includes('name="robots" content="noindex, nofollow"')
-  )
+  if ((noIndex || unpublishedLocaleReviewRoute) && !html.includes(robotsNoIndex))
     bad.push(`${file}: missing required noindex directive`);
+  if ((html.match(/name="robots"/g) || []).length > 1)
+    bad.push(`${file}: duplicate robots meta tags`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
   if (!root && !html.includes('href="#main"')) bad.push(`${file}: missing skip link`);
   if (!root && !html.includes('<main id="main"')) bad.push(`${file}: missing main landmark target`);
@@ -110,7 +120,8 @@ for (const file of files) {
   for (const block of jsonLdBlocks(html)) {
     try {
       const parsed = JSON.parse(block);
-      for (const item of Array.isArray(parsed) ? parsed : [parsed]) types.add(item['@type']);
+      for (const item of Array.isArray(parsed) ? parsed : [parsed])
+        for (const type of [item['@type']].flat()) types.add(type);
     } catch {
       bad.push(`${file}: invalid JSON-LD`);
     }
@@ -165,6 +176,17 @@ for (const file of files) {
     if (!publishedRoutes.has(route))
       bad.push(`${file}: broken internal link ${href} (resolved ${route})`);
   }
+}
+const sitemapFiles = (await readdir('dist')).filter((name) => /^sitemap.*\.xml$/.test(name));
+for (const name of sitemapFiles) {
+  const xml = await readFile(join('dist', name), 'utf8');
+  for (const excluded of [
+    '/nl/financieel-misbruik/<',
+    '/nl/herstel/therapie/<',
+    '/nl/ontwerp-systeem/',
+  ])
+    if (xml.includes(excluded))
+      bad.push(`dist/${name}: must not list ${excluded.replace('<', '')}`);
 }
 if (noIndex) {
   const robots = await readFile('dist/robots.txt', 'utf8');

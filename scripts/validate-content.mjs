@@ -70,7 +70,10 @@ const isDate = (value) =>
 const externalHref = /^(?:[a-z][a-z\d+.-]*:|\/\/)/i;
 const forbidden = [
   [/\blorem ipsum\b/i, 'placeholder text'],
-  [/\bons team\b|\bonze redactie\b|\bons platform\b|\bwij zijn er\b|\bwij bieden\b/i, '"wij/ons team" voice'],
+  [
+    /\bons team\b|\bonze redactie\b|\bons platform\b|\bwij zijn er\b|\bwij bieden\b/i,
+    '"wij/ons team" voice',
+  ],
   [/\b(?:is|zijn) (?:een )?(?:narcist|sociopaat|psychopaat)\b/i, 'labels a person'],
 ];
 const hrefsIn = (value, found = []) => {
@@ -88,7 +91,14 @@ const routes = new Map();
 for (const entry of entries) {
   const { file, data, prefix, collection } = entry;
   const where = `${file}`;
-  for (const field of ['title', 'description', 'translationKey', 'slug', 'publishedAt', 'updatedAt'])
+  for (const field of [
+    'title',
+    'description',
+    'translationKey',
+    'slug',
+    'publishedAt',
+    'updatedAt',
+  ])
     if (!(field in data)) errors.push(`${where}: missing ${field}`);
   if (!['nl', 'en', 'ar'].includes(data.locale ?? 'nl'))
     errors.push(`${where}: locale must be nl, en or ar`);
@@ -98,10 +108,14 @@ for (const entry of entries) {
     errors.push(`${where}: author must be founder or editorial`);
   if (typeof data.slug !== 'string' || !data.slug.startsWith(prefix))
     errors.push(`${where}: slug must start with "${prefix}"`);
-  if (typeof data.description === 'string' && (data.description.length < 30 || data.description.length > 200))
+  if (
+    typeof data.description === 'string' &&
+    (data.description.length < 30 || data.description.length > 200)
+  )
     errors.push(`${where}: description must be 30–200 characters (${data.description.length})`);
   for (const field of ['publishedAt', 'updatedAt'])
-    if (field in data && !isDate(data[field])) errors.push(`${where}: ${field} must be an ISO date`);
+    if (field in data && !isDate(data[field]))
+      errors.push(`${where}: ${field} must be an ISO date`);
   if (data.reviewedAt != null && !isDate(data.reviewedAt))
     errors.push(`${where}: reviewedAt must be an ISO date or null`);
   if (data.published === true && editorialReviewRequired && !data.reviewedAt)
@@ -130,7 +144,8 @@ for (const entry of entries) {
   if (data.published !== true) continue;
   const keyId = `${data.locale ?? 'nl'}:${data.translationKey}`;
   const route = `${data.locale ?? 'nl'}:${data.slug}`;
-  if (keys.has(keyId)) errors.push(`${where}: duplicate translationKey ${keyId} (${keys.get(keyId)})`);
+  if (keys.has(keyId))
+    errors.push(`${where}: duplicate translationKey ${keyId} (${keys.get(keyId)})`);
   if (routes.has(route)) errors.push(`${where}: duplicate route ${route} (${routes.get(route)})`);
   keys.set(keyId, file);
   routes.set(route, file);
@@ -154,7 +169,8 @@ for (const file of statsFiles) {
   const data = document.toJS();
   for (const field of ['value', 'study', 'url', 'checkedAt', 'population', 'period', 'definition'])
     if (!data?.[field]) errors.push(`${file}: missing ${field}`);
-  if (data?.url && !String(data.url).startsWith('https://')) errors.push(`${file}: url must be HTTPS`);
+  if (data?.url && !String(data.url).startsWith('https://'))
+    errors.push(`${file}: url must be HTTPS`);
 }
 
 const reported = onlyFiles.size

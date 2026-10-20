@@ -1,0 +1,17 @@
+---
+/** Renders plain frontmatter text with the founder-review marker highlighted. */
+interface Props {
+  text: string;
+}
+const MARKER = '[OPRICHTER REVIEW NODIG]';
+const parts = Astro.props.text.split(MARKER);
+---
+
+{
+  parts.map((part, index) => (
+    <>
+      {index > 0 && <mark class="review-marker">{MARKER}</mark>}
+      {part}
+    </>
+  ))
+}

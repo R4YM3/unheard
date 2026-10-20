@@ -1,0 +1,45 @@
+---
+export interface GridItem {
+  eyebrow?: string;
+  title: string;
+  text?: string;
+  href?: string;
+  label?: string;
+  tone?: 'neutral' | 'safe' | 'tension' | 'alert' | 'story';
+}
+interface Props {
+  items: GridItem[];
+  columns?: 2 | 3;
+  headingLevel?: 3 | 4;
+  tone?: GridItem['tone'];
+}
+const { items, columns = 3, headingLevel = 3, tone = 'neutral' } = Astro.props;
+const Heading = `h${headingLevel}` as 'h3' | 'h4';
+---
+
+<div class:list={['grid', `grid--${columns}`]}>
+  {
+    items.map((item) => {
+      const classes = ['card', `card--${item.tone ?? tone}`];
+      const inner = (
+        <>
+          {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
+          <Heading>{item.title}</Heading>
+          {item.text && <p>{item.text}</p>}
+          {item.href && (
+            <span class="card-link-label" aria-hidden="true">
+              {item.label ?? 'Lees verder'} →
+            </span>
+          )}
+        </>
+      );
+      return item.href ? (
+        <a class:list={classes} href={item.href}>
+          {inner}
+        </a>
+      ) : (
+        <article class:list={classes}>{inner}</article>
+      );
+    })
+  }
+</div>

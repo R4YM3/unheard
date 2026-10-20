@@ -1,13 +1,25 @@
 ---
 interface Props {
-  title: string;
-  label?: string;
+  compact?: boolean;
 }
-const { title, label } = Astro.props;
+const { compact = false } = Astro.props;
 ---
 
-<aside class="card card--alert help" aria-label={title}>
-  {label && <p class="eyebrow">{label}</p>}
-  <h2>{title}</h2>
-  <slot />
+<aside
+  class:list={['help-block', { 'help-block--compact': compact }]}
+  aria-labelledby="help-heading"
+>
+  <h2 id="help-heading">Heb je nu hulp nodig?</h2>
+  <ul>
+    <li>Bij direct gevaar: bel <a href="tel:112">112</a>.</li>
+    <li>
+      Bij gedachten aan zelfdoding: bel <a href="tel:113">113</a> of chat via
+      <a href="https://www.113.nl/" rel="noopener">113.nl</a> (gratis, dag en nacht).
+    </li>
+    <li>
+      Bij zorgen over huiselijk geweld of misbruik, ook als man: Veilig Thuis,
+      <a href="tel:08002000">0800-2000</a> (gratis en anoniem).
+    </li>
+  </ul>
+  <p><a href="nl/hulp-vinden/">Meer over hulp vinden en veilig advies vragen</a></p>
 </aside>

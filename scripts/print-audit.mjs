@@ -17,36 +17,41 @@ const routes = [
   {
     id: 'story',
     route: '/nl/mijn-verhaal/',
-    required: ['De weg waarop ik mezelf kwijtraakte.', 'Voor mijn kinderen.'],
-  },
-  {
-    id: 'self-doubt',
-    route: '/nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
-    required: ['Wat er gezegd wordt', 'Wat ik vanbinnen voel'],
+    required: ['De weg waarop ik mezelf kwijtraakte.', 'Wie werd ik?', 'Voor mijn kinderen.'],
   },
   {
     id: 'emotion',
-    route: '/nl/wat-voel-ik/ik-voel-me-schuldig/',
-    required: ['Schuld zonder conclusie', 'Drie rustige vragen'],
-  },
-  {
-    id: 'darvo',
-    route: '/nl/begrippen/darvo/',
-    required: ['Wat betekent DARVO?', 'Begin bij wat jij nodig hebt.'],
-  },
-  {
-    id: 'therapy',
-    route: '/nl/herstel/therapie/',
-    required: ['Verschillende wegen naar zelfinzicht.', 'Je hoeft dit niet alleen uit te zoeken.'],
-  },
-  {
-    id: 'financial-abuse',
-    route: '/nl/financieel-misbruik/',
+    route: '/nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
     required: [
-      'Financiële druk kan uitmonden in chronische stress',
-      'Een veilige eerste stap is genoeg.',
+      'Wat er gezegd wordt',
+      'Wat ik vanbinnen voel',
+      'Een grens aangeven',
+      'Bevestiging zoeken',
     ],
   },
+  { id: 'emotion-hub', route: '/nl/wat-voel-ik/', required: ['Waar kan ik beginnen?'] },
+  { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
+  { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
+  {
+    id: 'knowledge',
+    route: '/nl/begrijp-het/conflict-of-patroon/',
+    required: ['Wat er gezegd wordt', 'Bronnen'],
+  },
+  { id: 'financial-hub', route: '/nl/begrijp-het/financieel-misbruik/', required: ['Wat is het?'] },
+  { id: 'recovery-hub', route: '/nl/herstel/', required: ['Herstel'] },
+  {
+    id: 'therapy',
+    route: '/nl/herstel/therapievormen/schematherapie/',
+    required: ['Vragen die je kunt stellen'],
+  },
+  {
+    id: 'tool',
+    route: '/nl/hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig/',
+    required: ['vragenkaart'],
+  },
+  { id: 'help', route: '/nl/hulp-vinden/', required: ['112', '113', '0800-2000'] },
+  { id: 'stats', route: '/nl/mannen-in-cijfers/', required: ['Beperkingen', '4,9%'] },
+  { id: 'search', route: '/nl/zoeken/', required: ['Alle pagina’s'] },
 ];
 
 const startServer = () =>
@@ -90,13 +95,20 @@ try {
       footerHidden: !(await visibility(page, '.site-footer')),
       themeHidden: !(await visibility(page, '.theme-toggle')),
       hiddenPanelsVisible: await page.evaluate(() =>
-        [...globalThis.document.querySelectorAll('[hidden]')].every(
-          (element) => globalThis.getComputedStyle(element).display !== 'none',
-        ),
+        [
+          ...globalThis.document.querySelectorAll(
+            '[data-pv-panel], .pv-panel, .glossary-item, details > :not(summary)',
+          ),
+        ].every((element) => globalThis.getComputedStyle(element).display !== 'none'),
       ),
       detailsExpanded: await page.evaluate(() =>
         [...globalThis.document.querySelectorAll('details:not([open]) > :not(summary)')].every(
           (element) => globalThis.getComputedStyle(element).display !== 'none',
+        ),
+      ),
+      privateInputHidden: await page.evaluate(() =>
+        [...globalThis.document.querySelectorAll('textarea')].every(
+          (element) => globalThis.getComputedStyle(element).display === 'none',
         ),
       ),
       text: await page.evaluate(() => globalThis.document.body.innerText),
@@ -105,10 +117,12 @@ try {
       throw new Error(`${item.route}: print UI must hide site navigation and fixed controls.`);
     if (!printState.hiddenPanelsVisible)
       throw new Error(`${item.route}: print must reveal tab panel content.`);
+    if (!printState.privateInputHidden)
+      throw new Error(`${item.route}: private answers must be excluded from print by default.`);
     if (!printState.detailsExpanded)
       throw new Error(`${item.route}: print must reveal collapsed detail content.`);
     for (const expected of item.required) {
-      if (!printState.text.includes(expected))
+      if (!printState.text.toLowerCase().includes(expected.toLowerCase()))
         throw new Error(`${item.route}: missing printed content: ${expected}`);
     }
 

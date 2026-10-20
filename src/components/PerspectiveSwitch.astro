@@ -1,126 +1,157 @@
 ---
-const scenarios = [
-  {
-    label: 'Een gesprek begrijpen',
-    outside: '“Zo heb ik dat niet bedoeld. Jij maakt het altijd groter dan het is.”',
-    inside:
-      'Ik probeer uit te leggen waarom dit me raakte, maar ik vraag me af of ik het verkeerd heb onthouden.',
-    context:
-      'Verschillen in interpretatie zijn normaal. Wanneer jouw beleving herhaaldelijk terzijde wordt geschoven, kan je vertrouwen in je eigen gevoel afnemen.',
-  },
-  {
-    label: 'Een grens aangeven',
-    outside: '“Waarom doe je nu zo moeilijk? Ik vraag toch niet veel?”',
-    inside: 'Ik voel spanning als ik nee wil zeggen en ben bang voor wat er daarna gebeurt.',
-    context:
-      'Een grens hoeft niet door iedereen prettig gevonden te worden om toch geldig te zijn. Let op of er ruimte is voor jouw keuze.',
-  },
-  {
-    label: 'Bevestiging zoeken',
-    outside: '“Je hoeft niet overal iets achter te zoeken.”',
-    inside: 'Ik zoek geruststelling, maar voel me daarna nog onzekerder over mijn eigen gevoel.',
-    context:
-      'Verwijzen naar de mening van anderen kan extra druk oproepen. Je mag onderzoeken of er werkelijk naar jouw ervaring geluisterd wordt.',
-  },
-];
+/**
+ * Scenario + perspective switch. Every scenario and both perspectives are rendered in HTML,
+ * so the content is readable without JavaScript and in print. The script only enhances it
+ * into scene buttons and a two-tab view.
+ */
+interface Scenario {
+  label: string;
+  outside: string;
+  inside: string;
+  context: string;
+}
+interface Props {
+  scenarios: Scenario[];
+  id?: string;
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+  outsideLabel?: string;
+  insideLabel?: string;
+}
+const {
+  scenarios,
+  id = 'perspectief',
+  eyebrow = 'Twee kanten van één gesprek',
+  heading = 'Wat je hoort. Wat je voelt.',
+  intro = 'Dit zijn fictieve voorbeelden, geen diagnoses. Ze laten zien dat wat er gezegd wordt en wat je vanbinnen voelt allebei aandacht verdienen.',
+  outsideLabel = 'Wat er gezegd wordt',
+  insideLabel = 'Wat ik vanbinnen voel',
+} = Astro.props;
 ---
 
-<section class="section" aria-labelledby="perspective-title">
+<section class="section" aria-labelledby={`${id}-heading`} id={id}>
   <div class="wrap">
-    <p class="eyebrow">Twee kanten van één gesprek</p><h2 id="perspective-title">
-      Wat je hoort. Wat je voelt.
-    </h2>
-    <p class="perspective-intro">
-      Selecteer een situatie en wissel tussen wat er gezegd wordt en wat je vanbinnen voelt.
-    </p>
-    <div class="scenario" role="group" aria-label="Kies een voorbeeldsituatie">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2 id={`${id}-heading`}>{heading}</h2>
+    <p class="reading">{intro}</p>
+    <div class="pv" data-pv data-outside-label={outsideLabel} data-inside-label={insideLabel}>
       {
-        scenarios.map((item, index) => (
-          <button
-            class="button button--quiet"
-            type="button"
-            data-scene={index}
-            aria-pressed={index === 0 ? 'true' : 'false'}
-          >
-            {item.label}
-          </button>
-        ))
+        scenarios.length > 1 && (
+          <fieldset class="pv-scene-choice" hidden data-pv-choice>
+            <legend>Kies een voorbeeldsituatie</legend>
+            <div class="pv-scene-buttons">
+              {scenarios.map((scenario, index) => (
+                <button type="button" data-pv-scene={index} aria-pressed={index === 0 ? 'true' : 'false'}>
+                  {scenario.label}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+        )
       }
-    </div>
-    <div class="tabs" role="tablist" aria-label="Perspectief">
-      <button role="tab" id="outside-tab" aria-selected="true" aria-controls="outside-panel"
-        >Wat er gezegd wordt</button
-      ><button
-        role="tab"
-        id="inside-tab"
-        aria-selected="false"
-        aria-controls="inside-panel"
-        tabindex="-1">Wat ik vanbinnen voel</button
-      >
-    </div>
-    <div class="tabpanel" id="outside-panel" role="tabpanel" aria-labelledby="outside-tab">
-      <p class="eyebrow">De buitenkant</p><p data-outside>{scenarios[0].outside}</p>
-    </div>
-    <div class="tabpanel" id="inside-panel" role="tabpanel" aria-labelledby="inside-tab" hidden>
-      <p class="eyebrow">De binnenkant</p><p data-inside>{scenarios[0].inside}</p>
-    </div>
-    <p class="perspective-context" data-context aria-live="polite">{scenarios[0].context}</p>
-    <div class="print-only">
-      <h3>Alle voorbeeldsituaties</h3>
+      <div class="pv-tabs" hidden data-pv-tabs aria-label="Kies perspectief">
+        <button type="button" id={`${id}-tab-outside`} data-pv-side="outside">{outsideLabel}</button
+        >
+        <button type="button" id={`${id}-tab-inside`} data-pv-side="inside">{insideLabel}</button>
+      </div>
       {
-        scenarios.map((scenario) => (
-          <section>
-            <h4>{scenario.label}</h4>
-            <p>
-              <strong>Wat er gezegd wordt:</strong> {scenario.outside}
-            </p>
-            <p>
-              <strong>Wat ik vanbinnen voel:</strong> {scenario.inside}
-            </p>
-            <p>
-              <strong>Duiding:</strong> {scenario.context}
-            </p>
+        scenarios.map((scenario, index) => (
+          <section class="pv-scene" data-pv-panel={index} aria-labelledby={`${id}-scene-${index}`}>
+            <h3 class="pv-scene__title" id={`${id}-scene-${index}`}>
+              {scenario.label}
+            </h3>
+            <div class="pv-panels">
+              <div
+                class="pv-panel pv-panel--outside"
+                id={`${id}-${index}-outside`}
+                data-side="outside"
+              >
+                <p class="eyebrow">{outsideLabel}</p>
+                <p class="pv-quote">{scenario.outside}</p>
+              </div>
+              <div
+                class="pv-panel pv-panel--inside"
+                id={`${id}-${index}-inside`}
+                data-side="inside"
+              >
+                <p class="eyebrow">{insideLabel}</p>
+                <p class="pv-quote">{scenario.inside}</p>
+              </div>
+            </div>
+            <p class="pv-context">{scenario.context}</p>
           </section>
         ))
       }
     </div>
   </div>
 </section>
-<script define:vars={{ scenarios }}>
-  let current = 0;
-  const tabs = [...document.querySelectorAll('[role="tab"]')];
-  const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));
-  const selectTab = (index) => {
-    tabs.forEach((tab, i) => {
-      tab.setAttribute('aria-selected', String(i === index));
-      tab.tabIndex = i === index ? 0 : -1;
-      panels[i].hidden = i !== index;
+
+<script>
+  const enhance = (root: HTMLElement) => {
+    const tabList = root.querySelector<HTMLElement>('[data-pv-tabs]');
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[data-pv-side]')];
+    const sceneButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-pv-scene]')];
+    const scenes = [...root.querySelectorAll<HTMLElement>('[data-pv-panel]')];
+    if (!tabList || tabs.length !== 2 || scenes.length === 0) return;
+    let scene = 0;
+    let side: 'outside' | 'inside' = 'outside';
+
+    tabList.setAttribute('role', 'tablist');
+    tabs.forEach((tab) => tab.setAttribute('role', 'tab'));
+    scenes.forEach((section) =>
+      section.querySelectorAll<HTMLElement>('[data-side]').forEach((panel) => {
+        panel.setAttribute('role', 'tabpanel');
+        panel.tabIndex = 0;
+      }),
+    );
+
+    const render = () => {
+      sceneButtons.forEach((button, index) =>
+        button.setAttribute('aria-pressed', String(index === scene)),
+      );
+      scenes.forEach((section, index) => {
+        section.hidden = index !== scene;
+        section.querySelectorAll<HTMLElement>('[data-side]').forEach((panel) => {
+          panel.hidden = panel.dataset.side !== side;
+        });
+      });
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.pvSide === side;
+        const panelId = `${scenes[scene].querySelector(`[data-side="${tab.dataset.pvSide}"]`)?.id}`;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.setAttribute('aria-controls', panelId);
+        tab.tabIndex = selected ? 0 : -1;
+        document.getElementById(panelId)?.setAttribute('aria-labelledby', tab.id);
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        side = tab.dataset.pvSide === 'inside' ? 'inside' : 'outside';
+        render();
+      });
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? 1 : (index + 1) % 2;
+        side = tabs[next].dataset.pvSide === 'inside' ? 'inside' : 'outside';
+        render();
+        tabs[next].focus();
+      });
     });
+    sceneButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        scene = Number(button.dataset.pvScene);
+        render();
+      }),
+    );
+
+    root.querySelector<HTMLElement>('[data-pv-choice]')?.removeAttribute('hidden');
+    tabList.hidden = false;
+    root.dataset.enhanced = '';
+    render();
   };
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => selectTab(index));
-    tab.addEventListener('keydown', (e) => {
-      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
-      e.preventDefault();
-      const n =
-        e.key === 'Home'
-          ? 0
-          : e.key === 'End'
-            ? tabs.length - 1
-            : (index + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
-      tabs[n].focus();
-      selectTab(n);
-    });
-  });
-  document.querySelectorAll('[data-scene]').forEach((button) =>
-    button.addEventListener('click', () => {
-      current = Number(button.dataset.scene);
-      document
-        .querySelectorAll('[data-scene]')
-        .forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
-      document.querySelector('[data-outside]').textContent = scenarios[current].outside;
-      document.querySelector('[data-inside]').textContent = scenarios[current].inside;
-      document.querySelector('[data-context]').textContent = scenarios[current].context;
-    }),
-  );
+
+  document.querySelectorAll<HTMLElement>('[data-pv]').forEach(enhance);
 </script>

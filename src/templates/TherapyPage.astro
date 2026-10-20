@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import EntryLayout from '../layouts/EntryLayout.astro';
+import Marked from '../components/Marked.astro';
+
+interface Props {
+  entry: CollectionEntry<'therapies'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<EntryLayout
+  entry={entry}
+  eyebrow={data.hero?.eyebrow ?? `Herstel / Therapievormen / ${data.name}`}
+>
+  <div class="wrap reading">
+    <p class="summary-box"><strong>Waar richt het zich op?</strong> {data.focus}</p>
+  </div>
+  <div class="wrap reading prose"><Content /></div>
+  <section class="section section--soft" aria-labelledby="vragen-heading" id="vragen">
+    <div class="wrap reading">
+      <p class="eyebrow">Voor een gesprek met een professional</p>
+      <h2 id="vragen-heading">Vragen die je kunt stellen</h2>
+      <ol class="questions-list">
+        {data.professionalQuestions.map((question) => <li>{question}</li>)}
+      </ol>
+      <p class="note">
+        Of een therapievorm bij jou past, bepaal je samen met een bevoegde professional,
+        bijvoorbeeld via je huisarts.
+      </p>
+    </div>
+  </section>
+  {
+    data.founder && (
+      <section
+        class="section section--therapy"
+        aria-labelledby="ervaring-heading"
+        id="mijn-ervaring"
+      >
+        <div class="wrap">
+          <div class="card card--story founder-note">
+            <p class="eyebrow">Persoonlijke ervaring · ik-passage</p>
+            <h2 id="ervaring-heading">Mijn ervaring met {data.name.toLowerCase()}</h2>
+            {data.founder.text.map((paragraph) => (
+              <p>
+                <Marked text={paragraph} />
+              </p>
+            ))}
+            <p class="note">
+              Dit is de ervaring van de oprichter, geen behandeladvies en geen uitspraak over wat
+              voor een ander werkt.
+              {data.founder.needsReview && ' Deze passage wordt nog door hem bevestigd.'}
+            </p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+</EntryLayout>

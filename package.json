@@ -15,7 +15,8 @@
     "audit:lighthouse": "npm run build && node scripts/lighthouse.mjs",
     "audit:visual": "node scripts/visual-audit.mjs",
     "audit:a11y": "npm run build && node scripts/axe-audit.mjs",
-    "audit:print": "npm run build && node scripts/print-audit.mjs"
+    "audit:print": "npm run build && node scripts/print-audit.mjs",
+    "audit:ux": "npm run build && node scripts/ux-audit.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

@@ -1,0 +1,56 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+
+interface Props {
+  heading: string;
+  eyebrow?: string;
+  paragraphs?: string[];
+  lead?: string;
+  actions?: Array<{ href: string; label: string; quiet?: boolean }>;
+  crumbs?: Array<{ href: string; label: string }>;
+  art?: 'article' | 'story' | false;
+  artNote?: string;
+}
+const {
+  heading,
+  eyebrow,
+  paragraphs = [],
+  lead,
+  actions = [],
+  crumbs = [],
+  art = 'article',
+  artNote,
+} = Astro.props;
+---
+
+<section class="hero page-hero">
+  <div class="wrap">
+    {crumbs.length > 1 && <Breadcrumbs crumbs={crumbs} />}
+    <div class:list={['page-hero__grid', { 'page-hero__grid--plain': !art }]}>
+      <div class="page-hero__content">
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <h1>{heading}</h1>
+        {lead && <p class="lead">{lead}</p>}
+        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        {
+          actions.length > 0 && (
+            <div class="actions">
+              {actions.map((action) => (
+                <a class:list={['button', { 'button--quiet': action.quiet }]} href={action.href}>
+                  {action.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+      {
+        art && (
+          <div class:list={['hero-art', { 'hero-art--story': art === 'story' }]} aria-hidden="true">
+            {artNote && <span class="hero-art__note">{artNote}</span>}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

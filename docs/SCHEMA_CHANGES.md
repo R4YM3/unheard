@@ -89,8 +89,24 @@ it. Keys owned by this branch that term articles can link to:
 | `herstel`, `herstel-*`, `therapievormen`, `therapie-*` | `/nl/herstel/…` |
 | `hulp-vinden`, `voor-naasten`, `hulpmiddelen`, `kaart-*` | help, loved ones, tools |
 
+## Rendering notes for term articles
+
+- The page H1 is `title`; `summary` and the `glossary` definition appear together in an
+  "In het kort" box directly under the hero, and the definition is emitted as `DefinedTerm`
+  JSON-LD. Keep the definition identical to what the body says.
+- `/nl/begrippen/` lists every published `patterns` entry whose slug is exactly
+  `begrippen/<segment>` (direct children only), and builds the A–Z index from the `glossary`
+  blocks of all collections.
+- `hero` (`eyebrow`, `paragraphs`, `actions`) is optional; without it the hero shows only the
+  breadcrumbs and title. Anchor actions must match a heading id generated from the body
+  (lowercase, spaces become hyphens, punctuation removed), e.g. `## Wat is het?` → `#wat-is-het`.
+- Do not put an `#` H1 in the body; the validator rejects it.
+
 ## Changelog
 
 - 2026-10-20: introduced `emotions`, `patterns`, `articles`, `therapies`, `tools`, `stats`,
   `hubs`, `story`; added `status`, `reviewedAt`, extended `sources`, grouped `related`,
   `glossary`, `scenarios`, `reflection`, `reviewNotes`.
+- 2026-10-20 (later): templates and catch-all route landed; hub `listings` show direct
+  children only; robots meta is now exactly `noindex,nofollow`; top navigation points
+  "Begrijp het" to `/nl/begrijp-het/`. No field changes for `patterns`.

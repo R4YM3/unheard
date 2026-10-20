@@ -1,27 +1,47 @@
 ---
-interface Source {
-  label: string;
-  url: string;
-}
+import { formatDate, isoDate } from '../lib/content';
+
 interface Props {
-  sources: Source[];
+  sources: Array<{
+    label: string;
+    url: string;
+    publisher?: string;
+    checkedAt?: Date;
+    note?: string;
+  }>;
 }
 const { sources } = Astro.props;
 ---
 
-{
-  sources.length > 0 && (
-    <section class="section section--soft" aria-labelledby="sources-heading">
-      <div class="wrap reading">
-        <h2 id="sources-heading">Bronnen</h2>
-        <ul>
+<section class="section section--tight source-list" aria-labelledby="sources-heading">
+  <div class="wrap reading">
+    <h2 id="sources-heading">Bronnen</h2>
+    {
+      sources.length > 0 ? (
+        <ol>
           {sources.map((source) => (
             <li>
-              <a href={source.url}>{source.label}</a>
+              <a href={source.url} rel="noopener">
+                {source.label}
+              </a>
+              {source.publisher && <>, {source.publisher}</>}
+              {source.checkedAt && (
+                <>
+                  {' '}
+                  · geraadpleegd op{' '}
+                  <time datetime={isoDate(source.checkedAt)}>{formatDate(source.checkedAt)}</time>
+                </>
+              )}
+              {source.note && <span class="note"> — {source.note}</span>}
             </li>
           ))}
-        </ul>
-      </div>
-    </section>
-  )
-}
+        </ol>
+      ) : (
+        <p class="note">
+          Deze pagina beschrijft persoonlijke ervaring of oriëntatie en verwijst niet naar
+          onderzoek. Feitelijke informatie staat op de pagina’s waarnaar wordt verwezen.
+        </p>
+      )
+    }
+  </div>
+</section>

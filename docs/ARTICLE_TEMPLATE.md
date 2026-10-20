@@ -1,53 +1,77 @@
-# Article content template
+# Copy-ready content templates
 
-Copy this file into `src/content/articles/<section>/<slug>.md`, then replace every placeholder.
-Do not set `published: true` until the content, sources, internal relations, and translation status
-have been reviewed.
+Copy a block into a new file, replace every value, then run
+`node scripts/validate-content.mjs <file>`, `npm run check` and `npm run build`.
+Field rules, slug prefixes and the key registry are in [CONTENT_GUIDE.md](CONTENT_GUIDE.md).
+Only cite sources listed in [SOURCES_VERIFIED.md](SOURCES_VERIFIED.md), or verify new ones first.
+
+## Knowledge article (`src/content/articles/<section>/<file>.md`)
 
 ```md
 ---
-title: 'A clear, reader-centred title'
-description: 'A specific description of at least thirty characters for search and sharing metadata.'
+title: 'Een menselijke titel als vraag of herkenning'
+description: 'Een concrete omschrijving van 30 tot 200 tekens voor zoekmachines en delen.'
 locale: nl
-translationKey: stable-translation-key
-slug: section/route-slug
-kind: emotion # emotion | concept | recovery | resource
-published: false
-author: Ongehoord
-updatedAt: 2026-10-19
-related: [another-published-translation-key]
+translationKey: unieke-sleutel
+slug: begrijp-het/unieke-sleutel
+status: draft # draft | in_review | approved
+published: false # true zodra de pagina zonder privégegevens of onbevestigde claims online mag
+author: editorial # editorial = algemene uitleg, founder = persoonlijke ervaring
+publishedAt: 2026-10-20
+updatedAt: 2026-10-20
+reviewedAt: null # ISO-datum na inhoudelijke review; verplicht voordat NO_INDEX=false kan
+order: 10
+cardTitle: 'Korte kaarttitel'
+cardText: 'Eén herkenbare zin voor kaarten en zoekresultaten.'
+summary: 'Een direct antwoord van twee of drie zinnen. Dit verschijnt bovenaan als “In het kort”.'
+glossary: # optioneel: verschijnt in de begrippenindex en als DefinedTerm
+  term: 'Begrip'
+  definition: 'Een voorzichtige omschrijving van 20 tot 260 tekens, zonder diagnose.'
+  aliases: []
+  category: basis # patroon | controle | financieel | impact | labels | basis
+scenarios: # optioneel, maximaal drie fictieve situaties
+  - label: 'Korte situatienaam'
+    outside: '“Wat er gezegd wordt.”'
+    inside: 'Wat ik vanbinnen voel, in de ik-vorm.'
+    context: 'Nuance die niets concludeert over de ander.'
+reflection: # optioneel
+  heading: 'Vragen om bij stil te staan'
+  questions: ['Een vrijblijvende vraag?']
+  writable: false # true toont lokale invulvelden; nooit opgeslagen of verstuurd
+related: [zelftwijfel, hulp-vinden] # 2 tot 5 bestaande of geplande sleutels
 sources:
-  - label: 'Primary or trusted source'
-    url: 'https://example.org/source'
-hero:
-  eyebrow: Section / topic
-  paragraphs:
-    - A first, calm paragraph that is meaningful without JavaScript.
-    - A second paragraph that states limits and avoids diagnosing another person.
-  actions:
-    - href: '#what-this-means'
-      label: What does this mean?
-    - href: nl/hulp-vinden/
-      label: Find support
-      quiet: true
+  - label: 'Titel van de bron'
+    url: 'https://www.voorbeeld-officiele-bron.nl/pagina'
+    publisher: 'Uitgever'
+    checkedAt: 2026-10-20
+reviewNotes:
+  - 'Vraag voor de oprichter of een inhoudelijk reviewer.'
 ---
 
-## What this means
+## Wat is het?
 
-Write the essential explanation in plain language. Do not make clinical, legal, or factual claims
-without a specific source in the frontmatter.
+## Hoe kan het eruitzien?
 
-## A safe next step
+## Wanneer is het niet zomaar af te leiden?
 
-Offer options rather than instructions. Do not ask readers to submit sensitive information, and do
-not add a form that stores responses.
+## Wat het met je kan doen
+
+## Wat kan helpen?
 ```
 
-## Before publishing
+The URL in `sources` above is a placeholder. Replace it with a real, checked source before setting
+`published: true`.
 
-1. Add only approved facts and founder-approved first-person text.
-2. Use a unique, lowercase route slug and a stable `translationKey`.
-3. Add at least one specific HTTPS source for published articles.
-4. Point `related` only at existing published articles in the same locale.
-5. Run `npm run check` and `npm run build`.
-6. Keep a translation unpublished until the entire equivalent page has native-language editorial review.
+## Other collections
+
+- **Emotion** (`src/content/emotions/`, slug `wat-voel-ik/...`): add `feeling`, `impacts`,
+  `helps` and optionally `founderNote`. Body order: Herken je dit? → Wat gebeurt er om je heen? →
+  Wat kan dit verklaren? → Wat het met je kan doen → Wanneer is het iets anders?
+- **Pattern** (`src/content/patterns/`, slug `begrippen/...`): same fields as an article; always
+  add a `glossary` block. Term articles are written on the `content/begrippen` branch.
+- **Therapy** (`src/content/therapies/`, slug `herstel/therapievormen/...`): add `name`, `focus`,
+  `professionalQuestions` (at least three) and an optional labelled `founder` passage.
+- **Tool** (`src/content/tools/`, slug `hulpmiddelen/...`): add `purpose`, `usage`, `safety` and a
+  `card` with at least three `prompts` (`kind: lines` or `kind: check`).
+- **Stat** (`src/content/stats/*.yaml`): only with `verified: true` after checking the primary
+  source; every field (definition, population, period, limitations, URL, checked date) is required.

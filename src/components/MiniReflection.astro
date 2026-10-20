@@ -1,0 +1,67 @@
+---
+/**
+ * Optional reflection questions. Answers stay in the page: nothing is stored, sent or
+ * printed unless the reader explicitly opts in to printing them.
+ */
+interface Props {
+  reflection: { heading?: string; questions: string[]; note?: string; writable: boolean };
+  id?: string;
+}
+const { reflection, id = 'reflectie' } = Astro.props;
+const heading = reflection.heading ?? 'Vragen om bij stil te staan';
+---
+
+<section class="section" aria-labelledby={`${id}-heading`} id={id}>
+  <div class="wrap reading">
+    <div class="reflection" data-print-answers>
+      <p class="eyebrow">Vrijblijvend</p>
+      <h2 id={`${id}-heading`}>{heading}</h2>
+      {reflection.note && <p>{reflection.note}</p>}
+      {
+        reflection.writable ? (
+          <form
+            class="reflection-form"
+            method="dialog"
+            autocomplete="off"
+            aria-describedby={`${id}-privacy`}
+          >
+            {reflection.questions.map((question, index) => (
+              <div>
+                <label for={`${id}-q${index}`}>{question}</label>
+                <textarea
+                  id={`${id}-q${index}`}
+                  rows="3"
+                  autocomplete="off"
+                  spellcheck="false"
+                  autocapitalize="off"
+                />
+                <span class="print-lines" style="--lines: 3" aria-hidden="true" />
+              </div>
+            ))}
+            <div class="form-row">
+              <button class="button button--quiet" type="reset">
+                Wis mijn antwoorden
+              </button>
+              <label class="check-label print-toggle">
+                <input type="checkbox" /> Neem mijn antwoorden mee als ik print
+              </label>
+            </div>
+          </form>
+        ) : (
+          <ol>
+            {reflection.questions.map((question) => (
+              <li>{question}</li>
+            ))}
+          </ol>
+        )
+      }
+      <p class="note" id={`${id}-privacy`}>
+        {
+          reflection.writable
+            ? 'Wat je hier typt, blijft alleen in dit venster. Ongehoord slaat het niet op en verstuurt het niet. Klik op ‘Wis mijn antwoorden’ als je klaar bent en sluit het tabblad. Op een gedeeld apparaat kun je ook alleen in gedachten antwoorden.'
+            : 'Je hoeft niets op te schrijven. Je kunt de vragen ook alleen in gedachten beantwoorden, of ze bewaren voor een gesprek met iemand die je vertrouwt.'
+        }
+      </p>
+    </div>
+  </div>
+</section>
