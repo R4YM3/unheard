@@ -57,7 +57,7 @@ sources:
     url: 'https://www.ggzstandaarden.nl/zorgstandaarden/persoonlijkheidsstoornissen/introductie'
     checkedAt: 2026-10-20
 reviewNotes:
-  - 'Klinische review nodig: controleer de weergave van DSM-5, ICD-11 en Pincus & Lukowitsky (2010) door een psychiater of klinisch psycholoog.'
+  - 'Klinische review nodig: controleer de weergave van DSM-5, ICD-11, Pincus & Lukowitsky (2010) en de passages over ontstaan en samenleven door een psychiater of klinisch psycholoog.'
 ---
 
 ## Waarom dit artikel anders is
@@ -90,6 +90,24 @@ Onderzoekers onderscheiden twee brede thema's binnen pathologisch narcisme: _gra
 
 'Covert narcist' is dus geen officiële diagnose, en ook in de wetenschap omstreden als aparte categorie. Het woord kan helpen om subtiel gedrag te benoemen, maar het is geen vaststaand label.
 
+## Hoe kan zo'n patroon ontstaan?
+
+Er is geen enkele oorzaak, en geen verhaal dat voor iedereen klopt. [Thuisarts](https://www.thuisarts.nl/persoonlijkheids-stoornis/ik-heb-persoonlijkheids-stoornis) beschrijft dat een persoonlijkheidsstoornis vaak samenhangt met een erfelijke aanleg, en soms ook met wat iemand heeft meegemaakt: mishandeling, verwaarlozing, pesten, of ouders die zelf psychische problemen hadden. Thuisarts zegt er nadrukkelijk bij dat veel mensen zulke dingen meemaken en géén persoonlijkheidsstoornis krijgen.
+
+Dat geldt ook voor narcistische trekken. Onderzoekers zijn het niet eens over de precieze afbakening (Pincus en Lukowitsky, 2010). Een verklaring is bovendien geen excuus voor gedrag dat jou schaadt. En van buitenaf kun je niet zien hoe iemands patronen zijn ontstaan. Dat hoef je ook niet te weten om te erkennen wat het met jou deed.
+
+## Hoe kan het zijn om daarmee te leven?
+
+Dit gaat over wat jij kunt meemaken. Het is geen beschrijving van een type mens, en geen manier om vast te stellen wat er met de ander aan de hand is. Dezelfde dingen kunnen gebeuren bij iemand mét en zonder een diagnose.
+
+**Wat er om je heen kan gebeuren.** Jouw verhaal telt minder dan dat van de ander. Complimenten en afwijzing wisselen elkaar af. Kritiek komt terug als een aanval op jou. Afspraken schuiven, of gelden alleen als ze de ander uitkomen. Vrienden, familie of collega's horen een versie waarin jij degene bent die moeilijk doet. Soms is dat luid en zichtbaar. Soms is het stil: een zucht, een grap ten koste van jou, dagenlang afstand, of het gevoel dat je steeds te veel vraagt. Dat stillere patroon wordt online vaak 'verborgen narcisme' genoemd. Zoals hierboven staat, is dat geen officiële diagnose.
+
+**Wat het met je gevoel kan doen.** Je gaat twijfelen aan je herinnering en aan je recht om iets te vinden. Je voelt je schuldig als je een grens noemt, en leeg als je die inslikt. Je mist de ander en je bent bang voor de ander, soms in dezelfde dag. Je herkent jezelf minder: je smaak, je vrienden, je tempo. Schaamte kan groot zijn, zeker als je van jezelf vond dat je 'sterk' hoorde te zijn. Zie ook [zelftwijfel](nl/begrippen/zelftwijfel/), [schuld](nl/wat-voel-ik/ik-voel-me-schuldig/) en [emotionele uitputting](nl/begrippen/emotionele-uitputting/).
+
+**Wat het praktisch kan doen.** Je slaapt slechter of staat steeds aan. Werk, studie of het huishouden kosten meer moeite, omdat een deel van je aandacht bij de relatie blijft. Geld, telefoon of afspraken met anderen worden een bron van spanning. Zie [dwingende controle](nl/begrippen/dwingende-controle/) en [financieel misbruik](nl/begrijp-het/financieel-misbruik/). Na een breuk kan het contact doorgaan via kinderen, een huis of een gezamenlijke rekening. Dat maakt stoppen niet altijd eenvoudig, en het is geen teken dat je het 'niet meende'.
+
+Eén ruzie of één kwetsende zin is dit niet. Het gaat om wat er steeds terugkomt, en om wat het met jou doet.
+
 ## Hoe kan gedrag eruitzien, los van een label?
 
 In plaats van te vragen "Is de ander een narcist?", kan het helpen om te kijken naar concreet gedrag en wat het met je deed. Bijvoorbeeld:
@@ -119,7 +137,7 @@ Al deze gedragingen kunnen voorkomen bij mensen _met_ en _zonder_ een persoonlij
 
 ## Impact op de ontvanger
 
-Wat je hebt meegemaakt, kan diep ingrijpen, ongeacht hoe je het gedrag van de ander noemt: [twijfel aan jezelf](nl/begrippen/zelftwijfel/), [jezelf niet meer herkennen](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/), [schuldgevoel](nl/wat-voel-ik/ik-voel-me-schuldig/), [uitputting](nl/begrippen/emotionele-uitputting/). Die gevolgen zijn echt, en verdienen aandacht.
+Wat je hebt meegemaakt, kan diep ingrijpen, ongeacht hoe je het gedrag van de ander noemt. In jezelf: [twijfel](nl/begrippen/zelftwijfel/), [schuld](nl/wat-voel-ik/ik-voel-me-schuldig/), schaamte, en het gevoel dat je [jezelf niet meer herkent](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/). In je lijf: spanning, slecht slapen, [steeds aan staan](nl/wat-voel-ik/ik-sta-voortdurend-aan/). In het dagelijks leven: minder contact met mensen die je eerder vertrouwde, moeite met werk of geld, en beslissingen die je uitstelt omdat je niet meer weet wat van jou is. Die gevolgen zijn echt. Ze bewijzen geen diagnose van de ander. Ze zijn wel een reden om je eigen situatie serieus te nemen.
 
 ## Wat kan helpen?
 

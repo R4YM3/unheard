@@ -137,12 +137,15 @@ home:
           label: 'Hoe kun je helpen?',
           href: 'nl/ik-maak-me-zorgen-om-iemand/',
         }
-  fact:
-    eyebrow: 'Eén cijfer, met context'
-    value: '4,9%'
-    text: 'van de mannen van 16 jaar en ouder maakte in de twaalf maanden voor het CBS-onderzoek van 2024 psychisch geweld in huiselijke kring mee. Dat gaat niet alleen over partners, maar over de hele huiselijke kring.'
+  facts:
+    eyebrow: 'Twee cijfers, met context'
+    items:
+      - value: '870.000'
+        text: 'mensen van 16 jaar en ouder maakten in 2024 psychisch geweld in huiselijke kring mee. Dat is ongeveer 5,9 procent van iedereen, niet alleen van mannen, en niet alleen binnen een relatie.'
+      - value: '4,9%'
+        text: 'van de mannen van 16 jaar en ouder maakte dat mee. Het CBS publiceert daarbij geen apart aantal mannen. 870.000 is dus niet het mannelijke cijfer.'
     href: 'nl/mannen-in-cijfers/'
-    label: 'Wat dit cijfer wel en niet zegt'
+    label: 'Wat deze cijfers wel en niet zeggen'
   closing:
     eyebrow: 'Je staat er niet alleen voor'
     heading: 'Je hoeft niet te wachten tot het ernstig genoeg voelt.'
@@ -157,5 +160,5 @@ sources:
     checkedAt: 2026-10-20
 reviewNotes:
   - 'Bevestig de introductietekst in ik-vorm en de zin “Ik ben één persoon, geen hulporganisatie”.'
-  - 'Bevestig of het CBS-cijfer op de homepage mag staan (handoff: maximaal één rustig feit, nooit in de hero).'
+  - 'Bevestig of de twee CBS-cijfers op de homepage mogen staan: 870.000 voor de hele bevolking en 4,9% voor mannen, nooit in de hero, en nooit als hetzelfde getal.'
 ---

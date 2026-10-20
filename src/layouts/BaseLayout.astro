@@ -258,8 +258,10 @@ const footerGroups =
         </details>
         <div class="header-controls"><LocaleSelector locale={locale} /></div>
       </div>
-      {
-        activeSection && (
+    </header>
+    {
+      activeSection && (
+        <div class="section-nav-bar">
           <div class="wrap">
             <nav class="section-nav" aria-label={activeSection.label}>
               <ul>
@@ -273,9 +275,9 @@ const footerGroups =
               </ul>
             </nav>
           </div>
-        )
-      }
-    </header>
+        </div>
+      )
+    }
     <main id="main"><slot /></main>
     <footer class="site-footer">
       <div class="wrap">

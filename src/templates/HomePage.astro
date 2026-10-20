@@ -130,12 +130,20 @@ if (!home) throw new Error(`HomePage requires a home block; received ${entry.id}
   </section>
   <section class="section section--tight" aria-labelledby="feit-heading">
     <div class="wrap">
-      <p class="eyebrow" id="feit-heading">{home.fact.eyebrow}</p>
-      <a class="stat-teaser" href={home.fact.href}>
-        {home.fact.value && <p class="stat-teaser__value">{home.fact.value}</p>}
-        <p>{home.fact.text}</p>
-        <span class="card-link-label">{home.fact.label} →</span>
-      </a>
+      <p class="eyebrow" id="feit-heading">{home.facts.eyebrow}</p>
+      <div class="stat-teasers">
+        {
+          home.facts.items.map((item) => (
+            <article class="stat-teaser">
+              <p class="stat-teaser__value">{item.value}</p>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+      <p class="stat-teasers__more">
+        <a href={home.facts.href}>{home.facts.label} →</a>
+      </p>
     </div>
   </section>
   <section class="section section--chrome" aria-labelledby="slot-heading" id="hulp">

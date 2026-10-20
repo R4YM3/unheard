@@ -325,10 +325,16 @@ const hubs = defineCollection({
           heading: z.string().min(8),
           cards: z.array(homeCard).min(1),
         }),
-        fact: z.object({
+        facts: z.object({
           eyebrow: z.string().min(2),
-          value: z.string().min(2).optional(),
-          text: z.string().min(20),
+          items: z
+            .array(
+              z.object({
+                value: z.string().min(2),
+                text: z.string().min(20),
+              }),
+            )
+            .length(2),
           href: internalHref,
           label: z.string().min(2),
         }),

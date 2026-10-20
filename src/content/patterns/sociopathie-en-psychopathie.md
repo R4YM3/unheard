@@ -44,7 +44,7 @@ sources:
     url: 'https://www.thuisarts.nl/persoonlijkheids-stoornis/ik-heb-persoonlijkheids-stoornis'
     checkedAt: 2026-10-20
 reviewNotes:
-  - 'Klinische review nodig: controleer het onderscheid ASPS/psychopathie en de DSM-5-criteria door een psychiater of klinisch psycholoog.'
+  - 'Klinische review nodig: controleer het onderscheid ASPS/psychopathie, de DSM-5-criteria en de passages over ontstaan en samenleven door een psychiater of klinisch psycholoog.'
 ---
 
 ## Waarom dit artikel anders is
@@ -79,6 +79,24 @@ Met 'psychopathische trekken' wordt bedoeld dat iemand sommige van deze kenmerke
 
 'Sociopaat' en 'sociopathie' zijn geen diagnoses in de DSM-5 of ICD-11. Het woord leeft vooral in de dagelijkse taal en in de media. Mensen bedoelen er meestal iets mee als 'iemand die geen geweten lijkt te hebben'. Omdat er geen vaste definitie is, betekent het voor iedereen iets anders.
 
+## Hoe kan zo'n patroon ontstaan?
+
+Ook hier is er geen enkele oorzaak. [Thuisarts](https://www.thuisarts.nl/persoonlijkheids-stoornis/ik-heb-persoonlijkheids-stoornis) beschrijft dat persoonlijkheidsstoornissen vaak samenhangen met aanleg, en soms met wat iemand heeft meegemaakt, zoals mishandeling, verwaarlozing of pesten. Veel mensen maken dat mee en krijgen geen stoornis. Voor de antisociale persoonlijkheidsstoornis geldt in de DSM-5 bovendien dat er al vóór het vijftiende jaar aanwijzingen voor een gedragsstoornis moeten zijn. Dat is een eis voor een diagnose, geen verhaal dat jij over iemand anders kunt invullen.
+
+Een verklaring maakt schadelijk gedrag niet goed. En je hoeft de jeugd van een ander niet te kennen om te zien wat er met jou gebeurde.
+
+## Hoe kan het zijn om daarmee te leven?
+
+Ook dit is geen portret van een type mens. Het beschrijft wat mensen kunnen meemaken als grenzen, waarheid of gevolgen structureel niet lijken te tellen.
+
+**Wat er om je heen kan gebeuren.** Afspraken worden gebroken en daarna ontkend. Er wordt gelogen over geld, contacten of waar iemand was. Jouw nee wordt genegeerd, of bestraft met stilte, dreiging of charme die snel weer omslaat. Spijt, als die er is, duurt kort en verandert het gedrag niet. Anderen horen een versie waarin jij overdrijft. Soms is er ook concreet risico: schulden op jouw naam, spullen die verdwijnen, intimidatie. Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/) en [dwingende controle](nl/begrippen/dwingende-controle/).
+
+**Wat het met je gevoel kan doen.** Je vertrouwt je eigen oordeel minder, omdat de feiten steeds worden herschreven. Je schaamt je dat je iemand geloofde. Je wordt waakzaam: je controleert, je bereidt gesprekken voor, je ontspant niet als het even rustig is. Boosheid en medelijden kunnen door elkaar lopen, zeker als de ander ook kwetsbaar kan overkomen. Zie [zelftwijfel](nl/begrippen/zelftwijfel/) en [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/).
+
+**Wat het praktisch kan doen.** Geld raakt uit het zicht. Werk of slaap lijdt onder de spanning. Je trekt je terug uit vriendschappen, omdat uitleggen te ingewikkeld voelt of omdat je niet geloofd verwacht te worden. Delen wat er gebeurde kan onveilig zijn als de ander daarop reageert. Bij dreiging of geweld gaat je veiligheid voor een gesprek. Bij direct gevaar bel je 112. Voor advies: Veilig Thuis, 0800-2000.
+
+Eén leugen of één gebroken afspraak maakt iemand dit niet. Het gaat om een herhaald patroon, en om het effect op jou.
+
 ## Hoe kan gedrag eruitzien, los van een label?
 
 In plaats van te vragen "Is de ander een sociopaat?", kan het helpen om concreet te kijken:
@@ -108,7 +126,7 @@ Al deze gedragingen kunnen voorkomen bij mensen met en zonder een persoonlijkhei
 
 ## Impact op de ontvanger
 
-Wie langdurig is voorgelogen, uitgebuit of bang gemaakt, kan last hebben van [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/), [twijfel aan het eigen oordeel](nl/begrippen/zelftwijfel/), wantrouwen tegenover nieuwe mensen en schaamte omdat je 'erin bent getrapt'. Dat je iemand vertrouwde, is geen fout. Vertrouwen is normaal.
+Wie langdurig is voorgelogen, uitgebuit of bang gemaakt, kan dat op drie plekken merken. In je gevoel: [twijfel aan je oordeel](nl/begrippen/zelftwijfel/), schaamte, wantrouwen tegenover nieuwe mensen, en soms nog steeds zorg voor de ander. In je lijf: [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/), slecht slapen, een lichaam dat niet ontspant als het even stil is. In de praktijk: geld dat niet klopt, een kleiner netwerk, en beslissingen die je uitstelt omdat je niet weet wat veilig is. Dat je iemand vertrouwde, is geen fout. Vertrouwen is normaal. Deze gevolgen zeggen niets over een diagnose. Ze zijn wel genoeg om hulp voor jezelf te zoeken.
 
 ## Wat kan helpen?
 
