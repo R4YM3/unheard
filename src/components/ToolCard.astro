@@ -1,0 +1,67 @@
+---
+/**
+ * A4 question card. Prints blank writing lines by default; typed answers are only printed
+ * when the reader ticks the opt-in box. Nothing is stored or sent.
+ */
+interface Props {
+  card: {
+    title: string;
+    intro?: string;
+    prompts: Array<{ question: string; hint?: string; kind: 'lines' | 'check'; lines: number }>;
+    closing?: string;
+  };
+}
+const { card } = Astro.props;
+---
+
+<section class="section section--tight" aria-labelledby="kaart-heading" id="kaart">
+  <div class="wrap reading">
+    <div class="tool-card" data-print-answers>
+      <p class="eyebrow">Ongehoord · vragenkaart</p>
+      <h2 id="kaart-heading">{card.title}</h2>
+      {card.intro && <p>{card.intro}</p>}
+      <form method="dialog" autocomplete="off" aria-describedby="kaart-privacy">
+        <ol>
+          {
+            card.prompts.map((prompt, index) =>
+              prompt.kind === 'check' ? (
+                <li>
+                  <div class="tool-check">
+                    <input type="checkbox" id={`kaart-${index}`} />
+                    <label for={`kaart-${index}`}>{prompt.question}</label>
+                  </div>
+                  {prompt.hint && <p class="hint">{prompt.hint}</p>}
+                </li>
+              ) : (
+                <li>
+                  <label for={`kaart-${index}`}>{prompt.question}</label>
+                  {prompt.hint && <p class="hint">{prompt.hint}</p>}
+                  <textarea
+                    id={`kaart-${index}`}
+                    rows={Math.min(prompt.lines, 5)}
+                    autocomplete="off"
+                    spellcheck="false"
+                    autocapitalize="off"
+                  />
+                  <span class="print-lines" style={`--lines: ${prompt.lines}`} aria-hidden="true" />
+                </li>
+              ),
+            )
+          }
+        </ol>
+        {card.closing && <p>{card.closing}</p>}
+        <div class="form-row no-print">
+          <button class="button button--quiet" type="reset">Wis alles</button>
+          <label class="check-label print-toggle">
+            <input type="checkbox" /> Neem mijn antwoorden mee als ik print
+          </label>
+        </div>
+      </form>
+      <p class="note no-print" id="kaart-privacy">
+        Je kunt deze kaart leeg printen en met de hand invullen. Wat je op het scherm typt, slaat
+        Ongehoord niet op en verstuurt het niet. Bij het printen worden alleen lege schrijfregels
+        afgedrukt, tenzij je zelf aanvinkt dat je antwoorden mee mogen.
+      </p>
+    </div>
+  </div>
+</section>

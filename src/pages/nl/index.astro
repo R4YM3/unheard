@@ -1,18 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
-import HomePage from '../../components/HomePage.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomePage from '../../templates/HomePage.astro';
+import { findByKey } from '../../lib/content';
 
-const [entry] = await getCollection(
-  'pages',
-  (page) => page.data.locale === 'nl' && page.data.slug === 'home',
-);
-
-if (!entry) {
-  throw new Error('Missing validated content entry for /nl/.');
-}
+const entry = await findByKey('nl', 'home');
+if (!entry || entry.collection !== 'hubs') throw new Error('Missing published home hub for /nl/.');
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description} canonicalPath="/nl/">
-  <HomePage entry={entry} />
-</BaseLayout>
+<HomePage entry={entry} />

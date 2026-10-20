@@ -1,0 +1,30 @@
+---
+import Marked from './Marked.astro';
+
+interface Props {
+  note: { eyebrow: string; heading: string; paragraphs: string[]; needsReview: boolean };
+  id?: string;
+}
+const { note, id = 'oprichter' } = Astro.props;
+---
+
+<section class="section section--paper" aria-labelledby={`${id}-heading`}>
+  <div class="wrap">
+    <div class="card card--story founder-note">
+      <p class="eyebrow">{note.eyebrow}</p>
+      <h2 id={`${id}-heading`}>{note.heading}</h2>
+      {
+        note.paragraphs.map((paragraph) => (
+          <p>
+            <Marked text={paragraph} />
+          </p>
+        ))
+      }
+      <p class="note">
+        Persoonlijke ervaring van de oprichter, geen advies.{
+          note.needsReview && ' Deze passage wordt nog door hem bevestigd.'
+        }
+      </p>
+    </div>
+  </div>
+</section>

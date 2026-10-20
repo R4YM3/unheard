@@ -1,0 +1,115 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import EntryLayout from '../layouts/EntryLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CardGrid from '../components/CardGrid.astro';
+import Timeline from '../components/Timeline.astro';
+import { breadcrumbsFor } from '../lib/content';
+
+interface Props {
+  entry: CollectionEntry<'story'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const crumbs = await breadcrumbsFor(entry);
+const hasBody = Boolean(entry.body?.trim());
+---
+
+<EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
+  <section class="hero page-hero">
+    <div class="wrap">
+      <Breadcrumbs crumbs={crumbs} />
+      <div class="page-hero__grid">
+        <div class="page-hero__content">
+          <p class="eyebrow">{data.eyebrow}</p>
+          <h1>{data.heading}</h1>
+          <p class="lead">{data.lead}</p>
+          <p>{data.heroPersonal}</p>
+          <div class="actions">
+            <a class="button" href="#tijdlijn">Bekijk de tijdlijn</a>
+            <a class="button button--quiet" href="#voor-mijn-kinderen">Een boodschap voor later</a>
+          </div>
+        </div>
+        <div class="hero-art hero-art--story" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+  <ArticleMeta entry={entry} />
+  <section class="section" aria-labelledby="intro-heading">
+    <div class="wrap reading">
+      <p class="eyebrow">{data.introduction.eyebrow}</p>
+      <h2 id="intro-heading">{data.introduction.heading}</h2>
+      <p class="lead">{data.introduction.lead}</p>
+      {data.introduction.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <p class="note">{data.introduction.note}</p>
+    </div>
+  </section>
+  {
+    hasBody && (
+      <div class="wrap reading prose">
+        <Content />
+      </div>
+    )
+  }
+  <section class="section section--soft" aria-labelledby="tijdlijn-heading" id="tijdlijn">
+    <div class="wrap reading">
+      <p class="eyebrow">{data.timeline.eyebrow}</p>
+      <h2 id="tijdlijn-heading">{data.timeline.heading}</h2>
+      <p>{data.timeline.lead}</p>
+      <Timeline label={data.timeline.label} milestones={data.timeline.milestones} />
+      <p class="note">{data.timeline.note}</p>
+    </div>
+  </section>
+  <section class="section section--therapy" aria-labelledby="therapie-heading" id="therapie">
+    <div class="wrap">
+      <p class="eyebrow">{data.therapy.eyebrow}</p>
+      <h2 id="therapie-heading">{data.therapy.heading}</h2>
+      <div class="reading">{data.therapy.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+      <CardGrid
+        columns={2}
+        items={data.therapy.cards.map((card) => ({ title: card.title, text: card.description }))}
+      />
+      <div class="actions">
+        <a class="button" href={data.therapy.href}>{data.therapy.label}</a>
+      </div>
+    </div>
+  </section>
+  <section class="section" aria-labelledby="vaderschap-heading" id="vaderschap">
+    <div class="wrap">
+      <p class="eyebrow">{data.fatherhood.eyebrow}</p>
+      <h2 id="vaderschap-heading">{data.fatherhood.heading}</h2>
+      <CardGrid
+        columns={2}
+        items={data.fatherhood.cards.map((card) => ({ title: card.title, text: card.description }))}
+      />
+    </div>
+  </section>
+  <section
+    class="section section--children"
+    aria-labelledby="brief-heading"
+    id="voor-mijn-kinderen"
+  >
+    <div class="wrap reading">
+      <div class="card card--story">
+        <p class="eyebrow">{data.letter.eyebrow}</p>
+        <h2 id="brief-heading">{data.letter.heading}</h2>
+        {data.letter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        <p><strong>{data.letter.signature}</strong></p>
+      </div>
+    </div>
+  </section>
+  <section class="section section--paper" aria-labelledby="slot-heading">
+    <div class="wrap reading">
+      <p class="eyebrow">{data.closing.eyebrow}</p>
+      <h2 id="slot-heading">{data.closing.heading}</h2>
+      {data.closing.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <div class="actions">
+        <a class="button" href="nl/wat-voel-ik/">Begin bij wat je voelt</a>
+        <a class="button button--quiet" href="nl/begrijp-het/">Begrijp patronen</a>
+      </div>
+    </div>
+  </section>
+</EntryLayout>

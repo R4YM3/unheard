@@ -1,0 +1,17 @@
+order: 40
+verified: true
+value: '1 205'
+label: 'mannen overleden in 2025 door zelfdoding (voorlopig cijfer)'
+explanation: 'Bij vrouwen ging het om 553. In totaal overleden 1 758 mensen door zelfdoding, 9,7 per 100 000 inwoners. Er overleden ruim twee keer zoveel mannen als vrouwen. Dit cijfer zegt niets over oorzaken.'
+study: 'CBS — 1 758 zelfdodingen in 2025, gemiddeld bijna 5 per dag'
+publisher: 'CBS'
+year: 2025
+definition: 'Het aantal mensen dat in Nederland in het kalenderjaar 2025 overleed door zelfdoding, zoals gepubliceerd door het CBS.'
+population: 'Mensen die in Nederland overleden door zelfdoding, mannen en vrouwen.'
+period: 'Kalenderjaar 2025'
+limitations:
+  - 'Dit cijfer laat geen oorzakelijk verband zien met misbruik, een scheiding of eenzaamheid. Achtergronden en oorzaken zijn er niet uit af te leiden.'
+  - 'Het gaat om voorlopige cijfers; het definitieve aantal kan nog veranderen.'
+  - 'Het cijfer zegt niets over individuele situaties of over welke groepen het meest risico lopen.'
+url: 'https://www.cbs.nl/nl-nl/nieuws/2026/25/1-758-zelfdodingen-in-2025-gemiddeld-bijna-5-per-dag'
+checkedAt: 2026-10-20

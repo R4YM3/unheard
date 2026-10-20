@@ -1,6 +1,6 @@
-# Project
+# Ongehoord
 
-A public, statically generated Astro website.
+A statically generated Astro website: a Dutch knowledge and recognition platform about emotional and financial abuse, with particular attention to men and open to everyone.
 
 ## Local development
 
@@ -17,24 +17,29 @@ Run `npm run audit:lighthouse` after a build for a local desktop Lighthouse audi
 
 Run `npm run audit:a11y` for an Axe WCAG 2.0/2.1/2.2 A/AA audit of every generated HTML route in both light and dark themes. It requires Chrome and runs entirely locally.
 
-Run `npm run audit:print` to create and check A4 PDFs for the home, founder-story, generic emotion, self-doubt, DARVO, financial-abuse, and therapy templates. It verifies that navigation and fixed controls are absent while tab and timeline content remain printable. PDFs are written to ignored `work/print-audit/`.
+Run `npm run audit:print` to create and check A4 PDFs for every content template (home, story, emotion, hubs, glossary, pattern, knowledge, therapy, tool, help, statistics and search). It verifies that navigation and fixed controls are absent, that tab, timeline and accordion content is printed in full, and that typed reflection answers are left out unless the reader opts in. PDFs are written to ignored `work/print-audit/`.
+
+Run `npm run audit:ux` for browser checks the static audit cannot do: no horizontal scrolling at 320, 375, 430 and 1440 px with JavaScript on and off, full content coverage without JavaScript, keyboard behaviour of the perspective tabs, and Axe colour contrast of the "Wat ik vanbinnen voel" panel in light and dark themes.
 
 Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 
 ## Adding content
 
-Add an article Markdown file under `src/content/articles/` with schema-validated frontmatter. Include a `locale`, stable `translationKey`, route `slug`, `published` flag, author, date, related content keys, and sources. An article page is generated only when `published: true`. Do not publish unreviewed translations as full articles.
+All copy lives in `src/content/` as Markdown or YAML with Zod-validated frontmatter (`src/content.config.ts`). There is one folder per collection: `emotions`, `patterns`, `articles`, `therapies`, `tools`, `hubs`, `story` and `stats`. A single route, `src/pages/[locale]/[...slug].astro`, generates a page for every entry with `published: true` and picks the template by collection.
 
-Start from the copy-ready [article template](docs/ARTICLE_TEMPLATE.md). It includes the required
-frontmatter, safe-copy constraints, and the local validation steps.
+The workflow is: add a Markdown file, run `node scripts/validate-content.mjs <file>`, then `npm run check` and `npm run build`. The page then appears at `/<locale>/<slug>/`, in hub listings for its parent route, in the search page, in the glossary index when it has a `glossary` block, and as a related card wherever another page lists its `translationKey` in `related`.
 
-Reusable home, hub, tool, support, therapy, and founder-story copy lives in `src/content/pages/`. Its validated frontmatter keeps document metadata (`title` and `description`) separate from visible headings, leads, cards, timeline layers, and safety callouts. The Astro templates render this content but do not own its copy.
+Read [docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) first. It documents every field, the slug prefixes per collection, the full key registry and the editorial rules. Copy-ready examples are in [docs/ARTICLE_TEMPLATE.md](docs/ARTICLE_TEMPLATE.md). Verified sources and crisis numbers, with the date they were checked, are in [docs/SOURCES_VERIFIED.md](docs/SOURCES_VERIFIED.md). Schema changes that affect the `content/begrippen` branch are logged in [docs/SCHEMA_CHANGES.md](docs/SCHEMA_CHANGES.md).
+
+The build fails on duplicate keys or routes and on `related` keys that do not resolve to a published page. The only exception is the list of planned term keys in `src/lib/content.ts`, which may be linked before their articles exist; such links are skipped until the article is published.
+
+Every page shows its author role, status (`draft`, `in_review` or `approved`), update date and review date. A per-route review overview for the founder is in `CONTENT_REVIEW.md`.
 
 ## Publishing
 
 GitHub Actions checks every pull request and builds/deploys to GitHub Pages on each push to `main`. Pages uses the Actions workflow as its publishing source. While it is hosted at the GitHub project URL, the build uses the repository subpath automatically.
 
-The temporary deployment is protected with `noindex, nofollow` and a blocking `robots.txt`. This is controlled by the `NO_INDEX` Actions variable, which defaults to `true`; set it to `false` only when the site is ready to be discoverable.
+The temporary deployment is protected with `<meta name="robots" content="noindex,nofollow">` on every page and a blocking `robots.txt`. This is controlled by the `NO_INDEX` Actions variable, which defaults to `true`; set it to `false` only when the site is ready to be discoverable.
 
 Before changing `NO_INDEX` to `false`, add a real ISO `reviewedAt` date to every published article after founder, clinical, and legal review. Content validation deliberately fails if a discoverable build contains an unreviewed published article.
 

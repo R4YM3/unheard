@@ -1,0 +1,147 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import EntryLayout from '../layouts/EntryLayout.astro';
+import CardGrid from '../components/CardGrid.astro';
+import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import StartChooser from '../components/StartChooser.astro';
+
+interface Props {
+  entry: CollectionEntry<'hubs'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const home = data.home;
+if (!home) throw new Error(`HomePage requires a home block; received ${entry.id}.`);
+---
+
+<EntryLayout entry={entry} hero={false} articleType={false} showSummary={false} showHelp={false}>
+  <section class="hero" id="top">
+    <div class="wrap home-hero__grid">
+      <div class="home-hero__copy">
+        <p class="eyebrow">{home.hero.eyebrow}</p>
+        <h1>{data.heading}</h1>
+        <p class="lead">{home.hero.lead}</p>
+        <p>{home.hero.description}</p>
+        <div class="actions">
+          <a class="button" href={home.hero.primary.href}>{home.hero.primary.label}</a>
+          <a class="button button--quiet" href={home.hero.secondary.href}
+            >{home.hero.secondary.label}</a
+          >
+        </div>
+      </div>
+      <div class="home-hero__art" aria-hidden="true"></div>
+    </div>
+  </section>
+  <section class="section section--soft" aria-labelledby="welkom-heading">
+    <div class="wrap reading">
+      <p class="eyebrow">{home.introduction.eyebrow}</p>
+      <h2 id="welkom-heading">{home.introduction.heading}</h2>
+      {home.introduction.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </section>
+  <section class="section" aria-labelledby="gevoelens-heading" id="gevoelens">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">{home.feelings.eyebrow}</p>
+          <h2 id="gevoelens-heading">{home.feelings.heading}</h2>
+        </div>
+        <p>{home.feelings.lead}</p>
+      </div>
+      <div class="grid grid--3">
+        {
+          home.feelings.cards.map((card) => (
+            <a class="card feeling-card" href={card.href}>
+              <p class="eyebrow">{card.eyebrow}</p>
+              <h3>{card.title}</h3>
+            </a>
+          ))
+        }
+      </div>
+      <p><a class="text-link" href={home.feelings.moreHref}>{home.feelings.moreLabel}</a></p>
+    </div>
+  </section>
+  <section class="section section--tension" aria-labelledby="onderwerpen-heading" id="onderwerpen">
+    <div class="wrap">
+      <p class="eyebrow">{home.topics.eyebrow}</p>
+      <h2 id="onderwerpen-heading">{home.topics.heading}</h2>
+      <CardGrid
+        columns={2}
+        items={home.topics.cards.map((card) => ({
+          eyebrow: card.eyebrow,
+          title: card.title,
+          text: [card.description, card.note].filter(Boolean).join(' '),
+          href: card.href,
+          label: card.label,
+          tone: 'tension' as const,
+        }))}
+      />
+    </div>
+  </section>
+  {
+    data.scenarios.length > 0 && (
+      <PerspectiveSwitch
+        scenarios={data.scenarios}
+        eyebrow={home.perspective.eyebrow}
+        heading={home.perspective.heading}
+        intro={home.perspective.lead}
+      />
+    )
+  }
+  <section class="section section--paper" aria-labelledby="verhaal-heading" id="verhaal">
+    <div class="wrap page-hero__grid">
+      <div class="hero-art hero-art--story" aria-hidden="true"></div>
+      <div>
+        <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
+        <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
+        {home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        <div class="actions">
+          <a class="button" href={home.storyTeaser.href}>{home.storyTeaser.label}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {data.chooser && <StartChooser locale={data.locale} />}
+  <section class="section" aria-labelledby="tijdlijn-teaser-heading">
+    <div class="wrap reading">
+      <p class="eyebrow">{home.timelineTeaser.eyebrow}</p>
+      <h2 id="tijdlijn-teaser-heading">{home.timelineTeaser.heading}</h2>
+      <p>{home.timelineTeaser.description}</p>
+      <p><a class="text-link" href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a></p>
+    </div>
+  </section>
+  <section class="section section--soft" aria-labelledby="herstel-heading" id="herstel">
+    <div class="wrap">
+      <p class="eyebrow">{home.resources.eyebrow}</p>
+      <h2 id="herstel-heading">{home.resources.heading}</h2>
+      <CardGrid
+        items={home.resources.cards.map((card) => ({
+          eyebrow: card.eyebrow,
+          title: card.title,
+          text: card.description,
+          href: card.href,
+          label: card.label,
+          tone: 'safe' as const,
+        }))}
+      />
+    </div>
+  </section>
+  <section class="section section--tight" aria-labelledby="feit-heading">
+    <div class="wrap reading">
+      <p class="eyebrow" id="feit-heading">{home.fact.eyebrow}</p>
+      <p class="lead">{home.fact.text}</p>
+      <p><a class="text-link" href={home.fact.href}>{home.fact.label}</a></p>
+    </div>
+  </section>
+  <section class="section section--chrome" aria-labelledby="slot-heading" id="hulp">
+    <div class="wrap reading">
+      <p class="eyebrow">{home.closing.eyebrow}</p>
+      <h2 id="slot-heading">{home.closing.heading}</h2>
+      <p>{home.closing.description}</p>
+      <div class="actions">
+        <a class="button" href={home.closing.href}>{home.closing.label}</a>
+      </div>
+      <p class="note">{home.closing.note}</p>
+    </div>
+  </section>
+</EntryLayout>

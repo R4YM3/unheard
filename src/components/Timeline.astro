@@ -1,11 +1,62 @@
 ---
+import Marked from './Marked.astro';
+/** Layered personal timeline: main milestones always visible, layers and in-between moments expandable (and fully printed). */
+interface Milestone {
+  eyebrow: string;
+  title: string;
+  description: string;
+  lenses: Array<{ heading: string; text: string }>;
+  between: Array<{ title: string; text: string }>;
+}
 interface Props {
   label: string;
+  milestones: Milestone[];
 }
-
-const { label } = Astro.props;
+const { label, milestones } = Astro.props;
 ---
 
 <ol class="timeline" aria-label={label}>
-  <slot />
+  {
+    milestones.map((milestone) => (
+      <li>
+        <article class="card">
+          <p class="eyebrow">{milestone.eyebrow}</p>
+          <h3>{milestone.title}</h3>
+          <p>{milestone.description}</p>
+          <details>
+            <summary>Lees de vier lagen van dit moment</summary>
+            <div class="timeline-lenses">
+              {milestone.lenses.map((lens) => (
+                <section class="timeline-lens">
+                  <h4>{lens.heading}</h4>
+                  <p>
+                    <Marked text={lens.text} />
+                  </p>
+                </section>
+              ))}
+            </div>
+          </details>
+          {milestone.between.length > 0 && (
+            <details>
+              <summary>
+                {milestone.between.length === 1
+                  ? 'Bekijk het tussenmoment'
+                  : `Bekijk ${milestone.between.length} tussenmomenten`}
+              </summary>
+              <div class="timeline-between">
+                {milestone.between.map((moment) => (
+                  <article>
+                    <h4>{moment.title}</h4>
+                    <p>
+                      <Marked text={moment.text} />
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </details>
+          )}
+        </article>
+      </li>
+    ))
+  }
 </ol>

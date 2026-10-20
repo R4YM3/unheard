@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import EntryLayout from '../layouts/EntryLayout.astro';
+import CardGrid from '../components/CardGrid.astro';
+import FounderNote from '../components/FounderNote.astro';
+import MiniReflection from '../components/MiniReflection.astro';
+import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+
+interface Props {
+  entry: CollectionEntry<'emotions'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `Wat voel ik? / ${data.feeling}`}>
+  <div class="wrap reading prose"><Content /></div>
+  {data.scenarios.length > 0 && <PerspectiveSwitch scenarios={data.scenarios} />}
+  {
+    data.impacts.length > 0 && (
+      <section class="section section--tension" aria-labelledby="impact-heading" id="impact">
+        <div class="wrap">
+          <p class="eyebrow">Mogelijke gevolgen</p>
+          <h2 id="impact-heading">Waar je het kunt merken</h2>
+          <p class="reading">
+            Niet iedereen merkt hetzelfde. Herken je een paar dingen, dan zegt dat iets over wat je
+            draagt, niet over wie je bent.
+          </p>
+          <CardGrid
+            columns={data.impacts.length % 3 === 0 ? 3 : 2}
+            items={data.impacts.map((impact) => ({ ...impact, tone: 'tension' as const }))}
+          />
+        </div>
+      </section>
+    )
+  }
+  {data.reflection && <MiniReflection reflection={data.reflection} />}
+  {
+    data.helps.length > 0 && (
+      <section class="section section--soft" aria-labelledby="helps-heading" id="wat-helpt">
+        <div class="wrap">
+          <p class="eyebrow">Kleine stappen</p>
+          <h2 id="helps-heading">Wat kan helpen?</h2>
+          <CardGrid
+            columns={data.helps.length % 3 === 0 ? 3 : 2}
+            items={data.helps.map((help) => ({ ...help, tone: 'safe' as const }))}
+          />
+        </div>
+      </section>
+    )
+  }
+  {data.founderNote && <FounderNote note={data.founderNote} />}
+</EntryLayout>

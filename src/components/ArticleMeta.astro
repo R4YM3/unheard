@@ -1,0 +1,43 @@
+---
+import type { RoutedEntry } from '../lib/content';
+import { authorLabels, formatDate, isoDate, statusLabels } from '../lib/content';
+
+interface Props {
+  entry: RoutedEntry;
+}
+const { data } = Astro.props.entry;
+---
+
+<div class="wrap">
+  <dl class="article-meta">
+    <div><dt>Auteur</dt><dd>{authorLabels[data.author]}</dd></div>
+    <div>
+      <dt>Status</dt><dd><span class="status-badge">{statusLabels[data.status]}</span></dd>
+    </div>
+    <div>
+      <dt>Bijgewerkt</dt><dd>
+        <time datetime={isoDate(data.updatedAt)}>{formatDate(data.updatedAt)}</time>
+      </dd>
+    </div>
+    <div>
+      <dt>Inhoudelijk gecontroleerd</dt>
+      <dd>
+        {
+          data.reviewedAt ? (
+            <time datetime={isoDate(data.reviewedAt)}>{formatDate(data.reviewedAt)}</time>
+          ) : (
+            'nog niet'
+          )
+        }
+      </dd>
+    </div>
+  </dl>
+  {
+    data.status !== 'approved' && (
+      <p class="draft-notice">
+        Deze pagina is een conceptversie en is nog niet inhoudelijk gecontroleerd. Lees haar als
+        oriëntatie, niet als advies.
+      </p>
+    )
+  }
+</div>

@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import EntryLayout from '../layouts/EntryLayout.astro';
+import ToolCard from '../components/ToolCard.astro';
+
+interface Props {
+  entry: CollectionEntry<'tools'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? 'Hulpmiddelen / Vragenkaart'}>
+  <section class="section section--tight" aria-labelledby="gebruik-heading">
+    <div class="wrap reading">
+      <h2 id="gebruik-heading">Waarvoor en hoe</h2>
+      <p>{data.purpose}</p>
+      <ol>{data.usage.map((step) => <li>{step}</li>)}</ol>
+      <div class="card card--alert">
+        <h3>Veiligheid eerst</h3>
+        <p>{data.safety}</p>
+      </div>
+    </div>
+  </section>
+  <ToolCard card={data.card} />
+  <div class="wrap reading prose"><Content /></div>
+</EntryLayout>

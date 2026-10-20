@@ -2,10 +2,31 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parseDocument } from 'yaml';
 
-const articleDirectory = 'src/content/articles';
-const pageDirectory = 'src/content/pages';
-const supportedLocales = new Set(['nl', 'en', 'ar']);
+/**
+ * Fast pre-build checks across all content collections. The Zod schemas in
+ * src/content.config.ts remain authoritative; this script adds cross-file rules that Zod
+ * cannot express: unique keys/routes, resolvable relations, the review gate and editorial
+ * lint. Usage: `node scripts/validate-content.mjs [file …]` (no args = everything).
+ */
+const root = 'src/content';
+const collections = {
+  emotions: 'wat-voel-ik/',
+  patterns: 'begrippen/',
+  articles: '',
+  therapies: 'herstel/therapievormen/',
+  tools: 'hulpmiddelen/',
+  hubs: '',
+  story: '',
+};
+const plannedKeys = new Set(
+  (await readFile('src/lib/content.ts', 'utf8'))
+    .match(/plannedKeys = new Set\(\[([\s\S]*?)\]\)/)?.[1]
+    .match(/'([a-z0-9-]+)'/g)
+    ?.map((value) => value.slice(1, -1)) ?? [],
+);
 const editorialReviewRequired = process.env.NO_INDEX === 'false';
+const onlyFiles = new Set(process.argv.slice(2).map((file) => file.replace(/^\.\//, '')));
+
 const walk = async (directory) =>
   (
     await Promise.all(
@@ -14,244 +35,151 @@ const walk = async (directory) =>
       ),
     )
   ).flat();
-const parseFrontmatter = async (file) => {
+
+const parse = async (file) => {
   const text = await readFile(file, 'utf8');
   const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*(?:\n|$)/);
-  if (!match) throw new Error(`${file}: missing YAML frontmatter`);
+  if (!match) return { error: 'missing YAML frontmatter' };
   const document = parseDocument(match[1]);
-  if (document.errors.length > 0) {
-    throw new Error(
-      `${file}: invalid YAML — ${document.errors.map(({ message }) => message).join(', ')}`,
-    );
-  }
-  return document.toJS();
+  if (document.errors.length > 0)
+    return { error: `invalid YAML — ${document.errors.map(({ message }) => message).join('; ')}` };
+  return { data: document.toJS(), body: text.slice(match[0].length) };
 };
 
 const errors = [];
-const rejectUnknownKeys = (file, path, value, allowed) => {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) return;
-  for (const key of Object.keys(value)) {
-    if (!allowed.includes(key)) errors.push(`${file}: ${path} has unexpected field ${key}`);
-  }
-};
-const files = (await walk(articleDirectory)).filter((file) => /\.mdx?$/.test(file));
-const articles = await Promise.all(
-  files.map(async (file) => ({ file, data: await parseFrontmatter(file) })),
-);
-const publishedByKey = new Map();
-const slugs = new Set();
-for (const { file, data } of articles) {
-  if (!data || typeof data !== 'object') {
-    errors.push(`${file}: frontmatter must be an object`);
+const entries = [];
+for (const [collection, prefix] of Object.entries(collections)) {
+  let files = [];
+  try {
+    files = (await walk(join(root, collection))).filter((file) => /\.mdx?$/.test(file));
+  } catch {
     continue;
   }
-  const required = [
-    'title',
-    'description',
-    'locale',
-    'translationKey',
-    'slug',
-    'kind',
-    'published',
-    'author',
-    'updatedAt',
-  ];
-  for (const field of required) if (!(field in data)) errors.push(`${file}: missing ${field}`);
-  if (!supportedLocales.has(data.locale)) errors.push(`${file}: locale must be nl, en, or ar`);
-  if (
-    typeof data.slug !== 'string' ||
-    !/^[a-z0-9]+(?:[a-z0-9-]*\/)*[a-z0-9]+(?:[a-z0-9-]*)?$/.test(data.slug)
-  ) {
-    errors.push(`${file}: slug must use lowercase URL-safe segments without a leading slash`);
-  } else {
-    const key = `${data.locale}:${data.slug}`;
-    if (slugs.has(key)) errors.push(`${file}: duplicate route ${key}`);
-    slugs.add(key);
-  }
-  if (typeof data.updatedAt !== 'string' || Number.isNaN(Date.parse(data.updatedAt)))
-    errors.push(`${file}: updatedAt must be an ISO date`);
-  if (
-    data.reviewedAt !== undefined &&
-    (typeof data.reviewedAt !== 'string' || Number.isNaN(Date.parse(data.reviewedAt)))
-  )
-    errors.push(`${file}: reviewedAt must be an ISO date when present`);
-  if (data.published === true && editorialReviewRequired && !data.reviewedAt)
-    errors.push(`${file}: published content needs reviewedAt before NO_INDEX can be disabled`);
-  if (!Array.isArray(data.related)) errors.push(`${file}: related must be an array`);
-  if (!Array.isArray(data.sources)) errors.push(`${file}: sources must be an array`);
-  if (data.published === true && data.sources?.length === 0)
-    errors.push(`${file}: published content needs at least one source`);
-  for (const source of data.sources ?? []) {
-    if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
-      errors.push(`${file}: every source needs a label and HTTPS URL`);
-  }
-  if (data.hero) {
-    if (
-      !data.hero.eyebrow ||
-      !Array.isArray(data.hero.paragraphs) ||
-      data.hero.paragraphs.length === 0
-    )
-      errors.push(`${file}: hero needs an eyebrow and at least one paragraph`);
-    if (!Array.isArray(data.hero.actions)) errors.push(`${file}: hero actions must be an array`);
-    for (const action of data.hero.actions ?? []) {
-      if (!action?.href || !action?.label)
-        errors.push(`${file}: every hero action needs href and label`);
-      if (/^(?:https?:)?\/\//i.test(action?.href ?? ''))
-        errors.push(`${file}: hero actions must use internal routes or anchors`);
+  for (const file of files) {
+    const { data, body, error } = await parse(file);
+    if (error) {
+      errors.push(`${file}: ${error}`);
+      continue;
     }
-  }
-  if (data.published === true && typeof data.translationKey === 'string') {
-    const key = `${data.locale}:${data.translationKey}`;
-    if (publishedByKey.has(key)) errors.push(`${file}: duplicate published translation key ${key}`);
-    publishedByKey.set(key, file);
+    entries.push({ file, collection, prefix, data, body });
   }
 }
-for (const { file, data } of articles.filter(({ data }) => data?.published === true)) {
-  for (const relatedKey of data.related ?? []) {
-    if (!publishedByKey.has(`${data.locale}:${relatedKey}`))
-      errors.push(`${file}: related entry ${relatedKey} is not a published ${data.locale} article`);
-  }
-}
-const pageFiles = (await walk(pageDirectory)).filter((file) => /\.mdx?$/.test(file));
-const pages = await Promise.all(
-  pageFiles.map(async (file) => ({ file, data: await parseFrontmatter(file) })),
-);
-const pageRoutes = new Set();
-for (const { file, data } of pages) {
-  if (!data || typeof data !== 'object') {
-    errors.push(`${file}: frontmatter must be an object`);
-    continue;
-  }
+
+const isDate = (value) =>
+  value instanceof Date || (typeof value === 'string' && !Number.isNaN(Date.parse(value)));
+const externalHref = /^(?:[a-z][a-z\d+.-]*:|\/\/)/i;
+const forbidden = [
+  [/\blorem ipsum\b/i, 'placeholder text'],
+  [
+    /\bons team\b|\bonze redactie\b|\bons platform\b|\bwij zijn er\b|\bwij bieden\b/i,
+    '"wij/ons team" voice',
+  ],
+  [/\b(?:is|zijn) (?:een )?(?:narcist|sociopaat|psychopaat)\b/i, 'labels a person'],
+];
+const hrefsIn = (value, found = []) => {
+  if (Array.isArray(value)) value.forEach((item) => hrefsIn(item, found));
+  else if (value && typeof value === 'object')
+    for (const [field, item] of Object.entries(value)) {
+      if (field === 'href' && typeof item === 'string') found.push(item);
+      else hrefsIn(item, found);
+    }
+  return found;
+};
+
+const keys = new Map();
+const routes = new Map();
+for (const entry of entries) {
+  const { file, data, prefix, collection } = entry;
+  const where = `${file}`;
   for (const field of [
     'title',
     'description',
-    'heading',
-    'locale',
+    'translationKey',
     'slug',
-    'eyebrow',
-    'lead',
-    'kind',
-  ]) {
-    if (!(field in data)) errors.push(`${file}: missing ${field}`);
-  }
-  if (!supportedLocales.has(data.locale)) errors.push(`${file}: locale must be nl, en, or ar`);
-  if (typeof data.slug !== 'string' || !/^[a-z0-9]+(?:[a-z0-9-]*\/)*[a-z0-9-]+$/.test(data.slug)) {
-    errors.push(`${file}: slug must use lowercase URL-safe segments without a leading slash`);
-  } else {
-    const route = `${data.locale}:${data.slug}`;
-    if (pageRoutes.has(route)) errors.push(`${file}: duplicate page route ${route}`);
-    pageRoutes.add(route);
-  }
-  if (!['hub', 'tools', 'support', 'therapy', 'story', 'home'].includes(data.kind))
-    errors.push(`${file}: kind must be hub, tools, support, therapy, story, or home`);
+    'publishedAt',
+    'updatedAt',
+  ])
+    if (!(field in data)) errors.push(`${where}: missing ${field}`);
+  if (!['nl', 'en', 'ar'].includes(data.locale ?? 'nl'))
+    errors.push(`${where}: locale must be nl, en or ar`);
+  if (data.status && !['draft', 'in_review', 'approved'].includes(data.status))
+    errors.push(`${where}: status must be draft, in_review or approved`);
+  if (data.author && !['founder', 'editorial', 'Ongehoord'].includes(data.author))
+    errors.push(`${where}: author must be founder or editorial`);
+  if (typeof data.slug !== 'string' || !data.slug.startsWith(prefix))
+    errors.push(`${where}: slug must start with "${prefix}"`);
   if (
-    !Array.isArray(data.sources) ||
-    (!['story', 'home'].includes(data.kind) && data.sources.length === 0)
+    typeof data.description === 'string' &&
+    (data.description.length < 30 || data.description.length > 200)
   )
-    errors.push(`${file}: non-story/non-home content pages need at least one source`);
+    errors.push(`${where}: description must be 30–200 characters (${data.description.length})`);
+  for (const field of ['publishedAt', 'updatedAt'])
+    if (field in data && !isDate(data[field]))
+      errors.push(`${where}: ${field} must be an ISO date`);
+  if (data.reviewedAt != null && !isDate(data.reviewedAt))
+    errors.push(`${where}: reviewedAt must be an ISO date or null`);
+  if (data.published === true && editorialReviewRequired && !data.reviewedAt)
+    errors.push(`${where}: published content needs reviewedAt before NO_INDEX can be disabled`);
+  if (data.published === true && editorialReviewRequired && data.status !== 'approved')
+    errors.push(`${where}: published content must be approved before NO_INDEX can be disabled`);
   for (const source of data.sources ?? []) {
     if (!source?.label || typeof source.url !== 'string' || !source.url.startsWith('https://'))
-      errors.push(`${file}: every source needs a label and HTTPS URL`);
+      errors.push(`${where}: every source needs a label and an HTTPS URL`);
   }
-  if ('cards' in data && !Array.isArray(data.cards)) errors.push(`${file}: cards must be an array`);
-  for (const card of data.cards ?? []) {
-    if (!card?.title || !card?.description)
-      errors.push(`${file}: every card needs title and description`);
-    if (card.href && /^(?:https?:)?\/\//i.test(card.href))
-      errors.push(`${file}: card links must be internal routes`);
-    if (card.items && !Array.isArray(card.items))
-      errors.push(`${file}: card items must be an array`);
+  const needsSources = ['emotions', 'patterns', 'therapies'].includes(collection);
+  if (data.published === true && needsSources && !(data.sources ?? []).length)
+    errors.push(`${where}: published ${collection} need at least one source`);
+  for (const href of hrefsIn(data)) {
+    if (href.startsWith('/')) errors.push(`${where}: href ${href} must be relative to <base>`);
+    else if (externalHref.test(href) && !href.startsWith('tel:'))
+      errors.push(`${where}: frontmatter href ${href} must be internal`);
   }
-  if (data.safety) {
-    for (const field of ['title', 'description', 'href', 'label']) {
-      if (!data.safety[field]) errors.push(`${file}: safety needs ${field}`);
-    }
+  for (const [pattern, reason] of forbidden) {
+    if (pattern.test(entry.body) || pattern.test(JSON.stringify(data)))
+      errors.push(`${where}: editorial lint — ${reason}`);
   }
-  if (data.kind === 'therapy') {
-    const therapy = data.therapy;
-    const sections = ['introduction', 'experiences', 'questions', 'closing', 'support'];
-    if (!therapy || typeof therapy !== 'object') {
-      errors.push(`${file}: therapy pages need therapy content`);
-    } else {
-      for (const section of sections) {
-        if (!therapy[section] || typeof therapy[section] !== 'object')
-          errors.push(`${file}: therapy content needs ${section}`);
-      }
-      if (!Array.isArray(therapy.experiences?.items) || therapy.experiences.items.length === 0)
-        errors.push(`${file}: therapy experiences need at least one item`);
-      if (!Array.isArray(therapy.questions?.items) || therapy.questions.items.length === 0)
-        errors.push(`${file}: therapy questions need at least one item`);
-      if (therapy.support?.href && /^(?:https?:)?\/\//i.test(therapy.support.href))
-        errors.push(`${file}: therapy support link must be an internal route`);
-    }
-  }
-  if (data.kind === 'story') {
-    const story = data.story;
-    const sections = ['introduction', 'timeline', 'fatherhood', 'recovery', 'letter', 'closing'];
-    if (!story || typeof story !== 'object') {
-      errors.push(`${file}: story pages need story content`);
-    } else {
-      for (const section of sections) {
-        if (!story[section] || typeof story[section] !== 'object')
-          errors.push(`${file}: story content needs ${section}`);
-      }
-      for (const milestone of story.timeline?.milestones ?? []) {
-        if (!Array.isArray(milestone.lenses) || milestone.lenses.length !== 4)
-          errors.push(`${file}: every story milestone needs four lenses`);
-        if (milestone.between && !Array.isArray(milestone.between))
-          errors.push(`${file}: story milestone between moments must be an array`);
-      }
-      if (!story.heroPersonal) errors.push(`${file}: story needs heroPersonal`);
-      if (!Array.isArray(story.letter?.paragraphs) || story.letter.paragraphs.length === 0)
-        errors.push(`${file}: story letter needs paragraphs`);
-      if (!story.letter?.signature) errors.push(`${file}: story letter needs a signature`);
-      if (story.recovery?.href && /^(?:https?:)?\/\//i.test(story.recovery.href))
-        errors.push(`${file}: story recovery link must be an internal route`);
-    }
-  }
-  if (data.kind === 'home') {
-    const home = data.home;
-    const sections = [
-      'hero',
-      'introduction',
-      'feelings',
-      'patterns',
-      'storyTeaser',
-      'timelineTeaser',
-      'resources',
-      'closing',
-    ];
-    if (!home || typeof home !== 'object') {
-      errors.push(`${file}: home pages need home content`);
-    } else {
-      for (const section of sections) {
-        if (!home[section] || typeof home[section] !== 'object')
-          errors.push(`${file}: home content needs ${section}`);
-      }
-      for (const [name, cards] of [
-        ['feelings', home.feelings?.cards],
-        ['patterns', home.patterns?.cards],
-        ['resources', home.resources?.cards],
-      ]) {
-        if (!Array.isArray(cards) || cards.length === 0)
-          errors.push(`${file}: home ${name} needs cards`);
-        for (const [index, card] of (cards ?? []).entries()) {
-          rejectUnknownKeys(
-            file,
-            `home.${name}.cards[${index}]`,
-            card,
-            name === 'patterns'
-              ? ['eyebrow', 'title', 'description', 'note', 'label', 'href']
-              : name === 'resources'
-                ? ['eyebrow', 'title', 'description', 'label', 'href']
-                : ['eyebrow', 'title', 'description', 'href'],
-          );
-        }
-      }
-    }
+  for (const link of entry.body.matchAll(/\]\((\/[^)]*)\)/g))
+    errors.push(`${where}: Markdown link ${link[1]} must be relative to <base>`);
+  if (/^#\s/m.test(entry.body)) errors.push(`${where}: body must not contain an H1 (#)`);
+  if (data.published !== true) continue;
+  const keyId = `${data.locale ?? 'nl'}:${data.translationKey}`;
+  const route = `${data.locale ?? 'nl'}:${data.slug}`;
+  if (keys.has(keyId))
+    errors.push(`${where}: duplicate translationKey ${keyId} (${keys.get(keyId)})`);
+  if (routes.has(route)) errors.push(`${where}: duplicate route ${route} (${routes.get(route)})`);
+  keys.set(keyId, file);
+  routes.set(route, file);
+}
+
+for (const { file, data } of entries.filter(({ data }) => data.published === true)) {
+  const related = Array.isArray(data.related)
+    ? data.related
+    : Object.values(data.related ?? {}).flat();
+  for (const relatedKey of related) {
+    if (!keys.has(`${data.locale ?? 'nl'}:${relatedKey}`) && !plannedKeys.has(relatedKey))
+      errors.push(`${file}: related key "${relatedKey}" is not a published entry or planned key`);
   }
 }
-if (errors.length > 0) throw new Error(`Content validation failed:\n${errors.join('\n')}`);
+
+const statsFiles = (await walk(join(root, 'stats')).catch(() => [])).filter((file) =>
+  /\.ya?ml$/.test(file),
+);
+for (const file of statsFiles) {
+  const document = parseDocument(await readFile(file, 'utf8'));
+  const data = document.toJS();
+  for (const field of ['value', 'study', 'url', 'checkedAt', 'population', 'period', 'definition'])
+    if (!data?.[field]) errors.push(`${file}: missing ${field}`);
+  if (data?.url && !String(data.url).startsWith('https://'))
+    errors.push(`${file}: url must be HTTPS`);
+}
+
+const reported = onlyFiles.size
+  ? errors.filter((message) => [...onlyFiles].some((file) => message.startsWith(file)))
+  : errors;
+if (reported.length > 0) {
+  console.error(`Content validation failed:\n${reported.join('\n')}`);
+  process.exit(1);
+}
 console.log(
-  `Validated ${articles.length} articles, ${pages.length} pages, and ${publishedByKey.size} published relations.`,
+  `Validated ${entries.length} content files (${keys.size} published keys) and ${statsFiles.length} figures.`,
 );

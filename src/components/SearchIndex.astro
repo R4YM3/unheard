@@ -1,0 +1,68 @@
+---
+import { collectionLabels, searchItems, type RoutedCollection } from '../lib/content';
+
+interface Props {
+  locale?: string;
+}
+const { locale = 'nl' } = Astro.props;
+const items = await searchItems(locale);
+const order: RoutedCollection[] = [
+  'hubs',
+  'emotions',
+  'articles',
+  'patterns',
+  'therapies',
+  'tools',
+  'story',
+];
+const groupLabels: Record<RoutedCollection, string> = {
+  ...collectionLabels,
+  hubs: 'Overzichtspagina’s',
+  emotions: 'Gevoelens',
+  articles: 'Uitleg, herstel en hulp',
+  patterns: 'Begrippen en patronen',
+  therapies: 'Therapievormen',
+  tools: 'Hulpmiddelen',
+};
+const groups = order
+  .map((collection) => ({
+    collection,
+    items: items.filter((item) => item.collection === collection),
+  }))
+  .filter((group) => group.items.length > 0);
+---
+
+<section class="section search-results" aria-labelledby="search-heading" id="alle-paginas">
+  <div class="wrap reading">
+    <h2 id="search-heading">Alle pagina’s</h2>
+    <div class="filter-field" hidden data-filter role="search">
+      <label for="site-search">Zoek op deze site</label>
+      <input id="site-search" type="search" name="q" autocomplete="off" spellcheck="false" />
+      <p class="note" aria-live="polite" data-filter-status></p>
+    </div>
+    <p class="note">
+      Zoeken gebeurt alleen in je eigen browser, op basis van deze lijst. Er wordt niets verstuurd
+      of bewaard.
+    </p>
+    {
+      groups.map((group) => (
+        <section data-filter-group aria-labelledby={`zoek-${group.collection}`}>
+          <h3 id={`zoek-${group.collection}`}>{groupLabels[group.collection]}</h3>
+          <ul>
+            {group.items.map((item) => (
+              <li data-filter-item data-terms={item.keywords}>
+                <a href={item.href}>{item.title}</a>
+                <p>{item.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  import { enhanceFilter } from '../scripts/filter';
+  enhanceFilter('.search-results', 'pagina', 'pagina’s');
+</script>

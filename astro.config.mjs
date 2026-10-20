@@ -9,6 +9,12 @@ export default defineConfig({
       ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''}`
       : '/',
   output: 'static',
-  integrations: [sitemap({ filter: (page) => !/\/(?:en|ar)\/$/.test(page) })],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !/\/(?:en|ar)\/$/.test(page) &&
+        !/\/nl\/(?:financieel-misbruik|herstel\/therapie|ontwerp-systeem)\/$/.test(page),
+    }),
+  ],
   build: { format: 'directory' },
 });

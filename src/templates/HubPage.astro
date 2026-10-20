@@ -1,0 +1,94 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import EntryLayout from '../layouts/EntryLayout.astro';
+import CardGrid from '../components/CardGrid.astro';
+import FounderNote from '../components/FounderNote.astro';
+import GlossaryIndex from '../components/GlossaryIndex.astro';
+import MiniReflection from '../components/MiniReflection.astro';
+import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import SearchIndex from '../components/SearchIndex.astro';
+import StartChooser from '../components/StartChooser.astro';
+import StatsList from '../components/StatsList.astro';
+import { cardFor, listCollection } from '../lib/content';
+
+interface Props {
+  entry: CollectionEntry<'hubs'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const listings = await Promise.all(
+  data.listings.map(async (listing) => ({
+    ...listing,
+    items: (await listCollection(listing.collection, data.locale, listing.prefix)).map(cardFor),
+  })),
+);
+const isEmptyBody = !entry.body?.trim();
+---
+
+<EntryLayout
+  entry={entry}
+  heading={data.heading}
+  eyebrow={data.hero?.eyebrow ?? data.eyebrow}
+  lead={data.lead}
+  pageType="CollectionPage"
+  articleType={false}
+  showSources={data.sources.length > 0}
+  showHelp={data.translationKey !== 'zoeken'}
+>
+  {
+    !isEmptyBody && (
+      <div class="wrap reading prose">
+        <Content />
+      </div>
+    )
+  }
+  {data.chooser && <StartChooser locale={data.locale} />}
+  {
+    listings.map((listing, index) => (
+      <section
+        class:list={[
+          'section',
+          {
+            'section--tension': listing.tone === 'tension',
+            'section--soft': listing.tone === 'safe',
+          },
+        ]}
+        aria-labelledby={`listing-${index}-heading`}
+      >
+        <div class="wrap">
+          {listing.eyebrow && <p class="eyebrow">{listing.eyebrow}</p>}
+          <h2 id={`listing-${index}-heading`}>{listing.heading}</h2>
+          {listing.lead && <p class="reading">{listing.lead}</p>}
+          {listing.items.length > 0 ? (
+            <CardGrid
+              items={listing.items.map((item) => ({
+                ...item,
+                tone: listing.tone === 'tension' ? ('tension' as const) : ('neutral' as const),
+              }))}
+            />
+          ) : (
+            <p class="note">Hier verschijnen binnenkort pagina’s.</p>
+          )}
+        </div>
+      </section>
+    ))
+  }
+  {
+    data.cards.length > 0 && (
+      <section class="section" aria-labelledby="hub-cards-heading">
+        <div class="wrap">
+          <h2 id="hub-cards-heading">Ook op deze site</h2>
+          <CardGrid columns={data.cards.length % 3 === 0 ? 3 : 2} items={data.cards} />
+        </div>
+      </section>
+    )
+  }
+  {data.glossaryIndex && <GlossaryIndex locale={data.locale} />}
+  {data.stats && <StatsList />}
+  {data.searchIndex && <SearchIndex locale={data.locale} />}
+  {data.scenarios.length > 0 && <PerspectiveSwitch scenarios={data.scenarios} />}
+  {data.reflection && <MiniReflection reflection={data.reflection} />}
+  {data.founderNote && <FounderNote note={data.founderNote} />}
+</EntryLayout>

@@ -4,105 +4,217 @@
 }
 
 @media print {
-  :root {
+  :root,
+  [data-theme] {
     color-scheme: light;
     --bg: #fff;
     --surface: #fff;
     --text: #000;
     --muted: #222;
+    --border: #777;
+    --link: #000;
+    --safe: #fff;
+    --safe-border: #777;
+    --tension: #fff;
+    --tension-border: #777;
+    --tension-edge: #000;
+    --inside-bg: #fff;
+    --inside-text: #000;
+    --inside-eyebrow: #222;
+    --badge: #fff;
+    --badge-text: #000;
+    --review-mark: #fff;
   }
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  body {
+    font:
+      11pt/1.5 Arial,
+      'Helvetica Neue',
+      sans-serif;
+  }
+
+  /* Navigation and interactive chrome */
   .site-header,
   .site-footer,
   .skip,
-  .actions,
-  .scenario,
-  .tabs,
   .theme-toggle,
-  .hero-visual,
-  .story-visual,
-  .story-hero-visual,
-  .article-hero-visual {
+  .actions,
+  .hero-art,
+  .home-hero__art,
+  .pv-scene-choice,
+  .pv-tabs,
+  .filter-field,
+  .az-nav,
+  .no-print {
     display: none !important;
   }
-  .reflection-form {
-    display: none !important;
-  }
-  .hero .button {
-    display: none !important;
-  }
-  body {
-    font-size: 11pt;
-    background: #fff;
-    color: #000;
-  }
+
+  /* Bands become plain paper */
   .hero,
-  .closing-section,
-  .section--children,
-  .section--paper,
+  .section,
   .section--soft,
-  .intro-section,
-  .timeline-teaser,
-  .tension-section,
-  .resources-section {
+  .section--tension,
+  .section--therapy,
+  .section--paper,
+  .section--children,
+  .section--chrome {
+    padding: 0 0 8mm !important;
     background: #fff !important;
     color: #000 !important;
-    padding: 1cm 0;
   }
-  .hero-grid,
-  .article-hero__grid--visual {
-    display: block;
+  .hero *,
+  .section--chrome * {
+    color: #000 !important;
   }
-  .hero-copy {
+  .page-hero__grid,
+  .home-hero__grid,
+  .grid,
+  .grid--2,
+  .grid--3,
+  .pv-panels,
+  .timeline-lenses {
+    display: block !important;
+  }
+  .page-hero__content,
+  .home-hero__copy {
+    margin: 0;
     padding: 0;
   }
-  .hero-copy > p:not(.eyebrow),
-  .hero .lead,
-  .hero .eyebrow,
-  .closing-section :is(p, h1, h2, h3, h4, li, .eyebrow, .note) {
-    color: #000 !important;
+  .wrap {
+    width: 100%;
   }
   h1 {
-    font-size: 30pt;
+    font-size: 26pt;
+    max-width: none;
   }
   h2 {
-    font-size: 22pt;
+    font-size: 18pt;
   }
   h3 {
-    font-size: 16pt;
+    font-size: 14pt;
   }
-  .section {
-    padding: 0.6cm 0;
-    break-inside: avoid;
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
   }
   .card,
-  .card--story,
-  .tabpanel,
-  .help {
-    border: 1px solid #555;
+  .pv-panel,
+  .pv-context,
+  .reflection,
+  .summary-box,
+  .help-block,
+  .stat,
+  .timeline-lens,
+  .timeline-between article,
+  .start-chooser details,
+  .glossary-item {
+    margin: 3mm 0;
+    border: 1px solid #777 !important;
     background: #fff !important;
     color: #000 !important;
+    break-inside: avoid;
   }
-  .button,
-  .button--quiet {
-    border: 1px solid #000 !important;
-    background: #fff !important;
-    color: #000 !important;
+  .card--tension::before {
+    display: none;
   }
-  .tabpanel,
-  [hidden] {
+  .card--tension {
+    border-inline-start: 3px solid #000 !important;
+  }
+
+  /* Everything that is collapsed or tabbed on screen is printed in full */
+  .pv [data-pv-panel][hidden],
+  .pv-panel[hidden],
+  .glossary-index .glossary-item[hidden],
+  .glossary-index .glossary-letter[hidden],
+  .search-results li[hidden],
+  .search-results section[hidden] {
+    display: block !important;
+  }
+  .pv-scene__title {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+  details::details-content {
+    display: block !important;
+    content-visibility: visible !important;
+  }
+  details > * {
     display: block !important;
   }
   details:not([open]) > :not(summary) {
     display: block !important;
   }
-  .timeline {
-    border-color: #000;
-  }
-  a[href]::after {
-    content: ' (' attr(href) ')';
-    font-size: 9pt;
-  }
   .print-only {
     display: block !important;
+  }
+
+  /* Links: show destinations for external sources and phone numbers */
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  a[href^='http']::after,
+  a[href^='tel:']::after {
+    content: ' (' attr(href) ')';
+    font-size: 8.5pt;
+    overflow-wrap: anywhere;
+  }
+
+  /* Private input is excluded unless the reader explicitly opts in */
+  .reflection-form textarea,
+  .tool-card textarea,
+  .print-toggle {
+    display: none !important;
+  }
+  .print-lines {
+    display: block !important;
+    height: calc(var(--lines, 3) * 8mm);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(8mm - 1px),
+      #999 calc(8mm - 1px),
+      #999 8mm
+    );
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .tool-check input,
+  .print-answers-off .tool-check input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 4mm;
+    height: 4mm;
+    border: 1px solid #000;
+  }
+  [data-print-answers]:has(.print-toggle input:checked) textarea {
+    display: block !important;
+    min-height: 0;
+    border: 1px solid #777;
+    color: #000;
+  }
+  [data-print-answers]:has(.print-toggle input:checked) .print-lines {
+    display: none !important;
+  }
+  [data-print-answers]:has(.print-toggle input:checked) .tool-check input {
+    appearance: auto;
+    -webkit-appearance: checkbox;
+  }
+  .tool-card {
+    border: 2px solid #000 !important;
+    break-before: page;
+  }
+  .tool-card ol > li {
+    break-inside: avoid;
   }
 }

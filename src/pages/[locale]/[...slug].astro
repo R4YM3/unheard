@@ -1,95 +1,37 @@
 ---
-import { getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Article from '../../components/Article.astro';
-import PerspectiveSwitch from '../../components/PerspectiveSwitch.astro';
-import RelatedContent from '../../components/RelatedContent.astro';
-import EmotionImpact from '../../components/EmotionImpact.astro';
-import FinancialExperience from '../../components/FinancialExperience.astro';
-import DarvoReflection from '../../components/DarvoReflection.astro';
-import DarvoGuide from '../../components/DarvoGuide.astro';
-import SelfDoubtStoryTeaser from '../../components/SelfDoubtStoryTeaser.astro';
-import SourceList from '../../components/SourceList.astro';
-import { isLocale } from '../../i18n/config';
+import EmotionPage from '../../templates/EmotionPage.astro';
+import HubPage from '../../templates/HubPage.astro';
+import KnowledgePage from '../../templates/KnowledgePage.astro';
+import StoryPage from '../../templates/StoryPage.astro';
+import TherapyPage from '../../templates/TherapyPage.astro';
+import ToolPage from '../../templates/ToolPage.astro';
+import { getPublishedEntries, type RoutedEntry } from '../../lib/content';
+
 export async function getStaticPaths() {
-  const entries = await getCollection('articles', ({ data }) => data.published);
-  return entries.map((entry) => ({
-    params: { locale: entry.data.locale, slug: entry.data.slug },
-    props: { entry },
-  }));
+  const entries = await getPublishedEntries();
+  return entries
+    .filter((entry) => entry.data.slug !== 'home')
+    .map((entry) => ({
+      params: { locale: entry.data.locale, slug: entry.data.slug },
+      props: { entry },
+    }));
 }
-const { entry } = Astro.props;
-const { Content } = await render(entry);
-const locale = Astro.params.locale ?? 'nl';
-if (!isLocale(locale)) return new Response(null, { status: 404 });
-const path = `/${locale}/${Astro.params.slug}/`;
-const related = (
-  await getCollection('articles', ({ data }) => data.published && data.locale === locale)
-).filter((candidate) => entry.data.related.includes(candidate.data.translationKey));
-const translations = (
-  await getCollection(
-    'articles',
-    ({ data }) => data.published && data.translationKey === entry.data.translationKey,
-  )
-).map((candidate) => ({
-  locale: candidate.data.locale,
-  path: `${candidate.data.locale}/${candidate.data.slug}/`,
-}));
-const isSelfDoubt = entry.data.translationKey === 'zelftwijfel';
+
+const { entry } = Astro.props as { entry: RoutedEntry };
 ---
 
-<BaseLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  locale={locale}
-  canonicalPath={path}
-  alternates={translations}
->
-  {
-    isSelfDoubt ? (
-      <>
-        <>
-          <Article
-            entry={entry}
-            Content={Content}
-            locale={locale}
-            canonicalPath={path}
-            showSources={false}
-          />
-          <PerspectiveSwitch />
-          <EmotionImpact />
-          <SelfDoubtStoryTeaser />
-          <section class="section section--soft">
-            <div class="wrap reading">
-              <>
-                <h2>Je hoeft het niet alleen uit te zoeken.</h2>
-                <p>
-                  Wat je voelt verdient aandacht, ook wanneer je nog geen woorden hebt voor wat er
-                  gebeurt.
-                </p>
-                <a class="button" href="nl/hulp-vinden/">
-                  Hulp en veiligheid
-                </a>
-              </>
-            </div>
-          </section>
-        </>
-      </>
-    ) : entry.data.translationKey === 'darvo' ? (
-      <>
-        <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
-        <DarvoGuide entry={entry} />
-        <DarvoReflection />
-      </>
-    ) : entry.data.translationKey === 'financieel-misbruik' ? (
-      <>
-        <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
-        <FinancialExperience />
-      </>
-    ) : (
-      <Article entry={entry} Content={Content} locale={locale} canonicalPath={path} />
-    )
-  }
-  <RelatedContent entries={related} locale={locale} />
-  {isSelfDoubt && <SourceList sources={entry.data.sources} />}
-</BaseLayout>
+{
+  entry.collection === 'emotions' ? (
+    <EmotionPage entry={entry} />
+  ) : entry.collection === 'therapies' ? (
+    <TherapyPage entry={entry} />
+  ) : entry.collection === 'tools' ? (
+    <ToolPage entry={entry} />
+  ) : entry.collection === 'hubs' ? (
+    <HubPage entry={entry} />
+  ) : entry.collection === 'story' ? (
+    <StoryPage entry={entry} />
+  ) : (
+    <KnowledgePage entry={entry} />
+  )
+}

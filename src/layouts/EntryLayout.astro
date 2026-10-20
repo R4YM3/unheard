@@ -1,0 +1,150 @@
+---
+/**
+ * Shared shell for every content-collection page: metadata, breadcrumbs (visible and
+ * JSON-LD), hero, review status, summary, related links, sources and the quiet help route.
+ */
+import BaseLayout from './BaseLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import HelpBlock from '../components/HelpBlock.astro';
+import PageHero from '../components/PageHero.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+import SourceList from '../components/SourceList.astro';
+import {
+  breadcrumbsFor,
+  isoDate,
+  resolveRelated,
+  routeFor,
+  type RoutedEntry,
+} from '../lib/content';
+
+interface Props {
+  entry: RoutedEntry;
+  /** Set false when the template renders its own hero (home, story). */
+  hero?: boolean;
+  heading?: string;
+  lead?: string;
+  eyebrow?: string;
+  pageType?: 'WebPage' | 'CollectionPage' | 'AboutPage';
+  articleType?: 'Article' | false;
+  showSummary?: boolean;
+  showSources?: boolean;
+  showHelp?: boolean;
+}
+const {
+  entry,
+  hero = true,
+  heading,
+  lead,
+  eyebrow,
+  pageType = 'WebPage',
+  articleType = 'Article',
+  showSummary = true,
+  showSources = true,
+  showHelp = true,
+} = Astro.props;
+const { data } = entry;
+const route = routeFor(entry);
+const crumbs = await breadcrumbsFor(entry);
+const related = await resolveRelated(entry);
+const site = Astro.site ?? new URL('https://r4ym3.github.io');
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const absolute = (path: string) => new URL(`${basePath}${path}`, site).href;
+const organizationId = `${new URL(basePath, site).href}#organization`;
+
+const schema: Array<Record<string, unknown>> = [];
+if (crumbs.length > 1) {
+  schema.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.label,
+      item: absolute(crumb.href),
+    })),
+  });
+}
+if (articleType) {
+  schema.push({
+    '@type': articleType,
+    headline: heading ?? data.title,
+    description: data.description,
+    inLanguage: data.locale,
+    datePublished: isoDate(data.publishedAt),
+    dateModified: isoDate(data.updatedAt),
+    author: { '@id': organizationId },
+    publisher: { '@id': organizationId },
+    mainEntityOfPage: absolute(route),
+    citation: data.sources.map((source) => ({
+      '@type': 'CreativeWork',
+      name: source.label,
+      url: source.url,
+      ...(source.publisher
+        ? { publisher: { '@type': 'Organization', name: source.publisher } }
+        : {}),
+    })),
+  });
+}
+if (data.glossary) {
+  schema.push({
+    '@type': 'DefinedTerm',
+    name: data.glossary.term,
+    description: data.glossary.definition,
+    url: absolute(route),
+    inDefinedTermSet: absolute(`${data.locale}/begrippen/`),
+  });
+}
+const heroData = 'hero' in data ? data.hero : undefined;
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  locale={data.locale}
+  canonicalPath={`/${route}`}
+  schema={schema}
+  pageType={pageType}
+>
+  {
+    hero && (
+      <PageHero
+        heading={heading ?? data.title}
+        eyebrow={eyebrow ?? heroData?.eyebrow}
+        lead={lead}
+        paragraphs={heroData?.paragraphs ?? []}
+        actions={heroData?.actions ?? []}
+        crumbs={crumbs}
+        artNote={heroData?.visualNote}
+        art={heroData ? 'article' : false}
+      />
+    )
+  }
+  {hero && <ArticleMeta entry={entry} />}
+  <slot name="before-summary" />
+  {
+    showSummary && (data.summary || data.glossary) && (
+      <div class="wrap reading">
+        <section class="summary-box" aria-labelledby="summary-heading">
+          <h2 id="summary-heading">In het kort</h2>
+          {data.summary && <p>{data.summary}</p>}
+          {data.glossary && (
+            <p>
+              <dfn>{data.glossary.term}</dfn>: {data.glossary.definition}
+            </p>
+          )}
+        </section>
+      </div>
+    )
+  }
+  <slot />
+  <RelatedContent items={related} />
+  {showSources && <SourceList sources={data.sources} />}
+  {
+    showHelp && (
+      <div class="wrap reading section--tight">
+        <HelpBlock />
+      </div>
+    )
+  }
+</BaseLayout>

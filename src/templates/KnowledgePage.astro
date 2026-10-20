@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+import EntryLayout from '../layouts/EntryLayout.astro';
+import CardGrid from '../components/CardGrid.astro';
+import DarvoGuide from '../components/DarvoGuide.astro';
+import FounderNote from '../components/FounderNote.astro';
+import MiniReflection from '../components/MiniReflection.astro';
+import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+
+interface Props {
+  entry: CollectionEntry<'patterns'> | CollectionEntry<'articles'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const cards = 'cards' in data ? data.cards : [];
+const founderNote = 'founderNote' in data ? data.founderNote : undefined;
+const darvo = 'darvo' in data ? data.darvo : undefined;
+const pageType = ['over', 'werkwijze'].includes(data.translationKey) ? 'AboutPage' : 'WebPage';
+---
+
+<EntryLayout entry={entry} pageType={pageType}>
+  <div class="wrap reading prose"><Content /></div>
+  {darvo && <DarvoGuide guide={darvo} />}
+  {data.scenarios.length > 0 && <PerspectiveSwitch scenarios={data.scenarios} />}
+  {
+    cards.length > 0 && (
+      <section class="section section--soft" aria-labelledby="cards-heading">
+        <div class="wrap">
+          <h2 id="cards-heading">Verder op deze site</h2>
+          <CardGrid columns={cards.length % 3 === 0 ? 3 : 2} items={cards} />
+        </div>
+      </section>
+    )
+  }
+  {data.reflection && <MiniReflection reflection={data.reflection} />}
+  {founderNote && <FounderNote note={founderNote} />}
+</EntryLayout>

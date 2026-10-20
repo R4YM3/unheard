@@ -1,29 +1,29 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { LinkCard } from '../lib/content';
+import CardGrid from './CardGrid.astro';
+
 interface Props {
-  entries: CollectionEntry<'articles'>[];
-  locale: string;
+  items: LinkCard[];
+  heading?: string;
 }
-const { entries, locale } = Astro.props;
+const { items, heading = 'Verder lezen' } = Astro.props;
 ---
 
 {
-  entries.length > 0 && (
-    <section class="section section--soft">
+  items.length > 0 && (
+    <section class="section section--soft" aria-labelledby="related-heading" id="gerelateerd">
       <div class="wrap">
-        <>
-          <p class="eyebrow">Verder lezen</p>
-          <h2>Misschien helpt dit ook</h2>
-          <div class="grid">
-            {entries.map((entry) => (
-              <a class="card" href={`${locale}/${entry.data.slug}/`}>
-                <p class="eyebrow">{entry.data.kind}</p>
-                <h3>{entry.data.title}</h3>
-                <p>{entry.data.description}</p>
-              </a>
-            ))}
-          </div>
-        </>
+        <p class="eyebrow">Gerelateerd</p>
+        <h2 id="related-heading">{heading}</h2>
+        <CardGrid
+          items={items.map((item) => ({
+            eyebrow: item.eyebrow,
+            title: item.title,
+            text: item.text,
+            href: item.href,
+            tone: item.collection === 'patterns' ? ('tension' as const) : ('neutral' as const),
+          }))}
+        />
       </div>
     </section>
   )

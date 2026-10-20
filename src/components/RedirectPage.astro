@@ -1,0 +1,30 @@
+---
+/** Static, non-indexed redirect for a moved route. Canonical points to the new location. */
+interface Props {
+  to: string;
+  label: string;
+}
+const { to, label } = Astro.props;
+const site = Astro.site ?? new URL('https://r4ym3.github.io');
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const target = `${basePath}${to}`;
+const canonical = new URL(target, site).href;
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <base href={basePath} />
+    <link rel="canonical" href={canonical} />
+    <title>Deze pagina is verhuisd — Ongehoord</title>
+  </head>
+  <body>
+    <p>Deze pagina is verhuisd naar <a href={to}>{label}</a>.</p>
+  </body>
+</html>
