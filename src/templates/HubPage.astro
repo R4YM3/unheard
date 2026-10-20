@@ -67,6 +67,7 @@ const isEmptyBody = !entry.body?.trim();
                 <a class="card feeling-card" href={item.href}>
                   {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
                   <h3>{item.title}</h3>
+                  {item.text && <p>{item.text}</p>}
                 </a>
               ))}
             </div>

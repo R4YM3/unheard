@@ -327,6 +327,7 @@ const hubs = defineCollection({
         }),
         fact: z.object({
           eyebrow: z.string().min(2),
+          value: z.string().min(2).optional(),
           text: z.string().min(20),
           href: internalHref,
           label: z.string().min(2),

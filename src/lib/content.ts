@@ -97,6 +97,15 @@ export const findByKey = async (locale: Locale | string, translationKey: string)
     (entry) => entry.data.locale === locale && entry.data.translationKey === translationKey,
   );
 
+export const glossaryCategoryLabels: Record<string, string> = {
+  patroon: 'Patroon',
+  controle: 'Controle',
+  financieel: 'Financieel',
+  impact: 'Mogelijke impact',
+  labels: 'Labels en diagnoses',
+  basis: 'Basisbegrip',
+};
+
 export interface LinkCard {
   href: string;
   title: string;
@@ -105,18 +114,30 @@ export interface LinkCard {
   collection: RoutedCollection;
 }
 
-export const cardFor = (entry: RoutedEntry): LinkCard => ({
-  href: routeFor(entry),
-  title: entry.data.cardTitle ?? entry.data.title,
-  text: entry.data.cardText ?? entry.data.description,
-  eyebrow:
-    entry.collection === 'emotions'
-      ? `Gevoel · ${entry.data.feeling}`
-      : entry.collection === 'therapies'
-        ? `Therapievorm · ${entry.data.name}`
-        : collectionLabels[entry.collection],
-  collection: entry.collection,
-});
+export const cardFor = (entry: RoutedEntry): LinkCard => {
+  const glossary = entry.data.glossary;
+  if (entry.collection === 'patterns' && glossary) {
+    return {
+      href: routeFor(entry),
+      title: glossary.term,
+      text: glossary.definition,
+      eyebrow: glossaryCategoryLabels[glossary.category] ?? collectionLabels.patterns,
+      collection: entry.collection,
+    };
+  }
+  return {
+    href: routeFor(entry),
+    title: entry.data.cardTitle ?? entry.data.title,
+    text: entry.data.cardText ?? entry.data.description,
+    eyebrow:
+      entry.collection === 'emotions'
+        ? `Gevoel · ${entry.data.feeling}`
+        : entry.collection === 'therapies'
+          ? `Therapievorm · ${entry.data.name}`
+          : collectionLabels[entry.collection],
+    collection: entry.collection,
+  };
+};
 
 /** Related entries in declared order; planned-but-unpublished keys are skipped. */
 export const resolveRelated = async (entry: RoutedEntry) => {
@@ -185,15 +206,6 @@ export const glossaryItems = async (locale: Locale | string): Promise<GlossaryIt
       };
     })
     .sort((a, b) => a.term.localeCompare(b.term, 'nl', { sensitivity: 'base' }));
-
-export const glossaryCategoryLabels: Record<string, string> = {
-  patroon: 'Patroon',
-  controle: 'Controle',
-  financieel: 'Financieel',
-  impact: 'Mogelijke impact',
-  labels: 'Labels en diagnoses',
-  basis: 'Basisbegrip',
-};
 
 export interface SearchItem extends LinkCard {
   keywords: string;

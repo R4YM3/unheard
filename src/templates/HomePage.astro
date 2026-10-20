@@ -107,7 +107,9 @@ if (!home) throw new Error(`HomePage requires a home block; received ${entry.id}
       <p class="eyebrow">{home.timelineTeaser.eyebrow}</p>
       <h2 id="tijdlijn-teaser-heading">{home.timelineTeaser.heading}</h2>
       <p>{home.timelineTeaser.description}</p>
-      <p><a class="text-link" href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a></p>
+      <div class="actions">
+        <a class="button" href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a>
+      </div>
     </div>
   </section>
   <section class="section section--soft" aria-labelledby="herstel-heading" id="herstel">
@@ -127,10 +129,13 @@ if (!home) throw new Error(`HomePage requires a home block; received ${entry.id}
     </div>
   </section>
   <section class="section section--tight" aria-labelledby="feit-heading">
-    <div class="wrap reading">
+    <div class="wrap">
       <p class="eyebrow" id="feit-heading">{home.fact.eyebrow}</p>
-      <p class="lead">{home.fact.text}</p>
-      <p><a class="text-link" href={home.fact.href}>{home.fact.label}</a></p>
+      <a class="stat-teaser" href={home.fact.href}>
+        {home.fact.value && <p class="stat-teaser__value">{home.fact.value}</p>}
+        <p>{home.fact.text}</p>
+        <span class="card-link-label">{home.fact.label} →</span>
+      </a>
     </div>
   </section>
   <section class="section section--chrome" aria-labelledby="slot-heading" id="hulp">

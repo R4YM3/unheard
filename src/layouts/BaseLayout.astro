@@ -97,6 +97,49 @@ const isCurrent = (href: string) =>
   href === 'nl/begrijp-het/'
     ? localPath.startsWith(href) || localPath.startsWith('nl/begrippen/')
     : localPath.startsWith(href) && href !== `${locale}/`;
+const sectionGroups =
+  locale === 'nl'
+    ? [
+        {
+          test: localPath.startsWith('nl/wat-voel-ik'),
+          label: 'Binnen Wat voel ik?',
+          links: [
+            ['nl/wat-voel-ik/', 'Alle gevoelens'],
+            ['nl/wat-voel-ik/ik-twijfel-aan-mezelf/', 'Twijfel'],
+            ['nl/wat-voel-ik/ik-voel-me-schuldig/', 'Schuld'],
+            ['nl/wat-voel-ik/ik-herken-mezelf-niet-meer/', 'Identiteit'],
+            ['nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/', 'Grenzen'],
+            ['nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/', 'Geld'],
+            ['nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/', 'Het blijft pijn doen'],
+          ] as Array<[string, string]>,
+        },
+        {
+          test: localPath.startsWith('nl/begrijp-het') || localPath.startsWith('nl/begrippen'),
+          label: 'Binnen Begrijp het',
+          links: [
+            ['nl/begrijp-het/', 'Overzicht'],
+            ['nl/begrijp-het/emotioneel-misbruik/', 'Emotioneel misbruik'],
+            ['nl/begrijp-het/financieel-misbruik/', 'Financieel misbruik'],
+            ['nl/begrippen/', 'Begrippen A–Z'],
+            ['nl/begrippen/silent-treatment/', 'Silent treatment'],
+            ['nl/begrippen/gaslighting/', 'Gaslighting'],
+            ['nl/begrippen/darvo/', 'DARVO'],
+            ['nl/begrippen/hoovering/', 'Hoovering'],
+          ] as Array<[string, string]>,
+        },
+        {
+          test: localPath.startsWith('nl/herstel') || localPath.startsWith('nl/hulpmiddelen'),
+          label: 'Binnen Herstel',
+          links: [
+            ['nl/herstel/', 'Overzicht'],
+            ['nl/herstel/therapievormen/', 'Therapievormen'],
+            ['nl/herstel/therapievormen/schematherapie/', 'Schematherapie'],
+            ['nl/hulpmiddelen/', 'Hulpmiddelen'],
+          ] as Array<[string, string]>,
+        },
+      ]
+    : [];
+const activeSection = sectionGroups.find((group) => group.test);
 const navLabel =
   locale === 'ar' ? 'التنقل الرئيسي' : locale === 'en' ? 'Main navigation' : 'Hoofdnavigatie';
 const footerGroups =
@@ -202,11 +245,36 @@ const footerGroups =
                 </a>
               ))
             }
+            {
+              activeSection &&
+                activeSection.links.map(([href, label]) => (
+                  <a class="mobile-menu__sub" href={href}>
+                    {label}
+                  </a>
+                ))
+            }
             {locale === 'nl' && <a href="nl/zoeken/">Zoeken</a>}
           </nav>
         </details>
         <div class="header-controls"><LocaleSelector locale={locale} /></div>
       </div>
+      {
+        activeSection && (
+          <div class="wrap">
+            <nav class="section-nav" aria-label={activeSection.label}>
+              <ul>
+                {activeSection.links.map(([href, label]) => (
+                  <li>
+                    <a href={href} aria-current={localPath === href ? 'page' : undefined}>
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        )
+      }
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer">

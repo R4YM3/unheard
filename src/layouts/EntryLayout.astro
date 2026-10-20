@@ -129,9 +129,12 @@ const heroData = 'hero' in data ? data.hero : undefined;
           <h2 id="summary-heading">In het kort</h2>
           {data.summary && <p>{data.summary}</p>}
           {data.glossary && (
-            <p>
-              <dfn>{data.glossary.term}</dfn>: {data.glossary.definition}
-            </p>
+            <div class="term-definition">
+              <p class="term-definition__term">
+                <dfn>{data.glossary.term}</dfn>
+              </p>
+              <p>{data.glossary.definition}</p>
+            </div>
           )}
         </section>
       </div>

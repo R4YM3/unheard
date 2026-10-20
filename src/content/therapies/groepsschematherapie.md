@@ -5,7 +5,7 @@ locale: nl
 translationKey: therapie-groepsschematherapie
 slug: herstel/therapievormen/groepsschematherapie
 status: draft
-published: true
+published: false
 author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20

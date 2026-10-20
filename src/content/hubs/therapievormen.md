@@ -1,6 +1,6 @@
 ---
 title: 'Therapie en begeleiding: verschillende wegen naar herstel'
-description: 'Negen vormen van therapie en begeleiding in gewone taal uitgelegd, met mijn persoonlijke ervaring apart gelabeld. Geen ranglijst en geen behandeladvies.'
+description: 'Vormen van therapie en begeleiding in gewone taal uitgelegd, met mijn persoonlijke ervaring apart gelabeld. Schematherapie en de groepsvorm staan op één pagina. Geen ranglijst en geen behandeladvies.'
 locale: nl
 translationKey: therapievormen
 slug: herstel/therapievormen
@@ -11,7 +11,7 @@ publishedAt: 2026-10-19
 updatedAt: 2026-10-20
 reviewedAt: null
 cardTitle: Therapievormen
-cardText: 'Negen vormen van therapie en begeleiding, algemene uitleg los van mijn persoonlijke ervaring. Geen ranglijst.'
+cardText: 'Vormen van therapie en begeleiding, algemene uitleg los van mijn persoonlijke ervaring. Schematherapie en groepsschematherapie staan op één pagina. Geen ranglijst.'
 heading: 'Herstellen is meer dan begrijpen.'
 eyebrow: 'Herstel / Therapie en begeleiding'
 lead: 'Je kunt precies weten wat je hebt meegemaakt, en toch nog worstelen met wat je voelt. Herstel is niet één gesprek, één inzicht of één therapie. Soms begint het pas wanneer je ontdekt wat je zelf nodig hebt.'
@@ -26,7 +26,7 @@ summary: 'Er zijn verschillende vormen van therapie en begeleiding. Welke past, 
 listings:
   - collection: therapies
     prefix: 'herstel/therapievormen/'
-    eyebrow: 'Negen vormen'
+    eyebrow: 'Vormen'
     heading: 'Verschillende wegen naar zelfinzicht.'
     lead: 'Geen ranglijst en geen wondermiddelen. Per vorm vertel ik waarom ik eraan begon. De algemene uitleg is bewust gescheiden van mijn persoonlijke verhaal.'
     tone: safe

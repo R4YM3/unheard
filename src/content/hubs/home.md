@@ -111,7 +111,7 @@ home:
     heading: 'Van toen tot nu.'
     description: 'Een persoonlijke tijdlijn met per moment vier lagen: wat gebeurde er, wat voelde ik, wie werd ik en wat begrijp ik nu.'
     href: 'nl/mijn-verhaal/#tijdlijn'
-    label: 'Bekijk de tijdlijn'
+    label: 'Ontdek de tijdlijn'
   resources:
     eyebrow: '04 · Herstel & hulpmiddelen'
     heading: 'Er mag weer ruimte ontstaan.'
@@ -139,7 +139,8 @@ home:
         }
   fact:
     eyebrow: 'Eén cijfer, met context'
-    text: 'Ook mannen krijgen te maken met psychisch geweld in huiselijke kring. In het CBS-onderzoek van 2024 gaf 4,9 procent van de mannen van 16 jaar en ouder aan dit in de twaalf maanden ervoor te hebben meegemaakt. Dat gaat niet alleen over partners, maar over de hele huiselijke kring.'
+    value: '4,9%'
+    text: 'van de mannen van 16 jaar en ouder maakte in de twaalf maanden voor het CBS-onderzoek van 2024 psychisch geweld in huiselijke kring mee. Dat gaat niet alleen over partners, maar over de hele huiselijke kring.'
     href: 'nl/mannen-in-cijfers/'
     label: 'Wat dit cijfer wel en niet zegt'
   closing:

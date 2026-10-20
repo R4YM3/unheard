@@ -13,7 +13,9 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !/\/(?:en|ar)\/$/.test(page) &&
-        !/\/nl\/(?:financieel-misbruik|herstel\/therapie|ontwerp-systeem)\/$/.test(page),
+        !/\/nl\/(?:financieel-misbruik|herstel\/therapie|herstel\/therapievormen\/groepsschematherapie|ontwerp-systeem)\/$/.test(
+          page,
+        ),
     }),
   ],
   build: { format: 'directory' },
