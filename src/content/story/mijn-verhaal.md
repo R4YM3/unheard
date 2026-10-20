@@ -16,7 +16,7 @@ heading: 'Ook ik zocht woorden voor wat ik voelde.'
 eyebrow: 'Mijn verhaal / Ongehoord'
 lead: 'Ik begon langzaam aan mezelf te twijfelen. Ik zocht bevestiging, wilde begrijpen wat me overkwam en ontdekte gaandeweg hoe belangrijk het is om opnieuw naar mezelf te luisteren.'
 heroPersonal: 'Ik ben vader. Ik bouw mijn leven opnieuw op. En sommige dingen blijven moeilijk. Mijn verhaal is geen handleiding voor een ander, maar misschien herken je iets in mijn zoektocht.'
-related: [zelftwijfel, pijn-na-inzicht, therapievormen, herstel-ouderschap]
+related: [zelftwijfel, pijn-na-inzicht, therapievormen, herstel-ouderschap, herstel-rouw]
 introduction:
   eyebrow: 'Waarom ik dit deel'
   heading: 'Ik wilde begrijpen wat er met mij gebeurde.'
@@ -83,6 +83,25 @@ timeline:
           text: 'Waarom bleef ik gesprekken herhalen? [OPRICHTER REVIEW NODIG]'
         - title: 'Als anderen betrokken raken'
           text: 'Hoe voelde het wanneer gesprekken zich uitbreidden naar mensen om ons heen? [OPRICHTER REVIEW NODIG]'
+    - eyebrow: 'Uit elkaar gaan'
+      title: 'Afscheid van een gezamenlijk leven.'
+      description: 'Mijn relatie eindigde. Daarna volgde een lange periode van afwikkelen en regelen. [OPRICHTER REVIEW NODIG]'
+      lenses:
+        - heading: 'Wat gebeurde er?'
+          text: 'Mijn relatie eindigde. Het afwikkelen daarna duurde lang en ligt nog niet helemaal achter me. Details daarover deel ik bewust niet. [OPRICHTER REVIEW NODIG]'
+        - heading: 'Wat voelde ik?'
+          text: '[OPRICHTER REVIEW NODIG] Welke gevoelens uit deze periode wil je in eigen woorden noemen? Bijvoorbeeld rouw, schuldgevoel, spanning of gevoelens die elkaar tegenspraken.'
+        - heading: 'Wie werd ik?'
+          text: '[OPRICHTER REVIEW NODIG] Wat veranderde er in hoe je naar jezelf keek, als man en als vader?'
+        - heading: 'Wat begrijp ik nu?'
+          text: '[OPRICHTER REVIEW NODIG] Wat zie je nu anders aan deze periode?'
+      between:
+        - title: 'Rouwen om wat er niet meer is'
+          text: 'Ruimte om te beschrijven wat ik verloor en wat ik miste. [OPRICHTER REVIEW NODIG]'
+        - title: 'Twee gevoelens tegelijk'
+          text: 'Bestonden er gevoelens naast elkaar die elkaar leken tegen te spreken? [OPRICHTER REVIEW NODIG]'
+        - title: 'Lang moeten regelen'
+          text: 'Hoe was het om lange tijd te moeten regelen en afwachten, terwijl het nog niet af was? [OPRICHTER REVIEW NODIG]'
     - eyebrow: 'Het keerpunt'
       title: 'Ik begon woorden te vinden.'
       description: 'Ik ging mijn ervaringen onderzoeken en zocht hulp om mezelf beter te begrijpen.'
@@ -165,6 +184,9 @@ reviewNotes:
   - 'Klopt de volgorde van de hoofdstukken (jeugd, begin relatie, verschuiving, keerpunt, vandaag)?'
   - 'Wil je in de laag “Wat voelde ik?” bij het keerpunt iets zeggen over hulp zoeken als man?'
   - 'Bevestig de nieuwe introductiezin “Mijn verhaal begon niet bij een relatie.” (handoff 5.6).'
+  - 'Nieuw moment “Uit elkaar gaan”: wil je dat het einde van je relatie als eigen moment in de tijdlijn staat? Zo ja, kloppen de titel en de zin “Het afwikkelen daarna duurde lang en ligt nog niet helemaal achter me”, of zegt dat al te veel over lopende kwesties? Zie docs/VERHAAL_REVIEW.md.'
+  - 'Staat “Uit elkaar gaan” op de goede plek, vóór het keerpunt? Of zocht je al hulp voordat je relatie eindigde?'
+  - 'Het dossier bevat geen beschrijvingen van gevoelens. De lagen en tussenmomenten bij “Uit elkaar gaan” zijn daarom vragen. Vul ze in eigen woorden in of laat ze weg.'
 ---
 
 ## Hoe ik dit verhaal vertel
