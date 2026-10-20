@@ -23,7 +23,8 @@ listings:
     eyebrow: 'Patronen'
     heading: 'Uitgelichte begrippen'
     lead: 'Elk begrip heeft een eigen pagina met fictieve voorbeelden, nuance en mogelijke impact.'
-    tone: tension
+    tone: neutral
+    cardStyle: feeling
 related: [begrijp-het, conflict-of-patroon, emotioneel-misbruik]
 reviewNotes:
   - 'De afzonderlijke begrip-artikelen worden geschreven op de branch content/begrippen. Deze index vult zich automatisch zodra die artikelen gepubliceerd zijn.'

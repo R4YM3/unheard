@@ -247,6 +247,7 @@ const listing = z.object({
   heading: z.string().min(4),
   lead: z.string().min(10).optional(),
   tone: z.enum(['neutral', 'safe', 'tension']).default('neutral'),
+  cardStyle: z.enum(['default', 'feeling']).default('default'),
 });
 
 const homeCard = z.object({

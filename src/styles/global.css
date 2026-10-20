@@ -601,6 +601,12 @@ a.card:hover {
 .feeling-card {
   min-height: 12rem;
   justify-content: space-between;
+  overflow-wrap: break-word;
+}
+.feeling-card h3 {
+  margin-bottom: 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.2;
 }
 .feeling-card::after {
   align-self: flex-end;
