@@ -17,7 +17,7 @@ related: [over, mannen-in-cijfers, veilig-gebruik, toegankelijkheid]
 reviewNotes:
   - 'Oprichter: klopt de beschrijving van het reviewproces? Wie doet de inhoudelijke controle (clinicus, jurist) voordat een pagina op "Gecontroleerd" komt, en kan dat genoemd worden zonder namen?'
   - 'Oprichter: er is nog geen werkend contactkanaal voor correcties. Welk kanaal komt er? Pas de alinea onder "Fouten en correcties" aan zodra het werkt.'
-  - 'Oprichter: de tekst belooft dat hulpgegevens en cijfers regelmatig worden nagelopen en dat belangrijke correcties op de pagina worden vermeld. Kun je dat waarmaken? Zo niet, afzwakken. Er is nog geen veld in het schema voor een correctienotitie.'
+  - 'Oprichter: de belofte over correcties is afgezwakt tot alleen een nieuwe datum bijgewerkt. Wil je correcties zichtbaar op de pagina vermelden? Dan is een schemaveld voor een correctienotitie nodig.'
   - 'Redactie: de site staat nu op noindex. Moet dat hier genoemd worden, of hoort dat alleen in technische documentatie?'
 ---
 
@@ -66,12 +66,12 @@ Op dit moment staan veel pagina's nog op Concept of In review. Dat is bewust zic
 
 ## Bijwerken en herzien
 
-Bronnen veranderen. Telefoonnummers, openingstijden en cijfers worden aangepast. Pagina's met hulpgegevens en cijfers worden daarom regelmatig opnieuw nagelopen. Als een cijfer wordt vervangen door een nieuwere versie, verandert ook de datum waarop de bron is gecontroleerd.
+Bronnen veranderen. Telefoonnummers, openingstijden en cijfers worden aangepast. Pagina's met hulpgegevens en cijfers worden daarom opnieuw nagelopen voordat ze als gecontroleerd worden gemarkeerd. Als een cijfer wordt vervangen door een nieuwere versie, verandert ook de datum waarop de bron is gecontroleerd.
 
 ## Fouten en correcties
 
-Zie je een fout, een verouderd telefoonnummer of een bron die niet meer klopt? Dan zou die zo snel mogelijk hersteld moeten worden. Op dit moment is er nog geen manier om dat te melden: er is geen contactformulier en geen e-mailadres. Een contactmogelijkheid volgt. Tot die tijd worden de pagina's periodiek zelf nagelopen.
+Zie je een fout, een verouderd telefoonnummer of een bron die niet meer klopt? Dan zou die zo snel mogelijk hersteld moeten worden. Op dit moment is er nog geen manier om dat te melden: er is geen contactformulier en geen e-mailadres. Een contactmogelijkheid volgt.
 
-Wordt een inhoudelijke fout hersteld, dan verandert de datum "bijgewerkt" op die pagina. Bij een belangrijke correctie, bijvoorbeeld van een cijfer of hulpgegeven, wordt dat op de pagina zelf vermeld.
+Wordt een inhoudelijke fout hersteld, dan verandert de datum "bijgewerkt" op die pagina.
 
 Heb je nu hulp of advies nodig? Kijk dan op [Hulp vinden](nl/hulp-vinden/). Meer over wie Ongehoord maakt, staat op [Over Ongehoord](nl/over/).

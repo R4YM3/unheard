@@ -24,7 +24,6 @@ reviewNotes:
   - 'Jurist/privacy: is deze tekst voldoende als privacyverklaring, of is er een aparte, formele verklaring nodig (bijvoorbeeld over de rol van GitHub en de verwerkingsgrondslag)?'
   - 'Techniek: in de code zit een optionele Cloudflare Web Analytics-beacon (PUBLIC_CLOUDFLARE_BEACON_TOKEN). Die staat nu niet aan. Wordt die ooit aangezet, dan moet deze pagina vóór die tijd worden aangepast.'
   - 'Techniek: controleer bij elke wijziging aan reflectievelden, kopieerknoppen of zoekfunctie of de beschrijving hier nog klopt.'
-  - 'Techniek: klopt het dat de printbare kaarten bij Hulpmiddelen altijd leeg geprint worden, ook als er een invulvariant op het scherm staat? print.css verbergt nu .reflection-form.'
   - 'Redactie: hoe lang GitHub IP-adressen bewaart, staat niet in de geverifieerde bron. Daarom noemt de tekst geen bewaartermijn.'
 ---
 
@@ -56,7 +55,7 @@ Op sommige pagina's staan vragen om bij stil te staan, soms met een veld waarin 
 
 Bij sommige velden staat een knop om je tekst te kopiëren. Gekopieerde tekst staat dan op het klembord van je apparaat. Dat klembord kan door andere programma's worden gelezen, en sommige apparaten bewaren een klembordgeschiedenis of delen die met andere apparaten. Op een gedeeld apparaat is het verstandig om daar rekening mee te houden.
 
-Als je een pagina **print**, worden ingevulde reflectievelden standaard niet meegeprint. Printbare kaarten bij [Hulpmiddelen](nl/hulpmiddelen/) worden leeg geprint, zodat je ze op papier kunt invullen.
+Als je een pagina **print**, worden ingevulde reflectievelden standaard niet meegeprint. Printbare kaarten bij [Hulpmiddelen](nl/hulpmiddelen/) worden met lege regels geprint, zodat je ze op papier kunt invullen. Alleen als je zelf het vakje aanvinkt om je antwoorden mee te printen, komt wat je typte op papier.
 
 ## Op een gedeeld apparaat
 

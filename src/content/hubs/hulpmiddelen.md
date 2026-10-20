@@ -25,7 +25,6 @@ listings:
     tone: safe
 related: [hulp-vinden, herstel, wat-voel-ik]
 reviewNotes:
-  - 'Techniek: bevestig dat de template standaard een A4 met lege regels print, en dat getypte antwoorden alleen meekomen als de lezer dat zelf aanzet. De pagina veilig-gebruik zegt nu dat kaarten altijd leeg printen; die twee teksten moeten hetzelfde zeggen.'
   - 'Redactie: is de zin over browsers die tekst terugzetten nauwkeurig genoeg, of moet die alleen op veilig-gebruik staan?'
 ---
 

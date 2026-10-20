@@ -7,7 +7,7 @@ Nothing is approved yet. `draft` means founder text is still missing; `in_review
 ## Totals
 
 - Routes: 62. The individual term articles (gaslighting, hoovering and so on) come from branch `content/begrippen` and are not listed here.
-- Review notes in frontmatter: 184, of which 36 are addressed to the founder.
+- Review notes in frontmatter: 182, of which 36 are addressed to the founder.
 - Inline `[OPRICHTER REVIEW NODIG]` markers: 34.
 - **Founder review questions: 70** (founder notes plus inline markers).
 
@@ -382,7 +382,6 @@ Crisis numbers (112, 113, 0800-0113, Veilig Thuis 0800-2000) were checked on the
 - Status: `in_review`. Author: editorial. File: `src/content/hubs/hulpmiddelen.md`.
 - Sources: none. The page makes no factual claims that need one; recheck after editing.
 - Review questions:
-  - Techniek: bevestig dat de template standaard een A4 met lege regels print, en dat getypte antwoorden alleen meekomen als de lezer dat zelf aanzet. De pagina veilig-gebruik zegt nu dat kaarten altijd leeg printen; die twee teksten moeten hetzelfde zeggen.
   - Redactie: is de zin over browsers die tekst terugzetten nauwkeurig genoeg, of moet die alleen op veilig-gebruik staan?
 
 ### `/nl/hulpmiddelen/financieel-overzicht-en-veiligheid/`: Financieel overzicht en veiligheid
@@ -520,7 +519,6 @@ Crisis numbers (112, 113, 0800-0113, Veilig Thuis 0800-2000) were checked on the
   - Jurist/privacy: is deze tekst voldoende als privacyverklaring, of is er een aparte, formele verklaring nodig (bijvoorbeeld over de rol van GitHub en de verwerkingsgrondslag)?
   - Techniek: in de code zit een optionele Cloudflare Web Analytics-beacon (PUBLIC_CLOUDFLARE_BEACON_TOKEN). Die staat nu niet aan. Wordt die ooit aangezet, dan moet deze pagina vóór die tijd worden aangepast.
   - Techniek: controleer bij elke wijziging aan reflectievelden, kopieerknoppen of zoekfunctie of de beschrijving hier nog klopt.
-  - Techniek: klopt het dat de printbare kaarten bij Hulpmiddelen altijd leeg geprint worden, ook als er een invulvariant op het scherm staat? print.css verbergt nu .reflection-form.
   - Redactie: hoe lang GitHub IP-adressen bewaart, staat niet in de geverifieerde bron. Daarom noemt de tekst geen bewaartermijn.
 
 ### `/nl/wat-voel-ik/`: Wat voel ik? Begin bij herkenning
@@ -618,7 +616,7 @@ Crisis numbers (112, 113, 0800-0113, Veilig Thuis 0800-2000) were checked on the
 - Review questions:
   - Oprichter: klopt de beschrijving van het reviewproces? Wie doet de inhoudelijke controle (clinicus, jurist) voordat een pagina op "Gecontroleerd" komt, en kan dat genoemd worden zonder namen?
   - Oprichter: er is nog geen werkend contactkanaal voor correcties. Welk kanaal komt er? Pas de alinea onder "Fouten en correcties" aan zodra het werkt.
-  - Oprichter: de tekst belooft dat hulpgegevens en cijfers regelmatig worden nagelopen en dat belangrijke correcties op de pagina worden vermeld. Kun je dat waarmaken? Zo niet, afzwakken. Er is nog geen veld in het schema voor een correctienotitie.
+  - Oprichter: de belofte over correcties is afgezwakt tot alleen een nieuwe datum bijgewerkt. Wil je correcties zichtbaar op de pagina vermelden? Dan is een schemaveld voor een correctienotitie nodig.
   - Redactie: de site staat nu op noindex. Moet dat hier genoemd worden, of hoort dat alleen in technische documentatie?
 
 ### `/nl/zoeken/`: Zoeken op Ongehoord
