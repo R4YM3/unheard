@@ -29,7 +29,11 @@ const routes = [
       'Bevestiging zoeken',
     ],
   },
-  { id: 'emotion-hub', route: '/nl/wat-voel-ik/', required: ['Waar kan ik beginnen?'] },
+  {
+    id: 'emotion-hub',
+    route: '/nl/wat-voel-ik/',
+    required: ['Waar kan ik beginnen?', 'Hoe gevoelens elkaar kunnen opvolgen.'],
+  },
   { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
   { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
   {

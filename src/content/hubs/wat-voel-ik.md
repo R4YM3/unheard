@@ -17,6 +17,31 @@ eyebrow: 'Wat voel ik?'
 lead: 'Misschien zoek je geen label, maar woorden voor wat er in jou gebeurt.'
 summary: 'Op deze pagina staan negen gevoelens die mensen kunnen herkennen na of tijdens een relatie waarin ze zichzelf kwijtraakten. Kies wat het dichtst bij jou komt. Een gevoel bewijst niets over een ander, maar het verdient wel aandacht.'
 chooser: true
+feelingTimeline:
+  eyebrow: 'Geen vaste volgorde'
+  heading: 'Hoe gevoelens elkaar kunnen opvolgen.'
+  lead: 'Dit is geen route die iedereen aflegt, en geen bewijs van wat er bij jou gebeurt. Het is een lijn om woorden naast elkaar te zetten. Je mag overal instappen, een stap overslaan, of alleen de pagina openen die nu past.'
+  label: 'Mogelijke lijn van gevoelens'
+  note: 'De volgorde is een leeslijn. Gevoelens lopen vaak door elkaar, en ze kunnen ook naast elkaar bestaan. Herken je een stap, dan zegt dat iets over wat je draagt, niet over wie je bent of over wat een ander bedoelt.'
+  steps:
+    - key: zelftwijfel
+      text: 'Soms is het eerste wat je merkt twijfel aan je eigen herinnering of oordeel, nog voor je een naam hebt voor wat er gebeurt.'
+    - key: schuldgevoel
+      text: 'Die twijfel kan schuld worden, alsof jij de oorzaak bent van de onrust.'
+    - key: spanning
+      text: 'Als je lang op je hoede bent, kan je lichaam aan blijven staan, ook op momenten dat er niets gebeurt.'
+    - key: grenzen
+      text: 'Nee zeggen kan zwaarder gaan wegen dan de rust bewaren, en dan pas je je steeds vaker aan.'
+    - key: identiteit
+      text: 'Door dat aanpassen kun je jezelf op een dag minder herkennen dan vroeger.'
+    - key: bevestiging
+      text: 'Je zoekt bij anderen bevestiging voor iets wat je zelf al voelde.'
+    - key: geld-praten
+      text: 'Over geld, papieren of schulden durf je steeds minder te beginnen.'
+    - key: gemis
+      text: 'Je kunt iemand missen, ook als diegene je pijn heeft gedaan.'
+    - key: pijn-na-inzicht
+      text: 'Begrijpen maakt het gevoel niet meteen weg. Het kan blijven, naast wat je nu weet.'
 listings:
   - collection: emotions
     prefix: 'wat-voel-ik/'
@@ -27,6 +52,7 @@ listings:
 related: [begrijp-het, herstel, hulp-vinden]
 reviewNotes:
   - 'Controleer of de volgorde van de negen gevoelens klopt met de prioriteit die de oprichter wil geven.'
+  - 'Redactie: de tijdlijn is een leeslijn, geen verloop. Klopt de volgorde, en is elke zin algemeen genoeg?'
 ---
 
 ## Waarom beginnen bij een gevoel?

@@ -8,10 +8,18 @@ import GlossaryIndex from '../components/GlossaryIndex.astro';
 import MiniReflection from '../components/MiniReflection.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
 import SearchIndex from '../components/SearchIndex.astro';
+import FeelingTimeline from '../components/FeelingTimeline.astro';
 import StartChooser from '../components/StartChooser.astro';
 import StatsList from '../components/StatsList.astro';
 import WordFinder from '../components/WordFinder.astro';
-import { cardFor, glossaryItems, listCollection, routeFor, searchItems } from '../lib/content';
+import {
+  cardFor,
+  findByKey,
+  glossaryItems,
+  listCollection,
+  routeFor,
+  searchItems,
+} from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 
 interface Props {
@@ -42,6 +50,22 @@ const listedCards = [
     card.href ? [{ href: card.href, title: card.title, text: card.text }] : [],
   ),
 ];
+const feelingSteps = data.feelingTimeline
+  ? await Promise.all(
+      data.feelingTimeline.steps.map(async (step) => {
+        const linked = await findByKey(data.locale, step.key);
+        if (!linked) throw new Error(`Feeling timeline: unknown or unpublished key "${step.key}"`);
+        return { href: routeFor(linked), title: cardFor(linked).title, text: step.text };
+      }),
+    )
+  : [];
+const feelingList = itemList(
+  `${pageId}#tijdlijn`,
+  data.feelingTimeline?.heading ?? '',
+  feelingSteps,
+  pageId,
+  absolute,
+);
 const cardList = itemList(`${pageId}#paginas`, data.heading, listedCards, pageId, absolute);
 const searchList = data.searchIndex
   ? itemList(
@@ -88,8 +112,8 @@ const figureList = itemList(
   pageId,
   absolute,
 );
-const extraSchema = [cardList, searchList, termSet, figureList].filter((node): node is SchemaNode =>
-  Boolean(node),
+const extraSchema = [cardList, feelingList, searchList, termSet, figureList].filter(
+  (node): node is SchemaNode => Boolean(node),
 );
 const mainEntityId = termSet
   ? termSetId
@@ -163,6 +187,7 @@ const mainEntityId = termSet
       </section>
     ))
   }
+  {data.feelingTimeline && <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />}
   {
     data.cards.length > 0 && (
       <section class="section" aria-labelledby="hub-cards-heading">

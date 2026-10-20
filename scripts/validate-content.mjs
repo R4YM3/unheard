@@ -152,6 +152,30 @@ for (const entry of entries) {
   routes.set(route, file);
 }
 
+for (const { file, data } of entries.filter(({ data }) => data.feelingTimeline)) {
+  const steps = data.feelingTimeline.steps ?? [];
+  const stepKeys = steps.map((step) => step?.key);
+  if (new Set(stepKeys).size !== stepKeys.length)
+    errors.push(`${file}: feeling timeline repeats a feeling`);
+  const locale = data.locale ?? 'nl';
+  const feelings = entries
+    .filter(
+      (entry) =>
+        entry.collection === 'emotions' &&
+        entry.data.published === true &&
+        (entry.data.locale ?? 'nl') === locale,
+    )
+    .map((entry) => entry.data.translationKey);
+  for (const feeling of stepKeys) {
+    if (!feelings.includes(feeling))
+      errors.push(`${file}: feeling timeline step "${feeling}" is not a published feeling`);
+  }
+  for (const feeling of feelings) {
+    if (!stepKeys.includes(feeling))
+      errors.push(`${file}: feeling timeline misses published feeling "${feeling}"`);
+  }
+}
+
 for (const { file, data } of entries.filter(({ data }) => data.published === true)) {
   const related = Array.isArray(data.related)
     ? data.related

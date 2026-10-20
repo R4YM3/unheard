@@ -1,0 +1,60 @@
+---
+/**
+ * A possible line through the feeling pages. Every step stays a link to its own page.
+ * The order is a reading line, not a sequence a visitor is expected to follow.
+ */
+import { cardFor, findByKey, routeFor } from '../lib/content';
+
+interface Step {
+  key: string;
+  text: string;
+}
+interface Props {
+  timeline: {
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    label: string;
+    note: string;
+    steps: Step[];
+  };
+  locale: string;
+}
+const { timeline, locale } = Astro.props;
+const steps = await Promise.all(
+  timeline.steps.map(async (step) => {
+    const entry = await findByKey(locale, step.key);
+    if (!entry) throw new Error(`Feeling timeline: unknown or unpublished key "${step.key}"`);
+    return {
+      href: routeFor(entry),
+      title: cardFor(entry).title,
+      feeling: entry.collection === 'emotions' ? entry.data.feeling : cardFor(entry).eyebrow,
+      text: step.text,
+    };
+  }),
+);
+---
+
+<section class="section" id="tijdlijn" aria-labelledby="gevoel-tijdlijn-heading">
+  <div class="wrap">
+    <p class="eyebrow">{timeline.eyebrow}</p>
+    <h2 id="gevoel-tijdlijn-heading">{timeline.heading}</h2>
+    <p class="reading">{timeline.lead}</p>
+    <ol class="timeline" aria-label={timeline.label}>
+      {
+        steps.map((step) => (
+          <li>
+            <article class="card">
+              <p class="eyebrow">{step.feeling}</p>
+              <h3>
+                <a href={step.href}>{step.title}</a>
+              </h3>
+              <p>{step.text}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="note reading">{timeline.note}</p>
+  </div>
+</section>

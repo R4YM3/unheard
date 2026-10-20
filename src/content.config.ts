@@ -346,6 +346,23 @@ const hubs = defineCollection({
     cards: z.array(card).default([]),
     scenarios: z.array(scenario).max(3).default([]),
     reflection: reflection.optional(),
+    feelingTimeline: z
+      .object({
+        eyebrow: z.string().min(2),
+        heading: z.string().min(8),
+        lead: z.string().min(20),
+        label: z.string().min(4),
+        note: z.string().min(20),
+        steps: z
+          .array(
+            z.object({
+              key: key,
+              text: z.string().min(20).max(220),
+            }),
+          )
+          .min(3),
+      })
+      .optional(),
     chooser: z.boolean().default(false),
     glossaryIndex: z.boolean().default(false),
     stats: z.boolean().default(false),
