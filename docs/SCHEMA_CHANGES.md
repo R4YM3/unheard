@@ -7,13 +7,13 @@ files as described below.
 
 ## What moved
 
-| Before | After |
-| --- | --- |
-| `src/content/articles/begrippen/*.md` (`kind: concept`) | `src/content/patterns/*.md` |
-| `src/content/articles/wat-voel-ik/*.md` | `src/content/emotions/*.md` |
-| `src/content/pages/nl/*.md` | `src/content/hubs/*.md` and `src/content/story/mijn-verhaal.md` |
-| `/nl/financieel-misbruik/` | `/nl/begrijp-het/financieel-misbruik/` (old URL redirects) |
-| `/nl/herstel/therapie/` | `/nl/herstel/therapievormen/` (old URL redirects) |
+| Before                                                  | After                                                           |
+| ------------------------------------------------------- | --------------------------------------------------------------- |
+| `src/content/articles/begrippen/*.md` (`kind: concept`) | `src/content/patterns/*.md`                                     |
+| `src/content/articles/wat-voel-ik/*.md`                 | `src/content/emotions/*.md`                                     |
+| `src/content/pages/nl/*.md`                             | `src/content/hubs/*.md` and `src/content/story/mijn-verhaal.md` |
+| `/nl/financieel-misbruik/`                              | `/nl/begrijp-het/financieel-misbruik/` (old URL redirects)      |
+| `/nl/herstel/therapie/`                                 | `/nl/herstel/therapievormen/` (old URL redirects)               |
 
 `src/content/patterns/darvo.md` is the existing DARVO article, moved unchanged apart from the
 new fields. Edit it there.
@@ -81,13 +81,13 @@ exact keys:
 If you use a different key, add it to `plannedKeys` or the pages linking to it will not show
 it. Keys owned by this branch that term articles can link to:
 
-| Key | Route |
-| --- | --- |
-| `zelftwijfel`, `schuldgevoel`, `identiteit`, `grenzen`, `gemis`, `pijn-na-inzicht`, `bevestiging`, `spanning`, `geld-praten` | `/nl/wat-voel-ik/…` |
-| `begrijp-het`, `emotioneel-misbruik`, `conflict-of-patroon`, `wat-het-met-je-kan-doen` | `/nl/begrijp-het/…` |
-| `financieel-misbruik` and `financieel-*` subarticles | `/nl/begrijp-het/financieel-misbruik/…` |
-| `herstel`, `herstel-*`, `therapievormen`, `therapie-*` | `/nl/herstel/…` |
-| `hulp-vinden`, `voor-naasten`, `hulpmiddelen`, `kaart-*` | help, loved ones, tools |
+| Key                                                                                                                          | Route                                   |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| `zelftwijfel`, `schuldgevoel`, `identiteit`, `grenzen`, `gemis`, `pijn-na-inzicht`, `bevestiging`, `spanning`, `geld-praten` | `/nl/wat-voel-ik/…`                     |
+| `begrijp-het`, `emotioneel-misbruik`, `conflict-of-patroon`, `wat-het-met-je-kan-doen`                                       | `/nl/begrijp-het/…`                     |
+| `financieel-misbruik` and `financieel-*` subarticles                                                                         | `/nl/begrijp-het/financieel-misbruik/…` |
+| `herstel`, `herstel-*`, `therapievormen`, `therapie-*`                                                                       | `/nl/herstel/…`                         |
+| `hulp-vinden`, `voor-naasten`, `hulpmiddelen`, `kaart-*`                                                                     | help, loved ones, tools                 |
 
 ## Rendering notes for term articles
 

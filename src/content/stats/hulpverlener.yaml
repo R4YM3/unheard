@@ -1,0 +1,17 @@
+order: 30
+verified: true
+value: '32,6%'
+label: 'van alle slachtoffers van psychisch geweld in huiselijke kring praatte erover met een zorgprofessional'
+explanation: 'Een zorgprofessional is bijvoorbeeld een huisarts, psycholoog of maatschappelijk werker. Daarnaast praatte 2,5% met Veilig Thuis en 3,9% met de politie. Dit cijfer is niet uitgesplitst naar mannen en vrouwen.'
+study: 'Prevalentiemonitor Huiselijk Geweld en Seksueel Grensoverschrijdend Gedrag 2024, hoofdstuk 2, paragraaf 2.4'
+publisher: 'CBS en WODC'
+year: 2024
+definition: 'Het aandeel slachtoffers van psychisch geweld in huiselijke kring dat aangeeft erover te hebben gepraat met een zorgprofessional, zoals een huisarts, psycholoog of maatschappelijk werker.'
+population: 'Alle mensen van 16 jaar en ouder in particuliere huishoudens in Nederland die in de 12 maanden voor het onderzoek psychisch geweld in huiselijke kring meemaakten, mannen en vrouwen samen.'
+period: 'De 12 maanden voorafgaand aan het onderzoek; veldwerk in maart en april 2024'
+limitations:
+  - 'Dit cijfer is niet uitgesplitst naar gender; het zegt dus niets over verschillen tussen mannen en vrouwen.'
+  - 'Praten met de politie is niet hetzelfde als aangifte doen.'
+  - 'Het onderzoek is een online vragenlijst; de cijfers berusten op wat mensen zelf rapporteren.'
+url: 'https://www.cbs.nl/nl-nl/longread/rapportages/2024/prevalentiemonitor-huiselijk-geweld-en-seksueel-grensoverschrijdend-gedrag-2024/2-psychisch-geweld-in-huiselijke-kring'
+checkedAt: 2026-10-20

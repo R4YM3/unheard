@@ -22,16 +22,16 @@ state and is shown on the page. Everything is `noindex,nofollow` while `NO_INDEX
 
 ## Folders and routes
 
-| Collection | Folder | `slug` must start with | Template |
-| --- | --- | --- | --- |
-| `emotions` | `src/content/emotions/` | `wat-voel-ik/` | Emotion page |
-| `patterns` | `src/content/patterns/` | `begrippen/` | Knowledge page (term articles: `content/begrippen` branch) |
-| `articles` | `src/content/articles/` | any | Knowledge page |
-| `therapies` | `src/content/therapies/` | `herstel/therapievormen/` | Therapy page |
-| `tools` | `src/content/tools/` | `hulpmiddelen/` | Tool page with A4 card |
-| `hubs` | `src/content/hubs/` | any (`home` = `/nl/`) | Hub page with listings |
-| `story` | `src/content/story/` | `mijn-verhaal` | Founder story |
-| `stats` | `src/content/stats/*.yaml` | — | Figures on `/nl/mannen-in-cijfers/` |
+| Collection  | Folder                     | `slug` must start with    | Template                                                   |
+| ----------- | -------------------------- | ------------------------- | ---------------------------------------------------------- |
+| `emotions`  | `src/content/emotions/`    | `wat-voel-ik/`            | Emotion page                                               |
+| `patterns`  | `src/content/patterns/`    | `begrippen/`              | Knowledge page (term articles: `content/begrippen` branch) |
+| `articles`  | `src/content/articles/`    | any                       | Knowledge page                                             |
+| `therapies` | `src/content/therapies/`   | `herstel/therapievormen/` | Therapy page                                               |
+| `tools`     | `src/content/tools/`       | `hulpmiddelen/`           | Tool page with A4 card                                     |
+| `hubs`      | `src/content/hubs/`        | any (`home` = `/nl/`)     | Hub page with listings                                     |
+| `story`     | `src/content/story/`       | `mijn-verhaal`            | Founder story                                              |
+| `stats`     | `src/content/stats/*.yaml` | —                         | Figures on `/nl/mannen-in-cijfers/`                        |
 
 Breadcrumbs are derived from the slug: `begrijp-het/financieel-misbruik/signalen` shows
 Home → Begrijp het → Financieel misbruik → Signalen, as long as the parent slugs exist.
@@ -125,70 +125,70 @@ scenarios:
 Use these `translationKey` values in `related`. Unknown keys fail the build (term keys of the
 parallel branch are pre-registered, see `docs/SCHEMA_CHANGES.md`).
 
-| Key | Collection | Slug |
-| --- | --- | --- |
-| `home` | hubs | `home` (→ `/nl/`) |
-| `wat-voel-ik` | hubs | `wat-voel-ik` |
-| `zelftwijfel` | emotions | `wat-voel-ik/ik-twijfel-aan-mezelf` |
-| `schuldgevoel` | emotions | `wat-voel-ik/ik-voel-me-schuldig` |
-| `identiteit` | emotions | `wat-voel-ik/ik-herken-mezelf-niet-meer` |
-| `grenzen` | emotions | `wat-voel-ik/ik-durf-geen-nee-te-zeggen` |
-| `gemis` | emotions | `wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan` |
-| `pijn-na-inzicht` | emotions | `wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen` |
-| `bevestiging` | emotions | `wat-voel-ik/ik-zoek-steeds-bevestiging` |
-| `spanning` | emotions | `wat-voel-ik/ik-sta-voortdurend-aan` |
-| `geld-praten` | emotions | `wat-voel-ik/ik-durf-niet-over-geld-te-praten` |
-| `begrijp-het` | hubs | `begrijp-het` |
-| `emotioneel-misbruik` | articles | `begrijp-het/emotioneel-misbruik` |
-| `conflict-of-patroon` | articles | `begrijp-het/conflict-of-patroon` |
-| `wat-het-met-je-kan-doen` | articles | `begrijp-het/wat-het-met-je-kan-doen` |
-| `begrippen` | hubs | `begrippen` |
-| `darvo` | patterns | `begrippen/darvo` |
-| `financieel-misbruik` | hubs | `begrijp-het/financieel-misbruik` |
-| `financieel-signalen` | articles | `begrijp-het/financieel-misbruik/signalen` |
-| `financieel-geldruzie-of-controle` | articles | `begrijp-het/financieel-misbruik/geldruzie-of-controle` |
-| `financieel-documenten` | articles | `begrijp-het/financieel-misbruik/toegang-tot-documenten` |
-| `financieel-overzicht` | articles | `begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden` |
-| `financieel-afhankelijkheid` | articles | `begrijp-het/financieel-misbruik/afhankelijkheid` |
-| `financieel-na-scheiding` | articles | `begrijp-het/financieel-misbruik/druk-na-scheiding` |
-| `financieel-herstel` | articles | `begrijp-het/financieel-misbruik/veilig-financieel-herstel` |
-| `financieel-advies` | articles | `begrijp-het/financieel-misbruik/juridisch-en-financieel-advies` |
-| `herstel` | hubs | `herstel` |
-| `herstel-erkenning` | articles | `herstel/erkenning` |
-| `herstel-zelfvertrouwen` | articles | `herstel/zelfvertrouwen` |
-| `herstel-grenzen` | articles | `herstel/grenzen-leren-stellen` |
-| `herstel-triggers` | articles | `herstel/triggers-en-moeilijke-berichten` |
-| `herstel-rouw` | articles | `herstel/rouw` |
-| `herstel-leren-voelen` | articles | `herstel/leren-voelen` |
-| `herstel-contact-na-breuk` | articles | `herstel/contact-na-een-breuk` |
-| `herstel-ouderschap` | articles | `herstel/herstel-als-ouder` |
-| `herstel-steunnetwerk` | articles | `herstel/steunnetwerk` |
-| `therapievormen` | hubs | `herstel/therapievormen` |
-| `therapie-schematherapie` | therapies | `herstel/therapievormen/schematherapie` |
-| `therapie-groepsschematherapie` | therapies | `herstel/therapievormen/groepsschematherapie` |
-| `therapie-emdr` | therapies | `herstel/therapievormen/emdr` |
-| `therapie-exposure` | therapies | `herstel/therapievormen/exposuretherapie` |
-| `therapie-cgt` | therapies | `herstel/therapievormen/cognitieve-gedragstherapie` |
-| `therapie-psycholoog` | therapies | `herstel/therapievormen/gesprekken-met-een-psycholoog` |
-| `therapie-beeldend` | therapies | `herstel/therapievormen/beeldende-therapie` |
-| `therapie-boksen` | therapies | `herstel/therapievormen/boksen-met-emoties` |
-| `therapie-meditatie` | therapies | `herstel/therapievormen/meditatie` |
-| `mijn-verhaal` | story | `mijn-verhaal` |
-| `hulpmiddelen` | hubs | `hulpmiddelen` |
-| `kaart-zelfreflectie` | tools | `hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig` |
-| `kaart-partnergesprek` | tools | `hulpmiddelen/vragen-voor-een-gesprek-met-je-partner` |
-| `kaart-hulpverlener` | tools | `hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut` |
-| `kaart-naaste` | tools | `hulpmiddelen/iemand-steunen` |
-| `kaart-financieel` | tools | `hulpmiddelen/financieel-overzicht-en-veiligheid` |
-| `kaart-pijn-na-inzicht` | tools | `hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen` |
-| `hulp-vinden` | articles | `hulp-vinden` |
-| `voor-naasten` | articles | `ik-maak-me-zorgen-om-iemand` |
-| `mannen-in-cijfers` | hubs | `mannen-in-cijfers` |
-| `over` | articles | `over` |
-| `werkwijze` | articles | `werkwijze` |
-| `veilig-gebruik` | articles | `veilig-gebruik` |
-| `toegankelijkheid` | articles | `toegankelijkheid` |
-| `zoeken` | hubs | `zoeken` |
+| Key                                | Collection | Slug                                                              |
+| ---------------------------------- | ---------- | ----------------------------------------------------------------- |
+| `home`                             | hubs       | `home` (→ `/nl/`)                                                 |
+| `wat-voel-ik`                      | hubs       | `wat-voel-ik`                                                     |
+| `zelftwijfel`                      | emotions   | `wat-voel-ik/ik-twijfel-aan-mezelf`                               |
+| `schuldgevoel`                     | emotions   | `wat-voel-ik/ik-voel-me-schuldig`                                 |
+| `identiteit`                       | emotions   | `wat-voel-ik/ik-herken-mezelf-niet-meer`                          |
+| `grenzen`                          | emotions   | `wat-voel-ik/ik-durf-geen-nee-te-zeggen`                          |
+| `gemis`                            | emotions   | `wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan`             |
+| `pijn-na-inzicht`                  | emotions   | `wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen`            |
+| `bevestiging`                      | emotions   | `wat-voel-ik/ik-zoek-steeds-bevestiging`                          |
+| `spanning`                         | emotions   | `wat-voel-ik/ik-sta-voortdurend-aan`                              |
+| `geld-praten`                      | emotions   | `wat-voel-ik/ik-durf-niet-over-geld-te-praten`                    |
+| `begrijp-het`                      | hubs       | `begrijp-het`                                                     |
+| `emotioneel-misbruik`              | articles   | `begrijp-het/emotioneel-misbruik`                                 |
+| `conflict-of-patroon`              | articles   | `begrijp-het/conflict-of-patroon`                                 |
+| `wat-het-met-je-kan-doen`          | articles   | `begrijp-het/wat-het-met-je-kan-doen`                             |
+| `begrippen`                        | hubs       | `begrippen`                                                       |
+| `darvo`                            | patterns   | `begrippen/darvo`                                                 |
+| `financieel-misbruik`              | hubs       | `begrijp-het/financieel-misbruik`                                 |
+| `financieel-signalen`              | articles   | `begrijp-het/financieel-misbruik/signalen`                        |
+| `financieel-geldruzie-of-controle` | articles   | `begrijp-het/financieel-misbruik/geldruzie-of-controle`           |
+| `financieel-documenten`            | articles   | `begrijp-het/financieel-misbruik/toegang-tot-documenten`          |
+| `financieel-overzicht`             | articles   | `begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden` |
+| `financieel-afhankelijkheid`       | articles   | `begrijp-het/financieel-misbruik/afhankelijkheid`                 |
+| `financieel-na-scheiding`          | articles   | `begrijp-het/financieel-misbruik/druk-na-scheiding`               |
+| `financieel-herstel`               | articles   | `begrijp-het/financieel-misbruik/veilig-financieel-herstel`       |
+| `financieel-advies`                | articles   | `begrijp-het/financieel-misbruik/juridisch-en-financieel-advies`  |
+| `herstel`                          | hubs       | `herstel`                                                         |
+| `herstel-erkenning`                | articles   | `herstel/erkenning`                                               |
+| `herstel-zelfvertrouwen`           | articles   | `herstel/zelfvertrouwen`                                          |
+| `herstel-grenzen`                  | articles   | `herstel/grenzen-leren-stellen`                                   |
+| `herstel-triggers`                 | articles   | `herstel/triggers-en-moeilijke-berichten`                         |
+| `herstel-rouw`                     | articles   | `herstel/rouw`                                                    |
+| `herstel-leren-voelen`             | articles   | `herstel/leren-voelen`                                            |
+| `herstel-contact-na-breuk`         | articles   | `herstel/contact-na-een-breuk`                                    |
+| `herstel-ouderschap`               | articles   | `herstel/herstel-als-ouder`                                       |
+| `herstel-steunnetwerk`             | articles   | `herstel/steunnetwerk`                                            |
+| `therapievormen`                   | hubs       | `herstel/therapievormen`                                          |
+| `therapie-schematherapie`          | therapies  | `herstel/therapievormen/schematherapie`                           |
+| `therapie-groepsschematherapie`    | therapies  | `herstel/therapievormen/groepsschematherapie`                     |
+| `therapie-emdr`                    | therapies  | `herstel/therapievormen/emdr`                                     |
+| `therapie-exposure`                | therapies  | `herstel/therapievormen/exposuretherapie`                         |
+| `therapie-cgt`                     | therapies  | `herstel/therapievormen/cognitieve-gedragstherapie`               |
+| `therapie-psycholoog`              | therapies  | `herstel/therapievormen/gesprekken-met-een-psycholoog`            |
+| `therapie-beeldend`                | therapies  | `herstel/therapievormen/beeldende-therapie`                       |
+| `therapie-boksen`                  | therapies  | `herstel/therapievormen/boksen-met-emoties`                       |
+| `therapie-meditatie`               | therapies  | `herstel/therapievormen/meditatie`                                |
+| `mijn-verhaal`                     | story      | `mijn-verhaal`                                                    |
+| `hulpmiddelen`                     | hubs       | `hulpmiddelen`                                                    |
+| `kaart-zelfreflectie`              | tools      | `hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig`                    |
+| `kaart-partnergesprek`             | tools      | `hulpmiddelen/vragen-voor-een-gesprek-met-je-partner`             |
+| `kaart-hulpverlener`               | tools      | `hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut`        |
+| `kaart-naaste`                     | tools      | `hulpmiddelen/iemand-steunen`                                     |
+| `kaart-financieel`                 | tools      | `hulpmiddelen/financieel-overzicht-en-veiligheid`                 |
+| `kaart-pijn-na-inzicht`            | tools      | `hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen`           |
+| `hulp-vinden`                      | articles   | `hulp-vinden`                                                     |
+| `voor-naasten`                     | articles   | `ik-maak-me-zorgen-om-iemand`                                     |
+| `mannen-in-cijfers`                | hubs       | `mannen-in-cijfers`                                               |
+| `over`                             | articles   | `over`                                                            |
+| `werkwijze`                        | articles   | `werkwijze`                                                       |
+| `veilig-gebruik`                   | articles   | `veilig-gebruik`                                                  |
+| `toegankelijkheid`                 | articles   | `toegankelijkheid`                                                |
+| `zoeken`                           | hubs       | `zoeken`                                                          |
 
 ## Editorial rules (from the content handoff)
 
@@ -220,7 +220,7 @@ parallel branch are pre-registered, see `docs/SCHEMA_CHANGES.md`).
   without excluding women and non-binary readers.
 - **Structure.** Short paragraphs, clear `##` headings, summary sentences, a next step,
   2–5 related keys. Long is fine; padded is not. No lorem ipsum, no thin duplicate pages.
-- **Knowledge article order:** wat is het? → hoe kan het eruitzien? → wanneer is het *niet*
+- **Knowledge article order:** wat is het? → hoe kan het eruitzien? → wanneer is het _niet_
   zomaar af te leiden? → impact → wat kan helpen?
 - **Emotion page order:** hoe voelt het? → wat gebeurt er om je heen? → wat kan dit
   verklaren? → gevolgen; the template then adds the perspective switcher, impacts,

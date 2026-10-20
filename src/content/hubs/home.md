@@ -46,12 +46,36 @@ home:
     heading: 'Wat herken jij?'
     lead: 'Je hoeft het antwoord nog niet te weten. Kies wat het dichtst bij jouw ervaring komt.'
     cards:
-      - { eyebrow: '01 / Zelftwijfel', title: 'Ik twijfel steeds aan mezelf.', href: 'nl/wat-voel-ik/ik-twijfel-aan-mezelf/' }
-      - { eyebrow: '02 / Schuld', title: 'Ik voel me verantwoordelijk voor alles.', href: 'nl/wat-voel-ik/ik-voel-me-schuldig/' }
-      - { eyebrow: '03 / Identiteit', title: 'Ik herken mezelf niet meer.', href: 'nl/wat-voel-ik/ik-herken-mezelf-niet-meer/' }
-      - { eyebrow: '04 / Herstel', title: 'Ik begrijp het, maar het blijft pijn doen.', href: 'nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/' }
-      - { eyebrow: '05 / Grenzen', title: 'Ik durf geen nee te zeggen.', href: 'nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/' }
-      - { eyebrow: '06 / Geld', title: 'Ik durf niet over geld te praten.', href: 'nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/' }
+      - {
+          eyebrow: '01 / Zelftwijfel',
+          title: 'Ik twijfel steeds aan mezelf.',
+          href: 'nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
+        }
+      - {
+          eyebrow: '02 / Schuld',
+          title: 'Ik voel me verantwoordelijk voor alles.',
+          href: 'nl/wat-voel-ik/ik-voel-me-schuldig/',
+        }
+      - {
+          eyebrow: '03 / Identiteit',
+          title: 'Ik herken mezelf niet meer.',
+          href: 'nl/wat-voel-ik/ik-herken-mezelf-niet-meer/',
+        }
+      - {
+          eyebrow: '04 / Herstel',
+          title: 'Ik begrijp het, maar het blijft pijn doen.',
+          href: 'nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/',
+        }
+      - {
+          eyebrow: '05 / Grenzen',
+          title: 'Ik durf geen nee te zeggen.',
+          href: 'nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/',
+        }
+      - {
+          eyebrow: '06 / Geld',
+          title: 'Ik durf niet over geld te praten.',
+          href: 'nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/',
+        }
     moreHref: 'nl/wat-voel-ik/'
     moreLabel: 'Bekijk alle negen gevoelens'
   topics:
@@ -92,9 +116,27 @@ home:
     eyebrow: '04 · Herstel & hulpmiddelen'
     heading: 'Er mag weer ruimte ontstaan.'
     cards:
-      - { eyebrow: 'Herstel', title: 'Herstel hoeft geen rechte lijn te zijn.', description: 'Over erkenning, grenzen, rouw en leren voelen, en over therapievormen die je met een professional kunt bespreken.', label: 'Naar herstel', href: 'nl/herstel/' }
-      - { eyebrow: 'Vragenkaarten', title: 'Vragen die je ogen kunnen openen.', description: 'Printbare kaarten voor jezelf, voor een gesprek met een professional en voor naasten. Niets wordt opgeslagen.', label: 'Ontdek hulpmiddelen', href: 'nl/hulpmiddelen/' }
-      - { eyebrow: 'Voor naasten', title: 'Maak je je zorgen om iemand?', description: 'Hoe steun je een vriend, broer of collega zonder druk uit te oefenen of conclusies op te leggen?', label: 'Hoe kun je helpen?', href: 'nl/ik-maak-me-zorgen-om-iemand/' }
+      - {
+          eyebrow: 'Herstel',
+          title: 'Herstel hoeft geen rechte lijn te zijn.',
+          description: 'Over erkenning, grenzen, rouw en leren voelen, en over therapievormen die je met een professional kunt bespreken.',
+          label: 'Naar herstel',
+          href: 'nl/herstel/',
+        }
+      - {
+          eyebrow: 'Vragenkaarten',
+          title: 'Vragen die je ogen kunnen openen.',
+          description: 'Printbare kaarten voor jezelf, voor een gesprek met een professional en voor naasten. Niets wordt opgeslagen.',
+          label: 'Ontdek hulpmiddelen',
+          href: 'nl/hulpmiddelen/',
+        }
+      - {
+          eyebrow: 'Voor naasten',
+          title: 'Maak je je zorgen om iemand?',
+          description: 'Hoe steun je een vriend, broer of collega zonder druk uit te oefenen of conclusies op te leggen?',
+          label: 'Hoe kun je helpen?',
+          href: 'nl/ik-maak-me-zorgen-om-iemand/',
+        }
   fact:
     eyebrow: 'Eén cijfer, met context'
     text: 'Ook mannen krijgen te maken met psychisch geweld in huiselijke kring. In het CBS-onderzoek van 2024 gaf 4,9 procent van de mannen van 16 jaar en ouder aan dit in de twaalf maanden ervoor te hebben meegemaakt. Dat gaat niet alleen over partners, maar over de hele huiselijke kring.'

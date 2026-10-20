@@ -1,0 +1,17 @@
+order: 20
+verified: true
+value: '73%'
+label: 'van de mannen die psychisch geweld in huiselijke kring meemaakten, praatte er met iemand over'
+explanation: 'Bij vrouwen was dat 86%. Van alle slachtoffers samen praatte 81% met iemand en 15% met niemand. Met iemand praten kan ook een vriend of familielid zijn; het zegt niets over professionele hulp of aangifte.'
+study: 'Prevalentiemonitor Huiselijk Geweld en Seksueel Grensoverschrijdend Gedrag 2024, hoofdstuk 2, paragraaf 2.4'
+publisher: 'CBS en WODC'
+year: 2024
+definition: 'Het aandeel slachtoffers van psychisch geweld in huiselijke kring dat aangeeft met iemand over het geweld te hebben gepraat, ongeacht met wie.'
+population: 'Mensen van 16 jaar en ouder in particuliere huishoudens in Nederland die in de 12 maanden voor het onderzoek psychisch geweld in huiselijke kring meemaakten.'
+period: 'De 12 maanden voorafgaand aan het onderzoek; veldwerk in maart en april 2024'
+limitations:
+  - 'Met iemand praten is niet hetzelfde als professionele hulp zoeken of aangifte doen.'
+  - 'Het onderzoek is een online vragenlijst; de cijfers berusten op wat mensen zelf rapporteren.'
+  - 'Het cijfer gaat over slachtoffers binnen de hele huiselijke kring, niet alleen over (ex-)partners.'
+url: 'https://www.cbs.nl/nl-nl/longread/rapportages/2024/prevalentiemonitor-huiselijk-geweld-en-seksueel-grensoverschrijdend-gedrag-2024/2-psychisch-geweld-in-huiselijke-kring'
+checkedAt: 2026-10-20

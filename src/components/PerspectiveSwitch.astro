@@ -42,7 +42,11 @@ const {
             <legend>Kies een voorbeeldsituatie</legend>
             <div class="pv-scene-buttons">
               {scenarios.map((scenario, index) => (
-                <button type="button" data-pv-scene={index} aria-pressed={index === 0 ? 'true' : 'false'}>
+                <button
+                  type="button"
+                  data-pv-scene={index}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                >
                   {scenario.label}
                 </button>
               ))}

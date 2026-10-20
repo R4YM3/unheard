@@ -1,0 +1,18 @@
+order: 10
+verified: true
+value: '4,9%'
+label: 'van de mannen van 16 jaar en ouder maakte in de 12 maanden voor het onderzoek psychisch geweld in huiselijke kring mee'
+explanation: 'Bij vrouwen was dat 6,9%. Voor de hele bevolking van 16 jaar en ouder ging het om 5,9%, ongeveer 870 000 mensen. Het gaat niet alleen om partners of ex-partners, maar om iedereen uit de huiselijke kring.'
+study: 'Prevalentiemonitor Huiselijk Geweld en Seksueel Grensoverschrijdend Gedrag 2024, hoofdstuk 2: Psychisch geweld in huiselijke kring'
+publisher: 'CBS en WODC'
+year: 2024
+definition: 'Psychisch geweld in huiselijke kring: structurele (minstens maandelijkse) verbale agressie, en vormen van dwingende controle met dreiging en intimidatie, door iemand uit de huiselijke kring. Dit is breder dan partnergeweld.'
+population: 'Mensen van 16 jaar en ouder in particuliere huishoudens in Nederland, getrokken uit de Basisregistratie Personen (BRP). Mensen in instellingen doen niet mee.'
+period: 'De 12 maanden voorafgaand aan het onderzoek; veldwerk in maart en april 2024'
+limitations:
+  - 'Het onderzoek is een online vragenlijst; de cijfers berusten op wat mensen zelf rapporteren.'
+  - 'Het begrip psychisch geweld is in 2024 nieuw afgebakend. Eerdere jaren zijn opnieuw berekend, dus vergelijk niet met oudere publicaties met een andere definitie.'
+  - 'Het cijfer gaat over de hele huiselijke kring, niet alleen over (ex-)partners.'
+  - 'Mensen die in een instelling wonen, zijn niet meegenomen.'
+url: 'https://www.cbs.nl/nl-nl/longread/rapportages/2024/prevalentiemonitor-huiselijk-geweld-en-seksueel-grensoverschrijdend-gedrag-2024/2-psychisch-geweld-in-huiselijke-kring'
+checkedAt: 2026-10-20

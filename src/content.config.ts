@@ -120,7 +120,9 @@ const emotions = defineCollection({
     base.extend({
       feeling: z.string().min(3).max(40),
       scenarios: z.array(scenario).max(3).default([]),
-      impacts: z.array(z.object({ title: z.string().min(3), text: z.string().min(10) })).default([]),
+      impacts: z
+        .array(z.object({ title: z.string().min(3), text: z.string().min(10) }))
+        .default([]),
       reflection: reflection.optional(),
       helps: z.array(z.object({ title: z.string().min(3), text: z.string().min(10) })).default([]),
       founderNote: founderNote.optional(),
@@ -180,7 +182,10 @@ const therapies = defineCollection({
       focus: z.string().min(20).max(220),
       professionalQuestions: z.array(z.string().min(10)).min(3),
       founder: z
-        .object({ text: z.array(z.string().min(20)).min(1), needsReview: z.boolean().default(true) })
+        .object({
+          text: z.array(z.string().min(20)).min(1),
+          needsReview: z.boolean().default(true),
+        })
         .optional(),
     }),
     'herstel/therapievormen/',
@@ -379,14 +384,18 @@ const story = defineCollection({
       eyebrow: z.string().min(2),
       heading: z.string().min(8),
       paragraphs: z.array(z.string().min(20)).min(1),
-      cards: z.array(z.object({ title: z.string().min(4), description: z.string().min(20) })).min(1),
+      cards: z
+        .array(z.object({ title: z.string().min(4), description: z.string().min(20) }))
+        .min(1),
       href: internalHref,
       label: z.string().min(2),
     }),
     fatherhood: z.object({
       eyebrow: z.string().min(2),
       heading: z.string().min(8),
-      cards: z.array(z.object({ title: z.string().min(4), description: z.string().min(20) })).min(1),
+      cards: z
+        .array(z.object({ title: z.string().min(4), description: z.string().min(20) }))
+        .min(1),
     }),
     letter: z.object({
       eyebrow: z.string().min(2),
