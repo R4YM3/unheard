@@ -41,7 +41,6 @@ cards:
     label: 'Naar alle begrippen'
 related: [wat-voel-ik, herstel, hulp-vinden]
 reviewNotes:
-  - 'Redactie: de hoofdnavigatie verwijst "Begrijp het" nu naar nl/begrippen/. Moet die link naar deze hub (nl/begrijp-het/) wijzen nu de hub bestaat?'
   - 'Redactie: klopt de volgorde van de artikellisting (emotioneel misbruik, conflict of patroon, wat het met je kan doen)? Zo niet, voeg order-waarden toe aan de artikelen.'
 ---
 

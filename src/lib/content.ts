@@ -250,6 +250,7 @@ export const breadcrumbsFor = async (entry: RoutedEntry) => {
   const crumbs: Array<{ href: string; label: string }> = [
     { href: `${entry.data.locale}/`, label: 'Home' },
   ];
+  if (entry.data.translationKey === 'home') return crumbs;
   for (let index = 1; index < segments.length; index += 1) {
     const parentSlug = segments.slice(0, index).join('/');
     const parent = published.find(

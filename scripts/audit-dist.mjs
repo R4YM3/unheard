@@ -120,8 +120,13 @@ for (const file of files) {
   for (const block of jsonLdBlocks(html)) {
     try {
       const parsed = JSON.parse(block);
-      for (const item of Array.isArray(parsed) ? parsed : [parsed])
+      for (const item of Array.isArray(parsed) ? parsed : [parsed]) {
         for (const type of [item['@type']].flat()) types.add(type);
+        if (item['@type'] === 'BreadcrumbList') {
+          const urls = item.itemListElement.map((crumb) => crumb.item);
+          if (new Set(urls).size !== urls.length) bad.push(`${file}: BreadcrumbList repeats a URL`);
+        }
+      }
     } catch {
       bad.push(`${file}: invalid JSON-LD`);
     }
