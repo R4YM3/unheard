@@ -17,6 +17,7 @@ interface Props {
 const { groups } = Astro.props;
 ---
 
+<div class="read-progress" aria-hidden="true"></div>
 {
   groups.map((group) =>
     group.closed ? (
@@ -48,3 +49,8 @@ const { groups } = Astro.props;
     ),
   )
 }
+
+<script>
+  import { enhancePageRail } from '../scripts/page-rail';
+  enhancePageRail();
+</script>
