@@ -5,7 +5,9 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
 import FounderNote from '../components/FounderNote.astro';
 import MiniReflection from '../components/MiniReflection.astro';
+import PageRail from '../components/PageRail.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import { cardFor, listCollection, routeFor } from '../lib/content';
 
 interface Props {
   entry: CollectionEntry<'emotions'>;
@@ -13,9 +15,55 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
+const route = routeFor(entry);
+const feelings = (await listCollection('emotions', data.locale, 'wat-voel-ik/')).map((item) =>
+  cardFor(item),
+);
+const here = [
+  data.summary ? { href: `${route}#summary-heading`, label: 'In het kort' } : undefined,
+  { href: `${route}#herken-je-dit`, label: 'Herken je dit?' },
+  { href: `${route}#wat-gebeurt-er-om-je-heen`, label: 'Om je heen' },
+  { href: `${route}#wat-kan-dit-verklaren`, label: 'Wat het kan verklaren' },
+  { href: `${route}#wat-het-met-je-kan-doen`, label: 'Wat het met je kan doen' },
+  { href: `${route}#wanneer-is-het-iets-anders`, label: 'Wanneer het iets anders is' },
+  {
+    href: `${route}#${entry.body?.includes('## Een vraag voor vandaag') ? 'een-vraag-voor-vandaag' : 'een-volgende-stap'}`,
+    label: entry.body?.includes('## Een vraag voor vandaag')
+      ? 'Een vraag voor vandaag'
+      : 'Een volgende stap',
+  },
+  data.scenarios.length > 0 ? { href: `${route}#perspectief`, label: 'Twee kanten' } : undefined,
+  data.impacts.length > 0 ? { href: `${route}#impact`, label: 'Gevolgen' } : undefined,
+  data.reflection ? { href: `${route}#reflectie`, label: 'Reflectie' } : undefined,
+  data.helps.length > 0 ? { href: `${route}#wat-helpt`, label: 'Wat kan helpen' } : undefined,
+  data.sources.length > 0 ? { href: `${route}#sources-heading`, label: 'Bronnen' } : undefined,
+].filter((item): item is { href: string; label: string } => Boolean(item));
 ---
 
-<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `Wat voel ik? / ${data.feeling}`}>
+<EntryLayout
+  entry={entry}
+  eyebrow={data.hero?.eyebrow ?? `Wat voel ik? / ${data.feeling}`}
+  sectionNav={false}
+>
+  <PageRail
+    slot="rail"
+    groups={[
+      { label: 'Op deze pagina', items: here },
+      {
+        label: 'Andere gevoelens',
+        closed: true,
+        items: [
+          ...feelings.map((feeling) => ({
+            href: feeling.href,
+            label: feeling.title,
+            current: feeling.href === route,
+          })),
+          { href: `${data.locale}/wat-voel-ik/`, label: 'Alle gevoelens' },
+          { href: `${data.locale}/wat-voel-ik/#tijdlijn`, label: 'Tijdlijn' },
+        ],
+      },
+    ]}
+  />
   <div class="wrap reading prose"><Content /></div>
   {data.scenarios.length > 0 && <PerspectiveSwitch scenarios={data.scenarios} />}
   {

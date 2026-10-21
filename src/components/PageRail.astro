@@ -1,0 +1,50 @@
+---
+/** Quiet page map for a deep article: sections on this page, then sibling pages. */
+interface Item {
+  href: string;
+  label: string;
+  current?: boolean;
+}
+interface Group {
+  label: string;
+  items: Item[];
+  /** Long sibling lists stay closed until the reader asks for them. */
+  closed?: boolean;
+}
+interface Props {
+  groups: Group[];
+}
+const { groups } = Astro.props;
+---
+
+{
+  groups.map((group) =>
+    group.closed ? (
+      <details>
+        <summary>{group.label}</summary>
+        <ul>
+          {group.items.map((item) => (
+            <li>
+              <a href={item.href} aria-current={item.current ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    ) : (
+      <nav aria-label={group.label}>
+        <p class="eyebrow">{group.label}</p>
+        <ul>
+          {group.items.map((item) => (
+            <li>
+              <a href={item.href} aria-current={item.current ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    ),
+  )
+}

@@ -25,6 +25,8 @@ interface Props {
   /** Extra JSON-LD for visible lists on this page. */
   extraSchema?: Array<Record<string, unknown>>;
   mainEntityId?: string;
+  /** Pass false when this page shows its own side rail instead of the pill row. */
+  sectionNav?: boolean;
 }
 const {
   entry,
@@ -39,7 +41,9 @@ const {
   showHelp = true,
   extraSchema = [],
   mainEntityId,
+  sectionNav = true,
 } = Astro.props;
+const hasRail = Astro.slots.has('rail');
 const { data } = entry;
 const route = routeFor(entry);
 const crumbs = await breadcrumbsFor(entry);
@@ -112,6 +116,7 @@ const heroData = 'hero' in data ? data.hero : undefined;
   mainEntityId={mainEntityId ?? (data.glossary ? termId : articleType ? articleId : undefined)}
   citations={showSources ? citations : []}
   pageType={pageType}
+  sectionNav={sectionNav}
 >
   {
     hero && (
@@ -127,33 +132,44 @@ const heroData = 'hero' in data ? data.hero : undefined;
       />
     )
   }
-  <slot name="before-summary" />
-  {
-    showSummary && (data.summary || data.glossary) && (
-      <div class="wrap reading">
-        <section class="summary-box" aria-labelledby="summary-heading">
-          <h2 id="summary-heading">In het kort</h2>
-          {data.summary && <p>{data.summary}</p>}
-          {data.glossary && (
-            <div class="term-definition">
-              <p class="term-definition__term">
-                <dfn>{data.glossary.term}</dfn>
-              </p>
-              <p>{data.glossary.definition}</p>
-            </div>
-          )}
-        </section>
-      </div>
-    )
-  }
-  <slot />
-  <RelatedContent items={related} />
-  {showSources && <SourceList sources={data.sources} />}
-  {
-    showHelp && (
-      <div class="wrap reading section--tight">
-        <HelpBlock />
-      </div>
-    )
-  }
+  <div class:list={['article-layout', { 'article-layout--rail': hasRail }]}>
+    {
+      hasRail && (
+        <aside class="page-rail" aria-label="Paginanavigatie">
+          <slot name="rail" />
+        </aside>
+      )
+    }
+    <div class="article-layout__main">
+      <slot name="before-summary" />
+      {
+        showSummary && (data.summary || data.glossary) && (
+          <div class="wrap reading">
+            <section class="summary-box" aria-labelledby="summary-heading">
+              <h2 id="summary-heading">In het kort</h2>
+              {data.summary && <p>{data.summary}</p>}
+              {data.glossary && (
+                <div class="term-definition">
+                  <p class="term-definition__term">
+                    <dfn>{data.glossary.term}</dfn>
+                  </p>
+                  <p>{data.glossary.definition}</p>
+                </div>
+              )}
+            </section>
+          </div>
+        )
+      }
+      <slot />
+      <RelatedContent items={related} />
+      {showSources && <SourceList sources={data.sources} />}
+      {
+        showHelp && (
+          <div class="wrap reading section--tight">
+            <HelpBlock />
+          </div>
+        )
+      }
+    </div>
+  </div>
 </BaseLayout>
