@@ -76,7 +76,7 @@ try {
   const failures = [];
 
   // Pages are audited by a small pool of tabs per theme; results print in route order.
-  const concurrency = Number(process.env.AXE_CONCURRENCY ?? 6);
+  const concurrency = Number(process.env.AXE_CONCURRENCY ?? 4);
   for (const theme of themes) {
     const results = new Array(routes.length);
     let next = 0;
@@ -91,7 +91,7 @@ try {
         const index = next;
         next += 1;
         const route = routes[index];
-        await page.goto(`${origin}${route}`, { waitUntil: 'load' });
+        await page.goto(`${origin}${route}`, { waitUntil: 'networkidle0' });
         await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
         results[index] = await page.evaluate(
           async (tags) =>
