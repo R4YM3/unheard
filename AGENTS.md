@@ -5,7 +5,7 @@ You are implementing a real, production-oriented multilingual content platform f
 ## Priorities
 
 1. Read PROJECT_BRIEF.md, ROADMAP.md, EDITORIAL_POLICY.md and inspect references before writing code.
-2. Latest authority for look and feel: `references/homepage.html`, `references/mijn-verhaal.html`, `references/zelftwijfel.html`, `references/design-system.html`. Earlier articles are content references, not design authorities.
+2. Latest authority for look and feel: `docs/VERBETERPLAN.md` and the design canvas it links to (November 2026 redesign); it supersedes the older references below where they conflict. Earlier authority: `references/homepage.html`, `references/mijn-verhaal.html`, `references/zelftwijfel.html`, `references/design-system.html`. Earlier articles are content references, not design authorities.
 3. Create clean Astro + TypeScript project (unless this repo already has a mature compatible stack). Organize content separately, componentize interactive UX, use native HTML and progressive enhancement.
 4. All critical article content must be rendered as crawlable HTML and printable without requiring interaction or hydration. Never rely on client-side text for SEO.
 5. Preserve the founder's first-person voice. Never invent therapy results, childhood or relationship details, medical diagnoses of third parties, community submissions, or factual personal claims. Where necessary mark editorial TODOs.

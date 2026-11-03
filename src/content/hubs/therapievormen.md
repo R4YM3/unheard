@@ -55,7 +55,7 @@ reflection:
   note: 'Gebruik deze reflectie alleen op een apparaat waarop je je veilig voelt. De antwoorden worden niet verzonden of opgeslagen.'
   writable: true
 founderNote:
-  eyebrow: '01 / Mijn zoektocht'
+  eyebrow: 'Mijn zoektocht'
   heading: 'Ik zocht niet één antwoord. Ik zocht mezelf.'
   paragraphs:
     - 'Ik heb verschillende therapieën en vormen van begeleiding gevolgd. Niet allemaal met hetzelfde doel. Sommige hielpen mij nadenken over patronen, andere lieten mij ontdekken wat emoties met me doen, hoeveel energie ze kosten en wat ik diep vanbinnen wilde.'

@@ -1,9 +1,13 @@
 ---
+import '@fontsource/fraunces/latin-600.css';
+import '@fontsource/fraunces/latin-400-italic.css';
+import '@fontsource/source-sans-3/latin-400.css';
+import '@fontsource/source-sans-3/latin-600.css';
+import '@fontsource/source-sans-3/latin-700.css';
 import '../styles/global.css';
 import '../styles/print.css';
 import { type Locale } from '../i18n/config';
 import ThemeToggle from '../components/ThemeToggle.astro';
-import LocaleSelector from '../components/LocaleSelector.astro';
 interface Props {
   title: string;
   description: string;
@@ -301,7 +305,9 @@ const footerGroups =
             {locale === 'nl' && <a href="nl/zoeken/">Zoeken</a>}
           </nav>
         </details>
-        <div class="header-controls"><LocaleSelector locale={locale} /></div>
+        <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
+          >Verlaat site</a
+        >
       </div>
     </header>
     {
@@ -328,7 +334,7 @@ const footerGroups =
       <div class="wrap">
         <div class="footer-grid">
           <div>
-            <p><strong>◒ {brandName}.</strong></p>
+            <p class="footer-brand">{brandName}<span>.</span></p>
             {
               locale === 'nl' ? (
                 <>
@@ -366,6 +372,7 @@ const footerGroups =
             ))
           }
         </div>
+        <ThemeToggle locale={locale} />
         <p class="footer-meta">
           {
             locale === 'nl'
@@ -377,7 +384,26 @@ const footerGroups =
         </p>
       </div>
     </footer>
-    <ThemeToggle locale={locale} />
+    <script>
+      const exit = document.querySelector<HTMLAnchorElement>('[data-safe-exit]');
+      const leave = () => {
+        if (exit) window.location.replace(exit.href);
+      };
+      exit?.addEventListener('click', (event) => {
+        event.preventDefault();
+        leave();
+      });
+      document.addEventListener(
+        'keydown',
+        (event) => {
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            leave();
+          }
+        },
+        { capture: true },
+      );
+    </script>
     <script
       is:inline
       set:html={`addEventListener('beforeprint',()=>{document.querySelectorAll('main details:not([open])').forEach(d=>{d.dataset.printName=d.name||'';d.name='';d.open=true})});addEventListener('afterprint',()=>{document.querySelectorAll('main details[data-print-name]').forEach(d=>{d.open=false;d.name=d.dataset.printName;delete d.dataset.printName})})`}
