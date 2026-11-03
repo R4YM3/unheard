@@ -1,0 +1,38 @@
+---
+/** Previous and next page within a reading group, plus a way back to the whole list. */
+import type { NavLink } from '../lib/navigation';
+
+interface Props {
+  group: string;
+  previous?: NavLink;
+  next?: NavLink;
+  all: NavLink;
+}
+const { group, previous, next, all } = Astro.props;
+---
+
+<nav class="wrap reading group-pager" aria-label={`Verder lezen in ${group}`}>
+  <ul>
+    {
+      previous && (
+        <li>
+          <a href={previous.href} rel="prev">
+            <span class="group-pager__hint">← Vorige in {group}</span>
+            <span class="group-pager__title">{previous.label}</span>
+          </a>
+        </li>
+      )
+    }
+    {
+      next && (
+        <li class="group-pager__next">
+          <a href={next.href} rel="next">
+            <span class="group-pager__hint">Volgende in {group} →</span>
+            <span class="group-pager__title">{next.label}</span>
+          </a>
+        </li>
+      )
+    }
+  </ul>
+  <a class="text-link" href={all.href}>{all.label}</a>
+</nav>

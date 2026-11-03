@@ -75,30 +75,40 @@ try {
   browser = await puppeteer.launch({ executablePath: chromePath, headless: true });
   const failures = [];
 
+  // Pages are audited by a small pool of tabs per theme; results print in route order.
+  const concurrency = Number(process.env.AXE_CONCURRENCY ?? 6);
   for (const theme of themes) {
-    const page = await browser.newPage();
-    await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: theme.media }]);
-    await page.evaluateOnNewDocument(
-      (choice) => globalThis.localStorage.setItem('ongehoord-theme', choice),
-      theme.choice,
-    );
-
-    for (const route of routes) {
-      await page.goto(`${origin}${route}`, { waitUntil: 'networkidle0' });
-      await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
-      const result = await page.evaluate(
-        async (tags) =>
-          globalThis.axe.run(globalThis.document, { runOnly: { type: 'tag', values: tags } }),
-        wcagTags,
+    const results = new Array(routes.length);
+    let next = 0;
+    const worker = async () => {
+      const page = await browser.newPage();
+      await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: theme.media }]);
+      await page.evaluateOnNewDocument(
+        (choice) => globalThis.localStorage.setItem('ongehoord-theme', choice),
+        theme.choice,
       );
+      while (next < routes.length) {
+        const index = next;
+        next += 1;
+        const route = routes[index];
+        await page.goto(`${origin}${route}`, { waitUntil: 'load' });
+        await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
+        results[index] = await page.evaluate(
+          async (tags) =>
+            globalThis.axe.run(globalThis.document, { runOnly: { type: 'tag', values: tags } }),
+          wcagTags,
+        );
+      }
+      await page.close();
+    };
+    await Promise.all(Array.from({ length: Math.min(concurrency, routes.length) }, worker));
+    routes.forEach((route, index) => {
+      const { violations } = results[index];
       failures.push(
-        ...result.violations.map((violation) =>
-          formatViolation(`${theme.name} ${route}`, violation),
-        ),
+        ...violations.map((violation) => formatViolation(`${theme.name} ${route}`, violation)),
       );
-      console.log(`Axe ${theme.name} ${route}: ${result.violations.length} violations`);
-    }
-    await page.close();
+      console.log(`Axe ${theme.name} ${route}: ${violations.length} violations`);
+    });
   }
 
   if (failures.length) throw new Error(failures.join('\n'));
