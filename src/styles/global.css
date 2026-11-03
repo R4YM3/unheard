@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 html {
+  scroll-padding-top: 8rem;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, 'Avenir Next', 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif;
@@ -31,6 +32,35 @@ textarea:focus-visible,
 [tabindex]:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
+}
+/* Native disclosure behaviour stays available without JavaScript. */
+summary {
+  position: relative;
+  min-height: 2.75rem;
+  padding-inline-end: 2rem;
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  content: '';
+}
+summary::after {
+  content: '+';
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  top: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+details[open] > summary::after {
+  content: '−';
+}
+.mobile-menu summary::after {
+  content: none;
 }
 h1,
 h2,
@@ -71,7 +101,7 @@ h4 {
 .skip:focus {
   inset-inline-start: 1rem;
   top: 1rem;
-  z-index: 10;
+  z-index: 11;
   padding: 0.5rem;
   background: var(--surface);
 }
@@ -108,6 +138,9 @@ mark.review-marker {
 
 /* ---------- Header & navigation ---------- */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   border-bottom: 1px solid var(--chrome-border);
   background: var(--chrome-bg);
   color: var(--chrome-text);
@@ -120,6 +153,9 @@ mark.review-marker {
   min-height: 5.2rem;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   font-size: 1.45rem;
   font-weight: 600;
   letter-spacing: -0.055em;
@@ -147,7 +183,6 @@ mark.review-marker {
 .nav a[aria-current] {
   text-decoration: underline;
 }
-.nav .nav-home,
 .nav .nav-help,
 .locale-selector {
   display: inline-flex;
@@ -182,7 +217,7 @@ mark.review-marker {
 .section-nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.25rem;
+  min-height: 2.75rem;
   padding: 0.25rem 0.7rem;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -193,6 +228,23 @@ mark.review-marker {
 }
 .section-nav a[aria-current='page'] {
   border-color: var(--action);
+  text-decoration: underline;
+}
+.safe-exit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--chrome-control-border);
+  border-radius: var(--radius-sm);
+  background: var(--chrome-control);
+  color: var(--chrome-text);
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.safe-exit:hover {
   text-decoration: underline;
 }
 .header-controls {
@@ -208,14 +260,13 @@ mark.review-marker {
   display: none;
 }
 .theme-toggle {
-  position: fixed;
-  z-index: 4;
-  inset-inline-end: 1rem;
-  inset-block-end: 1rem;
-  display: grid;
-  width: 2.75rem;
-  height: 2.75rem;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.85rem;
+  margin-top: 1.5rem;
+  font: inherit;
   border: 1px solid var(--chrome-control-border);
   border-radius: var(--radius-sm);
   background: var(--chrome-control);
@@ -268,7 +319,9 @@ mark.review-marker {
   list-style: none;
 }
 .footer-grid li a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   padding-block: 0.2rem;
   text-decoration: underline;
   text-decoration-thickness: 0.06em;
@@ -311,6 +364,9 @@ mark.review-marker {
   margin-top: 1.5rem;
 }
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   color: var(--link);
   font-weight: 700;
   text-decoration: underline;
@@ -452,6 +508,11 @@ mark.review-marker {
   padding: 0;
   list-style: none;
   font-size: 0.88rem;
+}
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
 }
 .breadcrumbs li:not(:last-child)::after {
   margin-inline-start: 0.5rem;
@@ -1167,11 +1228,11 @@ a.card:hover {
 .page-rail {
   --read: 0;
   position: sticky;
-  top: 1rem;
+  top: 7rem;
   grid-column: 1;
   grid-row: 1;
   align-self: start;
-  max-height: calc(100dvh - 2rem);
+  max-height: calc(100dvh - 8rem);
   margin-top: clamp(2rem, 4vw, 3rem);
   padding: 0.9rem 0.85rem 1rem;
   overflow: auto;
@@ -1224,7 +1285,7 @@ a.card:hover {
 .page-rail a {
   display: flex;
   align-items: center;
-  min-height: 2.25rem;
+  min-height: 2.75rem;
   padding: 0.2rem 0.45rem;
   border-radius: var(--radius-sm);
   font-size: 0.92rem;
@@ -1484,18 +1545,25 @@ a.card:hover {
     padding-block: 0.7rem;
   }
   .brand {
+    font-size: clamp(1.1rem, 4.5vw, 1.45rem);
+    white-space: nowrap;
     flex: 1 1 auto;
     min-width: 0;
   }
   .nav {
     display: none;
   }
+  .safe-exit {
+    order: 1;
+  }
   .mobile-menu {
+    order: 2;
     position: relative;
     display: block;
     flex: 0 0 auto;
   }
   .mobile-menu summary {
+    padding: 0;
     display: grid;
     width: 2.75rem;
     height: 2.75rem;
@@ -1524,7 +1592,8 @@ a.card:hover {
     inset-inline-end: 0;
     display: grid;
     min-inline-size: min(17rem, calc(100vw - 2.25rem));
-    overflow: hidden;
+    max-height: calc(100dvh - 12rem);
+    overflow-y: auto;
     border: 1px solid var(--chrome-control-border);
     border-radius: var(--radius-sm);
     background: var(--chrome-bg);
@@ -1552,7 +1621,7 @@ a.card:hover {
     min-height: 11rem;
   }
   .home-hero__copy {
-    padding-block: 3.25rem 1rem;
+    padding-block: 3.25rem;
   }
   .home-hero__art {
     min-height: 14rem;
@@ -1600,4 +1669,12 @@ a.card:hover {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Leave room for the disclosure icon alongside longer labels. */
+.start-chooser summary,
+.timeline summary,
+.page-rail summary,
+.finder-deepening summary {
+  padding-inline-end: 2.25rem;
 }
