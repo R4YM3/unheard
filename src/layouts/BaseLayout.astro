@@ -1,4 +1,9 @@
 ---
+import '@fontsource/fraunces/latin-600.css';
+import '@fontsource/fraunces/latin-400-italic.css';
+import '@fontsource/source-sans-3/latin-400.css';
+import '@fontsource/source-sans-3/latin-600.css';
+import '@fontsource/source-sans-3/latin-700.css';
 import '../styles/global.css';
 import '../styles/print.css';
 import { type Locale } from '../i18n/config';
@@ -329,7 +334,7 @@ const footerGroups =
       <div class="wrap">
         <div class="footer-grid">
           <div>
-            <p><strong>◒ {brandName}.</strong></p>
+            <p class="footer-brand">{brandName}<span>.</span></p>
             {
               locale === 'nl' ? (
                 <>
