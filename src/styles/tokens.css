@@ -1,38 +1,39 @@
 /* Primitive tokens: raw palette and scale. Components never use these directly. */
 :root {
-  --palette-ink-950: #101614;
-  --palette-ink-900: #17201e;
-  --palette-ink-850: #1d2422;
-  --palette-ink-800: #242a29;
-  --palette-ink-750: #2b3430;
-  --palette-ink-700: #34413b;
-  --palette-ink-600: #43504a;
-  --palette-ink-500: #4d5a54;
-  --palette-grey-400: #819084;
-  --palette-grey-300: #a8b0a6;
-  --palette-grey-200: #c5d1c4;
-  --palette-grey-150: #d6e2d8;
-  --palette-grey-100: #e8ede7;
-  --palette-paper: #f1eee7;
-  --palette-paper-light: #fffdfa;
-  --palette-paper-warm: #f8f3ed;
-  --palette-sage-100: #e4ebe2;
-  --palette-sage-150: #e1e7de;
-  --palette-sage-200: #dce5db;
-  --palette-sage-300: #b7c7b8;
-  --palette-sage: #a6ada0;
-  --palette-sage-700: #35463d;
-  --palette-forest: #465a50;
-  --palette-forest-300: #cfdcd1;
-  --palette-terracotta: #9d5846;
-  --palette-terracotta-500: #b16b57;
-  --palette-terracotta-300: #dc9a85;
-  --palette-terracotta-100: #ffd1c3;
-  --palette-terracotta-900: #763b2c;
-  --palette-clay-300: #baa49a;
-  --palette-clay-500: #a98e84;
-  --palette-text-light: #202725;
-  --palette-text-dark: #f4f0e9;
+  /* Light: paper, ink, sage, terracotta. */
+  --palette-paper: #f6f2ea;
+  --palette-paper-light: #fffdf8;
+  --palette-paper-warm: #efe9df;
+  --palette-ink: #1e2320;
+  --palette-ink-soft: #3e4540;
+  --palette-ink-muted: #4f5550;
+  --palette-line: #dcd5c8;
+  --palette-line-strong: #858b82;
+  --palette-sage-100: #e3eae4;
+  --palette-sage-200: #dce5de;
+  --palette-sage-300: #a8c9b6;
+  --palette-sage-700: #2f4a3d;
+  --palette-terracotta: #9c4a2f;
+  --palette-terracotta-900: #8f4329;
+
+  /* Dark: forest, cream, ochre. */
+  --palette-forest-975: #101a17;
+  --palette-forest-950: #15211d;
+  --palette-forest-925: #182621;
+  --palette-forest-900: #1c2e28;
+  --palette-forest-850: #1f3a33;
+  --palette-forest-800: #22392f;
+  --palette-forest-line: #2e463d;
+  --palette-forest-line-strong: #6f857a;
+  --palette-cream: #eee8dc;
+  --palette-cream-muted: #b9c4bc;
+  --palette-ochre: #e0b464;
+  --palette-ochre-300: #e6c17f;
+  --palette-ochre-ink: #1f2a1f;
+
+  --font-sans:
+    'Source Sans 3', 'Avenir Next', 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: Fraunces, Georgia, 'Times New Roman', serif;
 
   --art-article:
     radial-gradient(ellipse at 72% 19%, rgb(185 197 180 / 54%), transparent 31%),
@@ -47,8 +48,9 @@
     linear-gradient(135deg, #7d9187 0%, #5f756d 36%, #32453f 68%, #1f2c28 100%);
   --art-note-bg: rgb(23 38 34 / 78%);
 
-  --radius-sm: 0.35rem;
-  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius: 0.875rem;
+  --radius-pill: 999px;
   --content: 73.75rem;
   --reading: 47.5rem;
   --space: clamp(1rem, 2vw, 2rem);
