@@ -45,7 +45,7 @@ Before changing `NO_INDEX` to `false`, add a real ISO `reviewedAt` date to every
 
 The GitHub Pages configuration uses `unheard.support` and the `SITE_URL` Actions variable to produce root-relative custom-domain URLs. DNS and the TLS certificate can take time to propagate; verify the Pages domain status in GitHub before treating the custom domain as live. The GitHub project URL may redirect before the domain itself resolves.
 
-The published edition is Dutch only. The root page therefore opens `/nl/`, and the visible language marker is deliberately non-interactive until a complete translation is approved. EN and AR routes remain technical, `noindex` review stubs with RTL readiness; they are not advertised in navigation or `hreflang`.
+The published edition is Dutch only. The root page therefore opens `/nl/`, and the language selector stays hidden until a complete translation is approved. EN and AR routes remain technical, `noindex` review stubs with RTL readiness; they are not advertised in navigation or `hreflang`.
 
 ## Privacy-friendly analytics
 

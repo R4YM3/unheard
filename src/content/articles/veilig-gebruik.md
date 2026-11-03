@@ -31,6 +31,12 @@ reviewNotes:
 
 Als je over emotioneel of financieel misbruik leest, wil je misschien niet dat iemand anders dat kan zien. Daarom staat hier precies wat er gebeurt als je deze site bezoekt: wat er wel wordt vastgelegd, wat niet, en waar de grenzen liggen van wat een website kan beloven.
 
+## Snel de site verlaten
+
+Bovenaan elke pagina staat de knop **Verlaat site**. Daarmee ga je meteen naar de website van het KNMI. Met de **Esc-toets** gebeurt hetzelfde. Zonder JavaScript werkt de knop als een gewone link; de Esc-toets werkt dan niet.
+
+Met JavaScript vervangt de knop de huidige pagina in je browsergeschiedenis. Eerder bezochte pagina’s en andere sporen van je bezoek blijven bestaan. De knop wist je geschiedenis niet en sluit geen andere tabbladen.
+
 ## Wat de hosting registreert
 
 Deze site wordt gehost via GitHub Pages, een dienst van GitHub. Volgens de documentatie van GitHub registreert en bewaart GitHub Pages de IP-adressen van bezoekers, voor beveiligingsdoeleinden. Een IP-adres is het adres waarmee je apparaat of netwerk verbinding maakt met internet.

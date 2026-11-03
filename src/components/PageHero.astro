@@ -11,22 +11,13 @@ interface Props {
   art?: 'article' | 'story' | false;
   artNote?: string;
 }
-const {
-  heading,
-  eyebrow,
-  paragraphs = [],
-  lead,
-  actions = [],
-  crumbs = [],
-  art = 'article',
-  artNote,
-} = Astro.props;
+const { heading, eyebrow, paragraphs = [], lead, actions = [], crumbs = [] } = Astro.props;
 ---
 
 <section class="hero page-hero">
   <div class="wrap">
     {crumbs.length > 1 && <Breadcrumbs crumbs={crumbs} />}
-    <div class:list={['page-hero__grid', { 'page-hero__grid--plain': !art }]}>
+    <div class="page-hero__grid page-hero__grid--plain">
       <div class="page-hero__content">
         {eyebrow && <p class="eyebrow">{eyebrow}</p>}
         <h1>{heading}</h1>
@@ -44,13 +35,6 @@ const {
           )
         }
       </div>
-      {
-        art && (
-          <div class:list={['hero-art', { 'hero-art--story': art === 'story' }]} aria-hidden="true">
-            {artNote && <span class="hero-art__note">{artNote}</span>}
-          </div>
-        )
-      }
     </div>
   </div>
 </section>

@@ -11,10 +11,9 @@ publishedAt: 2026-10-19
 updatedAt: 2026-10-20
 reviewedAt: null
 cardTitle: 'Home'
-heading: 'Voor alles wat je voelt, maar nog niet kunt verwoorden.'
+heading: 'Je hoeft het nog geen misbruik te noemen.'
 eyebrow: 'Ongehoord'
 lead: 'Herkenning, begrip en herstel na emotioneel of financieel misbruik.'
-chooser: true
 scenarios:
   - label: 'Een gesprek begrijpen'
     outside: '“Zo heb ik dat niet bedoeld. Jij maakt het altijd groter dan het is.”'
@@ -42,44 +41,44 @@ home:
       - 'Misschien heb je nog geen woorden voor wat je meemaakt. Dat betekent niet dat je gevoel er niet mag zijn. Hier kun je herkennen, onderzoeken en begrijpen, zonder dat iemand voor jou bepaalt wat je hebt ervaren.'
       - 'Ik bouw Ongehoord vanuit mijn eigen ervaringen en herstel. Ik ben één persoon, geen hulporganisatie. Je vindt hier mijn verhaal, uitleg over patronen en gevolgen, en hulpmiddelen om je gevoelens te onderzoeken. De aandacht gaat vooral uit naar mannen, omdat het stigma het moeilijk kan maken om te praten. Iedereen is welkom.'
   feelings:
-    eyebrow: '01 · Begin bij jezelf'
+    eyebrow: 'Begin bij jezelf'
     heading: 'Wat herken jij?'
     lead: 'Je hoeft het antwoord nog niet te weten. Kies wat het dichtst bij jouw ervaring komt.'
     cards:
       - {
-          eyebrow: '01 / Zelftwijfel',
+          eyebrow: 'Zelftwijfel',
           title: 'Ik twijfel steeds aan mezelf.',
           href: 'nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
         }
       - {
-          eyebrow: '02 / Schuld',
+          eyebrow: 'Schuld',
           title: 'Ik voel me verantwoordelijk voor alles.',
           href: 'nl/wat-voel-ik/ik-voel-me-schuldig/',
         }
       - {
-          eyebrow: '03 / Identiteit',
+          eyebrow: 'Identiteit',
           title: 'Ik herken mezelf niet meer.',
           href: 'nl/wat-voel-ik/ik-herken-mezelf-niet-meer/',
         }
       - {
-          eyebrow: '04 / Herstel',
+          eyebrow: 'Herstel',
           title: 'Ik begrijp het, maar het blijft pijn doen.',
           href: 'nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/',
         }
       - {
-          eyebrow: '05 / Grenzen',
+          eyebrow: 'Grenzen',
           title: 'Ik durf geen nee te zeggen.',
           href: 'nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/',
         }
       - {
-          eyebrow: '06 / Geld',
+          eyebrow: 'Geld',
           title: 'Ik durf niet over geld te praten.',
           href: 'nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/',
         }
-    moreHref: 'nl/wat-voel-ik/'
-    moreLabel: 'Bekijk alle negen gevoelens'
+    moreHref: 'nl/hulpmiddelen/help-me-woorden-vinden/'
+    moreLabel: 'Help me woorden vinden'
   topics:
-    eyebrow: '02 · Begrijp het'
+    eyebrow: 'Begrijp het'
     heading: 'Er bestaan woorden voor wat je meemaakt.'
     cards:
       - eyebrow: 'Hoofdthema / Emotioneel misbruik'
@@ -95,7 +94,7 @@ home:
         label: 'Welke veilige stappen zijn er?'
         href: 'nl/begrijp-het/financieel-misbruik/'
   perspective:
-    eyebrow: '03 · Twee kanten van één gesprek'
+    eyebrow: 'Twee kanten van één gesprek'
     heading: 'Wat je hoort. Wat je voelt.'
     lead: 'Kies een situatie en wissel tussen wat er gezegd wordt en wat je vanbinnen voelt. Dit zijn fictieve voorbeelden, geen diagnoses.'
   storyTeaser:
@@ -113,16 +112,9 @@ home:
     href: 'nl/mijn-verhaal/#tijdlijn'
     label: 'Ontdek de tijdlijn'
   resources:
-    eyebrow: '04 · Herstel & hulpmiddelen'
+    eyebrow: 'Herstel & hulpmiddelen'
     heading: 'Er mag weer ruimte ontstaan.'
     cards:
-      - {
-          eyebrow: 'Woorden vinden',
-          title: 'Weet je nog niet hoe je het moet noemen?',
-          description: 'Zes korte vragen over wat je voelt. Je krijgt een eigen overzicht met pagina’s om te lezen. Geen test en niets wordt opgeslagen.',
-          label: 'Help me woorden vinden',
-          href: 'nl/hulpmiddelen/help-me-woorden-vinden/',
-        }
       - {
           eyebrow: 'Herstel',
           title: 'Herstel hoeft geen rechte lijn te zijn.',

@@ -16,6 +16,7 @@ summary: 'De kaarten op deze pagina zijn optionele vragen, geen test en geen dia
 heading: 'Vragen die je ogen kunnen openen.'
 eyebrow: 'Hulpmiddelen'
 lead: 'Deze kaarten vragen niets van je. Lees, vul in of print alleen wat voor jou veilig voelt, en sla over wat je niet wilt aanraken.'
+chooser: true
 listings:
   - collection: tools
     prefix: 'hulpmiddelen/'
