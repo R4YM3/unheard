@@ -8,7 +8,8 @@ import '../styles/global.css';
 import '../styles/print.css';
 import { type Locale } from '../i18n/config';
 import ThemeToggle from '../components/ThemeToggle.astro';
-import { currentTab, isMenuCurrent, mainMenu, sectionFor, type Section } from '../lib/navigation';
+import { ui } from '../i18n/ui';
+import { currentTab, isMenuCurrent, mainMenu, navigationFor, sectionFor } from '../lib/navigation';
 interface Props {
   title: string;
   description: string;
@@ -25,8 +26,6 @@ interface Props {
   /** Sources visible on the page. */
   citations?: Array<Record<string, unknown>>;
   pageType?: 'WebPage' | 'CollectionPage' | 'AboutPage';
-  /** Horizontal section links under the header. Deep pages can replace them with a side rail. */
-  sectionNav?: boolean;
 }
 const {
   title,
@@ -40,7 +39,6 @@ const {
   mainEntityId,
   citations = [],
   pageType = 'WebPage',
-  sectionNav = true,
 } = Astro.props;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
@@ -119,16 +117,18 @@ const skipLabel =
       ? 'انتقل إلى المحتوى'
       : 'Skip to content';
 const homeHref = `${locale}/`;
-const navigation: Array<[string, string]> =
-  locale === 'nl'
-    ? mainMenu.map(({ href, label }) => [href, label])
-    : [[homeHref, locale === 'ar' ? 'الصفحة الرئيسية' : 'Home']];
+const t = ui(locale);
+const siteNavigation = navigationFor(locale);
+const navigation: Array<[string, string]> = siteNavigation
+  ? mainMenu(siteNavigation).map(({ href, label }) => [href, label])
+  : [[homeHref, t.home]];
 const isCurrent = (href: string) =>
-  locale === 'nl' ? isMenuCurrent(href, localPath) : href === homeHref && localPath === homeHref;
-const activeSection: Section | undefined = locale === 'nl' ? sectionFor(localPath) : undefined;
+  siteNavigation
+    ? isMenuCurrent(siteNavigation, href, localPath)
+    : href === homeHref && localPath === homeHref;
+const activeSection = siteNavigation ? sectionFor(siteNavigation, localPath) : undefined;
 const activeTab = activeSection ? currentTab(activeSection, localPath) : undefined;
-const navLabel =
-  locale === 'ar' ? 'التنقل الرئيسي' : locale === 'en' ? 'Main navigation' : 'Hoofdnavigatie';
+const navLabel = t.mainNavigation;
 const footerGroups =
   locale === 'nl'
     ? [
@@ -211,7 +211,7 @@ const footerGroups =
               <a
                 class:list={{
                   'nav-home': href === homeHref,
-                  'nav-help': href === 'nl/hulp-vinden/',
+                  'nav-help': href === siteNavigation?.help.href,
                 }}
                 href={href}
                 aria-current={isCurrent(href) ? 'page' : undefined}
@@ -222,13 +222,7 @@ const footerGroups =
           }
         </nav>
         <details class="mobile-menu">
-          <summary
-            aria-label={locale === 'nl'
-              ? 'Menu openen'
-              : locale === 'ar'
-                ? 'فتح القائمة'
-                : 'Open menu'}
-          >
+          <summary aria-label={t.openMenu}>
             <span></span><span></span><span></span>
           </summary>
           <nav class="mobile-menu__panel" aria-label={`${navLabel} (mobiel)`}>
@@ -251,7 +245,7 @@ const footerGroups =
                   </a>
                 ))
             }
-            {locale === 'nl' && <a href="nl/zoeken/">Zoeken</a>}
+            {locale === 'nl' && <a href="nl/zoeken/">{t.search}</a>}
           </nav>
         </details>
         <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
@@ -259,42 +253,6 @@ const footerGroups =
         >
       </div>
     </header>
-    {
-      sectionNav && activeSection && (
-        <div class="section-nav-bar">
-          <div class="wrap">
-            <nav class="section-nav" aria-label={activeSection.label}>
-              <a
-                class="section-nav__name"
-                href={activeSection.menu.href}
-                aria-current={
-                  localPath === activeSection.menu.href &&
-                  !activeSection.tabs.some((tab) => tab.href === localPath)
-                    ? 'page'
-                    : undefined
-                }
-              >
-                {activeSection.menu.label}
-              </a>
-              <ul>
-                {activeSection.tabs.map(({ href, label }) => (
-                  <li>
-                    <a
-                      href={href}
-                      aria-current={
-                        localPath === href ? 'page' : activeTab?.href === href ? 'true' : undefined
-                      }
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </div>
-      )
-    }
     <main id="main"><slot /></main>
     <footer class="site-footer">
       <div class="wrap">

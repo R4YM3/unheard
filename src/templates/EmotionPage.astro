@@ -9,7 +9,8 @@ import GroupPager from '../components/GroupPager.astro';
 import PageRail from '../components/PageRail.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
 import { cardFor, listCollection, routeFor } from '../lib/content';
-import { feelingGroups, groupFor, neighbours } from '../lib/navigation';
+import { ui } from '../i18n/ui';
+import { groupFor, navigationFor, neighbours } from '../lib/navigation';
 
 interface Props {
   entry: CollectionEntry<'emotions'>;
@@ -34,7 +35,8 @@ const here = [
   { href: `${route}#${nextStep.id}`, label: nextStep.label },
 ];
 const titleFor = (href: string) => feelings.find((feeling) => feeling.href === href)?.title;
-const group = groupFor(feelingGroups, route);
+const t = ui(data.locale);
+const group = groupFor(navigationFor(data.locale)?.feelingGroups ?? [], route);
 const siblings = (group?.pages ?? [])
   .map((href) => ({ href, label: titleFor(href) }))
   .filter((item): item is { href: string; label: string } => Boolean(item.label));
@@ -45,19 +47,15 @@ const linkTo = (href?: string) => {
 };
 const allFeelings = {
   href: `${data.locale}/wat-voel-ik/`,
-  label: `Alle ${feelings.length} gevoelens`,
+  label: t.allFeelings(feelings.length),
 };
 ---
 
-<EntryLayout
-  entry={entry}
-  eyebrow={data.hero?.eyebrow ?? `Wat voel ik? / ${data.feeling}`}
-  sectionNav={false}
->
+<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `Wat voel ik? / ${data.feeling}`}>
   <PageRail
     slot="rail"
     groups={[
-      { label: 'Op deze pagina', items: here },
+      { label: t.onThisPage, items: here },
       ...(group
         ? [
             {
@@ -68,7 +66,7 @@ const allFeelings = {
               ],
             },
           ]
-        : [{ label: 'Andere gevoelens', items: [allFeelings] }]),
+        : [{ label: t.otherFeelings, items: [allFeelings] }]),
     ]}
   />
   <div class="wrap reading prose"><Content /></div>
@@ -114,6 +112,7 @@ const allFeelings = {
         previous={linkTo(previous)}
         next={linkTo(next)}
         all={allFeelings}
+        locale={data.locale}
       />
     )
   }

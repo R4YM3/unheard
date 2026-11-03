@@ -6,6 +6,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Timeline from '../components/Timeline.astro';
 import { breadcrumbsFor, routeFor } from '../lib/content';
+import { navigationFor } from '../lib/navigation';
+import { heroTrail } from '../lib/trail';
 
 interface Props {
   entry: CollectionEntry<'story'>;
@@ -16,15 +18,20 @@ const { Content } = await render(entry);
 const crumbs = await breadcrumbsFor(entry);
 const route = routeFor(entry);
 const hasBody = Boolean(entry.body?.trim());
+const trail = heroTrail(
+  crumbs,
+  data.eyebrow,
+  navigationFor(data.locale)?.sections.map((section) => section.menu.label),
+);
 ---
 
 <EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
   <section class="hero page-hero">
     <div class="wrap">
-      <Breadcrumbs crumbs={crumbs} />
       <div class="page-hero__grid page-hero__grid--plain">
         <div class="page-hero__content">
-          <p class="eyebrow">{data.eyebrow}</p>
+          <Breadcrumbs ancestors={trail.ancestors} current={trail.current} locale={data.locale} />
+          {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
           <h1>{data.heading}</h1>
           <p class="lead">{data.lead}</p>
           <p>{data.heroPersonal}</p>
