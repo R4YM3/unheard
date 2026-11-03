@@ -216,32 +216,49 @@ mark.review-marker {
   background: var(--bg);
   color: var(--text);
 }
+/* Quiet tabs: the section name, then at most four parts of the section. */
 .section-nav {
-  padding-block: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.section-nav__name {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  padding-inline-end: 1.5rem;
+  border-inline-end: 1px solid var(--border);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 .section-nav ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.section-nav a {
+.section-nav ul a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.75rem;
-  padding: 0.25rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--text);
-  font-size: 0.82rem;
-  font-weight: 650;
+  min-height: 3rem;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
-.section-nav a[aria-current='page'] {
-  border-color: var(--action);
-  text-decoration: underline;
+.section-nav ul a:hover {
+  color: var(--text);
+}
+.section-nav ul a[aria-current] {
+  border-bottom-color: var(--help);
+  color: var(--text);
 }
 .safe-exit {
   display: inline-flex;
@@ -1272,6 +1289,7 @@ a.card:hover {
   grid-column: 2;
   grid-row: 1;
 }
+/* Quiet rail: no frame, a thin line per link, the current place marked on that line. */
 .page-rail {
   --read: 0;
   position: sticky;
@@ -1281,20 +1299,17 @@ a.card:hover {
   align-self: start;
   max-height: calc(100dvh - 8rem);
   margin-top: clamp(2rem, 4vw, 3rem);
-  padding: 0.9rem 0.85rem 1rem;
+  padding-block: 0.25rem;
   overflow: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
   overscroll-behavior: contain;
 }
 .read-progress {
   position: absolute;
   inset-inline-start: 0;
   top: 0;
-  width: 3px;
+  width: 2px;
   height: calc(var(--read) * 100%);
-  background: var(--action);
+  background: var(--help);
   pointer-events: none;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1305,26 +1320,24 @@ a.card:hover {
 .page-rail nav + nav,
 .page-rail nav + details,
 .page-rail details + nav {
-  margin-top: 1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--border);
+  margin-top: 1.75rem;
 }
 .page-rail summary {
   min-height: 2.75rem;
-  padding: 0.35rem 0.45rem;
-  font-size: 0.78rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
 }
 .page-rail .eyebrow {
-  margin: 0 0 0.35rem;
-  padding-inline: 0.45rem;
+  margin: 0 0 0.4rem;
+  padding-inline-start: 0.85rem;
+  color: var(--muted);
 }
 .page-rail ul {
   display: grid;
-  gap: 0.1rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1332,22 +1345,60 @@ a.card:hover {
 .page-rail a {
   display: flex;
   align-items: center;
-  min-height: 2.75rem;
-  padding: 0.2rem 0.45rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.92rem;
+  min-height: 2.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.85rem;
+  border-inline-start: 2px solid var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
   line-height: 1.3;
 }
 .page-rail a:hover {
-  background: var(--safe);
+  border-inline-start-color: var(--muted);
+  color: var(--text);
 }
 .page-rail a[aria-current='page'],
 .page-rail a[aria-current='location'] {
-  background: var(--safe);
+  border-inline-start-color: var(--help);
+  color: var(--text);
   font-weight: 700;
 }
-.page-rail a[aria-current='location'] {
-  box-shadow: inset 3px 0 0 var(--action);
+/* Previous / next within a reading group. */
+.group-pager {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+.group-pager ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+.group-pager__next {
+  grid-column: 2;
+  text-align: end;
+}
+.group-pager ul a {
+  display: grid;
+  gap: 0.25rem;
+  height: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.group-pager ul a:hover {
+  border-color: var(--help);
+}
+.group-pager__hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.group-pager__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
 }
 .article-layout--rail h2,
 .article-layout--rail h3 {
@@ -1551,6 +1602,16 @@ a.card:hover {
   .page-rail {
     grid-row: 1;
     overflow: visible;
+  }
+  /* On narrow screens the rail keeps only this page's chapters; the group moves to the
+     previous/next links at the end of the page. */
+  .page-rail nav + nav,
+  .page-rail nav + details {
+    display: none;
+  }
+  .page-rail ul {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
+    column-gap: 0.75rem;
   }
   .read-progress {
     position: fixed;
