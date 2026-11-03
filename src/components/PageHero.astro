@@ -1,5 +1,8 @@
 ---
 import Breadcrumbs from './Breadcrumbs.astro';
+import type { Locale } from '../i18n/config';
+import { navigationFor } from '../lib/navigation';
+import { heroTrail } from '../lib/trail';
 
 interface Props {
   heading: string;
@@ -8,18 +11,21 @@ interface Props {
   lead?: string;
   actions?: Array<{ href: string; label: string; quiet?: boolean }>;
   crumbs?: Array<{ href: string; label: string }>;
+  locale: Locale;
   art?: 'article' | 'story' | false;
   artNote?: string;
 }
-const { heading, eyebrow, paragraphs = [], lead, actions = [], crumbs = [] } = Astro.props;
+const { heading, eyebrow, paragraphs = [], lead, actions = [], crumbs = [], locale } = Astro.props;
+const menuLabels = navigationFor(locale)?.sections.map((section) => section.menu.label) ?? [];
+const trail = heroTrail(crumbs, eyebrow, menuLabels);
 ---
 
 <section class="hero page-hero">
   <div class="wrap">
-    {crumbs.length > 1 && <Breadcrumbs crumbs={crumbs} />}
     <div class="page-hero__grid page-hero__grid--plain">
       <div class="page-hero__content">
-        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <Breadcrumbs ancestors={trail.ancestors} current={trail.current} locale={locale} />
+        {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
         <h1>{heading}</h1>
         {lead && <p class="lead">{lead}</p>}
         {paragraphs.map((paragraph) => <p>{paragraph}</p>)}

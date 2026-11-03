@@ -3,8 +3,13 @@
  * the reading rail and the previous/next links use. One source, so a page can never
  * light up under the wrong section.
  *
- * Paths are locale-relative to the site base, with a trailing slash ("nl/herstel/").
+ * Navigation is defined per locale: each language gets its own paths (slugs may be
+ * translated) and labels. A locale without an entry has only a home link until its
+ * translation is approved.
+ *
+ * Paths are relative to the site base, with a trailing slash ("nl/herstel/").
  */
+import type { Locale } from '../i18n/config';
 
 export interface NavLink {
   href: string;
@@ -16,7 +21,7 @@ export interface Section {
   menu: NavLink;
   /** Accessible name of the section bar. */
   label: string;
-  /** At most four tabs; the same on every page of the section. */
+  /** At most four parts of the section, shown as sub-items in the mobile menu. */
   tabs: NavLink[];
   /** Path prefixes that belong to this section (besides the tab paths themselves). */
   prefixes: string[];
@@ -29,10 +34,15 @@ export interface PageGroup {
   pages: string[];
 }
 
-export const homeHref = 'nl/';
-export const helpHref = 'nl/hulp-vinden/';
+export interface LocaleNavigation {
+  home: NavLink;
+  help: NavLink;
+  sections: Section[];
+  feelingGroups: PageGroup[];
+  feelingsOverview: string;
+}
 
-export const sections: Section[] = [
+const nlSections: Section[] = [
   {
     menu: { href: 'nl/wat-voel-ik/', label: 'Wat voel ik?' },
     label: 'Binnen Wat voel ik?',
@@ -84,14 +94,7 @@ export const sections: Section[] = [
   },
 ];
 
-/** Main menu, in order. "Hulp vinden" is rendered as a button, not a section. */
-export const mainMenu: NavLink[] = [
-  { href: homeHref, label: 'Home' },
-  ...sections.map((section) => section.menu),
-  { href: helpHref, label: 'Hulp vinden' },
-];
-
-export const feelingGroups: PageGroup[] = [
+const nlFeelingGroups: PageGroup[] = [
   {
     label: 'Over jezelf',
     pages: [
@@ -118,6 +121,25 @@ export const feelingGroups: PageGroup[] = [
   },
 ];
 
+const byLocale: Partial<Record<Locale, LocaleNavigation>> = {
+  nl: {
+    home: { href: 'nl/', label: 'Home' },
+    help: { href: 'nl/hulp-vinden/', label: 'Hulp vinden' },
+    sections: nlSections,
+    feelingGroups: nlFeelingGroups,
+    feelingsOverview: 'nl/wat-voel-ik/',
+  },
+};
+
+export const navigationFor = (locale: Locale): LocaleNavigation | undefined => byLocale[locale];
+
+/** Main menu, in order. The help link is rendered as a button, not as a section. */
+export const mainMenu = (nav: LocaleNavigation): NavLink[] => [
+  nav.home,
+  ...nav.sections.map((section) => section.menu),
+  nav.help,
+];
+
 const longestMatch = (path: string, candidates: string[]) =>
   candidates
     .filter((candidate) => path.startsWith(candidate))
@@ -127,12 +149,12 @@ const longestMatch = (path: string, candidates: string[]) =>
  * The section a page belongs to. An exact tab match wins (so a tab can point into another
  * folder), then the longest matching path prefix.
  */
-export const sectionFor = (path: string): Section | undefined => {
-  const exact = sections.find((section) => section.tabs.some((tab) => tab.href === path));
+export const sectionFor = (nav: LocaleNavigation, path: string): Section | undefined => {
+  const exact = nav.sections.find((section) => section.tabs.some((tab) => tab.href === path));
   if (exact) return exact;
   let best: Section | undefined;
   let bestLength = -1;
-  for (const section of sections) {
+  for (const section of nav.sections) {
     const length = longestMatch(path, section.prefixes);
     if (length > bestLength) {
       best = section;
@@ -158,10 +180,10 @@ export const currentTab = (section: Section, path: string): NavLink | undefined 
 };
 
 /** Whether a main-menu entry is current for a page. */
-export const isMenuCurrent = (href: string, path: string) => {
-  if (href === homeHref) return path === homeHref;
-  if (href === helpHref) return path.startsWith(helpHref);
-  return sectionFor(path)?.menu.href === href;
+export const isMenuCurrent = (nav: LocaleNavigation, href: string, path: string) => {
+  if (href === nav.home.href) return path === nav.home.href;
+  if (href === nav.help.href) return path.startsWith(nav.help.href);
+  return sectionFor(nav, path)?.menu.href === href;
 };
 
 export const groupFor = (groups: PageGroup[], path: string) =>

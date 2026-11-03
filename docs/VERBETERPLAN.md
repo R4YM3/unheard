@@ -27,11 +27,12 @@ Review van 3 november 2026. Canvas met de ontwerpen: https://claude.ai/artifact/
 
 - Navigatie staat als data in `src/lib/navigation.ts`: hoofdmenu, sectiebalk (maximaal 4 tabs per sectie) en de groepen voor gevoelens. Getest in `test/navigation.test.mjs`.
 - De groepen staan in `navigation.ts` in plaats van in een frontmatter-veld, zodat er één bron is en geen 88 bestanden aangepast hoeven te worden.
-- De sectiebalk bestaat uit rustige tabs met de sectienaam ervoor. Hulpmiddelen-pagina's lichten niet meer op onder Herstel.
+- Geen aparte sectiebalk: het hoofdmenu zegt in welke sectie je bent. De onderdelen per sectie staan in het mobiele menu. Hulpmiddelen-pagina's lichten niet meer op onder Herstel.
 - Gevoelspagina's hebben de stille zijbalk (variant A): alleen de hoofdstukken van de tekst, daaronder de eigen groep. Onderaan staan vorige/volgende-links binnen de groep. Op mobiel blijven alleen de hoofdstukken over, in twee kolommen.
 - Help me woorden vinden valt onder Wat voel ik?. Over Ongehoord en Werkwijze vallen onder Mijn verhaal. Voor naasten en Veilig gebruik vallen onder Hulpmiddelen.
 - De toegankelijkheidsaudit controleert 6 pagina's tegelijk (±25 s in plaats van ±4 min). De CI bouwt niet meer drie keer.
-- Het kruimelpad blijft, vanwege de BreadcrumbList-data voor zoekmachines.
+- Eén pad-regel boven de titel vervangt kruimelpad én eyebrow. Die regel toont alleen de pagina's tussen de sectie en de titel (Home is het logo, de pagina zelf is de titel). Het volledige pad blijft voor schermlezers en in de BreadcrumbList-data. Regel en test: `src/lib/trail.ts`.
+- Meertalig: navigatie per taal in `navigationFor(locale)` en UI-teksten in `src/i18n/ui.ts`. EN en AR tonen alleen Home tot hun vertaling is goedgekeurd.
 
 ## Fase 3 — Inhoud (zie bord 5)
 

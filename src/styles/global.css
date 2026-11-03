@@ -211,55 +211,6 @@ mark.review-marker {
   text-decoration: underline;
   text-underline-offset: 0.25em;
 }
-.section-nav-bar {
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text);
-}
-/* Quiet tabs: the section name, then at most four parts of the section. */
-.section-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem 1.5rem;
-  overflow-x: auto;
-  scrollbar-width: thin;
-}
-.section-nav__name {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  min-height: 3rem;
-  padding-inline-end: 1.5rem;
-  border-inline-end: 1px solid var(--border);
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.section-nav ul {
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.section-nav ul a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 3rem;
-  border-bottom: 3px solid transparent;
-  color: var(--muted);
-  font-size: 0.98rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.section-nav ul a:hover {
-  color: var(--text);
-}
-.section-nav ul a[aria-current] {
-  border-bottom-color: var(--help);
-  color: var(--text);
-}
 .safe-exit {
   display: inline-flex;
   align-items: center;
@@ -545,33 +496,36 @@ mark.review-marker {
 }
 
 /* ---------- Breadcrumbs & article meta ---------- */
+/* The trail sits where an eyebrow would: one quiet line above the title. */
+.breadcrumbs {
+  margin-bottom: 0.25rem;
+}
 .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 0.5rem;
+  gap: 0 0.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
-.breadcrumbs li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-}
-.breadcrumbs a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-}
-.breadcrumbs li:not(:last-child)::after {
-  margin-inline-start: 0.5rem;
+.breadcrumbs li + li:not(.sr-only)::before {
+  margin-inline-end: 0.5rem;
+  color: var(--muted);
   content: '/';
-  opacity: 0.7;
 }
 .breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--hero-eyebrow);
   text-decoration: underline;
-  text-decoration-thickness: 0.06em;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-decoration-thickness: 0.08em;
+}
+.breadcrumbs a:hover {
+  text-decoration-color: currentColor;
 }
 .article-meta {
   display: flex;
