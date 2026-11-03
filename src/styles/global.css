@@ -9,11 +9,12 @@ html {
   scroll-padding-top: 8rem;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, 'Avenir Next', 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.65;
+  font-family: var(--font-sans);
+  line-height: 1.6;
 }
 body {
   margin: 0;
+  font-size: 1.0625rem;
   overflow-wrap: break-word;
 }
 [hidden] {
@@ -66,14 +67,14 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Avenir Next', 'Helvetica Neue', Inter, ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.055em;
-  line-height: 1.15;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
   margin: 0 0 0.75rem;
 }
 h1 {
-  font-size: clamp(2.5rem, 6.2vw, 4rem);
+  font-size: clamp(2.4rem, 5.6vw, 3.75rem);
   max-width: 18ch;
 }
 h2 {
@@ -83,8 +84,7 @@ h3 {
   font-size: clamp(1.3rem, 2vw, 1.8rem);
 }
 h4 {
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
+  font-size: 1.15rem;
 }
 .sr-only {
   position: absolute;
@@ -112,16 +112,21 @@ h4 {
 .reading {
   max-width: var(--reading);
 }
+/* Reading columns share the left edge of the content grid instead of floating centred,
+   so text, headings and card rows line up while scrolling. */
+.wrap.reading {
+  margin-inline: max(1.25rem, calc((100% - var(--content)) / 2)) auto;
+}
 .print-only {
   display: none;
 }
 .eyebrow {
   overflow-wrap: anywhere;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--muted);
+  color: var(--hero-eyebrow);
 }
 .note {
   color: var(--muted);
@@ -141,9 +146,9 @@ mark.review-marker {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--chrome-border);
-  background: var(--chrome-bg);
-  color: var(--chrome-text);
+  border-bottom: 1px solid var(--header-border);
+  background: var(--header-bg);
+  color: var(--header-text);
 }
 .header-row {
   display: grid;
@@ -156,12 +161,13 @@ mark.review-marker {
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
-  font-size: 1.45rem;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
   font-weight: 600;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.01em;
 }
 .brand span {
-  color: var(--palette-terracotta-300);
+  color: var(--brand-dot);
 }
 .nav {
   display: flex;
@@ -170,8 +176,8 @@ mark.review-marker {
   align-items: center;
   justify-content: flex-end;
   gap: 1.25rem;
-  font-size: 0.88rem;
-  font-weight: 650;
+  font-size: 0.98rem;
+  font-weight: 600;
 }
 .nav a {
   display: inline-flex;
@@ -182,6 +188,8 @@ mark.review-marker {
 .nav a:hover,
 .nav a[aria-current] {
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.4em;
 }
 .nav .nav-help,
 .locale-selector {
@@ -189,14 +197,19 @@ mark.review-marker {
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.56rem 0.82rem;
-  border: 1px solid var(--palette-forest-300);
-  border-radius: var(--radius-sm);
-  background: transparent;
-  color: var(--chrome-text);
-  font-size: 0.88rem;
-  font-weight: 650;
+  padding: 0.56rem 1.1rem;
+  border: 1px solid var(--help);
+  border-radius: var(--radius-pill);
+  background: var(--help);
+  color: var(--help-text);
+  font-size: 0.98rem;
+  font-weight: 600;
   line-height: 1.15;
+}
+.nav .nav-help:hover,
+.nav .nav-help[aria-current] {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 .section-nav-bar {
   border-bottom: 1px solid var(--border);
@@ -235,13 +248,13 @@ mark.review-marker {
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.6rem 0.75rem;
-  border: 1px solid var(--chrome-control-border);
-  border-radius: var(--radius-sm);
-  background: var(--chrome-control);
-  color: var(--chrome-text);
-  font-size: 0.88rem;
-  font-weight: 700;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 0.98rem;
+  font-weight: 600;
   white-space: nowrap;
 }
 .safe-exit:hover {
@@ -267,14 +280,14 @@ mark.review-marker {
   padding: 0.6rem 0.85rem;
   margin-top: 1.5rem;
   font: inherit;
-  border: 1px solid var(--chrome-control-border);
-  border-radius: var(--radius-sm);
-  background: var(--chrome-control);
-  color: var(--chrome-text);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-pill);
+  background: var(--control-bg);
+  color: var(--footer-text);
   cursor: pointer;
 }
 .theme-toggle:hover {
-  background: var(--chrome-control-hover);
+  background: var(--control-hover);
 }
 .theme-toggle svg {
   width: 1.05rem;
@@ -297,10 +310,10 @@ mark.review-marker {
 /* ---------- Footer ---------- */
 .site-footer {
   padding: 2.5rem 0 4.5rem;
-  border-top: 1px solid var(--chrome-border);
-  background: var(--chrome-bg-strong);
-  color: var(--palette-grey-100);
-  font-size: 0.88rem;
+  border-top: 1px solid var(--footer-border);
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-size: 0.95rem;
 }
 .footer-grid {
   display: grid;
@@ -309,9 +322,19 @@ mark.review-marker {
 }
 .footer-grid h2 {
   margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+.footer-brand {
+  margin-top: 0;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.footer-brand span {
+  color: var(--brand-dot);
 }
 .footer-grid ul {
   margin: 0;
@@ -333,8 +356,8 @@ mark.review-marker {
 }
 .footer-meta {
   margin-top: 1.75rem;
-  color: var(--palette-grey-200);
-  font-size: 0.8rem;
+  color: var(--footer-muted);
+  font-size: 0.85rem;
 }
 
 /* ---------- Buttons & links ---------- */
@@ -343,9 +366,9 @@ mark.review-marker {
   align-items: center;
   justify-content: center;
   min-height: 2.75rem;
-  padding: 0.7rem 1.1rem;
+  padding: 0.7rem 1.35rem;
   border: 1px solid var(--action);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   background: var(--action);
   color: var(--action-text);
   font: inherit;
@@ -407,16 +430,21 @@ mark.review-marker {
   background: var(--children);
 }
 .section--chrome {
-  background: var(--chrome-bg);
-  color: var(--chrome-text);
+  background: var(--band-bg);
+  color: var(--band-text);
 }
 .section--chrome .eyebrow,
 .section--chrome .note {
-  color: var(--chrome-eyebrow);
+  color: var(--band-muted);
 }
 .section--chrome a:not(.button) {
-  color: inherit;
+  color: var(--band-link);
   text-decoration: underline;
+}
+.section--chrome .button:not(.button--quiet) {
+  border-color: var(--band-text);
+  background: var(--band-text);
+  color: var(--band-bg);
 }
 .section-heading {
   display: flex;
@@ -432,24 +460,24 @@ mark.review-marker {
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--chrome-bg);
-  color: var(--chrome-text);
+  background: var(--hero-bg);
+  color: var(--hero-text);
 }
 .hero .eyebrow {
-  color: var(--chrome-eyebrow);
+  color: var(--hero-eyebrow);
 }
 .hero p:not(.eyebrow) {
   max-width: 42rem;
-  color: var(--chrome-muted);
+  color: var(--hero-muted);
 }
 .hero .lead {
-  color: var(--chrome-text);
+  color: var(--hero-text);
 }
 .hero .button--quiet {
-  color: var(--chrome-text);
+  color: var(--hero-text);
 }
 .page-hero {
-  padding-block: 1.25rem clamp(3rem, 7vw, 5rem);
+  padding-block: 0.75rem clamp(2rem, 4vw, 3rem);
 }
 .page-hero__grid {
   display: grid;
@@ -462,7 +490,7 @@ mark.review-marker {
 }
 .page-hero__content {
   min-width: 0;
-  margin-top: clamp(2.25rem, 7vw, 5rem);
+  margin-top: clamp(1.25rem, 4vw, 2.5rem);
 }
 .hero-art {
   display: flex;
@@ -478,9 +506,9 @@ mark.review-marker {
   max-width: 17rem;
   margin: auto 1.25rem 1.25rem;
   padding: 0.9rem;
-  border-inline-start: 2px solid var(--palette-grey-150);
+  border-inline-start: 2px solid var(--band-muted);
   background: var(--art-note-bg);
-  color: var(--chrome-text);
+  color: var(--band-text);
   font-size: 0.82rem;
 }
 .home-hero__grid {
@@ -491,7 +519,7 @@ mark.review-marker {
 }
 .home-hero__copy {
   min-width: 0;
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 .home-hero__art {
   min-height: 34rem;
@@ -508,6 +536,11 @@ mark.review-marker {
   padding: 0;
   list-style: none;
   font-size: 0.88rem;
+}
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
 }
 .breadcrumbs a {
   display: inline-flex;
@@ -552,11 +585,11 @@ mark.review-marker {
 }
 .site-notice {
   margin: 0;
-  padding: 0.65rem 1.25rem;
+  padding: 0.45rem 1.25rem;
   border-bottom: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 0.9rem;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.85rem;
   line-height: 1.45;
   text-align: center;
 }
@@ -570,7 +603,8 @@ mark.review-marker {
   background: var(--safe);
 }
 .summary-box h2 {
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -583,7 +617,7 @@ mark.review-marker {
 }
 .prose {
   padding-block: clamp(2rem, 5vw, 3.5rem);
-  font-size: 1.06rem;
+  font-size: 1.125rem;
 }
 .prose h2 {
   margin-top: clamp(2.25rem, 5vw, 3.25rem);
@@ -598,9 +632,9 @@ mark.review-marker {
 .prose blockquote {
   margin: 1.5rem 0;
   padding-inline-start: 1.25rem;
-  border-inline-start: 3px solid var(--action);
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.25rem;
+  border-inline-start: 3px solid var(--help);
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
   font-style: italic;
 }
 .prose li + li {
@@ -691,7 +725,7 @@ a.card {
     box-shadow 160ms ease;
 }
 a.card:hover {
-  border-color: var(--action);
+  border-color: var(--help);
   box-shadow: 0 0.4rem 1.1rem color-mix(in srgb, var(--text) 12%, transparent);
 }
 .card--safe {
@@ -699,45 +733,26 @@ a.card:hover {
   background: var(--safe);
 }
 .card--story {
-  border: 0;
-  border-radius: 0.15rem 1.5rem 1.5rem 0.15rem;
+  border-color: var(--border);
   background: var(--story);
 }
 .card--alert {
-  border-inline-start: 0.35rem solid var(--action);
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 .card--tension {
   position: relative;
   overflow: hidden;
   border-color: var(--tension-border);
   background: var(--tension);
-  padding-inline-start: calc(clamp(1.35rem, 3vw, 1.9rem) + var(--tension-edge-width));
 }
-.card--tension::before {
-  position: absolute;
-  inset-block: 0;
-  inset-inline-start: 0;
-  width: var(--tension-edge-width);
-  background: var(--tension-edge);
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    74% 10%,
-    100% 20%,
-    74% 30%,
-    100% 40%,
-    74% 50%,
-    100% 60%,
-    74% 70%,
-    100% 80%,
-    74% 90%,
-    100% 100%,
-    0 100%
-  );
-  content: '';
-}
-[dir='rtl'] .card--tension::before {
-  transform: scaleX(-1);
+/* Card labels name a type in plain words; they do not shout. */
+.card .eyebrow,
+.stat-teaser .eyebrow {
+  margin-bottom: 0.4rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.9rem;
 }
 .card-link-label {
   margin-top: auto;
@@ -761,7 +776,7 @@ a.card:hover {
 }
 .feeling-card::after {
   align-self: flex-end;
-  color: var(--action);
+  color: var(--link);
   content: '↗';
   font-size: 1.35rem;
 }
@@ -944,7 +959,7 @@ a.card:hover {
 .tool-check input {
   width: 1.25rem;
   height: 1.25rem;
-  accent-color: var(--palette-forest);
+  accent-color: var(--help);
 }
 .start-chooser details {
   border: 1px solid var(--border);
@@ -1217,6 +1232,38 @@ a.card:hover {
 }
 .article-layout--rail .wrap {
   width: 100%;
+  margin-inline: 0;
+}
+/* Coloured bands run to the viewport edge, also beside the rail. border-image paints
+   outside the box without creating scrollable overflow. */
+.article-layout--rail
+  :is(
+    .section--soft,
+    .section--tension,
+    .section--therapy,
+    .section--paper,
+    .section--children,
+    .section--chrome
+  ) {
+  border-image: linear-gradient(var(--band, transparent) 0 0) fill 0 / /0 100vw;
+}
+.article-layout--rail .section--soft {
+  --band: var(--safe);
+}
+.article-layout--rail .section--tension {
+  --band: var(--tension-section);
+}
+.article-layout--rail .section--therapy {
+  --band: var(--therapy);
+}
+.article-layout--rail .section--paper {
+  --band: var(--paper-section);
+}
+.article-layout--rail .section--children {
+  --band: var(--children);
+}
+.article-layout--rail .section--chrome {
+  --band: var(--band-bg);
 }
 .article-layout__main {
   min-width: 0;
@@ -1368,10 +1415,10 @@ a.card:hover {
   font-weight: 700;
 }
 .finder-prompt {
-  font-family: 'Avenir Next', 'Helvetica Neue', Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.3rem, 3vw, 1.65rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1.25;
 }
 .finder-options {
@@ -1403,7 +1450,7 @@ a.card:hover {
   width: 1.25rem;
   height: 1.25rem;
   margin: 0.15rem 0 0;
-  accent-color: var(--palette-forest);
+  accent-color: var(--help);
 }
 .finder-nav,
 .finder-actions,
@@ -1569,10 +1616,10 @@ a.card:hover {
     height: 2.75rem;
     place-content: center;
     gap: 0.25rem;
-    border: 1px solid var(--chrome-control-border);
-    border-radius: var(--radius-sm);
-    background: var(--chrome-control);
-    color: var(--chrome-text);
+    border: 1px solid var(--control-border);
+    border-radius: var(--radius-pill);
+    background: var(--control-bg);
+    color: var(--header-text);
     cursor: pointer;
     list-style: none;
   }
@@ -1594,15 +1641,15 @@ a.card:hover {
     min-inline-size: min(17rem, calc(100vw - 2.25rem));
     max-height: calc(100dvh - 12rem);
     overflow-y: auto;
-    border: 1px solid var(--chrome-control-border);
-    border-radius: var(--radius-sm);
-    background: var(--chrome-bg);
+    border: 1px solid var(--control-border);
+    border-radius: var(--radius);
+    background: var(--header-bg);
     box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 20%);
   }
   .mobile-menu__panel a {
     padding: 0.85rem 1rem;
-    border-bottom: 1px solid var(--chrome-border);
-    color: var(--chrome-text);
+    border-bottom: 1px solid var(--header-border);
+    color: var(--header-text);
     font-weight: 700;
   }
   .mobile-menu__panel a:last-child {
