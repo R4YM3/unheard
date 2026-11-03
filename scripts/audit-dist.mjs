@@ -63,7 +63,7 @@ for (const file of files) {
     if (!html.includes(robotsNoIndex)) bad.push(`${file}: root redirect must stay noindex`);
     if (!html.includes('class="spinner"'))
       bad.push(`${file}: root redirect is missing its loading indicator`);
-    if (!/background:\s*#242a29/.test(html))
+    if (!/background:\s*#f6f2ea/.test(html))
       bad.push(`${file}: root redirect must retain the site-colour background`);
     if (!html.includes('setTimeout(()=>location.replace(target),450)'))
       bad.push(`${file}: root redirect is missing its controlled hand-off`);

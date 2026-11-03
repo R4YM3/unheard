@@ -4,6 +4,12 @@ Review van 3 november 2026. Canvas met de ontwerpen: https://claude.ai/artifact/
 
 ## Besluiten
 
+- **Kleur:** lichte modus = A "licht en zacht" (papier, salie, terracotta). Donkere modus = B "bosgroen" (bosgroen, crème, oker). Geen bijna-zwarte vlakken meer.
+- **Typografie:** Fraunces 600 voor koppen, Source Sans 3 voor tekst, lokaal gehost via `@fontsource` (geen externe verzoeken).
+- **Subnavigatie:** variant A, de stille zijbalk (alleen de hoofdstukken van de pagina, daaronder de groep). Zie bord 8.
+- **Wat je hoort. Wat je voelt.:** variant B op de homepage, met zin en gedachte tegelijk in beeld en zonder tabs. Zie bord 8.
+- **Foto's:** vijf AI-gegenereerde beelden in één stijl (prompts op bord 7), met een vermelding dat ze met AI gemaakt zijn. Geen gegenereerd portret van de oprichter.
+
 - **Het hoofdmenu blijft:** Home · Wat voel ik? · Begrijp het · Herstel · Mijn verhaal · Hulpmiddelen, plus de knop "Hulp vinden".
 - **Erbij komt** een vaste knop "Verlaat site", die ook met de Esc-toets werkt. Het "NL"-vak verdwijnt tot er een vertaling is.
 - **Het palet blijft** (salie, papier, terracotta). Koppen komen in een serif (Fraunces), tekst in een rustige sans (Source Sans 3).
