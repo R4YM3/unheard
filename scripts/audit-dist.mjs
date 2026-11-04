@@ -150,8 +150,16 @@ for (const file of files) {
     bad.push(`${file}: article missing visible source attribution`);
   if (hasContentArticle && !html.includes('"citation":['))
     bad.push(`${file}: article missing structured-data citations`);
-  if (hasContentArticle && html.includes('"datePublished":'))
-    bad.push(`${file}: article date is not visible on the page`);
+  // Structured dates must match a visible date on the page.
+  for (const field of ['datePublished', 'dateModified']) {
+    const date = html.match(new RegExp(`"${field}":"(\\d{4}-\\d{2}-\\d{2})"`))?.[1];
+    if (date && !html.includes(`<time datetime="${date}"`))
+      bad.push(`${file}: ${field} ${date} is not visible on the page`);
+  }
+  if (hasContentArticle && !/"author":\{"@type":"(Organization|Person)"/.test(html))
+    bad.push(`${file}: article author must be an inline Organization or Person`);
+  if (hasContentArticle && !html.includes('"image":{"@type":"ImageObject"'))
+    bad.push(`${file}: article missing image`);
   if (hasContentArticle && file.includes('/begrippen/') && !types.has('DefinedTerm'))
     bad.push(`${file}: concept article missing DefinedTerm JSON-LD`);
   if (file.includes('/nl/') && !html.includes('"@type":"SearchAction"'))

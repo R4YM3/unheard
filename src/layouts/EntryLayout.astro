@@ -10,6 +10,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 import SourceList from '../components/SourceList.astro';
 import { ui } from '../i18n/ui';
 import { slotFor } from '../lib/photos';
+import { brandName, founderName, shareImage } from '../lib/site';
+import ArticleMeta from '../components/ArticleMeta.astro';
 import { breadcrumbsFor, resolveRelated, routeFor, type RoutedEntry } from '../lib/content';
 
 interface Props {
@@ -110,8 +112,26 @@ if (articleType) {
     headline: visibleHeading,
     description: data.description,
     inLanguage: data.locale,
-    author: { '@id': organizationId },
-    publisher: { '@id': organizationId },
+    /* Inline objects rather than @id references: not every validator resolves references. */
+    author:
+      data.author === 'founder' && founderName
+        ? { '@type': 'Person', name: founderName }
+        : { '@type': 'Organization', '@id': organizationId, name: brandName, url: absolute('') },
+    publisher: {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: brandName,
+      url: absolute(''),
+      logo: { '@type': 'ImageObject', url: absolute('logo.svg'), width: 256, height: 256 },
+    },
+    datePublished: data.publishedAt.toISOString().slice(0, 10),
+    dateModified: data.updatedAt.toISOString().slice(0, 10),
+    image: {
+      '@type': 'ImageObject',
+      url: absolute(shareImage.path),
+      width: shareImage.width,
+      height: shareImage.height,
+    },
     mainEntityOfPage: { '@id': pageId },
     ...(data.glossary ? { about: { '@id': termId } } : {}),
     citation: citations,
@@ -177,6 +197,16 @@ const heroData = 'hero' in data ? data.hero : undefined;
         )
       }
       <slot />
+      {
+        articleType && (
+          <ArticleMeta
+            author={data.author}
+            publishedAt={data.publishedAt}
+            updatedAt={data.updatedAt}
+            locale={data.locale}
+          />
+        )
+      }
       <RelatedContent items={related} />
       {showSources && <SourceList sources={data.sources} />}
       {showHelp && <HelpBlock />}
