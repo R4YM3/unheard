@@ -13,7 +13,7 @@ reviewedAt: null
 cardTitle: 'Hulp vinden'
 cardText: '112 bij direct gevaar, 113 bij gedachten aan zelfdoding, Veilig Thuis bij zorgen over huiselijk geweld. Ongehoord belt niet met je mee.'
 summary: 'Bij direct gevaar bel je 112. Bij gedachten aan zelfdoding bel of chat je met 113, gratis en anoniem, dag en nacht. 0800-0113 is het gratis alternatief. Bij zorgen over huiselijk geweld of misbruik bel je Veilig Thuis op 0800-2000. Ongehoord heeft zelf geen hulplijn.'
-related: [voor-naasten, veilig-gebruik, hulpmiddelen, financieel-advies]
+related: [voor-naasten, veilig-gebruik, hulpmiddelen, financieel-advies, praktisch-na-breuk]
 sources:
   - label: 'Rijksoverheid — Alarmnummer 112'
     url: 'https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/alarmnummer-112'
