@@ -4,18 +4,15 @@
  * JSON-LD), hero, review status, summary, related links, sources and the quiet help route.
  */
 import BaseLayout from './BaseLayout.astro';
-import ArticleMeta from '../components/ArticleMeta.astro';
 import HelpBlock from '../components/HelpBlock.astro';
 import PageHero from '../components/PageHero.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import SourceList from '../components/SourceList.astro';
-import {
-  breadcrumbsFor,
-  isoDate,
-  resolveRelated,
-  routeFor,
-  type RoutedEntry,
-} from '../lib/content';
+import { ui } from '../i18n/ui';
+import { slotFor } from '../lib/photos';
+import { brandName, founderName, shareImage } from '../lib/site';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import { breadcrumbsFor, resolveRelated, routeFor, type RoutedEntry } from '../lib/content';
 
 interface Props {
   entry: RoutedEntry;
@@ -29,6 +26,13 @@ interface Props {
   showSummary?: boolean;
   showSources?: boolean;
   showHelp?: boolean;
+  /** Extra JSON-LD for visible lists on this page. */
+  extraSchema?: Array<Record<string, unknown>>;
+  mainEntityId?: string;
+  /** Link cards the template wants in the single "Verder lezen" block, before related pages. */
+  moreLinks?: Array<{ href?: string; title: string; text: string; eyebrow?: string }>;
+  /** Hero buttons when the content itself defines none (at most two). */
+  actions?: Array<{ href: string; label: string; quiet?: boolean }>;
 }
 const {
   entry,
@@ -41,22 +45,51 @@ const {
   showSummary = true,
   showSources = true,
   showHelp = true,
+  extraSchema = [],
+  mainEntityId,
+  moreLinks = [],
+  actions: fallbackActions = [],
 } = Astro.props;
+const hasRail = Astro.slots.has('rail');
 const { data } = entry;
 const route = routeFor(entry);
 const crumbs = await breadcrumbsFor(entry);
-const related = await resolveRelated(entry);
+/* One "Verder lezen" block per page: the template's own links first, then related pages,
+   without duplicates and at most six. */
+const related = [
+  ...moreLinks.flatMap((card) =>
+    card.href
+      ? [{ href: card.href, title: card.title, text: card.text, eyebrow: card.eyebrow }]
+      : [],
+  ),
+  ...(await resolveRelated(entry)),
+]
+  .filter((card, index, all) => all.findIndex((other) => other.href === card.href) === index)
+  /* The help band below already links to the help page. */
+  .filter((card) => !(showHelp && card.href.endsWith('/hulp-vinden/')))
+  .slice(0, 6);
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const absolute = (path: string) => new URL(`${basePath}${path}`, site).href;
 const organizationId = `${new URL(basePath, site).href}#organization`;
+const pageId = absolute(route);
+const articleId = `${pageId}#artikel`;
+const termId = `${pageId}#begrip`;
+const visibleHeading = heading ?? data.title;
+const citations = data.sources.map((source) => ({
+  '@type': 'CreativeWork',
+  name: source.label,
+  url: source.url,
+  ...(source.publisher ? { publisher: { '@type': 'Organization', name: source.publisher } } : {}),
+}));
 
 const schema: Array<Record<string, unknown>> = [];
 if (crumbs.length > 1) {
   schema.push({
     '@type': 'BreadcrumbList',
+    '@id': `${pageId}#kruimelpad`,
     itemListElement: crumbs.map((crumb, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -65,36 +98,49 @@ if (crumbs.length > 1) {
     })),
   });
 }
-if (articleType) {
-  schema.push({
-    '@type': articleType,
-    headline: heading ?? data.title,
-    description: data.description,
-    inLanguage: data.locale,
-    datePublished: isoDate(data.publishedAt),
-    dateModified: isoDate(data.updatedAt),
-    author: { '@id': organizationId },
-    publisher: { '@id': organizationId },
-    mainEntityOfPage: absolute(route),
-    citation: data.sources.map((source) => ({
-      '@type': 'CreativeWork',
-      name: source.label,
-      url: source.url,
-      ...(source.publisher
-        ? { publisher: { '@type': 'Organization', name: source.publisher } }
-        : {}),
-    })),
-  });
-}
 if (data.glossary) {
   schema.push({
     '@type': 'DefinedTerm',
+    '@id': termId,
     name: data.glossary.term,
     description: data.glossary.definition,
-    url: absolute(route),
-    inDefinedTermSet: absolute(`${data.locale}/begrippen/`),
+    url: pageId,
+    inDefinedTermSet: { '@id': absolute(`${data.locale}/begrippen/#termen`) },
   });
 }
+if (articleType) {
+  schema.push({
+    '@type': articleType,
+    '@id': articleId,
+    headline: visibleHeading,
+    description: data.description,
+    inLanguage: data.locale,
+    /* Inline objects rather than @id references: not every validator resolves references. */
+    author:
+      data.author === 'founder' && founderName
+        ? { '@type': 'Person', name: founderName }
+        : { '@type': 'Organization', '@id': organizationId, name: brandName, url: absolute('') },
+    publisher: {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: brandName,
+      url: absolute(''),
+      logo: { '@type': 'ImageObject', url: absolute('logo.svg'), width: 256, height: 256 },
+    },
+    datePublished: data.publishedAt.toISOString().slice(0, 10),
+    dateModified: data.updatedAt.toISOString().slice(0, 10),
+    image: {
+      '@type': 'ImageObject',
+      url: absolute(shareImage.path),
+      width: shareImage.width,
+      height: shareImage.height,
+    },
+    mainEntityOfPage: { '@id': pageId },
+    ...(data.glossary ? { about: { '@id': termId } } : {}),
+    citation: citations,
+  });
+}
+schema.push(...extraSchema);
 const heroData = 'hero' in data ? data.hero : undefined;
 ---
 
@@ -104,6 +150,9 @@ const heroData = 'hero' in data ? data.hero : undefined;
   locale={data.locale}
   canonicalPath={`/${route}`}
   schema={schema}
+  schemaName={visibleHeading}
+  mainEntityId={mainEntityId ?? (data.glossary ? termId : articleType ? articleId : undefined)}
+  citations={showSources ? citations : []}
   pageType={pageType}
 >
   {
@@ -113,38 +162,63 @@ const heroData = 'hero' in data ? data.hero : undefined;
         eyebrow={eyebrow ?? heroData?.eyebrow}
         lead={lead}
         paragraphs={heroData?.paragraphs ?? []}
-        actions={heroData?.actions ?? []}
+        actions={(heroData?.actions?.length ? heroData.actions : fallbackActions).slice(0, 2)}
         crumbs={crumbs}
+        locale={data.locale}
+        artSlot={slotFor(data.translationKey)}
         artNote={heroData?.visualNote}
         art={heroData ? 'article' : false}
       />
     )
   }
-  {hero && <ArticleMeta entry={entry} />}
-  <slot name="before-summary" />
+  <div class:list={['article-layout', { 'article-layout--rail': hasRail }]}>
+    {
+      hasRail && (
+        <aside class="page-rail" aria-label={ui(data.locale).pageNavigation}>
+          <slot name="rail" />
+        </aside>
+      )
+    }
+    <div class="article-layout__main">
+      <slot name="before-summary" />
+      {
+        showSummary && (data.summary || data.glossary) && (
+          <div class="wrap reading">
+            <section class="summary-box" aria-labelledby="summary-heading">
+              <h2 id="summary-heading">{ui(data.locale).inShort}</h2>
+              {data.summary && <p>{data.summary}</p>}
+              {data.glossary && (
+                <div class="term-definition">
+                  <p class="term-definition__term">
+                    <dfn>{data.glossary.term}</dfn>
+                  </p>
+                  <p>{data.glossary.definition}</p>
+                </div>
+              )}
+            </section>
+          </div>
+        )
+      }
+      <slot />
+    </div>
+  </div>
   {
-    showSummary && (data.summary || data.glossary) && (
-      <div class="wrap reading">
-        <section class="summary-box" aria-labelledby="summary-heading">
-          <h2 id="summary-heading">In het kort</h2>
-          {data.summary && <p>{data.summary}</p>}
-          {data.glossary && (
-            <p>
-              <dfn>{data.glossary.term}</dfn>: {data.glossary.definition}
-            </p>
-          )}
-        </section>
-      </div>
-    )
+    /* The rail stays beside the running text. Bands (examples, questions, reflection, a
+      personal note) and everything after them run full width, so the rail never floats
+      over a coloured band. */
   }
-  <slot />
+  <slot name="after" />
   <RelatedContent items={related} />
   {showSources && <SourceList sources={data.sources} />}
   {
-    showHelp && (
-      <div class="wrap reading section--tight">
-        <HelpBlock />
-      </div>
+    articleType && (
+      <ArticleMeta
+        author={data.author}
+        publishedAt={data.publishedAt}
+        updatedAt={data.updatedAt}
+        locale={data.locale}
+      />
     )
   }
+  {showHelp && <HelpBlock />}
 </BaseLayout>

@@ -23,7 +23,7 @@ usage:
 safety: 'Denk eerst na over wie je post, mail, telefoon, computer of cloud kan zien, voordat je documenten opzoekt. Voelt dat niet veilig, verzamel dan niets en verander geen gedeelde rekeningen of wachtwoorden. Verzamel geen bewijs in het geheim. Vraag eerst advies. Bij direct gevaar bel je 112.'
 card:
   title: 'Financieel overzicht en veiligheid'
-  intro: 'Veiligheid gaat voor een overzicht. Je mag alles overslaan. Dit is geen test en geen bewijs.'
+  intro: 'Veiligheid gaat voor een overzicht. Je mag alles overslaan.'
   prompts:
     - question: 'Ik weet wie mijn post, mail, telefoon of computer kan openen.'
       hint: 'Denk ook aan een gedeeld cloudaccount. Weet je het niet, vink niet aan en stop met zoeken.'
@@ -57,7 +57,7 @@ card:
       hint: 'Een stap overslaan kan de veiligere keuze zijn.'
       kind: lines
       lines: 2
-  closing: 'Bewaar deze kaart alleen op een plek die van jou is. Verzamel geen bewijs in het geheim en verander geen gedeelde toegang als dat onveilig kan zijn. Bij direct gevaar bel je 112.'
+  closing: 'Bewaar deze kaart alleen op een plek die van jou is. Bij direct gevaar bel je 112.'
 related: [geld-praten, financieel-overzicht, financieel-herstel, financieel-advies, hulp-vinden]
 sources:
   - label: 'Movisie — Financiële kwetsbaarheid en huiselijk geweld en kindermishandeling'

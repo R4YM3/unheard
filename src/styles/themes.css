@@ -1,88 +1,154 @@
-/* Semantic tokens. Light is the default; dark applies via data-theme (set before first paint). */
+/* Semantic tokens. Light is the default; dark applies via data-theme (set before first paint).
+   Light = "licht en zacht" (off-white, paper, two olive steps; sage and terracotta as ink and accent). Dark = "bosgroen" (forest, cream, ochre).
+   Every text/background pair below meets WCAG AA (4.5:1); field borders meet 3:1. */
 :root,
 [data-theme='light'] {
   color-scheme: light;
   --bg: var(--palette-paper);
   --surface: var(--palette-paper-light);
-  --text: var(--palette-text-light);
-  --muted: var(--palette-ink-500);
-  --border: var(--palette-grey-300);
-  --action: var(--palette-terracotta);
+  --text: var(--palette-ink);
+  --muted: var(--palette-ink-muted);
+  --border: var(--palette-line);
+  --border-strong: var(--palette-line-strong);
+
+  /* Primary buttons are calm ink; terracotta is reserved for links and the exit. */
+  --action: var(--palette-ink);
   --action-text: #fff;
+  --accent: var(--palette-terracotta);
+  --accent-text: #fff;
   --focus: var(--palette-terracotta);
   --link: var(--palette-terracotta-900);
-  --safe: var(--palette-sage-100);
-  --safe-border: var(--palette-sage-300);
-  --children: var(--palette-sage-150);
-  --therapy: #f5f0eb;
-  --story: #f9f8f3;
+  --help: var(--palette-sage-700);
+  --help-text: #fff;
+  --brand-dot: var(--palette-terracotta);
+
+  /* Two band steps of one soft olive: light (rest, help, hero) and deeper (depth, lists). */
+  --safe: var(--palette-olive);
+  --safe-border: var(--palette-olive-line);
+  --children: var(--palette-olive);
+  --therapy: var(--palette-olive-deep);
+  --story: var(--palette-paper-light);
   --paper-section: var(--palette-paper);
-  --tension: var(--palette-paper-warm);
-  --tension-border: var(--palette-clay-300);
-  --tension-edge: var(--palette-terracotta-500);
-  --tension-section: #eee9e3;
+  --tension: var(--palette-paper-light);
+  --tension-border: var(--palette-line);
+  --tension-edge: var(--palette-sage-700);
+  --tension-section: var(--palette-olive-deep);
+  --tint: var(--palette-olive-deep);
   --badge: var(--palette-sage-200);
-  --badge-text: var(--palette-text-light);
+  --badge-text: var(--palette-ink);
   --review-mark: #fbe6c9;
 
-  /* Dark "chrome" bands (header, heroes, closing) stay dark in both themes. */
-  --chrome-bg: var(--palette-ink-800);
-  --chrome-bg-strong: var(--palette-ink-900);
-  --chrome-text: var(--palette-text-dark);
-  --chrome-muted: #d7ded8;
-  --chrome-eyebrow: var(--palette-grey-200);
-  --chrome-border: var(--palette-ink-600);
-  --chrome-control: var(--palette-ink-700);
-  --chrome-control-hover: var(--palette-forest);
-  --chrome-control-border: var(--palette-grey-400);
+  /* Header and page heroes are light: the page should feel open, not heavy. */
+  --header-bg: var(--palette-paper-light);
+  --header-text: var(--palette-ink);
+  --header-border: var(--palette-line);
+  --control-bg: var(--palette-paper-light);
+  --control-border: var(--palette-line-strong);
+  --control-hover: var(--palette-olive);
+  /* The hero is its own band (olive): never the page colour, so it never runs into the block below. */
+  --hero-bg: var(--palette-olive);
+  --hero-text: var(--palette-ink);
+  --hero-muted: var(--palette-ink-soft);
+  --hero-eyebrow: var(--palette-sage-700);
+
+  /* One deep band for the closing help section. */
+  --band-bg: var(--palette-sage-700);
+  --band-text: var(--palette-paper-light);
+  --band-muted: var(--palette-sage-200);
+  --band-link: #fff;
+
+  --footer-bg: var(--palette-olive-deep);
+  --footer-text: var(--palette-ink);
+  --footer-muted: var(--palette-ink-muted);
+  --footer-border: var(--palette-line);
+
+  /* Decorative landscape in the hero frame */
+  --art-sky: #e9e2d4;
+  --art-sun: #d9a57f;
+  --art-hill-1: #c9d6cc;
+  --art-hill-2: #a8bfae;
+  --art-hill-3: #6f8f7c;
 
   /* Perspective switch */
-  --tab-bg: var(--palette-sage-100);
-  --tab-text: var(--palette-text-light);
-  --tab-active-bg: var(--palette-forest);
+  --tab-bg: var(--palette-olive);
+  --tab-text: var(--palette-ink);
+  --tab-active-bg: var(--palette-sage-700);
   --tab-active-text: #fff;
   --scene-pressed: var(--palette-sage-200);
-  --scene-pressed-border: var(--palette-forest);
-  --inside-bg: var(--palette-ink-800);
-  --inside-text: var(--palette-paper);
-  --inside-eyebrow: var(--palette-grey-150);
+  --scene-pressed-border: var(--palette-sage-700);
+  --inside-bg: var(--palette-sage-700);
+  --inside-text: var(--palette-paper-light);
+  --inside-eyebrow: var(--palette-sage-200);
 }
 
 [data-theme='dark'] {
   color-scheme: dark;
-  --bg: var(--palette-ink-850);
-  --surface: var(--palette-ink-750);
-  --text: var(--palette-text-dark);
-  --muted: #d1d9d1;
-  --border: var(--palette-grey-400);
-  --action: var(--palette-terracotta-300);
-  --action-text: #1c211f;
-  --focus: var(--palette-terracotta-300);
-  --link: var(--palette-terracotta-100);
-  --safe: var(--palette-sage-700);
-  --safe-border: #5d7265;
-  --children: #304039;
-  --therapy: #3b3530;
-  --story: var(--palette-ink-750);
-  --paper-section: var(--palette-ink-850);
-  --tension: #3e302b;
-  --tension-border: var(--palette-clay-500);
-  --tension-edge: var(--palette-terracotta-300);
-  --tension-section: #302d2a;
-  --badge: var(--palette-sage-700);
-  --badge-text: var(--palette-text-dark);
+  --bg: var(--palette-forest-950);
+  --surface: var(--palette-forest-900);
+  --text: var(--palette-cream);
+  --muted: var(--palette-cream-muted);
+  --border: var(--palette-forest-line);
+  --border-strong: var(--palette-forest-line-strong);
+
+  --action: var(--palette-cream);
+  --action-text: var(--palette-forest-950);
+  --accent: var(--palette-ochre);
+  --accent-text: var(--palette-ochre-ink);
+  --focus: var(--palette-ochre);
+  --link: var(--palette-ochre-300);
+  --help: var(--palette-cream);
+  --help-text: var(--palette-forest-950);
+  --brand-dot: var(--palette-ochre);
+
+  --safe: #284238;
+  --safe-border: var(--palette-forest-line);
+  --children: var(--palette-forest-800);
+  --therapy: var(--palette-forest-900);
+  --story: var(--palette-forest-900);
+  --paper-section: var(--palette-forest-950);
+  --tension: var(--palette-forest-900);
+  --tension-border: var(--palette-forest-line);
+  --tension-edge: var(--palette-sage-300);
+  --tension-section: #20342d;
+  --tint: #20342d;
+  --badge: var(--palette-forest-800);
+  --badge-text: var(--palette-cream);
   --review-mark: #5a4630;
 
-  --chrome-bg: var(--palette-ink-800);
-  --chrome-bg-strong: var(--palette-ink-900);
+  --header-bg: var(--palette-forest-900);
+  --header-text: var(--palette-cream);
+  --header-border: var(--palette-forest-line);
+  --control-bg: var(--palette-forest-900);
+  --control-border: var(--palette-forest-line-strong);
+  --control-hover: var(--palette-forest-800);
+  --hero-bg: var(--palette-forest-850);
+  --hero-text: var(--palette-cream);
+  --hero-muted: var(--palette-cream-muted);
+  --hero-eyebrow: var(--palette-sage-300);
 
-  --tab-bg: var(--palette-sage-700);
-  --tab-text: var(--palette-text-dark);
-  --tab-active-bg: var(--palette-forest-300);
-  --tab-active-text: var(--palette-ink-850);
-  --scene-pressed: var(--palette-sage-700);
-  --scene-pressed-border: var(--palette-forest-300);
-  --inside-bg: var(--palette-ink-950);
-  --inside-text: var(--palette-text-dark);
-  --inside-eyebrow: var(--palette-grey-150);
+  --band-bg: var(--palette-forest-800);
+  --band-text: var(--palette-cream);
+  --band-muted: var(--palette-cream-muted);
+  --band-link: var(--palette-ochre-300);
+
+  --footer-bg: var(--palette-forest-975);
+  --footer-text: var(--palette-cream);
+  --footer-muted: var(--palette-cream-muted);
+  --footer-border: var(--palette-forest-line);
+
+  --art-sky: #2d4c40;
+  --art-sun: #e0b464;
+  --art-hill-1: #3d5f50;
+  --art-hill-2: #2a463a;
+  --art-hill-3: #8fa99a;
+
+  --tab-bg: var(--palette-forest-800);
+  --tab-text: var(--palette-cream);
+  --tab-active-bg: var(--palette-sage-300);
+  --tab-active-text: var(--palette-forest-950);
+  --scene-pressed: var(--palette-forest-800);
+  --scene-pressed-border: var(--palette-sage-300);
+  --inside-bg: var(--palette-forest-975);
+  --inside-text: var(--palette-cream);
+  --inside-eyebrow: var(--palette-sage-300);
 }

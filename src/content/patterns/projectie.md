@@ -25,10 +25,10 @@ sources:
     publisher: 'American Psychological Association'
     url: 'https://dictionary.apa.org/defense-mechanism'
     checkedAt: 2026-10-20
-  - label: 'Factsheet emotioneel of psychisch geweld — definitie van huiselijk geweld, inclusief psychisch geweld en machtsverschil'
+  - label: 'Factsheet partner- en ex-partnergeweld — alle vormen van geweld tussen (ex-)partners, waaronder emotioneel en psychisch geweld'
     publisher: 'Huiselijkgeweld.nl (ministerie van VWS)'
-    url: 'https://www.huiselijkgeweld.nl/factsheets/e/emotioneel-geweld'
-    checkedAt: 2026-10-20
+    url: 'https://www.huiselijkgeweld.nl/factsheets/p/partner-en-ex-partnergeweld'
+    checkedAt: 2026-11-04
 ---
 
 ## Wat is projectie?

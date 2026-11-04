@@ -1,14 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HelpBlock from '../components/HelpBlock.astro';
+
+const routes = [
+  { href: 'nl/wat-voel-ik/', title: 'Wat voel ik?', text: 'Begin bij een gevoel dat je herkent.' },
+  {
+    href: 'nl/begrijp-het/',
+    title: 'Begrijp het',
+    text: 'Uitleg over patronen, begrippen en financieel misbruik.',
+  },
+  {
+    href: 'nl/hulp-vinden/',
+    title: 'Hulp vinden',
+    text: 'Waar je terechtkunt, van direct gevaar tot advies.',
+  },
+];
 ---
 
-<BaseLayout title="Pagina niet gevonden" description="Deze pagina bestaat niet of is verplaatst."
-  ><section class="section">
+<BaseLayout title="Pagina niet gevonden" description="Deze pagina bestaat niet of is verplaatst.">
+  <section class="hero page-hero">
     <div class="wrap reading">
-      <h1>Deze pagina kan ik niet vinden.</h1><p>Misschien is de inhoud nog niet gepubliceerd.</p><a
-        class="button"
-        href="nl/">Naar de startpagina</a
-      >
+      <h1>Deze pagina kan ik niet vinden.</h1>
+      <p class="lead">
+        Misschien is de link oud, of is de pagina nog niet gepubliceerd. Zoek wat je nodig hebt, of
+        begin bij een van deze routes.
+      </p>
+      <form class="not-found-search" action="nl/zoeken/" method="get" role="search">
+        <label for="not-found-q">Zoek op deze site</label>
+        <div>
+          <input id="not-found-q" type="search" name="q" autocomplete="off" spellcheck="false" />
+          <button class="button" type="submit">Zoeken</button>
+        </div>
+      </form>
     </div>
-  </section></BaseLayout
->
+  </section>
+  <section class="section section--tint" aria-labelledby="routes-heading">
+    <div class="wrap">
+      <h2 id="routes-heading">Waar wil je beginnen?</h2>
+      <div class="grid grid--3">
+        {
+          routes.map((route) => (
+            <a class="card" href={route.href}>
+              <h3>{route.title}</h3>
+              <p>{route.text}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <HelpBlock />
+</BaseLayout>

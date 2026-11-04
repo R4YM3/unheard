@@ -63,7 +63,7 @@ for (const file of files) {
     if (!html.includes(robotsNoIndex)) bad.push(`${file}: root redirect must stay noindex`);
     if (!html.includes('class="spinner"'))
       bad.push(`${file}: root redirect is missing its loading indicator`);
-    if (!/background:\s*#242a29/.test(html))
+    if (!/background:\s*#f6f2ea/.test(html))
       bad.push(`${file}: root redirect must retain the site-colour background`);
     if (!html.includes('setTimeout(()=>location.replace(target),450)'))
       bad.push(`${file}: root redirect is missing its controlled hand-off`);
@@ -88,7 +88,8 @@ for (const file of files) {
   if ((html.match(/name="robots"/g) || []).length > 1)
     bad.push(`${file}: duplicate robots meta tags`);
   if (!root && (html.match(/<h1[ >]/g) || []).length !== 1) bad.push(`${file}: expected one H1`);
-  if (!root && !html.includes('href="#main"')) bad.push(`${file}: missing skip link`);
+  if (!root && !/<a class="skip" href="[^"]*#main"/.test(html))
+    bad.push(`${file}: missing skip link`);
   if (!root && !html.includes('<main id="main"')) bad.push(`${file}: missing main landmark target`);
   if (/<img\b(?![^>]*\balt=)[^>]*>/i.test(html)) bad.push(`${file}: image without alt attribute`);
   if (/<html lang="ar"(?![^>]*\bdir="rtl")/i.test(html))
@@ -101,6 +102,8 @@ for (const file of files) {
     if (key !== 'ongehoord-theme')
       bad.push(`${file}: persistent browser storage is not permitted for ${key}`);
   }
+  for (const glued of html.matchAll(/[\p{L},:]<a\s[^>]*>([^<]{0,30})/gu))
+    bad.push(`${file}: missing space before link “${glued[1]}”`);
 
   if (file.includes('/nl/')) {
     const navigation = html.match(/<nav class="nav"[^>]*>([\s\S]*?)<\/nav>/i)?.[1] ?? '';
@@ -117,10 +120,14 @@ for (const file of files) {
   }
 
   const types = new Set();
+  const schemaNodes = (parsed) => {
+    const items = Array.isArray(parsed) ? parsed : [parsed];
+    return items.flatMap((item) => (Array.isArray(item?.['@graph']) ? item['@graph'] : [item]));
+  };
   for (const block of jsonLdBlocks(html)) {
     try {
       const parsed = JSON.parse(block);
-      for (const item of Array.isArray(parsed) ? parsed : [parsed]) {
+      for (const item of schemaNodes(parsed)) {
         for (const type of [item['@type']].flat()) types.add(type);
         if (item['@type'] === 'BreadcrumbList') {
           const urls = item.itemListElement.map((crumb) => crumb.item);
@@ -143,10 +150,26 @@ for (const file of files) {
     bad.push(`${file}: article missing visible source attribution`);
   if (hasContentArticle && !html.includes('"citation":['))
     bad.push(`${file}: article missing structured-data citations`);
-  if (hasContentArticle && !html.includes('"datePublished":'))
-    bad.push(`${file}: article missing structured-data publication date`);
+  // Structured dates must match a visible date on the page.
+  for (const field of ['datePublished', 'dateModified']) {
+    const date = html.match(new RegExp(`"${field}":"(\\d{4}-\\d{2}-\\d{2})"`))?.[1];
+    if (date && !html.includes(`<time datetime="${date}"`))
+      bad.push(`${file}: ${field} ${date} is not visible on the page`);
+  }
+  if (hasContentArticle && !/"author":\{"@type":"(Organization|Person)"/.test(html))
+    bad.push(`${file}: article author must be an inline Organization or Person`);
+  if (hasContentArticle && !html.includes('"image":{"@type":"ImageObject"'))
+    bad.push(`${file}: article missing image`);
   if (hasContentArticle && file.includes('/begrippen/') && !types.has('DefinedTerm'))
     bad.push(`${file}: concept article missing DefinedTerm JSON-LD`);
+  if (file.includes('/nl/') && !html.includes('"@type":"SearchAction"'))
+    bad.push(`${file}: missing site search action`);
+  if (file.endsWith('/nl/begrippen/index.html') && !types.has('DefinedTermSet'))
+    bad.push(`${file}: glossary index missing DefinedTermSet`);
+  if (file.endsWith('/nl/index.html') && !types.has('ItemList'))
+    bad.push(`${file}: home missing ItemList`);
+  if (file.includes('/nl/') && !html.includes('geen hulporganisatie'))
+    bad.push(`${file}: organization description does not match the visible footer`);
 
   const headingLevels = [...html.matchAll(/<h([1-6])\b/gi)].map((match) => Number(match[1]));
   for (let index = 1; index < headingLevels.length; index += 1) {
@@ -181,6 +204,28 @@ for (const file of files) {
     if (!publishedRoutes.has(route))
       bad.push(`${file}: broken internal link ${href} (resolved ${route})`);
   }
+}
+// Bundled client scripts: no network calls, no storage beyond the theme choice.
+for (const file of (await walk('dist')).filter((name) => name.endsWith('.js'))) {
+  const js = await readFile(file, 'utf8');
+  for (const [pattern, reason] of [
+    [/\bfetch\s*\(|XMLHttpRequest|sendBeacon|WebSocket|EventSource/, 'network request'],
+    [/sessionStorage|indexedDB|document\.cookie/, 'browser storage'],
+  ])
+    if (pattern.test(js)) bad.push(`${file}: client script contains a ${reason}`);
+  for (const key of localStorageKeys(js))
+    if (key !== 'ongehoord-theme') bad.push(`${file}: persistent storage for ${key}`);
+}
+const finderPage = 'dist/nl/hulpmiddelen/help-me-woorden-vinden/index.html';
+const finderHtml = await readFile(finderPage, 'utf8').catch(() => '');
+if (!finderHtml) bad.push(`${finderPage}: word finder page missing`);
+else {
+  for (const required of ['tel:112', 'tel:113', 'tel:08002000', 'data-finder-data'])
+    if (!finderHtml.includes(required)) bad.push(`${finderPage}: missing ${required}`);
+  if (!/<form class="finder-form" method="dialog"/.test(finderHtml))
+    bad.push(`${finderPage}: answers must never submit as a GET/POST request`);
+  if (!/data-finder-controls hidden/.test(finderHtml))
+    bad.push(`${finderPage}: step controls must be hidden without JavaScript`);
 }
 const sitemapFiles = (await readdir('dist')).filter((name) => /^sitemap.*\.xml$/.test(name));
 for (const name of sitemapFiles) {

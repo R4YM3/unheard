@@ -3,7 +3,7 @@
  * - every page fits 320/375/430/1440 px wide viewports without horizontal scrolling;
  * - without JavaScript, all perspective-switch content, glossary entries and search results
  *   are visible, and enhancement-only controls stay hidden;
- * - with JavaScript, the "Wat ik vanbinnen voel" tab passes axe colour contrast in light and
+ * - with JavaScript, the "Wat je hoort. Wat je voelt." component passes axe colour contrast in light and
  *   dark themes, and the tabs respond to the keyboard.
  */
 import { readdir, readFile } from 'node:fs/promises';
@@ -62,11 +62,15 @@ try {
   await waitForServer();
   browser = await puppeteer.launch({ executablePath: chromePath, headless: true });
 
-  // 1. Narrow viewports, with and without JavaScript.
-  for (const javascript of [true, false]) {
-    const page = await browser.newPage();
-    await page.setJavaScriptEnabled(javascript);
-    for (const width of widths) {
+  // 1. Narrow viewports, with and without JavaScript: each width/JS combination in its own tab,
+  //    all at once.
+  const combinations = [true, false].flatMap((javascript) =>
+    widths.map((width) => ({ javascript, width })),
+  );
+  await Promise.all(
+    combinations.map(async ({ javascript, width }) => {
+      const page = await browser.newPage();
+      await page.setJavaScriptEnabled(javascript);
       await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
       for (const route of routes) {
         await page.goto(`${origin}${route}`, { waitUntil: 'load' });
@@ -83,9 +87,9 @@ try {
             `${route} @${width}px js=${javascript}: horizontal overflow ${overflow.scroll}>${overflow.client} (${overflow.offenders.join(', ')})`,
           );
       }
-    }
-    await page.close();
-  }
+      await page.close();
+    }),
+  );
   console.log(`Viewport checks: ${routes.length} routes × ${widths.length} widths × JS on/off`);
 
   // 2. No-JS content coverage.
@@ -101,9 +105,12 @@ try {
         panels: all('.pv-panel').length,
         hiddenPanels: all('.pv-panel, [data-pv-panel]').filter((element) => !visible(element))
           .length,
-        visibleControls: all('[data-pv-tabs], [data-pv-choice], [data-filter]').filter(visible)
-          .length,
-        hiddenItems: all('[data-filter-item]').filter((element) => !visible(element)).length,
+        visibleControls: all(
+          '[data-pv-tabs], [data-pv-choice], [data-filter], [data-finder-controls]',
+        ).filter(visible).length,
+        hiddenItems: all('[data-filter-item], .finder-step, .finder-all__card').filter(
+          (element) => !visible(element),
+        ).length,
       };
     });
     if (state.hiddenPanels)
@@ -115,56 +122,159 @@ try {
   await noJs.close();
   console.log('No-JS checks done');
 
-  // 3. Perspective tabs: keyboard and contrast of the inside panel in both themes.
+  // 3. Perspective: both sides visible, example buttons work, contrast in both themes.
   const pvRoutes = [];
   for (const route of routes) {
     const html = await readFile(join('dist', route, 'index.html'), 'utf8').catch(() => '');
     if (html.includes('data-pv')) pvRoutes.push(route);
   }
-  for (const theme of ['light', 'dark']) {
+  // Both themes at once, three tabs each, sharing one queue of routes per theme.
+  const checkPerspective = async (theme, queue) => {
     const page = await browser.newPage();
     await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: theme }]);
     await page.evaluateOnNewDocument(
       (choice) => globalThis.localStorage.setItem('ongehoord-theme', choice),
       theme,
     );
-    for (const route of pvRoutes) {
+    while (queue.length > 0) {
+      const route = queue.shift();
       await page.goto(`${origin}${route}`, { waitUntil: 'networkidle0' });
-      const outside = await page.$('[data-pv-side="outside"]');
-      if (!outside) {
-        failures.push(`${route}: perspective switch not enhanced`);
-        continue;
+      // Both sides of a scenario are always visible together.
+      const sides = await page.$$eval(
+        '[data-pv-panel]:not([hidden]) .pv-line',
+        (lines) =>
+          lines.filter((line) => globalThis.getComputedStyle(line).display !== 'none').length,
+      );
+      if (sides !== 2)
+        failures.push(`${route} ${theme}: expected both sides visible, saw ${sides}`);
+      const buttons = await page.$$('[data-pv-scene]');
+      if (buttons.length > 1) {
+        await buttons[1].focus();
+        await page.keyboard.press('Enter');
+        const state = await page.evaluate(() => ({
+          pressed: globalThis.document
+            .querySelectorAll('[data-pv-scene]')[1]
+            .getAttribute('aria-pressed'),
+          shown: [...globalThis.document.querySelectorAll('[data-pv-panel]')]
+            .filter((panel) => !panel.hidden)
+            .map((panel) => panel.dataset.pvPanel),
+        }));
+        if (state.pressed !== 'true' || state.shown.join() !== '1')
+          failures.push(`${route} ${theme}: choosing the second example did not show it alone`);
       }
-      await outside.focus();
-      await page.keyboard.press('ArrowRight');
-      const selected = await page.$eval('[data-pv-side="inside"]', (element) =>
-        element.getAttribute('aria-selected'),
-      );
-      if (selected !== 'true')
-        failures.push(`${route} ${theme}: ArrowRight did not select inside tab`);
-      const insideVisible = await page.$eval(
-        '[data-pv-panel]:not([hidden]) .pv-panel--inside',
-        (el) => !el.hidden && globalThis.getComputedStyle(el).display !== 'none',
-      );
-      if (!insideVisible)
-        failures.push(`${route} ${theme}: inside panel not shown after selecting tab`);
       await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
       const result = await page.evaluate(() =>
         globalThis.axe.run(globalThis.document.querySelector('.pv'), {
           runOnly: {
             type: 'rule',
-            values: ['color-contrast', 'aria-required-children', 'aria-valid-attr-value'],
+            values: ['color-contrast', 'aria-valid-attr-value', 'button-name'],
           },
         }),
       );
       for (const violation of result.violations)
         failures.push(
-          `${route} ${theme} inside tab: ${violation.id} at ${violation.nodes.map((node) => node.target.join(' ')).join(', ')}`,
+          `${route} ${theme} perspective: ${violation.id} at ${violation.nodes.map((node) => node.target.join(' ')).join(', ')}`,
         );
     }
     await page.close();
-  }
+  };
+  await Promise.all(
+    ['light', 'dark'].flatMap((theme) => {
+      const queue = [...pvRoutes];
+      return [1, 2, 3].map(() => checkPerspective(theme, queue));
+    }),
+  );
   console.log(`Perspective checks: ${pvRoutes.length} routes × 2 themes`);
+
+  // 4. Word finder: keyboard-only route, overview, privacy and contrast in both themes.
+  const finderRoute = '/nl/hulpmiddelen/help-me-woorden-vinden/';
+  for (const theme of ['light', 'dark']) {
+    const page = await browser.newPage();
+    await page.setViewport({ width: 375, height: 800 });
+    await page.emulateMediaFeatures([
+      { name: 'prefers-color-scheme', value: theme },
+      { name: 'prefers-reduced-motion', value: 'reduce' },
+    ]);
+    await page.evaluateOnNewDocument(
+      (choice) => globalThis.localStorage.setItem('ongehoord-theme', choice),
+      theme,
+    );
+    await page.goto(`${origin}${finderRoute}`, { waitUntil: 'networkidle0' });
+    const lateRequests = [];
+    page.on('request', (request) => lateRequests.push(request.url()));
+    const fail = (message) => failures.push(`${finderRoute} ${theme}: ${message}`);
+    const press = async (selector, key = 'Space') => {
+      await page.focus(selector);
+      await page.keyboard.press(key);
+    };
+    const visibleStep = () =>
+      page.$$eval('[data-step]', (steps) =>
+        steps.filter((step) => !step.hidden).map((step) => step.dataset.step),
+      );
+    if ((await visibleStep()).join() !== '0') fail('expected only the first question');
+    await press('input[value="twijfel"]');
+    await press('[data-finder-next]', 'Enter');
+    const focused = await page.evaluate(() =>
+      globalThis.document.activeElement?.hasAttribute('data-step-focus'),
+    );
+    if (!focused) fail('focus did not move to the next question');
+    await press('[data-finder-skip]', 'Enter');
+    await press('[data-finder-prev]', 'Enter');
+    if ((await visibleStep()).join() !== '1') fail('back button did not return a step');
+    for (let step = 1; step < 4; step += 1) await press('[data-finder-next]', 'Enter');
+    await press('input[value="geen-zicht"]');
+    await press('[data-finder-next]', 'Enter');
+    await press('input[value="niet-veilig"]');
+    await press('[data-finder-next]', 'Enter');
+    const overview = await page.evaluate(() => {
+      const doc = globalThis.document;
+      const result = doc.querySelector('[data-finder-result]');
+      return {
+        shown: !result.hidden,
+        focus: doc.activeElement?.id,
+        text: result.innerText,
+        url: globalThis.location.href,
+        storage: Object.keys(globalThis.localStorage).filter((key) => key !== 'ongehoord-theme'),
+        session: Object.keys(globalThis.sessionStorage),
+        links: [...result.querySelectorAll('a[href^="nl/"]')].map((link) => link.href),
+      };
+    });
+    if (!overview.shown) fail('overview did not appear');
+    if (overview.focus !== 'finder-result-heading') fail('focus did not move to the overview');
+    for (const expected of [
+      'Eerst je veiligheid',
+      'Wat je herkende',
+      'Vragen om bij stil te staan',
+    ])
+      if (!overview.text.includes(expected)) fail(`overview misses “${expected}”`);
+    const verdict = overview.text
+      .replace(/geen (?:uitslag|score)/gi, '')
+      .match(/\d+\s?%|\bscore\b|\buitslag\b/i);
+    if (verdict) fail(`overview contains a score or percentage (“${verdict[0]}”)`);
+    if (overview.url !== `${origin}${finderRoute}`) fail('answers leaked into the URL');
+    if (overview.storage.length || overview.session.length) fail('answers were stored');
+    if (lateRequests.length) fail(`network requests during the route: ${lateRequests.join(', ')}`);
+    for (const link of overview.links) {
+      const response = await fetch(link);
+      if (!response.ok) fail(`overview link ${link} returned ${response.status}`);
+    }
+    await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
+    const axe = await page.evaluate(() =>
+      globalThis.axe.run(globalThis.document.querySelector('[data-finder]'), {
+        runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'] },
+      }),
+    );
+    for (const violation of axe.violations)
+      fail(`${violation.id} at ${violation.nodes.map((node) => node.target.join(' ')).join(', ')}`);
+    await press('[data-finder-clear]', 'Enter');
+    const cleared = await page.evaluate(() => ({
+      checked: globalThis.document.querySelectorAll('[data-finder] input:checked').length,
+      resultHidden: globalThis.document.querySelector('[data-finder-result]').hidden,
+    }));
+    if (cleared.checked || !cleared.resultHidden) fail('“Wis alles” did not clear the answers');
+    await page.close();
+  }
+  console.log('Word finder checks: keyboard route, privacy and contrast × 2 themes');
 } finally {
   await browser?.close();
   server.kill();

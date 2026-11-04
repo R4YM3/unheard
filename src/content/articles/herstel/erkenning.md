@@ -85,4 +85,4 @@ Juist voor mannen kan dit lastig zijn. Wie heeft geleerd dat je sterk moet zijn 
 
 Als je merkt dat twijfel aan je eigen herinnering je blijft achtervolgen, lees dan verder over [vertrouwen in je eigen waarneming](nl/herstel/zelfvertrouwen/). En als het verlies van wat je hoopte te hebben zwaar weegt, kan [rouw](nl/herstel/rouw/) een passend volgend onderwerp zijn.
 
-Merk je dat klachten als somberheid of slecht slapen blijven, dan kun je dat bij je huisarts bespreken. Zorgen over je veiligheid kun je gratis en anoniem bespreken met Veilig Thuis via [0800-2000](tel:08002000).
+Merk je dat klachten als somberheid of slecht slapen blijven, dan kun je dat bij je huisarts bespreken.

@@ -82,5 +82,3 @@ Soms wordt na de ene behandeling een andere geprobeerd. Dat zegt iets over wat b
 Daar is geen zelftest voor, en deze site geeft geen behandeladvies. Misschien merk je dat je bepaalde herinneringen, plekken of gesprekken vermijdt omdat ze te veel oproepen. Dat is een begrijpelijke reactie, en het kan een goed begin zijn van een gesprek. Het is geen automatische reden voor exposure.
 
 Begin bij je huisarts of de praktijkondersteuner (POH-GGZ). Vertel wat je ervaart en wat je eerder hebt geprobeerd, ook als een eerdere behandeling niet genoeg voelde. Dat is waardevolle informatie voor wie met je meedenkt.
-
-Voel je je onveilig in je relatie of thuis? Bel dan gratis en anoniem met Veilig Thuis: [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).

@@ -1,19 +1,23 @@
 ---
+import { localeFromPath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 import type { LinkCard } from '../lib/content';
 import CardGrid from './CardGrid.astro';
 
+type RelatedItem = Pick<LinkCard, 'href' | 'title' | 'text'> &
+  Partial<Pick<LinkCard, 'eyebrow' | 'collection'>>;
 interface Props {
-  items: LinkCard[];
+  items: RelatedItem[];
   heading?: string;
 }
-const { items, heading = 'Verder lezen' } = Astro.props;
+const t = ui(localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL));
+const { items, heading = t.readMore } = Astro.props;
 ---
 
 {
   items.length > 0 && (
-    <section class="section section--soft" aria-labelledby="related-heading" id="gerelateerd">
+    <section class="section section--tint" aria-labelledby="related-heading" id="gerelateerd">
       <div class="wrap">
-        <p class="eyebrow">Gerelateerd</p>
         <h2 id="related-heading">{heading}</h2>
         <CardGrid
           items={items.map((item) => ({

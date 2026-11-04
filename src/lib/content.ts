@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
 
 export const routedCollections = [
   'emotions',
@@ -97,6 +98,15 @@ export const findByKey = async (locale: Locale | string, translationKey: string)
     (entry) => entry.data.locale === locale && entry.data.translationKey === translationKey,
   );
 
+export const glossaryCategoryLabels: Record<string, string> = {
+  patroon: 'Patroon',
+  controle: 'Controle',
+  financieel: 'Financieel',
+  impact: 'Mogelijke impact',
+  labels: 'Labels en diagnoses',
+  basis: 'Basisbegrip',
+};
+
 export interface LinkCard {
   href: string;
   title: string;
@@ -105,18 +115,30 @@ export interface LinkCard {
   collection: RoutedCollection;
 }
 
-export const cardFor = (entry: RoutedEntry): LinkCard => ({
-  href: routeFor(entry),
-  title: entry.data.cardTitle ?? entry.data.title,
-  text: entry.data.cardText ?? entry.data.description,
-  eyebrow:
-    entry.collection === 'emotions'
-      ? `Gevoel · ${entry.data.feeling}`
-      : entry.collection === 'therapies'
-        ? `Therapievorm · ${entry.data.name}`
-        : collectionLabels[entry.collection],
-  collection: entry.collection,
-});
+export const cardFor = (entry: RoutedEntry): LinkCard => {
+  const glossary = entry.data.glossary;
+  if (entry.collection === 'patterns' && glossary) {
+    return {
+      href: routeFor(entry),
+      title: glossary.term,
+      text: glossary.definition,
+      eyebrow: glossaryCategoryLabels[glossary.category] ?? collectionLabels.patterns,
+      collection: entry.collection,
+    };
+  }
+  return {
+    href: routeFor(entry),
+    title: entry.data.cardTitle ?? entry.data.title,
+    text: entry.data.cardText ?? entry.data.description,
+    eyebrow:
+      entry.collection === 'emotions'
+        ? `${ui(entry.data.locale).feeling} · ${entry.data.feeling}`
+        : entry.collection === 'therapies'
+          ? `Therapievorm · ${entry.data.name}`
+          : ui(entry.data.locale).collections[entry.collection],
+    collection: entry.collection,
+  };
+};
 
 /** Related entries in declared order; planned-but-unpublished keys are skipped. */
 export const resolveRelated = async (entry: RoutedEntry) => {
@@ -133,7 +155,7 @@ export const resolveRelated = async (entry: RoutedEntry) => {
     .map(cardFor);
 };
 
-const byOrder = (a: RoutedEntry, b: RoutedEntry) =>
+export const byOrder = (a: RoutedEntry, b: RoutedEntry) =>
   (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title, 'nl');
 
 /** Published entries of a collection; with a prefix, only direct children (`prefix/<segment>`). */
@@ -186,16 +208,8 @@ export const glossaryItems = async (locale: Locale | string): Promise<GlossaryIt
     })
     .sort((a, b) => a.term.localeCompare(b.term, 'nl', { sensitivity: 'base' }));
 
-export const glossaryCategoryLabels: Record<string, string> = {
-  patroon: 'Patroon',
-  controle: 'Controle',
-  financieel: 'Financieel',
-  impact: 'Mogelijke impact',
-  labels: 'Labels en diagnoses',
-  basis: 'Basisbegrip',
-};
-
 export interface SearchItem extends LinkCard {
+  key: string;
   keywords: string;
 }
 
@@ -211,12 +225,15 @@ export const searchItems = async (locale: Locale | string): Promise<SearchItem[]
     .sort(byOrder)
     .map((entry) => ({
       ...cardFor(entry),
+      key: entry.data.translationKey,
       keywords: [
         entry.data.title,
         entry.data.cardTitle,
         entry.data.description,
         entry.data.glossary?.term,
         ...(entry.data.glossary?.aliases ?? []),
+        /* Chapter headings make the search find pages by what they cover, not only their title. */
+        ...[...(entry.body ?? '').matchAll(/^#{2,3}\s+(.+)$/gm)].map((match) => match[1]),
       ]
         .filter(Boolean)
         .join(' ')
@@ -234,13 +251,13 @@ export const authorLabels = {
   editorial: 'Ongehoord (algemene uitleg)',
 } as const;
 
-const dateFormat = new Intl.DateTimeFormat('nl-NL', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-  timeZone: 'UTC',
-});
-export const formatDate = (date: Date) => dateFormat.format(date);
+export const formatDate = (date: Date, locale: Locale = 'nl') =>
+  new Intl.DateTimeFormat(ui(locale).dateLocale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
 export const isoDate = (date: Date) => date.toISOString().slice(0, 10);
 
 /** Hub titles used to build breadcrumbs from route segments. */
@@ -248,7 +265,7 @@ export const breadcrumbsFor = async (entry: RoutedEntry) => {
   const published = await getPublishedEntries();
   const segments = entry.data.slug.split('/');
   const crumbs: Array<{ href: string; label: string }> = [
-    { href: `${entry.data.locale}/`, label: 'Home' },
+    { href: `${entry.data.locale}/`, label: ui(entry.data.locale).home },
   ];
   if (entry.data.translationKey === 'home') return crumbs;
   for (let index = 1; index < segments.length; index += 1) {

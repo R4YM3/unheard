@@ -1,0 +1,194 @@
+/**
+ * Interface strings per locale. Content lives in src/content; these are the words the
+ * templates add around it (navigation, labels, accessible names). EN and AR are drafts
+ * until a translation is approved; keep keys identical across locales.
+ */
+import type { Locale } from './config';
+
+const nl = {
+  home: 'Home',
+  mainNavigation: 'Hoofdnavigatie',
+  openMenu: 'Menu openen',
+  breadcrumb: 'Kruimelpad',
+  pageNavigation: 'Paginanavigatie',
+  onThisPage: 'Op deze pagina',
+  otherFeelings: 'Andere gevoelens',
+  allFeelings: (count: number) => `Alle ${count} gevoelens`,
+  readOnIn: (group: string) => `Verder lezen in ${group}`,
+  previousIn: (group: string) => `Vorige in ${group}`,
+  nextIn: (group: string) => `Volgende in ${group}`,
+  search: 'Zoeken',
+  darkMode: 'Donkere modus',
+  perspectiveHeading: 'Wat je hoort. Wat je voelt.',
+  perspectiveIntro:
+    'Hetzelfde moment, van twee kanten. Dit zijn fictieve voorbeelden, geen diagnoses.',
+  youHear: 'Je hoort',
+  youFeel: 'Je voelt',
+  chooseExample: 'Kies een voorbeeld',
+  warmLine: 'Van jou mag ook gehouden worden.',
+  writtenBy: 'Geschreven door',
+  overview: 'Overzicht',
+  byFounder: 'de oprichter van Ongehoord',
+  byEditorial: 'de redactie van Ongehoord',
+  publishedOn: 'gepubliceerd op',
+  updatedOn: 'bijgewerkt op',
+  skipToContent: 'Direct naar inhoud',
+  safeExit: 'Verlaat site',
+  siteNotice:
+    'Deze site is een conceptversie en is nog niet inhoudelijk gecontroleerd. Lees haar als oriëntatie, niet als advies.',
+  brandDescription:
+    'Voor alles wat je voelt, maar nog niet kunt verwoorden. Een persoonlijk initiatief van één persoon, geen hulporganisatie.',
+  footerDanger: 'Direct gevaar? Bel',
+  footerWorried: 'Zorgen over huiselijk geweld?',
+  footerAllHelp: 'Alle hulp',
+  footerMeta: (photos: boolean) =>
+    `Conceptsite in ontwikkeling. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.${photos ? ' De foto’s op deze site zijn met AI gemaakt.' : ''}`,
+  shareImageAlt: 'Ongehoord: Je hoeft het nog geen misbruik te noemen.',
+  mobileSuffix: '(mobiel)',
+  draftStatus: 'Conceptversie',
+  inShort: 'In het kort',
+  readMore: 'Verder lezen',
+  readOn: 'Lees verder',
+  sources: 'Bronnen',
+  checkedOn: 'gecontroleerd op',
+  noSources:
+    'Deze pagina beschrijft persoonlijke ervaring of oriëntatie en verwijst niet naar onderzoek. Feitelijke informatie staat op de pagina’s waarnaar wordt verwezen.',
+  alsoGoodToKnow: 'Ook goed om te weten',
+  pagesComingSoon: 'Hier verschijnen binnenkort pagina’s.',
+  reflectionHeading: 'Vragen om bij stil te staan',
+  optional: 'Vrijblijvend',
+  clearAnswers: 'Wis mijn antwoorden',
+  printAnswers: 'Neem mijn antwoorden mee als ik print',
+  reflectionWritableNote:
+    'Wat je hier typt, blijft alleen in dit venster. Ongehoord slaat het niet op en verstuurt het niet. Klik op ‘Wis mijn antwoorden’ als je klaar bent en sluit het tabblad. Op een gedeeld apparaat kun je ook alleen in gedachten antwoorden.',
+  reflectionThinkNote:
+    'Je hoeft niets op te schrijven. Je kunt de vragen ook alleen in gedachten beantwoorden, of ze bewaren voor een gesprek met iemand die je vertrouwt.',
+  feelingsMenu: 'Wat voel ik?',
+  feeling: 'Gevoel',
+  impactHeading: 'Waar je het kunt merken',
+  impactIntro:
+    'Niet iedereen merkt hetzelfde. Herken je een paar dingen, dan zegt dat iets over wat je draagt, niet over wie je bent.',
+  collections: {
+    emotions: 'Gevoel',
+    patterns: 'Begrip',
+    articles: 'Uitleg',
+    therapies: 'Therapievorm',
+    tools: 'Hulpmiddel',
+    hubs: 'Overzicht',
+    story: 'Mijn verhaal',
+  },
+  dateLocale: 'nl-NL',
+};
+
+export type UiStrings = typeof nl;
+
+const en: UiStrings = {
+  home: 'Home',
+  mainNavigation: 'Main navigation',
+  openMenu: 'Open menu',
+  breadcrumb: 'Breadcrumb',
+  pageNavigation: 'Page navigation',
+  onThisPage: 'On this page',
+  otherFeelings: 'Other feelings',
+  allFeelings: (count: number) => `All ${count} feelings`,
+  readOnIn: (group: string) => `Read on in ${group}`,
+  previousIn: (group: string) => `Previous in ${group}`,
+  nextIn: (group: string) => `Next in ${group}`,
+  search: 'Search',
+  darkMode: 'Dark mode',
+  perspectiveHeading: 'What you hear. What you feel.',
+  perspectiveIntro: 'The same moment, from two sides. These are fictional examples, not diagnoses.',
+  youHear: 'You hear',
+  youFeel: 'You feel',
+  chooseExample: 'Choose an example',
+  warmLine: 'You deserve to be loved too.',
+  writtenBy: 'Written by',
+  overview: 'Overview',
+  byFounder: 'the founder of Ongehoord',
+  byEditorial: 'the Ongehoord editors',
+  publishedOn: 'published on',
+  updatedOn: 'updated on',
+  skipToContent: 'Skip to content',
+  safeExit: 'Leave site',
+  siteNotice:
+    'This English edition is an unreviewed translation of a draft site. Read it for orientation, not as advice.',
+  brandDescription:
+    'For everything you feel but cannot yet put into words. A personal initiative by one person, not a support organisation.',
+  footerDanger: 'In immediate danger? Call',
+  footerWorried: 'Worried about domestic violence?',
+  footerAllHelp: 'All help',
+  footerMeta: (photos: boolean) =>
+    `Draft site in development. Examples and terms help you explore patterns; they are not a diagnosis or a judgement of anyone.${photos ? ' The photos on this site were made with AI.' : ''}`,
+  shareImageAlt: 'Unheard: you don’t have to call it abuse yet.',
+  mobileSuffix: '(mobile)',
+  draftStatus: 'Draft',
+  inShort: 'In short',
+  readMore: 'Read more',
+  readOn: 'Read on',
+  sources: 'Sources',
+  checkedOn: 'checked on',
+  noSources:
+    'This page describes personal experience or orientation and does not refer to research. Factual information is on the pages it links to.',
+  alsoGoodToKnow: 'Also good to know',
+  pagesComingSoon: 'Pages will appear here soon.',
+  reflectionHeading: 'Questions to reflect on',
+  optional: 'Optional',
+  clearAnswers: 'Clear my answers',
+  printAnswers: 'Include my answers when I print',
+  reflectionWritableNote:
+    'What you type here stays in this window only. Unheard does not store or send it. Click ‘Clear my answers’ when you are done and close the tab. On a shared device you can also answer in your head.',
+  reflectionThinkNote:
+    'You don’t have to write anything down. You can answer the questions in your head, or keep them for a conversation with someone you trust.',
+  feelingsMenu: 'What do I feel?',
+  feeling: 'Feeling',
+  impactHeading: 'Where you might notice it',
+  impactIntro:
+    'Not everyone notices the same things. If you recognise a few, that says something about what you are carrying, not about who you are.',
+  collections: {
+    emotions: 'Feeling',
+    patterns: 'Term',
+    articles: 'Explainer',
+    therapies: 'Type of therapy',
+    tools: 'Tool',
+    hubs: 'Overview',
+    story: 'My story',
+  },
+  dateLocale: 'en-GB',
+};
+
+/* Arabic is a scaffold: strings not yet translated fall back to English. */
+const ar: UiStrings = {
+  ...en,
+  dateLocale: 'ar',
+  skipToContent: 'انتقل إلى المحتوى',
+  brandDescription: 'مساحة لما تشعر به ولا تستطيع وصفه بعد.',
+  home: 'الصفحة الرئيسية',
+  mainNavigation: 'التنقل الرئيسي',
+  openMenu: 'فتح القائمة',
+  breadcrumb: 'مسار التنقل',
+  pageNavigation: 'التنقل في الصفحة',
+  onThisPage: 'في هذه الصفحة',
+  otherFeelings: 'مشاعر أخرى',
+  allFeelings: (count: number) => `كل المشاعر (${count})`,
+  readOnIn: (group: string) => `تابع القراءة في ${group}`,
+  previousIn: (group: string) => `السابق في ${group}`,
+  nextIn: (group: string) => `التالي في ${group}`,
+  search: 'بحث',
+  darkMode: 'الوضع الداكن',
+  perspectiveHeading: 'ما تسمعه. ما تشعر به.',
+  perspectiveIntro: 'اللحظة نفسها من جانبين. هذه أمثلة خيالية وليست تشخيصًا.',
+  youHear: 'تسمع',
+  youFeel: 'تشعر',
+  chooseExample: 'اختر مثالًا',
+  warmLine: 'أنت أيضًا تستحق أن تُحَب.',
+  writtenBy: 'كتبه',
+  overview: 'نظرة عامة',
+  byFounder: 'مؤسس Ongehoord',
+  byEditorial: 'فريق تحرير Ongehoord',
+  publishedOn: 'نُشر في',
+  updatedOn: 'حُدّث في',
+};
+
+const strings: Record<Locale, UiStrings> = { nl, en, ar };
+
+export const ui = (locale: Locale): UiStrings => strings[locale];

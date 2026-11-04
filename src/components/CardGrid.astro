@@ -1,4 +1,6 @@
 ---
+import { localeFromPath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 export interface GridItem {
   eyebrow?: string;
   title: string;
@@ -15,6 +17,10 @@ interface Props {
 }
 const { items, columns = 3, headingLevel = 3, tone = 'neutral' } = Astro.props;
 const Heading = `h${headingLevel}` as 'h3' | 'h4';
+/* A label that every card in the list shares says nothing: show labels only in mixed lists. */
+const labels = new Set(items.map((item) => item.eyebrow ?? ''));
+const showLabels = labels.size > 1;
+const t = ui(localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL));
 ---
 
 <div class:list={['grid', `grid--${columns}`]}>
@@ -23,12 +29,12 @@ const Heading = `h${headingLevel}` as 'h3' | 'h4';
       const classes = ['card', `card--${item.tone ?? tone}`];
       const inner = (
         <>
-          {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
+          {showLabels && item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
           <Heading>{item.title}</Heading>
           {item.text && <p>{item.text}</p>}
           {item.href && (
             <span class="card-link-label" aria-hidden="true">
-              {item.label ?? 'Lees verder'} →
+              {item.label ?? t.readOn} →
             </span>
           )}
         </>

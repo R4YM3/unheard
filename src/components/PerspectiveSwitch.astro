@@ -1,9 +1,13 @@
 ---
 /**
- * Scenario + perspective switch. Every scenario and both perspectives are rendered in HTML,
- * so the content is readable without JavaScript and in print. The script only enhances it
- * into scene buttons and a two-tab view.
+ * What is said and what it does inside, shown together. Every scenario is rendered in HTML
+ * and readable without JavaScript and in print (all scenarios stacked). With JavaScript the
+ * reader picks one scenario at a time with plain toggle buttons; both sides stay visible,
+ * because seeing them side by side is the point.
  */
+import type { Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
 interface Scenario {
   label: string;
   outside: string;
@@ -18,73 +22,59 @@ interface Props {
   intro?: string;
   outsideLabel?: string;
   insideLabel?: string;
+  locale?: Locale;
 }
-const {
-  scenarios,
-  id = 'perspectief',
-  eyebrow = 'Twee kanten van één gesprek',
-  heading = 'Wat je hoort. Wat je voelt.',
-  intro = 'Dit zijn fictieve voorbeelden, geen diagnoses. Ze laten zien dat wat er gezegd wordt en wat je vanbinnen voelt allebei aandacht verdienen.',
-  outsideLabel = 'Wat er gezegd wordt',
-  insideLabel = 'Wat ik vanbinnen voel',
-} = Astro.props;
+const { scenarios, id = 'perspectief', locale = 'nl', ...rest } = Astro.props;
+const t = ui(locale);
+const heading = rest.heading ?? t.perspectiveHeading;
+const intro = rest.intro ?? t.perspectiveIntro;
+const outsideLabel = rest.outsideLabel ?? t.youHear;
+const insideLabel = rest.insideLabel ?? t.youFeel;
+/* Content may already carry its own quotation marks; <q> adds them once. */
+const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’']+$/g, '');
 ---
 
-<section class="section" aria-labelledby={`${id}-heading`} id={id}>
+<section class="section section--tint pv-section" aria-labelledby={`${id}-heading`} id={id}>
   <div class="wrap">
-    <p class="eyebrow">{eyebrow}</p>
-    <h2 id={`${id}-heading`}>{heading}</h2>
-    <p class="reading">{intro}</p>
-    <div class="pv" data-pv data-outside-label={outsideLabel} data-inside-label={insideLabel}>
+    <div class="pv-head">
+      <h2 id={`${id}-heading`}>{heading}</h2>
+      <p>{intro}</p>
+    </div>
+    <div class="pv" data-pv>
       {
         scenarios.length > 1 && (
-          <fieldset class="pv-scene-choice" hidden data-pv-choice>
-            <legend>Kies een voorbeeldsituatie</legend>
-            <div class="pv-scene-buttons">
-              {scenarios.map((scenario, index) => (
-                <button
-                  type="button"
-                  data-pv-scene={index}
-                  aria-pressed={index === 0 ? 'true' : 'false'}
-                >
-                  {scenario.label}
-                </button>
-              ))}
-            </div>
-          </fieldset>
+          <div class="pv-choice" role="group" aria-label={t.chooseExample} hidden data-pv-choice>
+            {scenarios.map((scenario, index) => (
+              <button
+                type="button"
+                data-pv-scene={index}
+                aria-controls={`${id}-scene-${index}`}
+                aria-pressed={index === 0 ? 'true' : 'false'}
+              >
+                {scenario.label}
+              </button>
+            ))}
+          </div>
         )
       }
-      <div class="pv-tabs" hidden data-pv-tabs aria-label="Kies perspectief">
-        <button type="button" id={`${id}-tab-outside`} data-pv-side="outside">{outsideLabel}</button
-        >
-        <button type="button" id={`${id}-tab-inside`} data-pv-side="inside">{insideLabel}</button>
-      </div>
       {
         scenarios.map((scenario, index) => (
-          <section class="pv-scene" data-pv-panel={index} aria-labelledby={`${id}-scene-${index}`}>
-            <h3 class="pv-scene__title" id={`${id}-scene-${index}`}>
-              {scenario.label}
-            </h3>
-            <div class="pv-panels">
-              <div
-                class="pv-panel pv-panel--outside"
-                id={`${id}-${index}-outside`}
-                data-side="outside"
-              >
-                <p class="eyebrow">{outsideLabel}</p>
-                <p class="pv-quote">{scenario.outside}</p>
+          <article class="pv-scene" id={`${id}-scene-${index}`} data-pv-panel={index}>
+            <h3 class="pv-scene__title">{scenario.label}</h3>
+            <dl class="pv-lines">
+              <div class="pv-line pv-line--outside">
+                <dt>{outsideLabel}</dt>
+                <dd>
+                  <q>{unquote(scenario.outside)}</q>
+                </dd>
               </div>
-              <div
-                class="pv-panel pv-panel--inside"
-                id={`${id}-${index}-inside`}
-                data-side="inside"
-              >
-                <p class="eyebrow">{insideLabel}</p>
-                <p class="pv-quote">{scenario.inside}</p>
+              <div class="pv-line pv-line--inside">
+                <dt>{insideLabel}</dt>
+                <dd>{scenario.inside}</dd>
               </div>
-            </div>
+            </dl>
             <p class="pv-context">{scenario.context}</p>
-          </section>
+          </article>
         ))
       }
     </div>
@@ -93,68 +83,23 @@ const {
 
 <script>
   const enhance = (root: HTMLElement) => {
-    const tabList = root.querySelector<HTMLElement>('[data-pv-tabs]');
-    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[data-pv-side]')];
-    const sceneButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-pv-scene]')];
+    const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-pv-scene]')];
     const scenes = [...root.querySelectorAll<HTMLElement>('[data-pv-panel]')];
-    if (!tabList || tabs.length !== 2 || scenes.length === 0) return;
-    let scene = 0;
-    let side: 'outside' | 'inside' = 'outside';
-
-    tabList.setAttribute('role', 'tablist');
-    tabs.forEach((tab) => tab.setAttribute('role', 'tab'));
-    scenes.forEach((section) =>
-      section.querySelectorAll<HTMLElement>('[data-side]').forEach((panel) => {
-        panel.setAttribute('role', 'tabpanel');
-        panel.tabIndex = 0;
-      }),
-    );
-
-    const render = () => {
-      sceneButtons.forEach((button, index) =>
+    if (buttons.length < 2 || scenes.length !== buttons.length) return;
+    const show = (scene: number) => {
+      buttons.forEach((button, index) =>
         button.setAttribute('aria-pressed', String(index === scene)),
       );
       scenes.forEach((section, index) => {
         section.hidden = index !== scene;
-        section.querySelectorAll<HTMLElement>('[data-side]').forEach((panel) => {
-          panel.hidden = panel.dataset.side !== side;
-        });
-      });
-      tabs.forEach((tab) => {
-        const selected = tab.dataset.pvSide === side;
-        const panelId = `${scenes[scene].querySelector(`[data-side="${tab.dataset.pvSide}"]`)?.id}`;
-        tab.setAttribute('aria-selected', String(selected));
-        tab.setAttribute('aria-controls', panelId);
-        tab.tabIndex = selected ? 0 : -1;
-        document.getElementById(panelId)?.setAttribute('aria-labelledby', tab.id);
       });
     };
-
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => {
-        side = tab.dataset.pvSide === 'inside' ? 'inside' : 'outside';
-        render();
-      });
-      tab.addEventListener('keydown', (event) => {
-        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        const next = event.key === 'Home' ? 0 : event.key === 'End' ? 1 : (index + 1) % 2;
-        side = tabs[next].dataset.pvSide === 'inside' ? 'inside' : 'outside';
-        render();
-        tabs[next].focus();
-      });
-    });
-    sceneButtons.forEach((button) =>
-      button.addEventListener('click', () => {
-        scene = Number(button.dataset.pvScene);
-        render();
-      }),
+    buttons.forEach((button) =>
+      button.addEventListener('click', () => show(Number(button.dataset.pvScene))),
     );
-
     root.querySelector<HTMLElement>('[data-pv-choice]')?.removeAttribute('hidden');
-    tabList.hidden = false;
     root.dataset.enhanced = '';
-    render();
+    show(0);
   };
 
   document.querySelectorAll<HTMLElement>('[data-pv]').forEach(enhance);

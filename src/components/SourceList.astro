@@ -1,5 +1,7 @@
 ---
 import { formatDate, isoDate } from '../lib/content';
+import { localeFromPath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 
 interface Props {
   sources: Array<{
@@ -11,11 +13,13 @@ interface Props {
   }>;
 }
 const { sources } = Astro.props;
+const locale = localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL);
+const t = ui(locale);
 ---
 
 <section class="section section--tight source-list" aria-labelledby="sources-heading">
   <div class="wrap reading">
-    <h2 id="sources-heading">Bronnen</h2>
+    <h2 id="sources-heading">{t.sources}</h2>
     {
       sources.length > 0 ? (
         <ol>
@@ -28,8 +32,10 @@ const { sources } = Astro.props;
               {source.checkedAt && (
                 <>
                   {' '}
-                  · geraadpleegd op{' '}
-                  <time datetime={isoDate(source.checkedAt)}>{formatDate(source.checkedAt)}</time>
+                  · {t.checkedOn}{' '}
+                  <time datetime={isoDate(source.checkedAt)}>
+                    {formatDate(source.checkedAt, locale)}
+                  </time>
                 </>
               )}
               {source.note && <span class="note"> — {source.note}</span>}
@@ -37,10 +43,7 @@ const { sources } = Astro.props;
           ))}
         </ol>
       ) : (
-        <p class="note">
-          Deze pagina beschrijft persoonlijke ervaring of oriëntatie en verwijst niet naar
-          onderzoek. Feitelijke informatie staat op de pagina’s waarnaar wordt verwezen.
-        </p>
+        <p class="note">{t.noSources}</p>
       )
     }
   </div>

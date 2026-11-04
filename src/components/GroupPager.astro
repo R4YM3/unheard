@@ -1,0 +1,42 @@
+---
+/** Previous and next page within a reading group, plus a way back to the whole list. */
+import type { Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+import type { NavLink } from '../lib/navigation';
+
+interface Props {
+  group: string;
+  previous?: NavLink;
+  next?: NavLink;
+  all: NavLink;
+  locale: Locale;
+}
+const { group, previous, next, all, locale } = Astro.props;
+const t = ui(locale);
+---
+
+<nav class="wrap reading group-pager" aria-label={t.readOnIn(group)}>
+  <ul>
+    {
+      previous && (
+        <li>
+          <a href={previous.href} rel="prev">
+            <span class="group-pager__hint">← {t.previousIn(group)}</span>
+            <span class="group-pager__title">{previous.label}</span>
+          </a>
+        </li>
+      )
+    }
+    {
+      next && (
+        <li class="group-pager__next">
+          <a href={next.href} rel="next">
+            <span class="group-pager__hint">{t.nextIn(group)} →</span>
+            <span class="group-pager__title">{next.label}</span>
+          </a>
+        </li>
+      )
+    }
+  </ul>
+  <a class="text-link" href={all.href}>{all.label}</a>
+</nav>

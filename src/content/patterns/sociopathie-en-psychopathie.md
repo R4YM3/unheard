@@ -44,52 +44,52 @@ sources:
     url: 'https://www.thuisarts.nl/persoonlijkheids-stoornis/ik-heb-persoonlijkheids-stoornis'
     checkedAt: 2026-10-20
 reviewNotes:
-  - 'Klinische review nodig: controleer het onderscheid ASPS/psychopathie en de DSM-5-criteria door een psychiater of klinisch psycholoog.'
+  - 'Klinische review nodig: controleer het onderscheid ASPS/psychopathie, de DSM-5-criteria en de passages over ontstaan en samenleven door een psychiater of klinisch psycholoog.'
 ---
 
 ## Waarom dit artikel anders is
 
-'Sociopaat' en 'psychopaat' zijn zware woorden. In films en series staan ze voor de kille, berekenende dader. In gesprekken over relaties worden ze gebruikt voor iemand die geen spijt leek te voelen, die loog of manipuleerde. Dat kan herkenbaar zijn. Maar de woorden betekenen klinisch iets anders dan in de dagelijkse taal, en ze worden vaak door elkaar gebruikt.
-
-Dit artikel houdt drie dingen uit elkaar:
+'Sociopaat' en 'psychopaat' zijn zware woorden. In films staan ze voor de kille, berekenende dader; in gesprekken over relaties voor iemand die geen spijt leek te voelen, loog of manipuleerde. Dat kan herkenbaar zijn. Maar klinisch betekenen de woorden iets anders, en ze worden vaak door elkaar gebruikt:
 
 1. **De antisociale persoonlijkheidsstoornis**: een officiële diagnose.
 2. **Psychopathie**: een begrip uit onderzoek en forensische psychiatrie, geen aparte diagnose in de DSM.
-3. **'Sociopaat'**: een woord uit de dagelijkse taal, geen diagnose.
+3. **'Sociopaat'**: een woord uit de dagelijkse taal en de media, zonder vaste definitie.
 
 Dit artikel bevat bewust **geen checklist** om te bepalen of iemand die je kent een sociopaat of psychopaat is. Een diagnose op afstand is niet mogelijk. Wat je wel kunt doen, is het gedrag benoemen dat je hebt meegemaakt en wat het met je deed.
 
 ## Wat is de antisociale persoonlijkheidsstoornis?
 
-De antisociale persoonlijkheidsstoornis (ASPS, in het Engels ASPD) is een diagnose uit het Amerikaanse classificatiesysteem DSM-5. Het gaat om een langdurig patroon van het negeren en schenden van de rechten van anderen, dat al in de jeugd zichtbaar was. De diagnose wordt alleen gesteld bij volwassenen, en vereist volgens de DSM-5 aanwijzingen voor een gedragsstoornis vóór het vijftiende jaar. Het naslagwerk StatPearls geeft een overzicht.
+De antisociale persoonlijkheidsstoornis (ASPS) is een diagnose uit het Amerikaanse classificatiesysteem DSM-5: een langdurig patroon van het negeren en schenden van de rechten van anderen. De diagnose wordt alleen bij volwassenen gesteld, en vereist aanwijzingen voor een gedragsstoornis vóór het vijftiende jaar. Het naslagwerk StatPearls geeft een overzicht. Volgens Werner, Few en Bucholz (2015) is de diagnose vooral gebaseerd op _gedrag_, zoals herhaaldelijk de wet overtreden, liegen, impulsiviteit en onverantwoordelijkheid.
 
-Volgens een overzichtsartikel van Werner, Few en Bucholz (2015) is de diagnose vooral gebaseerd op _gedrag_. In de DSM-5-criteria gaat het dan onder meer om herhaaldelijk de wet overtreden, liegen, impulsiviteit en onverantwoordelijkheid.
-
-In de nieuwe internationale classificatie van de Wereldgezondheidsorganisatie (ICD-11) verdwijnen aparte typen persoonlijkheidsstoornissen. Professionals beschrijven dan de ernst van de persoonlijkheidsproblemen en de trekken die op de voorgrond staan, zoals _dissocialiteit_: het negeren van de rechten en gevoelens van anderen (Bach e.a., 2022).
+In de nieuwe classificatie van de Wereldgezondheidsorganisatie (ICD-11) verdwijnen de aparte typen. Professionals beschrijven dan de ernst van de persoonlijkheidsproblemen en trekken zoals _dissocialiteit_: het negeren van de rechten en gevoelens van anderen (Bach e.a., 2022).
 
 ## Wat is psychopathie?
 
-Psychopathie is geen aparte diagnose in de DSM. Het is een begrip uit onderzoek en forensische psychiatrie. Werner en collega's beschrijven psychopathie als een persoonlijkheidsstoornis die wordt gekenmerkt door impulsiviteit, vlak gevoelsleven, oppervlakkige charme, gevoelloosheid en manipulatie. Waar bij de antisociale persoonlijkheidsstoornis het gedrag centraal staat, staan bij psychopathie de emotionele en interpersoonlijke kenmerken voorop.
+Werner en collega's beschrijven psychopathie als een stoornis met impulsiviteit, een vlak gevoelsleven, oppervlakkige charme, gevoelloosheid en manipulatie. Waar bij de antisociale persoonlijkheidsstoornis het gedrag centraal staat, staan bij psychopathie de emotionele en interpersoonlijke kenmerken voorop. De twee overlappen, maar zijn 'niet synoniem'.
 
-De twee overlappen, maar ze zijn volgens dit overzicht 'niet synoniem'. Psychopathie wordt bovendien vooral onderzocht in gevangenissen. Hoe vaak het in de algemene bevolking voorkomt, is daarom niet goed bekend; schattingen zijn gebaseerd op het meten van _trekken_, niet op diagnoses.
+Psychopathie wordt vooral onderzocht in gevangenissen; hoe vaak het in de algemene bevolking voorkomt, is niet goed bekend. 'Psychopathische trekken' betekent dat iemand sommige kenmerken in meer of mindere mate heeft. Dat is iets anders dan 'een psychopaat zijn'.
 
-Met 'psychopathische trekken' wordt bedoeld dat iemand sommige van deze kenmerken in meer of mindere mate heeft. Dat is iets anders dan 'een psychopaat zijn'.
+## Hoe kan zo'n patroon ontstaan?
 
-## En 'sociopaat'?
+Er is geen enkele oorzaak. [Thuisarts](https://www.thuisarts.nl/persoonlijkheids-stoornis/ik-heb-persoonlijkheids-stoornis) beschrijft dat persoonlijkheidsstoornissen vaak samenhangen met aanleg, en soms met wat iemand heeft meegemaakt, zoals mishandeling, verwaarlozing of pesten. Veel mensen maken dat mee en krijgen geen stoornis.
 
-'Sociopaat' en 'sociopathie' zijn geen diagnoses in de DSM-5 of ICD-11. Het woord leeft vooral in de dagelijkse taal en in de media. Mensen bedoelen er meestal iets mee als 'iemand die geen geweten lijkt te hebben'. Omdat er geen vaste definitie is, betekent het voor iedereen iets anders.
+Een verklaring maakt schadelijk gedrag niet goed. En je hoeft de jeugd van een ander niet te kennen om te zien wat er met jou gebeurde.
 
-## Hoe kan gedrag eruitzien, los van een label?
+## Wat je kunt meemaken
 
-In plaats van te vragen "Is de ander een sociopaat?", kan het helpen om concreet te kijken:
+Dit is geen portret van een type mens. Het beschrijft wat je kunt meemaken als grenzen, waarheid of gevolgen structureel niet lijken te tellen. In plaats van te vragen "Is de ander een sociopaat?", kan het helpen om concreet te kijken:
 
-- Werd er herhaaldelijk tegen je gelogen, ook over grote dingen?
-- Werden jouw grenzen of rechten structureel genegeerd?
-- Was er dreiging, intimidatie of geweld?
-- Werd je financieel uitgebuit? Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
-- Leek de ander geen spijt te hebben, of werd jij juist de schuldige gemaakt? Zie [DARVO](nl/begrippen/darvo/).
+- Werd er herhaaldelijk tegen je gelogen, over geld, contacten of waar iemand was?
+- Werd jouw nee genegeerd, of bestraft met stilte, dreiging of charme die snel weer omsloeg?
+- Was er intimidatie of geweld?
+- Werd je financieel uitgebuit, bijvoorbeeld met schulden op jouw naam? Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- Duurde spijt kort, of werd jij juist de schuldige gemaakt? Zie [DARVO](nl/begrippen/darvo/).
 
-Al deze gedragingen kunnen voorkomen bij mensen met en zonder een persoonlijkheidsstoornis. Ze zijn op zichzelf ernstig genoeg om serieus te nemen, ook zonder diagnose.
+**Wat het met je gevoel kan doen.** Je vertrouwt je eigen oordeel minder, omdat de feiten steeds worden herschreven. Je schaamt je dat je iemand geloofde. Je wordt waakzaam en ontspant niet als het even rustig is. Boosheid en medelijden kunnen door elkaar lopen. Zie [zelftwijfel](nl/begrippen/zelftwijfel/) en [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/).
+
+**Wat het praktisch kan doen.** Geld raakt uit het zicht. Werk of slaap lijdt onder de spanning. Je trekt je terug uit vriendschappen, omdat uitleggen te ingewikkeld voelt. Delen wat er gebeurde kan onveilig zijn als de ander daarop reageert; dan gaat je veiligheid voor een gesprek.
+
+Eén leugen of één gebroken afspraak maakt iemand dit niet. Het gaat om een herhaald patroon, en om het effect op jou. Dat je iemand vertrouwde, is geen fout. Deze gedragingen zijn ook zonder diagnose ernstig genoeg om serieus te nemen.
 
 > **Illustratief voorbeeld — verzonnen, geen echt gesprek**
 >
@@ -103,17 +103,11 @@ Al deze gedragingen kunnen voorkomen bij mensen met en zonder een persoonlijkhei
 
 - **Het kan de ernst juist verkleinen.** Als het verhaal alleen over 'de psychopaat' gaat, verdwijnt soms wat er feitelijk gebeurde.
 - **Het helpt niet in juridische situaties.** Politie, Veilig Thuis en rechters kijken naar gedrag, feiten en risico, niet naar diagnoses van leken.
-- **Het stigmatiseert mensen met een persoonlijkheidsstoornis**, van wie velen zelf hulp zoeken. Thuisarts beschrijft dat er behandelingen bestaan voor persoonlijkheidsstoornissen.
-- **Het kan je eigen herstel in de weg zitten**, als je blijft zoeken naar de 'juiste' diagnose voor de ander in plaats van naar wat jij nodig hebt.
-
-## Impact op de ontvanger
-
-Wie langdurig is voorgelogen, uitgebuit of bang gemaakt, kan last hebben van [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/), [twijfel aan het eigen oordeel](nl/begrippen/zelftwijfel/), wantrouwen tegenover nieuwe mensen en schaamte omdat je 'erin bent getrapt'. Dat je iemand vertrouwde, is geen fout. Vertrouwen is normaal.
+- **Het stigmatiseert mensen met een persoonlijkheidsstoornis**, van wie velen zelf hulp zoeken.
+- **Het kan je herstel in de weg zitten**, als je blijft zoeken naar de 'juiste' diagnose voor de ander in plaats van naar wat jij nodig hebt.
 
 ## Wat kan helpen?
 
 - **Beschrijf gedrag en feiten**, ook naar hulpverleners en instanties.
-- **Neem dreiging serieus.** Bij direct gevaar bel je 112. Voor advies: Veilig Thuis, 0800-2000, gratis en anoniem, dag en nacht.
 - **Zoek hulp voor jezelf.** Een psycholoog kan je helpen om te verwerken wat er gebeurd is. Zie [therapie](nl/herstel/therapievormen/).
-- **Ben je slachtoffer van een misdrijf**, zoals fraude of bedreiging? Slachtofferhulp Nederland biedt gratis ondersteuning.
-- Zie ook [Hulp vinden](nl/hulp-vinden/).
+- **Ben je slachtoffer van een misdrijf**, zoals fraude of bedreiging? [Slachtofferhulp Nederland](https://www.slachtofferhulp.nl/) biedt gratis ondersteuning.
