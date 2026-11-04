@@ -2,6 +2,8 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import PageRail from '../components/PageRail.astro';
+import { articleRailGroups } from '../lib/article-rail';
 import Marked from '../components/Marked.astro';
 
 interface Props {
@@ -9,13 +11,15 @@ interface Props {
 }
 const { entry } = Astro.props;
 const { data } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const railGroups = await articleRailGroups(entry, headings);
 ---
 
 <EntryLayout
   entry={entry}
   eyebrow={data.hero?.eyebrow ?? `Herstel / Therapievormen / ${data.name}`}
 >
+  {railGroups.length > 0 && <PageRail slot="rail" groups={railGroups} />}
   {
     /* One summary per page: the focus line only stands in when there is no summary. */
     !data.summary && (
