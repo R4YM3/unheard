@@ -62,11 +62,15 @@ try {
   await waitForServer();
   browser = await puppeteer.launch({ executablePath: chromePath, headless: true });
 
-  // 1. Narrow viewports, with and without JavaScript.
-  for (const javascript of [true, false]) {
-    const page = await browser.newPage();
-    await page.setJavaScriptEnabled(javascript);
-    for (const width of widths) {
+  // 1. Narrow viewports, with and without JavaScript: each width/JS combination in its own tab,
+  //    all at once.
+  const combinations = [true, false].flatMap((javascript) =>
+    widths.map((width) => ({ javascript, width })),
+  );
+  await Promise.all(
+    combinations.map(async ({ javascript, width }) => {
+      const page = await browser.newPage();
+      await page.setJavaScriptEnabled(javascript);
       await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
       for (const route of routes) {
         await page.goto(`${origin}${route}`, { waitUntil: 'load' });
@@ -83,9 +87,9 @@ try {
             `${route} @${width}px js=${javascript}: horizontal overflow ${overflow.scroll}>${overflow.client} (${overflow.offenders.join(', ')})`,
           );
       }
-    }
-    await page.close();
-  }
+      await page.close();
+    }),
+  );
   console.log(`Viewport checks: ${routes.length} routes × ${widths.length} widths × JS on/off`);
 
   // 2. No-JS content coverage.
@@ -124,14 +128,16 @@ try {
     const html = await readFile(join('dist', route, 'index.html'), 'utf8').catch(() => '');
     if (html.includes('data-pv')) pvRoutes.push(route);
   }
-  for (const theme of ['light', 'dark']) {
+  // Both themes at once, three tabs each, sharing one queue of routes per theme.
+  const checkPerspective = async (theme, queue) => {
     const page = await browser.newPage();
     await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: theme }]);
     await page.evaluateOnNewDocument(
       (choice) => globalThis.localStorage.setItem('ongehoord-theme', choice),
       theme,
     );
-    for (const route of pvRoutes) {
+    while (queue.length > 0) {
+      const route = queue.shift();
       await page.goto(`${origin}${route}`, { waitUntil: 'networkidle0' });
       // Both sides of a scenario are always visible together.
       const sides = await page.$$eval(
@@ -171,7 +177,13 @@ try {
         );
     }
     await page.close();
-  }
+  };
+  await Promise.all(
+    ['light', 'dark'].flatMap((theme) => {
+      const queue = [...pvRoutes];
+      return [1, 2, 3].map(() => checkPerspective(theme, queue));
+    }),
+  );
   console.log(`Perspective checks: ${pvRoutes.length} routes × 2 themes`);
 
   // 4. Word finder: keyboard-only route, overview, privacy and contrast in both themes.

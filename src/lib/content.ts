@@ -232,6 +232,8 @@ export const searchItems = async (locale: Locale | string): Promise<SearchItem[]
         entry.data.description,
         entry.data.glossary?.term,
         ...(entry.data.glossary?.aliases ?? []),
+        /* Chapter headings make the search find pages by what they cover, not only their title. */
+        ...[...(entry.body ?? '').matchAll(/^#{2,3}\s+(.+)$/gm)].map((match) => match[1]),
       ]
         .filter(Boolean)
         .join(' ')

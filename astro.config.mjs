@@ -12,6 +12,11 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
+        // The root only redirects to /nl/ and is noindex.
+        new URL(page).pathname.replace(/\/$/, '') !==
+          (process.env.GITHUB_ACTIONS && !usesCustomDomain
+            ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''}`
+            : '') &&
         !/\/(?:en|ar)\/$/.test(page) &&
         !/\/nl\/(?:financieel-misbruik|herstel\/therapie|herstel\/therapievormen\/groepsschematherapie|ontwerp-systeem)\/$/.test(
           page,
