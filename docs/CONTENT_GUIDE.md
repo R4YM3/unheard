@@ -143,6 +143,10 @@ parallel branch are pre-registered, see `docs/SCHEMA_CHANGES.md`).
 | `conflict-of-patroon`              | articles   | `begrijp-het/conflict-of-patroon`                                 |
 | `wat-het-met-je-kan-doen`          | articles   | `begrijp-het/wat-het-met-je-kan-doen`                             |
 | `waarom-ik`                        | articles   | `begrijp-het/waarom-overkwam-dit-mij`                             |
+| `zelf-ook-fout`                    | articles   | `begrijp-het/wat-als-ik-zelf-ook-fout-zat`                        |
+| `ouderschap-na-controle`           | articles   | `herstel/ouder-blijven-met-een-ex-die-controle-zoekt`             |
+| `het-vertellen`                    | articles   | `herstel/hoe-vertel-ik-het`                                       |
+| `praktisch-na-breuk`               | articles   | `herstel/praktische-stappen-na-een-breuk`                         |
 | `begrippen`                        | hubs       | `begrippen`                                                       |
 | `darvo`                            | patterns   | `begrippen/darvo`                                                 |
 | `financieel-misbruik`              | hubs       | `begrijp-het/financieel-misbruik`                                 |
