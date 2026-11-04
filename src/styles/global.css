@@ -436,29 +436,70 @@ mark.review-marker {
 
 /* ---------- Sections ---------- */
 .section {
+  --section-bg: transparent;
   padding: clamp(3.25rem, 7vw, 5.5rem) 0;
+  background: var(--section-bg);
 }
 .section--tight {
   padding-block: clamp(2rem, 4vw, 3rem);
 }
-.section--soft {
-  background: var(--safe);
+/* Band colours come in two families: sage (rest, help) and warm (depth, lists). */
+.section--soft,
+.section--children {
+  --section-bg: var(--safe);
 }
 .section--tension {
-  background: var(--tension-section);
+  --section-bg: var(--tension-section);
 }
 .section--therapy {
-  background: var(--therapy);
+  --section-bg: var(--therapy);
+}
+.section--tint {
+  --section-bg: var(--tint);
 }
 .section--paper {
-  background: var(--paper-section);
-}
-.section--children {
-  background: var(--children);
+  --section-bg: var(--paper-section);
 }
 .section--chrome {
-  background: var(--band-bg);
+  --section-bg: var(--band-bg);
   color: var(--band-text);
+}
+/* Two bands of the same family never touch: the second switches family, so every block
+   reads as its own piece. */
+:is(.section--soft, .section--children) + :is(.section--soft, .section--children) {
+  --section-bg: var(--tint);
+}
+:is(.section--tension, .section--therapy, .section--tint)
+  + :is(.section--tension, .section--therapy, .section--tint) {
+  --section-bg: var(--safe);
+}
+/* Blocks on the plain page background that follow each other share one gap instead of
+   stacking two. */
+:is(
+    .prose,
+    .article-byline,
+    .group-pager,
+    .section:not(
+      .section--soft,
+      .section--children,
+      .section--tension,
+      .section--therapy,
+      .section--tint,
+      .section--chrome
+    )
+  )
+  + :is(
+    .prose,
+    .section:not(
+      .section--soft,
+      .section--children,
+      .section--tension,
+      .section--therapy,
+      .section--tint,
+      .section--chrome
+    )
+  ) {
+  padding-top: 0;
 }
 .section--chrome .eyebrow,
 .section--chrome .note {
@@ -1460,34 +1501,8 @@ a.card:focus-visible,
 }
 /* Coloured bands run to the viewport edge, also beside the rail. border-image paints
    outside the box without creating scrollable overflow. */
-.article-layout--rail
-  :is(
-    .section--soft,
-    .section--tension,
-    .section--therapy,
-    .section--paper,
-    .section--children,
-    .section--chrome
-  ) {
-  border-image: linear-gradient(var(--band, transparent) 0 0) fill 0 / /0 100vw;
-}
-.article-layout--rail .section--soft {
-  --band: var(--safe);
-}
-.article-layout--rail .section--tension {
-  --band: var(--tension-section);
-}
-.article-layout--rail .section--therapy {
-  --band: var(--therapy);
-}
-.article-layout--rail .section--paper {
-  --band: var(--paper-section);
-}
-.article-layout--rail .section--children {
-  --band: var(--children);
-}
-.article-layout--rail .section--chrome {
-  --band: var(--band-bg);
+.article-layout--rail .section {
+  border-image: linear-gradient(var(--section-bg) 0 0) fill 0 / /0 100vw;
 }
 .article-layout__main {
   min-width: 0;
