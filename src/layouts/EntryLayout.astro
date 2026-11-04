@@ -200,19 +200,20 @@ const heroData = 'hero' in data ? data.hero : undefined;
         )
       }
       <slot />
-      <RelatedContent items={related} />
-      {showSources && <SourceList sources={data.sources} />}
-      {
-        articleType && (
-          <ArticleMeta
-            author={data.author}
-            publishedAt={data.publishedAt}
-            updatedAt={data.updatedAt}
-            locale={data.locale}
-          />
-        )
-      }
-      {showHelp && <HelpBlock />}
     </div>
   </div>
+  {/* Below the article the rail stops: further reading, sources and help run full width. */}
+  <RelatedContent items={related} />
+  {showSources && <SourceList sources={data.sources} />}
+  {
+    articleType && (
+      <ArticleMeta
+        author={data.author}
+        publishedAt={data.publishedAt}
+        updatedAt={data.updatedAt}
+        locale={data.locale}
+      />
+    )
+  }
+  {showHelp && <HelpBlock />}
 </BaseLayout>
