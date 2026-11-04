@@ -2185,3 +2185,7 @@ a.card:focus-visible,
 .reflection ol li + li {
   margin-top: 0.5rem;
 }
+/* The text column ends on its own padding; the prose inside does not add more. */
+.article-layout--rail .article-layout__main > .prose:last-child {
+  padding-bottom: 0;
+}
