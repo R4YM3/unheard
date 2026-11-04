@@ -37,10 +37,12 @@ const options = await Promise.all(
               <ul>
                 {option.links.map((link) => (
                   <li>
-                    <a class="text-link" href={link.href}>
-                      {link.title}
+                    <a href={link.href}>
+                      <span>
+                        {link.title}
+                        <span class="note">{link.eyebrow}</span>
+                      </span>
                     </a>
-                    <span class="note"> · {link.eyebrow}</span>
                   </li>
                 ))}
               </ul>
