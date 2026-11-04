@@ -24,12 +24,11 @@ professionalQuestions:
   - 'Wat doen we als het te zwaar wordt, of als het tussen ons niet goed voelt?'
 founder:
   text:
-    - 'Schematherapie hielp me mezelf te onderzoeken.'
+    - 'Schematherapie hielp me mezelf te onderzoeken. Ook groepsschematherapie maakte deel uit van die zoektocht.'
     - '[OPRICHTER REVIEW NODIG] Wat schematherapie mij persoonlijk heeft gebracht, vul ik later zelf aan.'
     - 'Dit is mijn persoonlijke ervaring. Het zegt niet of schematherapie voor jou passend is.'
   needsReview: true
-related:
-  [therapievormen, therapie-groepsschematherapie, identiteit, mijn-verhaal, kaart-hulpverlener]
+related: [therapievormen, identiteit, mijn-verhaal, kaart-hulpverlener]
 sources:
   - label: 'Vereniging voor Schematherapie — Schematherapie'
     url: 'https://www.schematherapie.nl/schematherapie'
@@ -52,9 +51,15 @@ Sommige reacties lijken vanzelf te gaan. Je past je aan voordat iemand iets vraa
 
 Het woord 'schema' verwijst naar zo'n diepgeworteld patroon: een manier van kijken naar jezelf, anderen en de wereld die vaak al lang meegaat. In de therapie probeer je zulke patronen te herkennen, te begrijpen waar ze vandaan kunnen komen en te onderzoeken wat je in het hier en nu nodig hebt.
 
-De Vereniging voor Schematherapie beschrijft dat schematherapie individueel, in een groep of in een combinatie van beide kan worden gegeven. Groepsschematherapie heeft op deze site een [eigen pagina](nl/herstel/therapievormen/groepsschematherapie/).
+De Vereniging voor Schematherapie beschrijft dat schematherapie individueel, in een groep of in een combinatie van beide kan worden gegeven. Het is dezelfde benadering. Alleen de setting verschilt.
 
 Schematherapie is geen behandeling voor een relatie of voor wat een ander heeft gedaan. Het gaat om wat jij ervaart: klachten, patronen en vragen waar je zelf mee zit. Of schematherapie daarbij past, beslis je samen met een bevoegde professional.
+
+## Alleen of in een groep
+
+In een individueel traject werk je met één behandelaar. In een groep werk je met andere deelnemers, onder begeleiding van een of meer behandelaars. Je onderzoekt dezelfde soort patronen, en ook hoe je in het contact met anderen reageert. Welke vorm iemand krijgt, hangt af van de hulpvraag en van wat een behandelaar of instelling aanbiedt.
+
+Een groep is niet voor iedereen passend. Vraag vooraf wie de groep begeleidt, hoe groot die is, wat er van je verwacht wordt en hoe de vertrouwelijkheid is geregeld. Je mag meebeslissen of je individueel, in een groep of in een combinatie wilt beginnen. Dat staat ook bij de vragen hieronder.
 
 ## Wat kun je verwachten?
 
@@ -84,5 +89,3 @@ Wil je weten wat er bekend is over de werkzaamheid bij jouw klachten? Vraag dat 
 Daar is geen test of beslisschema voor, en deze site geeft geen behandeladvies. Misschien herken je jezelf in vragen als: waarom reageer ik steeds zo? Waarom voel ik me zo snel verantwoordelijk? Zulke vragen zijn een goed begin van een gesprek, maar geen automatische reden voor schematherapie.
 
 Een praktische eerste stap is een afspraak met je huisarts. Bij psychische klachten kun je daar terecht. De huisarts of de praktijkondersteuner (POH-GGZ) kijkt samen met jou wat er speelt en welke hulp past. Neem gerust mee wat je eerder hebt geprobeerd en wat je daarvan merkte. Een [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je gedachten op een rij te zetten.
-
-Voel je je onveilig in je relatie of thuis? Dan kun je gratis en anoniem bellen met Veilig Thuis: [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).

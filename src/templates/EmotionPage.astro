@@ -5,51 +5,122 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
 import FounderNote from '../components/FounderNote.astro';
 import MiniReflection from '../components/MiniReflection.astro';
+import GroupPager from '../components/GroupPager.astro';
+import PageRail from '../components/PageRail.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import { cardFor, listCollection, routeFor } from '../lib/content';
+import { ui } from '../i18n/ui';
+import { groupFor, navigationFor, neighbours } from '../lib/navigation';
 
 interface Props {
   entry: CollectionEntry<'emotions'>;
 }
 const { entry } = Astro.props;
 const { data } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const route = routeFor(entry);
+const nav = navigationFor(data.locale);
+const overview = nav?.feelingsOverview ?? `${data.locale}/wat-voel-ik/`;
+const feelings = (
+  await listCollection('emotions', data.locale, overview.slice(data.locale.length + 1))
+).map((item) => cardFor(item));
+const nextStep = entry.body?.includes('## Een vraag voor vandaag')
+  ? { id: 'een-vraag-voor-vandaag', label: 'Een vraag voor vandaag' }
+  : { id: 'een-volgende-stap', label: 'Een volgende stap' };
+/* Only the chapters of the text itself; the blocks below the text have their own headings.
+   Dutch pages use short rail labels; other locales use their chapter headings as written. */
+const here =
+  data.locale !== 'nl'
+    ? headings
+        .filter((heading) => heading.depth === 2)
+        .map((heading) => ({ href: `${route}#${heading.slug}`, label: heading.text }))
+    : [
+        { href: `${route}#herken-je-dit`, label: 'Herken je dit?' },
+        { href: `${route}#wat-gebeurt-er-om-je-heen`, label: 'Om je heen' },
+        { href: `${route}#wat-kan-dit-verklaren`, label: 'Wat het kan verklaren' },
+        { href: `${route}#wat-het-met-je-kan-doen`, label: 'Wat het met je doet' },
+        { href: `${route}#wanneer-is-het-iets-anders`, label: 'Wanneer het iets anders is' },
+        { href: `${route}#${nextStep.id}`, label: nextStep.label },
+      ];
+const titleFor = (href: string) => feelings.find((feeling) => feeling.href === href)?.title;
+const t = ui(data.locale);
+const group = groupFor(nav?.feelingGroups ?? [], route);
+const siblings = (group?.pages ?? [])
+  .map((href) => ({ href, label: titleFor(href) }))
+  .filter((item): item is { href: string; label: string } => Boolean(item.label));
+const { previous, next } = group ? neighbours(group, route) : {};
+const linkTo = (href?: string) => {
+  const label = href ? titleFor(href) : undefined;
+  return href && label ? { href, label } : undefined;
+};
+const allFeelings = {
+  href: `${overview}#gevoelens`,
+  label: t.allFeelings(feelings.length),
+};
 ---
 
-<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `Wat voel ik? / ${data.feeling}`}>
+<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `${t.feelingsMenu} / ${data.feeling}`}>
+  <PageRail
+    slot="rail"
+    groups={[
+      { label: t.onThisPage, items: here },
+      ...(group
+        ? [
+            {
+              label: group.label,
+              items: [
+                ...siblings.map((item) => ({ ...item, current: item.href === route })),
+                allFeelings,
+              ],
+            },
+          ]
+        : [{ label: t.otherFeelings, items: [allFeelings] }]),
+    ]}
+  />
   <div class="wrap reading prose"><Content /></div>
-  {data.scenarios.length > 0 && <PerspectiveSwitch scenarios={data.scenarios} />}
   {
-    data.impacts.length > 0 && (
-      <section class="section section--tension" aria-labelledby="impact-heading" id="impact">
-        <div class="wrap">
-          <p class="eyebrow">Mogelijke gevolgen</p>
-          <h2 id="impact-heading">Waar je het kunt merken</h2>
-          <p class="reading">
-            Niet iedereen merkt hetzelfde. Herken je een paar dingen, dan zegt dat iets over wat je
-            draagt, niet over wie je bent.
-          </p>
-          <CardGrid
-            columns={data.impacts.length % 3 === 0 ? 3 : 2}
-            items={data.impacts.map((impact) => ({ ...impact, tone: 'tension' as const }))}
-          />
-        </div>
-      </section>
-    )
-  }
-  {data.reflection && <MiniReflection reflection={data.reflection} />}
-  {
+    /* The small steps belong to "Een volgende stap": straight under it, not in a block of their own. */
     data.helps.length > 0 && (
-      <section class="section section--soft" aria-labelledby="helps-heading" id="wat-helpt">
-        <div class="wrap">
-          <p class="eyebrow">Kleine stappen</p>
-          <h2 id="helps-heading">Wat kan helpen?</h2>
-          <CardGrid
-            columns={data.helps.length % 3 === 0 ? 3 : 2}
-            items={data.helps.map((help) => ({ ...help, tone: 'safe' as const }))}
-          />
-        </div>
-      </section>
+      <div class="wrap helps-inline" id="wat-helpt">
+        <CardGrid
+          columns={data.helps.length % 3 === 0 ? 3 : 2}
+          items={data.helps.map((help) => ({ ...help, tone: 'safe' as const }))}
+        />
+      </div>
     )
   }
-  {data.founderNote && <FounderNote note={data.founderNote} />}
+  <Fragment slot="after">
+    {
+      data.scenarios.length > 0 && (
+        <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
+      )
+    }
+    {
+      data.impacts.length > 0 && (
+        <section class="section section--tension" aria-labelledby="impact-heading" id="impact">
+          <div class="wrap">
+            <h2 id="impact-heading">{t.impactHeading}</h2>
+            <p class="reading">{t.impactIntro}</p>
+            <CardGrid
+              columns={data.impacts.length % 3 === 0 ? 3 : 2}
+              items={data.impacts.map((impact) => ({ ...impact, tone: 'tension' as const }))}
+            />
+          </div>
+        </section>
+      )
+    }
+    {data.reflection && <MiniReflection reflection={data.reflection} collapsed />}
+    {data.founderNote && <FounderNote note={data.founderNote} />}
+    {
+      group && (previous || next) && (
+        <GroupPager
+          group={group.label}
+          previous={linkTo(previous)}
+          next={linkTo(next)}
+          all={allFeelings}
+          locale={data.locale}
+        />
+      )
+    }
+  </Fragment>
 </EntryLayout>

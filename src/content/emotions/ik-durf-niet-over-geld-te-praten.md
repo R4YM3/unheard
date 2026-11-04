@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Geld en schaamte'
   paragraphs:
     - 'Misschien weet je niet precies hoeveel er op de rekening staat, of op wiens naam welke schuld staat. Vragen ernaar voelt spannend, of je doet het al lang niet meer.'
-    - 'Schaamte over geld is heel gewoon, en voor veel mannen extra zwaar. Je hoeft het niet in je eentje uit te zoeken, en je hoeft niets te doen wat onveilig voelt.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - {

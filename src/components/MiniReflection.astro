@@ -3,19 +3,36 @@
  * Optional reflection questions. Answers stay in the page: nothing is stored, sent or
  * printed unless the reader explicitly opts in to printing them.
  */
+import { localeFromPath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 interface Props {
   reflection: { heading?: string; questions: string[]; note?: string; writable: boolean };
   id?: string;
+  /** Start closed: the questions open on request, so a long page stays light. */
+  collapsed?: boolean;
 }
-const { reflection, id = 'reflectie' } = Astro.props;
-const heading = reflection.heading ?? 'Vragen om bij stil te staan';
+const { reflection, id = 'reflectie', collapsed = false } = Astro.props;
+const Box = collapsed ? 'details' : 'div';
+const t = ui(localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL));
+const heading = reflection.heading ?? t.reflectionHeading;
 ---
 
 <section class="section" aria-labelledby={`${id}-heading`} id={id}>
   <div class="wrap reading">
-    <div class="reflection" data-print-answers>
-      <p class="eyebrow">Vrijblijvend</p>
-      <h2 id={`${id}-heading`}>{heading}</h2>
+    <Box class:list={['reflection', { 'reflection--collapsed': collapsed }]} data-print-answers>
+      {
+        collapsed ? (
+          <summary>
+            <span class="eyebrow">{t.optional}</span>
+            <h2 id={`${id}-heading`}>{heading}</h2>
+          </summary>
+        ) : (
+          <>
+            <p class="eyebrow">{t.optional}</p>
+            <h2 id={`${id}-heading`}>{heading}</h2>
+          </>
+        )
+      }
       {reflection.note && <p>{reflection.note}</p>}
       {
         reflection.writable ? (
@@ -40,10 +57,10 @@ const heading = reflection.heading ?? 'Vragen om bij stil te staan';
             ))}
             <div class="form-row">
               <button class="button button--quiet" type="reset">
-                Wis mijn antwoorden
+                {t.clearAnswers}
               </button>
               <label class="check-label print-toggle">
-                <input type="checkbox" /> Neem mijn antwoorden mee als ik print
+                <input type="checkbox" /> {t.printAnswers}
               </label>
             </div>
           </form>
@@ -56,12 +73,8 @@ const heading = reflection.heading ?? 'Vragen om bij stil te staan';
         )
       }
       <p class="note" id={`${id}-privacy`}>
-        {
-          reflection.writable
-            ? 'Wat je hier typt, blijft alleen in dit venster. Ongehoord slaat het niet op en verstuurt het niet. Klik op ‘Wis mijn antwoorden’ als je klaar bent en sluit het tabblad. Op een gedeeld apparaat kun je ook alleen in gedachten antwoorden.'
-            : 'Je hoeft niets op te schrijven. Je kunt de vragen ook alleen in gedachten beantwoorden, of ze bewaren voor een gesprek met iemand die je vertrouwt.'
-        }
+        {reflection.writable ? t.reflectionWritableNote : t.reflectionThinkNote}
       </p>
-    </div>
+    </Box>
   </div>
 </section>

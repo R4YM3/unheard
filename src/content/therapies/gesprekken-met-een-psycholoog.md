@@ -90,4 +90,4 @@ Daar is geen test voor, en deze site geeft geen behandeladvies. Merk je dat wat 
 
 Bereid je gesprek voor met de [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) als je dat prettig vindt. Schrijf op wat je wilt vertellen, ook als je het nog niet precies kunt verwoorden.
 
-Voel je je onveilig in je relatie of thuis? Bel dan gratis en anoniem met Veilig Thuis: [0800-2000](tel:08002000). Heb je gedachten aan zelfdoding, bel dan gratis [113](tel:113) of chat via 113.nl. Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).
+Heb je gedachten aan zelfdoding, bel dan gratis [113](tel:113) of chat via 113.nl.

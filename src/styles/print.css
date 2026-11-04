@@ -39,14 +39,18 @@
 
   /* Navigation and interactive chrome */
   .site-header,
+  .section-nav-bar,
+  .page-rail,
+  .group-pager,
+  .read-progress,
   .site-footer,
   .skip,
   .theme-toggle,
+  .safety-dock,
   .actions,
   .hero-art,
   .home-hero__art,
-  .pv-scene-choice,
-  .pv-tabs,
+  .pv-choice,
   .filter-field,
   .az-nav,
   .no-print {
@@ -75,7 +79,6 @@
   .grid,
   .grid--2,
   .grid--3,
-  .pv-panels,
   .timeline-lenses {
     display: block !important;
   }
@@ -104,11 +107,10 @@
     break-after: avoid;
   }
   .card,
-  .pv-panel,
-  .pv-context,
+  .pv-scene,
   .reflection,
   .summary-box,
-  .help-block,
+  .help-band__numbers a,
   .stat,
   .timeline-lens,
   .timeline-between article,
@@ -129,7 +131,6 @@
 
   /* Everything that is collapsed or tabbed on screen is printed in full */
   .pv [data-pv-panel][hidden],
-  .pv-panel[hidden],
   .glossary-index .glossary-item[hidden],
   .glossary-index .glossary-letter[hidden],
   .search-results li[hidden],
@@ -156,6 +157,10 @@
   }
   .print-only {
     display: block !important;
+  }
+  .article-layout--rail {
+    display: block !important;
+    width: auto;
   }
 
   /* Links: show destinations for external sources and phone numbers */
@@ -209,6 +214,36 @@
   [data-print-answers]:has(.print-toggle input:checked) .tool-check input {
     appearance: auto;
     -webkit-appearance: checkbox;
+  }
+  /* Word finder: print the overview once it exists, otherwise every question on paper */
+  .finder-nav,
+  .finder-actions,
+  .finder[data-state='result'] .finder-about,
+  .finder[data-state='result'] .finder-form,
+  .finder[data-state='result'] + .finder-all {
+    display: none !important;
+  }
+  .finder:not([data-state='result']) .finder-step[hidden] {
+    display: block !important;
+  }
+  .finder-form,
+  .finder-result,
+  .finder-alert,
+  .finder-deepening details {
+    border: 1px solid #777 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .finder-option {
+    min-height: 0;
+    padding: 1mm 0;
+    border: 0;
+    background: none;
+  }
+  .finder-result section,
+  .finder-route,
+  .finder-step {
+    break-inside: avoid;
   }
   .tool-card {
     border: 2px solid #000 !important;

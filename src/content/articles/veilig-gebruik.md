@@ -31,6 +31,12 @@ reviewNotes:
 
 Als je over emotioneel of financieel misbruik leest, wil je misschien niet dat iemand anders dat kan zien. Daarom staat hier precies wat er gebeurt als je deze site bezoekt: wat er wel wordt vastgelegd, wat niet, en waar de grenzen liggen van wat een website kan beloven.
 
+## Snel de site verlaten
+
+Bovenaan elke pagina staat de knop **Verlaat site**. Daarmee ga je meteen naar de website van het KNMI. Met de **Esc-toets** gebeurt hetzelfde. Zonder JavaScript werkt de knop als een gewone link; de Esc-toets werkt dan niet.
+
+Met JavaScript vervangt de knop de huidige pagina in je browsergeschiedenis. Eerder bezochte pagina’s en andere sporen van je bezoek blijven bestaan. De knop wist je geschiedenis niet en sluit geen andere tabbladen.
+
 ## Wat de hosting registreert
 
 Deze site wordt gehost via GitHub Pages, een dienst van GitHub. Volgens de documentatie van GitHub registreert en bewaart GitHub Pages de IP-adressen van bezoekers, voor beveiligingsdoeleinden. Een IP-adres is het adres waarmee je apparaat of netwerk verbinding maakt met internet.
@@ -41,7 +47,7 @@ Daar heeft Ongehoord geen invloed op. Zelf houdt de site geen bezoekersstatistie
 
 - **Geen cookies.** De site zelf plaatst geen cookies.
 - **Geen trackers of advertenties.** Er worden geen scripts, lettertypen of advertenties van andere partijen geladen. In de code van de site zit een optie voor een bezoekersteller van Cloudflare, maar die staat niet aan. Als dat ooit verandert, wordt dat eerst op deze pagina vermeld.
-- **Alleen je themakeuze.** Als je op de knop voor licht, donker of systeemthema klikt, onthoudt je browser die keuze. Dat gebeurt in de lokale opslag van je eigen browser, onder de naam `ongehoord-theme`. Er wordt niets anders bewaard, en deze keuze wordt nergens naartoe gestuurd. Klik je niet op de knop, dan wordt er niets opgeslagen.
+- **Alleen je themakeuze.** Als je rechtsboven op de knop voor licht of donker klikt, onthoudt je browser die keuze. Dat gebeurt in de lokale opslag van je eigen browser, onder de naam `ongehoord-theme`. Er wordt niets anders bewaard, en deze keuze wordt nergens naartoe gestuurd. Klik je niet op de knop, dan wordt er niets opgeslagen.
 - **Geen formulieren die iets versturen.** Je kunt hier geen verhaal insturen, geen account aanmaken en geen bericht sturen.
 - **Zoeken gebeurt in je browser.** De zoekfunctie filtert een lijst die al op de pagina staat. Wat je intypt, wordt niet verstuurd of bewaard.
 

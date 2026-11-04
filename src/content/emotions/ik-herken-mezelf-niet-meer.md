@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Jezelf kwijt'
   paragraphs:
     - 'Misschien merk je dat je minder ruimte inneemt, contacten vermijdt of niet meer goed weet wat je zelf wilt. Je kijkt in de spiegel en denkt: wanneer ben ik zo geworden?'
-    - 'Dat gevoel zegt niet wie je bent. Het kan een uitnodiging zijn om voorzichtig te onderzoeken wat je nodig hebt en wat je vroeger plezier gaf.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal', quiet: true }
@@ -40,7 +39,7 @@ scenarios:
   - label: 'Een vriend die iets merkt'
     outside: '“Je bent veranderd. Je lacht bijna niet meer.”'
     inside: 'Ik wil zeggen dat het goed gaat, maar ik herken het eigenlijk. Ik weet alleen niet wanneer het begon.'
-    context: 'Mensen veranderen door werk, ouderschap, verlies of stress. Een vriend stelt hiermee geen diagnose, maar het kan een uitnodiging zijn om even stil te staan.'
+    context: 'Mensen veranderen door werk, ouderschap, verlies of stress. Het kan een uitnodiging zijn om even stil te staan.'
 impacts:
   - {
       title: 'In je verlangens',

@@ -25,8 +25,8 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
-      - run: npm run audit:a11y
-      - run: npm run audit:print
+      - run: node scripts/axe-audit.mjs
+      - run: node scripts/print-audit.mjs
       - run: node scripts/ux-audit.mjs
       - uses: actions/upload-pages-artifact@v5
         if: github.event_name != 'pull_request'

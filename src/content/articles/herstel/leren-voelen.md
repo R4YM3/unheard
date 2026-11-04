@@ -97,4 +97,4 @@ Soms komt er bij het voelen meer los dan je verwacht. Dat kan overweldigend zijn
 
 Raakt je dagelijks leven ontregeld, of blijven spanning en somberheid lang aanhouden, bespreek het dan met je huisarts. Begeleiding kan helpen om in een veilig tempo te leren voelen. Een overzicht staat bij [de therapievormen](nl/herstel/therapievormen/).
 
-Wil je verder lezen? Bekijk [rouw](nl/herstel/rouw/) of de printbare kaart bij [Ik begrijp het, maar het blijft pijn doen](nl/hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen/).
+Wil je verder lezen? Bekijk [rouw](nl/herstel/rouw/) of de printbare kaart [Vragen voor als het blijft pijn doen](nl/hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen/).

@@ -1,5 +1,9 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+
+/* Ids come from the file path, not the `slug` field: translations share slugs such as
+   "home", and a slug-based id would let one locale silently overwrite another. */
+const idFromPath = ({ entry }: { entry: string }) => entry.replace(/\.(?:mdx?|ya?ml)$/, '');
 import { z } from 'astro/zod';
 
 const key = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'use lowercase kebab-case keys');
@@ -108,14 +112,25 @@ const base = z.object({
   order: z.number().int().optional(),
 });
 
-const prefixed = <T extends z.ZodObject>(schema: T, prefix: string) =>
-  schema.refine((data) => String((data as { slug?: unknown }).slug).startsWith(prefix), {
-    message: `slug must start with "${prefix}"`,
-    path: ['slug'],
+/** Slug prefix per collection; a record gives each locale its own (translated) folder. */
+const prefixed = <T extends z.ZodObject>(schema: T, prefix: string | Record<string, string>) =>
+  schema.superRefine((data, context) => {
+    const { slug, locale } = data as { slug?: unknown; locale?: string };
+    const expected = typeof prefix === 'string' ? prefix : (prefix[locale ?? 'nl'] ?? prefix.nl);
+    if (!String(slug).startsWith(expected))
+      context.addIssue({
+        code: 'custom',
+        message: `slug must start with "${expected}"`,
+        path: ['slug'],
+      });
   });
 
 const emotions = defineCollection({
-  loader: glob({ base: './src/content/emotions', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/emotions',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: prefixed(
     base.extend({
       feeling: z.string().min(3).max(40),
@@ -127,7 +142,7 @@ const emotions = defineCollection({
       helps: z.array(z.object({ title: z.string().min(3), text: z.string().min(10) })).default([]),
       founderNote: founderNote.optional(),
     }),
-    'wat-voel-ik/',
+    { nl: 'wat-voel-ik/', en: 'what-do-i-feel/' },
   ),
 });
 
@@ -152,7 +167,11 @@ const darvo = z.object({
 
 /** Glossary terms and behavioural patterns. Term articles are written on `content/begrippen`. */
 const patterns = defineCollection({
-  loader: glob({ base: './src/content/patterns', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/patterns',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: prefixed(
     base.extend({
       scenarios: z.array(scenario).max(3).default([]),
@@ -165,7 +184,11 @@ const patterns = defineCollection({
 
 /** Explanatory, recovery, support and about pages. */
 const articles = defineCollection({
-  loader: glob({ base: './src/content/articles', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/articles',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: base.extend({
     scenarios: z.array(scenario).max(3).default([]),
     reflection: reflection.optional(),
@@ -175,7 +198,11 @@ const articles = defineCollection({
 });
 
 const therapies = defineCollection({
-  loader: glob({ base: './src/content/therapies', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/therapies',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: prefixed(
     base.extend({
       name: z.string().min(3),
@@ -193,7 +220,7 @@ const therapies = defineCollection({
 });
 
 const tools = defineCollection({
-  loader: glob({ base: './src/content/tools', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/tools', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: prefixed(
     base.extend({
       purpose: z.string().min(20),
@@ -221,7 +248,7 @@ const tools = defineCollection({
 
 /** Individually verified figures. Only `verified: true` entries are rendered. */
 const stats = defineCollection({
-  loader: glob({ base: './src/content/stats', pattern: '**/*.{yaml,yml}' }),
+  loader: glob({ base: './src/content/stats', pattern: '**/*.{yaml,yml}', generateId: idFromPath }),
   schema: z.object({
     order: z.number().int(),
     verified: z.boolean(),
@@ -240,6 +267,87 @@ const stats = defineCollection({
   }),
 });
 
+const routeId = z.enum([
+  'zelftwijfel',
+  'schuld',
+  'grenzen',
+  'controle',
+  'identiteit',
+  'spanning',
+  'financieel',
+  'eenzaamheid',
+]);
+
+/** "Help me woorden vinden": questions, routes and texts. Rules live in lib/word-finder.mjs. */
+const finder = defineCollection({
+  loader: glob({
+    base: './src/content/finder',
+    pattern: '**/*.{yaml,yml}',
+    generateId: idFromPath,
+  }),
+  schema: z.object({
+    id: key,
+    status: z.enum(['draft', 'in_review', 'approved']).default('draft'),
+    can: z.array(z.string().min(20)).min(1),
+    cannot: z.array(z.string().min(20)).min(1),
+    privacy: z.string().min(40),
+    questions: z
+      .array(
+        z.object({
+          id: key,
+          prompt: z.string().min(10).max(90),
+          hint: z.string().min(10).max(120).optional(),
+          multiple: z.boolean().default(true),
+          options: z
+            .array(
+              z.object({
+                id: key,
+                label: z.string().min(8).max(90),
+                ack: z.string().min(10).max(110).optional(),
+                routes: z.array(routeId).default([]),
+                exclusive: z.boolean().default(false),
+                safety: z.enum(['concern', 'danger', 'crisis']).optional(),
+              }),
+            )
+            .min(2)
+            .max(6),
+        }),
+      )
+      .min(5)
+      .max(7),
+    routes: z
+      .array(
+        z.object({
+          id: routeId,
+          title: z.string().min(4).max(40),
+          recognition: z.string().min(40).max(260),
+          feelings: z.array(key).default([]),
+          patterns: z.array(key).min(1),
+          reflections: z.array(z.string().min(15)).min(2).max(3),
+          next: z.array(key).min(1),
+        }),
+      )
+      .length(8),
+    general: z.object({
+      reading: z.array(key).min(1),
+      reflections: z.array(z.string().min(15)).min(2).max(3),
+      next: z.array(key).min(1),
+    }),
+    empty: z.string().min(40),
+    safety: z.object({
+      concern: z.string().min(40),
+      danger: z.string().min(40),
+      crisis: z.string().min(40),
+    }),
+    deepening: z.object({
+      heading: z.string().min(8),
+      intro: z.string().min(20),
+      prompts: z.array(z.string().min(10)).min(3).max(6),
+      closing: z.string().min(20),
+    }),
+  }),
+});
+
 const listing = z.object({
   collection: z.enum(['emotions', 'patterns', 'articles', 'therapies', 'tools']),
   prefix: z.string().optional(),
@@ -248,6 +356,10 @@ const listing = z.object({
   lead: z.string().min(10).optional(),
   tone: z.enum(['neutral', 'safe', 'tension']).default('neutral'),
   cardStyle: z.enum(['default', 'feeling']).default('default'),
+  /** Show only these translation keys, in this order (the full list lives elsewhere). */
+  featured: z.array(z.string().min(2)).optional(),
+  /** Link under the list, for example to the full index. */
+  more: action.optional(),
 });
 
 const homeCard = z.object({
@@ -260,7 +372,7 @@ const homeCard = z.object({
 });
 
 const hubs = defineCollection({
-  loader: glob({ base: './src/content/hubs', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/hubs', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: base.extend({
     heading: z.string().min(8),
     eyebrow: z.string().min(2),
@@ -269,10 +381,28 @@ const hubs = defineCollection({
     cards: z.array(card).default([]),
     scenarios: z.array(scenario).max(3).default([]),
     reflection: reflection.optional(),
+    feelingTimeline: z
+      .object({
+        eyebrow: z.string().min(2),
+        heading: z.string().min(8),
+        lead: z.string().min(20),
+        label: z.string().min(4),
+        note: z.string().min(20),
+        steps: z
+          .array(
+            z.object({
+              key: key,
+              text: z.string().min(20).max(220),
+            }),
+          )
+          .min(3),
+      })
+      .optional(),
     chooser: z.boolean().default(false),
     glossaryIndex: z.boolean().default(false),
     stats: z.boolean().default(false),
     searchIndex: z.boolean().default(false),
+    finder: key.optional(),
     founderNote: founderNote.optional(),
     home: z
       .object({
@@ -325,9 +455,16 @@ const hubs = defineCollection({
           heading: z.string().min(8),
           cards: z.array(homeCard).min(1),
         }),
-        fact: z.object({
+        facts: z.object({
           eyebrow: z.string().min(2),
-          text: z.string().min(20),
+          items: z
+            .array(
+              z.object({
+                value: z.string().min(2),
+                text: z.string().min(20),
+              }),
+            )
+            .length(2),
           href: internalHref,
           label: z.string().min(2),
         }),
@@ -347,7 +484,7 @@ const hubs = defineCollection({
 const lens = z.object({ heading: z.string().min(4), text: z.string().min(10) });
 
 const story = defineCollection({
-  loader: glob({ base: './src/content/story', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/story', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: base.extend({
     heading: z.string().min(8),
     eyebrow: z.string().min(2),
@@ -412,4 +549,14 @@ const story = defineCollection({
   }),
 });
 
-export const collections = { emotions, patterns, articles, therapies, tools, stats, hubs, story };
+export const collections = {
+  emotions,
+  patterns,
+  articles,
+  therapies,
+  tools,
+  stats,
+  finder,
+  hubs,
+  story,
+};

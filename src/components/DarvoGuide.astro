@@ -18,7 +18,6 @@ const { guide } = Astro.props;
 
 <section class="section section--soft" aria-labelledby="darvo-steps-heading">
   <div class="wrap">
-    <p class="eyebrow">De drie onderdelen</p>
     <h2 id="darvo-steps-heading">Hoe kan het eruitzien?</h2>
     <p class="reading">
       Fictieve zinnen, ter illustratie. Eén zin bewijst niets; het gaat om herhaling en context.
@@ -35,7 +34,8 @@ const { guide } = Astro.props;
 </section>
 <PerspectiveSwitch
   id="darvo-perspectief"
-  eyebrow="Twee kanten"
+  outsideLabel="Wat er gezegd wordt"
+  insideLabel="Wat er in jou gebeurt"
   heading="Wat wordt er gezegd? Wat gebeurt er in jou?"
   intro="De buitenkant en de binnenkant kunnen tegelijk waar zijn. Je gevoel verdient aandacht, ook wanneer niet vaststaat hoe het gedrag van de ander bedoeld was."
   scenarios={[
@@ -50,7 +50,6 @@ const { guide } = Astro.props;
 />
 <section class="section section--tension" aria-labelledby="darvo-impact-heading">
   <div class="wrap">
-    <p class="eyebrow">De impact</p>
     <h2 id="darvo-impact-heading">Wat kan het met je doen?</h2>
     <p class="reading">
       Bij herhaalde ervaringen kun je jezelf steeds meer gaan controleren. In onderzoek naar DARVO
@@ -65,14 +64,12 @@ const { guide } = Astro.props;
 </section>
 <section class="section section--chrome" aria-labelledby="darvo-why-heading">
   <div class="wrap reading">
-    <p class="eyebrow">Waarom het zo kan raken</p>
     <h2 id="darvo-why-heading">Je wilt gehoord worden, niet winnen.</h2>
     {guide.why.map((paragraph) => <p>{paragraph}</p>)}
   </div>
 </section>
 <section class="section" aria-labelledby="darvo-help-heading" id="een-veilige-volgende-stap">
   <div class="wrap">
-    <p class="eyebrow">Wat kan helpen?</p>
     <h2 id="darvo-help-heading">Begin bij wat jij nodig hebt.</h2>
     <div class="grid grid--2">
       <article class="card card--safe">

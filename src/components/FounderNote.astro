@@ -1,14 +1,25 @@
 ---
 import Marked from './Marked.astro';
+import { REVIEW_MARKER } from '../lib/review-marks';
+import { localeFromPath } from '../i18n/config';
 
 interface Props {
   note: { eyebrow: string; heading: string; paragraphs: string[]; needsReview: boolean };
   id?: string;
 }
 const { note, id = 'oprichter' } = Astro.props;
+const dutch = localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL) === 'nl';
+const caption = dutch
+  ? `Persoonlijke ervaring van de oprichter, geen advies.${note.needsReview ? ' Deze passage wordt nog door hem bevestigd.' : ''}`
+  : `The founder’s personal experience, not advice.${note.needsReview ? ' He has yet to confirm this passage.' : ''}`;
+/* A note that is only placeholders stays out of the published view. */
+const placeholderOnly = note.paragraphs.every((paragraph) => paragraph.includes(REVIEW_MARKER));
 ---
 
-<section class="section section--paper" aria-labelledby={`${id}-heading`}>
+<section
+  class:list={['section', 'section--paper', { 'needs-review': placeholderOnly }]}
+  aria-labelledby={`${id}-heading`}
+>
   <div class="wrap">
     <div class="card card--story founder-note">
       <p class="eyebrow">{note.eyebrow}</p>
@@ -20,11 +31,7 @@ const { note, id = 'oprichter' } = Astro.props;
           </p>
         ))
       }
-      <p class="note">
-        Persoonlijke ervaring van de oprichter, geen advies.{
-          note.needsReview && ' Deze passage wordt nog door hem bevestigd.'
-        }
-      </p>
+      <p class="note">{caption}</p>
     </div>
   </div>
 </section>

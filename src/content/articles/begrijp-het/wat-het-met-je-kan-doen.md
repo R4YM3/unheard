@@ -129,4 +129,4 @@ Meer uitleg, met de beperkingen van elk begrip, staat in de [begrippenlijst](nl/
 
 Begrijpen wat er met je gebeurt, betekent niet dat het meteen minder pijn doet. Daarover gaat [Ik begrijp het, maar het blijft pijn doen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/). Over de stappen daarna gaat [Herstel](nl/herstel/).
 
-Denk je aan zelfdoding, bel dan [113](tel:113) of chat via 113.nl. Bij direct gevaar bel je [112](tel:112). Meer hulproutes staan op [Hulp vinden](nl/hulp-vinden/).
+Denk je aan zelfdoding, bel dan [113](tel:113) of chat via 113.nl.

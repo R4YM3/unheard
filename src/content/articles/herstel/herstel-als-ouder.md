@@ -19,7 +19,14 @@ hero:
   paragraphs:
     - 'Je bent aan het herstellen, en tegelijk moet er ontbijt op tafel, huiswerk gemaakt en een kind getroost worden. Er is weinig ruimte om even uit te vallen.'
     - 'Je hoeft het niet perfect te doen. Er zijn is vaak belangrijker dan alles goed doen.'
-related: [herstel-contact-na-breuk, herstel-steunnetwerk, mijn-verhaal, hulp-vinden]
+related:
+  [
+    herstel-contact-na-breuk,
+    herstel-steunnetwerk,
+    mijn-verhaal,
+    hulp-vinden,
+    ouderschap-na-controle,
+  ]
 sources:
   - label: 'Veilig Thuis — Contact'
     url: 'https://www.veiligthuis.nl/nl/contact'

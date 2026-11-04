@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Pijn na inzicht'
   paragraphs:
     - 'Misschien begrijp je inmiddels veel van een patroon of van je eigen reactie, maar voel je je nog steeds verdrietig, boos, gespannen of leeg.'
-    - 'Inzicht hoeft niet meteen opluchting te geven. Je hoeft jezelf niet te dwingen sneller verder te zijn dan je gevoel kan bijhouden.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - {
@@ -153,4 +152,4 @@ Heb je gedachten aan zelfdoding, dan kun je dag en nacht gratis bellen met [113]
 
 ## Een vraag voor vandaag
 
-In plaats van te vragen wanneer het over is, kun je misschien vragen: wat heb ik vandaag nodig om iets milder voor mezelf te zijn? De [kaart Ik begrijp het, maar het blijft pijn doen](nl/hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen/) kan je helpen daar rustig bij stil te staan.
+In plaats van te vragen wanneer het over is, kun je misschien vragen: wat heb ik vandaag nodig om iets milder voor mezelf te zijn? De kaart [Vragen voor als het blijft pijn doen](nl/hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen/) kan je helpen daar rustig bij stil te staan.

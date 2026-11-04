@@ -94,4 +94,4 @@ Er is geen vaste route, maar een paar dingen kunnen helpen om weer grip te krijg
 - **Advies vragen.** Je huisarts kan met je meedenken over wat je nodig hebt. Thuisarts beschrijft ook wat je kunt doen als je partner of ex je mishandelt. Bij Veilig Thuis kun je gratis en anoniem advies vragen via [0800-2000](tel:08002000), ook als je twijfelt of jouw situatie "erg genoeg" is.
 - **Niet confronteren als dat onveilig kan zijn.** Vraag eerst vertrouwelijk advies voordat je grote stappen zet.
 
-Bij direct gevaar bel je [112](tel:112). Denk je aan zelfdoding, bel dan [113](tel:113) of chat via 113.nl. Meer over deze routes staat op [Hulp vinden](nl/hulp-vinden/).
+Denk je aan zelfdoding, bel dan [113](tel:113) of chat via 113.nl.

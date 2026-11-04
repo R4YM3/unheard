@@ -1,43 +1,35 @@
 ---
-import type { RoutedEntry } from '../lib/content';
-import { authorLabels, formatDate, isoDate, statusLabels } from '../lib/content';
+/**
+ * A quiet byline at the end of an article: who wrote it and when it was last updated. These
+ * are the dates and author that the Article structured data repeats.
+ */
+import type { Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+import { founderName } from '../lib/site';
 
 interface Props {
-  entry: RoutedEntry;
+  author: 'founder' | 'editorial';
+  publishedAt: Date;
+  updatedAt: Date;
+  locale: Locale;
 }
-const { data } = Astro.props.entry;
+const { author, publishedAt, updatedAt, locale } = Astro.props;
+const t = ui(locale);
+const format = (date: Date) =>
+  new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+const iso = (date: Date) => date.toISOString().slice(0, 10);
+const byline = author === 'founder' ? (founderName ?? t.byFounder) : t.byEditorial;
 ---
 
-<div class="wrap">
-  <dl class="article-meta">
-    <div><dt>Auteur</dt><dd>{authorLabels[data.author]}</dd></div>
-    <div>
-      <dt>Status</dt><dd><span class="status-badge">{statusLabels[data.status]}</span></dd>
-    </div>
-    <div>
-      <dt>Bijgewerkt</dt><dd>
-        <time datetime={isoDate(data.updatedAt)}>{formatDate(data.updatedAt)}</time>
-      </dd>
-    </div>
-    <div>
-      <dt>Inhoudelijk gecontroleerd</dt>
-      <dd>
-        {
-          data.reviewedAt ? (
-            <time datetime={isoDate(data.reviewedAt)}>{formatDate(data.reviewedAt)}</time>
-          ) : (
-            'nog niet'
-          )
-        }
-      </dd>
-    </div>
-  </dl>
-  {
-    data.status !== 'approved' && (
-      <p class="draft-notice">
-        Deze pagina is een conceptversie en is nog niet inhoudelijk gecontroleerd. Lees haar als
-        oriëntatie, niet als advies.
-      </p>
+<p class="wrap reading article-byline">
+  {`${t.writtenBy} ${byline} · ${t.publishedOn} `}<time datetime={iso(publishedAt)}
+    >{format(publishedAt)}</time
+  >{
+    iso(updatedAt) !== iso(publishedAt) && (
+      <>
+        {` · ${t.updatedOn} `}
+        <time datetime={iso(updatedAt)}>{format(updatedAt)}</time>
+      </>
     )
   }
-</div>
+</p>

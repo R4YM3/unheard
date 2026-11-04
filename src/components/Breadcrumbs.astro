@@ -1,22 +1,35 @@
 ---
+/**
+ * The pages between the section and the current page. Home (the logo) and the current page
+ * (the title) are not repeated visually; the current page stays available to screen readers.
+ */
+import type { Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+import type { Crumb } from '../lib/trail';
+
 interface Props {
-  crumbs: Array<{ href: string; label: string }>;
+  ancestors: Crumb[];
+  current?: Crumb;
+  locale: Locale;
 }
-const { crumbs } = Astro.props;
+const { ancestors, current, locale } = Astro.props;
 ---
 
-<nav class="breadcrumbs" aria-label="Kruimelpad">
-  <ol>
-    {
-      crumbs.map((crumb, index) =>
-        index === crumbs.length - 1 ? (
-          <li aria-current="page">{crumb.label}</li>
-        ) : (
+{
+  ancestors.length > 0 && (
+    <nav class="breadcrumbs" aria-label={ui(locale).breadcrumb}>
+      <ol>
+        {ancestors.map((crumb) => (
           <li>
             <a href={crumb.href}>{crumb.label}</a>
           </li>
-        ),
-      )
-    }
-  </ol>
-</nav>
+        ))}
+        {current && (
+          <li class="sr-only" aria-current="page">
+            {current.label}
+          </li>
+        )}
+      </ol>
+    </nav>
+  )
+}

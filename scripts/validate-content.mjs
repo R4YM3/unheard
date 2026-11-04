@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parseDocument } from 'yaml';
+import { validateModel } from '../src/lib/word-finder.mjs';
 
 /**
  * Fast pre-build checks across all content collections. The Zod schemas in
@@ -10,7 +11,7 @@ import { parseDocument } from 'yaml';
  */
 const root = 'src/content';
 const collections = {
-  emotions: 'wat-voel-ik/',
+  emotions: { nl: 'wat-voel-ik/', en: 'what-do-i-feel/' },
   patterns: 'begrippen/',
   articles: '',
   therapies: 'herstel/therapievormen/',
@@ -106,8 +107,9 @@ for (const entry of entries) {
     errors.push(`${where}: status must be draft, in_review or approved`);
   if (data.author && !['founder', 'editorial', 'Ongehoord'].includes(data.author))
     errors.push(`${where}: author must be founder or editorial`);
-  if (typeof data.slug !== 'string' || !data.slug.startsWith(prefix))
-    errors.push(`${where}: slug must start with "${prefix}"`);
+  const expected = typeof prefix === 'string' ? prefix : (prefix[data.locale ?? 'nl'] ?? prefix.nl);
+  if (typeof data.slug !== 'string' || !data.slug.startsWith(expected))
+    errors.push(`${where}: slug must start with "${expected}"`);
   if (
     typeof data.description === 'string' &&
     (data.description.length < 30 || data.description.length > 200)
@@ -120,6 +122,14 @@ for (const entry of entries) {
     errors.push(`${where}: reviewedAt must be an ISO date or null`);
   if (data.published === true && editorialReviewRequired && !data.reviewedAt)
     errors.push(`${where}: published content needs reviewedAt before NO_INDEX can be disabled`);
+  if (
+    data.published === true &&
+    editorialReviewRequired &&
+    JSON.stringify({ data, body: entry.body ?? '' }).includes('[OPRICHTER REVIEW NODIG]')
+  )
+    errors.push(
+      `${where}: remove the [OPRICHTER REVIEW NODIG] markers before NO_INDEX can be disabled`,
+    );
   if (data.published === true && editorialReviewRequired && data.status !== 'approved')
     errors.push(`${where}: published content must be approved before NO_INDEX can be disabled`);
   for (const source of data.sources ?? []) {
@@ -151,6 +161,30 @@ for (const entry of entries) {
   routes.set(route, file);
 }
 
+for (const { file, data } of entries.filter(({ data }) => data.feelingTimeline)) {
+  const steps = data.feelingTimeline.steps ?? [];
+  const stepKeys = steps.map((step) => step?.key);
+  if (new Set(stepKeys).size !== stepKeys.length)
+    errors.push(`${file}: feeling timeline repeats a feeling`);
+  const locale = data.locale ?? 'nl';
+  const feelings = entries
+    .filter(
+      (entry) =>
+        entry.collection === 'emotions' &&
+        entry.data.published === true &&
+        (entry.data.locale ?? 'nl') === locale,
+    )
+    .map((entry) => entry.data.translationKey);
+  for (const feeling of stepKeys) {
+    if (!feelings.includes(feeling))
+      errors.push(`${file}: feeling timeline step "${feeling}" is not a published feeling`);
+  }
+  for (const feeling of feelings) {
+    if (!stepKeys.includes(feeling))
+      errors.push(`${file}: feeling timeline misses published feeling "${feeling}"`);
+  }
+}
+
 for (const { file, data } of entries.filter(({ data }) => data.published === true)) {
   const related = Array.isArray(data.related)
     ? data.related
@@ -173,6 +207,26 @@ for (const file of statsFiles) {
     errors.push(`${file}: url must be HTTPS`);
 }
 
+const finderFiles = (await walk(join(root, 'finder')).catch(() => [])).filter((file) =>
+  /\.ya?ml$/.test(file),
+);
+const nlKeys = new Set(
+  [...keys.keys()].filter((id) => id.startsWith('nl:')).map((id) => id.slice(3)),
+);
+for (const file of finderFiles) {
+  const document = parseDocument(await readFile(file, 'utf8'));
+  if (document.errors.length > 0) {
+    errors.push(`${file}: invalid YAML`);
+    continue;
+  }
+  const model = document.toJS();
+  for (const question of model.questions ?? [])
+    for (const option of question.options ?? []) option.routes ??= [];
+  for (const problem of validateModel(model, nlKeys)) errors.push(`${file}: ${problem}`);
+  for (const [pattern, reason] of forbidden)
+    if (pattern.test(JSON.stringify(model))) errors.push(`${file}: editorial lint — ${reason}`);
+}
+
 const reported = onlyFiles.size
   ? errors.filter((message) => [...onlyFiles].some((file) => message.startsWith(file)))
   : errors;
@@ -181,5 +235,5 @@ if (reported.length > 0) {
   process.exit(1);
 }
 console.log(
-  `Validated ${entries.length} content files (${keys.size} published keys) and ${statsFiles.length} figures.`,
+  `Validated ${entries.length} content files (${keys.size} published keys), ${statsFiles.length} figures and ${finderFiles.length} word finder.`,
 );

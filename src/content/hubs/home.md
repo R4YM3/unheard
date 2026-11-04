@@ -11,10 +11,9 @@ publishedAt: 2026-10-19
 updatedAt: 2026-10-20
 reviewedAt: null
 cardTitle: 'Home'
-heading: 'Voor alles wat je voelt, maar nog niet kunt verwoorden.'
+heading: 'Je hoeft het nog geen misbruik te noemen.'
 eyebrow: 'Ongehoord'
 lead: 'Herkenning, begrip en herstel na emotioneel of financieel misbruik.'
-chooser: true
 scenarios:
   - label: 'Een gesprek begrijpen'
     outside: '“Zo heb ik dat niet bedoeld. Jij maakt het altijd groter dan het is.”'
@@ -42,44 +41,44 @@ home:
       - 'Misschien heb je nog geen woorden voor wat je meemaakt. Dat betekent niet dat je gevoel er niet mag zijn. Hier kun je herkennen, onderzoeken en begrijpen, zonder dat iemand voor jou bepaalt wat je hebt ervaren.'
       - 'Ik bouw Ongehoord vanuit mijn eigen ervaringen en herstel. Ik ben één persoon, geen hulporganisatie. Je vindt hier mijn verhaal, uitleg over patronen en gevolgen, en hulpmiddelen om je gevoelens te onderzoeken. De aandacht gaat vooral uit naar mannen, omdat het stigma het moeilijk kan maken om te praten. Iedereen is welkom.'
   feelings:
-    eyebrow: '01 · Begin bij jezelf'
+    eyebrow: 'Begin bij jezelf'
     heading: 'Wat herken jij?'
     lead: 'Je hoeft het antwoord nog niet te weten. Kies wat het dichtst bij jouw ervaring komt.'
     cards:
       - {
-          eyebrow: '01 / Zelftwijfel',
+          eyebrow: 'Zelftwijfel',
           title: 'Ik twijfel steeds aan mezelf.',
           href: 'nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
         }
       - {
-          eyebrow: '02 / Schuld',
+          eyebrow: 'Schuld',
           title: 'Ik voel me verantwoordelijk voor alles.',
           href: 'nl/wat-voel-ik/ik-voel-me-schuldig/',
         }
       - {
-          eyebrow: '03 / Identiteit',
+          eyebrow: 'Identiteit',
           title: 'Ik herken mezelf niet meer.',
           href: 'nl/wat-voel-ik/ik-herken-mezelf-niet-meer/',
         }
       - {
-          eyebrow: '04 / Herstel',
+          eyebrow: 'Herstel',
           title: 'Ik begrijp het, maar het blijft pijn doen.',
           href: 'nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/',
         }
       - {
-          eyebrow: '05 / Grenzen',
+          eyebrow: 'Grenzen',
           title: 'Ik durf geen nee te zeggen.',
           href: 'nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/',
         }
       - {
-          eyebrow: '06 / Geld',
+          eyebrow: 'Geld',
           title: 'Ik durf niet over geld te praten.',
           href: 'nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/',
         }
-    moreHref: 'nl/wat-voel-ik/'
-    moreLabel: 'Bekijk alle negen gevoelens'
+    moreHref: 'nl/hulpmiddelen/help-me-woorden-vinden/'
+    moreLabel: 'Help me woorden vinden'
   topics:
-    eyebrow: '02 · Begrijp het'
+    eyebrow: 'Begrijp het'
     heading: 'Er bestaan woorden voor wat je meemaakt.'
     cards:
       - eyebrow: 'Hoofdthema / Emotioneel misbruik'
@@ -95,9 +94,9 @@ home:
         label: 'Welke veilige stappen zijn er?'
         href: 'nl/begrijp-het/financieel-misbruik/'
   perspective:
-    eyebrow: '03 · Twee kanten van één gesprek'
+    eyebrow: 'Twee kanten van één gesprek'
     heading: 'Wat je hoort. Wat je voelt.'
-    lead: 'Kies een situatie en wissel tussen wat er gezegd wordt en wat je vanbinnen voelt. Dit zijn fictieve voorbeelden, geen diagnoses.'
+    lead: 'Hetzelfde moment, van twee kanten: wat er gezegd wordt en wat het vanbinnen met je doet. Dit zijn fictieve voorbeelden, geen diagnoses.'
   storyTeaser:
     eyebrow: 'Waarom Ongehoord bestaat'
     heading: 'Ook ik zocht woorden voor wat ik voelde.'
@@ -111,9 +110,9 @@ home:
     heading: 'Van toen tot nu.'
     description: 'Een persoonlijke tijdlijn met per moment vier lagen: wat gebeurde er, wat voelde ik, wie werd ik en wat begrijp ik nu.'
     href: 'nl/mijn-verhaal/#tijdlijn'
-    label: 'Bekijk de tijdlijn'
+    label: 'Ontdek de tijdlijn'
   resources:
-    eyebrow: '04 · Herstel & hulpmiddelen'
+    eyebrow: 'Herstel & hulpmiddelen'
     heading: 'Er mag weer ruimte ontstaan.'
     cards:
       - {
@@ -137,11 +136,15 @@ home:
           label: 'Hoe kun je helpen?',
           href: 'nl/ik-maak-me-zorgen-om-iemand/',
         }
-  fact:
-    eyebrow: 'Eén cijfer, met context'
-    text: 'Ook mannen krijgen te maken met psychisch geweld in huiselijke kring. In het CBS-onderzoek van 2024 gaf 4,9 procent van de mannen van 16 jaar en ouder aan dit in de twaalf maanden ervoor te hebben meegemaakt. Dat gaat niet alleen over partners, maar over de hele huiselijke kring.'
+  facts:
+    eyebrow: 'Twee cijfers, met context'
+    items:
+      - value: '870.000'
+        text: 'mensen van 16 jaar en ouder maakten in 2024 psychisch geweld in huiselijke kring mee. Dat is ongeveer 5,9 procent van iedereen, niet alleen van mannen, en niet alleen binnen een relatie.'
+      - value: '4,9%'
+        text: 'van de mannen van 16 jaar en ouder maakte dat mee. Het CBS publiceert daarbij geen apart aantal mannen. 870.000 is dus niet het mannelijke cijfer.'
     href: 'nl/mannen-in-cijfers/'
-    label: 'Wat dit cijfer wel en niet zegt'
+    label: 'Wat deze cijfers wel en niet zeggen'
   closing:
     eyebrow: 'Je staat er niet alleen voor'
     heading: 'Je hoeft niet te wachten tot het ernstig genoeg voelt.'
@@ -156,5 +159,5 @@ sources:
     checkedAt: 2026-10-20
 reviewNotes:
   - 'Bevestig de introductietekst in ik-vorm en de zin “Ik ben één persoon, geen hulporganisatie”.'
-  - 'Bevestig of het CBS-cijfer op de homepage mag staan (handoff: maximaal één rustig feit, nooit in de hero).'
+  - 'Bevestig of de twee CBS-cijfers op de homepage mogen staan: 870.000 voor de hele bevolking en 4,9% voor mannen, nooit in de hero, en nooit als hetzelfde getal.'
 ---

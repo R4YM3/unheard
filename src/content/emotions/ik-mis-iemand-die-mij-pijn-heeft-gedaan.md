@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Gemis'
   paragraphs:
     - 'Misschien schaam je je ervoor. Je weet wat er gebeurde, je hebt gezien wat het met je deed. En toch mis je de ander, de gewoontes, de goede momenten.'
-    - 'Dat is verwarrend, maar niet vreemd. Verlangen en pijn kunnen naast elkaar bestaan. Je hoeft geen van beide weg te praten.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - { href: 'nl/herstel/rouw/', label: 'Lees over rouw', quiet: true }
@@ -150,4 +149,4 @@ Als het gemis je dagen beheerst, als je slecht slaapt, weinig eet of je nergens 
 
 ## Een volgende stap
 
-Je hoeft niet te kiezen tussen missen en weten. Je mag allebei voelen. Een kleine stap kan zijn om tegen één persoon te zeggen: ik mis het, én het deed pijn. Wie zich zorgen maakt over contact of veiligheid, kan gratis en anoniem advies vragen bij Veilig Thuis via 0800-2000. Meer mogelijkheden staan op [Hulp vinden](nl/hulp-vinden/).
+Je hoeft niet te kiezen tussen missen en weten. Je mag allebei voelen. Een kleine stap kan zijn om tegen één persoon te zeggen: ik mis het, én het deed pijn.

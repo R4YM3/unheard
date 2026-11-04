@@ -16,10 +16,14 @@
     "audit:visual": "node scripts/visual-audit.mjs",
     "audit:a11y": "npm run build && node scripts/axe-audit.mjs",
     "audit:print": "npm run build && node scripts/print-audit.mjs",
-    "audit:ux": "npm run build && node scripts/ux-audit.mjs"
+    "audit:ux": "npm run build && node scripts/ux-audit.mjs",
+    "audit:sources": "node scripts/check-sources.mjs",
+    "audit:launch": "NO_INDEX=false node scripts/validate-content.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/source-sans-3": "^5.3.1",
     "astro": "^7.4.0"
   },
   "devDependencies": {

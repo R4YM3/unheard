@@ -1,0 +1,73 @@
+---
+/** Quiet page map for a deep article: sections on this page, then sibling pages. */
+interface Item {
+  href: string;
+  label: string;
+  current?: boolean;
+}
+interface Group {
+  label: string;
+  items: Item[];
+  /** Long sibling lists stay closed until the reader asks for them. */
+  closed?: boolean;
+}
+interface Props {
+  groups: Group[];
+}
+const { groups } = Astro.props;
+---
+
+<div class="read-progress" aria-hidden="true"></div>
+{
+  /* Narrow screens: this page's chapters as one closed button, so the text comes first. */
+  groups[0] && (
+    <details class="rail-mobile">
+      <summary>{groups[0].label}</summary>
+      <ul>
+        {groups[0].items.map((item) => (
+          <li>
+            <a href={item.href} aria-current={item.current ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )
+}
+{
+  groups.map((group) =>
+    group.closed ? (
+      <details>
+        <summary>{group.label}</summary>
+        <ul>
+          {group.items.map((item) => (
+            <li>
+              <a href={item.href} aria-current={item.current ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    ) : (
+      <nav aria-label={group.label}>
+        <p class="eyebrow">{group.label}</p>
+        <ul>
+          {group.items.map((item) => (
+            <li>
+              <a href={item.href} aria-current={item.current ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    ),
+  )
+}
+
+<script>
+  import { enhancePageRail } from '../scripts/page-rail';
+  enhancePageRail();
+</script>

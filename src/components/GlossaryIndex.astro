@@ -3,8 +3,9 @@ import { glossaryCategoryLabels, glossaryItems } from '../lib/content';
 
 interface Props {
   locale?: string;
+  pagePath?: string;
 }
-const { locale = 'nl' } = Astro.props;
+const { locale = 'nl', pagePath = `${locale}/begrippen/` } = Astro.props;
 const items = await glossaryItems(locale);
 const alphabet = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 const letters = [...new Set(items.map((item) => item.letter))];
@@ -28,7 +29,7 @@ const groups = letters.map((letter) => ({
           alphabet.map((letter) => (
             <li>
               {letters.includes(letter) ? (
-                <a href={`#letter-${letter.toLowerCase()}`}>{letter}</a>
+                <a href={`${pagePath}#letter-${letter.toLowerCase()}`}>{letter}</a>
               ) : (
                 <span aria-hidden="true">{letter}</span>
               )}

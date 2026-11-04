@@ -20,7 +20,7 @@ usage:
   - 'Kies één vraag die je wilt stellen, en één zin die je achterwege laat.'
   - 'Blijf bereikbaar, ook als de ander weinig terugzegt.'
   - 'Bel 112 als er nu gevaar is. Voor advies kun je zelf Veilig Thuis bellen.'
-safety: 'Jij bent geen hulpverlener en deze kaart is geen diagnose. Forceer geen breuk en confronteer de partner niet. Als er nu gevaar is, bel je 112. Voor advies over huiselijk geweld kun je zelf Veilig Thuis bellen via 0800-2000, ook als je het niet zeker weet.'
+safety: 'Jij bent geen hulpverlener. Forceer geen breuk en confronteer de partner niet. Als er nu gevaar is, bel je 112. Voor advies over huiselijk geweld kun je zelf Veilig Thuis bellen via 0800-2000, ook als je het niet zeker weet.'
 card:
   title: 'Iemand steunen'
   intro: 'Je hoeft het niet op te lossen. Eén rustige vraag kan genoeg zijn.'
