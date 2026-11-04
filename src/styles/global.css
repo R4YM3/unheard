@@ -589,12 +589,10 @@ mark.review-marker {
   stroke-width: 6;
 }
 .home-hero__grid .hero-art-frame {
-  /* Same vertical rhythm as the text: the arch starts at the eyebrow and ends at the buttons. */
-  align-self: stretch;
-  height: auto;
-  min-height: 0;
-  margin-block: clamp(3rem, 6vw, 5rem);
-  aspect-ratio: auto;
+  /* Centred in the free column beside the text, both ways. */
+  align-self: center;
+  justify-self: center;
+  margin: clamp(2rem, 5vw, 3.5rem) auto;
 }
 .page-hero__grid:not(.page-hero__grid--plain) {
   align-items: center;
