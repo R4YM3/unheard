@@ -24,6 +24,16 @@ const groupLabels: Record<RoutedCollection, string> = {
   therapies: 'Therapievormen',
   tools: 'Hulpmiddelen',
 };
+/* Where most readers start; shown while the search field is empty. */
+const startKeys = [
+  'zelftwijfel',
+  'schuldgevoel',
+  'gaslighting',
+  'darvo',
+  'hulp-vinden',
+  'mijn-verhaal',
+];
+const startItems = startKeys.flatMap((key) => items.filter((item) => item.key === key));
 const groups = order
   .map((collection) => ({
     collection,
@@ -45,6 +55,20 @@ const groups = order
       of bewaard.
     </p>
     {
+      startItems.length > 0 && (
+        <div class="search-start" hidden data-filter-start>
+          <h3>Waar veel mensen beginnen</h3>
+          <ul>
+            {startItems.map((item) => (
+              <li>
+                <a href={item.href}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    {
       groups.map((group) => (
         <section data-filter-group aria-labelledby={`zoek-${group.collection}`}>
           <h3 id={`zoek-${group.collection}`}>{groupLabels[group.collection]}</h3>
@@ -64,5 +88,5 @@ const groups = order
 
 <script>
   import { enhanceFilter } from '../scripts/filter';
-  enhanceFilter('.search-results', 'pagina', 'pagina’s');
+  enhanceFilter('.search-results', 'pagina', 'pagina’s', { startWhenEmpty: true });
 </script>

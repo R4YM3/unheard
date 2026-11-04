@@ -11,6 +11,7 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 import { ui } from '../i18n/ui';
 import { hasPhotos } from '../lib/photos';
 import { shareImage } from '../lib/site';
+import { markReview } from '../lib/review-marks';
 import { currentTab, isMenuCurrent, mainMenu, navigationFor, sectionFor } from '../lib/navigation';
 interface Props {
   title: string;
@@ -204,7 +205,7 @@ const footerGroups =
     <title>{title} — {brandName}</title>
     <script
       is:inline
-      set:html={`(()=>{try{const t=localStorage.getItem('ongehoord-theme');const d=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=d}catch{}})()`}
+      set:html={`(()=>{try{const t=localStorage.getItem('ongehoord-theme');const d=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=d}catch{}if(/[?&]review(?:=|&|$)/.test(location.search))document.documentElement.classList.add('show-review')})()`}
     />
   </head>
   <body>
@@ -238,6 +239,18 @@ const footerGroups =
             ))
           }
         </nav>
+        {
+          locale === 'nl' && (
+            <a class="header-search" href="nl/zoeken/" aria-label={t.search} title={t.search}>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <>
+                  <circle cx="11" cy="11" r="6.5" />
+                  <path d="m16 16 4.5 4.5" />
+                </>
+              </svg>
+            </a>
+          )
+        }
         <details class="mobile-menu">
           <summary aria-label={t.openMenu}>
             <span></span><span></span><span></span>
@@ -267,7 +280,7 @@ const footerGroups =
         </details>
       </div>
     </header>
-    <main id="main"><slot /></main>
+    <main id="main" set:html={markReview(await Astro.slots.render('default'))} />
     <footer class="site-footer">
       <div class="wrap">
         <div class="footer-grid">

@@ -166,6 +166,17 @@ h4 {
 .lead {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
 }
+/* Founder-review placeholders: hidden for visitors, visible with ?review in the URL.
+   Separate rules on purpose: one invalid selector would void a whole selector list. */
+html:not(.show-review) .needs-review {
+  display: none;
+}
+html:not(.show-review) .timeline-lens:has(.needs-review) {
+  display: none;
+}
+html:not(.show-review) .timeline-between article:has(.needs-review) {
+  display: none;
+}
 mark.review-marker {
   background: var(--review-mark);
   color: inherit;
@@ -183,7 +194,7 @@ mark.review-marker {
 }
 .header-row {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 1.25rem;
   min-height: 5.2rem;
@@ -286,6 +297,46 @@ mark.review-marker {
 }
 .mobile-menu {
   display: none;
+}
+.header-search {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-pill);
+  color: var(--header-text);
+}
+.header-search:hover {
+  background: var(--control-hover);
+}
+.header-search svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+.search-start ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.search-start a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+.search-start a:hover {
+  border-color: var(--help);
 }
 .theme-toggle {
   display: inline-grid;
@@ -947,6 +998,32 @@ a.card:focus-visible,
   letter-spacing: 0;
   font-size: 0.9rem;
 }
+.not-found-search {
+  margin-top: 1.5rem;
+}
+.not-found-search label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.not-found-search div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.not-found-search input {
+  flex: 1 1 16rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+.listing-more {
+  margin: 1.5rem 0 0;
+}
 .card-link-label {
   margin-top: auto;
   padding-top: 1rem;
@@ -1090,6 +1167,19 @@ a.card:focus-visible,
   border: 1px solid var(--safe-border);
   border-radius: var(--radius);
   background: var(--safe);
+}
+.helps-inline {
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+.reflection--collapsed > summary {
+  display: block;
+  padding-inline-end: 2.5rem;
+}
+.reflection--collapsed > summary h2 {
+  margin: 0;
+}
+.reflection--collapsed[open] > summary {
+  margin-bottom: 1rem;
 }
 .reflection ol {
   padding-inline-start: 1.25rem;
@@ -1544,6 +1634,9 @@ a.card:focus-visible,
 .page-rail details + nav {
   margin-top: 1.75rem;
 }
+.page-rail .rail-mobile {
+  display: none;
+}
 .page-rail summary {
   min-height: 2.75rem;
   padding: 0.35rem 0.75rem;
@@ -1822,15 +1915,25 @@ a.card:focus-visible,
     grid-row: 1;
     overflow: visible;
   }
-  /* On narrow screens the rail keeps only this page's chapters; the group moves to the
+  /* On narrow screens the rail is one closed "Op deze pagina" button; the group moves to the
      previous/next links at the end of the page. */
-  .page-rail nav + nav,
-  .page-rail nav + details {
+  .page-rail > nav,
+  .page-rail > details:not(.rail-mobile) {
     display: none;
   }
-  .page-rail ul {
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
-    column-gap: 0.75rem;
+  .page-rail .rail-mobile {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .page-rail .rail-mobile summary {
+    min-height: 3rem;
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    font-weight: 700;
+  }
+  .page-rail .rail-mobile ul {
+    padding: 0 0.5rem 0.75rem;
   }
   .read-progress {
     position: fixed;
@@ -1881,6 +1984,9 @@ a.card:focus-visible,
     display: none;
   }
 
+  .header-search {
+    order: 1;
+  }
   .mobile-menu {
     order: 2;
     position: relative;
@@ -1957,10 +2063,15 @@ a.card:focus-visible,
   }
 }
 @media (max-width: 42rem) {
+  /* No automatic hyphenation in headings: break only a word that cannot fit at all. */
   h1 {
     max-inline-size: 100%;
-    overflow-wrap: anywhere;
-    hyphens: auto;
+    font-size: clamp(2rem, 8.5vw, 2.6rem);
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+  h2 {
+    hyphens: manual;
   }
   .section-heading {
     display: block;

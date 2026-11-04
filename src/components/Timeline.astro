@@ -1,5 +1,6 @@
 ---
 import Marked from './Marked.astro';
+import { REVIEW_MARKER } from '../lib/review-marks';
 /** Layered personal timeline: main milestones always visible, layers and in-between moments expandable (and fully printed). */
 interface Milestone {
   eyebrow: string;
@@ -23,7 +24,11 @@ const { label, milestones } = Astro.props;
           <p class="eyebrow">{milestone.eyebrow}</p>
           <h3>{milestone.title}</h3>
           <p>{milestone.description}</p>
-          <details>
+          <details
+            class:list={{
+              'needs-review': milestone.lenses.every((lens) => lens.text.includes(REVIEW_MARKER)),
+            }}
+          >
             <summary>Lees de vier lagen van dit moment</summary>
             <div class="timeline-lenses">
               {milestone.lenses.map((lens) => (

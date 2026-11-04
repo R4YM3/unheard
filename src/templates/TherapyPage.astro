@@ -5,6 +5,7 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import PageRail from '../components/PageRail.astro';
 import { articleRailGroups } from '../lib/article-rail';
 import Marked from '../components/Marked.astro';
+import { REVIEW_MARKER } from '../lib/review-marks';
 
 interface Props {
   entry: CollectionEntry<'therapies'>;
@@ -47,7 +48,15 @@ const railGroups = await articleRailGroups(entry, headings);
   {
     data.founder && (
       <section
-        class="section section--therapy"
+        class:list={[
+          'section',
+          'section--therapy',
+          {
+            'needs-review': data.founder.text.every((paragraph) =>
+              paragraph.includes(REVIEW_MARKER),
+            ),
+          },
+        ]}
         aria-labelledby="ervaring-heading"
         id="mijn-ervaring"
       >

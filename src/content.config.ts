@@ -325,6 +325,10 @@ const listing = z.object({
   lead: z.string().min(10).optional(),
   tone: z.enum(['neutral', 'safe', 'tension']).default('neutral'),
   cardStyle: z.enum(['default', 'feeling']).default('default'),
+  /** Show only these translation keys, in this order (the full list lives elsewhere). */
+  featured: z.array(z.string().min(2)).optional(),
+  /** Link under the list, for example to the full index. */
+  more: action.optional(),
 });
 
 const homeCard = z.object({
