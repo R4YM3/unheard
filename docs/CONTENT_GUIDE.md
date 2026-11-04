@@ -142,6 +142,7 @@ parallel branch are pre-registered, see `docs/SCHEMA_CHANGES.md`).
 | `emotioneel-misbruik`              | articles   | `begrijp-het/emotioneel-misbruik`                                 |
 | `conflict-of-patroon`              | articles   | `begrijp-het/conflict-of-patroon`                                 |
 | `wat-het-met-je-kan-doen`          | articles   | `begrijp-het/wat-het-met-je-kan-doen`                             |
+| `waarom-ik`                        | articles   | `begrijp-het/waarom-overkwam-dit-mij`                             |
 | `begrippen`                        | hubs       | `begrippen`                                                       |
 | `darvo`                            | patterns   | `begrippen/darvo`                                                 |
 | `financieel-misbruik`              | hubs       | `begrijp-het/financieel-misbruik`                                 |
