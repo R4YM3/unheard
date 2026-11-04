@@ -32,7 +32,7 @@ scenarios:
     outside: '“Waarom maak je er altijd zo’n drama van?”'
     inside: 'Ik weet niet goed wat ik hiervan moet vinden. Was dit een slechte dag, of gebeurt dit vaker dan ik wil toegeven?'
     context: 'Uit één losse zin valt niet af te leiden wat er speelt. Wat helpt, is kijken naar wat er gebeurt over een langere tijd: hoe vaak, wie zich aanpast, en of er ruimte is om het goed te maken.'
-related: [emotioneel-misbruik, dwingende-controle, darvo, grenzen]
+related: [emotioneel-misbruik, dwingende-controle, darvo, grenzen, zelf-ook-fout]
 sources:
   - label: 'Thuisarts — Ik word mishandeld door mijn partner of ex-partner'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'

@@ -21,6 +21,8 @@ Run `npm run audit:print` to create and check A4 PDFs for every content template
 
 Run `npm run audit:ux` for browser checks the static audit cannot do: no horizontal scrolling at 320, 375, 430 and 1440 px with JavaScript on and off, full content coverage without JavaScript, that both sides of each "Wat je hoort. Wat je voelt." example stay visible and the example buttons work from the keyboard, and Axe colour contrast of that component in light and dark themes.
 
+Run `npm run audit:sources` now and then to check every source URL in the content. It needs the network, so it is not part of CI. Sites that block scripted requests (DOI resolvers, Juridisch Loket, Nibud, Politie) are listed as "check by hand"; 404s and other errors fail the check.
+
 Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 
 ## Adding content

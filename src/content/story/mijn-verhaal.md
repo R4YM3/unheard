@@ -16,7 +16,7 @@ heading: 'Ook ik zocht woorden voor wat ik voelde.'
 eyebrow: 'Mijn verhaal / Ongehoord'
 lead: 'Ik begon langzaam aan mezelf te twijfelen. Ik zocht bevestiging, wilde begrijpen wat me overkwam en ontdekte gaandeweg hoe belangrijk het is om opnieuw naar mezelf te luisteren.'
 heroPersonal: 'Ik ben vader. Ik bouw mijn leven opnieuw op. En sommige dingen blijven moeilijk. Mijn verhaal is geen handleiding voor een ander, maar misschien herken je iets in mijn zoektocht.'
-related: [zelftwijfel, pijn-na-inzicht, therapievormen, herstel-ouderschap]
+related: [zelftwijfel, pijn-na-inzicht, therapievormen, herstel-ouderschap, waarom-ik]
 introduction:
   eyebrow: 'Waarom ik dit deel'
   heading: 'Ik wilde begrijpen wat er met mij gebeurde.'
