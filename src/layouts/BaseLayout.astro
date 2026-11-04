@@ -8,6 +8,8 @@ import '../styles/global.css';
 import '../styles/print.css';
 import { type Locale } from '../i18n/config';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import { ui } from '../i18n/ui';
+import { currentTab, isMenuCurrent, mainMenu, navigationFor, sectionFor } from '../lib/navigation';
 interface Props {
   title: string;
   description: string;
@@ -24,8 +26,6 @@ interface Props {
   /** Sources visible on the page. */
   citations?: Array<Record<string, unknown>>;
   pageType?: 'WebPage' | 'CollectionPage' | 'AboutPage';
-  /** Horizontal section links under the header. Deep pages can replace them with a side rail. */
-  sectionNav?: boolean;
 }
 const {
   title,
@@ -39,7 +39,6 @@ const {
   mainEntityId,
   citations = [],
   pageType = 'WebPage',
-  sectionNav = true,
 } = Astro.props;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
@@ -118,72 +117,18 @@ const skipLabel =
       ? 'انتقل إلى المحتوى'
       : 'Skip to content';
 const homeHref = `${locale}/`;
-const navigation: Array<[string, string]> =
-  locale === 'nl'
-    ? [
-        [homeHref, 'Home'],
-        ['nl/wat-voel-ik/', 'Wat voel ik?'],
-        ['nl/begrijp-het/', 'Begrijp het'],
-        ['nl/herstel/', 'Herstel'],
-        ['nl/mijn-verhaal/', 'Mijn verhaal'],
-        ['nl/hulpmiddelen/', 'Hulpmiddelen'],
-        ['nl/hulp-vinden/', 'Hulp vinden'],
-      ]
-    : [[homeHref, locale === 'ar' ? 'الصفحة الرئيسية' : 'Home']];
-const isCurrent = (href: string) => {
-  if (href === homeHref) return localPath === homeHref;
-  if (href === 'nl/begrijp-het/')
-    return localPath.startsWith(href) || localPath.startsWith('nl/begrippen/');
-  return localPath.startsWith(href);
-};
-const sectionGroups =
-  locale === 'nl'
-    ? [
-        {
-          test: localPath.startsWith('nl/wat-voel-ik'),
-          label: 'Binnen Wat voel ik?',
-          links: [
-            ['nl/wat-voel-ik/', 'Alle gevoelens'],
-            ['nl/wat-voel-ik/#tijdlijn', 'Tijdlijn'],
-            ['nl/hulpmiddelen/help-me-woorden-vinden/', 'Woorden vinden'],
-            ['nl/wat-voel-ik/ik-twijfel-aan-mezelf/', 'Twijfel'],
-            ['nl/wat-voel-ik/ik-voel-me-schuldig/', 'Schuld'],
-            ['nl/wat-voel-ik/ik-herken-mezelf-niet-meer/', 'Identiteit'],
-            ['nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/', 'Grenzen'],
-            ['nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/', 'Geld'],
-            ['nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/', 'Het blijft pijn doen'],
-          ] as Array<[string, string]>,
-        },
-        {
-          test: localPath.startsWith('nl/begrijp-het') || localPath.startsWith('nl/begrippen'),
-          label: 'Binnen Begrijp het',
-          links: [
-            ['nl/begrijp-het/', 'Overzicht'],
-            ['nl/begrijp-het/emotioneel-misbruik/', 'Emotioneel misbruik'],
-            ['nl/begrijp-het/financieel-misbruik/', 'Financieel misbruik'],
-            ['nl/begrippen/', 'Begrippen A–Z'],
-            ['nl/begrippen/silent-treatment/', 'Silent treatment'],
-            ['nl/begrippen/gaslighting/', 'Gaslighting'],
-            ['nl/begrippen/darvo/', 'DARVO'],
-            ['nl/begrippen/hoovering/', 'Hoovering'],
-          ] as Array<[string, string]>,
-        },
-        {
-          test: localPath.startsWith('nl/herstel') || localPath.startsWith('nl/hulpmiddelen'),
-          label: 'Binnen Herstel',
-          links: [
-            ['nl/herstel/', 'Overzicht'],
-            ['nl/herstel/therapievormen/', 'Therapievormen'],
-            ['nl/herstel/therapievormen/schematherapie/', 'Schematherapie'],
-            ['nl/hulpmiddelen/', 'Hulpmiddelen'],
-            ['nl/hulpmiddelen/help-me-woorden-vinden/', 'Woorden vinden'],
-          ] as Array<[string, string]>,
-        },
-      ]
-    : [];
-const activeSection = sectionGroups.find((group) => group.test);
-const navLabel =
-  locale === 'ar' ? 'التنقل الرئيسي' : locale === 'en' ? 'Main navigation' : 'Hoofdnavigatie';
+const t = ui(locale);
+const siteNavigation = navigationFor(locale);
+const navigation: Array<[string, string]> = siteNavigation
+  ? mainMenu(siteNavigation).map(({ href, label }) => [href, label])
+  : [[homeHref, t.home]];
+const isCurrent = (href: string) =>
+  siteNavigation
+    ? isMenuCurrent(siteNavigation, href, localPath)
+    : href === homeHref && localPath === homeHref;
+const activeSection = siteNavigation ? sectionFor(siteNavigation, localPath) : undefined;
+const activeTab = activeSection ? currentTab(activeSection, localPath) : undefined;
+const navLabel = t.mainNavigation;
 const footerGroups =
   locale === 'nl'
     ? [
@@ -266,7 +211,7 @@ const footerGroups =
               <a
                 class:list={{
                   'nav-home': href === homeHref,
-                  'nav-help': href === 'nl/hulp-vinden/',
+                  'nav-help': href === siteNavigation?.help.href,
                 }}
                 href={href}
                 aria-current={isCurrent(href) ? 'page' : undefined}
@@ -277,13 +222,7 @@ const footerGroups =
           }
         </nav>
         <details class="mobile-menu">
-          <summary
-            aria-label={locale === 'nl'
-              ? 'Menu openen'
-              : locale === 'ar'
-                ? 'فتح القائمة'
-                : 'Open menu'}
-          >
+          <summary aria-label={t.openMenu}>
             <span></span><span></span><span></span>
           </summary>
           <nav class="mobile-menu__panel" aria-label={`${navLabel} (mobiel)`}>
@@ -296,13 +235,17 @@ const footerGroups =
             }
             {
               activeSection &&
-                activeSection.links.map(([href, label]) => (
-                  <a class="mobile-menu__sub" href={href}>
+                activeSection.tabs.map(({ href, label }) => (
+                  <a
+                    class="mobile-menu__sub"
+                    href={href}
+                    aria-current={activeTab?.href === href ? 'page' : undefined}
+                  >
                     {label}
                   </a>
                 ))
             }
-            {locale === 'nl' && <a href="nl/zoeken/">Zoeken</a>}
+            {locale === 'nl' && <a href="nl/zoeken/">{t.search}</a>}
           </nav>
         </details>
         <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
@@ -310,25 +253,6 @@ const footerGroups =
         >
       </div>
     </header>
-    {
-      sectionNav && activeSection && (
-        <div class="section-nav-bar">
-          <div class="wrap">
-            <nav class="section-nav" aria-label={activeSection.label}>
-              <ul>
-                {activeSection.links.map(([href, label]) => (
-                  <li>
-                    <a href={href} aria-current={localPath === href ? 'page' : undefined}>
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </div>
-      )
-    }
     <main id="main"><slot /></main>
     <footer class="site-footer">
       <div class="wrap">
