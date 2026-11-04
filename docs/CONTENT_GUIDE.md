@@ -230,3 +230,20 @@ parallel branch are pre-registered, see `docs/SCHEMA_CHANGES.md`).
 - **Emotion page order:** hoe voelt het? → wat gebeurt er om je heen? → wat kan dit
   verklaren? → gevolgen; the template then adds the perspective switcher, impacts,
   reflection questions, `helps`, related routes, help and sources.
+
+## Translations (English pilot)
+
+- A translation is a new file in a `en/` folder of the same collection, for example
+  `src/content/articles/en/find-help.md`. It keeps the Dutch `translationKey`, sets
+  `locale: en` and has an English slug. Feelings live under `what-do-i-feel/`.
+- Content ids come from the file path, so a translation may share a slug such as `home`.
+- `related` may only name keys that exist in the same locale. Link to a Dutch-only page with
+  its `nl/…` URL and mark it "(in Dutch)".
+- Keep source titles in their original language; add `note: 'In Dutch'` for Dutch sources.
+- The services are Dutch in every edition. Only say a service helps in English when a source
+  says so. The English help band adds fixed emergency numbers for a few other countries; there
+  is no location lookup.
+- Until a locale is listed in `publishedLocales` (`src/i18n/language.mjs`), its pages are built
+  for review only: always `noindex`, absent from the sitemap, no `hreflang`, and no language
+  link from the Dutch edition. Review at `/en/`. The English menu (`src/lib/navigation.ts`) lists
+  only pages that exist in English; a test enforces that.

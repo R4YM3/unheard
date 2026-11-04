@@ -185,7 +185,7 @@ const heroData = 'hero' in data ? data.hero : undefined;
         showSummary && (data.summary || data.glossary) && (
           <div class="wrap reading">
             <section class="summary-box" aria-labelledby="summary-heading">
-              <h2 id="summary-heading">In het kort</h2>
+              <h2 id="summary-heading">{ui(data.locale).inShort}</h2>
               {data.summary && <p>{data.summary}</p>}
               {data.glossary && (
                 <div class="term-definition">

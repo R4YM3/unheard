@@ -17,7 +17,8 @@ export default defineConfig({
           (process.env.GITHUB_ACTIONS && !usesCustomDomain
             ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''}`
             : '') &&
-        !/\/(?:en|ar)\/$/.test(page) &&
+        // Locales without an approved translation (see src/i18n/language.mjs) stay out.
+        !/\/(?:en|ar)\//.test(page) &&
         !/\/nl\/(?:financieel-misbruik|herstel\/therapie|herstel\/therapievormen\/groepsschematherapie|ontwerp-systeem)\/$/.test(
           page,
         ),

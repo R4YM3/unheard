@@ -11,7 +11,7 @@ import { validateModel } from '../src/lib/word-finder.mjs';
  */
 const root = 'src/content';
 const collections = {
-  emotions: 'wat-voel-ik/',
+  emotions: { nl: 'wat-voel-ik/', en: 'what-do-i-feel/' },
   patterns: 'begrippen/',
   articles: '',
   therapies: 'herstel/therapievormen/',
@@ -107,8 +107,9 @@ for (const entry of entries) {
     errors.push(`${where}: status must be draft, in_review or approved`);
   if (data.author && !['founder', 'editorial', 'Ongehoord'].includes(data.author))
     errors.push(`${where}: author must be founder or editorial`);
-  if (typeof data.slug !== 'string' || !data.slug.startsWith(prefix))
-    errors.push(`${where}: slug must start with "${prefix}"`);
+  const expected = typeof prefix === 'string' ? prefix : (prefix[data.locale ?? 'nl'] ?? prefix.nl);
+  if (typeof data.slug !== 'string' || !data.slug.startsWith(expected))
+    errors.push(`${where}: slug must start with "${expected}"`);
   if (
     typeof data.description === 'string' &&
     (data.description.length < 30 || data.description.length > 200)

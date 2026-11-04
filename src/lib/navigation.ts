@@ -40,6 +40,8 @@ export interface LocaleNavigation {
   sections: Section[];
   feelingGroups: PageGroup[];
   feelingsOverview: string;
+  /** Link groups in the footer. */
+  footer: Array<{ heading: string; links: NavLink[] }>;
 }
 
 const nlSections: Section[] = [
@@ -128,6 +130,65 @@ const byLocale: Partial<Record<Locale, LocaleNavigation>> = {
     sections: nlSections,
     feelingGroups: nlFeelingGroups,
     feelingsOverview: 'nl/wat-voel-ik/',
+    footer: [
+      {
+        heading: 'Ontdek',
+        links: [
+          { href: 'nl/wat-voel-ik/', label: 'Wat voel ik?' },
+          { href: 'nl/begrijp-het/', label: 'Begrijp het' },
+          { href: 'nl/begrippen/', label: 'Begrippen van A tot Z' },
+          { href: 'nl/herstel/', label: 'Herstel' },
+          { href: 'nl/hulpmiddelen/', label: 'Hulpmiddelen' },
+          { href: 'nl/mannen-in-cijfers/', label: 'Mannen in cijfers' },
+          { href: 'nl/zoeken/', label: 'Zoeken' },
+        ],
+      },
+      {
+        heading: 'Over deze site',
+        links: [
+          { href: 'nl/over/', label: 'Over Ongehoord' },
+          { href: 'nl/werkwijze/', label: 'Werkwijze en bronnen' },
+          { href: 'nl/veilig-gebruik/', label: 'Privacy en veilig gebruik' },
+          { href: 'nl/toegankelijkheid/', label: 'Toegankelijkheid' },
+          { href: 'nl/ik-maak-me-zorgen-om-iemand/', label: 'Voor naasten' },
+        ],
+      },
+    ],
+  },
+  /* English pilot: only pages that exist in English. Grows with each translated page. */
+  en: {
+    home: { href: 'en/', label: 'Home' },
+    help: { href: 'en/find-help/', label: 'Find help' },
+    sections: [
+      {
+        menu: { href: 'en/what-do-i-feel/', label: 'What do I feel?' },
+        label: 'Within What do I feel?',
+        tabs: [{ href: 'en/what-do-i-feel/', label: 'Feelings' }],
+        prefixes: ['en/what-do-i-feel/'],
+      },
+      {
+        menu: { href: 'en/understand/emotional-abuse/', label: 'Emotional abuse' },
+        label: 'Within Understand',
+        tabs: [{ href: 'en/understand/emotional-abuse/', label: 'Emotional abuse' }],
+        prefixes: ['en/understand/'],
+      },
+    ],
+    feelingGroups: [{ label: 'About yourself', pages: ['en/what-do-i-feel/i-doubt-myself/'] }],
+    feelingsOverview: 'en/what-do-i-feel/',
+    footer: [
+      {
+        heading: 'Explore',
+        links: [
+          { href: 'en/what-do-i-feel/', label: 'What do I feel?' },
+          { href: 'en/understand/emotional-abuse/', label: 'Emotional abuse' },
+          { href: 'nl/', label: 'Full Dutch edition' },
+        ],
+      },
+      {
+        heading: 'About this site',
+        links: [{ href: 'en/safe-use/', label: 'Privacy and safe use' }],
+      },
+    ],
   },
 };
 

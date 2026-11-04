@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readdir } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
 import {
   currentTab,
@@ -49,8 +49,30 @@ test('sections have at most four parts', () => {
   for (const section of nav.sections) assert.ok(section.tabs.length <= 4, section.label);
 });
 
-test('locales without approved navigation fall back to home only', () => {
-  assert.equal(navigationFor('en'), undefined);
+test('the English pilot menu links only to pages that exist in English', async () => {
+  const en = navigationFor('en');
+  assert.ok(en);
+  const slugs = new Set(['en/']);
+  const walk = async (dir) => {
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const path = `${dir}/${entry.name}`;
+      if (entry.isDirectory()) await walk(path);
+      else if (/\.mdx?$/.test(entry.name)) {
+        const text = await readFile(path, 'utf8');
+        if (/^locale: en$/m.test(text) && /^published: true$/m.test(text))
+          slugs.add(`en/${text.match(/^slug: '?([^'\n]+)'?$/m)[1]}/`);
+      }
+    }
+  };
+  await walk('src/content');
+  const hrefs = [
+    ...mainMenu(en).map((link) => link.href),
+    ...en.sections.flatMap((section) => section.tabs.map((tab) => tab.href)),
+    ...en.feelingGroups.flatMap((group) => group.pages),
+    ...en.footer.flatMap((group) => group.links.map((link) => link.href)),
+  ].filter((href) => href.startsWith('en/'));
+  for (const href of hrefs.map((href) => href.replace('en/home/', 'en/')))
+    assert.ok(slugs.has(href), `${href} is not a published English page`);
   assert.equal(navigationFor('ar'), undefined);
 });
 
