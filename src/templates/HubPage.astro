@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
+import ProseSlice from '../components/ProseSlice.astro';
 import FounderNote from '../components/FounderNote.astro';
 import GlossaryIndex from '../components/GlossaryIndex.astro';
 import MiniReflection from '../components/MiniReflection.astro';
@@ -35,8 +36,8 @@ const listings = await Promise.all(
   })),
 );
 const isEmptyBody = !entry.body?.trim();
-/* Section hubs open with what they hold; the explanation follows for those who want it. */
-const contentFirst = listings.length > 0 && !data.finder;
+/* Hubs weave their explanation and their lists: chapter, list, chapter, list, the rest. */
+const woven = listings.length > 0 && !data.finder && !isEmptyBody;
 const route = routeFor(entry);
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
@@ -140,72 +141,72 @@ const mainEntityId = termSet
   extraSchema={extraSchema}
   mainEntityId={mainEntityId}
   moreLinks={data.cards}
-  showSummary={!contentFirst}
 >
   {
-    !contentFirst && !isEmptyBody && (
+    !woven && !isEmptyBody && (
       <div class="wrap reading prose">
         <Content />
       </div>
     )
   }
-  {!contentFirst && data.chooser && <StartChooser locale={data.locale} />}
+  {!woven && data.chooser && <StartChooser locale={data.locale} />}
   {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
   {
     listings.map((listing, index) => (
-      <section
-        class:list={[
-          'section',
-          {
-            'section--tension': listing.tone === 'tension',
-            'section--soft': listing.tone === 'safe',
-          },
-        ]}
-        aria-labelledby={`listing-${index}-heading`}
-        id={listing.collection === 'emotions' ? 'gevoelens' : undefined}
-      >
-        <div class="wrap">
-          {listing.eyebrow && <p class="eyebrow">{listing.eyebrow}</p>}
-          <h2 id={`listing-${index}-heading`}>{listing.heading}</h2>
-          {listing.lead && <p class="reading">{listing.lead}</p>}
-          {listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
-            <div class="grid grid--3">
-              {listing.items.map((item) => (
-                <a class="card feeling-card" href={item.href}>
-                  {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
-                  <h3>{item.title}</h3>
-                  {item.text && <p>{item.text}</p>}
-                </a>
-              ))}
-            </div>
-          ) : listing.items.length > 0 ? (
-            <CardGrid
-              items={listing.items.map((item) => ({
-                ...item,
-                tone: listing.tone === 'tension' ? ('tension' as const) : ('neutral' as const),
-              }))}
-            />
-          ) : (
-            <p class="note">Hier verschijnen binnenkort pagina’s.</p>
-          )}
-        </div>
-      </section>
+      <>
+        {woven && (
+          <ProseSlice from={index} to={index + 1}>
+            <Content />
+          </ProseSlice>
+        )}
+        <section
+          class:list={[
+            'section',
+            {
+              'section--tension': listing.tone === 'tension',
+              'section--soft': listing.tone === 'safe',
+            },
+          ]}
+          aria-labelledby={`listing-${index}-heading`}
+          id={listing.collection === 'emotions' ? 'gevoelens' : undefined}
+        >
+          <div class="wrap">
+            {listing.eyebrow && <p class="eyebrow">{listing.eyebrow}</p>}
+            <h2 id={`listing-${index}-heading`}>{listing.heading}</h2>
+            {listing.lead && <p class="reading">{listing.lead}</p>}
+            {listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
+              <div class="grid grid--3">
+                {listing.items.map((item) => (
+                  <a class="card feeling-card" href={item.href}>
+                    {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
+                    <h3>{item.title}</h3>
+                    {item.text && <p>{item.text}</p>}
+                  </a>
+                ))}
+              </div>
+            ) : listing.items.length > 0 ? (
+              <CardGrid
+                items={listing.items.map((item) => ({
+                  ...item,
+                  tone: listing.tone === 'tension' ? ('tension' as const) : ('neutral' as const),
+                }))}
+              />
+            ) : (
+              <p class="note">Hier verschijnen binnenkort pagina’s.</p>
+            )}
+          </div>
+        </section>
+      </>
     ))
   }
-  {contentFirst && data.chooser && <StartChooser locale={data.locale} />}
   {
-    contentFirst && (data.summary || !isEmptyBody) && (
-      <div class="wrap reading prose">
-        {data.summary && (
-          <section class="summary-box" aria-labelledby="summary-heading">
-            <h2 id="summary-heading">In het kort</h2>
-            <p>{data.summary}</p>
-          </section>
-        )}
-        {!isEmptyBody && <Content />}
-      </div>
+    woven && (
+      <ProseSlice from={listings.length}>
+        <Content />
+      </ProseSlice>
     )
   }
+  {woven && data.chooser && <StartChooser locale={data.locale} />}
   {data.feelingTimeline && <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />}
   {
     data.cards.some((card) => !card.href) && (

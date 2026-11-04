@@ -1,0 +1,21 @@
+---
+/**
+ * Renders part of a Markdown body: the chapters (split at each <h2>) from `from` up to, not
+ * including, `to`. Text before the first chapter belongs to the first slice. Lets a hub weave
+ * its lists between the chapters of its explanation without changing the Markdown file.
+ */
+interface Props {
+  from: number;
+  to?: number;
+}
+const { from, to } = Astro.props;
+const html = await Astro.slots.render('default');
+const parts = html.split(/(?=<h2[\s>])/);
+const chapters =
+  parts.length > 1 && !/^\s*<h2[\s>]/.test(parts[0])
+    ? [parts[0] + parts[1], ...parts.slice(2)]
+    : parts;
+const slice = chapters.slice(from, to).join('');
+---
+
+{slice.trim() && <div class="wrap reading prose" set:html={slice} />}
