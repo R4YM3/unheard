@@ -25,6 +25,7 @@ const nl = {
   youHear: 'Je hoort',
   youFeel: 'Je voelt',
   chooseExample: 'Kies een voorbeeld',
+  warmLine: 'Van jou mag ook gehouden worden.',
 };
 
 export type UiStrings = typeof nl;
@@ -48,6 +49,7 @@ const en: UiStrings = {
   youHear: 'You hear',
   youFeel: 'You feel',
   chooseExample: 'Choose an example',
+  warmLine: 'You deserve to be loved too.',
 };
 
 const ar: UiStrings = {
@@ -69,6 +71,7 @@ const ar: UiStrings = {
   youHear: 'تسمع',
   youFeel: 'تشعر',
   chooseExample: 'اختر مثالًا',
+  warmLine: 'أنت أيضًا تستحق أن تُحَب.',
 };
 
 const strings: Record<Locale, UiStrings> = { nl, en, ar };

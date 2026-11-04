@@ -3,13 +3,12 @@ import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import HeroPhoto from '../components/HeroPhoto.astro';
+import HeroArt from '../components/HeroArt.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Timeline from '../components/Timeline.astro';
 import { breadcrumbsFor, routeFor } from '../lib/content';
 import { navigationFor } from '../lib/navigation';
 import { heroTrail } from '../lib/trail';
-import { photoFor } from '../lib/photos';
 
 interface Props {
   entry: CollectionEntry<'story'>;
@@ -20,7 +19,6 @@ const { Content } = await render(entry);
 const crumbs = await breadcrumbsFor(entry);
 const route = routeFor(entry);
 const hasBody = Boolean(entry.body?.trim());
-const photo = photoFor('mijn-verhaal');
 const trail = heroTrail(
   crumbs,
   data.eyebrow,
@@ -31,7 +29,7 @@ const trail = heroTrail(
 <EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
   <section class="hero page-hero">
     <div class="wrap">
-      <div class:list={['page-hero__grid', { 'page-hero__grid--plain': !photo }]}>
+      <div class="page-hero__grid">
         <div class="page-hero__content">
           <Breadcrumbs ancestors={trail.ancestors} current={trail.current} locale={data.locale} />
           {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
@@ -45,8 +43,8 @@ const trail = heroTrail(
             >
           </div>
         </div>
+        <HeroArt slot="mijn-verhaal" />
       </div>
-      {photo && <HeroPhoto photo={photo} />}
     </div>
   </section>
   <section class="section" aria-labelledby="intro-heading">
