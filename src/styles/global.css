@@ -1589,6 +1589,8 @@ a.card:focus-visible,
   grid-template-columns: 17.5rem minmax(0, 1fr);
   gap: clamp(1.25rem, 2.5vw, 2.5rem);
   align-items: start;
+  /* The rail stays with the article and stops a little above the full-width blocks below. */
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 .article-layout--rail .wrap {
   width: 100%;
