@@ -241,37 +241,35 @@ mark.review-marker {
   display: none;
 }
 .theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  min-height: 2.75rem;
-  padding: 0.6rem 0.85rem;
-  margin-top: 1.5rem;
-  font: inherit;
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
   border: 1px solid var(--control-border);
   border-radius: var(--radius-pill);
   background: var(--control-bg);
-  color: var(--footer-text);
+  color: var(--header-text);
   cursor: pointer;
 }
 .theme-toggle:hover {
   background: var(--control-hover);
 }
 .theme-toggle svg {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.2rem;
+  height: 1.2rem;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
 }
-.theme-toggle [data-theme-icon] {
+/* Show what the button switches to: a moon in light mode, a sun in dark mode. */
+.theme-toggle [data-theme-icon='to-light'],
+.theme-toggle[aria-pressed='true'] [data-theme-icon='to-dark'] {
   display: none;
 }
-.theme-toggle[data-theme-choice='light'] [data-theme-icon='light'],
-.theme-toggle[data-theme-choice='dark'] [data-theme-icon='dark'],
-.theme-toggle[data-theme-choice='system'] [data-theme-icon='system'] {
+.theme-toggle[aria-pressed='true'] [data-theme-icon='to-light'] {
   display: block;
 }
 
@@ -365,7 +363,6 @@ mark.review-marker {
 }
 .prose a,
 .summary-box a,
-.help-block a,
 .source-list a,
 .card p a,
 .glossary-index dd a,
@@ -488,6 +485,21 @@ mark.review-marker {
 .home-hero__copy {
   min-width: 0;
   padding-block: clamp(3rem, 6vw, 5rem);
+}
+.hero-photo {
+  margin: 0;
+  align-self: center;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: calc(var(--radius) + 0.25rem);
+}
+.home-hero__grid .hero-photo {
+  padding-block: clamp(2rem, 5vw, 4rem);
 }
 .home-hero__art {
   min-height: 34rem;
@@ -756,107 +768,52 @@ a.card:hover {
 }
 
 /* ---------- Perspective switch ---------- */
-.pv-scene-choice {
-  margin: 1.75rem 0 1.25rem;
-  padding: 0;
-  border: 0;
-  min-width: 0;
+.pv-head {
+  max-width: var(--reading);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
-.pv-scene-choice legend {
-  padding: 0 0 0.6rem;
-  font-size: 0.9rem;
-  font-weight: 750;
+.pv-head p {
+  margin: 0;
+  color: var(--muted);
 }
-.pv-scene-buttons {
+.pv-choice {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
 }
-.pv-scene-buttons button {
-  flex: 1 1 12rem;
-  min-height: 3rem;
-  padding: 0.8rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 0.45rem;
-  background: var(--surface);
+.pv-choice button {
+  min-height: 2.75rem;
+  padding: 0.4rem 1.1rem;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
   color: var(--text);
   font: inherit;
-  font-weight: 650;
-  text-align: start;
+  font-weight: 600;
   cursor: pointer;
 }
-.pv-scene-buttons button[aria-pressed='true'] {
-  border-color: var(--scene-pressed-border);
-  background: var(--scene-pressed);
-  box-shadow: inset 0 0 0 1px var(--scene-pressed-border);
+.pv-choice button:hover {
+  border-color: var(--help);
 }
-.pv-tabs {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.pv-choice button[aria-pressed='true'] {
+  border-color: var(--help);
+  background: var(--help);
+  color: var(--help-text);
 }
-.pv-tabs button {
-  min-height: 3rem;
-  padding: 1rem 0.75rem;
-  border: 0;
-  border-radius: 0;
-  background: var(--tab-bg);
-  color: var(--tab-text);
-  font: inherit;
-  font-weight: 700;
-  line-height: 1.35;
-  cursor: pointer;
-}
-.pv-tabs button:first-child {
-  border-start-start-radius: var(--radius);
-}
-.pv-tabs button:last-child {
-  border-start-end-radius: var(--radius);
-}
-.pv-tabs button[aria-selected='true'] {
-  background: var(--tab-active-bg);
-  color: var(--tab-active-text);
-}
-.pv-scene + .pv-scene {
-  margin-top: 2rem;
-}
-.pv-scene__title {
-  margin-bottom: 0.75rem;
-  font-size: 1.25rem;
-}
-.pv-panels {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-.pv-panel {
-  min-height: 12rem;
-  padding: clamp(1.4rem, 4vw, 2.5rem);
+/* One moment: what is said, then what it does inside. */
+.pv-scene {
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 4vw, 3.5rem);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) + 0.25rem);
   background: var(--surface);
 }
-.pv-panel .eyebrow {
-  margin-top: 0;
+.pv-scene + .pv-scene {
+  margin-top: 1rem;
 }
-.pv-panel blockquote,
-.pv-panel p.pv-quote {
-  margin: 0;
-  font-size: clamp(1.1rem, 2.1vw, 1.45rem);
-  line-height: 1.5;
-}
-.pv-panel--inside {
-  border-color: var(--inside-bg);
-  background: var(--inside-bg);
-  color: var(--inside-text);
-}
-.pv-panel--inside .eyebrow {
-  color: var(--inside-eyebrow);
-}
-.pv-context {
-  margin: 0.75rem 0 0;
-  padding: 1.1rem 1.25rem;
-  border-radius: 0.5rem;
-  background: var(--safe);
+.pv-scene__title {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
 }
 .pv[data-enhanced] .pv-scene__title {
   position: absolute;
@@ -866,15 +823,55 @@ a.card:hover {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
-.pv[data-enhanced] .pv-scene + .pv-scene {
-  margin-top: 0;
+.pv-lines {
+  display: grid;
+  margin: 0;
 }
-.pv[data-enhanced] .pv-panels {
-  display: block;
+.pv-line {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0.25rem 2rem;
+  align-items: baseline;
 }
-.pv[data-enhanced] .pv-panel {
-  border-top: 0;
-  border-radius: 0 0 var(--radius) var(--radius);
+.pv-line--inside {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.pv-line dt {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pv-line--inside dt {
+  color: var(--hero-eyebrow);
+}
+.pv-line dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.pv-line dd q {
+  quotes: '“' '”';
+}
+.pv-line--inside dd {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--hero-eyebrow);
+}
+.pv-context {
+  max-width: var(--reading);
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+}
+@media (max-width: 42rem) {
+  .pv-line {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* ---------- Reflection, chooser, tools ---------- */
@@ -1171,19 +1168,63 @@ a.card:hover {
 .source-list li + li {
   margin-top: 0.5rem;
 }
-.help-block {
-  padding: 1.25rem 1.5rem;
-  border: 1px solid var(--safe-border);
+.help-band__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1.5rem clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.help-band h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+.help-band p {
+  margin: 0 0 0.75rem;
+}
+.help-band p a {
+  color: var(--link);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.help-band__numbers {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.help-band__numbers a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
+  line-height: 1.35;
 }
-.help-block h2 {
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
+.help-band__numbers a:hover {
+  border-color: var(--help);
 }
-.help-block ul {
-  margin: 0.5rem 0;
-  padding-inline-start: 1.1rem;
+.help-band__numbers strong {
+  display: block;
+}
+.help-band__numbers span span,
+.help-band__numbers a > span:first-child {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.help-band__numbers strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+.help-band__number {
+  flex: none;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text) !important;
 }
 .founder-note {
   max-width: var(--reading);
@@ -1615,8 +1656,9 @@ a.card:hover {
   .nav {
     display: none;
   }
-  .safe-exit {
+  .header-controls {
     order: 1;
+    gap: 0.4rem;
   }
   .mobile-menu {
     order: 2;
@@ -1704,16 +1746,8 @@ a.card:hover {
   }
   .grid--2,
   .grid--3,
-  .pv-panels,
   .timeline-lenses {
     grid-template-columns: 1fr;
-  }
-  .pv-scene-buttons button {
-    flex-basis: 100%;
-  }
-  .pv-tabs button {
-    padding: 0.85rem 0.5rem;
-    font-size: 0.92rem;
   }
   .stat-teasers,
   .stat dl {

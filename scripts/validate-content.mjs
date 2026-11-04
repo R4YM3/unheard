@@ -121,6 +121,14 @@ for (const entry of entries) {
     errors.push(`${where}: reviewedAt must be an ISO date or null`);
   if (data.published === true && editorialReviewRequired && !data.reviewedAt)
     errors.push(`${where}: published content needs reviewedAt before NO_INDEX can be disabled`);
+  if (
+    data.published === true &&
+    editorialReviewRequired &&
+    JSON.stringify({ data, body: entry.body ?? '' }).includes('[OPRICHTER REVIEW NODIG]')
+  )
+    errors.push(
+      `${where}: remove the [OPRICHTER REVIEW NODIG] markers before NO_INDEX can be disabled`,
+    );
   if (data.published === true && editorialReviewRequired && data.status !== 'approved')
     errors.push(`${where}: published content must be approved before NO_INDEX can be disabled`);
   for (const source of data.sources ?? []) {

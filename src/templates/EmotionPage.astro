@@ -70,7 +70,11 @@ const allFeelings = {
     ]}
   />
   <div class="wrap reading prose"><Content /></div>
-  {data.scenarios.length > 0 && <PerspectiveSwitch scenarios={data.scenarios} />}
+  {
+    data.scenarios.length > 0 && (
+      <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
+    )
+  }
   {
     data.impacts.length > 0 && (
       <section class="section section--tension" aria-labelledby="impact-heading" id="impact">
