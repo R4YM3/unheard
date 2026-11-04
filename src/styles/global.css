@@ -1339,6 +1339,23 @@ a.card:hover {
   font-weight: 600;
   color: var(--text) !important;
 }
+.article-byline {
+  margin-block: clamp(1.5rem, 3vw, 2.5rem);
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.story-letter h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+}
+.story-letter p {
+  color: var(--muted);
+}
+.story-letter__signature {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
 .founder-note {
   max-width: var(--reading);
 }

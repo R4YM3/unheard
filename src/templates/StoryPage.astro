@@ -38,9 +38,6 @@ const trail = heroTrail(
           <p>{data.heroPersonal}</p>
           <div class="actions">
             <a class="button" href={`${route}#tijdlijn`}>Bekijk de tijdlijn</a>
-            <a class="button button--quiet" href={`${route}#voor-mijn-kinderen`}
-              >Een boodschap voor later</a
-            >
           </div>
         </div>
         <HeroArt slot="mijn-verhaal" />
@@ -96,18 +93,16 @@ const trail = heroTrail(
       />
     </div>
   </section>
+  {/* A personal note, not a highlight: quiet type, no band, no card. */}
   <section
-    class="section section--children"
+    class="section section--tight story-letter"
     aria-labelledby="brief-heading"
     id="voor-mijn-kinderen"
   >
     <div class="wrap reading">
-      <div class="card card--story">
-        <p class="eyebrow">{data.letter.eyebrow}</p>
-        <h2 id="brief-heading">{data.letter.heading}</h2>
-        {data.letter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        <p><strong>{data.letter.signature}</strong></p>
-      </div>
+      <h2 id="brief-heading">{data.letter.heading}</h2>
+      {data.letter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <p class="story-letter__signature">{data.letter.signature}</p>
     </div>
   </section>
   <section class="section section--paper" aria-labelledby="slot-heading">
