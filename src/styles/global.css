@@ -525,12 +525,25 @@ mark.review-marker {
 }
 /* Two bands of the same family never touch: the second switches family, so every block
    reads as its own piece. */
-:is(.section--soft, .section--children) + :is(.section--soft, .section--children) {
+/* A component may leave its <script> between two bands; the rule looks past it. */
+:is(.section--soft, .section--children) + :is(.section--soft, .section--children),
+:is(.section--soft, .section--children) + script + :is(.section--soft, .section--children) {
   --section-bg: var(--tint);
 }
 :is(.section--tension, .section--therapy, .section--tint)
+  + :is(.section--tension, .section--therapy, .section--tint),
+:is(.section--tension, .section--therapy, .section--tint)
+  + script
   + :is(.section--tension, .section--therapy, .section--tint) {
   --section-bg: var(--safe);
+}
+/* The footer is linen; after a page that ends on a linen band it takes the sand step. */
+body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-child) .site-footer {
+  background: var(--safe);
+}
+/* The hero is sand: a sand band straight below it takes the linen step instead. */
+.hero + :is(.section--soft, .section--children) {
+  --section-bg: var(--tint);
 }
 /* Blocks on the plain page background that follow each other share one gap instead of
    stacking two. */

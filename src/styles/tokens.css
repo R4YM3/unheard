@@ -2,12 +2,13 @@
 :root {
   /* Light: paper, ink, sage, terracotta. */
   --palette-paper: #f6f2ea;
-  /* Off-white rather than white: soft enough for large areas (hero, header, cards). */
-  --palette-paper-light: #fbf8f2;
-  --palette-paper-warm: #efe9df;
-  --palette-stone: #e7e3dc;
-  --palette-stone-line: #cfc8bc;
-  --palette-linen: #ebe4d6;
+  /* One warm tonal scale (hue 40°, same saturation): off-white, paper, sand, linen. Only the
+     lightness steps, so neighbouring bands always belong together. */
+  --palette-paper-light: #fbf9f5;
+  --palette-sand: #efeade;
+  --palette-sand-line: #dad1be;
+  --palette-linen: #e8e0d1;
+  --palette-linen-line: #d2c7b2;
   --palette-ink: #1e2320;
   --palette-ink-soft: #3e4540;
   --palette-ink-muted: #4f5550;

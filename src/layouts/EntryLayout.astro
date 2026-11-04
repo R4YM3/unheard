@@ -202,7 +202,12 @@ const heroData = 'hero' in data ? data.hero : undefined;
       <slot />
     </div>
   </div>
-  {/* Below the article the rail stops: further reading, sources and help run full width. */}
+  {
+    /* The rail stays beside the running text. Bands (examples, questions, reflection, a
+      personal note) and everything after them run full width, so the rail never floats
+      over a coloured band. */
+  }
+  <slot name="after" />
   <RelatedContent items={related} />
   {showSources && <SourceList sources={data.sources} />}
   {
