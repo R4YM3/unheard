@@ -1,5 +1,9 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+
+/* Ids come from the file path, not the `slug` field: translations share slugs such as
+   "home", and a slug-based id would let one locale silently overwrite another. */
+const idFromPath = ({ entry }: { entry: string }) => entry.replace(/\.(?:mdx?|ya?ml)$/, '');
 import { z } from 'astro/zod';
 
 const key = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'use lowercase kebab-case keys');
@@ -108,14 +112,25 @@ const base = z.object({
   order: z.number().int().optional(),
 });
 
-const prefixed = <T extends z.ZodObject>(schema: T, prefix: string) =>
-  schema.refine((data) => String((data as { slug?: unknown }).slug).startsWith(prefix), {
-    message: `slug must start with "${prefix}"`,
-    path: ['slug'],
+/** Slug prefix per collection; a record gives each locale its own (translated) folder. */
+const prefixed = <T extends z.ZodObject>(schema: T, prefix: string | Record<string, string>) =>
+  schema.superRefine((data, context) => {
+    const { slug, locale } = data as { slug?: unknown; locale?: string };
+    const expected = typeof prefix === 'string' ? prefix : (prefix[locale ?? 'nl'] ?? prefix.nl);
+    if (!String(slug).startsWith(expected))
+      context.addIssue({
+        code: 'custom',
+        message: `slug must start with "${expected}"`,
+        path: ['slug'],
+      });
   });
 
 const emotions = defineCollection({
-  loader: glob({ base: './src/content/emotions', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/emotions',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: prefixed(
     base.extend({
       feeling: z.string().min(3).max(40),
@@ -127,7 +142,7 @@ const emotions = defineCollection({
       helps: z.array(z.object({ title: z.string().min(3), text: z.string().min(10) })).default([]),
       founderNote: founderNote.optional(),
     }),
-    'wat-voel-ik/',
+    { nl: 'wat-voel-ik/', en: 'what-do-i-feel/' },
   ),
 });
 
@@ -152,7 +167,11 @@ const darvo = z.object({
 
 /** Glossary terms and behavioural patterns. Term articles are written on `content/begrippen`. */
 const patterns = defineCollection({
-  loader: glob({ base: './src/content/patterns', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/patterns',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: prefixed(
     base.extend({
       scenarios: z.array(scenario).max(3).default([]),
@@ -165,7 +184,11 @@ const patterns = defineCollection({
 
 /** Explanatory, recovery, support and about pages. */
 const articles = defineCollection({
-  loader: glob({ base: './src/content/articles', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/articles',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: base.extend({
     scenarios: z.array(scenario).max(3).default([]),
     reflection: reflection.optional(),
@@ -175,7 +198,11 @@ const articles = defineCollection({
 });
 
 const therapies = defineCollection({
-  loader: glob({ base: './src/content/therapies', pattern: '**/*.{md,mdx}' }),
+  loader: glob({
+    base: './src/content/therapies',
+    pattern: '**/*.{md,mdx}',
+    generateId: idFromPath,
+  }),
   schema: prefixed(
     base.extend({
       name: z.string().min(3),
@@ -193,7 +220,7 @@ const therapies = defineCollection({
 });
 
 const tools = defineCollection({
-  loader: glob({ base: './src/content/tools', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/tools', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: prefixed(
     base.extend({
       purpose: z.string().min(20),
@@ -221,7 +248,7 @@ const tools = defineCollection({
 
 /** Individually verified figures. Only `verified: true` entries are rendered. */
 const stats = defineCollection({
-  loader: glob({ base: './src/content/stats', pattern: '**/*.{yaml,yml}' }),
+  loader: glob({ base: './src/content/stats', pattern: '**/*.{yaml,yml}', generateId: idFromPath }),
   schema: z.object({
     order: z.number().int(),
     verified: z.boolean(),
@@ -253,7 +280,11 @@ const routeId = z.enum([
 
 /** "Help me woorden vinden": questions, routes and texts. Rules live in lib/word-finder.mjs. */
 const finder = defineCollection({
-  loader: glob({ base: './src/content/finder', pattern: '**/*.{yaml,yml}' }),
+  loader: glob({
+    base: './src/content/finder',
+    pattern: '**/*.{yaml,yml}',
+    generateId: idFromPath,
+  }),
   schema: z.object({
     id: key,
     status: z.enum(['draft', 'in_review', 'approved']).default('draft'),
@@ -341,7 +372,7 @@ const homeCard = z.object({
 });
 
 const hubs = defineCollection({
-  loader: glob({ base: './src/content/hubs', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/hubs', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: base.extend({
     heading: z.string().min(8),
     eyebrow: z.string().min(2),
@@ -453,7 +484,7 @@ const hubs = defineCollection({
 const lens = z.object({ heading: z.string().min(4), text: z.string().min(10) });
 
 const story = defineCollection({
-  loader: glob({ base: './src/content/story', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/story', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: base.extend({
     heading: z.string().min(8),
     eyebrow: z.string().min(2),

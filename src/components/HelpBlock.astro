@@ -1,44 +1,101 @@
 ---
 /**
  * The quiet help route at the end of every content page: three numbers that can be called
- * directly, and a link to the full help page. Dutch services; other locales need their own
- * verified numbers before they are published.
+ * directly, and a link to the full help page. The services are Dutch in every language:
+ * the site is about help in the Netherlands. A reader's language says nothing about where
+ * they are, so other editions also list emergency numbers for a few other countries, as
+ * fixed text (no location lookup). Sources for those numbers are on the help page.
  */
+import { localeFromPath } from '../i18n/config';
+import { navigationFor } from '../lib/navigation';
+
+const locale = localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL);
+const helpHref = navigationFor(locale)?.help.href ?? 'nl/hulp-vinden/';
+const text =
+  locale === 'nl'
+    ? {
+        heading: 'Heb je nu hulp nodig?',
+        intro:
+          'Ongehoord biedt zelf geen hulp. Deze organisaties wel, ook voor mannen. Bellen is gratis.',
+        based: undefined,
+        chat: ['Liever chatten? Dat kan anoniem via', '.'],
+        more: 'Meer over hulp vinden en veilig advies vragen',
+        veiligThuis: 'Advies bij huiselijk geweld, anoniem',
+        suicide: 'Bij gedachten aan zelfdoding, dag en nacht',
+        danger: ['Direct gevaar', 'Politie, brandweer, ambulance'],
+        abroad: undefined,
+      }
+    : {
+        heading: 'Do you need help now?',
+        intro:
+          'Unheard does not offer help itself. These organisations do, for men too. Calls are free.',
+        based: 'This site is based in the Netherlands. These are Dutch services.',
+        chat: ['Prefer to chat? You can, anonymously, via', '.'],
+        more: 'More about finding help and asking for advice safely',
+        veiligThuis: 'Advice on domestic violence, anonymous',
+        suicide: 'If you have thoughts of suicide, day and night. Usually in English too',
+        danger: ['Immediate danger', 'Police, fire brigade, ambulance'],
+        abroad: {
+          summary: 'Not in the Netherlands?',
+          items: [
+            ['112', 'the Netherlands and the rest of the European Union'],
+            ['911', 'United States and Canada'],
+            ['999', 'United Kingdom (112 works there too)'],
+            ['000', 'Australia'],
+          ],
+          elsewhere:
+            'Anywhere else: call the local emergency number. Sources are on the help page.',
+        },
+      };
 ---
 
 <aside class="section section--soft help-band" aria-labelledby="help-heading">
   <div class="wrap help-band__grid">
     <div>
-      <h2 id="help-heading">Heb je nu hulp nodig?</h2>
+      <h2 id="help-heading">{text.heading}</h2>
+      <p>{text.intro}</p>
+      {text.based && <p>{text.based}</p>}
       <p>
-        Ongehoord biedt zelf geen hulp. Deze organisaties wel, ook voor mannen. Bellen is gratis.
+        {`${text.chat[0]} `}<a href="https://www.113.nl/" rel="noopener">113.nl</a>{text.chat[1]}
       </p>
-      <p>
-        Liever chatten? Dat kan anoniem via <a href="https://www.113.nl/" rel="noopener">113.nl</a>.
-      </p>
-      <p><a href="nl/hulp-vinden/">Meer over hulp vinden en veilig advies vragen</a></p>
+      <p><a href={helpHref}>{text.more}</a></p>
     </div>
-    <ul class="help-band__numbers">
-      <li>
-        <a href="tel:08002000">
-          <span><strong>Veilig Thuis</strong> Advies bij huiselijk geweld, anoniem</span>
-          <span class="help-band__number">0800-2000</span>
-        </a>
-      </li>
-      <li>
-        <a href="tel:113">
-          <span
-            ><strong>113 Zelfmoordpreventie</strong> Bij gedachten aan zelfdoding, dag en nacht</span
-          >
-          <span class="help-band__number">113</span>
-        </a>
-      </li>
-      <li>
-        <a href="tel:112">
-          <span><strong>Direct gevaar</strong> Politie, brandweer, ambulance</span>
-          <span class="help-band__number">112</span>
-        </a>
-      </li>
-    </ul>
+    <div>
+      <ul class="help-band__numbers">
+        <li>
+          <a href="tel:08002000">
+            <span><strong>Veilig Thuis</strong> {text.veiligThuis}</span>
+            <span class="help-band__number">0800-2000</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:113">
+            <span><strong>113 Zelfmoordpreventie</strong> {text.suicide}</span>
+            <span class="help-band__number">113</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:112">
+            <span><strong>{text.danger[0]}</strong> {text.danger[1]}</span>
+            <span class="help-band__number">112</span>
+          </a>
+        </li>
+      </ul>
+      {
+        text.abroad && (
+          <details class="help-band__abroad">
+            <summary>{text.abroad.summary}</summary>
+            <ul>
+              {text.abroad.items.map(([number, where]) => (
+                <li>
+                  <a href={`tel:${number}`}>{number}</a> {where}
+                </li>
+              ))}
+            </ul>
+            <p>{text.abroad.elsewhere}</p>
+          </details>
+        )
+      }
+    </div>
   </div>
 </aside>
