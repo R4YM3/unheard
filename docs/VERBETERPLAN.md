@@ -78,4 +78,6 @@ Review van 3 november 2026. Canvas met de ontwerpen: https://claude.ai/artifact/
 
 ## Fase 5 — Livegang
 
+- De conceptmelding bovenaan blijft tot de inhoud gecontroleerd is. Daarna wordt het een melding dat de site vanuit eigen ervaring is geschreven, bijvoorbeeld: "Ongehoord is geschreven vanuit eigen ervaring. Lees het als herkenning, niet als advies." (`site-notice` in `BaseLayout.astro`).
+
 - Begin met een kern van ±25 gereviewde pagina's. De rest blijft `draft`. Pas daarna `NO_INDEX=false`.

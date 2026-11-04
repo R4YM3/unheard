@@ -35,6 +35,8 @@ const listings = await Promise.all(
   })),
 );
 const isEmptyBody = !entry.body?.trim();
+/* Section hubs open with what they hold; the explanation follows for those who want it. */
+const contentFirst = listings.length > 0 && !data.finder;
 const route = routeFor(entry);
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
@@ -138,15 +140,16 @@ const mainEntityId = termSet
   extraSchema={extraSchema}
   mainEntityId={mainEntityId}
   moreLinks={data.cards}
+  showSummary={!contentFirst}
 >
   {
-    !isEmptyBody && (
+    !contentFirst && !isEmptyBody && (
       <div class="wrap reading prose">
         <Content />
       </div>
     )
   }
-  {data.chooser && <StartChooser locale={data.locale} />}
+  {!contentFirst && data.chooser && <StartChooser locale={data.locale} />}
   {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
   {
     listings.map((listing, index) => (
@@ -159,6 +162,7 @@ const mainEntityId = termSet
           },
         ]}
         aria-labelledby={`listing-${index}-heading`}
+        id={listing.collection === 'emotions' ? 'gevoelens' : undefined}
       >
         <div class="wrap">
           {listing.eyebrow && <p class="eyebrow">{listing.eyebrow}</p>}
@@ -187,6 +191,20 @@ const mainEntityId = termSet
         </div>
       </section>
     ))
+  }
+  {contentFirst && data.chooser && <StartChooser locale={data.locale} />}
+  {
+    contentFirst && (data.summary || !isEmptyBody) && (
+      <div class="wrap reading prose">
+        {data.summary && (
+          <section class="summary-box" aria-labelledby="summary-heading">
+            <h2 id="summary-heading">In het kort</h2>
+            <p>{data.summary}</p>
+          </section>
+        )}
+        {!isEmptyBody && <Content />}
+      </div>
+    )
   }
   {data.feelingTimeline && <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />}
   {

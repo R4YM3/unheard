@@ -59,6 +59,13 @@
   --footer-muted: var(--palette-ink-muted);
   --footer-border: var(--palette-line);
 
+  /* Decorative landscape in the hero frame */
+  --art-sky: #e9e2d4;
+  --art-sun: #d9a57f;
+  --art-hill-1: #c9d6cc;
+  --art-hill-2: #a8bfae;
+  --art-hill-3: #6f8f7c;
+
   /* Perspective switch */
   --tab-bg: var(--palette-sage-100);
   --tab-text: var(--palette-ink);
@@ -124,6 +131,12 @@
   --footer-text: var(--palette-cream);
   --footer-muted: var(--palette-cream-muted);
   --footer-border: var(--palette-forest-line);
+
+  --art-sky: #2d4c40;
+  --art-sun: #e0b464;
+  --art-hill-1: #3d5f50;
+  --art-hill-2: #2a463a;
+  --art-hill-3: #8fa99a;
 
   --tab-bg: var(--palette-forest-800);
   --tab-text: var(--palette-cream);
