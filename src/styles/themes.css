@@ -1,5 +1,5 @@
 /* Semantic tokens. Light is the default; dark applies via data-theme (set before first paint).
-   Light = "licht en zacht" (off-white, paper, sand, linen; sage and terracotta as ink and accent). Dark = "bosgroen" (forest, cream, ochre).
+   Light = "licht en zacht" (off-white, paper, two olive steps; sage and terracotta as ink and accent). Dark = "bosgroen" (forest, cream, ochre).
    Every text/background pair below meets WCAG AA (4.5:1); field borders meet 3:1. */
 :root,
 [data-theme='light'] {
@@ -22,18 +22,18 @@
   --help-text: #fff;
   --brand-dot: var(--palette-terracotta);
 
-  /* Two band steps on the same warm scale: sand (rest, help) and linen (depth, lists). */
-  --safe: var(--palette-sand);
-  --safe-border: var(--palette-sand-line);
-  --children: var(--palette-sand);
-  --therapy: var(--palette-linen);
+  /* Two band steps of one soft olive: light (rest, help, hero) and deeper (depth, lists). */
+  --safe: var(--palette-olive);
+  --safe-border: var(--palette-olive-line);
+  --children: var(--palette-olive);
+  --therapy: var(--palette-olive-deep);
   --story: var(--palette-paper-light);
   --paper-section: var(--palette-paper);
   --tension: var(--palette-paper-light);
   --tension-border: var(--palette-line);
   --tension-edge: var(--palette-sage-700);
-  --tension-section: var(--palette-linen);
-  --tint: var(--palette-linen);
+  --tension-section: var(--palette-olive-deep);
+  --tint: var(--palette-olive-deep);
   --badge: var(--palette-sage-200);
   --badge-text: var(--palette-ink);
   --review-mark: #fbe6c9;
@@ -44,9 +44,9 @@
   --header-border: var(--palette-line);
   --control-bg: var(--palette-paper-light);
   --control-border: var(--palette-line-strong);
-  --control-hover: var(--palette-sand);
-  /* The hero is its own band (sand): never the page colour, so it never runs into the block below. */
-  --hero-bg: var(--palette-sand);
+  --control-hover: var(--palette-olive);
+  /* The hero is its own band (olive): never the page colour, so it never runs into the block below. */
+  --hero-bg: var(--palette-olive);
   --hero-text: var(--palette-ink);
   --hero-muted: var(--palette-ink-soft);
   --hero-eyebrow: var(--palette-sage-700);
@@ -57,7 +57,7 @@
   --band-muted: var(--palette-sage-200);
   --band-link: #fff;
 
-  --footer-bg: var(--palette-linen);
+  --footer-bg: var(--palette-olive-deep);
   --footer-text: var(--palette-ink);
   --footer-muted: var(--palette-ink-muted);
   --footer-border: var(--palette-line);
@@ -70,7 +70,7 @@
   --art-hill-3: #6f8f7c;
 
   /* Perspective switch */
-  --tab-bg: var(--palette-sand);
+  --tab-bg: var(--palette-olive);
   --tab-text: var(--palette-ink);
   --tab-active-bg: var(--palette-sage-700);
   --tab-active-text: #fff;

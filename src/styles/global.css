@@ -537,11 +537,11 @@ mark.review-marker {
   + :is(.section--tension, .section--therapy, .section--tint) {
   --section-bg: var(--safe);
 }
-/* The footer is linen; after a page that ends on a linen band it takes the sand step. */
+/* The footer takes the deeper step; after a page that ends on a deeper band it takes the light one. */
 body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-child) .site-footer {
   background: var(--safe);
 }
-/* The hero is sand: a sand band straight below it takes the linen step instead. */
+/* The hero is the light step: a light band straight below it takes the deeper step instead. */
 .hero + :is(.section--soft, .section--children) {
   --section-bg: var(--tint);
 }
