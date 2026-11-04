@@ -2,8 +2,10 @@
 import type { LinkCard } from '../lib/content';
 import CardGrid from './CardGrid.astro';
 
+type RelatedItem = Pick<LinkCard, 'href' | 'title' | 'text'> &
+  Partial<Pick<LinkCard, 'eyebrow' | 'collection'>>;
 interface Props {
-  items: LinkCard[];
+  items: RelatedItem[];
   heading?: string;
 }
 const { items, heading = 'Verder lezen' } = Astro.props;
@@ -13,7 +15,6 @@ const { items, heading = 'Verder lezen' } = Astro.props;
   items.length > 0 && (
     <section class="section section--soft" aria-labelledby="related-heading" id="gerelateerd">
       <div class="wrap">
-        <p class="eyebrow">Gerelateerd</p>
         <h2 id="related-heading">{heading}</h2>
         <CardGrid
           items={items.map((item) => ({

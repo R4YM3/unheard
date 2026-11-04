@@ -9,6 +9,7 @@ import '../styles/print.css';
 import { type Locale } from '../i18n/config';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { ui } from '../i18n/ui';
+import { hasPhotos } from '../lib/photos';
 import { currentTab, isMenuCurrent, mainMenu, navigationFor, sectionFor } from '../lib/navigation';
 interface Props {
   title: string;
@@ -248,9 +249,12 @@ const footerGroups =
             {locale === 'nl' && <a href="nl/zoeken/">{t.search}</a>}
           </nav>
         </details>
-        <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
-          >Verlaat site</a
-        >
+        <div class="header-controls">
+          <ThemeToggle locale={locale} />
+          <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
+            >Verlaat site</a
+          >
+        </div>
       </div>
     </header>
     <main id="main"><slot /></main>
@@ -296,11 +300,10 @@ const footerGroups =
             ))
           }
         </div>
-        <ThemeToggle locale={locale} />
         <p class="footer-meta">
           {
             locale === 'nl'
-              ? 'Conceptsite in ontwikkeling. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.'
+              ? `Conceptsite in ontwikkeling. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.${hasPhotos ? ' De foto’s op deze site zijn met AI gemaakt.' : ''}`
               : locale === 'ar'
                 ? 'موقع تجريبي قيد التطوير.'
                 : 'Concept site in development.'

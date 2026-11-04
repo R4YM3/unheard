@@ -1,25 +1,44 @@
 ---
-interface Props {
-  compact?: boolean;
-}
-const { compact = false } = Astro.props;
+/**
+ * The quiet help route at the end of every content page: three numbers that can be called
+ * directly, and a link to the full help page. Dutch services; other locales need their own
+ * verified numbers before they are published.
+ */
 ---
 
-<aside
-  class:list={['help-block', { 'help-block--compact': compact }]}
-  aria-labelledby="help-heading"
->
-  <h2 id="help-heading">Heb je nu hulp nodig?</h2>
-  <ul>
-    <li>Bij direct gevaar: bel <a href="tel:112">112</a>.</li>
-    <li>
-      Bij gedachten aan zelfdoding: bel <a href="tel:113">113</a> of chat via{' '}
-      <a href="https://www.113.nl/" rel="noopener">113.nl</a> (gratis, dag en nacht).
-    </li>
-    <li>
-      Bij zorgen over huiselijk geweld of misbruik, ook als man: Veilig Thuis,{' '}
-      <a href="tel:08002000">0800-2000</a> (gratis en anoniem).
-    </li>
-  </ul>
-  <p><a href="nl/hulp-vinden/">Meer over hulp vinden en veilig advies vragen</a></p>
+<aside class="section section--soft help-band" aria-labelledby="help-heading">
+  <div class="wrap help-band__grid">
+    <div>
+      <h2 id="help-heading">Heb je nu hulp nodig?</h2>
+      <p>
+        Ongehoord biedt zelf geen hulp. Deze organisaties wel, ook voor mannen. Bellen is gratis.
+      </p>
+      <p>
+        Liever chatten? Dat kan anoniem via <a href="https://www.113.nl/" rel="noopener">113.nl</a>.
+      </p>
+      <p><a href="nl/hulp-vinden/">Meer over hulp vinden en veilig advies vragen</a></p>
+    </div>
+    <ul class="help-band__numbers">
+      <li>
+        <a href="tel:08002000">
+          <span><strong>Veilig Thuis</strong> Advies bij huiselijk geweld, anoniem</span>
+          <span class="help-band__number">0800-2000</span>
+        </a>
+      </li>
+      <li>
+        <a href="tel:113">
+          <span
+            ><strong>113 Zelfmoordpreventie</strong> Bij gedachten aan zelfdoding, dag en nacht</span
+          >
+          <span class="help-band__number">113</span>
+        </a>
+      </li>
+      <li>
+        <a href="tel:112">
+          <span><strong>Direct gevaar</strong> Politie, brandweer, ambulance</span>
+          <span class="help-band__number">112</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </aside>

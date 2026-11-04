@@ -3,7 +3,7 @@
  * - every page fits 320/375/430/1440 px wide viewports without horizontal scrolling;
  * - without JavaScript, all perspective-switch content, glossary entries and search results
  *   are visible, and enhancement-only controls stay hidden;
- * - with JavaScript, the "Wat ik vanbinnen voel" tab passes axe colour contrast in light and
+ * - with JavaScript, the "Wat je hoort. Wat je voelt." component passes axe colour contrast in light and
  *   dark themes, and the tabs respond to the keyboard.
  */
 import { readdir, readFile } from 'node:fs/promises';
@@ -118,7 +118,7 @@ try {
   await noJs.close();
   console.log('No-JS checks done');
 
-  // 3. Perspective tabs: keyboard and contrast of the inside panel in both themes.
+  // 3. Perspective: both sides visible, example buttons work, contrast in both themes.
   const pvRoutes = [];
   for (const route of routes) {
     const html = await readFile(join('dist', route, 'index.html'), 'utf8').catch(() => '');
@@ -133,36 +133,41 @@ try {
     );
     for (const route of pvRoutes) {
       await page.goto(`${origin}${route}`, { waitUntil: 'networkidle0' });
-      const outside = await page.$('[data-pv-side="outside"]');
-      if (!outside) {
-        failures.push(`${route}: perspective switch not enhanced`);
-        continue;
+      // Both sides of a scenario are always visible together.
+      const sides = await page.$$eval(
+        '[data-pv-panel]:not([hidden]) .pv-line',
+        (lines) =>
+          lines.filter((line) => globalThis.getComputedStyle(line).display !== 'none').length,
+      );
+      if (sides !== 2)
+        failures.push(`${route} ${theme}: expected both sides visible, saw ${sides}`);
+      const buttons = await page.$$('[data-pv-scene]');
+      if (buttons.length > 1) {
+        await buttons[1].focus();
+        await page.keyboard.press('Enter');
+        const state = await page.evaluate(() => ({
+          pressed: globalThis.document
+            .querySelectorAll('[data-pv-scene]')[1]
+            .getAttribute('aria-pressed'),
+          shown: [...globalThis.document.querySelectorAll('[data-pv-panel]')]
+            .filter((panel) => !panel.hidden)
+            .map((panel) => panel.dataset.pvPanel),
+        }));
+        if (state.pressed !== 'true' || state.shown.join() !== '1')
+          failures.push(`${route} ${theme}: choosing the second example did not show it alone`);
       }
-      await outside.focus();
-      await page.keyboard.press('ArrowRight');
-      const selected = await page.$eval('[data-pv-side="inside"]', (element) =>
-        element.getAttribute('aria-selected'),
-      );
-      if (selected !== 'true')
-        failures.push(`${route} ${theme}: ArrowRight did not select inside tab`);
-      const insideVisible = await page.$eval(
-        '[data-pv-panel]:not([hidden]) .pv-panel--inside',
-        (el) => !el.hidden && globalThis.getComputedStyle(el).display !== 'none',
-      );
-      if (!insideVisible)
-        failures.push(`${route} ${theme}: inside panel not shown after selecting tab`);
       await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
       const result = await page.evaluate(() =>
         globalThis.axe.run(globalThis.document.querySelector('.pv'), {
           runOnly: {
             type: 'rule',
-            values: ['color-contrast', 'aria-required-children', 'aria-valid-attr-value'],
+            values: ['color-contrast', 'aria-valid-attr-value', 'button-name'],
           },
         }),
       );
       for (const violation of result.violations)
         failures.push(
-          `${route} ${theme} inside tab: ${violation.id} at ${violation.nodes.map((node) => node.target.join(' ')).join(', ')}`,
+          `${route} ${theme} perspective: ${violation.id} at ${violation.nodes.map((node) => node.target.join(' ')).join(', ')}`,
         );
     }
     await page.close();
