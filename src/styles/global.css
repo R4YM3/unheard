@@ -425,10 +425,15 @@ mark.review-marker {
   padding: 0;
   list-style: none;
 }
+/* Plain lines, no gaps: the links sit inside a sentence, so they keep text height
+   instead of the 44px target that stand-alone controls get. */
 .footer-help li + li {
-  margin-top: 0.15rem;
+  margin-top: 0;
 }
-.footer-help a {
+.footer-grid .footer-help a {
+  display: inline;
+  min-height: 0;
+  padding: 0;
   color: inherit;
   font-weight: 700;
   text-decoration: underline;
