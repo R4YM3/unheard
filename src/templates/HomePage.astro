@@ -127,7 +127,8 @@ const homeLists = [
           text: card.description,
           href: card.href,
           label: card.label,
-          tone: 'safe' as const,
+          /* White cards on the sage band, so each link stands out. */
+          tone: 'neutral' as const,
         }))}
       />
     </div>
