@@ -9,6 +9,7 @@ import DarvoGuide from '../components/DarvoGuide.astro';
 import FounderNote from '../components/FounderNote.astro';
 import MiniReflection from '../components/MiniReflection.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import { ui } from '../i18n/ui';
 
 interface Props {
   entry: CollectionEntry<'patterns'> | CollectionEntry<'articles'>;
@@ -36,7 +37,7 @@ const pageType = ['over', 'werkwijze'].includes(data.translationKey) ? 'AboutPag
     cards.some((card) => !card.href) && (
       <section class="section section--soft" aria-labelledby="cards-heading">
         <div class="wrap">
-          <h2 id="cards-heading">Ook goed om te weten</h2>
+          <h2 id="cards-heading">{ui(data.locale).alsoGoodToKnow}</h2>
           <CardGrid items={cards.filter((card) => !card.href)} />
         </div>
       </section>

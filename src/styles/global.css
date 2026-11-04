@@ -2106,3 +2106,24 @@ a.card:focus-visible,
 .finder-deepening summary {
   padding-inline-end: 2.25rem;
 }
+
+/* Emergency numbers outside the Netherlands, in editions other than Dutch. */
+.help-band__abroad {
+  margin-top: 1rem;
+}
+.help-band__abroad summary {
+  font-weight: 600;
+}
+.help-band__abroad ul {
+  margin: 0.5rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+.help-band__abroad li {
+  margin: 0.25rem 0;
+}
+.help-band__abroad li a {
+  display: inline-block;
+  min-width: 3.5rem;
+  font-weight: 700;
+}

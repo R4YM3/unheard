@@ -6,7 +6,7 @@ import '@fontsource/source-sans-3/latin-600.css';
 import '@fontsource/source-sans-3/latin-700.css';
 import '../styles/global.css';
 import '../styles/print.css';
-import { type Locale } from '../i18n/config';
+import { isPublicLocale, type Locale } from '../i18n/config';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { ui } from '../i18n/ui';
 import { hasPhotos } from '../lib/photos';
@@ -62,12 +62,8 @@ const siteRoot = new URL(basePath, site).href;
 const websiteId = `${siteRoot}#website`;
 const organizationId = `${siteRoot}#organization`;
 const logoUrl = new URL(`${basePath}logo.svg`, site).href;
-const organizationDescription =
-  locale === 'nl'
-    ? 'Voor alles wat je voelt, maar nog niet kunt verwoorden. Een persoonlijk initiatief van één persoon, geen hulporganisatie.'
-    : locale === 'ar'
-      ? 'مساحة لما تشعر به ولا تستطيع وصفه بعد.'
-      : 'For everything you feel but cannot yet put into words.';
+const t = ui(locale);
+const organizationDescription = t.brandDescription;
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -104,7 +100,7 @@ const schema = {
       inLanguage: locale,
       url: canonical,
       isPartOf: { '@id': websiteId },
-      creativeWorkStatus: 'Conceptversie',
+      creativeWorkStatus: t.draftStatus,
       ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
       ...(citations.length > 0 ? { citation: citations } : {}),
     },
@@ -112,16 +108,11 @@ const schema = {
   ],
 };
 const schemaJson = JSON.stringify(schema).replaceAll('<', '\\u003c');
-const noIndex = process.env.NO_INDEX === 'true' || !indexable;
+/* A locale without an approved translation is built for review only and never indexed. */
+const noIndex = process.env.NO_INDEX === 'true' || !indexable || !isPublicLocale(locale);
 const cloudflareBeaconToken = import.meta.env.PUBLIC_CLOUDFLARE_BEACON_TOKEN;
-const skipLabel =
-  locale === 'nl'
-    ? 'Direct naar inhoud'
-    : locale === 'ar'
-      ? 'انتقل إلى المحتوى'
-      : 'Skip to content';
+const skipLabel = t.skipToContent;
 const homeHref = `${locale}/`;
-const t = ui(locale);
 const siteNavigation = navigationFor(locale);
 const navigation: Array<[string, string]> = siteNavigation
   ? mainMenu(siteNavigation).map(({ href, label }) => [href, label])
@@ -133,33 +124,11 @@ const isCurrent = (href: string) =>
 const activeSection = siteNavigation ? sectionFor(siteNavigation, localPath) : undefined;
 const activeTab = activeSection ? currentTab(activeSection, localPath) : undefined;
 const navLabel = t.mainNavigation;
-const footerGroups =
-  locale === 'nl'
-    ? [
-        {
-          heading: 'Ontdek',
-          links: [
-            ['nl/wat-voel-ik/', 'Wat voel ik?'],
-            ['nl/begrijp-het/', 'Begrijp het'],
-            ['nl/begrippen/', 'Begrippen van A tot Z'],
-            ['nl/herstel/', 'Herstel'],
-            ['nl/hulpmiddelen/', 'Hulpmiddelen'],
-            ['nl/mannen-in-cijfers/', 'Mannen in cijfers'],
-            ['nl/zoeken/', 'Zoeken'],
-          ],
-        },
-        {
-          heading: 'Over deze site',
-          links: [
-            ['nl/over/', 'Over Ongehoord'],
-            ['nl/werkwijze/', 'Werkwijze en bronnen'],
-            ['nl/veilig-gebruik/', 'Privacy en veilig gebruik'],
-            ['nl/toegankelijkheid/', 'Toegankelijkheid'],
-            ['nl/ik-maak-me-zorgen-om-iemand/', 'Voor naasten'],
-          ],
-        },
-      ]
-    : [];
+const footerGroups = siteNavigation?.footer ?? [];
+/* hreflang only between locales that are public. */
+const publicAlternates = isPublicLocale(locale)
+  ? alternateUrls.filter(({ locale: alternateLocale }) => isPublicLocale(alternateLocale))
+  : [];
 ---
 
 <!doctype html>
@@ -177,7 +146,7 @@ const footerGroups =
     <meta property="og:image" content={new URL(`${basePath}${shareImage.path}`, site).href} />
     <meta property="og:image:width" content={String(shareImage.width)} />
     <meta property="og:image:height" content={String(shareImage.height)} />
-    <meta property="og:image:alt" content="Ongehoord: Je hoeft het nog geen misbruik te noemen." />
+    <meta property="og:image:alt" content={t.shareImageAlt} />
     <meta
       property="og:locale"
       content={locale === 'nl' ? 'nl_NL' : locale === 'ar' ? 'ar' : 'en_GB'}
@@ -187,11 +156,15 @@ const footerGroups =
     <link rel="icon" href={`${basePath}favicon.svg`} type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
     {
-      alternateUrls.map(({ locale: alternateLocale, href }) => (
+      publicAlternates.map(({ locale: alternateLocale, href }) => (
         <link rel="alternate" hreflang={alternateLocale} href={href} />
       ))
     }
-    {defaultAlternate && <link rel="alternate" hreflang="x-default" href={defaultAlternate.href} />}
+    {
+      publicAlternates.length > 0 && defaultAlternate && (
+        <link rel="alternate" hreflang="x-default" href={defaultAlternate.href} />
+      )
+    }
     <script type="application/ld+json" set:html={schemaJson} />
     {
       cloudflareBeaconToken && (
@@ -213,13 +186,10 @@ const footerGroups =
     <div class="safety-dock">
       <ThemeToggle locale={locale} />
       <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
-        >Verlaat site</a
+        >{t.safeExit}</a
       >
     </div>
-    <p class="site-notice">
-      Deze site is een conceptversie en is nog niet inhoudelijk gecontroleerd. Lees haar als
-      oriëntatie, niet als advies.
-    </p>
+    <p class="site-notice">{t.siteNotice}</p>
     <header class="site-header">
       <div class="wrap header-row">
         <a class="brand" href={`${locale}/`}>{brandName}<span>.</span></a>
@@ -255,7 +225,7 @@ const footerGroups =
           <summary aria-label={t.openMenu}>
             <span></span><span></span><span></span>
           </summary>
-          <nav class="mobile-menu__panel" aria-label={`${navLabel} (mobiel)`}>
+          <nav class="mobile-menu__panel" aria-label={`${navLabel} ${t.mobileSuffix}`}>
             {
               navigation.map(([href, label]) => (
                 <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>
@@ -287,32 +257,21 @@ const footerGroups =
           <div>
             <p class="footer-brand">{brandName}<span>.</span></p>
             <p class="footer-warm">{t.warmLine}</p>
+            <p>{t.brandDescription}</p>
             {
-              locale === 'nl' ? (
-                <>
-                  <p>
-                    Voor alles wat je voelt, maar nog niet kunt verwoorden. Een persoonlijk
-                    initiatief van één persoon, geen hulporganisatie.
-                  </p>
-                  <ul class="footer-help">
-                    <li>
-                      Direct gevaar? Bel <a href="tel:112">112</a>.
-                    </li>
-                    <li>Zorgen over huiselijk geweld?</li>
-                    <li>
-                      Veilig Thuis <a href="tel:08002000">0800-2000</a>.
-                    </li>
-                    <li>
-                      <a href="nl/hulp-vinden/">Alle hulp</a>
-                    </li>
-                  </ul>
-                </>
-              ) : (
-                <p>
-                  {locale === 'ar'
-                    ? 'مساحة لما تشعر به ولا تستطيع وصفه بعد.'
-                    : 'For everything you feel but cannot yet put into words.'}
-                </p>
+              siteNavigation && (
+                <ul class="footer-help">
+                  <li>
+                    {t.footerDanger} <a href="tel:112">112</a>.
+                  </li>
+                  <li>{t.footerWorried}</li>
+                  <li>
+                    Veilig Thuis <a href="tel:08002000">0800-2000</a>.
+                  </li>
+                  <li>
+                    <a href={siteNavigation.help.href}>{t.footerAllHelp}</a>
+                  </li>
+                </ul>
               )
             }
           </div>
@@ -321,7 +280,7 @@ const footerGroups =
               <nav aria-label={group.heading}>
                 <h2>{group.heading}</h2>
                 <ul>
-                  {group.links.map(([href, label]) => (
+                  {group.links.map(({ href, label }) => (
                     <li>
                       <a href={href}>{label}</a>
                     </li>
@@ -331,15 +290,7 @@ const footerGroups =
             ))
           }
         </div>
-        <p class="footer-meta">
-          {
-            locale === 'nl'
-              ? `Conceptsite in ontwikkeling. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.${hasPhotos ? ' De foto’s op deze site zijn met AI gemaakt.' : ''}`
-              : locale === 'ar'
-                ? 'موقع تجريبي قيد التطوير.'
-                : 'Concept site in development.'
-          }
-        </p>
+        <p class="footer-meta">{t.footerMeta(hasPhotos)}</p>
       </div>
     </footer>
     <script>

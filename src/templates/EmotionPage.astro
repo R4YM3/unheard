@@ -17,26 +17,34 @@ interface Props {
 }
 const { entry } = Astro.props;
 const { data } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 const route = routeFor(entry);
-const feelings = (await listCollection('emotions', data.locale, 'wat-voel-ik/')).map((item) =>
-  cardFor(item),
-);
+const nav = navigationFor(data.locale);
+const overview = nav?.feelingsOverview ?? `${data.locale}/wat-voel-ik/`;
+const feelings = (
+  await listCollection('emotions', data.locale, overview.slice(data.locale.length + 1))
+).map((item) => cardFor(item));
 const nextStep = entry.body?.includes('## Een vraag voor vandaag')
   ? { id: 'een-vraag-voor-vandaag', label: 'Een vraag voor vandaag' }
   : { id: 'een-volgende-stap', label: 'Een volgende stap' };
-/* Only the chapters of the text itself; the blocks below the text have their own headings. */
-const here = [
-  { href: `${route}#herken-je-dit`, label: 'Herken je dit?' },
-  { href: `${route}#wat-gebeurt-er-om-je-heen`, label: 'Om je heen' },
-  { href: `${route}#wat-kan-dit-verklaren`, label: 'Wat het kan verklaren' },
-  { href: `${route}#wat-het-met-je-kan-doen`, label: 'Wat het met je doet' },
-  { href: `${route}#wanneer-is-het-iets-anders`, label: 'Wanneer het iets anders is' },
-  { href: `${route}#${nextStep.id}`, label: nextStep.label },
-];
+/* Only the chapters of the text itself; the blocks below the text have their own headings.
+   Dutch pages use short rail labels; other locales use their chapter headings as written. */
+const here =
+  data.locale !== 'nl'
+    ? headings
+        .filter((heading) => heading.depth === 2)
+        .map((heading) => ({ href: `${route}#${heading.slug}`, label: heading.text }))
+    : [
+        { href: `${route}#herken-je-dit`, label: 'Herken je dit?' },
+        { href: `${route}#wat-gebeurt-er-om-je-heen`, label: 'Om je heen' },
+        { href: `${route}#wat-kan-dit-verklaren`, label: 'Wat het kan verklaren' },
+        { href: `${route}#wat-het-met-je-kan-doen`, label: 'Wat het met je doet' },
+        { href: `${route}#wanneer-is-het-iets-anders`, label: 'Wanneer het iets anders is' },
+        { href: `${route}#${nextStep.id}`, label: nextStep.label },
+      ];
 const titleFor = (href: string) => feelings.find((feeling) => feeling.href === href)?.title;
 const t = ui(data.locale);
-const group = groupFor(navigationFor(data.locale)?.feelingGroups ?? [], route);
+const group = groupFor(nav?.feelingGroups ?? [], route);
 const siblings = (group?.pages ?? [])
   .map((href) => ({ href, label: titleFor(href) }))
   .filter((item): item is { href: string; label: string } => Boolean(item.label));
@@ -46,12 +54,12 @@ const linkTo = (href?: string) => {
   return href && label ? { href, label } : undefined;
 };
 const allFeelings = {
-  href: `${data.locale}/wat-voel-ik/#gevoelens`,
+  href: `${overview}#gevoelens`,
   label: t.allFeelings(feelings.length),
 };
 ---
 
-<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `Wat voel ik? / ${data.feeling}`}>
+<EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `${t.feelingsMenu} / ${data.feeling}`}>
   <PageRail
     slot="rail"
     groups={[
@@ -90,11 +98,8 @@ const allFeelings = {
     data.impacts.length > 0 && (
       <section class="section section--tension" aria-labelledby="impact-heading" id="impact">
         <div class="wrap">
-          <h2 id="impact-heading">Waar je het kunt merken</h2>
-          <p class="reading">
-            Niet iedereen merkt hetzelfde. Herken je een paar dingen, dan zegt dat iets over wat je
-            draagt, niet over wie je bent.
-          </p>
+          <h2 id="impact-heading">{t.impactHeading}</h2>
+          <p class="reading">{t.impactIntro}</p>
           <CardGrid
             columns={data.impacts.length % 3 === 0 ? 3 : 2}
             items={data.impacts.map((impact) => ({ ...impact, tone: 'tension' as const }))}

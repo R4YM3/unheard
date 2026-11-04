@@ -23,6 +23,7 @@ import {
   searchItems,
 } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
+import { ui } from '../i18n/ui';
 
 interface Props {
   entry: CollectionEntry<'hubs'>;
@@ -215,7 +216,7 @@ const mainEntityId = termSet
                 }))}
               />
             ) : (
-              <p class="note">Hier verschijnen binnenkort pagina’s.</p>
+              <p class="note">{ui(data.locale).pagesComingSoon}</p>
             )}
             {listing.more && (
               <p class="listing-more">
@@ -242,7 +243,7 @@ const mainEntityId = termSet
     data.cards.some((card) => !card.href) && (
       <section class="section" aria-labelledby="hub-cards-heading">
         <div class="wrap">
-          <h2 id="hub-cards-heading">Ook goed om te weten</h2>
+          <h2 id="hub-cards-heading">{ui(data.locale).alsoGoodToKnow}</h2>
           <CardGrid items={data.cards.filter((card) => !card.href)} />
         </div>
       </section>

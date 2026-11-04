@@ -1,4 +1,6 @@
 ---
+import { localeFromPath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 import type { LinkCard } from '../lib/content';
 import CardGrid from './CardGrid.astro';
 
@@ -8,7 +10,8 @@ interface Props {
   items: RelatedItem[];
   heading?: string;
 }
-const { items, heading = 'Verder lezen' } = Astro.props;
+const t = ui(localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL));
+const { items, heading = t.readMore } = Astro.props;
 ---
 
 {

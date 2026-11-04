@@ -3,6 +3,8 @@
  * Optional reflection questions. Answers stay in the page: nothing is stored, sent or
  * printed unless the reader explicitly opts in to printing them.
  */
+import { localeFromPath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 interface Props {
   reflection: { heading?: string; questions: string[]; note?: string; writable: boolean };
   id?: string;
@@ -11,7 +13,8 @@ interface Props {
 }
 const { reflection, id = 'reflectie', collapsed = false } = Astro.props;
 const Box = collapsed ? 'details' : 'div';
-const heading = reflection.heading ?? 'Vragen om bij stil te staan';
+const t = ui(localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL));
+const heading = reflection.heading ?? t.reflectionHeading;
 ---
 
 <section class="section" aria-labelledby={`${id}-heading`} id={id}>
@@ -20,12 +23,12 @@ const heading = reflection.heading ?? 'Vragen om bij stil te staan';
       {
         collapsed ? (
           <summary>
-            <span class="eyebrow">Vrijblijvend</span>
+            <span class="eyebrow">{t.optional}</span>
             <h2 id={`${id}-heading`}>{heading}</h2>
           </summary>
         ) : (
           <>
-            <p class="eyebrow">Vrijblijvend</p>
+            <p class="eyebrow">{t.optional}</p>
             <h2 id={`${id}-heading`}>{heading}</h2>
           </>
         )
@@ -54,10 +57,10 @@ const heading = reflection.heading ?? 'Vragen om bij stil te staan';
             ))}
             <div class="form-row">
               <button class="button button--quiet" type="reset">
-                Wis mijn antwoorden
+                {t.clearAnswers}
               </button>
               <label class="check-label print-toggle">
-                <input type="checkbox" /> Neem mijn antwoorden mee als ik print
+                <input type="checkbox" /> {t.printAnswers}
               </label>
             </div>
           </form>
@@ -70,11 +73,7 @@ const heading = reflection.heading ?? 'Vragen om bij stil te staan';
         )
       }
       <p class="note" id={`${id}-privacy`}>
-        {
-          reflection.writable
-            ? 'Wat je hier typt, blijft alleen in dit venster. Ongehoord slaat het niet op en verstuurt het niet. Klik op ‘Wis mijn antwoorden’ als je klaar bent en sluit het tabblad. Op een gedeeld apparaat kun je ook alleen in gedachten antwoorden.'
-            : 'Je hoeft niets op te schrijven. Je kunt de vragen ook alleen in gedachten beantwoorden, of ze bewaren voor een gesprek met iemand die je vertrouwt.'
-        }
+        {reflection.writable ? t.reflectionWritableNote : t.reflectionThinkNote}
       </p>
     </Box>
   </div>

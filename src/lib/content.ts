@@ -132,10 +132,10 @@ export const cardFor = (entry: RoutedEntry): LinkCard => {
     text: entry.data.cardText ?? entry.data.description,
     eyebrow:
       entry.collection === 'emotions'
-        ? `Gevoel · ${entry.data.feeling}`
+        ? `${ui(entry.data.locale).feeling} · ${entry.data.feeling}`
         : entry.collection === 'therapies'
           ? `Therapievorm · ${entry.data.name}`
-          : collectionLabels[entry.collection],
+          : ui(entry.data.locale).collections[entry.collection],
     collection: entry.collection,
   };
 };
@@ -251,13 +251,13 @@ export const authorLabels = {
   editorial: 'Ongehoord (algemene uitleg)',
 } as const;
 
-const dateFormat = new Intl.DateTimeFormat('nl-NL', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-  timeZone: 'UTC',
-});
-export const formatDate = (date: Date) => dateFormat.format(date);
+export const formatDate = (date: Date, locale: Locale = 'nl') =>
+  new Intl.DateTimeFormat(ui(locale).dateLocale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
 export const isoDate = (date: Date) => date.toISOString().slice(0, 10);
 
 /** Hub titles used to build breadcrumbs from route segments. */

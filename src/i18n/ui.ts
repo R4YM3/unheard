@@ -32,6 +32,52 @@ const nl = {
   byEditorial: 'de redactie van Ongehoord',
   publishedOn: 'gepubliceerd op',
   updatedOn: 'bijgewerkt op',
+  skipToContent: 'Direct naar inhoud',
+  safeExit: 'Verlaat site',
+  siteNotice:
+    'Deze site is een conceptversie en is nog niet inhoudelijk gecontroleerd. Lees haar als oriëntatie, niet als advies.',
+  brandDescription:
+    'Voor alles wat je voelt, maar nog niet kunt verwoorden. Een persoonlijk initiatief van één persoon, geen hulporganisatie.',
+  footerDanger: 'Direct gevaar? Bel',
+  footerWorried: 'Zorgen over huiselijk geweld?',
+  footerAllHelp: 'Alle hulp',
+  footerMeta: (photos: boolean) =>
+    `Conceptsite in ontwikkeling. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.${photos ? ' De foto’s op deze site zijn met AI gemaakt.' : ''}`,
+  shareImageAlt: 'Ongehoord: Je hoeft het nog geen misbruik te noemen.',
+  mobileSuffix: '(mobiel)',
+  draftStatus: 'Conceptversie',
+  inShort: 'In het kort',
+  readMore: 'Verder lezen',
+  readOn: 'Lees verder',
+  sources: 'Bronnen',
+  checkedOn: 'gecontroleerd op',
+  noSources:
+    'Deze pagina beschrijft persoonlijke ervaring of oriëntatie en verwijst niet naar onderzoek. Feitelijke informatie staat op de pagina’s waarnaar wordt verwezen.',
+  alsoGoodToKnow: 'Ook goed om te weten',
+  pagesComingSoon: 'Hier verschijnen binnenkort pagina’s.',
+  reflectionHeading: 'Vragen om bij stil te staan',
+  optional: 'Vrijblijvend',
+  clearAnswers: 'Wis mijn antwoorden',
+  printAnswers: 'Neem mijn antwoorden mee als ik print',
+  reflectionWritableNote:
+    'Wat je hier typt, blijft alleen in dit venster. Ongehoord slaat het niet op en verstuurt het niet. Klik op ‘Wis mijn antwoorden’ als je klaar bent en sluit het tabblad. Op een gedeeld apparaat kun je ook alleen in gedachten antwoorden.',
+  reflectionThinkNote:
+    'Je hoeft niets op te schrijven. Je kunt de vragen ook alleen in gedachten beantwoorden, of ze bewaren voor een gesprek met iemand die je vertrouwt.',
+  feelingsMenu: 'Wat voel ik?',
+  feeling: 'Gevoel',
+  impactHeading: 'Waar je het kunt merken',
+  impactIntro:
+    'Niet iedereen merkt hetzelfde. Herken je een paar dingen, dan zegt dat iets over wat je draagt, niet over wie je bent.',
+  collections: {
+    emotions: 'Gevoel',
+    patterns: 'Begrip',
+    articles: 'Uitleg',
+    therapies: 'Therapievorm',
+    tools: 'Hulpmiddel',
+    hubs: 'Overzicht',
+    story: 'Mijn verhaal',
+  },
+  dateLocale: 'nl-NL',
 };
 
 export type UiStrings = typeof nl;
@@ -62,9 +108,60 @@ const en: UiStrings = {
   byEditorial: 'the Ongehoord editors',
   publishedOn: 'published on',
   updatedOn: 'updated on',
+  skipToContent: 'Skip to content',
+  safeExit: 'Leave site',
+  siteNotice:
+    'This English edition is an unreviewed translation of a draft site. Read it for orientation, not as advice.',
+  brandDescription:
+    'For everything you feel but cannot yet put into words. A personal initiative by one person, not a support organisation.',
+  footerDanger: 'In immediate danger? Call',
+  footerWorried: 'Worried about domestic violence?',
+  footerAllHelp: 'All help',
+  footerMeta: (photos: boolean) =>
+    `Draft site in development. Examples and terms help you explore patterns; they are not a diagnosis or a judgement of anyone.${photos ? ' The photos on this site were made with AI.' : ''}`,
+  shareImageAlt: 'Unheard: you don’t have to call it abuse yet.',
+  mobileSuffix: '(mobile)',
+  draftStatus: 'Draft',
+  inShort: 'In short',
+  readMore: 'Read more',
+  readOn: 'Read on',
+  sources: 'Sources',
+  checkedOn: 'checked on',
+  noSources:
+    'This page describes personal experience or orientation and does not refer to research. Factual information is on the pages it links to.',
+  alsoGoodToKnow: 'Also good to know',
+  pagesComingSoon: 'Pages will appear here soon.',
+  reflectionHeading: 'Questions to reflect on',
+  optional: 'Optional',
+  clearAnswers: 'Clear my answers',
+  printAnswers: 'Include my answers when I print',
+  reflectionWritableNote:
+    'What you type here stays in this window only. Unheard does not store or send it. Click ‘Clear my answers’ when you are done and close the tab. On a shared device you can also answer in your head.',
+  reflectionThinkNote:
+    'You don’t have to write anything down. You can answer the questions in your head, or keep them for a conversation with someone you trust.',
+  feelingsMenu: 'What do I feel?',
+  feeling: 'Feeling',
+  impactHeading: 'Where you might notice it',
+  impactIntro:
+    'Not everyone notices the same things. If you recognise a few, that says something about what you are carrying, not about who you are.',
+  collections: {
+    emotions: 'Feeling',
+    patterns: 'Term',
+    articles: 'Explainer',
+    therapies: 'Type of therapy',
+    tools: 'Tool',
+    hubs: 'Overview',
+    story: 'My story',
+  },
+  dateLocale: 'en-GB',
 };
 
+/* Arabic is a scaffold: strings not yet translated fall back to English. */
 const ar: UiStrings = {
+  ...en,
+  dateLocale: 'ar',
+  skipToContent: 'انتقل إلى المحتوى',
+  brandDescription: 'مساحة لما تشعر به ولا تستطيع وصفه بعد.',
   home: 'الصفحة الرئيسية',
   mainNavigation: 'التنقل الرئيسي',
   openMenu: 'فتح القائمة',
