@@ -589,7 +589,12 @@ mark.review-marker {
   stroke-width: 6;
 }
 .home-hero__grid .hero-art-frame {
-  margin-block: clamp(2rem, 5vw, 3.5rem);
+  /* Same vertical rhythm as the text: the arch starts at the eyebrow and ends at the buttons. */
+  align-self: stretch;
+  height: auto;
+  min-height: 0;
+  margin-block: clamp(3rem, 6vw, 5rem);
+  aspect-ratio: auto;
 }
 .page-hero__grid:not(.page-hero__grid--plain) {
   align-items: center;
@@ -599,7 +604,7 @@ mark.review-marker {
   min-height: 0;
 }
 .home-hero__grid .hero-art-frame {
-  max-width: 24rem;
+  max-width: 26rem;
 }
 /* On small screens a page's content comes first; only the homepage keeps its image. */
 @media (max-width: 52rem) {
@@ -815,14 +820,59 @@ mark.review-marker {
 .card > :last-child {
   margin-bottom: 0;
 }
-a.card {
-  transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease;
+/* Clickable tiles: the whole tile is the target and lifts a little under the pointer or focus.
+   .card--link makes the heading link cover the card, so the heading stays the link text. */
+.card--link {
+  position: relative;
 }
-a.card:hover {
+.card--link h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.card--link h3 a::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  content: '';
+}
+.card--link h3 a:focus-visible {
+  outline: none;
+}
+.card--link:has(h3 a:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+a.card,
+.card--link,
+.group-pager ul a,
+.help-band__numbers a {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+a.card:hover,
+a.card:focus-visible,
+.card--link:hover,
+.card--link:has(h3 a:focus-visible),
+.group-pager ul a:hover,
+.group-pager ul a:focus-visible,
+.help-band__numbers a:hover,
+.help-band__numbers a:focus-visible {
   border-color: var(--help);
-  box-shadow: 0 0.4rem 1.1rem color-mix(in srgb, var(--text) 12%, transparent);
+  box-shadow: 0 0.6rem 1.4rem color-mix(in srgb, var(--palette-ink) 12%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  a.card:hover,
+  a.card:focus-visible,
+  .card--link:hover,
+  .card--link:has(h3 a:focus-visible),
+  .group-pager ul a:hover,
+  .group-pager ul a:focus-visible,
+  .help-band__numbers a:hover,
+  .help-band__numbers a:focus-visible {
+    transform: translateY(-3px);
+  }
 }
 .card--safe {
   border-color: var(--safe-border);
@@ -1317,9 +1367,6 @@ a.card:hover {
   background: var(--surface);
   line-height: 1.35;
 }
-.help-band__numbers a:hover {
-  border-color: var(--help);
-}
 .help-band__numbers strong {
   display: block;
 }
@@ -1511,9 +1558,6 @@ a.card:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
-}
-.group-pager ul a:hover {
-  border-color: var(--help);
 }
 .group-pager__hint {
   color: var(--muted);
