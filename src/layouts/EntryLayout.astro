@@ -31,6 +31,8 @@ interface Props {
   mainEntityId?: string;
   /** Link cards the template wants in the single "Verder lezen" block, before related pages. */
   moreLinks?: Array<{ href?: string; title: string; text: string; eyebrow?: string }>;
+  /** Hero buttons when the content itself defines none (at most two). */
+  actions?: Array<{ href: string; label: string; quiet?: boolean }>;
 }
 const {
   entry,
@@ -46,6 +48,7 @@ const {
   extraSchema = [],
   mainEntityId,
   moreLinks = [],
+  actions: fallbackActions = [],
 } = Astro.props;
 const hasRail = Astro.slots.has('rail');
 const { data } = entry;
@@ -159,7 +162,7 @@ const heroData = 'hero' in data ? data.hero : undefined;
         eyebrow={eyebrow ?? heroData?.eyebrow}
         lead={lead}
         paragraphs={heroData?.paragraphs ?? []}
-        actions={heroData?.actions ?? []}
+        actions={(heroData?.actions?.length ? heroData.actions : fallbackActions).slice(0, 2)}
         crumbs={crumbs}
         locale={data.locale}
         artSlot={slotFor(data.translationKey)}

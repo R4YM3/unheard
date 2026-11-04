@@ -4,6 +4,7 @@ import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
 import ProseSlice from '../components/ProseSlice.astro';
+import { navigationFor, sectionFor } from '../lib/navigation';
 import FounderNote from '../components/FounderNote.astro';
 import GlossaryIndex from '../components/GlossaryIndex.astro';
 import MiniReflection from '../components/MiniReflection.astro';
@@ -36,9 +37,22 @@ const listings = await Promise.all(
   })),
 );
 const isEmptyBody = !entry.body?.trim();
+const route = routeFor(entry);
 /* Hubs weave their explanation and their lists: chapter, list, chapter, list, the rest. */
 const woven = listings.length > 0 && !data.finder && !isEmptyBody;
-const route = routeFor(entry);
+const listingId = (listing: (typeof listings)[number], index: number) =>
+  listing.collection === 'emotions' ? 'gevoelens' : `lijst-${index + 1}`;
+/* Two hero buttons: down to the first list, and on to a part of this section. */
+const nav = navigationFor(data.locale);
+const sectionPart = nav
+  ? sectionFor(nav, route)?.tabs.find((tab) => tab.href !== route && !route.startsWith(tab.href))
+  : undefined;
+const heroActions = [
+  ...(listings[0]
+    ? [{ href: `${route}#${listingId(listings[0], 0)}`, label: `${listings[0].heading} ↓` }]
+    : []),
+  ...(sectionPart ? [{ href: sectionPart.href, label: sectionPart.label, quiet: true }] : []),
+];
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -141,6 +155,7 @@ const mainEntityId = termSet
   extraSchema={extraSchema}
   mainEntityId={mainEntityId}
   moreLinks={data.cards}
+  actions={heroActions}
 >
   {
     !woven && !isEmptyBody && (
@@ -168,7 +183,7 @@ const mainEntityId = termSet
             },
           ]}
           aria-labelledby={`listing-${index}-heading`}
-          id={listing.collection === 'emotions' ? 'gevoelens' : undefined}
+          id={listingId(listing, index)}
         >
           <div class="wrap">
             {listing.eyebrow && <p class="eyebrow">{listing.eyebrow}</p>}
