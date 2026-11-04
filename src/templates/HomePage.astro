@@ -2,7 +2,9 @@
 import type { CollectionEntry } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
+import HeroPhoto from '../components/HeroPhoto.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import { photoFor } from '../lib/photos';
 import { routeFor } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 
@@ -39,6 +41,7 @@ const homeLists = [
     absolute,
   ),
 ].filter((node): node is SchemaNode => Boolean(node));
+const photo = photoFor('home');
 ---
 
 <EntryLayout
@@ -53,7 +56,7 @@ const homeLists = [
   mainEntityId={homeLists[0] ? `${pageId}#gevoelens` : undefined}
 >
   <section class="hero" id="top">
-    <div class="wrap reading">
+    <div class:list={['wrap', photo ? 'home-hero__grid' : 'reading']}>
       <div class="home-hero__copy">
         <p class="eyebrow">{home.hero.eyebrow}</p>
         <h1>{data.heading}</h1>
@@ -67,6 +70,7 @@ const homeLists = [
           >
         </div>
       </div>
+      {photo && <HeroPhoto photo={photo} priority />}
     </div>
   </section>
   <section class="section" aria-labelledby="gevoelens-heading" id="gevoelens">
@@ -95,7 +99,7 @@ const homeLists = [
     data.scenarios.length > 0 && (
       <PerspectiveSwitch
         scenarios={data.scenarios}
-        eyebrow={home.perspective.eyebrow}
+        locale={data.locale}
         heading={home.perspective.heading}
         intro={home.perspective.lead}
       />

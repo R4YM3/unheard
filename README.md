@@ -19,7 +19,7 @@ Run `npm run audit:a11y` for an Axe WCAG 2.0/2.1/2.2 A/AA audit of every generat
 
 Run `npm run audit:print` to create and check A4 PDFs for every content template (home, story, emotion, hubs, glossary, pattern, knowledge, therapy, tool, help, statistics and search). It verifies that navigation and fixed controls are absent, that tab, timeline and accordion content is printed in full, and that typed reflection answers are left out unless the reader opts in. PDFs are written to ignored `work/print-audit/`.
 
-Run `npm run audit:ux` for browser checks the static audit cannot do: no horizontal scrolling at 320, 375, 430 and 1440 px with JavaScript on and off, full content coverage without JavaScript, keyboard behaviour of the perspective tabs, and Axe colour contrast of the "Wat ik vanbinnen voel" panel in light and dark themes.
+Run `npm run audit:ux` for browser checks the static audit cannot do: no horizontal scrolling at 320, 375, 430 and 1440 px with JavaScript on and off, full content coverage without JavaScript, that both sides of each "Wat je hoort. Wat je voelt." example stay visible and the example buttons work from the keyboard, and Axe colour contrast of that component in light and dark themes.
 
 Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 

@@ -96,7 +96,7 @@ home:
   perspective:
     eyebrow: 'Twee kanten van één gesprek'
     heading: 'Wat je hoort. Wat je voelt.'
-    lead: 'Kies een situatie en wissel tussen wat er gezegd wordt en wat je vanbinnen voelt. Dit zijn fictieve voorbeelden, geen diagnoses.'
+    lead: 'Hetzelfde moment, van twee kanten: wat er gezegd wordt en wat het vanbinnen met je doet. Dit zijn fictieve voorbeelden, geen diagnoses.'
   storyTeaser:
     eyebrow: 'Waarom Ongehoord bestaat'
     heading: 'Ook ik zocht woorden voor wat ik voelde.'

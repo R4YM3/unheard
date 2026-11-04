@@ -49,8 +49,7 @@
   .actions,
   .hero-art,
   .home-hero__art,
-  .pv-scene-choice,
-  .pv-tabs,
+  .pv-choice,
   .filter-field,
   .az-nav,
   .no-print {
@@ -79,7 +78,6 @@
   .grid,
   .grid--2,
   .grid--3,
-  .pv-panels,
   .timeline-lenses {
     display: block !important;
   }
@@ -108,11 +106,10 @@
     break-after: avoid;
   }
   .card,
-  .pv-panel,
-  .pv-context,
+  .pv-scene,
   .reflection,
   .summary-box,
-  .help-block,
+  .help-band__numbers a,
   .stat,
   .timeline-lens,
   .timeline-between article,
@@ -133,7 +130,6 @@
 
   /* Everything that is collapsed or tabbed on screen is printed in full */
   .pv [data-pv-panel][hidden],
-  .pv-panel[hidden],
   .glossary-index .glossary-item[hidden],
   .glossary-index .glossary-letter[hidden],
   .search-results li[hidden],

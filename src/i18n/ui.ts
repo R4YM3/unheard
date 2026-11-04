@@ -18,6 +18,13 @@ const nl = {
   previousIn: (group: string) => `Vorige in ${group}`,
   nextIn: (group: string) => `Volgende in ${group}`,
   search: 'Zoeken',
+  darkMode: 'Donkere modus',
+  perspectiveHeading: 'Wat je hoort. Wat je voelt.',
+  perspectiveIntro:
+    'Hetzelfde moment, van twee kanten. Dit zijn fictieve voorbeelden, geen diagnoses.',
+  youHear: 'Je hoort',
+  youFeel: 'Je voelt',
+  chooseExample: 'Kies een voorbeeld',
 };
 
 export type UiStrings = typeof nl;
@@ -35,6 +42,12 @@ const en: UiStrings = {
   previousIn: (group: string) => `Previous in ${group}`,
   nextIn: (group: string) => `Next in ${group}`,
   search: 'Search',
+  darkMode: 'Dark mode',
+  perspectiveHeading: 'What you hear. What you feel.',
+  perspectiveIntro: 'The same moment, from two sides. These are fictional examples, not diagnoses.',
+  youHear: 'You hear',
+  youFeel: 'You feel',
+  chooseExample: 'Choose an example',
 };
 
 const ar: UiStrings = {
@@ -50,6 +63,12 @@ const ar: UiStrings = {
   previousIn: (group: string) => `السابق في ${group}`,
   nextIn: (group: string) => `التالي في ${group}`,
   search: 'بحث',
+  darkMode: 'الوضع الداكن',
+  perspectiveHeading: 'ما تسمعه. ما تشعر به.',
+  perspectiveIntro: 'اللحظة نفسها من جانبين. هذه أمثلة خيالية وليست تشخيصًا.',
+  youHear: 'تسمع',
+  youFeel: 'تشعر',
+  chooseExample: 'اختر مثالًا',
 };
 
 const strings: Record<Locale, UiStrings> = { nl, en, ar };

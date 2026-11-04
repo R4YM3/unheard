@@ -34,6 +34,16 @@ Review van 3 november 2026. Canvas met de ontwerpen: https://claude.ai/artifact/
 - Eén pad-regel boven de titel vervangt kruimelpad én eyebrow. Die regel toont alleen de pagina's tussen de sectie en de titel (Home is het logo, de pagina zelf is de titel). Het volledige pad blijft voor schermlezers en in de BreadcrumbList-data. Regel en test: `src/lib/trail.ts`.
 - Meertalig: navigatie per taal in `navigationFor(locale)` en UI-teksten in `src/i18n/ui.ts`. EN en AR tonen alleen Home tot hun vertaling is goedgekeurd.
 
+## PR 3 — Componenten (klaar)
+
+- Licht/donker-knop rechtsboven in de header (volgt het apparaat tot je kiest). De themaknop in de footer is weg.
+- "Wat je hoort. Wat je voelt." toont beide kanten tegelijk, met knoppen per voorbeeld en zonder tabs.
+- Eén blok "Verder lezen" per pagina: de eigen links van de pagina en de gerelateerde pagina's samen, zonder dubbele links en met maximaal zes kaarten.
+- Het hulpblok is een salieband met drie klikbare nummers en de chatlink van 113.
+- Geen dubbele samenvatting meer op therapiepagina's.
+- Fotoplekken: een bestand in `src/assets/photos/` met de naam van de plek verschijnt vanzelf (zie de README daar). De footer meldt dan dat de foto's met AI gemaakt zijn.
+- De build weigert `[OPRICHTER REVIEW NODIG]` in gepubliceerde content zodra `NO_INDEX=false`.
+
 ## Fase 3 — Inhoud (zie bord 5)
 
 - **Verhuizen:**
