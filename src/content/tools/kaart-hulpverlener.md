@@ -13,7 +13,7 @@ reviewedAt: null
 order: 30
 cardTitle: 'Gesprek voorbereiden'
 cardText: 'Een geheugensteun voor een afspraak met de huisarts of een therapeut. Jij kiest wat je wel en niet zegt.'
-summary: 'Met deze kaart orden je wat je in een afspraak wilt zeggen. De huisarts is een ingang bij psychische klachten. De praktijkondersteuner kan helpen bij somberheid. Dit is geen spoedhulp en geen diagnose.'
+summary: 'Met deze kaart orden je wat je in een afspraak wilt zeggen. De huisarts is een ingang bij psychische klachten. De praktijkondersteuner kan helpen bij somberheid. Dit is geen spoedhulp.'
 purpose: 'Een afspraak met een huisarts of therapeut voorbereiden, zodat je niet alles in de eerste minuut hoeft te kunnen uitleggen.'
 usage:
   - 'Schrijf de eerste zin op die je hardop wilt zeggen, in je eigen woorden.'

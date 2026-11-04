@@ -83,5 +83,3 @@ Zoek je een lichaams- of bewegingsgerichte aanpak binnen de zorg? Vraag je huisa
 Daar is geen test voor, en deze site geeft geen behandeladvies. Misschien merk je dat praten alleen niet genoeg voelt, dat je spanning vooral in je lijf zit, of dat je niet goed weet wat een emotie met je doet. Dat zijn goede onderwerpen voor een gesprek met je huisarts of de praktijkondersteuner (POH-GGZ).
 
 Wil je met een begeleider buiten de zorg werken, vraag dan naar opleiding, ervaring en wat die doet als het te veel wordt. Twijfel je over je lichamelijke gezondheid, overleg dan eerst met je huisarts.
-
-Voel je je onveilig in je relatie of thuis? Bel dan gratis en anoniem met Veilig Thuis: [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).

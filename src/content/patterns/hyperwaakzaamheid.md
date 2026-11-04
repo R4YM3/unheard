@@ -48,7 +48,7 @@ Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noe
 - **Alert zijn is in een onveilige situatie een gezonde reactie.** Als iemands stemming bepaalt hoe je avond verloopt, is opletten logisch. Je lichaam doet wat het moet doen om je te beschermen.
 - **Het probleem ontstaat als de alertheid blijft**, ook als het gevaar voorbij is of als je in een veilige omgeving bent.
 - **Hyperwaakzaamheid is geen diagnose op zichzelf.** Het kan een kenmerk zijn van een posttraumatische stressstoornis (PTSS), maar het komt ook voor bij angst, langdurige stress of gewoon na een zware periode. Thuisarts noemt bij PTSS onder meer snel en heftig schrikken van dingen waar je vroeger niet van zou schrikken, slecht je aandacht ergens bij kunnen houden en slecht slapen.
-- **Alleen een arts of psycholoog kan vaststellen** of je klachten passen bij PTSS of iets anders. Dit artikel helpt je om te herkennen wat je voelt, niet om jezelf een diagnose te geven.
+- **Alleen een arts of psycholoog kan vaststellen** of je klachten passen bij PTSS of iets anders.
 
 ## Hoe kan het eruitzien?
 

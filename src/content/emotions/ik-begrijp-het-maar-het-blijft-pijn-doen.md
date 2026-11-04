@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Pijn na inzicht'
   paragraphs:
     - 'Misschien begrijp je inmiddels veel van een patroon of van je eigen reactie, maar voel je je nog steeds verdrietig, boos, gespannen of leeg.'
-    - 'Inzicht hoeft niet meteen opluchting te geven. Je hoeft jezelf niet te dwingen sneller verder te zijn dan je gevoel kan bijhouden.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - {

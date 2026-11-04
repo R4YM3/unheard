@@ -13,14 +13,14 @@ reviewedAt: null
 order: 10
 cardTitle: 'Wat voel ik?'
 cardText: 'Een kaart met vragen over wat je voelt en nodig hebt. Geen score, geen label, geen opdracht om alles in te vullen.'
-summary: 'Deze kaart helpt je woorden te vinden voor wat je voelt en nodig hebt, of je nu nog in de relatie zit of niet. Het is geen test en geen diagnose. Je mag bij één vraag stoppen.'
+summary: 'Deze kaart helpt je woorden te vinden voor wat je voelt en nodig hebt, of je nu nog in de relatie zit of niet. Je mag bij één vraag stoppen.'
 purpose: 'Woorden vinden voor wat je nu voelt en wat je nodig hebt, zonder daar een conclusie over je relatie of je partner aan te verbinden.'
 usage:
   - 'Kies één vraag die vandaag haalbaar voelt. De rest mag leeg blijven.'
   - 'Schrijf in gewone zinnen. Feiten en gevoelens mogen door elkaar staan.'
   - 'Stop als je onrustig wordt, of als iemand kan meekijken.'
   - 'Bewaar papier alleen op een plek die van jou is, of gooi het weg.'
-safety: 'Schrijven kan onveilig zijn op een gedeeld toestel of als papier gevonden wordt. Deze kaart bewijst niets en geeft je geen label. Voelt het niet veilig om verder te gaan, stop dan en lees Hulp vinden.'
+safety: 'Schrijven kan onveilig zijn op een gedeeld toestel of als papier gevonden wordt. Voelt het niet veilig om verder te gaan, stop dan en lees Hulp vinden.'
 card:
   title: 'Wat voel ik en wat heb ik nodig?'
   intro: 'Neem de tijd. Je hoeft niet alles in te vullen, en je hoeft geen conclusie te trekken.'
@@ -53,7 +53,7 @@ card:
       hint: 'Een naam of “niemand, vandaag niet”. Alleen opschrijven als dat veilig voelt.'
       kind: lines
       lines: 2
-  closing: 'Je mag deze kaart weggooien, bewaren of aan iemand laten zien. Een antwoord is geen bewijs en geen diagnose.'
+  closing: 'Je mag deze kaart weggooien, bewaren of aan iemand laten zien.'
 related: [zelftwijfel, pijn-na-inzicht, hulp-vinden, herstel, wat-voel-ik]
 reviewNotes:
   - 'Redactie: het fictieve voorbeeld noemt geen namen of plaatsen. Oprichter hoeft het niet als eigen herinnering te herkennen.'

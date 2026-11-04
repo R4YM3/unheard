@@ -91,4 +91,4 @@ Daar is geen test voor, en deze site geeft geen behandeladvies. Sommige mensen m
 
 Wil je meditatie proberen naast andere hulp, of twijfel je of het nu het goede moment is? Bespreek het met je huisarts of de praktijkondersteuner (POH-GGZ). Zeker als je somber bent of eerder een depressie hebt gehad, is het goed om dat samen te bekijken.
 
-Voel je je onveilig in je relatie of thuis? Bel dan gratis en anoniem met Veilig Thuis: [0800-2000](tel:08002000). Heb je gedachten aan zelfdoding, bel dan gratis [113](tel:113) of chat via 113.nl. Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).
+Heb je gedachten aan zelfdoding, bel dan gratis [113](tel:113) of chat via 113.nl.

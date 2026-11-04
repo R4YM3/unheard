@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Grenzen'
   paragraphs:
     - 'Misschien weet je precies wat je niet wilt, maar voelt uitspreken daarvan spannend, vermoeiend of onmogelijk. Je zegt ja, en ergens vanbinnen zegt iets nee.'
-    - 'Een grens hoeft geen groot gesprek te zijn. Veiligheid en tempo mogen vooropstaan, en je bepaalt zelf wanneer en bij wie je iets uitprobeert.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - { href: 'nl/herstel/grenzen-leren-stellen/', label: 'Grenzen leren stellen', quiet: true }
@@ -162,4 +161,4 @@ Mogelijke woorden, alleen als ze bij jou en je veiligheid passen:
 - Ik heb even tijd nodig om na te denken.
 - Ik ga dit met iemand bespreken voordat ik antwoord geef.
 
-Er is ook een [vragenkaart voor een gesprek met je partner](nl/hulpmiddelen/vragen-voor-een-gesprek-met-je-partner/). Gebruik die alleen als het veilig voelt; je hebt altijd het recht om niet in gesprek te gaan. Bij direct gevaar bel je [112](tel:112). Voor advies over huiselijk geweld of misbruik kun je Veilig Thuis bereiken via 0800-2000. Meer mogelijkheden staan op [Hulp vinden](nl/hulp-vinden/).
+Er is ook een [vragenkaart voor een gesprek met je partner](nl/hulpmiddelen/vragen-voor-een-gesprek-met-je-partner/). Gebruik die alleen als het veilig voelt; je hebt altijd het recht om niet in gesprek te gaan.
