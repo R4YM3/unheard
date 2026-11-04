@@ -527,10 +527,6 @@ mark.review-marker {
   + :is(.section--tension, .section--therapy, .section--tint) {
   --section-bg: var(--safe);
 }
-/* The hero is sage in the light theme: a sage band straight below it switches family. */
-.hero + :is(.section--soft, .section--children) {
-  --section-bg: var(--tint);
-}
 /* Blocks on the plain page background that follow each other share one gap instead of
    stacking two. */
 :is(
