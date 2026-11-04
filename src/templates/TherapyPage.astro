@@ -16,9 +16,16 @@ const { Content } = await render(entry);
   entry={entry}
   eyebrow={data.hero?.eyebrow ?? `Herstel / Therapievormen / ${data.name}`}
 >
-  <div class="wrap reading">
-    <p class="summary-box"><strong>Waar richt het zich op?</strong> {data.focus}</p>
-  </div>
+  {
+    /* One summary per page: the focus line only stands in when there is no summary. */
+    !data.summary && (
+      <div class="wrap reading">
+        <p class="summary-box">
+          <strong>Waar richt het zich op?</strong> {data.focus}
+        </p>
+      </div>
+    )
+  }
   <div class="wrap reading prose"><Content /></div>
   <section class="section section--soft" aria-labelledby="vragen-heading" id="vragen">
     <div class="wrap reading">

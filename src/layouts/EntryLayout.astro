@@ -9,6 +9,7 @@ import PageHero from '../components/PageHero.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import SourceList from '../components/SourceList.astro';
 import { ui } from '../i18n/ui';
+import { photoForKey } from '../lib/photos';
 import { breadcrumbsFor, resolveRelated, routeFor, type RoutedEntry } from '../lib/content';
 
 interface Props {
@@ -26,6 +27,8 @@ interface Props {
   /** Extra JSON-LD for visible lists on this page. */
   extraSchema?: Array<Record<string, unknown>>;
   mainEntityId?: string;
+  /** Link cards the template wants in the single "Verder lezen" block, before related pages. */
+  moreLinks?: Array<{ href?: string; title: string; text: string; eyebrow?: string }>;
 }
 const {
   entry,
@@ -40,12 +43,26 @@ const {
   showHelp = true,
   extraSchema = [],
   mainEntityId,
+  moreLinks = [],
 } = Astro.props;
 const hasRail = Astro.slots.has('rail');
 const { data } = entry;
 const route = routeFor(entry);
 const crumbs = await breadcrumbsFor(entry);
-const related = await resolveRelated(entry);
+/* One "Verder lezen" block per page: the template's own links first, then related pages,
+   without duplicates and at most six. */
+const related = [
+  ...moreLinks.flatMap((card) =>
+    card.href
+      ? [{ href: card.href, title: card.title, text: card.text, eyebrow: card.eyebrow }]
+      : [],
+  ),
+  ...(await resolveRelated(entry)),
+]
+  .filter((card, index, all) => all.findIndex((other) => other.href === card.href) === index)
+  /* The help band below already links to the help page. */
+  .filter((card) => !(showHelp && card.href.endsWith('/hulp-vinden/')))
+  .slice(0, 6);
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -125,6 +142,7 @@ const heroData = 'hero' in data ? data.hero : undefined;
         actions={heroData?.actions ?? []}
         crumbs={crumbs}
         locale={data.locale}
+        photo={photoForKey(data.translationKey)}
         artNote={heroData?.visualNote}
         art={heroData ? 'article' : false}
       />
@@ -161,13 +179,7 @@ const heroData = 'hero' in data ? data.hero : undefined;
       <slot />
       <RelatedContent items={related} />
       {showSources && <SourceList sources={data.sources} />}
-      {
-        showHelp && (
-          <div class="wrap reading section--tight">
-            <HelpBlock />
-          </div>
-        )
-      }
+      {showHelp && <HelpBlock />}
     </div>
   </div>
 </BaseLayout>

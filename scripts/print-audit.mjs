@@ -22,12 +22,7 @@ const routes = [
   {
     id: 'emotion',
     route: '/nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
-    required: [
-      'Wat er gezegd wordt',
-      'Wat ik vanbinnen voel',
-      'Een grens aangeven',
-      'Bevestiging zoeken',
-    ],
+    required: ['Je hoort', 'Je voelt', 'Een grens aangeven', 'Bevestiging zoeken'],
   },
   {
     id: 'emotion-hub',
@@ -39,7 +34,7 @@ const routes = [
   {
     id: 'knowledge',
     route: '/nl/begrijp-het/conflict-of-patroon/',
-    required: ['Wat er gezegd wordt', 'Bronnen'],
+    required: ['Je hoort', 'Bronnen'],
   },
   { id: 'financial-hub', route: '/nl/begrijp-het/financieel-misbruik/', required: ['Wat is het?'] },
   { id: 'recovery-hub', route: '/nl/herstel/', required: ['Herstel'] },
