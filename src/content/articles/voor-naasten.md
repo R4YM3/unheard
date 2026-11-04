@@ -37,7 +37,7 @@ scenarios:
     outside: '“Dit is genoeg. Je moet nu weg.”'
     inside: 'Als ik nu vertrek, wordt het misschien erger. En misschien zie ik het verkeerd.'
     context: 'Een snelle conclusie of een gedwongen breuk kan iemand laten dichtklappen. Jij kunt niet voor de ander beslissen of vertrekken nu veilig is. Veiligheid weegt zwaarder dan gelijk krijgen.'
-related: [kaart-naaste, hulp-vinden, herstel-steunnetwerk, emotioneel-misbruik]
+related: [kaart-naaste, hulp-vinden, herstel-steunnetwerk, emotioneel-misbruik, het-vertellen]
 sources:
   - label: 'Veilig Thuis — Contact'
     url: 'https://www.veiligthuis.nl/nl/contact'
