@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { Locale } from '../i18n/config';
+import { ui } from '../i18n/ui';
 
 export const routedCollections = [
   'emotions',
@@ -260,7 +261,7 @@ export const breadcrumbsFor = async (entry: RoutedEntry) => {
   const published = await getPublishedEntries();
   const segments = entry.data.slug.split('/');
   const crumbs: Array<{ href: string; label: string }> = [
-    { href: `${entry.data.locale}/`, label: 'Home' },
+    { href: `${entry.data.locale}/`, label: ui(entry.data.locale).home },
   ];
   if (entry.data.translationKey === 'home') return crumbs;
   for (let index = 1; index < segments.length; index += 1) {

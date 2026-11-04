@@ -23,18 +23,16 @@ Review van 3 november 2026. Canvas met de ontwerpen: https://claude.ai/artifact/
 5. Een eigen plus/min-icoon voor de uitklappers. De lege gradientbeelden weg (tot er een eigen foto is).
 6. Het cijferblok laten beginnen met 4,9% van de mannen, of het van de homepage halen.
 
-## Fase 2 — Subnavigatie (zie bord 6)
+## Fase 2 — Subnavigatie (klaar)
 
-- `sectionGroups` uit `BaseLayout.astro` halen en in `src/lib/navigation.ts` zetten, als één bron.
-- Per sectie maximaal 4 tabs, op elke pagina binnen de sectie hetzelfde:
-  - Wat voel ik?: Gevoelens · Help me woorden vinden · Wat je hoort, wat je voelt
-  - Begrijp het: Emotioneel misbruik · Financieel misbruik · Begrippen A–Z · In cijfers
-  - Herstel: Herstel · Therapievormen
-  - Mijn verhaal: Het verhaal · Tijdlijn · Waarom Ongehoord
-  - Hulpmiddelen: Vragenkaarten · Voor naasten · Veilig gebruik
-- Een nieuw frontmatter-veld `group`. `PageRail` toont dan "Op deze pagina" en de pagina's in dezelfde groep. Onderaan komen vorige/volgende-links binnen de groep.
-- Het kruimelpad vervalt op pagina's met een sectiebalk.
-- Bug: Hulpmiddelen-pagina's tonen nu "Binnen Herstel".
+- Navigatie staat als data in `src/lib/navigation.ts`: hoofdmenu, sectiebalk (maximaal 4 tabs per sectie) en de groepen voor gevoelens. Getest in `test/navigation.test.mjs`.
+- De groepen staan in `navigation.ts` in plaats van in een frontmatter-veld, zodat er één bron is en geen 88 bestanden aangepast hoeven te worden.
+- Geen aparte sectiebalk: het hoofdmenu zegt in welke sectie je bent. De onderdelen per sectie staan in het mobiele menu. Hulpmiddelen-pagina's lichten niet meer op onder Herstel.
+- Gevoelspagina's hebben de stille zijbalk (variant A): alleen de hoofdstukken van de tekst, daaronder de eigen groep. Onderaan staan vorige/volgende-links binnen de groep. Op mobiel blijven alleen de hoofdstukken over, in twee kolommen.
+- Help me woorden vinden valt onder Wat voel ik?. Over Ongehoord en Werkwijze vallen onder Mijn verhaal. Voor naasten en Veilig gebruik vallen onder Hulpmiddelen.
+- De toegankelijkheidsaudit controleert 6 pagina's tegelijk (±25 s in plaats van ±4 min). De CI bouwt niet meer drie keer.
+- Eén pad-regel boven de titel vervangt kruimelpad én eyebrow. Die regel toont alleen de pagina's tussen de sectie en de titel (Home is het logo, de pagina zelf is de titel). Het volledige pad blijft voor schermlezers en in de BreadcrumbList-data. Regel en test: `src/lib/trail.ts`.
+- Meertalig: navigatie per taal in `navigationFor(locale)` en UI-teksten in `src/i18n/ui.ts`. EN en AR tonen alleen Home tot hun vertaling is goedgekeurd.
 
 ## Fase 3 — Inhoud (zie bord 5)
 
