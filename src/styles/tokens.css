@@ -2,13 +2,12 @@
 :root {
   /* Light: paper, ink, sage, terracotta. */
   --palette-paper: #f6f2ea;
-  /* One warm tonal scale (hue 40°, same saturation): off-white, paper, sand, linen. Only the
-     lightness steps, so neighbouring bands always belong together. */
+  /* Off-white and paper carry the page; bands are two steps of a soft olive. */
   --palette-paper-light: #fbf9f5;
-  --palette-sand: #efeade;
-  --palette-sand-line: #dad1be;
-  --palette-linen: #e8e0d1;
-  --palette-linen-line: #d2c7b2;
+  --palette-olive: #e7e7da;
+  --palette-olive-line: #d6d6c2;
+  --palette-olive-deep: #dfdfcc;
+  --palette-olive-deep-line: #ceceb6;
   --palette-ink: #1e2320;
   --palette-ink-soft: #3e4540;
   --palette-ink-muted: #4f5550;
