@@ -22,12 +22,7 @@ const routes = [
   {
     id: 'emotion',
     route: '/nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
-    required: [
-      'Je hoort',
-      'Je voelt',
-      'Een grens aangeven',
-      'Bevestiging zoeken',
-    ],
+    required: ['Je hoort', 'Je voelt', 'Een grens aangeven', 'Bevestiging zoeken'],
   },
   {
     id: 'emotion-hub',
