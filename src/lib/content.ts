@@ -155,7 +155,7 @@ export const resolveRelated = async (entry: RoutedEntry) => {
     .map(cardFor);
 };
 
-const byOrder = (a: RoutedEntry, b: RoutedEntry) =>
+export const byOrder = (a: RoutedEntry, b: RoutedEntry) =>
   (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title, 'nl');
 
 /** Published entries of a collection; with a prefix, only direct children (`prefix/<segment>`). */
