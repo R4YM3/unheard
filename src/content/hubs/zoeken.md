@@ -13,7 +13,7 @@ reviewedAt: null
 cardTitle: 'Zoeken'
 heading: 'Zoek een onderwerp.'
 eyebrow: 'Zoeken'
-lead: 'Alle pagina’s staan hieronder. Typ een woord om de lijst korter te maken.'
+lead: 'Typ een woord, of begin bij een van de suggesties. Zoeken gebeurt alleen in je eigen browser.'
 searchIndex: true
 related: [wat-voel-ik, begrippen, hulp-vinden]
 ---

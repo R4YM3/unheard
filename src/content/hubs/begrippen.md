@@ -17,14 +17,6 @@ eyebrow: 'Begrijp het / Begrippen & patronen'
 lead: 'Een begrip beschrijft een mogelijk patroon; het vertelt niet wie iemand is.'
 summary: 'Hier vind je begrippen die mensen gebruiken om patronen in relaties te beschrijven, zoals DARVO, gaslighting of financiële controle, en woorden voor wat zulke patronen met je kunnen doen. Elk begrip heeft een korte omschrijving en een eigen pagina met nuance.'
 glossaryIndex: true
-listings:
-  - collection: patterns
-    prefix: 'begrippen/'
-    eyebrow: 'Patronen'
-    heading: 'Uitgelichte begrippen'
-    lead: 'Elk begrip heeft een eigen pagina met fictieve voorbeelden, nuance en mogelijke impact.'
-    tone: neutral
-    cardStyle: feeling
 related: [begrijp-het, conflict-of-patroon, emotioneel-misbruik]
 reviewNotes:
   - 'De afzonderlijke begrip-artikelen worden geschreven op de branch content/begrippen. Deze index vult zich automatisch zodra die artikelen gepubliceerd zijn.'

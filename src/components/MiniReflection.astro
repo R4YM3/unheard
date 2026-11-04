@@ -6,16 +6,30 @@
 interface Props {
   reflection: { heading?: string; questions: string[]; note?: string; writable: boolean };
   id?: string;
+  /** Start closed: the questions open on request, so a long page stays light. */
+  collapsed?: boolean;
 }
-const { reflection, id = 'reflectie' } = Astro.props;
+const { reflection, id = 'reflectie', collapsed = false } = Astro.props;
+const Box = collapsed ? 'details' : 'div';
 const heading = reflection.heading ?? 'Vragen om bij stil te staan';
 ---
 
 <section class="section" aria-labelledby={`${id}-heading`} id={id}>
   <div class="wrap reading">
-    <div class="reflection" data-print-answers>
-      <p class="eyebrow">Vrijblijvend</p>
-      <h2 id={`${id}-heading`}>{heading}</h2>
+    <Box class:list={['reflection', { 'reflection--collapsed': collapsed }]} data-print-answers>
+      {
+        collapsed ? (
+          <summary>
+            <span class="eyebrow">Vrijblijvend</span>
+            <h2 id={`${id}-heading`}>{heading}</h2>
+          </summary>
+        ) : (
+          <>
+            <p class="eyebrow">Vrijblijvend</p>
+            <h2 id={`${id}-heading`}>{heading}</h2>
+          </>
+        )
+      }
       {reflection.note && <p>{reflection.note}</p>}
       {
         reflection.writable ? (
@@ -62,6 +76,6 @@ const heading = reflection.heading ?? 'Vragen om bij stil te staan';
             : 'Je hoeft niets op te schrijven. Je kunt de vragen ook alleen in gedachten beantwoorden, of ze bewaren voor een gesprek met iemand die je vertrouwt.'
         }
       </p>
-    </div>
+    </Box>
   </div>
 </section>

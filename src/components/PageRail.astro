@@ -19,6 +19,23 @@ const { groups } = Astro.props;
 
 <div class="read-progress" aria-hidden="true"></div>
 {
+  /* Narrow screens: this page's chapters as one closed button, so the text comes first. */
+  groups[0] && (
+    <details class="rail-mobile">
+      <summary>{groups[0].label}</summary>
+      <ul>
+        {groups[0].items.map((item) => (
+          <li>
+            <a href={item.href} aria-current={item.current ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )
+}
+{
   groups.map((group) =>
     group.closed ? (
       <details>
