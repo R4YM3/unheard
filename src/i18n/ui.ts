@@ -26,6 +26,11 @@ const nl = {
   youFeel: 'Je voelt',
   chooseExample: 'Kies een voorbeeld',
   warmLine: 'Van jou mag ook gehouden worden.',
+  writtenBy: 'Geschreven door',
+  byFounder: 'de oprichter van Ongehoord',
+  byEditorial: 'de redactie van Ongehoord',
+  publishedOn: 'gepubliceerd op',
+  updatedOn: 'bijgewerkt op',
 };
 
 export type UiStrings = typeof nl;
@@ -50,6 +55,11 @@ const en: UiStrings = {
   youFeel: 'You feel',
   chooseExample: 'Choose an example',
   warmLine: 'You deserve to be loved too.',
+  writtenBy: 'Written by',
+  byFounder: 'the founder of Ongehoord',
+  byEditorial: 'the Ongehoord editors',
+  publishedOn: 'published on',
+  updatedOn: 'updated on',
 };
 
 const ar: UiStrings = {
@@ -72,6 +82,11 @@ const ar: UiStrings = {
   youFeel: 'تشعر',
   chooseExample: 'اختر مثالًا',
   warmLine: 'أنت أيضًا تستحق أن تُحَب.',
+  writtenBy: 'كتبه',
+  byFounder: 'مؤسس Ongehoord',
+  byEditorial: 'فريق تحرير Ongehoord',
+  publishedOn: 'نُشر في',
+  updatedOn: 'حُدّث في',
 };
 
 const strings: Record<Locale, UiStrings> = { nl, en, ar };
