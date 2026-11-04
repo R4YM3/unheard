@@ -29,3 +29,15 @@ test('the active section is the last heading above the reading line', () => {
   assert.equal(activeSection(sections, 1800), 'gevolgen');
   assert.equal(activeSection([...sections].reverse(), 1000), 'herken');
 });
+
+test('the reading line follows the chapters, not the whole page', async () => {
+  const { chapterProgress } = await import('../src/lib/page-rail.mjs');
+  const tops = [1000, 2000, 2500];
+  assert.equal(chapterProgress(tops, 3500, 500), 0);
+  assert.equal(chapterProgress(tops, 3500, 1000), 0);
+  assert.equal(chapterProgress(tops, 3500, 1500), 0.5);
+  assert.equal(chapterProgress(tops, 3500, 2250), 1.5);
+  assert.equal(chapterProgress(tops, 3500, 3000), 2.5);
+  assert.equal(chapterProgress(tops, 3500, 9000), 3);
+  assert.equal(chapterProgress([], 3500, 9000), 0);
+});

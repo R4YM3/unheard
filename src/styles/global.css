@@ -34,6 +34,29 @@ textarea:focus-visible,
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
+/* Jumping within a page: scroll smoothly and briefly mark where you landed, so a link such as
+   "Alle 9 gevoelens" visibly arrives. Both are off for readers who prefer less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  :target > h2,
+  h2:target,
+  h3:target {
+    animation: arrived 1.8s ease-out 0.25s;
+  }
+}
+@keyframes arrived {
+  0%,
+  35% {
+    background: color-mix(in srgb, var(--help) 16%, transparent);
+    box-shadow: 0 0 0 0.4rem color-mix(in srgb, var(--help) 16%, transparent);
+  }
+  100% {
+    background: transparent;
+    box-shadow: 0 0 0 0.4rem transparent;
+  }
+}
 /* Native disclosure behaviour stays available without JavaScript. */
 summary {
   position: relative;
@@ -228,11 +251,27 @@ mark.review-marker {
 .safe-exit:hover {
   text-decoration: underline;
 }
-.header-controls {
+/* Always within reach, bottom right: switch light/dark, or leave the site at once. */
+.safety-dock {
+  position: fixed;
+  inset-block-end: max(1rem, env(safe-area-inset-bottom));
+  inset-inline-end: max(1rem, env(safe-area-inset-right));
+  z-index: 12;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.6rem;
+  gap: 0.5rem;
+}
+.safety-dock .safe-exit,
+.safety-dock .theme-toggle {
+  box-shadow: 0 0.35rem 1.2rem color-mix(in srgb, var(--palette-ink) 22%, transparent);
+}
+.safety-dock .safe-exit {
+  min-height: 3rem;
+  padding-inline: 1.3rem;
+}
+.safety-dock .theme-toggle {
+  width: 3rem;
+  height: 3rem;
 }
 .locale-selector {
   min-width: 2.75rem;
@@ -275,7 +314,7 @@ mark.review-marker {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  padding: 2.5rem 0 4.5rem;
+  padding: 2.5rem 0 6.5rem;
   border-top: 1px solid var(--footer-border);
   background: var(--footer-bg);
   color: var(--footer-text);
@@ -299,6 +338,13 @@ mark.review-marker {
   font-size: 1.4rem;
   font-weight: 600;
 }
+.footer-warm {
+  margin-top: -0.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--hero-eyebrow);
+}
 .footer-brand span {
   color: var(--brand-dot);
 }
@@ -314,6 +360,14 @@ mark.review-marker {
   padding-block: 0.2rem;
   text-decoration: underline;
   text-decoration-thickness: 0.06em;
+}
+.footer-help {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+.footer-help li + li {
+  margin-top: 0.15rem;
 }
 .footer-help a {
   color: inherit;
@@ -486,20 +540,79 @@ mark.review-marker {
   min-width: 0;
   padding-block: clamp(3rem, 6vw, 5rem);
 }
-.hero-photo {
-  margin: 0;
-  align-self: center;
-}
-.hero-photo img {
-  display: block;
+/* The image at the top of a page sits in one arched frame: a photo, or a quiet landscape. */
+.hero-art-frame {
+  position: relative;
+  align-self: stretch;
   width: 100%;
-  height: auto;
+  max-width: 26rem;
+  min-height: 18rem;
+  margin: 0 0 0 auto;
+  overflow: hidden;
+  border-radius: 999px 999px calc(var(--radius) + 0.25rem) calc(var(--radius) + 0.25rem);
+  background: var(--art-sky);
   aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: calc(var(--radius) + 0.25rem);
 }
-.home-hero__grid .hero-photo {
-  padding-block: clamp(2rem, 5vw, 4rem);
+.hero-art-frame img,
+.hero-art-frame svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.art-sky {
+  fill: var(--art-sky);
+}
+.art-sun {
+  fill: var(--art-sun);
+}
+.art-halo {
+  fill: none;
+  stroke: var(--art-sun);
+  stroke-width: 1.5;
+  opacity: 0.45;
+}
+.art-hill--1 {
+  fill: var(--art-hill-1);
+}
+.art-hill--2 {
+  fill: var(--art-hill-2);
+}
+.art-hill--3 {
+  fill: var(--art-hill-3);
+}
+.art-line {
+  fill: none;
+  stroke: var(--art-hill-3);
+  stroke-linecap: round;
+  stroke-width: 6;
+}
+.home-hero__grid .hero-art-frame {
+  margin-block: clamp(2rem, 5vw, 3.5rem);
+}
+.page-hero__grid:not(.page-hero__grid--plain) {
+  align-items: center;
+}
+.page-hero .hero-art-frame {
+  max-width: 17rem;
+  min-height: 0;
+}
+.home-hero__grid .hero-art-frame {
+  max-width: 24rem;
+}
+/* On small screens a page's content comes first; only the homepage keeps its image. */
+@media (max-width: 52rem) {
+  .page-hero .hero-art-frame {
+    display: none;
+  }
+  .home-hero__grid .hero-art-frame {
+    max-width: none;
+    min-height: 0;
+    margin-block: 0 2rem;
+    aspect-ratio: 16 / 10;
+    border-radius: 999px 999px var(--radius) var(--radius);
+  }
 }
 .home-hero__art {
   min-height: 34rem;
@@ -1656,10 +1769,7 @@ a.card:hover {
   .nav {
     display: none;
   }
-  .header-controls {
-    order: 1;
-    gap: 0.4rem;
-  }
+
   .mobile-menu {
     order: 2;
     position: relative;

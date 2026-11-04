@@ -9,7 +9,7 @@ import PageHero from '../components/PageHero.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import SourceList from '../components/SourceList.astro';
 import { ui } from '../i18n/ui';
-import { photoForKey } from '../lib/photos';
+import { slotFor } from '../lib/photos';
 import { breadcrumbsFor, resolveRelated, routeFor, type RoutedEntry } from '../lib/content';
 
 interface Props {
@@ -142,7 +142,7 @@ const heroData = 'hero' in data ? data.hero : undefined;
         actions={heroData?.actions ?? []}
         crumbs={crumbs}
         locale={data.locale}
-        photo={photoForKey(data.translationKey)}
+        artSlot={slotFor(data.translationKey)}
         artNote={heroData?.visualNote}
         art={heroData ? 'article' : false}
       />

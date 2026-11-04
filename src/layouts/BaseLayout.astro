@@ -199,6 +199,12 @@ const footerGroups =
   </head>
   <body>
     <a class="skip" href={`${localPath}#main`}>{skipLabel}</a>
+    <div class="safety-dock">
+      <ThemeToggle locale={locale} />
+      <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
+        >Verlaat site</a
+      >
+    </div>
     <p class="site-notice">
       Deze site is een conceptversie en is nog niet inhoudelijk gecontroleerd. Lees haar als
       oriëntatie, niet als advies.
@@ -249,12 +255,6 @@ const footerGroups =
             {locale === 'nl' && <a href="nl/zoeken/">{t.search}</a>}
           </nav>
         </details>
-        <div class="header-controls">
-          <ThemeToggle locale={locale} />
-          <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
-            >Verlaat site</a
-          >
-        </div>
       </div>
     </header>
     <main id="main"><slot /></main>
@@ -263,6 +263,7 @@ const footerGroups =
         <div class="footer-grid">
           <div>
             <p class="footer-brand">{brandName}<span>.</span></p>
+            <p class="footer-warm">{t.warmLine}</p>
             {
               locale === 'nl' ? (
                 <>
@@ -270,11 +271,18 @@ const footerGroups =
                     Voor alles wat je voelt, maar nog niet kunt verwoorden. Een persoonlijk
                     initiatief van één persoon, geen hulporganisatie.
                   </p>
-                  <p class="footer-help">
-                    Direct gevaar? Bel <a href="tel:112">112</a>. Zorgen over huiselijk geweld?
-                    Veilig Thuis <a href="tel:08002000">0800-2000</a>.{' '}
-                    <a href="nl/hulp-vinden/">Alle hulp</a>
-                  </p>
+                  <ul class="footer-help">
+                    <li>
+                      Direct gevaar? Bel <a href="tel:112">112</a>.
+                    </li>
+                    <li>Zorgen over huiselijk geweld?</li>
+                    <li>
+                      Veilig Thuis <a href="tel:08002000">0800-2000</a>.
+                    </li>
+                    <li>
+                      <a href="nl/hulp-vinden/">Alle hulp</a>
+                    </li>
+                  </ul>
                 </>
               ) : (
                 <p>
