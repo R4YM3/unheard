@@ -200,6 +200,8 @@ const heroData = 'hero' in data ? data.hero : undefined;
         )
       }
       <slot />
+      <RelatedContent items={related} />
+      {showSources && <SourceList sources={data.sources} />}
       {
         articleType && (
           <ArticleMeta
@@ -210,8 +212,6 @@ const heroData = 'hero' in data ? data.hero : undefined;
           />
         )
       }
-      <RelatedContent items={related} />
-      {showSources && <SourceList sources={data.sources} />}
       {showHelp && <HelpBlock />}
     </div>
   </div>

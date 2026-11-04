@@ -1,14 +1,20 @@
 ---
 import Marked from './Marked.astro';
+import { REVIEW_MARKER } from '../lib/review-marks';
 
 interface Props {
   note: { eyebrow: string; heading: string; paragraphs: string[]; needsReview: boolean };
   id?: string;
 }
 const { note, id = 'oprichter' } = Astro.props;
+/* A note that is only placeholders stays out of the published view. */
+const placeholderOnly = note.paragraphs.every((paragraph) => paragraph.includes(REVIEW_MARKER));
 ---
 
-<section class="section section--paper" aria-labelledby={`${id}-heading`}>
+<section
+  class:list={['section', 'section--paper', { 'needs-review': placeholderOnly }]}
+  aria-labelledby={`${id}-heading`}
+>
   <div class="wrap">
     <div class="card card--story founder-note">
       <p class="eyebrow">{note.eyebrow}</p>

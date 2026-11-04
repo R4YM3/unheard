@@ -209,6 +209,7 @@ export const glossaryItems = async (locale: Locale | string): Promise<GlossaryIt
     .sort((a, b) => a.term.localeCompare(b.term, 'nl', { sensitivity: 'base' }));
 
 export interface SearchItem extends LinkCard {
+  key: string;
   keywords: string;
 }
 
@@ -224,6 +225,7 @@ export const searchItems = async (locale: Locale | string): Promise<SearchItem[]
     .sort(byOrder)
     .map((entry) => ({
       ...cardFor(entry),
+      key: entry.data.translationKey,
       keywords: [
         entry.data.title,
         entry.data.cardTitle,

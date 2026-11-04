@@ -19,15 +19,18 @@ lead: 'Soms voel je al lang dat er iets niet klopt, maar kun je niet zeggen wat.
 listings:
   - collection: articles
     prefix: 'begrijp-het/'
-    eyebrow: 'Uitleg'
     heading: 'Waar wil je meer over weten?'
     lead: 'Achtergrond in gewone taal. Elk artikel staat op zichzelf, dus begin waar je vraag ligt.'
   - collection: patterns
     prefix: 'begrippen/'
-    eyebrow: 'Begrippen & patronen'
     heading: 'Patronen die je misschien herkent'
     lead: 'Korte uitleg van terugkerend gedrag, met voorbeelden die verzonnen zijn en niemand beschrijven.'
     tone: tension
+    featured:
+      [gaslighting, darvo, dwingende-controle, silent-treatment, traumabinding, love-bombing]
+    more:
+      href: 'nl/begrippen/'
+      label: 'Alle begrippen van A tot Z'
 cards:
   - eyebrow: 'Hoofdthema'
     title: 'Financieel misbruik'

@@ -98,7 +98,7 @@
   --help-text: var(--palette-forest-950);
   --brand-dot: var(--palette-ochre);
 
-  --safe: var(--palette-forest-800);
+  --safe: #284238;
   --safe-border: var(--palette-forest-line);
   --children: var(--palette-forest-800);
   --therapy: var(--palette-forest-900);
@@ -107,8 +107,8 @@
   --tension: var(--palette-forest-900);
   --tension-border: var(--palette-forest-line);
   --tension-edge: var(--palette-sage-300);
-  --tension-section: var(--palette-forest-925);
-  --tint: #1b2a24;
+  --tension-section: #20342d;
+  --tint: #20342d;
   --badge: var(--palette-forest-800);
   --badge-text: var(--palette-cream);
   --review-mark: #5a4630;

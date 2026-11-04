@@ -33,7 +33,15 @@ const { Content } = await render(entry);
 const listings = await Promise.all(
   data.listings.map(async (listing) => ({
     ...listing,
-    items: (await listCollection(listing.collection, data.locale, listing.prefix)).map(cardFor),
+    items: await (async () => {
+      const entries = await listCollection(listing.collection, data.locale, listing.prefix);
+      const chosen = listing.featured
+        ? listing.featured.flatMap((key) =>
+            entries.filter((entry) => entry.data.translationKey === key),
+          )
+        : entries;
+      return chosen.map(cardFor);
+    })(),
   })),
 );
 const isEmptyBody = !entry.body?.trim();
@@ -187,7 +195,6 @@ const mainEntityId = termSet
           id={listingId(listing, index)}
         >
           <div class="wrap">
-            {listing.eyebrow && <p class="eyebrow">{listing.eyebrow}</p>}
             <h2 id={`listing-${index}-heading`}>{listing.heading}</h2>
             {listing.lead && <p class="reading">{listing.lead}</p>}
             {listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
@@ -209,6 +216,13 @@ const mainEntityId = termSet
               />
             ) : (
               <p class="note">Hier verschijnen binnenkort pagina’s.</p>
+            )}
+            {listing.more && (
+              <p class="listing-more">
+                <a class="button button--quiet" href={listing.more.href}>
+                  {listing.more.label}
+                </a>
+              </p>
             )}
           </div>
         </section>
