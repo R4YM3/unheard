@@ -88,7 +88,7 @@ helps:
       title: 'Wees mild over het verleden',
       text: 'Je deed wat je toen kon met wat je toen wist. Inzicht van nu maakt je niet alsnog schuldig aan toen.',
     }
-related: [darvo, schuldverschuiving, herstel-erkenning, hulp-vinden]
+related: [darvo, schuldverschuiving, herstel-erkenning, hulp-vinden, waarom-ik]
 sources:
   - label: 'Jennifer Freyd — DARVO'
     url: 'https://www.jjfreyd.com/darvo/'

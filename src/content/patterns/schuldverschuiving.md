@@ -25,10 +25,10 @@ sources:
     publisher: 'Journal of Aggression, Maltreatment & Trauma'
     url: 'https://doi.org/10.1080/10926771.2017.1320777'
     checkedAt: 2026-10-20
-  - label: 'Factsheet emotioneel of psychisch geweld — definitie van huiselijk geweld, inclusief psychisch geweld en machtsverschil'
+  - label: 'Factsheet partner- en ex-partnergeweld — alle vormen van geweld tussen (ex-)partners, waaronder emotioneel en psychisch geweld'
     publisher: 'Huiselijkgeweld.nl (ministerie van VWS)'
-    url: 'https://www.huiselijkgeweld.nl/factsheets/e/emotioneel-geweld'
-    checkedAt: 2026-10-20
+    url: 'https://www.huiselijkgeweld.nl/factsheets/p/partner-en-ex-partnergeweld'
+    checkedAt: 2026-11-04
   - label: 'Ik word mishandeld door mijn partner of ex-partner'
     publisher: 'Thuisarts.nl (NHG)'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
