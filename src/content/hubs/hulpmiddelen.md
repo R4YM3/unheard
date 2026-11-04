@@ -12,7 +12,7 @@ updatedAt: 2026-10-20
 reviewedAt: null
 cardTitle: 'Hulpmiddelen'
 cardText: 'Vrijblijvende vragen om te ordenen wat je voelt, nodig hebt of wilt zeggen. Geen test en geen score.'
-summary: 'De kaarten op deze pagina zijn optionele vragen, geen test en geen diagnose. Er is geen score en geen label. Wat je invult blijft in je browser en wordt niet verstuurd. Op papier staan standaard lege regels.'
+summary: 'De kaarten op deze pagina zijn optionele vragen. Wat je invult blijft in je browser en wordt niet verstuurd. Op papier staan standaard lege regels.'
 heading: 'Vragen die je ogen kunnen openen.'
 eyebrow: 'Hulpmiddelen'
 lead: 'Deze kaarten vragen niets van je. Lees, vul in of print alleen wat voor jou veilig voelt, en sla over wat je niet wilt aanraken.'

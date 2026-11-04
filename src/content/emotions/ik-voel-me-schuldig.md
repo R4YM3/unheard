@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Schuldgevoel'
   paragraphs:
     - 'Misschien begon je een gesprek omdat iets je pijn deed. Toch eindig je met het gevoel dat jij het moet oplossen, uitleggen of goedmaken.'
-    - 'Schuldgevoel kan zwaar wegen, ook wanneer je nog niet weet wat er precies in een gesprek of relatie gebeurt. Je mag het onderzoeken voordat je jezelf veroordeelt.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - { href: 'nl/herstel/erkenning/', label: 'Lees over erkenning', quiet: true }
@@ -162,4 +161,4 @@ Wordt schuldgevoel overweldigend, blijf je erover piekeren of voel je je langere
 
 Begin klein: één situatie, drie vragen. Waar wilde ik het over hebben? Welke verantwoordelijkheid neem ik op me? Van wie is die eigenlijk? Je hoeft het antwoord niet meteen te weten.
 
-Als schuld, spanning of verwarring je dagelijks leven bepalen, of als je je onveilig voelt, is jouw veiligheid belangrijker dan het gesprek afmaken of de ander geruststellen. Veilig Thuis geeft gratis en anoniem advies via 0800-2000. Meer mogelijkheden staan op [Hulp vinden](nl/hulp-vinden/).
+Als schuld, spanning of verwarring je dagelijks leven bepalen, of als je je onveilig voelt, is jouw veiligheid belangrijker dan het gesprek afmaken of de ander geruststellen.

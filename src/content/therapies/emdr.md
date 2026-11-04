@@ -86,5 +86,3 @@ Dat een behandeling erkend is, betekent niet dat ze voor iedereen op dezelfde ma
 Daar is geen zelftest voor, en deze site geeft geen behandeladvies. Misschien blijven bepaalde herinneringen je raken, ook al begrijp je inmiddels wat er gebeurd is. Dat is een goede reden om met iemand te praten, maar geen automatische reden voor EMDR.
 
 Begin bij je huisarts of de praktijkondersteuner (POH-GGZ). Vertel wat je ervaart, hoe lang al, en wat je eerder hebt geprobeerd. Samen kun je bekijken of verdere beoordeling of behandeling nodig is.
-
-Voel je je onveilig in je relatie of thuis? Bel dan gratis en anoniem met Veilig Thuis: [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).

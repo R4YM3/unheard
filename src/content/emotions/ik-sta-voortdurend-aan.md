@@ -14,12 +14,11 @@ order: 80
 feeling: Spanning
 cardTitle: 'Ik sta voortdurend aan'
 cardText: 'Een melding op je telefoon, een toon in iemands stem: je lichaam slaat alarm voordat je weet waarom.'
-summary: 'Voortdurend aan staan kan ontstaan als je lange tijd alert moest zijn op spanning of onvoorspelbaarheid. Je lichaam blijft dan waakzaam, ook als het niet meer nodig is. Dat is geen zwakte en geen diagnose. Rust kan stap voor stap terugkomen; bij aanhoudende klachten kan de huisarts meedenken.'
+summary: 'Voortdurend aan staan kan ontstaan als je lange tijd alert moest zijn op spanning of onvoorspelbaarheid. Je lichaam blijft dan waakzaam, ook als het niet meer nodig is. Dat is geen zwakte. Rust kan stap voor stap terugkomen; bij aanhoudende klachten kan de huisarts meedenken.'
 hero:
   eyebrow: 'Wat voel ik? / Spanning'
   paragraphs:
     - 'Misschien slaap je onrustig, schrik je van kleine geluiden of merk je dat je altijd een beetje op je hoede bent. Ontspannen voelt bijna onveilig.'
-    - 'Dat kost veel energie. Je hoeft niet meteen te weten waar het vandaan komt om je spanning serieus te nemen.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - {

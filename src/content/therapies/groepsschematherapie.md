@@ -84,5 +84,3 @@ Wil je weten wat bekend is over groepsbehandeling bij jouw klachten? Vraag dat d
 Er is geen vaste regel die zegt wie in een groep past en wie niet. Sommige mensen willen eerst individueel beginnen; anderen merken juist dat het helpt om te horen dat ze niet de enige zijn. Beide zijn begrijpelijk.
 
 Begin bij je huisarts of de praktijkondersteuner (POH-GGZ). Daar kun je bespreken wat je ervaart en welke vormen van hulp er zijn. Zeg het gerust als je opziet tegen een groep: dat is nuttige informatie voor wie met je meedenkt.
-
-Voel je je onveilig in je relatie of thuis? Bel dan gratis en anoniem met Veilig Thuis: [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).

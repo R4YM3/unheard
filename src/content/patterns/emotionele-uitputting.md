@@ -45,7 +45,7 @@ Emotionele uitputting is geen diagnose. Het is een beschrijving van een toestand
 
 Thuisarts beschrijft overspannenheid als een situatie waarin je veel spanning hebt in je leven en het niet goed lukt om daarmee om te gaan. Als voorbeelden van zulke spanning noemt Thuisarts onder meer problemen zoals schulden of 'een relatie die niet goed gaat', en weinig steun van mensen om je heen. Je bent bijvoorbeeld moe, slaapt slecht en piekert veel, en het lukt niet meer om elke dag te doen wat je wilt doen.
 
-Emotionele uitputting kan een onderdeel zijn van overspannenheid of een burn-out, maar dat hoeft niet. Alleen een huisarts of psycholoog kan beoordelen wat er bij jou speelt. Dit artikel helpt je om te herkennen wat je voelt, niet om een diagnose te stellen.
+Emotionele uitputting kan een onderdeel zijn van overspannenheid of een burn-out, maar dat hoeft niet. Alleen een huisarts of psycholoog kan beoordelen wat er bij jou speelt.
 
 ## Hoe kan het eruitzien?
 

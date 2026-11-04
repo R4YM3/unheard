@@ -101,5 +101,3 @@ Neem gerust een briefje mee. Je kunt bijvoorbeeld vragen:
 - Bij wie kan ik terecht als dit niet de juiste plek is?
 
 De printbare [voorbereidingskaart voor een gesprek met een hulpverlener](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je vragen te ordenen. Voor een overzicht van je geldzaken kun je de [financiële overzichts- en veiligheidschecklist](nl/hulpmiddelen/financieel-overzicht-en-veiligheid/) gebruiken.
-
-Bij direct gevaar bel je [112](tel:112).

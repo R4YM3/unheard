@@ -145,7 +145,7 @@ therapy:
     - title: 'Voelen'
       description: 'Met beeldende therapie onderzocht ik wat ik vanbinnen wilde. Tijdens boksen met emoties ervoer ik wat emoties met me doen en hoeveel fysieke en mentale energie ze kunnen kosten. Meditatie maakte ook deel uit van mijn zoektocht.'
     - title: 'Herinneringen verwerken'
-      description: 'Ik volgde EMDR en daarna exposuretherapie, omdat EMDR voor mij niet voldoende voelde. Dat is mijn persoonlijke ervaring, geen oordeel over welke therapie in het algemeen beter werkt.'
+      description: 'Ik volgde EMDR en daarna exposuretherapie, omdat EMDR voor mij niet voldoende voelde.'
     - title: 'Wat ik nog leer'
       description: 'Soms begrijp ik mijn patronen al goed, maar merk ik dat een gevoel nog steeds kan terugkomen. Ook dat hoort bij de manier waarop ik mijn herstel ervaar.'
   href: 'nl/herstel/therapievormen/'

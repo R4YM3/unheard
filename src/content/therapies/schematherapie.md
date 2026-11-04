@@ -89,5 +89,3 @@ Wil je weten wat er bekend is over de werkzaamheid bij jouw klachten? Vraag dat 
 Daar is geen test of beslisschema voor, en deze site geeft geen behandeladvies. Misschien herken je jezelf in vragen als: waarom reageer ik steeds zo? Waarom voel ik me zo snel verantwoordelijk? Zulke vragen zijn een goed begin van een gesprek, maar geen automatische reden voor schematherapie.
 
 Een praktische eerste stap is een afspraak met je huisarts. Bij psychische klachten kun je daar terecht. De huisarts of de praktijkondersteuner (POH-GGZ) kijkt samen met jou wat er speelt en welke hulp past. Neem gerust mee wat je eerder hebt geprobeerd en wat je daarvan merkte. Een [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je gedachten op een rij te zetten.
-
-Voel je je onveilig in je relatie of thuis? Dan kun je gratis en anoniem bellen met Veilig Thuis: [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).
