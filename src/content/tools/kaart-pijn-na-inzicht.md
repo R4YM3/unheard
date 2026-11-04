@@ -1,5 +1,5 @@
 ---
-title: 'Ik begrijp het, maar het blijft pijn doen'
+title: 'Vragen voor als het blijft pijn doen'
 description: 'Voor als inzicht het verdriet niet wegneemt. Vragen zonder de opdracht om al verder te zijn dan je bent.'
 locale: nl
 translationKey: kaart-pijn-na-inzicht
@@ -8,10 +8,10 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-04
 reviewedAt: null
 order: 60
-cardTitle: 'Het blijft pijn doen'
+cardTitle: 'Vragen voor als het blijft pijn doen'
 cardText: 'Een kaart voor als je meer begrijpt en het toch zeer doet. Geen opdracht om al over de pijn heen te zijn.'
 summary: 'Begrijpen wat er gebeurde neemt het gemis, de boosheid of de schaamte niet altijd weg. Deze kaart geeft daar ruimte aan, zonder score en zonder de eis dat je al verder bent.'
 purpose: 'Ruimte maken voor pijn die blijft, ook wanneer je al woorden hebt voor wat er is gebeurd. Niet om die pijn weg te redeneren.'
@@ -22,7 +22,7 @@ usage:
   - 'Bij gedachten aan zelfdoding leg je de kaart weg en bel of chat je met 113.'
 safety: 'Pijn die blijft is geen teken dat je faalt, en deze kaart meet dat niet. Als je gedachten hebt aan zelfdoding, is dit niet de hulp: bel 113 (gratis, anoniem, dag en nacht) of chat via 113.nl. Bij direct gevaar bel je 112.'
 card:
-  title: 'Ik begrijp het, maar het blijft pijn doen'
+  title: 'Vragen voor als het blijft pijn doen'
   intro: 'Je hoeft niet verder te zijn dan je bent. Eén regel over wat nog pijn doet is genoeg.'
   prompts:
     - question: 'Wat begrijp ik nu?'
