@@ -27,22 +27,24 @@ const pageType = ['over', 'werkwijze'].includes(data.translationKey) ? 'AboutPag
 <EntryLayout entry={entry} pageType={pageType} moreLinks={cards}>
   {railGroups.length > 0 && <PageRail slot="rail" groups={railGroups} />}
   <div class="wrap reading prose"><Content /></div>
-  {darvo && <DarvoGuide guide={darvo} />}
-  {
-    data.scenarios.length > 0 && (
-      <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
-    )
-  }
-  {
-    cards.some((card) => !card.href) && (
-      <section class="section section--soft" aria-labelledby="cards-heading">
-        <div class="wrap">
-          <h2 id="cards-heading">{ui(data.locale).alsoGoodToKnow}</h2>
-          <CardGrid items={cards.filter((card) => !card.href)} />
-        </div>
-      </section>
-    )
-  }
-  {data.reflection && <MiniReflection reflection={data.reflection} />}
-  {founderNote && <FounderNote note={founderNote} />}
+  <Fragment slot="after">
+    {darvo && <DarvoGuide guide={darvo} />}
+    {
+      data.scenarios.length > 0 && (
+        <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
+      )
+    }
+    {
+      cards.some((card) => !card.href) && (
+        <section class="section section--soft" aria-labelledby="cards-heading">
+          <div class="wrap">
+            <h2 id="cards-heading">{ui(data.locale).alsoGoodToKnow}</h2>
+            <CardGrid items={cards.filter((card) => !card.href)} />
+          </div>
+        </section>
+      )
+    }
+    {data.reflection && <MiniReflection reflection={data.reflection} />}
+    {founderNote && <FounderNote note={founderNote} />}
+  </Fragment>
 </EntryLayout>

@@ -89,36 +89,38 @@ const allFeelings = {
       </div>
     )
   }
-  {
-    data.scenarios.length > 0 && (
-      <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
-    )
-  }
-  {
-    data.impacts.length > 0 && (
-      <section class="section section--tension" aria-labelledby="impact-heading" id="impact">
-        <div class="wrap">
-          <h2 id="impact-heading">{t.impactHeading}</h2>
-          <p class="reading">{t.impactIntro}</p>
-          <CardGrid
-            columns={data.impacts.length % 3 === 0 ? 3 : 2}
-            items={data.impacts.map((impact) => ({ ...impact, tone: 'tension' as const }))}
-          />
-        </div>
-      </section>
-    )
-  }
-  {data.reflection && <MiniReflection reflection={data.reflection} collapsed />}
-  {data.founderNote && <FounderNote note={data.founderNote} />}
-  {
-    group && (previous || next) && (
-      <GroupPager
-        group={group.label}
-        previous={linkTo(previous)}
-        next={linkTo(next)}
-        all={allFeelings}
-        locale={data.locale}
-      />
-    )
-  }
+  <Fragment slot="after">
+    {
+      data.scenarios.length > 0 && (
+        <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
+      )
+    }
+    {
+      data.impacts.length > 0 && (
+        <section class="section section--tension" aria-labelledby="impact-heading" id="impact">
+          <div class="wrap">
+            <h2 id="impact-heading">{t.impactHeading}</h2>
+            <p class="reading">{t.impactIntro}</p>
+            <CardGrid
+              columns={data.impacts.length % 3 === 0 ? 3 : 2}
+              items={data.impacts.map((impact) => ({ ...impact, tone: 'tension' as const }))}
+            />
+          </div>
+        </section>
+      )
+    }
+    {data.reflection && <MiniReflection reflection={data.reflection} collapsed />}
+    {data.founderNote && <FounderNote note={data.founderNote} />}
+    {
+      group && (previous || next) && (
+        <GroupPager
+          group={group.label}
+          previous={linkTo(previous)}
+          next={linkTo(next)}
+          all={allFeelings}
+          locale={data.locale}
+        />
+      )
+    }
+  </Fragment>
 </EntryLayout>

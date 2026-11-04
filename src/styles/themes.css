@@ -1,5 +1,5 @@
 /* Semantic tokens. Light is the default; dark applies via data-theme (set before first paint).
-   Light = "licht en zacht" (paper, stone, linen; sage and terracotta as ink and accent). Dark = "bosgroen" (forest, cream, ochre).
+   Light = "licht en zacht" (off-white, paper, sand, linen; sage and terracotta as ink and accent). Dark = "bosgroen" (forest, cream, ochre).
    Every text/background pair below meets WCAG AA (4.5:1); field borders meet 3:1. */
 :root,
 [data-theme='light'] {
@@ -22,11 +22,10 @@
   --help-text: #fff;
   --brand-dot: var(--palette-terracotta);
 
-  /* Two quiet band families that never look like status colours: stone (rest, help) and
-     linen (depth, lists). */
-  --safe: var(--palette-stone);
-  --safe-border: var(--palette-stone-line);
-  --children: var(--palette-stone);
+  /* Two band steps on the same warm scale: sand (rest, help) and linen (depth, lists). */
+  --safe: var(--palette-sand);
+  --safe-border: var(--palette-sand-line);
+  --children: var(--palette-sand);
   --therapy: var(--palette-linen);
   --story: var(--palette-paper-light);
   --paper-section: var(--palette-paper);
@@ -45,9 +44,9 @@
   --header-border: var(--palette-line);
   --control-bg: var(--palette-paper-light);
   --control-border: var(--palette-line-strong);
-  --control-hover: var(--palette-stone);
-  /* The hero is its own band: never the page colour, so it never runs into the block below. */
-  --hero-bg: var(--palette-paper-light);
+  --control-hover: var(--palette-sand);
+  /* The hero is its own band (sand): never the page colour, so it never runs into the block below. */
+  --hero-bg: var(--palette-sand);
   --hero-text: var(--palette-ink);
   --hero-muted: var(--palette-ink-soft);
   --hero-eyebrow: var(--palette-sage-700);
@@ -58,7 +57,7 @@
   --band-muted: var(--palette-sage-200);
   --band-link: #fff;
 
-  --footer-bg: var(--palette-paper-warm);
+  --footer-bg: var(--palette-linen);
   --footer-text: var(--palette-ink);
   --footer-muted: var(--palette-ink-muted);
   --footer-border: var(--palette-line);
@@ -71,7 +70,7 @@
   --art-hill-3: #6f8f7c;
 
   /* Perspective switch */
-  --tab-bg: var(--palette-stone);
+  --tab-bg: var(--palette-sand);
   --tab-text: var(--palette-ink);
   --tab-active-bg: var(--palette-sage-700);
   --tab-active-text: #fff;
