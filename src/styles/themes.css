@@ -45,7 +45,7 @@
   --control-border: var(--palette-line-strong);
   --control-hover: var(--palette-sage-100);
   /* The hero is its own band: never the page colour, so it never runs into the block below. */
-  --hero-bg: var(--palette-sage-100);
+  --hero-bg: var(--palette-paper-light);
   --hero-text: var(--palette-ink);
   --hero-muted: var(--palette-ink-soft);
   --hero-eyebrow: var(--palette-sage-700);
