@@ -180,6 +180,7 @@ const mainEntityId = termSet
             {
               'section--tension': listing.tone === 'tension',
               'section--soft': listing.tone === 'safe',
+              'section--tint': listing.tone !== 'tension' && listing.tone !== 'safe',
             },
           ]}
           aria-labelledby={`listing-${index}-heading`}

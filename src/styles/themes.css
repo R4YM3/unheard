@@ -32,6 +32,7 @@
   --tension-border: var(--palette-line);
   --tension-edge: var(--palette-sage-700);
   --tension-section: var(--palette-paper-warm);
+  --tint: var(--palette-paper-warm);
   --badge: var(--palette-sage-200);
   --badge-text: var(--palette-ink);
   --review-mark: #fbe6c9;
@@ -107,6 +108,7 @@
   --tension-border: var(--palette-forest-line);
   --tension-edge: var(--palette-sage-300);
   --tension-section: var(--palette-forest-925);
+  --tint: #1b2a24;
   --badge: var(--palette-forest-800);
   --badge-text: var(--palette-cream);
   --review-mark: #5a4630;
