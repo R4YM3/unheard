@@ -1608,7 +1608,7 @@ a.card:focus-visible,
   gap: clamp(1.25rem, 2.5vw, 2.5rem);
   align-items: start;
   /* The rail stays with the article and stops a little above the full-width blocks below. */
-  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 .article-layout--rail .wrap {
   width: 100%;
@@ -2151,4 +2151,37 @@ a.card:focus-visible,
   display: inline-block;
   min-width: 3.5rem;
   font-weight: 700;
+}
+
+/* ---------- Below the rail ---------- */
+/* On rail pages the blocks below the text run full width, but their reading columns keep
+   the left edge of the text column, so the page reads as one column from top to bottom. */
+@media (min-width: 68.01rem) {
+  .article-layout--rail ~ .wrap.reading,
+  .article-layout--rail ~ * .wrap.reading {
+    margin-inline-start: calc(
+      max(1.25rem, calc((100% - var(--content)) / 2)) + 17.5rem + clamp(1.25rem, 2.5vw, 2.5rem)
+    );
+  }
+}
+/* The text column already ends with breathing room; a plain block right below it does not
+   add a second gap. */
+.article-layout--rail
+  + .section:not(
+    .section--soft,
+    .section--children,
+    .section--tension,
+    .section--therapy,
+    .section--tint,
+    .section--surface,
+    .section--chrome
+  ) {
+  padding-top: 0;
+}
+/* A reflection is a card: a card-sized heading and room between the questions. */
+.reflection h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+}
+.reflection ol li + li {
+  margin-top: 0.5rem;
 }
