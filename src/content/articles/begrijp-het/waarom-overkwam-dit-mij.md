@@ -110,5 +110,3 @@ Soms spelen eerdere ervaringen mee in hoe je reageert, bijvoorbeeld hoe je als k
 ## Een volgende stap
 
 Je hoeft het antwoord op "waarom ik?" niet in één keer te vinden. Vaak wordt het pas helderder als je ruimte krijgt om te vertellen wat er gebeurde, aan iemand die luistert zonder te oordelen. Over dat proces gaat [Erkenning vinden](nl/herstel/erkenning/).
-
-Maak je je zorgen over je veiligheid, dan kun je gratis en anoniem advies vragen bij Veilig Thuis. Meer mogelijkheden staan op [Hulp vinden](nl/hulp-vinden/).

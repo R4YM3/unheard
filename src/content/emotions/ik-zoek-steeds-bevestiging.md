@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Bevestiging zoeken'
   paragraphs:
     - 'Misschien vraag je vaker dan je zou willen: is dit normaal? Heb ik dit goed gedaan? Zie ik het verkeerd? En als iemand ja zegt, houdt de rust maar even stand.'
-    - 'Je bent niet lastig of zwak omdat je dat nodig hebt. Je zoekt houvast. De vraag is waar dat houvast vandaan kan komen.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - { href: 'nl/herstel/zelfvertrouwen/', label: 'Zelfvertrouwen terugvinden', quiet: true }

@@ -19,7 +19,6 @@ hero:
   eyebrow: 'Wat voel ik? / Zelftwijfel'
   paragraphs:
     - 'Je weet wat je voelde. Maar na een gesprek vraag je je opnieuw af of je misschien hebt overdreven, iets verkeerd hebt onthouden of zelf het probleem bent.'
-    - 'Misschien kun je nog niet verklaren waarom. Dat hoeft ook niet om jouw gevoel serieus te nemen.'
   actions:
     - { href: '#herkenning', label: 'Herken je dit? ↓' }
     - { href: 'nl/begrippen/darvo/', label: 'Wat kan er gebeuren?', quiet: true }
@@ -167,5 +166,3 @@ Het kan ook zijn dat de twijfel vooral uit jezelf komt, los van een ander. Bijvo
 ## Een volgende stap
 
 Maak onderscheid tussen wat er gezegd werd, wat je voelde en wat je nu nodig hebt. Zoek een gesprekspartner die luistert zonder voor jou te bepalen wat je moet denken of doen. Schrijf alleen iets op als dat veilig voelt. De [zelfreflectiekaart](nl/hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig/) kan daarbij helpen.
-
-Maak je je zorgen over je veiligheid, dan kun je gratis en anoniem advies vragen bij Veilig Thuis via 0800-2000. Bij direct gevaar bel je [112](tel:112). Meer mogelijkheden staan op [Hulp vinden](nl/hulp-vinden/).

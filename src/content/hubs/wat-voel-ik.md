@@ -20,7 +20,7 @@ chooser: true
 feelingTimeline:
   eyebrow: 'Geen vaste volgorde'
   heading: 'Hoe gevoelens elkaar kunnen opvolgen.'
-  lead: 'Dit is geen route die iedereen aflegt, en geen bewijs van wat er bij jou gebeurt. Het is een lijn om woorden naast elkaar te zetten. Je mag overal instappen, een stap overslaan, of alleen de pagina openen die nu past.'
+  lead: 'Dit is geen route die iedereen aflegt. Het is een lijn om woorden naast elkaar te zetten. Je mag overal instappen, een stap overslaan, of alleen de pagina openen die nu past.'
   label: 'Mogelijke lijn van gevoelens'
   note: 'De volgorde is een leeslijn. Gevoelens lopen vaak door elkaar, en ze kunnen ook naast elkaar bestaan. Herken je een stap, dan zegt dat iets over wat je draagt, niet over wie je bent of over wat een ander bedoelt.'
   steps:

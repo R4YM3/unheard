@@ -83,5 +83,3 @@ Wil je weten wat bekend is over CGT bij jouw klachten? Vraag het aan je huisarts
 Daar is geen test voor, en deze site geeft geen behandeladvies. Misschien merk je dat gedachten blijven rondmalen, dat je jezelf steeds de schuld geeft of dat je overal het ergste van verwacht. Dat zijn goede onderwerpen voor een gesprek, maar geen automatische reden voor CGT.
 
 Begin bij je huisarts of de praktijkondersteuner (POH-GGZ). Vertel wat je ervaart en wat je eerder hebt geprobeerd. Een [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je gedachten op een rij te zetten.
-
-Voel je je onveilig in je relatie of thuis? Bel dan gratis en anoniem met Veilig Thuis: [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112). Meer routes staan op [Hulp vinden](nl/hulp-vinden/).
