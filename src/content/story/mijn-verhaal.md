@@ -47,9 +47,6 @@ timeline:
           text: Het viel me steeds meer op dat veel mensen om haar heen voor haar zorgden en werk van haar overnamen. Ook schoolopdrachten werden voor haar gedaan. Op dat moment zag ik daar nog geen kwaad in. Zij had het moeilijk en ook mijn zorg voor haar ging steeds meer ruimte innemen.
           placement: rail
           theme: care
-        - title: Wat ik niet kon plaatsen
-          text: Er waren dingen uit haar verleden en reacties die ik niet goed kon plaatsen. Soms werd ze in de nacht in paniek wakker. Buiten de kring van mensen die haar ontzorgden, leek het vaak beter met haar te gaan. Dat verschil begreep ik niet goed. Ik maakte me zorgen en bleef proberen haar te ondersteunen. Pas later ging ik anders naar die ervaringen kijken.
-          theme: care
         - title: Er was ook twijfel
           text: 'Na een paar maanden maakte ik het een keer uit omdat ik twijfelde. Ze was niet de typische vrouw op wie ik viel. Ook toen we bij elkaar in de klas zaten, kreeg ik moeilijk een beeld van wie zij was en wat zij vond. Later kwam haar mening vaak pas achteraf of indirect. Misschien trok dat mysterieuze mij ook aan.'
           placement: rail
@@ -198,6 +195,9 @@ timeline:
         - title: Weer verder, zonder het uit te spreken
           text: Bij een meningsverschil kreeg ik te horen dat ik haar iets niet gunde. Daarna werd het stil. Soms kwam dagen later via haar moeder een reactie. Ik werd zelf ook stil en had behoefte aan afstand. Uiteindelijk gingen we weer door, zonder dat ik het gevoel had dat mijn kant echt besproken was.
           theme: boundaries
+        - title: Wat ik niet kon plaatsen
+          text: Er waren dingen uit haar verleden en reacties die ik niet goed kon plaatsen. Soms werd ze in de nacht in paniek wakker. Buiten de kring van mensen die haar ontzorgden, leek het vaak beter met haar te gaan. Dat verschil begreep ik niet goed. Ik maakte me zorgen en bleef proberen haar te ondersteunen. Pas later ging ik anders naar die ervaringen kijken.
+          theme: care
         - title: Mijn vrolijke masker en de waardering
           text: Er waren fijne momenten wanneer ik toenadering zocht, grappen maakte en vrolijk deed. Mijn warme, amicale kant voelde ook als een masker. Vanuit de familie kreeg ik lof en complimenten voor wat ik deed. Dat hielp mij doorgaan, terwijl ik steeds meer moeite kreeg met de verhoudingen.
           theme: emotional
