@@ -2400,3 +2400,13 @@ a.card:focus-visible,
 :is(.section--soft, .section--children) + script + :is(.section--soft, .section--children) {
   background-image: none;
 }
+
+/* While the timeline is being rewritten, a calm note takes its place. */
+.timeline-withheld {
+  max-width: var(--reading);
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--help);
+  background: var(--surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}

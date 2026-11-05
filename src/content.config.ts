@@ -520,6 +520,8 @@ const story = defineCollection({
       heading: z.string().min(8),
       lead: z.string().min(20),
       label: z.string().min(4),
+      /** While set, the page shows this note instead of the timeline (e.g. during legal review). */
+      withheld: z.string().min(20).optional(),
       preview: z
         .object({
           heading: z.string().min(8),
@@ -547,7 +549,7 @@ const story = defineCollection({
             reflection: timelineReflection.optional(),
           }),
         )
-        .min(1),
+        .default([]),
       note: z.string().min(20),
     }),
     therapy: z.object({
