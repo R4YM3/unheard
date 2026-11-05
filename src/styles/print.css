@@ -124,6 +124,25 @@
     color: #000 !important;
     break-inside: avoid;
   }
+  .timeline-marker,
+  .timeline-toggle,
+  .timeline::before,
+  .timeline-context::after,
+  .timeline > li::before {
+    display: none !important;
+  }
+  .timeline {
+    padding-inline-start: 0;
+  }
+  .timeline-context {
+    margin-inline-start: 0;
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #777;
+  }
+  .timeline-reflection {
+    break-inside: avoid;
+  }
   .timeline > li > .card {
     break-inside: auto;
   }

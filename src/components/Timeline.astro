@@ -1,82 +1,122 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import Marked from './Marked.astro';
+import TimelineTheme from './TimelineTheme.astro';
+import TimelineTitle from './TimelineTitle.astro';
+import TimelineReflection from './TimelineReflection.astro';
 import { REVIEW_MARKER } from '../lib/review-marks';
-/** Layered personal timeline: main milestones always visible, layers and in-between moments expandable (and fully printed). */
-interface Milestone {
-  eyebrow: string;
-  title: string;
-  description: string;
-  lenses: Array<{ heading: string; text: string }>;
-  between: Array<{ title: string; text: string; placement?: 'card' | 'rail' }>;
-}
+
+type TimelineData = CollectionEntry<'story'>['data']['timeline'];
 interface Props {
   label: string;
-  milestones: Milestone[];
+  milestones: TimelineData['milestones'];
+  context?: TimelineData['context'];
 }
-const { label, milestones } = Astro.props;
+const { label, milestones, context } = Astro.props;
 ---
 
-<ol class="timeline" aria-label={label}>
+<div class="story-timeline">
   {
-    milestones.map((milestone) => (
-      <>
-        <li class="timeline-milestone">
-          <article class="card">
-            <p class="eyebrow">{milestone.eyebrow}</p>
-            <h3>{milestone.title}</h3>
-            <p>{milestone.description}</p>
-            {milestone.lenses.length > 0 && (
-              <details
-                class:list={{
-                  'needs-review': milestone.lenses.every((lens) =>
-                    lens.text.includes(REVIEW_MARKER),
-                  ),
-                }}
-              >
-                <summary>Lees de vier lagen van dit moment</summary>
-                <div class="timeline-lenses">
-                  {milestone.lenses.map((lens) => (
-                    <section class="timeline-lens">
-                      <h4>{lens.heading}</h4>
-                      <p>
-                        <Marked text={lens.text} />
-                      </p>
-                    </section>
-                  ))}
+    context && (
+      <aside class="timeline-context" aria-labelledby="timeline-context-heading">
+        <p class="eyebrow">{context.eyebrow}</p>
+        <h3 id="timeline-context-heading">{context.title}</h3>
+        <p>{context.description}</p>
+        {context.moments.map((moment) => (
+          <details>
+            <summary>
+              <TimelineTitle title={moment.title} />
+            </summary>
+            <p>
+              <Marked text={moment.text} />
+            </p>
+          </details>
+        ))}
+      </aside>
+    )
+  }
+  <ol class="timeline" aria-label={label}>
+    {
+      milestones.map((milestone) => (
+        <>
+          <li class="timeline-milestone">
+            {milestone.theme && <TimelineTheme theme={milestone.theme} marker />}
+            <article class="card">
+              <p class="eyebrow">{milestone.eyebrow}</p>
+              <h3>{milestone.title}</h3>
+              <p>{milestone.description}</p>
+              {milestone.theme && <TimelineTheme theme={milestone.theme} />}
+              {milestone.lenses.length > 0 && (
+                <details
+                  class:list={{
+                    'needs-review': milestone.lenses.every((lens) =>
+                      lens.text.includes(REVIEW_MARKER),
+                    ),
+                  }}
+                >
+                  <summary>
+                    <TimelineTitle title="Lees de vier lagen van dit moment" />
+                  </summary>
+                  <div class="timeline-lenses">
+                    {milestone.lenses.map((lens) => (
+                      <section class="timeline-lens">
+                        <h4>{lens.heading}</h4>
+                        <p>
+                          <Marked text={lens.text} />
+                        </p>
+                      </section>
+                    ))}
+                  </div>
+                </details>
+              )}
+              {milestone.between.some((moment) => moment.placement !== 'rail') && (
+                <div class="timeline-between">
+                  {milestone.between
+                    .filter((moment) => moment.placement !== 'rail')
+                    .map((moment) => (
+                      <details>
+                        <summary>
+                          <TimelineTitle title={moment.title} />
+                        </summary>
+                        <p>
+                          <Marked text={moment.text} />
+                        </p>
+                        {moment.theme && <TimelineTheme theme={moment.theme} />}
+                      </details>
+                    ))}
                 </div>
-              </details>
-            )}
-            {milestone.between.some((moment) => moment.placement !== 'rail') && (
-              <div class="timeline-between">
-                {milestone.between
-                  .filter((moment) => moment.placement !== 'rail')
-                  .map((moment) => (
-                    <details>
-                      <summary>{moment.title}</summary>
+              )}
+            </article>
+          </li>
+          {milestone.between
+            .filter((moment) => moment.placement === 'rail')
+            .map((moment) => (
+              <>
+                <li
+                  class:list={[
+                    'timeline-moment',
+                    { 'timeline-moment--themed': Boolean(moment.theme) },
+                  ]}
+                >
+                  {moment.theme && <TimelineTheme theme={moment.theme} marker />}
+                  <details>
+                    <summary>
+                      <TimelineTitle title={moment.title} />
+                    </summary>
+                    <div class="timeline-moment__context">
                       <p>
                         <Marked text={moment.text} />
                       </p>
-                    </details>
-                  ))}
-              </div>
-            )}
-          </article>
-        </li>
-        {milestone.between
-          .filter((moment) => moment.placement === 'rail')
-          .map((moment) => (
-            <li class="timeline-moment">
-              <details>
-                <summary>{moment.title}</summary>
-                <div class="timeline-moment__context">
-                  <p>
-                    <Marked text={moment.text} />
-                  </p>
-                </div>
-              </details>
-            </li>
-          ))}
-      </>
-    ))
-  }
-</ol>
+                      {moment.theme && <TimelineTheme theme={moment.theme} />}
+                    </div>
+                  </details>
+                </li>
+                {moment.reflection && <TimelineReflection {...moment.reflection} />}
+              </>
+            ))}
+          {milestone.reflection && <TimelineReflection {...milestone.reflection} />}
+        </>
+      ))
+    }
+  </ol>
+</div>

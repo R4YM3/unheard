@@ -20,6 +20,9 @@
   --link: var(--palette-rosewood-900);
   --help: var(--palette-pine-700);
   --help-text: #fff;
+  --timeline-color: var(--palette-sand);
+  --timeline-line: var(--palette-sand-line);
+  --timeline-symbol: var(--palette-pine-700);
   --brand-dot: var(--palette-rosewood);
 
   /* Two soft bands: mist green (rest, help, hero) and sand (depth, lists, footer). */
@@ -100,6 +103,9 @@
   --link: var(--palette-ochre-300);
   --help: var(--palette-cream);
   --help-text: var(--palette-night-950);
+  --timeline-color: color-mix(in srgb, var(--palette-sand) 55%, var(--palette-night-900));
+  --timeline-line: color-mix(in srgb, var(--palette-sand-line) 55%, var(--palette-night-900));
+  --timeline-symbol: var(--palette-night-950);
   --brand-dot: var(--palette-ochre);
 
   --safe: #2b3630;

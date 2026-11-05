@@ -1,0 +1,41 @@
+---
+import money from '@phosphor-icons/core/assets/bold/currency-eur-bold.svg?raw';
+import connection from '@phosphor-icons/core/assets/bold/users-bold.svg?raw';
+import boundaries from '@phosphor-icons/core/assets/bold/chat-centered-text-bold.svg?raw';
+import emotional from '@phosphor-icons/core/assets/bold/heart-bold.svg?raw';
+import care from '@phosphor-icons/core/assets/bold/house-bold.svg?raw';
+import life from '@phosphor-icons/core/assets/bold/user-bold.svg?raw';
+
+interface Props {
+  theme: 'money' | 'connection' | 'boundaries' | 'emotional' | 'care' | 'life';
+  marker?: boolean;
+}
+// Centre the visible shapes, including the euro glyph, within the same square viewport.
+const centred = (svg: string, x = 0, y = 0) =>
+  svg.replace('viewBox="0 0 256 256"', `viewBox="${x} ${y} 256 256"`);
+const themes = {
+  money: { label: 'Geld en zeggenschap', icon: centred(money, -16) },
+  connection: { label: 'Contact en afstand', icon: centred(connection, 0, -2) },
+  boundaries: { label: 'Grenzen en gesprekken', icon: centred(boundaries, 0, 8) },
+  emotional: { label: 'Emotioneel', icon: centred(emotional, 0, 8) },
+  care: { label: 'Zorg en ruimte', icon: centred(care, 0, -4) },
+  life: { label: 'Mijn leven', icon: centred(life, -0.2, -3.85) },
+};
+const { theme, marker = false } = Astro.props;
+const { label, icon } = themes[theme];
+---
+
+<span
+  class:list={{ 'timeline-theme': !marker, 'timeline-marker': marker }}
+  role={marker ? 'img' : undefined}
+  aria-label={marker ? label : undefined}
+  title={marker ? label : undefined}
+>
+  {
+    marker ? (
+      <span class="timeline-icon" aria-hidden="true" set:html={icon} />
+    ) : (
+      <span>{label}</span>
+    )
+  }
+</span>

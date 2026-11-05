@@ -65,7 +65,11 @@ const trail = heroTrail(
       <p class="eyebrow">{data.timeline.eyebrow}</p>
       <h2 id="tijdlijn-heading">{data.timeline.heading}</h2>
       <p>{data.timeline.lead}</p>
-      <Timeline label={data.timeline.label} milestones={data.timeline.milestones} />
+      <Timeline
+        label={data.timeline.label}
+        milestones={data.timeline.milestones}
+        context={data.timeline.context}
+      />
       <p class="note">{data.timeline.note}</p>
       {
         data.timeline.preview && (

@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+}
+const words = Astro.props.title.trim().split(/\s+/);
+const lastWord = words.pop();
+const prefix = words.join(' ');
+---
+
+<span class="timeline-title"
+  >{prefix && `${prefix} `}<span class="timeline-title-end"
+    >{lastWord}<span class="timeline-toggle" aria-hidden="true"></span></span
+  ></span
+>

@@ -483,6 +483,24 @@ const hubs = defineCollection({
 
 const lens = z.object({ heading: z.string().min(4), text: z.string().min(10) });
 
+const timelineTheme = z.enum(['money', 'connection', 'boundaries', 'emotional', 'care', 'life']);
+const timelineReflection = z.object({
+  perspective: z.enum(['then', 'now', 'felt']),
+  text: z.string().min(10),
+});
+const timelineMoment = z
+  .object({
+    title: z.string().min(4),
+    text: z.string().min(10),
+    placement: z.enum(['card', 'rail']).default('card'),
+    theme: timelineTheme.optional(),
+    reflection: timelineReflection.optional(),
+  })
+  .refine((moment) => !moment.reflection || moment.placement === 'rail', {
+    message: 'A standalone reflection must follow a rail moment.',
+    path: ['reflection'],
+  });
+
 const story = defineCollection({
   loader: glob({ base: './src/content/story', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: base.extend({
@@ -509,6 +527,14 @@ const story = defineCollection({
           moments: z.array(z.object({ title: z.string().min(4), text: z.string().min(10) })).min(1),
         })
         .optional(),
+      context: z
+        .object({
+          eyebrow: z.string().min(2),
+          title: z.string().min(8),
+          description: z.string().min(20),
+          moments: z.array(timelineMoment).default([]),
+        })
+        .optional(),
       milestones: z
         .array(
           z.object({
@@ -516,15 +542,9 @@ const story = defineCollection({
             title: z.string().min(8),
             description: z.string().min(20),
             lenses: z.array(lens).refine((items) => items.length === 0 || items.length === 4),
-            between: z
-              .array(
-                z.object({
-                  title: z.string().min(4),
-                  text: z.string().min(10),
-                  placement: z.enum(['card', 'rail']).default('card'),
-                }),
-              )
-              .default([]),
+            theme: timelineTheme.optional(),
+            between: z.array(timelineMoment).default([]),
+            reflection: timelineReflection.optional(),
           }),
         )
         .min(1),

@@ -1,0 +1,20 @@
+---
+interface Props {
+  perspective: 'then' | 'now' | 'felt';
+  text: string;
+}
+const { perspective, text } = Astro.props;
+---
+
+<li class:list={['timeline-reflection', { 'timeline-reflection--thought': perspective !== 'now' }]}>
+  <p class="timeline-reflection__perspective">
+    {
+      perspective === 'felt'
+        ? 'Wat ik voelde'
+        : perspective === 'then'
+          ? 'Wat ik toen dacht'
+          : 'Als ik nu terugkijk'
+    }
+  </p>
+  <p class="timeline-reflection__text">{text}</p>
+</li>
