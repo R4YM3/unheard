@@ -66,6 +66,10 @@ timeline:
           text: Ze hielp me met dingen en ook financieel, al was dat niet per se nodig. Het viel me steeds meer op dat veel mensen om haar heen voor haar zorgden en werk van haar overnamen. Er waren signalen dat het niet altijd goed met haar ging, en er waren ook betere periodes. Op dat moment zag ik daar nog geen kwaad in.
           placement: rail
           theme: care
+        - title: Samenwonen
+          text: We gingen voor het eerst samenwonen. Mijn familie hielp mee om het huis op te knappen, en ik betaalde mee aan de woonlasten.
+          placement: rail
+          theme: money
       links:
         - href: nl/begrijp-het/waarom-overkwam-dit-mij/
           label: Waarom overkwam dit mij?
