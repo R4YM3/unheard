@@ -24,41 +24,36 @@ const { label, milestones } = Astro.props;
           <p class="eyebrow">{milestone.eyebrow}</p>
           <h3>{milestone.title}</h3>
           <p>{milestone.description}</p>
-          <details
-            class:list={{
-              'needs-review': milestone.lenses.every((lens) => lens.text.includes(REVIEW_MARKER)),
-            }}
-          >
-            <summary>Lees de vier lagen van dit moment</summary>
-            <div class="timeline-lenses">
-              {milestone.lenses.map((lens) => (
-                <section class="timeline-lens">
-                  <h4>{lens.heading}</h4>
-                  <p>
-                    <Marked text={lens.text} />
-                  </p>
-                </section>
-              ))}
-            </div>
-          </details>
-          {milestone.between.length > 0 && (
-            <details>
-              <summary>
-                {milestone.between.length === 1
-                  ? 'Bekijk het tussenmoment'
-                  : `Bekijk ${milestone.between.length} tussenmomenten`}
-              </summary>
-              <div class="timeline-between">
-                {milestone.between.map((moment) => (
-                  <article>
-                    <h4>{moment.title}</h4>
+          {milestone.lenses.length > 0 && (
+            <details
+              class:list={{
+                'needs-review': milestone.lenses.every((lens) => lens.text.includes(REVIEW_MARKER)),
+              }}
+            >
+              <summary>Lees de vier lagen van dit moment</summary>
+              <div class="timeline-lenses">
+                {milestone.lenses.map((lens) => (
+                  <section class="timeline-lens">
+                    <h4>{lens.heading}</h4>
                     <p>
-                      <Marked text={moment.text} />
+                      <Marked text={lens.text} />
                     </p>
-                  </article>
+                  </section>
                 ))}
               </div>
             </details>
+          )}
+          {milestone.between.length > 0 && (
+            <div class="timeline-between">
+              {milestone.between.map((moment) => (
+                <details>
+                  <summary>{moment.title}</summary>
+                  <p>
+                    <Marked text={moment.text} />
+                  </p>
+                </details>
+              ))}
+            </div>
           )}
         </article>
       </li>
