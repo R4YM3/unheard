@@ -499,7 +499,7 @@ mark.review-marker {
 .section--tight {
   padding-block: clamp(2rem, 4vw, 3rem);
 }
-/* Band colours come in two families: sage (rest, help) and warm (depth, lists). */
+/* Band colours come in two families: heath (rest, help) and sand (depth, lists). */
 .section--soft,
 .section--children {
   --section-bg: var(--safe);
@@ -2188,4 +2188,17 @@ a.card:focus-visible,
 /* The text column ends on its own padding; the prose inside does not add more. */
 .article-layout--rail .article-layout__main > .prose:last-child {
   padding-bottom: 0;
+}
+
+/* Contour lines: a quiet signature, only behind the hero and the help band. Decoration
+   only; print.css resets these backgrounds. */
+.hero,
+.help-band {
+  background-image: var(--pattern-contours);
+  background-repeat: no-repeat;
+  background-size: 960px 560px;
+  background-position: right -160px top -40px;
+}
+.help-band {
+  background-position: right -220px bottom -260px;
 }
