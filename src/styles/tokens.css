@@ -4,10 +4,10 @@
   --palette-paper: #f6f2ea;
   /* Off-white and paper carry the page; bands are wool and a warm stone (no green). */
   --palette-paper-light: #fbf9f5;
-  --palette-wool: #efebe3;
-  --palette-wool-line: #d9d3c7;
-  --palette-stone: #e6e2da;
-  --palette-stone-line: #cec8bc;
+  --palette-wool: #ede9e1;
+  --palette-wool-line: #d5cfc3;
+  --palette-stone: #dfdad0;
+  --palette-stone-line: #c7c0b2;
   --palette-ink: #1e2320;
   --palette-ink-soft: #3e4540;
   --palette-ink-muted: #4f5550;
