@@ -64,28 +64,34 @@ const trail = heroTrail(
     <div class="wrap reading">
       <p class="eyebrow">{data.timeline.eyebrow}</p>
       <h2 id="tijdlijn-heading">{data.timeline.heading}</h2>
-      <p>{data.timeline.lead}</p>
-      <Timeline
-        label={data.timeline.label}
-        milestones={data.timeline.milestones}
-        context={data.timeline.context}
-      />
-      <p class="note">{data.timeline.note}</p>
       {
-        data.timeline.preview && (
-          <aside class="timeline-preview" aria-labelledby="timeline-preview-heading">
-            <h3 id="timeline-preview-heading">{data.timeline.preview.heading}</h3>
-            <p>{data.timeline.preview.text}</p>
-            <details>
-              <summary>Al gedeeld over latere jaren</summary>
-              {data.timeline.preview.moments.map((moment) => (
-                <section>
-                  <h4>{moment.title}</h4>
-                  <p>{moment.text}</p>
-                </section>
-              ))}
-            </details>
-          </aside>
+        data.timeline.withheld ? (
+          <p class="timeline-withheld">{data.timeline.withheld}</p>
+        ) : (
+          <>
+            <p>{data.timeline.lead}</p>
+            <Timeline
+              label={data.timeline.label}
+              milestones={data.timeline.milestones}
+              context={data.timeline.context}
+            />
+            <p class="note">{data.timeline.note}</p>
+            {data.timeline.preview && (
+              <aside class="timeline-preview" aria-labelledby="timeline-preview-heading">
+                <h3 id="timeline-preview-heading">{data.timeline.preview.heading}</h3>
+                <p>{data.timeline.preview.text}</p>
+                <details>
+                  <summary>Al gedeeld over latere jaren</summary>
+                  {data.timeline.preview.moments.map((moment) => (
+                    <section>
+                      <h4>{moment.title}</h4>
+                      <p>{moment.text}</p>
+                    </section>
+                  ))}
+                </details>
+              </aside>
+            )}
+          </>
         )
       }
     </div>

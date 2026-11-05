@@ -126,11 +126,11 @@ try {
   const timelinePage = await browser.newPage();
   await timelinePage.setJavaScriptEnabled(false);
   await timelinePage.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
-  for (const selector of [
-    '.timeline-context details',
-    '.timeline-between details',
-    '.timeline-moment details',
-  ]) {
+  /* While the timeline is withheld (legal review), there are no disclosures to check. */
+  const withheld = await timelinePage.$('.timeline-withheld');
+  for (const selector of withheld
+    ? []
+    : ['.timeline-context details', '.timeline-between details', '.timeline-moment details']) {
     const summary = await timelinePage.$(`${selector} > summary`);
     if (!summary) throw new Error(`Missing timeline disclosure: ${selector}`);
     await summary.focus();

@@ -19,7 +19,7 @@ const routes = [
     route: '/nl/mijn-verhaal/',
     required: [
       'Hoe mijn wereld steeds kleiner werd.',
-      'Daarin sloot ik de mensen uit van wie ik hield.',
+      'Ik herschrijf dit deel van mijn verhaal',
       'Voor mijn kinderen.',
     ],
   },
