@@ -20,6 +20,7 @@ listings:
   - collection: articles
     prefix: 'begrijp-het/'
     heading: 'Waar wil je meer over weten?'
+    tape: true
     lead: 'Achtergrond in gewone taal. Elk artikel staat op zichzelf, dus begin waar je vraag ligt.'
   - collection: patterns
     prefix: 'begrippen/'

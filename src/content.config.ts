@@ -360,6 +360,8 @@ const listing = z.object({
   featured: z.array(z.string().min(2)).optional(),
   /** Link under the list, for example to the full index. */
   more: action.optional(),
+  /** A soft rosewood tape along the top edge marks the start of this list. */
+  tape: z.boolean().default(false),
 });
 
 const homeCard = z.object({

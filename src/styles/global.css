@@ -575,6 +575,18 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   ) {
   padding-top: 0;
 }
+/* A soft rosewood tape along the top edge: it marks where a new part begins, like a
+   boundary line, but muted so it reads as a border rather than a warning. */
+.section--tape {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--tape-stripe) 0 14px,
+    var(--tape-gap) 14px 28px
+  );
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
 .section--chrome .eyebrow,
 .section--chrome .note {
   color: var(--band-muted);
