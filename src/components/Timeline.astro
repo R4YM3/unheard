@@ -7,7 +7,7 @@ interface Milestone {
   title: string;
   description: string;
   lenses: Array<{ heading: string; text: string }>;
-  between: Array<{ title: string; text: string }>;
+  between: Array<{ title: string; text: string; placement?: 'card' | 'rail' }>;
 }
 interface Props {
   label: string;
@@ -19,44 +19,64 @@ const { label, milestones } = Astro.props;
 <ol class="timeline" aria-label={label}>
   {
     milestones.map((milestone) => (
-      <li>
-        <article class="card">
-          <p class="eyebrow">{milestone.eyebrow}</p>
-          <h3>{milestone.title}</h3>
-          <p>{milestone.description}</p>
-          {milestone.lenses.length > 0 && (
-            <details
-              class:list={{
-                'needs-review': milestone.lenses.every((lens) => lens.text.includes(REVIEW_MARKER)),
-              }}
-            >
-              <summary>Lees de vier lagen van dit moment</summary>
-              <div class="timeline-lenses">
-                {milestone.lenses.map((lens) => (
-                  <section class="timeline-lens">
-                    <h4>{lens.heading}</h4>
-                    <p>
-                      <Marked text={lens.text} />
-                    </p>
-                  </section>
-                ))}
+      <>
+        <li class="timeline-milestone">
+          <article class="card">
+            <p class="eyebrow">{milestone.eyebrow}</p>
+            <h3>{milestone.title}</h3>
+            <p>{milestone.description}</p>
+            {milestone.lenses.length > 0 && (
+              <details
+                class:list={{
+                  'needs-review': milestone.lenses.every((lens) =>
+                    lens.text.includes(REVIEW_MARKER),
+                  ),
+                }}
+              >
+                <summary>Lees de vier lagen van dit moment</summary>
+                <div class="timeline-lenses">
+                  {milestone.lenses.map((lens) => (
+                    <section class="timeline-lens">
+                      <h4>{lens.heading}</h4>
+                      <p>
+                        <Marked text={lens.text} />
+                      </p>
+                    </section>
+                  ))}
+                </div>
+              </details>
+            )}
+            {milestone.between.some((moment) => moment.placement !== 'rail') && (
+              <div class="timeline-between">
+                {milestone.between
+                  .filter((moment) => moment.placement !== 'rail')
+                  .map((moment) => (
+                    <details>
+                      <summary>{moment.title}</summary>
+                      <p>
+                        <Marked text={moment.text} />
+                      </p>
+                    </details>
+                  ))}
               </div>
-            </details>
-          )}
-          {milestone.between.length > 0 && (
-            <div class="timeline-between">
-              {milestone.between.map((moment) => (
-                <details>
-                  <summary>{moment.title}</summary>
+            )}
+          </article>
+        </li>
+        {milestone.between
+          .filter((moment) => moment.placement === 'rail')
+          .map((moment) => (
+            <li class="timeline-moment">
+              <details>
+                <summary>{moment.title}</summary>
+                <div class="timeline-moment__context">
                   <p>
                     <Marked text={moment.text} />
                   </p>
-                </details>
-              ))}
-            </div>
-          )}
-        </article>
-      </li>
+                </div>
+              </details>
+            </li>
+          ))}
+      </>
     ))
   }
 </ol>

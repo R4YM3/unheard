@@ -1473,6 +1473,48 @@ a.card:focus-visible,
 [dir='rtl'] .timeline > li::before {
   transform: translateX(50%);
 }
+.timeline > .timeline-moment {
+  margin-bottom: 1rem;
+}
+.timeline > .timeline-moment::before {
+  top: 1.1rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.timeline .timeline-moment > details {
+  margin-top: 0;
+}
+.timeline-moment summary {
+  width: fit-content;
+  max-width: 100%;
+  color: var(--link);
+  font-size: 1rem;
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 0.25em;
+}
+.timeline-moment summary:hover,
+.timeline-moment summary:focus-visible {
+  text-decoration-color: currentColor;
+}
+.timeline-moment__context {
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid var(--border);
+}
+.timeline-moment__context p {
+  margin: 0.25rem 0 1rem;
+}
+.timeline-preview {
+  margin-top: 2rem;
+  padding-block: 1.5rem;
+  border-block-start: 1px solid var(--border);
+}
+.timeline-preview summary {
+  font-weight: 700;
+}
+.timeline-preview details section {
+  margin-top: 1rem;
+}
 .timeline-lenses {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

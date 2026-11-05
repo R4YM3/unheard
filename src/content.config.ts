@@ -502,6 +502,13 @@ const story = defineCollection({
       heading: z.string().min(8),
       lead: z.string().min(20),
       label: z.string().min(4),
+      preview: z
+        .object({
+          heading: z.string().min(8),
+          text: z.string().min(20),
+          moments: z.array(z.object({ title: z.string().min(4), text: z.string().min(10) })).min(1),
+        })
+        .optional(),
       milestones: z
         .array(
           z.object({
@@ -510,7 +517,13 @@ const story = defineCollection({
             description: z.string().min(20),
             lenses: z.array(lens).refine((items) => items.length === 0 || items.length === 4),
             between: z
-              .array(z.object({ title: z.string().min(4), text: z.string().min(10) }))
+              .array(
+                z.object({
+                  title: z.string().min(4),
+                  text: z.string().min(10),
+                  placement: z.enum(['card', 'rail']).default('card'),
+                }),
+              )
               .default([]),
           }),
         )

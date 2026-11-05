@@ -67,6 +67,23 @@ const trail = heroTrail(
       <p>{data.timeline.lead}</p>
       <Timeline label={data.timeline.label} milestones={data.timeline.milestones} />
       <p class="note">{data.timeline.note}</p>
+      {
+        data.timeline.preview && (
+          <aside class="timeline-preview" aria-labelledby="timeline-preview-heading">
+            <h3 id="timeline-preview-heading">{data.timeline.preview.heading}</h3>
+            <p>{data.timeline.preview.text}</p>
+            <details>
+              <summary>Al gedeeld over latere jaren</summary>
+              {data.timeline.preview.moments.map((moment) => (
+                <section>
+                  <h4>{moment.title}</h4>
+                  <p>{moment.text}</p>
+                </section>
+              ))}
+            </details>
+          </aside>
+        )
+      }
     </div>
   </section>
   <section class="section section--therapy" aria-labelledby="therapie-heading" id="therapie">

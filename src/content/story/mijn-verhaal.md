@@ -30,9 +30,9 @@ introduction:
     - Ik dacht lang dat blijven zorgen bij liefde hoorde. Ik vertel wat ik toen meemaakte en wat ik pas later begon te begrijpen.
   note: Dit is mijn persoonlijke ervaring. Ik laat namen en herkenbare privégegevens weg. Het verhaal wordt nog aangevuld.
 timeline:
-  eyebrow: Mijn leven in lagen
+  eyebrow: De opbouw van ons samenleven
   heading: Hoe mijn wereld steeds kleiner werd.
-  lead: Lees de hoofdlijn of open een moment om verder te lezen. Ik vertel zonder jaartallen, vanuit wat ik toen beleefde en wat ik nu begrijp. Bij het printen staat alles open.
+  lead: Dit eerste deel vertelt hoe ons samenleven vorm kreeg en hoe mijn wereld veranderde. De grote kaarten geven de hoofdlijn. Open de kleinere momenten of de verdiepingen in een kaart als je verder wilt lezen. Bij het printen staat alles open.
   label: Mijlpalen in mijn verhaal
   milestones:
     - eyebrow: Waar ik vandaan kom
@@ -41,31 +41,41 @@ timeline:
       lenses: []
       between:
         - title: Eenzaam en zoekend
-          text: Op jonge leeftijd verloor ik het contact met mijn vader en zijn familie. Ik voelde me vaak eenzaam en was zoekend naar wie ik was. Aan die kant van mijn familie kon ik geen herkenning vinden.
+          text: Op jonge leeftijd verloor ik het contact met mijn vader en zijn familie. Hoewel ik broers en een zus heb, groeide ik voornamelijk als enig kind op bij mijn moeder en stiefvader. Ik voelde me vaak eenzaam en was zoekend naar wie ik was. Aan de andere kant van mijn familie kon ik geen herkenning vinden.
         - title: Zelf rondkomen en blijven proberen
-          text: Ik werkte al jong en was opgevoed om zelf rond te komen. Ik werk hard, soms te hard, en blijf proberen. Ik zie niet snel slechte intenties en pas me snel aan.
+          text: 'Ik werkte al jong en was opgevoed om zelf rond te komen. Ik herken mezelf als hoogsensitief: ik voel dingen snel aan. Ik werk hard, soms te hard, en blijf proberen. Ik zie niet snel slechte intenties en pas me snel aan.'
     - eyebrow: Het begin
       title: Haar aandacht betekende veel voor mij.
-      description: Ik wilde graag een relatie, geliefd zijn en me gezien voelen. Ze deed haar best voor mij en hielp me. Later werd mijn zorg voor haar steeds belangrijker. In het ondersteunen en ontzien begon ik mezelf vaker opzij te zetten.
+      description: Ik wilde graag een relatie, geliefd zijn en me gezien voelen. Haar aandacht betekende veel voor mij. Tegelijk had zij het moeilijk en ging mijn zorg voor haar steeds meer ruimte innemen.
       lenses: []
       between:
         - title: Iemand deed iets voor mij
           text: Ze hielp me met dingen en ook financieel, al was dat niet per se nodig. Ik was niet gewend dat iemand dat voor mij deed. Ik was gevoelig voor gezien worden en bevestiging krijgen.
         - title: Er was ook twijfel
-          text: Na een paar maanden maakte ik het een keer uit omdat ik twijfelde. Ze was niet de typische vrouw op wie ik viel. Ik vond haar moeilijk te doorgronden; misschien trok dat mysterieuze mij ook aan.
-        - title: Samenwonen en zorgen
-          text: Ze werkte, maar viel op haar werk regelmatig uit. Er waren ook betere periodes. Eerst sliep ik steeds vaker bij haar en haar ouders, die veel voor haar zorgden. Daarna gingen we samenwonen in een huis dat zij kocht. Mijn familie verbouwde het voor een klein bedrag en ik betaalde een deel van de hypotheek mee.
+          text: 'Na een paar maanden maakte ik het een keer uit omdat ik twijfelde. Ze was niet de typische vrouw op wie ik viel. Ik vond haar moeilijk te doorgronden: haar mening kwam vaak later of indirect. Misschien trok dat mysterieuze mij ook aan.'
+          placement: rail
+        - title: Ons eerste huis samen
+          text: Ze werkte, maar viel op haar werk regelmatig uit. Er waren ook betere periodes. Eerst sliep ik steeds vaker bij haar en haar ouders, die veel voor haar zorgden. Daarna gingen we voor het eerst samenwonen, in een huis dat zij kocht. Mijn familie verbouwde het voor een klein bedrag en ik betaalde een deel van de hypotheek mee.
+          placement: rail
+        - title: Een tweede huis en een gezamenlijke rekening
+          text: Ik begon voor mezelf en ging veel verdienen. We woonden inmiddels samen in een tweede huis, dat zij had gekocht en dat van haar was. Er kwam een gezamenlijke rekening. Zij had toen geen werk. Ik besteedde veel geld aan afbetaling en verbouwing. Ik werd gestuurd om haar huis af te betalen, in plaats van mijn studieschuld af te lossen of iets voor mezelf te doen.
+          placement: rail
     - eyebrow: Werk en vaderschap
       title: Ik dacht dat zorgen bij liefde hoorde.
-      description: Ik begon voor mezelf en ging veel verdienen. Onze dochter werd geboren. Ik werkte veel en probeerde mijn partner te ontzien. Wanneer ik niet werkte, zorgde ik voor mijn dochter en trok ik met haar op. Samen een kind hebben was voor mij bijzonder.
+      description: Onze dochter werd geboren. Samen een kind hebben was voor mij bijzonder. Ik combineerde veel werken met voor haar zorgen en mijn partner ontzien. Ik dacht dat dit bij liefde hoorde.
       lenses: []
       between:
-        - title: Mijn geld ging naar ons thuis
-          text: Bij het samenwonen in het tweede huis, dat zij had gekocht, kwam er een gezamenlijke rekening. Zij had toen geen werk. Ik besteedde veel geld aan afbetaling en verbouwing. Ik werd gestuurd om haar huis af te betalen, in plaats van mijn studieschuld af te lossen of iets voor mezelf te doen.
+        - title: Succes in mijn werk
+          text: Ik kwam in mijn carrière op plekken die ik nooit voor mogelijk had gehouden. Achteraf heb ik het gevoel dat dit succes mij ook verblindde voor wat er thuis speelde.
+          placement: card
         - title: Blijven opvangen
-          text: Haar ouders hielpen met opvang wanneer ik werkte, in het begin mijn moeder ook. Er was een schoonmaakster. Zij deed voornamelijk de nachten met onze dochter; ik deed de ochtenden. Ik heb vaker besproken dat we iets moesten veranderen aan het blijven geven van melk in de nacht. Voor mijn gevoel stond zij daar niet voor open. Later moesten bij mijn dochter kiezen worden getrokken. Ik breng dat in verband met de nachtvoeding; de medische oorzaak wil ik eerst laten controleren. Toch bleef ik ervaren dat ik haar ook buiten mijn werk moest ontzien. Over de opvoeding had ik voor mijn gevoel steeds minder te zeggen.
+          text: Haar ouders hielpen met opvang wanneer ik werkte, in het begin mijn moeder ook. Er was een schoonmaakster. Zij wilde geen BSO of andere kinderopvang. Ik ervoer dat haar moeder haar ook daarin stuurde. Toch bleef ik het gevoel houden dat ik haar ook buiten mijn werk moest ontzien. Over de opvoeding had ik voor mijn gevoel steeds minder te zeggen.
+        - title: De nachten en ochtenden
+          text: Zij deed voornamelijk de nachten met onze dochter; ik deed de ochtenden. Ik heb vaker besproken dat we iets moesten veranderen aan het blijven geven van melk in de nacht. Voor mijn gevoel stond zij daar niet voor open. Later moesten bij mijn dochter kiezen worden getrokken. Ik leg zelf een verband met de nachtvoeding; de medische oorzaak is nog niet gecontroleerd.
+          placement: card
         - title: Vrienden zagen iets wat ik niet toeliet
           text: 'Vrienden vroegen of het wel goed met mij ging. Ze zeiden dat de verhoudingen scheef waren en dat ik ook aan mezelf moest denken. Ik dacht dat ze het niet begrepen. Voor mij hoorde zorgen bij een relatie: je bent er voor elkaar, op goede en moeilijke dagen.'
+          placement: rail
     - eyebrow: Minder contact
       title: Ik voelde dat ik moest kiezen.
       description: Omdat zij vaak moe was, liet ik steeds meer afspraken met vrienden gaan. Er kwam ook steeds meer druk rond mijn familie. Ik ervoer dat ik moest kiezen tussen mijn gezin en mijn eigen mensen. Ik wilde niet kiezen.
@@ -73,12 +83,25 @@ timeline:
       between:
         - title: Mijn familie iets terug willen geven
           text: Mijn familie en vrienden hadden geholpen met de verbouwing. Toen ik familie financieel wilde bedanken en helpen bij hun eigen problemen, ervoer ik weerstand. Voor mij begon daar de spanning rond de mensen en de wereld waar ik vandaan kwam.
+          placement: rail
         - title: De pauze die jaren duurde
-          text: Ik hoorde steeds meer negatieve dingen over mijn moeder en familie. Mijn partner gaf aan dat ze het contact met mijn moeder niet meer trok. Ik liep weken met spanning in mijn lichaam. Uiteindelijk vertelde ik mijn ouders dat we een pauze moesten inlassen. Die pauze duurde jaren.
+          text: Ik hoorde steeds meer negatieve dingen over mijn moeder, mijn broer en vrienden. Mijn partner gaf aan dat ze het contact met mijn moeder niet meer trok. Ik liep weken met spanning in mijn lichaam. Uiteindelijk vertelde ik mijn ouders dat we een pauze moesten inlassen. Die pauze duurde jaren.
+          placement: rail
         - title: Waarom ik bleef doorgaan
           text: Als kind had ik mezelf beloofd dat mijn kinderen niet hetzelfde zouden meemaken als ik met mijn gescheiden ouders. Ik wilde zo graag dat ons gezin bij elkaar bleef. Zoals ik het toen beleefde, koos ik voor mijn dochter. Ik bleef doorgaan, ook over mijn grenzen.
         - title: Ook de laatste contacten werden minder
           text: Later ging ik soms nog naar sociale activiteiten op mijn werk. Ik kreeg te horen dat ik het alleen maar leuk had, terwijl zij het zwaar had. Ook dat liet ik steeds vaker gaan. Bijzondere momenten met mijn dochter kon ik met steeds minder mensen delen.
+          placement: rail
+        - title: Wanneer zij er voor mij was
+          text: In het begin was ze er wel wanneer ik verdrietig of moe was. Maar zoals ik het nu herinner, bevestigde die steun vooral dat ik er goed aan deed afstand te nemen van anderen.
+          placement: card
+    - eyebrow: Afspraken voor ons gezin
+      title: Ik tekende zonder alles te overzien.
+      description: Mijn sociale wereld was al weggevallen toen er druk werd gezet om een samenlevingscontract te tekenen, omdat dit nodig zou zijn voor onze dochter. Ik voelde me emotioneel niet stabiel genoeg om de gevolgen goed te overzien.
+      lenses: []
+      between:
+        - title: Het testament
+          text: Ik tekende ook een testament. Daarin sloot ik de mensen uit van wie ik hield.
     - eyebrow: Mezelf kwijtraken
       title: Een kleine vraag werd steeds moeilijker.
       description: Ik twijfelde steeds meer aan mezelf. Als ik iets voor mezelf wilde, kon ik dagen nadenken over hoe ik het moest brengen. Ik werkte harder en stopte mijn geld in het gezin en het huis. Daarmee verdoofde ik ook mijn pijn.
@@ -86,28 +109,32 @@ timeline:
       between:
         - title: Een paar tientjes durven vragen
           text: In het begin ging het om grotere bedragen. Later vond ik het al moeilijk om iets van een paar tientjes ter sprake te brengen. Ik kreeg te horen dat ik het geld beter in het huis kon steken.
+          placement: rail
         - title: Weer contact, maar geen erkenning
           text: Bij een meningsverschil hoorde ik dat ik haar iets niet gunde, of kreeg ik opmerkingen over hoe ik dacht en deed. Daarna werd het stil. Soms kwam dagen later via haar moeder een reactie. Het contact keerde terug als ik toenadering zocht, of zij dat deed. Voor mijn gevoel bleef mijn kant onbesproken.
-        - title: Tekenen zonder alles te overzien
-          text: Mijn sociale wereld was al weggevallen toen er druk werd gezet om een samenlevingscontract te tekenen, omdat dit nodig zou zijn voor onze dochter. Ik voelde me emotioneel niet stabiel genoeg om de gevolgen goed te overzien. Ik tekende ook een testament. Daarin sloot ik de mensen uit van wie ik hield.
         - title: Mijn vrolijke masker en de waardering
           text: Er waren fijne momenten wanneer ik toenadering zocht, grappen maakte en vrolijk deed. Mijn warme, amicale kant voelde ook als een masker. Vanuit de familie kreeg ik lof en complimenten voor wat ik deed. Dat hielp mij doorgaan, terwijl ik steeds meer moeite kreeg met de verhoudingen.
         - title: Zelf zorg ontvangen
           text: Als ik ziek was, zorgde ze op haar manier voor mij. Later had ik vaak het gevoel dat er een rekening volgde, in gedrag en opmerkingen. Daardoor voelde die zorg voor mij niet vanzelfsprekend vrij van verwijten.
-    - eyebrow: Een nieuw huis
+    - eyebrow: Het vrijstaande huis
       title: Ik bleef bouwen terwijl de afstand groeide.
-      description: We kochten een nieuw huis waar veel aan verbouwd moest worden. Naast mijn werk ging mijn vrije tijd naar slopen en verbouwen. Zij ging vaker dansen. Ik had haar daarin gestimuleerd, maar voelde steeds meer afstand en onrust.
+      description: 'Na overlast bij ons huis kochten we een vrijstaand huis: haar droomhuis. Er moest veel aan verbouwd worden. Naast mijn werk ging mijn vrije tijd naar slopen en verbouwen. Ondertussen voelde ik steeds meer afstand tussen ons.'
       lenses: []
       between:
         - title: Nog meer verantwoordelijkheid
-          text: Zij had geen werk. Ik droeg financieel de lasten en werkte naast mijn baan aan de verbouwing. Tegelijk kwam er weerstand tegen mijn afwezigheid, omdat zij de zorg thuis zwaar vond. Na de verkoop van ons vorige huis woonden we tijdelijk bij haar vader.
-        - title: Ons geld voelde niet meer gezamenlijk
-          text: Toen het geld uit de verkoop van de vorige woning vrijkwam, kreeg ik te horen dat dit háár geld was en dat ik ervan af moest blijven. Ondertussen was ik zo druk dat ik niet kon bijhouden waar het geld bleef. Zij had de boekhouding steeds meer naar zich toe getrokken.
-        - title: Mijn zorgen kwamen niet aan bod
-          text: Ze ging vaker op pad met mensen die ze bij het dansen ontmoette. Als ik mijn onrust besprak, kreeg ik te horen dat ik haar het dansen niet gunde. Uiteindelijk zei ze dat ze behoefte had aan andere mannen.
+          text: Zij had geen werk. Ik droeg financieel de lasten en werkte naast mijn baan aan de verbouwing. Er kwam weerstand tegen mijn afwezigheid, omdat zij de zorg thuis zwaar vond. Na de verkoop van het huis waarin we woonden, trokken we tijdelijk in het huis van haar vader.
+        - title: De boekhouding uit handen
+          text: Ze wist dat boekhouding mij niet goed lag en dat ik daarvoor iemand inschakelde. Zij trok die steeds meer naar zich toe. Er kwam veel geld binnen, maar ik was zo druk met werken en zorgen dat ik niet kon bijhouden waar het bleef.
+          placement: card
+        - title: Ik moest van het geld afblijven
+          text: Toen het geld uit de verkoop van de vorige woning vrijkwam, kreeg ik te horen dat dit háár geld was en dat ik ervan af moest blijven.
+          placement: rail
+        - title: Wat ze mij vertelde
+          text: Ik had haar gestimuleerd om te dansen, omdat ze daar positieve energie van kreeg. Ze ging vaker op pad met mensen die ze daar ontmoette. Als ik mijn onrust besprak, kreeg ik te horen dat ik haar het dansen niet gunde. Uiteindelijk zei ze dat ze behoefte had aan andere mannen.
+          placement: rail
     - eyebrow: Tijdelijk apart
       title: Ik vertrok, maar bleef alles dragen.
-      description: Ik ging met veel pijn naar een hotel. Die avond voelde ik dat ik niemand meer had om naartoe te gaan. Mijn werk, de verbouwing en de financiële verplichtingen liepen door. Ik miste mijn dochter enorm.
+      description: Ik ging met veel pijn naar een hotel. Die avond voelde ik dat ik niemand meer had om naartoe te gaan. De verbouwing en mijn werk liepen door, terwijl ik mijn dochter enorm miste.
       lenses: []
       between:
         - title: Zelf steun nodig hebben
@@ -116,18 +143,18 @@ timeline:
           text: In relatietherapie herkende ik mijn ervaring niet terug in hoe zij het vertelde. De uitspraak over andere mannen werd naar mijn beleving ontkend. Het ging erover dat ik haar het dansen niet gunde, te veel vroeg en onredelijk was.
         - title: Samen verder, met dezelfde moeite
           text: Ik bleef betalen voor haar tijdelijke woning, het nieuwe huis en de verbouwing. Na ongeveer een halfjaar was de verbouwing klaar. We besloten samen verder te gaan. Ik bleef ervaren dat ik financieel alles droeg en haar moest ontzien. Wanneer ik dat besprak, volgden opnieuw verwijten, schuldgevoel of zwijgen.
-    - eyebrow: Later en nu
-      title: Ik begon hulp te zoeken.
-      description: Later in dit traject kreeg ik een burn-out en volgde ik therapieën. Ik probeer nu beter te begrijpen wat ik heb meegemaakt. Het verhaal tussen deze momenten is nog niet compleet; de precieze volgorde werk ik verder uit.
-      lenses: []
-      between:
-        - title: Mijn klachten en grenzen
-          text: Ik had maagzuurklachten, migraineaanvallen, zag vlekken en had jarenlang darmklachten. Ik had niet goed door hoeveel klachten het werden. Toen ik met een burn-out thuis was, moest ik thuis meer doen. Daarna volgde ik therapieën.
-        - title: Anders terugkijken op de afspraken
-          text: Later ontdekte ik eerdere versies van het samenlevingscontract waarvan ik geen weet had. Op veel punten vind ik het gunstig voor haar geschreven. Ik probeer nog steeds duidelijkheid te krijgen over de totstandkoming. Als ik nu stukken wil opvragen, krijg ik te horen dat ik haar toestemming nodig heb. Die krijg ik niet.
-        - title: Mijn verhaal is nog niet af
-          text: Er zijn gebeurtenissen die ik nog wil vertellen en momenten waarvoor ik nog woorden zoek. Ik ben vader en bouw mijn leven opnieuw op. Sommige dingen blijven moeilijk.
-  note: Dit verhaal is nog in ontwikkeling. Vooral het latere deel en de volgorde daarvan vul ik verder aan. Ik beschrijf mijn herinneringen en mijn beleving.
+          placement: rail
+  note: Ik beschrijf mijn herinneringen en mijn beleving. Sommige onderwerpen liepen langer door dan één moment. Dit deel is nog in ontwikkeling.
+  preview:
+    heading: Hier stopt voorlopig dit eerste deel.
+    text: Dit is de opbouw van ons samenleven. Er volgen nog veel jaren die ik wil beschrijven. De latere gebeurtenissen hieronder heb ik al genoemd, maar hun plek en samenhang werk ik verder uit.
+    moments:
+      - title: Mijn klachten en grenzen
+        text: Ik had maagzuurklachten, migraineaanvallen, zag vlekken en had jarenlang darmklachten. Ik had niet goed door hoeveel klachten het werden. Toen ik met een burn-out thuis was, moest ik thuis meer doen. Daarna volgde ik therapieën.
+      - title: Anders terugkijken op de afspraken
+        text: Later ontdekte ik eerdere versies van het samenlevingscontract waarvan ik geen weet had. Op veel punten vind ik het gunstig voor haar geschreven. Er staat ook een afspraak over partneralimentatie in. Als ik nu stukken over de totstandkoming wil opvragen, krijg ik te horen dat ik haar toestemming nodig heb. Die krijg ik niet.
+      - title: Verwijten die bleven terugkomen
+        text: Later, na de verkoop van het huis, kreeg ik ook verwijten dat ik niet sociaal was en meerdere karakters had. Toen ik een keer met vrienden op vakantie wilde, werd dat iets waarover ik tot op vandaag verwijten krijg. De precieze plek van deze momenten in de volgorde wil ik nog controleren.
 therapy:
   eyebrow: Hulp zoeken en groeien
   heading: Ik moest mezelf niet alleen begrijpen, maar ook ervaren wat ik voelde.
@@ -164,10 +191,10 @@ letter:
   signature: Dikke kus, papa ♥
 closing:
   eyebrow: Vandaag
-  heading: Het verhaal gaat verder.
+  heading: Ik schrijf verder.
   paragraphs:
-    - 'Er zijn dingen die ik heb teruggevonden: ruimte om zelf keuzes te maken, plezier in het gewone leven en vertrouwen dat ik verder kan groeien.'
-    - Niet iedere dag voelt hetzelfde. Ik deel dit verhaal niet omdat ik alles heb opgelost, maar omdat herkenning soms begint wanneer iemand anders woorden geeft aan iets wat jij nog niet kon uitleggen.
+    - Dit eerste deel is nog niet mijn hele verhaal. Er volgen nog veel jaren die ik in mijn eigen woorden wil beschrijven.
+    - Ik deel wat ik al kan verwoorden. Wat ik nog moet vertellen, krijgt later zijn plek.
 reviewNotes:
   - Controleer de volgorde van tussenmomenten, met name de boekhouding, woningopbrengst en vakantie met vrienden.
   - Controleer contract, testament, eigendom en financiële passages aan de hand van documenten vóór publicatie.
