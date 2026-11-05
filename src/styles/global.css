@@ -499,7 +499,7 @@ mark.review-marker {
 .section--tight {
   padding-block: clamp(2rem, 4vw, 3rem);
 }
-/* Band colours come in two families: heath (rest, help) and sand (depth, lists). */
+/* Band colours come in two families: mist green (rest, help) and sand (depth, lists). */
 .section--soft,
 .section--children {
   --section-bg: var(--safe);
@@ -2190,15 +2190,20 @@ a.card:focus-visible,
   padding-bottom: 0;
 }
 
-/* Contour lines: a quiet signature, only behind the hero and the help band. Decoration
-   only; print.css resets these backgrounds. */
+/* Contour lines: a quiet signature on the rest bands (hero, help band, calm bands), never on
+   the sand bands, so it returns without being everywhere. The tile repeats across the whole
+   band. Decoration only; print.css resets these backgrounds. */
 .hero,
-.help-band {
+.help-band,
+.section--soft,
+.section--children {
   background-image: var(--pattern-contours);
-  background-repeat: no-repeat;
-  background-size: 960px 560px;
-  background-position: right -160px top -40px;
+  background-repeat: repeat;
+  background-size: 1200px 720px;
+  background-position: center top;
 }
-.help-band {
-  background-position: right -220px bottom -260px;
+/* A calm band that switched to the sand step (two calm bands in a row) stays plain. */
+:is(.section--soft, .section--children) + :is(.section--soft, .section--children),
+:is(.section--soft, .section--children) + script + :is(.section--soft, .section--children) {
+  background-image: none;
 }

@@ -1,18 +1,18 @@
 /* Primitive tokens: raw palette and scale. Components never use these directly. */
 :root {
-  /* Light: "heide en dennengroen". Paper, heath and sand bands, a muted pine green for the deep
-     band and controls, rosewood accent. */
+  /* Light: "mistgroen en dennengroen". Paper, a soft grey-green and sand for the bands, a muted
+     pine for the deep band and controls, rosewood accent. Neutrals lean green, not mauve. */
   --palette-paper: #f5f3f1;
   --palette-paper-light: #fbfaf9;
-  --palette-heath: #ebe6e8;
-  --palette-heath-line: #d6ccd1;
+  --palette-mist: #e6ebe8;
+  --palette-mist-line: #cdd5d0;
   --palette-sand: #e7e0d6;
   --palette-sand-line: #d0c6b8;
-  --palette-ink: #231f24;
-  --palette-ink-soft: #433c45;
-  --palette-ink-muted: #544d56;
-  --palette-line: #ddd5d8;
-  --palette-line-strong: #8a8189;
+  --palette-ink: #1f2321;
+  --palette-ink-soft: #3c443f;
+  --palette-ink-muted: #4e5651;
+  --palette-line: #d8dcd8;
+  --palette-line-strong: #828a85;
   --palette-pine-200: #dbe2dc;
   --palette-pine-300: #b3c2b8;
   --palette-pine-700: #33433a;
