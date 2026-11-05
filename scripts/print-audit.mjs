@@ -17,7 +17,11 @@ const routes = [
   {
     id: 'story',
     route: '/nl/mijn-verhaal/',
-    required: ['De weg waarop ik mezelf kwijtraakte.', 'Wie werd ik?', 'Voor mijn kinderen.'],
+    required: [
+      'Hoe mijn wereld steeds kleiner werd.',
+      'Daarin sloot ik de mensen uit van wie ik hield.',
+      'Voor mijn kinderen.',
+    ],
   },
   {
     id: 'emotion',

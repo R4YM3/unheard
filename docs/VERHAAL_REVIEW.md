@@ -1,69 +1,59 @@
 # Review: tijdlijn Mijn verhaal
 
-Route: `/nl/mijn-verhaal/`. Bestand: `src/content/story/mijn-verhaal.md`. Branch: `content/mijn-verhaal`. De pagina staat op `status: draft`, en `NO_INDEX` blijft aan.
+Route: `/nl/mijn-verhaal/`. Content: `src/content/story/mijn-verhaal.md`.
 
-Deze repo is publiek. Daarom staan hier geen citaten, namen, bedragen, adressen of procesdetails, en ook geen dossierpaden waarvan de mapnaam die gegevens bevat. Uit het dossier is niets naar de repo gekopieerd.
+## Update 4 november 2026
 
-## Wat het dossier bevatte
+De eerdere opzet met zes grotendeels oningevulde momenten is vervangen door het eerste deel van het verhaal dat de oprichter in deze chat heeft verteld. Na redactionele selectie bevat de webtekst acht hoofdmomenten en 26 afzonderlijk uitklapbare verhalen. Er zijn geen jaartallen of nieuwe diagnoses toegevoegd. De bestaande onderdelen over therapie, vaderschap en de brief zijn behouden.
 
-Ik heb het dossier alleen gelezen. Lokaal staan er bestanden in één map: `correspondentie/logboek/automatisch/`. Alle andere mappen zijn leeg, waaronder `correspondentie/logboek/per maand/`, `correspondentie/logboek/bulk/` en `correspondentie/tussen-partijen/persoonlijke-notities/`.
+Bron voor de nieuwe tekst: de eigen herinneringen en correcties van de oprichter in deze chat. Er zijn bij deze wijziging geen dossierstukken geraadpleegd. De formulering over het testament is expliciet door de oprichter gecorrigeerd. De tekst is persoonlijk getuigenis, geen onafhankelijke vaststelling van gebeurtenissen of bedoelingen van anderen.
 
-- `correspondentie/logboek/automatisch/automatisch-logboek.md`: een neutrale lijst van bewaarde berichten uit september en oktober 2026. Alleen metadata.
-- `correspondentie/logboek/automatisch/*/bron.json`: vooral facturen, accountmeldingen en abonnementen. Een paar berichten gaan over financiële of juridische afwikkeling. Die heb ik niet inhoudelijk gelezen en niet als bron voor publieke tekst gebruikt.
-- De mapstructuur van het dossier: gebruikt om de volgorde van periodes te begrijpen (een relatie, een scheiding met een lange afwikkeling die in het najaar van 2026 nog loopt). De mapnamen zelf zijn niet overgenomen.
+## Volgorde en vervolg
 
-Het dossier beschrijft nergens wat de oprichter voelde. Er zijn dus geen nieuwe gevoelens, gebeurtenissen, data of therapieresultaten toegevoegd. Waar het dossier alleen iets over de volgorde zegt, staat in de tekst een vraag of een algemene zin met `[OPRICHTER REVIEW NODIG]`.
+- Hulp thuis en blijven opvangen komen vóór het samenlevingscontract.
+- Het verlies van vrienden en familie komt vóór het tekenen van contract en testament.
+- De paniekreacties tijdens slaap betreffen de partner en bestonden vóór de kinderen.
+- De eerste tijdlijn eindigt bij het besluit om na tijdelijk apart wonen samen verder te gaan. Er is geen later definitief einde of therapiechronologie ingevuld.
+- Enkele onderwerpen beschrijven een langere periode. Controleer met de oprichter de plaats van boekhouding, uitbetaling woning en vakantie met vrienden.
+- Het contract is inmiddels aangevuld met de verklaring van de oprichter over eerdere versies, geweigerde toestemming voor inzage en een afspraak over partneralimentatie. De documenten zijn niet gecontroleerd. Verdere gevolgen van contract, testament en boekhouding moeten nog worden verteld; een vooropgezet plan is niet onafhankelijk vastgesteld.
 
-## Per tijdlijnmoment
+## Aanvullingen na de eerste lokale preview
 
-### 1. Voordat mijn relatie begon: “Het verhaal begon eerder.”
+De oprichter heeft verduidelijkt dat haar hulp en aandacht, ook financieel, hem aanvankelijk aantrokken. Zijn twijfel en het een keer uitmaken na enkele maanden zijn toegevoegd. De belofte als kind staat nu bij de ervaren keuze tussen gezin en familie. De gezamenlijke rekening hoort bij samenwonen in het tweede huis dat zij had gekocht, toen zijn inkomen groeide en zij geen werk had. Zijn bijdrage van meer dan de helft van de woningwaarde en het sturen op afbetaling van haar woning in plaats van zijn studieschuld zijn eigen verklaringen; bedragen en documenten zijn niet gecontroleerd. De tijdsaanduiding bij de nachtelijke paniekreacties is uit de webtekst gehaald.
 
-- Bron: bestaande site-tekst. Niets uit het dossier.
-- Publiek: ongewijzigd. De vier lagen zijn reviewvragen. Het tussenmoment over misbruik in de jeugd is een bestaande, eerder goedgekeurde zin.
-- Reviewvraag: mag de zin over misbruik in je jeugd publiek blijven, in deze bewoording? Vul de vier lagen in of laat ze weg.
+## Voor publicatie beoordelen
 
-### 2. Het begin: “Een toekomst samen.”
+1. Auteur: alle formuleringen, volgorde en weggelaten details controleren.
+2. Juridisch/redactioneel: contract, testament, eigendom, woningopbrengst, financiële passages en herkenbaarheid van betrokkenen beoordelen. Documenten zijn bij deze wijziging niet gecontroleerd.
+3. Privacy: passages over kinderen, reanimatie, partner en familie beoordelen. Geen medische oorzaak of schadeclaim over de dochter opgenomen.
+4. De medische duiding van het reanimatiemoment staat nog open. Lichamelijke klachten zijn beschreven zonder oorzakelijk verband toe te voegen.
+5. De gevoelige achtergrond over een eerdere relatie en de geloofsgemeenschap is niet opgenomen: naam, bron, relevantie en privacy zijn onvoldoende vastgesteld. Er is geen gemeenschap geïdentificeerd of diagnose van de partner toegevoegd.
+6. Bestaande brief en therapiepassages blijven onderdeel van de eerdere reviewopdracht.
 
-- Bron: bestaande site-tekst. Het dossier bevestigt alleen dat er een gezamenlijk leven was. Er zijn geen details gebruikt.
-- Publiek: ongewijzigd.
-- Reviewvraag: welke verwachtingen en gevoelens had je aan het begin? Wil je dit moment houden zonder concrete details?
+## Gedrag van de pagina
 
-### 3. De verschuiving: “Mezelf langzaam kwijtraken.”
+Hoofdmomenten blijven leesbaar; kleinere verhalen openen afzonderlijk met native HTML-details, ook zonder JavaScript. Alle tekst staat in gegenereerde HTML. Print toont ook gesloten momenten. De optionele vier perspectieven blijven ondersteund voor toekomstige aanvullingen, maar lege perspectieven worden niet getoond.
 
-- Bron: bestaande, goedgekeurde zinnen (twijfel, bevestiging zoeken, je aanpassen, je eigen gevoel wantrouwen). Niets uit het dossier.
-- Publiek: ongewijzigd.
-- Reviewvraag: wil je de laag “Wat gebeurde er?” in algemene woorden invullen, zonder iemand te beschuldigen of herkenbaar te maken?
+De pagina blijft `status: draft`; er is niets gepusht of gepubliceerd. Controleer vóór een eventuele publicatie ook de projectbrede indexeringsinstellingen. Een conceptstatus of noindex is geen toegangsbeveiliging.
 
-### 4. Uit elkaar gaan: “Afscheid van een gezamenlijk leven.” (nieuw)
+## Aanvulling 5 november 2026
 
-- Bron: de mapstructuur van het dossier en de periode van het automatische logboek (`correspondentie/logboek/automatisch/automatisch-logboek.md`). Die laten alleen zien dat de relatie eindigde en dat de afwikkeling lang duurde en in het najaar van 2026 nog liep.
-- Publiek: twee feitelijke zinnen in algemene woorden: “Mijn relatie eindigde. Het afwikkelen daarna duurde lang en ligt nog niet helemaal achter me.” Daarnaast staat er dat ik details bewust niet deel. De lagen over gevoel en zelfbeeld en de drie tussenmomenten (rouw, twee gevoelens tegelijk, lang moeten regelen) zijn vragen of “ruimte voor”-teksten. Ze beweren niet dat je iets voelde. Alles is gemarkeerd met `[OPRICHTER REVIEW NODIG]`. Daarnaast is `herstel-rouw` toegevoegd aan de gerelateerde pagina's.
-- Reviewvragen:
-  - Wil je dat het einde van je relatie een eigen moment is in de tijdlijn?
-  - Zegt “ligt nog niet helemaal achter me” te veel over lopende kwesties? Laat dit eventueel ook juridisch toetsen.
-  - Staat dit moment op de goede plek, vóór het keerpunt? Of zocht je al hulp voordat de relatie eindigde?
-  - Welke gevoelens uit deze periode wil je zelf noemen: rouw, schuldgevoel, spanning, tegenstrijdige gevoelens? Of laat je de laag weg?
+Een eerste hoofdstuk over de jeugd is toegevoegd op basis van de eigen woorden van de oprichter: vechtscheiding, partnerruil met een gezin met kinderen, weinig geld bij moeder, zichzelf wegcijferen, jong contact verliezen en jong werken. Geen aanvullende jeugddetails of causale verklaringen ingevuld. Privacy en herkenbaarheid van beide gezinnen vragen review vóór publicatie.
 
-### 5. Het keerpunt: “Ik begon woorden te vinden.”
+Een voorlopig slothoofdstuk bevat de later gemelde escalatie na woningverkoop, verwijten over sociaal zijn en meerdere karakters, burn-out, thuis meer moeten doen en daarna therapieën volgen. De woningverkoop en precieze plaats ten opzichte van opnieuw samen verdergaan zijn nog niet vastgesteld. Dat staat zichtbaar bij dit hoofdstuk. De verwijten worden niet als diagnose gepresenteerd; er is geen oorzaak van de burn-out of volgorde van specifieke therapieën toegevoegd.
 
-- Bron: bestaande, goedgekeurde zinnen over hulp zoeken en therapievormen. Niets uit het dossier.
-- Publiek: ongewijzigd.
-- Reviewvraag: hoe voelde het om hulp te zoeken, als man en als vader?
+## Latere ontdekking over het samenlevingscontract
 
-### 6. Vandaag: “Een leven dat ik opnieuw vormgeef.”
+De voorlopige tekst is vervangen door de eigen verklaring over onbekende eerdere versies, de ervaren gunstige afspraken voor de partner en het niet verkrijgen van toestemming om stukken op te vragen. Partneralimentatie wordt genoemd als afspraak die de oprichter in het contract aantrof, zonder juridische duiding van uitzonderlijkheid, geldigheid of inzagerechten. Controleer contract en correspondentie en laat de passage vóór publicatie juridisch/redactioneel beoordelen.
 
-- Bron: bestaande, goedgekeurde zinnen. Het dossier bevestigt alleen dat de afwikkeling nog loopt. Dat sluit aan bij “Herstel is niet af”. Er is niets toegevoegd.
-- Publiek: ongewijzigd.
-- Reviewvraag: geen nieuwe. De bestaande vraag over de brief aan de kinderen blijft open.
+De oprichter verduidelijkte vervolgens dat de geweigerde toestemming voor inzage nu speelt. Dat staat als apart huidig moment na de nog onvolledige eerdere geschiedenis. Bij de contractontdekking staat nu expliciet dat zijn toenmalige advocaat en vier andere advocaten hem vertelden dit niet eerder te hebben gezien. Dit is een toegeschreven herinnering, geen algemene juridische conclusie over hoe vaak deze afspraak voorkomt.
 
-## Bewust weggelaten
+## Redactionele selectie na review
 
-- Alles uit financiële, juridische en procesmatige berichten en mappen, ook in algemene vorm.
-- Namen van betrokkenen. Die staan in mapnamen in het dossier.
-- Alles over de kinderen buiten de bestaande, goedgekeurde tekst.
-- Mapnamen die naar specifieke gebeurtenissen of conflicten verwijzen. Zelfs in algemene woorden zouden ze een verwijt of een herkenbaar detail worden. De oprichter krijgt de details apart en buiten de repo.
+De inleiding is ingekort en de herhaalde uitleg over de vertelvorm is vervallen. De tijdlijn volgt acht grotere hoofdstukken met twee of drie uitklapbare verhalen per hoofdstuk. De selectie legt de nadruk op eigen wensen, aanpassen, zelftwijfel, minder contact, grenzen, vaderschap en hulp zoeken. Details over gezinssamenstelling, medische gebeurtenissen, nachtelijke reacties, inentingen, zwangerschap, hypotheekprocedure en aantallen advocaten zijn uit de webtekst gehaald. Het contract blijft met de druk bij tekenen, het testament en de latere ontdekking van onbekende versies herkenbaar aanwezig. De oorspronkelijke tekst blijft lokaal in het genegeerde bestand `work/story-source/mijn-verhaal-voor-redactie-2026-11-05.md`; deze bronnotities worden niet gebouwd of gepubliceerd.
 
-## Telling
+De laatste fase is uitdrukkelijk nog onvolledig en combineert latere gebeurtenissen en het heden zonder een exacte volgorde van burn-out en hereniging te claimen. Therapie, vaderschap en de brief blijven behouden. Er zijn geen nieuwe gebeurtenissen, gevoelens of verklaringen voor gedrag toegevoegd. Alle eerdere reviewvragen betreffen de volledige bronnotities; ze betekenen niet dat elk detail nog op de pagina staat.
 
-- Tijdlijnmomenten: 6 (5 bestaand, 1 nieuw).
-- Markeringen `[OPRICHTER REVIEW NODIG]` in de tijdlijnmomenten: 23, waarvan 8 nieuw bij “Uit elkaar gaan”. In het hele bestand staan er 25, inclusief de uitleg onder de tijdlijn en één reviewnotitie.
+## Publicatieopdracht 5 november 2026
+
+De oprichter heeft opdracht gegeven de verkorte tijdlijn te publiceren, met drie teruggebrachte onderwerpen: familie willen bedanken en helpen, het vrolijke masker met waardering die doorgaan stimuleerde, en zorg bij ziekte die later als een rekening voelde. De site blijft een concept; juridische en medische controles zijn hiermee niet als afgerond aangemerkt. De volledige oorspronkelijke tekst blijft alleen lokaal bewaard.

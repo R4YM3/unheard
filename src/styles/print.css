@@ -114,6 +114,7 @@
   .stat,
   .timeline-lens,
   .timeline-between article,
+  .timeline-between > details,
   .start-chooser details,
   .glossary-item {
     margin: 3mm 0;
@@ -121,6 +122,9 @@
     background: #fff !important;
     color: #000 !important;
     break-inside: avoid;
+  }
+  .timeline > li > .card {
+    break-inside: auto;
   }
   .card--tension::before {
     display: none;

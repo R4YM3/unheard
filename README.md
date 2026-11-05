@@ -37,6 +37,10 @@ The build fails on duplicate keys or routes and on `related` keys that do not re
 
 Every page shows its author role, status (`draft`, `in_review` or `approved`), update date and review date. A per-route review overview for the founder is in `CONTENT_REVIEW.md`.
 
+## Editing the personal timeline
+
+Edit `timeline.milestones` in `src/content/story/mijn-verhaal.md`. Each milestone has a visible `eyebrow`, `title` and `description`. Its `between` list contains individually expandable stories (`title` and `text`), rendered in HTML and expanded when printing. Use `lenses: []` until the author supplies the four perspectives; otherwise provide exactly four lenses. There is no fixed limit on smaller moments. Keep unresolved chronology and publication review notes in [docs/VERHAAL_REVIEW.md](docs/VERHAAL_REVIEW.md).
+
 ## Publishing
 
 GitHub Actions checks every pull request and builds/deploys to GitHub Pages on each push to `main`. Pages uses the Actions workflow as its publishing source. While it is hosted at the GitHub project URL, the build uses the repository subpath automatically.
