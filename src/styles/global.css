@@ -575,17 +575,33 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   ) {
   padding-top: 0;
 }
-/* A soft rosewood tape along the top edge: it marks where a new part begins, like a
-   boundary line, but muted so it reads as a border rather than a warning. */
+/* A tape along the top edge that stitches two bands together: diagonal stripes in the colour
+   of the block above, with the band itself showing through between them. It marks where a
+   new part begins without adding a colour of its own. */
 .section--tape {
+  --tape-above: var(--bg);
   background-image: repeating-linear-gradient(
     -45deg,
-    var(--tape-stripe) 0 14px,
-    var(--tape-gap) 14px 28px
+    var(--tape-above) 0 14px,
+    transparent 14px 28px
   );
-  background-size: 100% 10px;
+  background-size: 100% 12px;
   background-repeat: no-repeat;
   background-position: top;
+}
+.hero + .section--tape {
+  --tape-above: var(--hero-bg);
+}
+:is(.section--soft, .section--children) + .section--tape,
+:is(.section--soft, .section--children) + script + .section--tape {
+  --tape-above: var(--safe);
+}
+:is(.section--tension, .section--therapy, .section--tint) + .section--tape,
+:is(.section--tension, .section--therapy, .section--tint) + script + .section--tape {
+  --tape-above: var(--tint);
+}
+.section--chrome + .section--tape {
+  --tape-above: var(--band-bg);
 }
 .section--chrome .eyebrow,
 .section--chrome .note {
