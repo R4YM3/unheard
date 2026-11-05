@@ -549,6 +549,8 @@ const story = defineCollection({
             theme: timelineTheme.optional(),
             between: z.array(timelineMoment).default([]),
             reflection: timelineReflection.optional(),
+            /** Site pages a reader can go to next when they recognise this chapter. */
+            links: z.array(z.object({ href: internalHref, label: z.string().min(3) })).default([]),
           }),
         )
         .default([]),

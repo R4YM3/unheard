@@ -2438,3 +2438,18 @@ a.card:focus-visible,
   background: var(--surface);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
+
+/* Under each chapter of the story: where a reader can go next when they recognise it. */
+.timeline-recognise {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.timeline-recognise span {
+  font-weight: 700;
+}
+.timeline-recognise a {
+  color: var(--link);
+  text-decoration: underline;
+}
