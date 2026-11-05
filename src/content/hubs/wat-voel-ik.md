@@ -47,6 +47,7 @@ listings:
     prefix: 'wat-voel-ik/'
     eyebrow: 'Negen startvragen'
     heading: 'Wat herken jij?'
+    tape: true
     lead: 'Je hoeft het antwoord nog niet te weten. Je kunt ook meerdere pagina’s lezen; gevoelens lopen vaak door elkaar.'
     tone: neutral
 related: [begrijp-het, herstel, hulp-vinden]
