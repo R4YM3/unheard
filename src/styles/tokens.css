@@ -1,39 +1,39 @@
 /* Primitive tokens: raw palette and scale. Components never use these directly. */
 :root {
-  /* Light: paper, ink, sage, terracotta. */
-  --palette-paper: #f6f2ea;
-  /* Off-white and paper carry the page; bands are two steps of a soft olive. */
-  --palette-paper-light: #fbf9f5;
-  --palette-olive: #e7e7da;
-  --palette-olive-line: #d6d6c2;
-  --palette-olive-deep: #dfdfcc;
-  --palette-olive-deep-line: #ceceb6;
-  --palette-ink: #1e2320;
-  --palette-ink-soft: #3e4540;
-  --palette-ink-muted: #4f5550;
-  --palette-line: #dcd5c8;
-  --palette-line-strong: #858b82;
-  --palette-sage-100: #e3eae4;
-  --palette-sage-200: #dce5de;
-  --palette-sage-300: #a8c9b6;
-  --palette-sage-700: #2f4a3d;
-  --palette-terracotta: #9c4a2f;
-  --palette-terracotta-900: #8f4329;
+  /* Light: "heide en dennengroen". Paper, heath and sand bands, a muted pine green for the deep
+     band and controls, rosewood accent. */
+  --palette-paper: #f5f3f1;
+  --palette-paper-light: #fbfaf9;
+  --palette-heath: #ebe6e8;
+  --palette-heath-line: #d6ccd1;
+  --palette-sand: #e7e0d6;
+  --palette-sand-line: #d0c6b8;
+  --palette-ink: #231f24;
+  --palette-ink-soft: #433c45;
+  --palette-ink-muted: #544d56;
+  --palette-line: #ddd5d8;
+  --palette-line-strong: #8a8189;
+  --palette-pine-200: #dbe2dc;
+  --palette-pine-300: #b3c2b8;
+  --palette-pine-700: #33433a;
+  --palette-rosewood: #9a4d46;
+  --palette-rosewood-900: #8a413b;
 
-  /* Dark: forest, cream, ochre. */
-  --palette-forest-975: #101a17;
-  --palette-forest-950: #15211d;
-  --palette-forest-925: #182621;
-  --palette-forest-900: #1c2e28;
-  --palette-forest-850: #1f3a33;
-  --palette-forest-800: #22392f;
-  --palette-forest-line: #2e463d;
-  --palette-forest-line-strong: #6f857a;
-  --palette-cream: #eee8dc;
-  --palette-cream-muted: #b9c4bc;
-  --palette-ochre: #e0b464;
-  --palette-ochre-300: #e6c17f;
-  --palette-ochre-ink: #1f2a1f;
+  /* Dark: pine night, cream, ochre. */
+  --palette-night-975: #111614;
+  --palette-night-950: #161c19;
+  --palette-night-925: #19201c;
+  --palette-night-900: #1d2521;
+  --palette-night-850: #222c27;
+  --palette-night-800: #26302a;
+  --palette-night-line: #36423b;
+  --palette-night-line-strong: #7a877f;
+  --palette-pine-light: #b8c8bd;
+  --palette-cream: #ece9e3;
+  --palette-cream-muted: #bfc6c0;
+  --palette-ochre: #e3b46c;
+  --palette-ochre-300: #e9c58a;
+  --palette-ochre-ink: #241c1a;
 
   --font-sans:
     'Source Sans 3', 'Avenir Next', 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif;
