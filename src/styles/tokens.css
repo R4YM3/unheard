@@ -1,6 +1,7 @@
 /* Primitive tokens: raw palette and scale. Components never use these directly. */
 :root {
-  /* Light: "heide en pruim". Paper, heath and sand bands, plum ink and bands, rosewood accent. */
+  /* Light: "heide en dennengroen". Paper, heath and sand bands, a muted pine green for the deep
+     band and controls, rosewood accent. */
   --palette-paper: #f5f3f1;
   --palette-paper-light: #fbfaf9;
   --palette-heath: #ebe6e8;
@@ -12,24 +13,24 @@
   --palette-ink-muted: #544d56;
   --palette-line: #ddd5d8;
   --palette-line-strong: #8a8189;
-  --palette-plum-200: #e2d9e1;
-  --palette-plum-300: #b9a7b8;
-  --palette-plum-700: #3b3040;
+  --palette-pine-200: #dbe2dc;
+  --palette-pine-300: #b3c2b8;
+  --palette-pine-700: #33433a;
   --palette-rosewood: #9a4d46;
   --palette-rosewood-900: #8a413b;
 
-  /* Dark: plum night, cream, ochre. */
-  --palette-night-975: #141117;
-  --palette-night-950: #1a161d;
-  --palette-night-925: #1e1922;
-  --palette-night-900: #231d27;
-  --palette-night-850: #2a2230;
-  --palette-night-800: #2e2535;
-  --palette-night-line: #3e3445;
-  --palette-night-line-strong: #85788b;
-  --palette-mauve-300: #cbb6cb;
-  --palette-cream: #efe8e6;
-  --palette-cream-muted: #c6bac4;
+  /* Dark: pine night, cream, ochre. */
+  --palette-night-975: #111614;
+  --palette-night-950: #161c19;
+  --palette-night-925: #19201c;
+  --palette-night-900: #1d2521;
+  --palette-night-850: #222c27;
+  --palette-night-800: #26302a;
+  --palette-night-line: #36423b;
+  --palette-night-line-strong: #7a877f;
+  --palette-pine-light: #b8c8bd;
+  --palette-cream: #ece9e3;
+  --palette-cream-muted: #bfc6c0;
   --palette-ochre: #e3b46c;
   --palette-ochre-300: #e9c58a;
   --palette-ochre-ink: #241c1a;
