@@ -2,12 +2,12 @@
 :root {
   /* Light: paper, ink, sage, terracotta. */
   --palette-paper: #f6f2ea;
-  /* Off-white and paper carry the page; bands are two steps of a soft olive. */
+  /* Off-white and paper carry the page; bands are wool and a warm stone (no green). */
   --palette-paper-light: #fbf9f5;
-  --palette-olive: #e7e7da;
-  --palette-olive-line: #d6d6c2;
-  --palette-olive-deep: #dfdfcc;
-  --palette-olive-deep-line: #ceceb6;
+  --palette-wool: #efebe3;
+  --palette-wool-line: #d9d3c7;
+  --palette-stone: #e6e2da;
+  --palette-stone-line: #cec8bc;
   --palette-ink: #1e2320;
   --palette-ink-soft: #3e4540;
   --palette-ink-muted: #4f5550;
