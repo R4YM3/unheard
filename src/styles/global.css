@@ -2200,7 +2200,7 @@ a.card:focus-visible,
 .section--children {
   background-image: var(--pattern-contours);
   background-repeat: repeat;
-  background-size: 1200px 720px;
+  background-size: 960px 600px;
   background-position: center top;
 }
 /* A calm band that switched to the sand step (two calm bands in a row) stays plain. */
