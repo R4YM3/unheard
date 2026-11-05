@@ -62,6 +62,10 @@ timeline:
           text: Na een paar maanden maakte ik het een keer uit omdat ik twijfelde. Ik kreeg moeilijk een beeld van wat zij vond; een mening kwam vaak pas achteraf of indirect. Misschien trok dat mysterieuze mij ook aan.
           placement: card
           theme: emotional
+        - title: Signalen die ik toen nog niet zag
+          text: Ze hielp me met dingen en ook financieel, al was dat niet per se nodig. Het viel me steeds meer op dat veel mensen om haar heen voor haar zorgden en werk van haar overnamen. Er waren signalen dat het niet altijd goed met haar ging, en er waren ook betere periodes. Op dat moment zag ik daar nog geen kwaad in.
+          placement: rail
+          theme: care
       links:
         - href: nl/begrijp-het/waarom-overkwam-dit-mij/
           label: Waarom overkwam dit mij?
@@ -129,6 +133,10 @@ timeline:
       lenses: []
       description: Ik liet steeds meer afspraken met vrienden gaan. Er kwam steeds meer spanning rond mijn familie. Ik ervoer dat ik moest kiezen tussen mijn gezin en mijn eigen mensen.
       between:
+        - title: Mijn familie iets terug willen geven
+          text: Mijn familie en vrienden hadden geholpen met de verbouwing. Toen ik familie financieel wilde bedanken en helpen bij hun eigen problemen, ervoer ik weerstand. Voor mij begon daar de spanning rond de mensen en de wereld waar ik vandaan kwam.
+          placement: rail
+          theme: connection
         - title: Niet meer zomaar langsgaan
           text: Vroeger ging ik spontaan naar familie of vrienden. Die behoefte bleef, maar eerst voelde het alsof het niet kon, later alsof het niet mocht. Toen er eenmaal afstand was ontstaan, durfde ik niet meer.
           placement: card
@@ -158,7 +166,11 @@ timeline:
       theme: money
       lenses: []
       description: Mijn sociale wereld was al weggevallen toen er afspraken voor ons gezin op papier moesten komen, omdat dat nodig zou zijn voor ons kind. Ik herinner me dat ik emotioneel een wrak was. Veel ging langs me heen en ik had niemand bij wie ik terechtkon. Ik vertrouwde erop dat we er met hetzelfde gevoel in stonden. Ik tekende ook een testament, waarin ik de mensen uitsloot van wie ik hield.
-      between: []
+      between:
+        - title: Ook de laatste contacten werden minder
+          text: Later ging ik soms nog naar sociale activiteiten op mijn werk. Ik kreeg te horen dat ik het alleen maar leuk had, terwijl het thuis zwaar was. Ook dat liet ik steeds vaker gaan.
+          placement: rail
+          theme: connection
       reflection:
         perspective: felt
         text: Ik was zo trots op mijn kind. Juist op de mooiste momenten deed het pijn dat ik die niet kon delen met de mensen van wie ik hield.
@@ -198,6 +210,10 @@ timeline:
           text: Als ik ziek was, werd er voor mij gezorgd. Later had ik vaak het gevoel dat er een rekening volgde. Die zorg voelde voor mij niet vrij van verwijten.
           placement: card
           theme: emotional
+        - title: Alleen nog op mijn werk iets kunnen delen
+          text: Uiteindelijk had ik buiten mijn collega’s niemand meer. Het was werken op mijn werk en thuis werken voor het gezin. Wanneer ik iets vertelde aan een collega met wie ik vaak reed, viel hij geregeld stil. Ik ervoer dat als ongeloof, alsof hij niet wist wat hij moest zeggen.
+          placement: rail
+          theme: connection
         - title: Mijn lichaam gaf signalen
           text: Ik had maagzuurklachten, migraineaanvallen, zag vlekken en had jarenlang darmklachten. Mijn lichaam gaf signalen die ik toen niet kon rijmen met wat er gebeurde.
           placement: rail
@@ -209,6 +225,8 @@ timeline:
           label: Ik durf niet over geld te praten
         - href: nl/begrippen/silent-treatment/
           label: Silent treatment
+        - href: nl/begrippen/isolatie/
+          label: Isolatie
     - eyebrow: Bouwen
       title: Ik bleef bouwen terwijl de afstand groeide.
       theme: money
