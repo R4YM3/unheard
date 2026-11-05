@@ -86,6 +86,17 @@ const { label, milestones, context } = Astro.props;
                     ))}
                 </div>
               )}
+              {milestone.links.length > 0 && (
+                <p class="timeline-recognise">
+                  <span>Herken je dit?</span>{' '}
+                  {milestone.links.map((link, index) => (
+                    <>
+                      {index > 0 && ' · '}
+                      <a href={link.href}>{link.label}</a>
+                    </>
+                  ))}
+                </p>
+              )}
             </article>
           </li>
           {milestone.between
