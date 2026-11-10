@@ -36,7 +36,7 @@ const steps = await Promise.all(
 ---
 
 <section class="section" id="tijdlijn" aria-labelledby="gevoel-tijdlijn-heading">
-  <div class="wrap">
+  <div class="wrap reading">
     <p class="eyebrow">{timeline.eyebrow}</p>
     <h2 id="gevoel-tijdlijn-heading">{timeline.heading}</h2>
     <p class="reading">{timeline.lead}</p>
@@ -65,6 +65,8 @@ const steps = await Promise.all(
     gap: 1.25rem;
     margin-block: 2rem;
     padding: 0;
+    padding-inline-start: clamp(1rem, 3vw, 2rem);
+    border-inline-start: 2px solid var(--border);
     list-style: none;
   }
 </style>

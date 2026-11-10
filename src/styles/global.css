@@ -148,6 +148,10 @@ h4 {
 .wrap.reading {
   margin-inline: max(1.25rem, calc((100% - var(--content)) / 2)) auto;
 }
+/* Without a side rail, centre the reading column while keeping text left aligned. */
+.article-layout:not(.article-layout--rail) .wrap.reading {
+  margin-inline: auto;
+}
 .print-only {
   display: none;
 }
