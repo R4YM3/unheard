@@ -90,7 +90,10 @@ const homeLists = [
           ))
         }
       </div>
-      <p><a class="text-link" href={home.feelings.moreHref}>{home.feelings.moreLabel}</a></p>
+      <p class="listing-more">
+        <a class="button button--quiet" href={home.feelings.moreHref}>{home.feelings.moreLabel} →</a
+        >
+      </p>
     </div>
   </section>
   {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}

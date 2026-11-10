@@ -1,7 +1,7 @@
 ---
 /**
- * The pages between the section and the current page. Home (the logo) and the current page
- * (the title) are not repeated visually; the current page stays available to screen readers.
+ * The pages between the section and the current page, then the current page itself (not a
+ * link), so readers always see where they are. Home is the logo.
  */
 import type { Locale } from '../i18n/config';
 import { ui } from '../i18n/ui';
@@ -25,7 +25,7 @@ const { ancestors, current, locale } = Astro.props;
           </li>
         ))}
         {current && (
-          <li class="sr-only" aria-current="page">
+          <li class="breadcrumbs__current" aria-current="page">
             {current.label}
           </li>
         )}

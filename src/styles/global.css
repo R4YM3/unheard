@@ -2497,3 +2497,30 @@ a.card:focus-visible,
   color: var(--link);
   text-decoration: underline;
 }
+
+/* The current page closes the trail: plain text, not a link. */
+.breadcrumbs__current {
+  color: var(--muted);
+}
+
+/* The founder's own route through a topic: a torn top edge, like a page taken out of a
+   notebook. The route went up and down; the edge shows it. */
+.founder-note {
+  --tear: 12px;
+  padding-top: calc(var(--tear) + clamp(1.35rem, 3vw, 1.9rem));
+  border-top: 0;
+  -webkit-mask:
+    conic-gradient(from 135deg at 50% 0, #000 90deg, #0000 0) 0 0 / calc(var(--tear) * 2.4)
+      var(--tear) repeat-x,
+    linear-gradient(#000 0 0) 0 calc(var(--tear) - 0.5px) / 100% 100% no-repeat;
+  mask:
+    conic-gradient(from 135deg at 50% 0, #000 90deg, #0000 0) 0 0 / calc(var(--tear) * 2.4)
+      var(--tear) repeat-x,
+    linear-gradient(#000 0 0) 0 calc(var(--tear) - 0.5px) / 100% 100% no-repeat;
+}
+@media print {
+  .founder-note {
+    -webkit-mask: none;
+    mask: none;
+  }
+}
