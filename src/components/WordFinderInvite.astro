@@ -9,26 +9,26 @@ interface Props {
 const { heading, text, note, href, label } = Astro.props;
 ---
 
-<aside class="word-finder-invite" aria-labelledby="word-finder-invite-heading">
-  <div>
-    <h2 id="word-finder-invite-heading">{heading}</h2>
-    <p>{text}</p>
-    <p class="note">{note}</p>
+<section
+  class="section section--soft"
+  aria-labelledby="word-finder-invite-heading"
+  id="woorden-vinden"
+>
+  <div class="wrap word-finder-invite">
+    <div>
+      <h2 id="word-finder-invite-heading">{heading}</h2>
+      <p>{text}</p>
+      <p class="note">{note}</p>
+    </div>
+    <a class="button" href={href}>{label}<span aria-hidden="true"> →</span></a>
   </div>
-  <a class="button" href={href}>{label}<span aria-hidden="true"> →</span></a>
-</aside>
+</section>
 <style>
   .word-finder-invite {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: clamp(1.25rem, 3vw, 3rem);
-    padding: clamp(1.35rem, 3vw, 2.25rem);
-    margin-block-end: clamp(2.5rem, 5vw, 4rem);
-    border: 1px solid var(--safe-border);
-    border-radius: var(--radius);
-    background: var(--safe);
-    color: var(--text);
   }
   .button {
     gap: 0.5rem;

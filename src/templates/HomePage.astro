@@ -73,7 +73,6 @@ const homeLists = [
   </section>
   <section class="section section--tape" aria-labelledby="gevoelens-heading" id="gevoelens">
     <div class="wrap">
-      {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
       <div class="section-heading">
         <div>
           <p class="eyebrow">{home.feelings.eyebrow}</p>
@@ -94,6 +93,7 @@ const homeLists = [
       <p><a class="text-link" href={home.feelings.moreHref}>{home.feelings.moreLabel}</a></p>
     </div>
   </section>
+  {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
   {
     data.scenarios.length > 0 && (
       <PerspectiveSwitch
