@@ -280,3 +280,43 @@ export const breadcrumbsFor = async (entry: RoutedEntry) => {
   crumbs.push({ href: routeFor(entry), label: entry.data.cardTitle ?? entry.data.title });
   return crumbs;
 };
+
+/**
+ * "Verder lezen" always offers at least `min` options. When a page names fewer related
+ * pages, it is topped up with neighbours: first pages in the same folder, then the page one
+ * level up, then other pages of the same kind. Home, search and (when the help band shows)
+ * the help page are never added.
+ */
+export const topUpRelated = async <T extends { href: string }>(
+  entry: RoutedEntry,
+  cards: T[],
+  { min = 3, skipHelp = true } = {},
+): Promise<Array<T | LinkCard>> => {
+  if (cards.length >= min || ['home', 'zoeken'].includes(entry.data.translationKey)) return cards;
+  const published = (await getPublishedEntries()).filter(
+    (candidate) =>
+      candidate.data.locale === entry.data.locale &&
+      candidate !== entry &&
+      !['home', 'zoeken'].includes(candidate.data.translationKey) &&
+      !(skipHelp && candidate.data.translationKey === 'hulp-vinden'),
+  );
+  const folder = entry.data.slug.includes('/')
+    ? entry.data.slug.slice(0, entry.data.slug.lastIndexOf('/') + 1)
+    : '';
+  const parentSlug = folder.replace(/\/$/, '');
+  const siblings = published
+    .filter((candidate) => folder && candidate.data.slug.startsWith(folder))
+    .filter((candidate) => !candidate.data.slug.slice(folder.length).includes('/'))
+    .sort(byOrder);
+  const parent = published.filter((candidate) => parentSlug && candidate.data.slug === parentSlug);
+  const sameKind = published
+    .filter((candidate) => candidate.collection === entry.collection)
+    .sort(byOrder);
+  const result: Array<T | LinkCard> = [...cards];
+  for (const candidate of [...siblings, ...parent, ...sameKind]) {
+    if (result.length >= min) break;
+    const card = cardFor(candidate);
+    if (!result.some((existing) => existing.href === card.href)) result.push(card);
+  }
+  return result;
+};

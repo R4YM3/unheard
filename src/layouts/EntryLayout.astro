@@ -12,7 +12,13 @@ import { ui } from '../i18n/ui';
 import { slotFor } from '../lib/photos';
 import { brandName, founderName, shareImage } from '../lib/site';
 import ArticleMeta from '../components/ArticleMeta.astro';
-import { breadcrumbsFor, resolveRelated, routeFor, type RoutedEntry } from '../lib/content';
+import {
+  breadcrumbsFor,
+  resolveRelated,
+  routeFor,
+  topUpRelated,
+  type RoutedEntry,
+} from '../lib/content';
 
 interface Props {
   entry: RoutedEntry;
@@ -56,7 +62,7 @@ const route = routeFor(entry);
 const crumbs = await breadcrumbsFor(entry);
 /* One "Verder lezen" block per page: the template's own links first, then related pages,
    without duplicates and at most six. */
-const related = [
+const named = [
   ...moreLinks.flatMap((card) =>
     card.href
       ? [{ href: card.href, title: card.title, text: card.text, eyebrow: card.eyebrow }]
@@ -68,6 +74,8 @@ const related = [
   /* The help band below already links to the help page. */
   .filter((card) => !(showHelp && card.href.endsWith('/hulp-vinden/')))
   .slice(0, 6);
+/* At least three options, so a reader always has somewhere to go next. */
+const related = await topUpRelated(entry, named, { skipHelp: showHelp });
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
