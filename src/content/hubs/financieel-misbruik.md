@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-10
 reviewedAt: null
 cardTitle: 'Financieel misbruik'
 cardText: 'Wanneer geld, schulden of documenten je keuzevrijheid beperken. Over het verschil met gewone geldzorgen en veilige eerste stappen.'
@@ -40,16 +40,22 @@ listings:
     eyebrow: 'Verdieping'
     heading: 'Praktische deelartikelen'
     lead: 'Kies een onderwerp dat nu bij je past: signalen, het verschil met gewone geldruzie, je eigen documenten, een overzicht maken, afhankelijkheid, druk na een scheiding, herstel en advies.'
+cardsPlacement: inline
 cards:
   - title: 'Ik moet voor elke uitgave toestemming vragen'
+    href: 'nl/begrippen/controle-over-uitgaven/'
     text: 'Weinig zeggenschap over geld kan je zelfstandigheid beperken. Kijk naar afspraken, vrijheid en eventuele gevolgen wanneer je nee zegt.'
   - title: 'Ik weet niet welke schulden of verplichtingen er zijn'
+    href: 'nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/'
     text: 'Onduidelijkheid over gezamenlijke financiën kan onzekerheid en risico’s veroorzaken. Onderzoek veilig welke informatie toegankelijk is.'
   - title: 'Ik voel me schuldig als ik iets voor mezelf koop'
+    href: 'nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/'
     text: 'Schaamte en schuld kunnen blijven hangen wanneer geld herhaaldelijk onderwerp van druk of verwijt is.'
   - title: 'Ik ben bang voor de financiële gevolgen van weggaan'
+    href: 'nl/begrijp-het/financieel-misbruik/afhankelijkheid/'
     text: 'Afhankelijkheid en dreiging met geld kunnen keuzes beperken. Maak niet impulsief grote wijzigingen; vraag vertrouwelijk advies.'
   - title: 'Ik draag steeds kosten waarover ik niet kon meebeslissen'
+    href: 'nl/begrippen/schulden-op-naam/'
     text: 'Beslissingen over verplichtingen zonder vrijwillige instemming verdienen aandacht; bewaar feiten waar dat veilig en toegestaan is.'
 scenarios:
   - label: 'Ik regel alles'

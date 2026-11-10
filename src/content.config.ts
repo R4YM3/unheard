@@ -381,6 +381,7 @@ const hubs = defineCollection({
     lead: z.string().min(20),
     listings: z.array(listing).default([]),
     cards: z.array(card).default([]),
+    cardsPlacement: z.enum(['related', 'inline']).default('related'),
     scenarios: z.array(scenario).max(8).default([]),
     reflection: reflection.optional(),
     feelingTimeline: z
