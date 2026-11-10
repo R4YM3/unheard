@@ -72,7 +72,7 @@ reviewNotes:
 
 ## Wanneer deze kaart kan helpen
 
-Soms kun je uitleggen wat er gebeurde, en doet het evengoed pijn. Je mist iemand. Je schaamt je. Je bent boos op jezelf omdat het “toch wel duidelijk” was. Inzicht en herstel lopen niet gelijk. Deze kaart is er voor die tussenruimte, tijdens een relatie of erna.
+Soms kun je uitleggen wat er gebeurde, en doet het evengoed pijn. [Je mist iemand](nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/). Je schaamt je. Je bent boos op jezelf omdat het “toch wel duidelijk” was. Inzicht en herstel lopen niet gelijk. Deze kaart is er voor die tussenruimte, tijdens een relatie of erna.
 
 Mannen krijgen vaak te horen dat ze het nu wel kunnen afsluiten. Deze vragen eisen dat niet. Ze zijn er ook voor vrouwen en non-binaire lezers. Meer over dit gevoel staat bij [Ik begrijp het, maar het blijft pijn doen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/).
 

@@ -45,7 +45,7 @@ Je bent daarin niet de enige. Van de mensen die in 2024 psychisch geweld in huis
 
 ## Aan wie
 
-Je hoeft het niet aan iedereen te vertellen, en niet alles tegelijk. Begin bij één persoon:
+Je hoeft het niet aan iedereen te vertellen, en niet alles tegelijk. Begin bij [één persoon](nl/herstel/steunnetwerk/):
 
 - iemand bij wie je je eerder veilig voelde, ook als jullie elkaar een tijd minder spraken;
 - iemand die niet meteen een kant kiest of de ander kent;
@@ -60,7 +60,7 @@ Het helpt soms om een eerste zin klaar te hebben. Bijvoorbeeld:
 - "Het gaat al een tijd niet goed tussen mij en mijn ex. Ik merk dat het meer met me doet dan ik dacht."
 - "Ik weet nog niet goed hoe ik het moet noemen, maar ik voel me al lang niet meer mezelf."
 
-Je kunt ook een pagina van deze site laten zien en zeggen: "Hierin herken ik veel."
+Je kunt ook [een pagina van deze site laten zien](nl/hulpmiddelen/help-me-woorden-vinden/) en zeggen: "Hierin herken ik veel."
 
 ## Als iemand niet goed reageert
 

@@ -123,7 +123,7 @@ Een paar vragen kunnen helpen om te ordenen, zonder dat ze een test zijn:
 - **Gaat het om één gesprek of om een terugkerend verloop?** Bijna iedereen reageert weleens defensief. Een patroon is iets anders dan een slechte avond.
 - **Kan het onderwerp later alsnog besproken worden?** Soms wordt iemand eerst boos en komt diegene er de volgende dag rustig op terug. Dat is een ander verhaal dan wanneer het oorspronkelijke onderwerp nooit meer aan bod komt.
 - **Kunnen jullie allebei zeggen dat je iets fout deed?** Als de rollen altijd dezelfde kant op worden omgedraaid, valt dat op.
-- **Speelt er meer?** Denk aan [dwingende controle](nl/begrippen/dwingende-controle/), bedreiging of financiële afhankelijkheid. Dan is het geheel belangrijker dan dit ene begrip.
+- **Speelt er meer?** Denk aan [dwingende controle](nl/begrippen/dwingende-controle/), bedreiging of [financiële afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/). Dan is het geheel belangrijker dan dit ene begrip.
 
 Je kunt van buitenaf niet vaststellen wat iemand bedoelt. Je kunt wel stilstaan bij wat dit soort gesprekken met jou doet.
 
@@ -135,4 +135,4 @@ Voor mannen kan dit extra ingewikkeld zijn. Wie als man aangeeft dat hij zich ge
 
 ## Als je jezelf herkent in de reactie
 
-Misschien lees je dit en denk je: zo reageer ik zelf ook weleens. Dat is geen reden voor paniek. Defensief reageren is menselijk. Het verschil zit in wat je daarna doet: kun je terugkomen op het gesprek, luisteren naar wat de ander raakte en verantwoordelijkheid nemen voor jouw deel? Als je merkt dat je dat vaak niet lukt, kan een gesprek met een psycholoog of huisarts helpen.
+Misschien lees je dit en denk je: zo reageer ik zelf ook weleens. Dat is geen reden voor paniek. Defensief reageren is menselijk. Het verschil zit in wat je daarna doet: kun je terugkomen op het gesprek, luisteren naar wat de ander raakte en verantwoordelijkheid nemen voor jouw deel? Als je merkt dat je dat vaak niet lukt, kan een [gesprek met een psycholoog of huisarts](nl/herstel/therapievormen/gesprekken-met-een-psycholoog/) helpen.

@@ -41,7 +41,7 @@ reviewNotes:
 
 Als je lang hebt gehoord dat je het verkeerd onthoudt, dat je overdrijft of dat je te gevoelig bent, kun je dat gaan geloven. Niet omdat je zwak bent, maar omdat herhaling werkt. Op den duur check je jezelf voordat een ander dat doet.
 
-Dat kan doorwerken, ook als de relatie voorbij is. Je twijfelt bij simpele keuzes. Je vraagt vaak of iets wel klopt. Je voelt iets, maar zegt het niet, omdat je niet zeker weet of je gevoel "terecht" is.
+Dat kan doorwerken, ook als de relatie voorbij is. Je twijfelt bij simpele keuzes. Je vraagt vaak of iets wel klopt. Je [voelt iets, maar zegt het niet](nl/herstel/leren-voelen/), omdat je niet zeker weet of je gevoel "terecht" is.
 
 Dit betekent niet automatisch dat er sprake was van misbruik. Ook na een moeilijke relatie zonder herhaald patroon kun je aan jezelf twijfelen. Maar als je het herkent, mag je het serieus nemen.
 
@@ -61,7 +61,7 @@ Zelfvertrouwen hoeft niet te beginnen bij grote vragen over wat er in de relatie
 
 Sommige mensen helpt het om kort op te schrijven wat ze zagen, hoorden of voelden. Niet om iets te bewijzen of om een dossier op te bouwen, maar om later terug te kunnen lezen: zo beleefde ik het op dat moment. Dat kan rust geven als je herinnering gaat wankelen.
 
-Doe dit alleen op een plek waar het veilig is. Als iemand anders toegang heeft tot je telefoon, computer of papieren, kan dit juist risico geven. Je hoeft niets te bewaren.
+Doe dit alleen op een plek waar het veilig is. Als [iemand anders toegang heeft tot je telefoon, computer of papieren](nl/veilig-gebruik/), kan dit juist risico geven. Je hoeft niets te bewaren.
 
 ### Merk op wanneer je gelijk had
 
@@ -77,7 +77,7 @@ Zelfvertrouwen groeit makkelijker in de buurt van mensen die je laten uitpraten,
 
 ## Voor mannen die gewend zijn het zelf te weten
 
-Veel mannen zijn opgevoed met het idee dat je moet weten wat je doet en daar niet over hoort te twijfelen. Juist dan kan zelftwijfel extra schaamte geven: het voelt als falen. Toch is twijfel na een periode waarin je beleving steeds werd betwist een begrijpelijke reactie. Je hoeft het niet weg te poetsen voordat je er iets aan mag doen.
+Veel mannen zijn opgevoed met het idee dat je moet weten wat je doet en daar niet over hoort te twijfelen. Juist dan kan [zelftwijfel](nl/begrippen/zelftwijfel/) extra schaamte geven: het voelt als falen. Toch is twijfel na een periode waarin je beleving steeds werd betwist een begrijpelijke reactie. Je hoeft het niet weg te poetsen voordat je er iets aan mag doen.
 
 ## Wanneer extra hulp kan helpen
 

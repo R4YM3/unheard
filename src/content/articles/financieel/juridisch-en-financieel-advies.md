@@ -42,12 +42,12 @@ reviewNotes:
 
 ## Wanneer kan advies helpen?
 
-Je hoeft niet eerst zeker te weten dat er sprake is van financieel misbruik om advies te vragen. Advies kan al helpen als:
+Je hoeft niet eerst zeker te weten dat er sprake is van [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) om advies te vragen. Advies kan al helpen als:
 
 - je niet weet welke schulden, leningen of contracten op jouw naam staan;
 - je overweegt om weg te gaan en wilt weten wat dat financieel betekent;
 - je onder druk iets hebt getekend en niet weet wat de gevolgen zijn;
-- geld na een scheiding een terugkerend conflict is;
+- [geld na een scheiding een terugkerend conflict is](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/);
 - je betalingsachterstanden hebt of het overzicht kwijt bent;
 - je je onveilig voelt als je over geld begint.
 

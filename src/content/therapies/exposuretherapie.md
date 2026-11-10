@@ -48,7 +48,7 @@ reviewNotes:
 
 Exposure betekent blootstelling. Bij exposuretherapie ga je onder begeleiding, stap voor stap, juist naar iets toe wat spanning oproept, in plaats van het te vermijden. Dat kan een herinnering zijn, of een situatie die je uit de weg gaat.
 
-Thuisarts, de website van huisartsen voor patiënten, beschrijft imaginaire exposure als een van de traumagerichte behandelingen bij PTSS (posttraumatische stressstoornis), naast EMDR en cognitieve therapie. 'Imaginair' betekent dat je in gedachten teruggaat naar de herinnering, samen met de behandelaar.
+Thuisarts, de website van huisartsen voor patiënten, beschrijft imaginaire exposure als een van de traumagerichte behandelingen bij PTSS (posttraumatische stressstoornis), naast EMDR en [cognitieve therapie](nl/herstel/therapievormen/cognitieve-gedragstherapie/). 'Imaginair' betekent dat je in gedachten teruggaat naar de herinnering, samen met de behandelaar.
 
 Exposure wordt ook buiten traumabehandeling gebruikt, bijvoorbeeld bij situaties die iemand uit spanning vermijdt. Omdat het woord voor verschillende werkwijzen wordt gebruikt, is het goed om een behandelaar te vragen welke vorm precies bedoeld wordt.
 

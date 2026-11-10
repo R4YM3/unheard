@@ -78,7 +78,7 @@ Voor mannen kan rouw extra stil verlopen. Wie gewend is om door te gaan en "er n
 ## Wat kan helpen
 
 - **Ruimte maken voor het gemis.** Een moment op de dag waarop je toestaat dat het er is, in plaats van het steeds weg te duwen.
-- **Erover praten met iemand die niet oordeelt.** Iemand die niet meteen zegt dat je blij moet zijn dat het voorbij is.
+- **[Erover praten met iemand die niet oordeelt](nl/herstel/hoe-vertel-ik-het/).** Iemand die niet meteen zegt dat je blij moet zijn dat het voorbij is.
 - **Opschrijven waar je om rouwt.** Een lijstje kan helpen om het verlies concreter te maken. Je hoeft het niet te bewaren.
 - **Kleine rituelen.** Een wandeling op een plek die belangrijk voor je is, een brief die je niet verstuurt, iets wat je opruimt als je eraan toe bent.
 - **Geduld.** Niet met de bedoeling dat het vanzelf overgaat, maar zodat je niet steeds hoeft te forceren.

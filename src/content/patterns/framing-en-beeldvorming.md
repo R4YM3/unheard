@@ -87,8 +87,8 @@ Dat laatste noemen mannen in onderzoek vaak als reden om geen hulp te zoeken. Ee
 
 ## Wat kan helpen?
 
-- **Je hoeft niet iedereen te overtuigen.** Kies een paar mensen bij wie je je verhaal rustig kunt vertellen.
+- **Je hoeft niet iedereen te overtuigen.** Kies een paar mensen bij wie je [je verhaal rustig kunt vertellen](nl/herstel/hoe-vertel-ik-het/).
 - **Reageer, als het kan, niet in de hitte van het moment.** Een rustige, korte reactie houdt meer stand dan een uitgebreide verdediging.
-- **Leg feiten vast als je met instanties te maken hebt**, bijvoorbeeld data, afspraken en correspondentie. Bewaar dat veilig, niet op een gedeeld apparaat.
-- **Zoek juridisch advies** als beeldvorming gevolgen heeft voor omgang, werk of andere belangrijke beslissingen. Het Juridisch Loket heeft voor iedereen gratis informatie op de website en geeft gratis persoonlijk advies als je inkomen en spaargeld onder een bepaalde grens liggen.
+- **Leg feiten vast als je met instanties te maken hebt**, bijvoorbeeld data, afspraken en correspondentie. Bewaar dat veilig, [niet op een gedeeld apparaat](nl/veilig-gebruik/).
+- **Zoek [juridisch advies](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/)** als beeldvorming gevolgen heeft voor omgang, werk of andere belangrijke beslissingen. Het Juridisch Loket heeft voor iedereen gratis informatie op de website en geeft gratis persoonlijk advies als je inkomen en spaargeld onder een bepaalde grens liggen.
 - **Zoek steun voor jezelf.** Een huisarts, psycholoog of Veilig Thuis (0800-2000) kan meedenken, ook als je niet weet of het 'erg genoeg' is. Zie [Hulp vinden](nl/hulp-vinden/).

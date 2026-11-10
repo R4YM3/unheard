@@ -46,7 +46,7 @@ Uitleg die raakt aan gezondheid, recht, statistiek of hulpverlening moet terug t
 
 Elke bron wordt rechtstreeks geopend en nagelezen voordat ernaar wordt verwezen. Bij elke bron staat de datum waarop dat voor het laatst is gebeurd. Kan een bewering niet worden teruggevonden in een bron, dan wordt die niet gepubliceerd. Liever een pagina met minder informatie dan een pagina met een claim die niet klopt.
 
-Online gaan veel beweringen en cijfers rond over misbruik, narcisme en relaties. Een deel daarvan is niet te herleiden of wordt ruimer gebruikt dan de oorspronkelijke bron toelaat. Zulke beweringen worden niet overgenomen.
+Online gaan veel beweringen en cijfers rond over misbruik, [narcisme](nl/begrippen/narcisme/) en relaties. Een deel daarvan is niet te herleiden of wordt ruimer gebruikt dan de oorspronkelijke bron toelaat. Zulke beweringen worden niet overgenomen.
 
 ## Wat de status en datums betekenen
 

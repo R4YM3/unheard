@@ -39,7 +39,7 @@ sources:
 
 Iedereen beïnvloedt anderen. Je overtuigt een vriend om mee te gaan naar een film, je probeert je partner over te halen voor een vakantiebestemming. Dat is normaal. Beïnvloeding wordt manipulatie als iemand je stuurt op een manier die verborgen, misleidend of dwingend is, zodat je keuzes maakt die je met volledige informatie en zonder druk misschien niet had gemaakt.
 
-Er is geen eenduidige klinische definitie van manipulatie. In dit artikel gaat het om herhaald gedrag waarmee iemand jouw gedachten, gevoelens of beslissingen probeert te sturen via misleiding, schuld, angst of verwarring, in plaats van via een open gesprek. Veilig Thuis omschrijft het als een signaal van dwingende controle: je partner probeert je gedachten, beslissingen of acties te controleren door misleiding.
+Er is geen eenduidige klinische definitie van manipulatie. In dit artikel gaat het om herhaald gedrag waarmee iemand jouw gedachten, gevoelens of beslissingen probeert te sturen via misleiding, schuld, angst of verwarring, in plaats van via een open gesprek. Veilig Thuis omschrijft het als een signaal van [dwingende controle](nl/begrippen/dwingende-controle/): je partner probeert je gedachten, beslissingen of acties te controleren door misleiding.
 
 Psychische manipulatie is een verzamelterm. Veel specifiekere begrippen vallen eronder, zoals [gaslighting](nl/begrippen/gaslighting/), [DARVO](nl/begrippen/darvo/), [schuldverschuiving](nl/begrippen/schuldverschuiving/), [triangulatie](nl/begrippen/triangulatie/) en [love bombing](nl/begrippen/love-bombing/).
 
@@ -87,12 +87,12 @@ Of iemand bewust manipuleert, kun je van buitenaf meestal niet vaststellen. Gelu
 - verwarring en twijfel aan je eigen oordeel, zie [zelftwijfel](nl/begrippen/zelftwijfel/);
 - [schuldgevoel](nl/wat-voel-ik/ik-voel-me-schuldig/) dat niet in verhouding staat tot wat je deed;
 - [moeite om nee te zeggen](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/);
-- het gevoel dat je steeds op je hoede moet zijn.
+- het gevoel dat je [steeds op je hoede moet zijn](nl/begrippen/hyperwaakzaamheid/).
 
 ## Wat kan helpen?
 
 - **Neem tijd voor beslissingen.** "Ik denk erover na en kom erop terug" is een volledig antwoord.
 - **Vraag om concrete informatie.** Bijvoorbeeld: "Wat is er precies met je moeder?"
-- **Praat met iemand buiten de situatie** om je ervaring te toetsen.
+- **[Praat met iemand buiten de situatie](nl/herstel/steunnetwerk/)** om je ervaring te toetsen.
 - **Schrijf belangrijke gesprekken op**, als dat veilig kan. Zo heb je iets om op terug te vallen als je herinnering in twijfel wordt getrokken.
 - **Herken je een patroon van controle?** Vraag gratis en anoniem advies bij Veilig Thuis (0800-2000). Zie ook [Hulp vinden](nl/hulp-vinden/).

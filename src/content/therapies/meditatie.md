@@ -64,7 +64,7 @@ Dat hangt sterk af van de vorm die je kiest. In grote lijnen:
 - Bij een cursus of training oefen je samen met anderen onder begeleiding, en krijg je meestal oefeningen mee voor thuis.
 - Bij MBCT gaat het om een gestructureerde groepstraining van acht weken.
 
-Meditatie klinkt rustig, maar kan in het begin onwennig zijn. Als je gewend bent om altijd 'aan' te staan, kan stilzitten juist onrustig voelen. Soms komen er gedachten of herinneringen naar boven die je liever wegduwt. Merk je dat, dan hoef je niet door te zetten. Bespreek het met een professional.
+Meditatie klinkt rustig, maar kan in het begin onwennig zijn. Als je gewend bent om [altijd 'aan' te staan](nl/wat-voel-ik/ik-sta-voortdurend-aan/), kan stilzitten juist onrustig voelen. Soms komen er gedachten of herinneringen naar boven die je liever wegduwt. Merk je dat, dan hoef je niet door te zetten. Bespreek het met een professional.
 
 Thuisarts geeft ook algemene tips om beter te ontspannen. Die zijn bedoeld voor dagelijks gebruik en zijn geen behandeling.
 
@@ -79,7 +79,7 @@ Wat wel vaststaat:
 
 Wat níet uit deze bronnen volgt:
 
-- dat meditatie helpt bij de nasleep van emotioneel of financieel misbruik in het algemeen;
+- dat meditatie helpt bij de nasleep van emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) in het algemeen;
 - dat meditatie een vervanging is voor andere hulp;
 - dat losse oefeningen of apps hetzelfde doen als een begeleide training zoals MBCT.
 

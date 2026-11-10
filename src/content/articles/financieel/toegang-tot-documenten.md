@@ -37,7 +37,7 @@ reviewNotes:
 
 Documenten lijken een praktisch onderwerp, maar ze raken aan iets groters: kun je zelf handelen als dat nodig is? Wie geen toegang heeft tot zijn identiteitsbewijs, bankgegevens of contracten, kan moeilijker een eigen rekening regelen, een huurwoning zoeken, hulp aanvragen of advies vragen.
 
-Bij financieel misbruik kan toegang tot documenten bewust of onbewust beperkt zijn. Ook als dat niet zo is, geeft het rust om te weten waar je eigen papieren zijn.
+Bij [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) kan toegang tot documenten bewust of onbewust beperkt zijn. Ook als dat niet zo is, geeft het rust om te weten waar je eigen papieren zijn.
 
 ## Welke documenten zijn van jou?
 
@@ -58,7 +58,7 @@ Je hoeft niet alles te hebben. Het gaat om weten wat er bestaat en waar het is.
 - Je documenten liggen op een plek waar jij niet bij kunt of mag komen.
 - Post op jouw naam wordt geopend of achtergehouden.
 - Wachtwoorden van jouw bank of andere online omgevingen zijn alleen bij de ander bekend.
-- Je weet niet welke contracten of leningen op jouw naam lopen.
+- Je weet niet welke [contracten of leningen op jouw naam lopen](nl/begrippen/schulden-op-naam/).
 - Als je ernaar vraagt, volgt er een verwijt of een reactie waar je bang voor bent.
 
 ## Wanneer het niet zomaar af te leiden is

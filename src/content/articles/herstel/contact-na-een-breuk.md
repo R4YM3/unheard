@@ -48,7 +48,7 @@ Na een breuk willen veel mensen afstand. Maar soms kan dat niet helemaal. Je dee
 
 Als de relatie werd gekenmerkt door verwijten, verdraaiingen of druk, kan dat na de breuk doorgaan. Berichten over een simpele afspraak kunnen uitlopen op discussies over vroeger. Een overdracht van de kinderen kan elke keer een gespannen moment zijn. Thuisarts beschrijft dat langdurige stress vaak voortkomt uit onzekerheid, bijvoorbeeld over geld, familie of een relatie.
 
-Niet elke moeizame samenwerking na een scheiding is een teken van misbruik. Veel ex-partners hebben het lastig met elkaar. Maar als je merkt dat je bij elk contact op je hoede bent, mag je jezelf daarbij helpen.
+Niet elke moeizame samenwerking na een scheiding is een teken van misbruik. Veel ex-partners hebben het lastig met elkaar. Maar als je merkt dat je [bij elk contact op je hoede bent](nl/begrippen/hyperwaakzaamheid/), mag je jezelf daarbij helpen.
 
 ## Structuur geeft rust
 
@@ -75,7 +75,7 @@ Meer over omgaan met berichten die je onrustig maken staat bij [triggers en moei
 
 ## Grenzen in het contact
 
-Je mag bepalen waar het contact over gaat. Als een gesprek afdwaalt naar vroeger of naar beschuldigingen, mag je terugkeren naar het onderwerp, of het gesprek beëindigen. "Ik wil het nu alleen over de afspraak van zaterdag hebben."
+Je mag [bepalen waar het contact over gaat](nl/herstel/grenzen-leren-stellen/). Als een gesprek afdwaalt naar vroeger of naar beschuldigingen, mag je terugkeren naar het onderwerp, of het gesprek beëindigen. "Ik wil het nu alleen over de afspraak van zaterdag hebben."
 
 Dat is geen confrontatie, maar een manier om bij de zaak te blijven. Het doel is niet om de ander te veranderen of te overtuigen, maar om jezelf heel te houden. Ga ook niet op zoek naar een groot gesprek om alles uit te praten; dat kan de spanning juist vergroten.
 

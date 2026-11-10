@@ -88,12 +88,12 @@ Wat het verschil kan maken:
 - het gevoel dat je niet volwassen bent, of dat je niet te vertrouwen bent;
 - schaamte, waardoor je anderen gaat ontwijken: je kunt immers niet mee uit eten;
 - [isolatie](nl/begrippen/isolatie/), omdat sociale activiteiten geld kosten;
-- angst om over geld te praten, ook later in nieuwe relaties;
+- [angst om over geld te praten](nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/), ook later in nieuwe relaties;
 - afhankelijkheid, waardoor vertrekken moeilijk voelt. Zie [macht en afhankelijkheid](nl/begrippen/macht-en-afhankelijkheid/).
 
 ## Wat kan helpen?
 
-- **Vraag, als het veilig is, om inzage.** Bijvoorbeeld: "Ik wil graag samen naar onze rekeningen kijken, zodat ik ook weet hoe we ervoor staan."
+- **[Vraag, als het veilig is, om inzage](nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/).** Bijvoorbeeld: "Ik wil graag samen naar onze rekeningen kijken, zodat ik ook weet hoe we ervoor staan."
 - **Houd, als het veilig kan, een kleine eigen buffer** of een eigen rekening. Wees je ervan bewust dat bankmeldingen of afschriften zichtbaar kunnen zijn voor de ander.
 - **Praat met iemand buiten de relatie** over hoe jullie geld verdelen. Hoe anderen erop reageren, kan je helpen om je eigen situatie te zien.
 - **Bel Geldfit** (0800-8115) voor gratis en anoniem advies over geldzaken.

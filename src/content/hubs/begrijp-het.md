@@ -52,7 +52,7 @@ reviewNotes:
 
 Misschien heb je lang gedacht dat het aan jou lag. Dat je te gevoelig was, te moeilijk, of dat je het verkeerd had onthouden. Misschien merk je pas achteraf hoeveel je jezelf hebt aangepast. Het kan dan helpen om te lezen dat anderen iets vergelijkbaars hebben meegemaakt, en dat er woorden voor bestaan.
 
-Die woorden zijn hulpmiddelen. Een begrip als gaslighting of dwingende controle beschrijft gedrag en het effect daarvan. Het zegt niets over wie iemand is, en het is geen diagnose. Herken je iets, dan betekent dat niet automatisch dat er sprake is van misbruik. Eén voorbeeld of één gevoel bewijst niets. Wat telt, is wat er steeds opnieuw gebeurt en wat het met je doet.
+Die woorden zijn hulpmiddelen. Een begrip als [gaslighting](nl/begrippen/gaslighting/) of [dwingende controle](nl/begrippen/dwingende-controle/) beschrijft gedrag en het effect daarvan. Het zegt niets over wie iemand is, en het is geen diagnose. Herken je iets, dan betekent dat niet automatisch dat er sprake is van misbruik. Eén voorbeeld of één gevoel bewijst niets. Wat telt, is wat er steeds opnieuw gebeurt en wat het met je doet.
 
 Deze pagina's helpen je daarom om je eigen ervaring te verwoorden. Ze helpen niet om vast te stellen of je partner of ex een bepaalde persoonlijkheid heeft. Dat kan niemand op afstand, en het is ook niet nodig om je eigen gevoel serieus te nemen.
 
@@ -60,10 +60,10 @@ Deze pagina's helpen je daarom om je eigen ervaring te verwoorden. Ze helpen nie
 
 Veel mensen beginnen bij een gevoel: twijfel, schuld, spanning, of het idee dat je jezelf kwijt bent. Daar gaat [Wat voel ik?](nl/wat-voel-ik/) over. Hier gaat het om de volgende stap: begrijpen wat er om je heen gebeurde, of nog gebeurt.
 
-- **Wat is emotioneel misbruik?** Een uitleg van het begrip, hoe het eruit kan zien en waarom het vaak lang onzichtbaar blijft. Ook voor mannen, die het soms niet herkennen omdat het niet past bij het beeld dat ze ervan hebben.
-- **Ongezond conflict of een patroon?** Iedere relatie kent ruzie. Wat is het verschil tussen een pijnlijk maar gelijkwaardig conflict en een herhaald patroon van controle?
-- **Wat het met je kan doen.** Over zelftwijfel, schuld, waakzaamheid, uitputting en schaamte, en over de grenzen van populaire labels.
-- **Financieel misbruik.** Een eigen hoofdthema, omdat controle over geld, schulden en documenten ingrijpende gevolgen kan hebben, ook lang na een relatie.
+- **[Wat is emotioneel misbruik?](nl/begrijp-het/emotioneel-misbruik/)** Een uitleg van het begrip, hoe het eruit kan zien en waarom het vaak lang onzichtbaar blijft. Ook voor mannen, die het soms niet herkennen omdat het niet past bij het beeld dat ze ervan hebben.
+- **[Ongezond conflict of een patroon?](nl/begrijp-het/conflict-of-patroon/)** Iedere relatie kent ruzie. Wat is het verschil tussen een pijnlijk maar gelijkwaardig conflict en een herhaald patroon van controle?
+- **[Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).** Over [zelftwijfel](nl/begrippen/zelftwijfel/), schuld, waakzaamheid, uitputting en schaamte, en over de grenzen van populaire labels.
+- **[Financieel misbruik](nl/begrijp-het/financieel-misbruik/).** Een eigen hoofdthema, omdat controle over geld, schulden en documenten ingrijpende gevolgen kan hebben, ook lang na een relatie.
 
 Begrijpen is waardevol, maar het is niet het eindpunt. Je kunt precies weten wat er gebeurde en het toch blijven voelen. Over de tijd daarna gaat [Herstel](nl/herstel/).
 

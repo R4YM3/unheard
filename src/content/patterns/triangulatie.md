@@ -84,8 +84,8 @@ Als triangulatie samengaat met [framing en beeldvorming](nl/begrippen/framing-en
 
 ## Wat kan helpen?
 
-- **Houd contact met mensen die jou zelf kennen**, ook als dat moeite kost. Je hoeft ze niet alles uit te leggen.
+- **[Houd contact met mensen die jou zelf kennen](nl/herstel/steunnetwerk/)**, ook als dat moeite kost. Je hoeft ze niet alles uit te leggen.
 - **Ga niet mee in de competitie.** Je hoeft niet te bewijzen dat je beter bent dan iemand met wie je wordt vergeleken.
 - **Vraag, als het veilig is, om rechtstreeks contact**: "Als je iets van mij vindt, hoor ik het liever van jou."
-- **Bescherm kinderen tegen de boodschapperrol**, ook als de ander dat niet doet. Een gezinscoach, mediator of jeugdprofessional kan helpen. Speelt er dreiging of controle, dan zijn gezamenlijke of bemiddelende gesprekken niet altijd veilig; bespreek dat eerst met een hulpverlener.
+- **[Bescherm kinderen tegen de boodschapperrol](nl/herstel/ouder-blijven-met-een-ex-die-controle-zoekt/)**, ook als de ander dat niet doet. Een gezinscoach, mediator of jeugdprofessional kan helpen. Speelt er dreiging of controle, dan zijn gezamenlijke of bemiddelende gesprekken niet altijd veilig; bespreek dat eerst met een hulpverlener.
 - **Merk je dat je steeds verder alleen komt te staan?** Praat erover met iemand buiten de situatie, bijvoorbeeld je huisarts, of vraag advies bij Veilig Thuis (0800-2000). Zie ook [Hulp vinden](nl/hulp-vinden/).

@@ -1,5 +1,6 @@
 ---
-/** Renders plain frontmatter text with the founder-review marker highlighted. */
+/** Renders editorial internal links and highlights founder-review markers. No raw HTML. */
+import { inlineParts } from '../lib/inline-text';
 interface Props {
   text: string;
 }
@@ -11,7 +12,15 @@ const parts = Astro.props.text.split(MARKER);
   parts.map((part, index) => (
     <>
       {index > 0 && <mark class="review-marker">{MARKER}</mark>}
-      {part}
+      {inlineParts(part).map((segment) =>
+        segment.href ? (
+          <a class="inline-link" href={segment.href}>
+            {segment.text}
+          </a>
+        ) : (
+          segment.text
+        ),
+      )}
     </>
   ))
 }

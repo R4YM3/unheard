@@ -123,7 +123,7 @@ Het kan ook breder zijn: op je werk, in je familie, op sociale media. Overal waa
 
 Bevestiging zoeken is meestal een reactie op onzekerheid over je eigen waarneming. Als je niet meer zeker weet of je gevoel klopt, leen je tijdelijk het oordeel van een ander. Dat is begrijpelijk. Het probleem is dat geleend vertrouwen niet blijft.
 
-Die onzekerheid kan gegroeid zijn door gesprekken waarin je beleving steeds werd tegengesproken. Als dat herhaaldelijk en stelselmatig gebeurt, wordt dat weleens gaslighting genoemd. Maar of dat bij jou speelt, kun je niet afleiden uit het feit dat je bevestiging zoekt; veel mensen doen dat om heel andere redenen. Over het verlies van vertrouwen in je eigen waarneming gaat de pagina [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
+Die onzekerheid kan gegroeid zijn door gesprekken waarin je beleving steeds werd tegengesproken. Als dat herhaaldelijk en stelselmatig gebeurt, wordt dat weleens [gaslighting](nl/begrippen/gaslighting/) genoemd. Maar of dat bij jou speelt, kun je niet afleiden uit het feit dat je bevestiging zoekt; veel mensen doen dat om heel andere redenen. Over het verlies van vertrouwen in je eigen waarneming gaat de pagina [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
 Het kan ook ouder zijn. Wie vroeger vooral waardering kreeg voor presteren of aanpassen, zoekt later makkelijker naar een teken dat het goed genoeg is. En in periodes van stress of verlies vraagt iedereen meer houvast.
 

@@ -39,7 +39,7 @@ sources:
 
 Hyperwaakzaamheid is een toestand waarin je veel alerter bent dan normaal, vooral op mogelijke dreiging. De American Psychological Association omschrijft het als een toestand van abnormaal verhoogde alertheid, in het bijzonder voor prikkels die bedreigend of mogelijk gevaarlijk zijn.
 
-In gewone woorden: je radar staat altijd aan. Je let op toon, gezichtsuitdrukkingen, voetstappen, het geluid van een sleutel in de deur. Je probeert te voorspellen wat er komt, zodat je je kunt voorbereiden.
+In gewone woorden: [je radar staat altijd aan](nl/wat-voel-ik/ik-sta-voortdurend-aan/). Je let op toon, gezichtsuitdrukkingen, voetstappen, het geluid van een sleutel in de deur. Je probeert te voorspellen wat er komt, zodat je je kunt voorbereiden.
 
 Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'loopt op eieren en is voortdurend alert' als mogelijk signaal bij iemand die psychische mishandeling meemaakt.
 
@@ -53,7 +53,7 @@ Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noe
 ## Hoe kan het eruitzien?
 
 - Je hoort meteen aan de manier waarop de voordeur dichtgaat in welke stemming de ander is.
-- Je leest berichten drie keer na voordat je ze verstuurt, om geen verkeerde toon te raken.
+- Je [leest berichten drie keer na voordat je ze verstuurt](nl/herstel/triggers-en-moeilijke-berichten/), om geen verkeerde toon te raken.
 - Je schrikt van een harde stem, ook als die niet tegen jou is.
 - Je kunt je op je werk slecht concentreren omdat je in gedachten thuis bent.
 - In een nieuwe, veilige relatie blijf je wachten op het moment dat het omslaat.

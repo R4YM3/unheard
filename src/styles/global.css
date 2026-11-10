@@ -480,6 +480,7 @@ mark.review-marker {
   text-decoration-thickness: 0.08em;
 }
 .prose a,
+.inline-link,
 .summary-box a,
 .source-list a,
 .card p a,

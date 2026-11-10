@@ -57,7 +57,7 @@ Het is begrijpelijk dat je zo naar jezelf kijkt. Toch helpt het om de vraag om t
 
 ## Het begint zelden als iets wat je zou herkennen
 
-Patronen van controle beginnen meestal klein. Een opmerking over met wie je omgaat. Een keer meekijken in je telefoon. Een ruzie die eindigt met jouw excuses. Los van elkaar lijken het gewone dingen die in elke relatie kunnen gebeuren.
+[Patronen van controle](nl/begrippen/dwingende-controle/) beginnen meestal klein. Een opmerking over met wie je omgaat. Een keer meekijken in je telefoon. Een ruzie die eindigt met jouw excuses. Los van elkaar lijken het gewone dingen die in elke relatie kunnen gebeuren.
 
 Veilig Thuis beschrijft hoe de invloed op je persoonlijke ruimte en beslissingen [steeds erger](https://www.veiligthuis.nl/nl/dwingendecontrole) kan worden, en hoe je je steeds meer afgezonderd kunt voelen van vrienden en familie. Wat geleidelijk verandert, valt van binnenuit nauwelijks op. Elke stap is maar een klein beetje verder dan de vorige, en je went aan wat gisteren nog vreemd voelde.
 
@@ -79,7 +79,7 @@ Dat zijn geen zwaktes. Het zijn eigenschappen die in een gelijkwaardige relatie 
 
 ## Waarom zag ik het niet eerder?
 
-Van binnenuit mis je vaak het perspectief dat anderen wel hebben. Zeker als je minder contact hebt met vrienden of familie, is er niemand die zegt: dit is niet normaal. En als je eigen waarneming steeds ter discussie staat, ga je ook aan je eigen twijfel twijfelen.
+Van binnenuit mis je vaak het perspectief dat anderen wel hebben. Zeker als je [minder contact hebt met vrienden of familie](nl/begrippen/isolatie/), is er niemand die zegt: dit is niet normaal. En als je eigen waarneming steeds ter discussie staat, ga je ook [aan je eigen twijfel twijfelen](nl/begrippen/zelftwijfel/).
 
 Dat je het niet eerder zag, betekent niet dat je het had moeten zien. Het betekent dat het patroon deed wat zulke patronen doen: het maakte zichzelf moeilijk zichtbaar.
 

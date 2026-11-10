@@ -54,6 +54,9 @@ for (const file of files) {
   }
   if (!html.includes('http-equiv="refresh"') && !html.includes('<main'))
     bad.push(`${file}: missing main`);
+  const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? '';
+  if (/\[[^\]\n]+\]\((?:nl|en|ar)\//.test(main))
+    bad.push(`${file}: internal Markdown link is displayed as text instead of a link`);
   if (/lorem ipsum/i.test(html)) bad.push(`${file}: placeholder text`);
   if (!html.includes('<title>')) bad.push(`${file}: missing title`);
   if (!html.includes('<base href=')) bad.push(`${file}: missing base URL`);

@@ -39,11 +39,11 @@ reviewNotes:
 
 ## Wat is gaslighting?
 
-Gaslighting is een vorm van psychische manipulatie waarbij iemand herhaaldelijk jouw waarneming, herinnering of gevoel ondermijnt. Niet één keer, in de hitte van een ruzie, maar zo vaak en zo stellig dat je op den duur meer vertrouwt op het verhaal van de ander dan op je eigen ervaring.
+Gaslighting is een vorm van [psychische manipulatie](nl/begrippen/psychische-manipulatie/) waarbij iemand herhaaldelijk jouw waarneming, herinnering of gevoel ondermijnt. Niet één keer, in de hitte van een ruzie, maar zo vaak en zo stellig dat je op den duur meer vertrouwt op het verhaal van de ander dan op je eigen ervaring.
 
 Het woord is de laatste jaren heel gewoon geworden. Dat heeft een voordeel: veel mensen vinden er eindelijk een woord in voor iets wat ze lang niet konden benoemen. Het heeft ook een nadeel: het woord wordt soms gebruikt voor elk meningsverschil.
 
-Sociologe Paige Sweet beschrijft gaslighting als psychisch misbruik dat ervoor zorgt dat iemand zich 'gek' voelt of zo wordt neergezet. Volgens haar werkt het vooral binnen relaties waarin macht ongelijk verdeeld is, en kan het gebruikmaken van vooroordelen, ongelijkheid en instanties: denk aan de suggestie dat niemand jou zal geloven, of dat jij degene bent die 'instabiel' is. Sweet onderzocht vooral de ervaringen van vrouwen in gewelddadige relaties en legt de nadruk op gender. Wie als man iets vergelijkbaars meemaakt, kan zich herkennen in de beschreven mechanismen, ook al gaat haar onderzoek niet over mannen.
+Sociologe Paige Sweet beschrijft gaslighting als psychisch misbruik dat ervoor zorgt dat iemand zich 'gek' voelt of zo wordt neergezet. Volgens haar werkt het vooral binnen relaties waarin [macht ongelijk verdeeld is](nl/begrippen/macht-en-afhankelijkheid/), en kan het gebruikmaken van vooroordelen, ongelijkheid en instanties: denk aan de suggestie dat niemand jou zal geloven, of dat jij degene bent die 'instabiel' is. Sweet onderzocht vooral de ervaringen van vrouwen in gewelddadige relaties en legt de nadruk op gender. Wie als man iets vergelijkbaars meemaakt, kan zich herkennen in de beschreven mechanismen, ook al gaat haar onderzoek niet over mannen.
 
 Gaslighting is geen diagnose en zegt niets over wie iemand is. Het beschrijft een patroon van gedrag en wat dat met de ontvanger doet.
 
@@ -76,7 +76,7 @@ Een paar dingen om mee te wegen, zonder dat ze een test zijn:
 - **Herhaling.** Gaat het om één keer, of gebeurt het steeds opnieuw, over allerlei onderwerpen?
 - **Richting.** Ligt de 'fout' altijd bij jou, of kan de ander ook zeggen: "Misschien vergis ik me"?
 - **Gevolg.** Word je na zulke gesprekken steeds onzekerder, ga je dingen opschrijven om jezelf te kunnen geloven, of check je je herinneringen bij anderen?
-- **Context.** Speelt er ook controle, dreiging, isolatie of financiële afhankelijkheid? Dan is het belangrijker om naar het geheel te kijken dan naar het label.
+- **Context.** Speelt er ook controle, dreiging, [isolatie](nl/begrippen/isolatie/) of [financiële afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/)? Dan is het belangrijker om naar het geheel te kijken dan naar het label.
 
 Ook als je dit herkent, kun je van buitenaf niet vaststellen wat iemand bedoelt. Iemand kan oprecht een andere herinnering hebben. Wat je wel kunt vaststellen, is wat het patroon met jóu doet. Dat is genoeg om het serieus te nemen.
 
@@ -88,13 +88,13 @@ Gaslighting raakt de basis waarmee je de wereld ordent: vertrouwen in je eigen w
 - moeite met beslissingen, omdat je je eigen oordeel niet meer vertrouwt;
 - schaamte, of het gevoel dat je 'te veel' bent;
 - terugtrekken uit gesprekken, omdat elke poging uitloopt op een discussie over jouw geheugen;
-- uitputting van het eindeloos reconstrueren van wat er 'echt' gebeurde.
+- [uitputting](nl/begrippen/emotionele-uitputting/) van het eindeloos reconstrueren van wat er 'echt' gebeurde.
 
 Dat zijn begrijpelijke reacties op een verwarrende situatie, geen bewijs dat er iets mis is met jou.
 
 ## Wat kan helpen?
 
-- **Schrijf voor jezelf op wat je hebt gezien en gevoeld**, als dat veilig kan. Niet om de ander te overtuigen, maar om je eigen houvast terug te vinden. Bewaar het niet op een apparaat dat iemand anders kan inzien.
+- **Schrijf voor jezelf op wat je hebt gezien en gevoeld**, als dat veilig kan. Niet om de ander te overtuigen, maar om je eigen houvast terug te vinden. Bewaar het [niet op een apparaat dat iemand anders kan inzien](nl/veilig-gebruik/).
 - **Toets bij iemand die je vertrouwt**, die geen partij is en niet voor jou invult wat je moet doen.
 - **Stop met het debat over de feiten** als dat telkens op hetzelfde uitloopt. Je hoeft niet te winnen om te weten wat je hebt meegemaakt.
 - **Merk je dat je bang bent, of dat je steeds meer wordt gecontroleerd?** Dan gaat veiligheid voor uitleggen. Je kunt gratis en anoniem advies vragen bij Veilig Thuis via 0800-2000, dag en nacht. Bij direct gevaar bel je 112. Meer over hulp vind je op [Hulp vinden](nl/hulp-vinden/).

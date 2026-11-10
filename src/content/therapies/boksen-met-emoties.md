@@ -47,7 +47,7 @@ reviewNotes:
 
 ## Waar richt het zich op?
 
-Emoties zitten niet alleen in je hoofd. Spanning, boosheid of verdriet kun je ook in je lichaam merken: in je schouders, je ademhaling, je kaken of je energie aan het eind van de dag. Met 'boksen met emoties' wordt grofweg bedoeld dat je beweging gebruikt om te onderzoeken wat emoties met je doen en hoeveel energie ze kosten.
+Emoties zitten niet alleen in je hoofd. Spanning, boosheid of verdriet kun je ook [in je lichaam merken](nl/herstel/leren-voelen/): in je schouders, je ademhaling, je kaken of je energie aan het eind van de dag. Met 'boksen met emoties' wordt grofweg bedoeld dat je beweging gebruikt om te onderzoeken wat emoties met je doen en hoeveel energie ze kosten.
 
 Dit is geen vastomlijnde behandelvorm met één methode, één opleiding of één beschermde naam. Wat iemand eronder verstaat, verschilt per begeleider. Het kan bij een therapeut plaatsvinden, maar ook daarbuiten.
 

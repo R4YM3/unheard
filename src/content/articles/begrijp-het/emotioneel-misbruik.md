@@ -46,7 +46,7 @@ Emotioneel misbruik is een herhaald patroon waarin iemand een ander kleineert, b
 
 Het woord "misbruik" kan zwaar voelen. Daarom helpt het om te kijken naar twee dingen: **wat er steeds terugkomt**, en **wat het met je doet**. Eén harde opmerking in een ruzie is pijnlijk, maar nog geen patroon. Het gaat om gedrag dat zich herhaalt en waardoor jouw zelfvertrouwen, vrijheid of veiligheid steeds verder afnemen.
 
-Je komt ook andere woorden tegen, zoals psychisch geweld of psychische mishandeling. Het CBS gebruikt in de Prevalentiemonitor Huiselijk Geweld het begrip **psychisch geweld in huiselijke kring**. Daaronder valt structurele verbale agressie, minstens maandelijks, en vormen van dwingende controle waarbij dreiging en intimidatie een rol spelen. Het gaat dan om iemand uit de huiselijke kring, en dat is breder dan alleen een partner of ex.
+Je komt ook andere woorden tegen, zoals psychisch geweld of psychische mishandeling. Het CBS gebruikt in de Prevalentiemonitor Huiselijk Geweld het begrip **psychisch geweld in huiselijke kring**. Daaronder valt structurele verbale agressie, minstens maandelijks, en vormen van [dwingende controle](nl/begrippen/dwingende-controle/) waarbij dreiging en intimidatie een rol spelen. Het gaat dan om iemand uit de huiselijke kring, en dat is breder dan alleen een partner of ex.
 
 Emotioneel misbruik is geen diagnose en zegt niets over de persoonlijkheid van de ander. Het beschrijft gedrag en het effect daarvan.
 
@@ -55,18 +55,18 @@ Emotioneel misbruik is geen diagnose en zegt niets over de persoonlijkheid van d
 Emotioneel misbruik heeft niet één vorm. Vaak is het een combinatie van gedrag dat los bekeken klein lijkt, maar samen een patroon vormt. Een paar voorbeelden, verzonnen en ter illustratie:
 
 - **Kleineren en bespotten.** Steeds opmerkingen over hoe je praat, eruitziet of dingen doet, soms "als grapje" gebracht, ook waar anderen bij zijn.
-- **Je werkelijkheid ondermijnen.** Herhaaldelijk te horen krijgen dat iets niet is gebeurd, dat je het verkeerd onthoudt of overdrijft, tot je aan je eigen geheugen gaat twijfelen. Dat wordt ook wel gaslighting genoemd.
-- **Schuld omdraaien.** Je brengt iets ter sprake en aan het eind van het gesprek ben jij degene die sorry zegt. Bij DARVO gaat het om een specifieke vorm daarvan: ontkennen, aanvallen en de rollen van slachtoffer en dader omdraaien. Daarover gaat de pagina over [DARVO](nl/begrippen/darvo/).
-- **Straffen met zwijgen of afwijzing.** Dagen genegeerd worden na een meningsverschil, zonder dat duidelijk is wat er mis is of hoe het weer goed komt.
+- **Je werkelijkheid ondermijnen.** Herhaaldelijk te horen krijgen dat iets niet is gebeurd, dat je het verkeerd onthoudt of overdrijft, tot je aan je eigen geheugen gaat twijfelen. Dat wordt ook wel [gaslighting](nl/begrippen/gaslighting/) genoemd.
+- **[Schuld omdraaien](nl/begrippen/schuldverschuiving/).** Je brengt iets ter sprake en aan het eind van het gesprek ben jij degene die sorry zegt. Bij DARVO gaat het om een specifieke vorm daarvan: ontkennen, aanvallen en de rollen van slachtoffer en dader omdraaien. Daarover gaat de pagina over [DARVO](nl/begrippen/darvo/).
+- **[Straffen met zwijgen of afwijzing](nl/begrippen/silent-treatment/).** Dagen genegeerd worden na een meningsverschil, zonder dat duidelijk is wat er mis is of hoe het weer goed komt.
 - **Afwisseling van warmte en kou.** Periodes van veel aandacht en genegenheid, afgewisseld met kilte of woede. Dat maakt het moeilijk om afstand te nemen, omdat je blijft hopen op de goede momenten.
 
 ### Structurele patronen: macht, afhankelijkheid en isolatie
 
 Naast losse gedragingen kan er een bredere structuur ontstaan. Bij **dwingende controle** gaat het om een patroon waarin iemand steeds meer bepaalt over het leven van een ander: wie je ziet, waar je bent, wat je uitgeeft, wat je mag vinden. Niet elke regel is controle, maar als jouw ruimte stap voor stap kleiner wordt en een nee steeds duurder wordt, verdient dat aandacht.
 
-Daarbij spelen **macht en afhankelijkheid** vaak een rol. Afhankelijkheid kan financieel zijn, maar ook praktisch of emotioneel: een gedeeld huis, kinderen, een verblijfsvergunning, een gezamenlijke vriendenkring. Hoe afhankelijker je bent, hoe moeilijker het wordt om grenzen aan te geven. Over geld en schulden gaat het eigen thema [financieel misbruik](nl/begrijp-het/financieel-misbruik/).
+Daarbij spelen **[macht en afhankelijkheid](nl/begrippen/macht-en-afhankelijkheid/)** vaak een rol. Afhankelijkheid kan financieel zijn, maar ook praktisch of emotioneel: een gedeeld huis, kinderen, een verblijfsvergunning, een gezamenlijke vriendenkring. Hoe afhankelijker je bent, hoe moeilijker het wordt om grenzen aan te geven. Over geld en schulden gaat het eigen thema [financieel misbruik](nl/begrijp-het/financieel-misbruik/).
 
-**Isolatie** gaat vaak geleidelijk. Vrienden worden minder welkom, familiebezoek levert steeds spanning op, en uiteindelijk lijkt het makkelijker om niet meer te gaan. Ook **sociale druk** kan meespelen, bijvoorbeeld wanneer de omgeving een eenzijdig beeld krijgt van wat er thuis gebeurt, of wanneer anderen worden ingezet om druk uit te oefenen. Deze begrippen worden apart uitgelegd in de [begrippenlijst](nl/begrippen/).
+**[Isolatie](nl/begrippen/isolatie/)** gaat vaak geleidelijk. Vrienden worden minder welkom, familiebezoek levert steeds spanning op, en uiteindelijk lijkt het makkelijker om niet meer te gaan. Ook **[sociale druk](nl/begrippen/sociale-druk/)** kan meespelen, bijvoorbeeld wanneer de omgeving een eenzijdig beeld krijgt van wat er thuis gebeurt, of wanneer anderen worden ingezet om druk uit te oefenen. Deze begrippen worden apart uitgelegd in de [begrippenlijst](nl/begrippen/).
 
 ## Wanneer is het niet zomaar af te leiden?
 
@@ -83,7 +83,7 @@ Emotioneel misbruik kan iedereen overkomen, ongeacht gender. Toch herkennen mann
 
 ## Wat het met je kan doen
 
-Emotioneel misbruik raakt vaak aan hoe je over jezelf denkt. Mensen beschrijven bijvoorbeeld dat ze [steeds aan zichzelf gingen twijfelen](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), zich voor alles schuldig voelden, voortdurend op hun hoede waren of zichzelf niet meer herkenden. Niet iedereen ervaart dat, en het kan ook andere oorzaken hebben. Meer daarover staat in [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).
+Emotioneel misbruik raakt vaak aan hoe je over jezelf denkt. Mensen beschrijven bijvoorbeeld dat ze [steeds aan zichzelf gingen twijfelen](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), [zich voor alles schuldig voelden](nl/wat-voel-ik/ik-voel-me-schuldig/), voortdurend op hun hoede waren of [zichzelf niet meer herkenden](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/). Niet iedereen ervaart dat, en het kan ook andere oorzaken hebben. Meer daarover staat in [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).
 
 ## Wat kan helpen?
 

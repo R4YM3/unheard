@@ -87,6 +87,6 @@ In onderzoek naar DARVO, een verwant patroon, hing meer blootstelling aan zulke 
 
 - **Maak onderscheid tussen jouw aandeel en de rest.** Je kunt erkennen dat je iets onhandig deed, zonder verantwoordelijk te worden voor hoe de ander daarop reageerde.
 - **Formuleer voor jezelf waar het oorspronkelijk over ging.** Schrijf het op als dat veilig kan.
-- **Zoek iemand die met je meekijkt** zonder partij te kiezen of jou te vertellen wat je moet doen.
+- **[Zoek iemand die met je meekijkt](nl/herstel/steunnetwerk/)** zonder partij te kiezen of jou te vertellen wat je moet doen.
 - **Let op je veiligheid.** Als je bang bent voor de reactie van de ander, of als er gedreigd wordt, gaat veiligheid voor gelijk krijgen. Veilig Thuis is dag en nacht gratis bereikbaar via 0800-2000, ook voor advies. Zie ook [Hulp vinden](nl/hulp-vinden/).
 - **Blijft het schuldgevoel?** Een psycholoog of huisarts kan helpen om te onderzoeken waar het vandaan komt. Op [Herstel en therapie](nl/herstel/therapievormen/) lees je meer.

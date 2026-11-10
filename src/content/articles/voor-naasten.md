@@ -77,7 +77,7 @@ Houd dat contact ook als de ander nog niet weg wil, of als het verhaal per week 
 
 ## Veiligheid serieus nemen
 
-Neem gevaar serieus, ook als er geen blauwe plekken zijn en ook als de ander zegt dat het wel meevalt. Emotionele druk en controle via geld kun je niet vanaf de zijlijn meten. Jij hoeft dat niet te classificeren.
+Neem gevaar serieus, ook als er geen blauwe plekken zijn en ook als de ander zegt dat het wel meevalt. Emotionele druk en [controle via geld](nl/begrippen/financieel-economisch-misbruik/) kun je niet vanaf de zijlijn meten. Jij hoeft dat niet te classificeren.
 
 Als je huiselijk geweld vermoedt, legt de [Rijksoverheid](https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/vraag-en-antwoord/huiselijk-geweld/wat-moet-ik-doen-bij-huiselijk-geweld) uit wat je kunt doen. Je hoeft niet zeker te zijn. Hoe je zelf advies vraagt, staat hieronder. Deel het verhaal intussen niet verder in een appgroep. Uitzondering: direct gevaar. Dan bel je 112, ook daarover hieronder.
 

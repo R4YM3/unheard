@@ -82,6 +82,6 @@ Wil je weten wat bekend is over beeldende therapie bij jouw klachten? Vraag het 
 
 ## Past dit bij jou?
 
-Daar is geen test voor, en deze site geeft geen behandeladvies. Misschien herken je dat je moeilijk kunt zeggen wat je voelt of wilt, of dat je jezelf een beetje kwijt bent geraakt. Dat zijn goede onderwerpen voor een gesprek, maar geen automatische reden voor beeldende therapie.
+Daar is geen test voor, en deze site geeft geen behandeladvies. Misschien herken je dat je moeilijk kunt zeggen wat je voelt of wilt, of dat je [jezelf een beetje kwijt bent geraakt](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/). Dat zijn goede onderwerpen voor een gesprek, maar geen automatische reden voor beeldende therapie.
 
 Begin bij je huisarts of de praktijkondersteuner (POH-GGZ). Vertel wat je ervaart en zeg het gerust als praten alleen voor jou niet genoeg voelt. Wie met je meedenkt, kan dan ook ervaringsgerichte vormen meenemen.

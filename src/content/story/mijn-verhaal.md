@@ -153,7 +153,7 @@ timeline:
             perspective: then
             text: Ik wilde niet kiezen. Ik wilde zo graag dat het werkte, voor mijn kind en voor mezelf.
         - title: Waarom ik bleef
-          text: Als kind had ik mezelf beloofd dat mijn kinderen niet hetzelfde zouden meemaken als ik met mijn gescheiden ouders. Ik bleef doorgaan, ook over mijn grenzen.
+          text: Als kind had ik mezelf beloofd dat mijn kinderen niet hetzelfde zouden meemaken als ik met mijn gescheiden ouders. Ik bleef doorgaan, ook [over mijn grenzen](nl/herstel/grenzen-leren-stellen/).
           placement: card
           theme: connection
         - title: Steun die afstand bevestigde
@@ -182,7 +182,7 @@ timeline:
       title: Een kleine vraag werd steeds moeilijker.
       theme: emotional
       lenses: []
-      description: Ik twijfelde steeds meer aan mezelf. Als ik iets voor mezelf wilde, kon ik dagen nadenken over hoe ik het moest brengen. Ik werkte harder en stopte mijn geld in het gezin en het huis. Daarmee verdoofde ik ook mijn pijn.
+      description: Ik [twijfelde steeds meer aan mezelf](nl/begrippen/zelftwijfel/). Als ik iets voor mezelf wilde, kon ik dagen nadenken over [hoe ik het moest brengen](nl/herstel/hoe-vertel-ik-het/). Ik werkte harder en stopte mijn geld in het gezin en het huis. Daarmee verdoofde ik ook mijn pijn.
       between:
         - title: Een paar tientjes durven vragen
           text: In het begin ging het om grotere bedragen voor spullen in huis. Later vond ik het al moeilijk om iets van een paar tientjes ter sprake te brengen. Mijn vragen werden afgewezen, genegeerd of beantwoord met zwijgen. Langzaam maar zeker durfde ik niet meer te vragen.
@@ -192,7 +192,7 @@ timeline:
             perspective: felt
             text: Ik durfde steeds minder te vragen of tegen te spreken. Ik had steeds vaker het gevoel dat ik het toch niet goed deed.
         - title: Geld verdienen en toch blut zijn
-          text: Er kwam iedere maand veel geld binnen, maar toch was ik telkens door mijn geld heen. Ik raakte de regie en het overzicht over mijn eigen financiën kwijt. Zelfs het contact met mijn accountant liep steeds minder via mij.
+          text: Er kwam iedere maand veel geld binnen, maar toch was ik telkens door mijn geld heen. Ik raakte de regie en [het overzicht over mijn eigen financiën](nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/) kwijt. Zelfs het contact met mijn accountant liep steeds minder via mij.
           placement: rail
           theme: money
           reflection:

@@ -28,7 +28,7 @@ Ongehoord is begonnen vanuit mijn eigen ervaring en mijn eigen herstel.
 
 [OPRICHTER REVIEW NODIG] Hier komt in mijn eigen woorden waarom ik deze plek wilde maken: wat ik zelf miste toen ik zocht, en wat ik had willen lezen. Zonder namen, data of details over anderen.
 
-In mijn herstel heb ik verschillende vormen van therapie en begeleiding geprobeerd. Ik ben vader, en ik bouw mijn leven opnieuw op. Over die weg vertel ik meer in [Mijn verhaal](nl/mijn-verhaal/).
+In mijn herstel heb ik verschillende [vormen van therapie en begeleiding](nl/herstel/therapievormen/) geprobeerd. Ik ben vader, en ik bouw mijn leven opnieuw op. Over die weg vertel ik meer in [Mijn verhaal](nl/mijn-verhaal/).
 
 ## Wat de naam betekent
 
@@ -38,13 +38,13 @@ Ongehoord heeft voor mij twee kanten. Het gaat over ervaringen die niet gehoord 
 
 ## Voor wie het is
 
-Ik schrijf in de eerste plaats voor mannen die emotioneel of financieel misbruik meemaken of hebben meegemaakt, in een relatie, in een gezin of na een breuk. Veel mannen zwijgen erover, of hebben er geen woorden voor.
+Ik schrijf in de eerste plaats voor mannen die emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) meemaken of hebben meegemaakt, in een relatie, in een gezin of na een breuk. Veel mannen zwijgen erover, of hebben er geen woorden voor.
 
 [OPRICHTER REVIEW NODIG] Wil ik hier iets zeggen over hoe dat zwijgen voor mij was?
 
-Maar Ongehoord is er voor iedereen. Vrouwen en non-binaire mensen met vergelijkbare vragen zijn net zo welkom. Ook als je je zorgen maakt om iemand anders, of als je nog helemaal geen naam hebt voor wat je meemaakt.
+Maar Ongehoord is er voor iedereen. Vrouwen en non-binaire mensen met vergelijkbare vragen zijn net zo welkom. Ook als je [je zorgen maakt om iemand anders](nl/ik-maak-me-zorgen-om-iemand/), of als je nog helemaal geen naam hebt voor wat je meemaakt.
 
-Je hoeft geen etiket te hebben om hier te mogen lezen. Begin gerust bij een gevoel.
+Je hoeft geen etiket te hebben om hier te mogen lezen. Begin gerust bij [een gevoel](nl/wat-voel-ik/).
 
 ## Eén persoon, geen team
 

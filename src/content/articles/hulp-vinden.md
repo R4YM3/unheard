@@ -148,7 +148,7 @@ Verzamel geen bewijs in het geheim als ontdekking de spanning kan verhogen. Vera
 
 ## Iemand in vertrouwen nemen
 
-Eén mens die kan luisteren is soms genoeg: een vriend, een zus, een collega. Zeg of je luisteren wilt, advies, of dat iemand iets doet. Je hoeft niet meteen alles te vertellen.
+Eén mens die kan luisteren is soms genoeg: een vriend, een zus, een collega. Zeg of je luisteren wilt, advies, of dat iemand iets doet. Je hoeft [niet meteen alles te vertellen](nl/herstel/hoe-vertel-ik-het/).
 
 Voor veel mannen voelt hulp vragen als falen. Dat maakt de ervaring niet kleiner. Wuift de eerste persoon het weg, dan mag je iemand anders kiezen.
 

@@ -74,7 +74,7 @@ Soms kun je niet bij de informatie die je nodig hebt. Je hebt geen toegang tot d
 
 Forceer het dan niet. Als iemand meekijkt met je telefoon, je bankapp of je post, kan het opvallen als je ineens gaat zoeken, inloggen of gegevens opvraagt. Bespreek eerst vertrouwelijk wat veilig is, bijvoorbeeld met [Veilig Thuis](https://www.veiligthuis.nl/nl/contact) via [0800-2000](tel:08002000). Lees ook [Toegang tot je eigen documenten](nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/).
 
-Denk ook na over waar je je overzicht bewaart. Een briefje in een gedeelde la of een bestand op een gedeelde computer is niet altijd privé.
+Denk ook na over waar je je overzicht bewaart. Een briefje in een gedeelde la of [een bestand op een gedeelde computer is niet altijd privé](nl/veilig-gebruik/).
 
 ## Wat het met je kan doen
 

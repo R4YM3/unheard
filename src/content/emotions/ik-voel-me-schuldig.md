@@ -135,7 +135,7 @@ In elke relatie zeggen mensen weleens zulke dingen, zeker onder druk. Het maakt 
 
 ## Wat kan dit verklaren?
 
-Een gesprek kan op een manier verlopen waarbij jouw zorg ongemerkt verdwijnt en jouw gedrag centraal komt te staan. Dat heet weleens schuldverschuiving. Een bekend beschreven patroon is [DARVO](nl/begrippen/darvo/): ontkennen, de ander aanvallen en de rollen van wie gekwetst is en wie kwetst omdraaien. Onderzoek naar DARVO kijkt ook naar de samenhang met zelfverwijt bij degene die een zorg uitspreekt. Een herkenbaar gesprek is geen bewijs dat dit patroon speelt, en zegt niets over de bedoeling van de ander.
+Een gesprek kan op een manier verlopen waarbij jouw zorg ongemerkt verdwijnt en jouw gedrag centraal komt te staan. Dat heet weleens [schuldverschuiving](nl/begrippen/schuldverschuiving/). Een bekend beschreven patroon is [DARVO](nl/begrippen/darvo/): ontkennen, de ander aanvallen en de rollen van wie gekwetst is en wie kwetst omdraaien. Onderzoek naar DARVO kijkt ook naar de samenhang met zelfverwijt bij degene die een zorg uitspreekt. Een herkenbaar gesprek is geen bewijs dat dit patroon speelt, en zegt niets over de bedoeling van de ander.
 
 Er zijn ook verklaringen die bij jezelf liggen. Misschien leerde je vroeg dat het jouw taak was om de vrede te bewaren. Misschien voel je je sneller verantwoordelijk dan gemiddeld, omdat je zorgzaam bent. Dat is een mooie eigenschap die kan doorschieten.
 

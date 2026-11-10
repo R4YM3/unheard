@@ -47,7 +47,7 @@ Een grens is simpel gezegd: dit wil ik wel, dit wil ik niet. In een relatie waar
 
 Dat is geen karakterfout. Het is een manier om je aan te passen aan een situatie die je niet kon veranderen. Na zo'n periode kan het voelen alsof je moet leren lopen: je weet hoe het zou moeten, maar je benen doen het nog niet.
 
-Niet elke moeite met grenzen komt voort uit misbruik. Veel mensen vinden nee zeggen lastig. Maar als je merkt dat je bang bent voor de reactie op een grens, is het goed om daar met zorg naar te kijken.
+Niet elke moeite met grenzen komt voort uit misbruik. Veel mensen vinden [nee zeggen lastig](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/). Maar als je merkt dat je bang bent voor de reactie op een grens, is het goed om daar met zorg naar te kijken.
 
 ## Eerst voelen, dan zeggen
 
@@ -80,7 +80,7 @@ Voel je je onveilig, of twijfel je of je situatie veilig is? Je kunt dat gratis 
 
 ## Als een grens schuldgevoel geeft
 
-Veel mensen voelen zich schuldig na het stellen van een grens. Alsof je iets ergs hebt gedaan. Dat gevoel is vaak een oude gewoonte, geen teken dat je fout zat. Je mag een grens stellen en je er tegelijk ongemakkelijk over voelen. Na een tijdje wordt dat ongemak meestal minder.
+Veel mensen [voelen zich schuldig na het stellen van een grens](nl/wat-voel-ik/ik-voel-me-schuldig/). Alsof je iets ergs hebt gedaan. Dat gevoel is vaak een oude gewoonte, geen teken dat je fout zat. Je mag een grens stellen en je er tegelijk ongemakkelijk over voelen. Na een tijdje wordt dat ongemak meestal minder.
 
 Voor mannen speelt soms nog iets anders mee: het idee dat je flexibel moet zijn, niet moeilijk moet doen, of dat je als man geen last mag hebben van wat een ander doet. Ook jij mag zeggen dat iets je te veel is.
 

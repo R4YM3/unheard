@@ -60,7 +60,7 @@ reviewNotes:
 
 Met 'schulden op naam' worden hier schulden bedoeld die op jouw naam staan, maar die je niet vrijwillig of niet bewust bent aangegaan. Bijvoorbeeld omdat een (ex-)partner je onder druk zette om te tekenen, of omdat iemand zonder jouw medeweten jouw gegevens gebruikte voor een lening, abonnement of aankoop. In Engelstalig onderzoek wordt hiervoor ook de term _coerced debt_ (afgedwongen schuld) gebruikt.
 
-Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'schulden hebben door toedoen van de partner' als signaal van [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/), net als een partner die de ander 'onder druk zet om schulden aan te gaan'. Movisie beschrijft dat schulden zowel een oorzaak als een gevolg van huiselijk geweld kunnen zijn, en dat financiële problemen vaak nog lang na de relatie doorwerken.
+Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'schulden hebben door toedoen van de partner' als signaal van [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/), net als een partner die de ander 'onder druk zet om schulden aan te gaan'. Movisie beschrijft dat schulden zowel een oorzaak als een gevolg van huiselijk geweld kunnen zijn, en dat [financiële problemen vaak nog lang na de relatie doorwerken](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/).
 
 Dit artikel geeft algemene informatie, geen juridisch of financieel advies. Je situatie hangt af van wat je getekend hebt, hoe je samenwoonde of getrouwd was en wat er precies op jouw naam staat.
 
@@ -103,9 +103,9 @@ Tekenen onder druk, of omdat je de ander vertrouwde, is niet dom. Het is precies
 
 ## Wat kan helpen?
 
-- **Bekijk wat er op jouw naam staat.** Bij Stichting BKR kun je gratis online je kredietoverzicht inzien via [Mijn Kredietregistratie](https://www.mijnkredietregistratie.nl/nl/mijn-kredietoverzicht). Ondersteunt je bank geen digitale identificatie, dan kun je een aanvraagformulier opsturen en krijg je het overzicht per post. Let op: dit overzicht laat geregistreerde kredieten zien, niet alle contracten en abonnementen.
-- **Zet je administratie op een veilige plek.** Bewaar kopieën van contracten, bankafschriften en brieven waar de ander er niet bij kan.
+- **[Bekijk wat er op jouw naam staat](nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/).** Bij Stichting BKR kun je gratis online je kredietoverzicht inzien via [Mijn Kredietregistratie](https://www.mijnkredietregistratie.nl/nl/mijn-kredietoverzicht). Ondersteunt je bank geen digitale identificatie, dan kun je een aanvraagformulier opsturen en krijg je het overzicht per post. Let op: dit overzicht laat geregistreerde kredieten zien, niet alle contracten en abonnementen.
+- **[Zet je administratie op een veilige plek](nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/).** Bewaar kopieën van contracten, bankafschriften en brieven waar de ander er niet bij kan.
 - **Vermoed je dat je gegevens zonder toestemming zijn gebruikt?** Dan kan het gaan om identiteitsfraude. De Rijksoverheid adviseert om je bank te informeren, bewijs te verzamelen en aangifte te doen bij de politie. Je kunt ook een melding doen bij het [Centraal Meldpunt Identiteitsfraude](https://www.rvig.nl/cmi) (CMI), dat advies geeft en kan bemiddelen met instanties. Betaal niet aan een incassobureau voor kosten waar je niets mee te maken hebt, maar meld het en houd contact.
 - **Vraag hulp bij schulden.** Bel [Geldfit](https://www.geldfit.nl/) (0800-8115) voor gratis advies, of meld je bij de schuldhulpverlening van je gemeente.
-- **Vraag juridisch advies** over aansprakelijkheid, zeker bij een scheiding. Het Juridisch Loket geeft gratis informatie, en gratis persoonlijk advies als je inkomen en spaargeld onder een bepaalde grens liggen.
+- **Vraag [juridisch advies](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/)** over aansprakelijkheid, zeker bij een scheiding. Het Juridisch Loket geeft gratis informatie, en gratis persoonlijk advies als je inkomen en spaargeld onder een bepaalde grens liggen.
 - **Is geld onderdeel van een breder patroon van controle of dreiging?** Bel Veilig Thuis: 0800-2000, gratis en anoniem, dag en nacht. Zie ook [Hulp vinden](nl/hulp-vinden/).

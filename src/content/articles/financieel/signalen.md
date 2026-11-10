@@ -41,7 +41,7 @@ reviewNotes:
 
 ## Wat zijn signalen?
 
-Een signaal is iets wat je opvalt en wat je aan het denken zet. Het is geen bewijs en geen diagnose. Bij financieel misbruik gaan signalen meestal over drie dingen: heb je **toegang** tot geld en informatie, heb je **zeggenschap** over beslissingen, en voel je de **vrijheid** om vragen te stellen of nee te zeggen?
+Een signaal is iets wat je opvalt en wat je aan het denken zet. Het is geen bewijs en geen diagnose. Bij [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) gaan signalen meestal over drie dingen: heb je **toegang** tot geld en informatie, heb je **zeggenschap** over beslissingen, en voel je de **vrijheid** om vragen te stellen of nee te zeggen?
 
 Financiële controle kan geleidelijk ontstaan en in het begin zelfs op zorg lijken, bijvoorbeeld als iemand aanbiedt om alles te regelen. Dat beschrijft de [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf). Juist daarom merk je het soms pas na lange tijd.
 
@@ -52,13 +52,13 @@ Lees dit niet als een lijst om af te vinken. Het zijn voorbeelden van situaties 
 ### Rond toegang tot geld
 
 - Je hebt geen of beperkt inzicht in de rekening waar jouw inkomen op binnenkomt.
-- Je krijgt een vast bedrag toebedeeld en moet uitleggen waar elke euro naartoe ging.
+- Je krijgt een vast bedrag toebedeeld en moet [uitleggen waar elke euro naartoe ging](nl/begrippen/controle-over-uitgaven/).
 - Wachtwoorden, pinpassen of bankapps zijn alleen bij de ander bekend.
 
 ### Rond beslissingen en verplichtingen
 
 - Grote aankopen, leningen of contracten worden afgesloten zonder dat je echt kon meebeslissen.
-- Er staan schulden of abonnementen op jouw naam waarvan je het bestaan niet wist of waar je onder druk mee instemde.
+- Er staan [schulden of abonnementen op jouw naam](nl/begrippen/schulden-op-naam/) waarvan je het bestaan niet wist of waar je onder druk mee instemde.
 - Je wordt gevraagd te tekenen zonder tijd of uitleg te krijgen.
 
 ### Rond werk, studie en inkomen

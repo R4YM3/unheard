@@ -100,11 +100,11 @@ reviewNotes:
 
 ## Wat is het?
 
-Partners kunnen oneens zijn over geld of verschillende inkomens hebben. Dat is op zichzelf geen financieel misbruik. Het wordt zorgelijk wanneer iemand door dwang, misleiding, bedreiging of structurele controle de financiële keuzevrijheid van een ander aantast.
+Partners kunnen oneens zijn over geld of verschillende inkomens hebben. Dat is op zichzelf geen [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/). Het wordt zorgelijk wanneer iemand door dwang, misleiding, bedreiging of structurele controle de financiële keuzevrijheid van een ander aantast.
 
-Financieel misbruik kan veel vormen hebben. Iemand bepaalt bijvoorbeeld alle uitgaven, houdt inkomsten of bankgegevens buiten je zicht, sluit verplichtingen af op jouw naam of maakt het moeilijk om te werken of te studeren. Het hoeft niet groot of plotseling te beginnen. Volgens de [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf) kan controle geleidelijk ontstaan en in het begin zelfs op zorg lijken, zoals het aanbod om de geldzaken te regelen.
+Financieel misbruik kan veel vormen hebben. Iemand [bepaalt bijvoorbeeld alle uitgaven](nl/begrippen/controle-over-uitgaven/), houdt inkomsten of bankgegevens buiten je zicht, sluit [verplichtingen af op jouw naam](nl/begrippen/schulden-op-naam/) of maakt het moeilijk om te werken of te studeren. Het hoeft niet groot of plotseling te beginnen. Volgens de [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf) kan controle geleidelijk ontstaan en in het begin zelfs op zorg lijken, zoals het aanbod om de geldzaken te regelen.
 
-Ook na een scheiding kan financiële druk een rol blijven spelen. Bij gezamenlijke schulden en eigendom zijn de feiten, toestemming en juridische afspraken belangrijk.
+Ook [na een scheiding kan financiële druk een rol blijven spelen](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/). Bij gezamenlijke schulden en eigendom zijn de feiten, toestemming en juridische afspraken belangrijk.
 
 Over financieel misbruik tussen partners bestaan in Nederland weinig cijfers. Dat zegt niets over hoe zwaar het voor jou kan zijn. Voor mannen kan het extra moeilijk zijn om erover te praten. Wie gewend is de kostwinner of de sterke te zijn, schaamt zich er soms voor dat hij geen grip heeft op zijn eigen geld. Die schaamte is begrijpelijk, en je bent er niet alleen in. Deze pagina is er voor iedereen, van welk gender ook.
 
@@ -116,13 +116,13 @@ Financiële druk kan uitmonden in chronische stress, schaamte, besluiteloosheid,
 
 _Illustratieve quote, geen letterlijk getuigenis van de oprichter of van een bezoeker._
 
-Geld raakt aan bijna alles: waar je woont, wat je je kinderen kunt geven, of je durft weg te gaan, of je een plan voor later kunt maken. [Movisie](https://www.movisie.nl/artikel/financiele-kwetsbaarheid-huiselijk-geweld-kindermishandeling) beschrijft hoe economische afhankelijkheid het lastig kan maken om een onveilige relatie te verlaten. Dat is geen zwakte. Het is een praktische en emotionele drempel die serieus genomen mag worden.
+Geld raakt aan bijna alles: waar je woont, wat je je kinderen kunt geven, of je durft weg te gaan, of je een plan voor later kunt maken. [Movisie](https://www.movisie.nl/artikel/financiele-kwetsbaarheid-huiselijk-geweld-kindermishandeling) beschrijft hoe [economische afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/) het lastig kan maken om een onveilige relatie te verlaten. Dat is geen zwakte. Het is een praktische en emotionele drempel die serieus genomen mag worden.
 
 ## Een veilige eerste stap is genoeg
 
 1. **Breng je gevoel onder woorden.** Wat maakt je onzeker: geen toegang, onverwachte verplichtingen, druk of de reactie op je vragen?
 2. **Onderzoek je veiligheid.** Als iemand meekijkt met apparaten of financiën, kan zelfstandig accounts wijzigen of bewijs verzamelen risico geven. Overleg zo nodig eerst vertrouwelijk met een deskundige.
-3. **Zoek onafhankelijke informatie.** Bespreek gezamenlijke verplichtingen met een juridisch adviseur, schuldhulpverlener of andere gekwalificeerde professional voordat je ingrijpende financiële stappen zet.
+3. **[Zoek onafhankelijke informatie](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/).** Bespreek gezamenlijke verplichtingen met een juridisch adviseur, schuldhulpverlener of andere gekwalificeerde professional voordat je ingrijpende financiële stappen zet.
 4. **Maak de volgende stap klein.** Je hoeft niet vandaag de volledige situatie te beoordelen of op te lossen.
 
 Twijfel je of wat je meemaakt financieel misbruik is, dan kun je gratis en anoniem advies vragen bij [Veilig Thuis](https://www.veiligthuis.nl/nl/contact) via [0800-2000](tel:08002000), dag en nacht. Bij direct gevaar bel je [112](tel:112). Voor vragen over geld en schulden kun je bellen met Geldfit via [0800-8115](tel:08008115). Juridische informatie vind je bij [Het Juridisch Loket](https://www.juridischloket.nl/contact/); wie een laag inkomen en weinig spaargeld heeft, kan daar ook gratis advies vragen via [0800-8020](tel:08008020). Meer opties staan op [Hulp vinden](nl/hulp-vinden/).

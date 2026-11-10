@@ -51,11 +51,11 @@ reviewNotes:
 
 Herstellen doe je zelden helemaal alleen. Mensen om je heen kunnen luisteren, meedenken, afleiden of gewoon aanwezig zijn. Ze kunnen je eraan herinneren wie je bent, op momenten dat je dat zelf even kwijt bent.
 
-Na een relatie waarin je je terugtrok of contacten verwaterden, kan dat netwerk kleiner zijn geworden. Misschien schaam je je om na lange tijd weer contact te zoeken. Misschien weet je niet wat mensen hebben gehoord. Dat is begrijpelijk. Een netwerk kun je opnieuw opbouwen, stap voor stap.
+Na een relatie waarin je je terugtrok of [contacten verwaterden](nl/begrippen/isolatie/), kan dat netwerk kleiner zijn geworden. Misschien schaam je je om na lange tijd weer contact te zoeken. Misschien weet je niet wat mensen hebben gehoord. Dat is begrijpelijk. Een netwerk kun je opnieuw opbouwen, stap voor stap.
 
 ## Hulp vragen als man
 
-Veel mannen hebben geleerd dat hulp vragen iets is wat je liever niet doet. Je lost het zelf op. Je wilt niemand lastigvallen. Je bent bang dat je niet serieus genomen wordt, of dat mensen je zwak vinden. Bij emotioneel of financieel misbruik kan daar nog bijkomen dat je denkt: dit overkomt mannen niet.
+Veel mannen hebben geleerd dat hulp vragen iets is wat je liever niet doet. Je lost het zelf op. Je wilt niemand lastigvallen. Je bent bang dat je niet serieus genomen wordt, of dat mensen je zwak vinden. Bij emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) kan daar nog bijkomen dat je denkt: dit overkomt mannen niet.
 
 Dat gevoel is begrijpelijk, maar het klopt niet. Iedereen kan te maken krijgen met misbruik, en iedereen mag hulp vragen. Hulp vragen is geen bekentenis van falen. Het is een manier om de last niet in je eentje te dragen.
 
@@ -63,7 +63,7 @@ Dit geldt net zo goed voor vrouwen en non-binaire mensen. Iedereen die dit leest
 
 ### Klein beginnen
 
-Je hoeft niet meteen je hele verhaal te vertellen. Het kan beginnen met:
+Je hoeft niet meteen [je hele verhaal te vertellen](nl/herstel/hoe-vertel-ik-het/). Het kan beginnen met:
 
 - "Ik heb het de laatste tijd zwaar. Mag ik je eens bellen?"
 - "Zin om een stuk te wandelen? Ik hoef niet per se te praten."

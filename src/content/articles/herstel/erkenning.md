@@ -40,7 +40,7 @@ reviewNotes:
 
 ## Waarom erkenning zo belangrijk kan voelen
 
-Na emotioneel of financieel misbruik blijft vaak één vraag hangen: was het echt zo, of overdrijf ik? Als je lang hebt gehoord dat jij het probleem was, of dat het allemaal wel meeviel, kan je eigen herinnering onbetrouwbaar gaan voelen.
+Na emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) blijft vaak één vraag hangen: was het echt zo, of overdrijf ik? Als je lang hebt gehoord dat jij het probleem was, of dat het allemaal wel meeviel, kan [je eigen herinnering onbetrouwbaar gaan voelen](nl/begrippen/zelftwijfel/).
 
 Erkenning helpt die twijfel te verzachten. Het is het gevoel dat wat jij meemaakte er mag zijn, dat het telt. Niet als vonnis over een ander, maar als bevestiging dat jouw ervaring serieus te nemen is.
 
@@ -68,7 +68,7 @@ Wie meldt of aangifte doet, hoopt soms ook op erkenning. Dat kan een belangrijke
 
 Niet iedereen reageert zoals je hoopt. Sommige mensen bagatelliseren, kiezen een kant of weten simpelweg niet wat ze moeten zeggen. Dat doet pijn, en het zegt meestal meer over hun ongemak dan over de waarde van jouw verhaal.
 
-Je hoeft niet iedereen te overtuigen. Het is genoeg als een paar mensen het wel horen.
+Je hoeft niet iedereen te overtuigen. Het is genoeg als [een paar mensen het wel horen](nl/herstel/steunnetwerk/).
 
 ## Jezelf erkenning geven
 

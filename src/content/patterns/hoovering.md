@@ -69,24 +69,24 @@ Wat kan helpen om te ordenen:
 - **Herhaalt het verloop zich?** Afstand, spijt, toenadering, en daarna weer hetzelfde gedrag als eerst?
 - **Hoe voel jij je erbij?** Rust, of vooral verwarring, schuld en onrust?
 
-Bij gezamenlijke kinderen is contact vaak noodzakelijk. Dan gaat het er niet om óf er contact is, maar hoe. Duidelijke, zakelijke afspraken kunnen helpen.
+Bij gezamenlijke kinderen is contact vaak noodzakelijk. Dan gaat het er niet om óf er contact is, maar hoe. [Duidelijke, zakelijke afspraken](nl/herstel/contact-na-een-breuk/) kunnen helpen.
 
 ## Impact op de ontvanger
 
 Steeds weer teruggetrokken worden kan uitputtend zijn. Mensen beschrijven onder meer:
 
-- twijfel aan je eigen besluit, ook als je goede redenen had;
+- [twijfel aan je eigen besluit](nl/begrippen/zelftwijfel/), ook als je goede redenen had;
 - [rouw en verlangen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/) die elke keer opnieuw worden opengebroken;
-- schuldgevoel als je niet reageert, zeker als er een 'crisis' wordt gemeld;
+- [schuldgevoel als je niet reageert](nl/wat-voel-ik/ik-voel-me-schuldig/), zeker als er een 'crisis' wordt gemeld;
 - schaamte tegenover je omgeving als je toch weer contact hebt gehad;
 - het gevoel dat je nooit echt vooruit komt.
 
-Dat je iemand mist die je pijn heeft gedaan, is geen teken van zwakte. Gehechtheid werkt niet volgens logica.
+Dat je [iemand mist die je pijn heeft gedaan](nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/), is geen teken van zwakte. Gehechtheid werkt niet volgens logica.
 
 ## Wat kan helpen?
 
 - **Besluit vooraf hoe je met contact omgaat**, op een rustig moment. Bijvoorbeeld: alleen schriftelijk, alleen over de kinderen, of helemaal niet.
-- **Vertraag je reactie.** Je hoeft niet meteen te antwoorden. Laat een bericht een dag liggen, of lees het samen met iemand die je vertrouwt.
+- **[Vertraag je reactie](nl/herstel/triggers-en-moeilijke-berichten/).** Je hoeft niet meteen te antwoorden. Laat een bericht een dag liggen, of lees het samen met iemand die je vertrouwt.
 - **Maak onderscheid tussen een echte noodsituatie en een oproep.** Bij echte nood kun je ook anderen inschakelen; jij hoeft niet altijd degene te zijn die helpt.
 - **Wees mild voor jezelf als je toch reageert.** Terugvallen hoort bij losmaken; het zegt niet dat je gefaald hebt.
 - **Voel je je onveilig, of wordt er gedreigd na een afwijzing?** Neem dat serieus. Veilig Thuis is dag en nacht gratis bereikbaar via 0800-2000; bij direct gevaar bel je 112. Zie ook [Hulp vinden](nl/hulp-vinden/).

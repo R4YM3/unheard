@@ -122,7 +122,7 @@ Wie gewend is problemen op te lossen door ze te snappen, loopt hier vaak tegenaa
 
 Soms is het de omgeving die het lastig maakt. Mensen gaan ervan uit dat het na een tijd wel over moet zijn. Ze vragen er niet meer naar, of reageren ongeduldig als je er toch over begint.
 
-Soms is er nog contact met degene om wie het gaat, bijvoorbeeld omdat je samen kinderen hebt. Elke ontmoeting of elk bericht kan oude gevoelens wakker maken, hoe goed je de situatie ook begrijpt. Over omgaan met zulke momenten lees je op [Triggers en moeilijke berichten](nl/herstel/triggers-en-moeilijke-berichten/).
+Soms is er nog [contact met degene om wie het gaat](nl/herstel/contact-na-een-breuk/), bijvoorbeeld omdat je samen kinderen hebt. Elke ontmoeting of elk bericht kan oude gevoelens wakker maken, hoe goed je de situatie ook begrijpt. Over omgaan met zulke momenten lees je op [Triggers en moeilijke berichten](nl/herstel/triggers-en-moeilijke-berichten/).
 
 En soms is het gewoon het leven: een feestdag, een verjaardag, een liedje. Dingen die niets met de ander te maken hebben, maar je toch terugbrengen.
 

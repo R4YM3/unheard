@@ -6,6 +6,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import HeroArt from '../components/HeroArt.astro';
 import CardGrid from '../components/CardGrid.astro';
 import Timeline from '../components/Timeline.astro';
+import Marked from '../components/Marked.astro';
 import { breadcrumbsFor, routeFor } from '../lib/content';
 import { navigationFor } from '../lib/navigation';
 import { heroTrail } from '../lib/trail';
@@ -136,7 +137,13 @@ const trail = heroTrail(
     <div class="wrap reading">
       <p class="eyebrow">{data.closing.eyebrow}</p>
       <h2 id="slot-heading">{data.closing.heading}</h2>
-      {data.closing.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      {
+        data.closing.paragraphs.map((paragraph) => (
+          <p>
+            <Marked text={paragraph} />
+          </p>
+        ))
+      }
       <div class="actions">
         <a class="button" href="nl/wat-voel-ik/">Begin bij wat je voelt</a>
         <a class="button button--quiet" href="nl/begrijp-het/">Begrijp patronen</a>

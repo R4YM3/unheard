@@ -49,13 +49,13 @@ Die vraag stellen is eerlijk. Het laat zien dat je naar jezelf durft te kijken. 
 
 **Samen escaleren** gebeurt als twee mensen elkaar steeds verder opjagen. Allebei worden ze harder, allebei voelen ze zich niet gehoord. Dat is pijnlijk, en vaak hebben beide mensen hulp nodig om het te doorbreken.
 
-**Een patroon van controle** is iets anders. Dan neemt één persoon steeds meer ruimte in, en heeft de ander steeds minder te zeggen over zijn eigen leven. Veilig Thuis beschrijft hoe die [invloed op je persoonlijke ruimte en beslissingen steeds erger](https://www.veiligthuis.nl/nl/dwingendecontrole) kan worden. Het verschil zit niet in één ruzie, maar in wie er na verloop van tijd bang, klein of afhankelijk wordt.
+**[Een patroon van controle](nl/begrippen/dwingende-controle/)** is iets anders. Dan neemt één persoon steeds meer ruimte in, en heeft de ander steeds minder te zeggen over zijn eigen leven. Veilig Thuis beschrijft hoe die [invloed op je persoonlijke ruimte en beslissingen steeds erger](https://www.veiligthuis.nl/nl/dwingendecontrole) kan worden. Het verschil zit niet in één ruzie, maar in wie er na verloop van tijd bang, klein of afhankelijk wordt.
 
 Meer over dat verschil staat op [Ongezond conflict of een patroon?](nl/begrijp-het/conflict-of-patroon/).
 
 ## Als jij steeds de schuldige bent
 
-Soms draait een gesprek over iets wat jou pijn deed, ongemerkt om. Je begint over jouw zorg en eindigt met excuses. Psycholoog Jennifer Freyd beschrijft dit als [DARVO](https://www.jjfreyd.com/darvo/): ontkennen, aanvallen, en de rollen van slachtoffer en dader omdraaien. Wie dat vaak meemaakt, gaat de schuld vanzelf bij zichzelf zoeken.
+Soms draait een gesprek over iets wat jou pijn deed, ongemerkt om. Je begint over jouw zorg en eindigt met excuses. Psycholoog Jennifer Freyd beschrijft dit als [DARVO](https://www.jjfreyd.com/darvo/): [ontkennen, aanvallen, en de rollen van slachtoffer en dader omdraaien](nl/begrippen/darvo/). Wie dat vaak meemaakt, gaat de schuld vanzelf bij zichzelf zoeken.
 
 Dat jij je schuldig voelt, bewijst dus niet dat jij de schuldige bent. Over dat gevoel gaat ook [Ik voel me overal schuldig over](nl/wat-voel-ik/ik-voel-me-schuldig/).
 

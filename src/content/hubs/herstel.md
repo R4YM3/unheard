@@ -60,14 +60,14 @@ reviewNotes:
 
 ## Wat herstel kan betekenen
 
-Herstel na emotioneel of financieel misbruik is geen vast traject met een eindpunt. Voor de een begint het met eindelijk woorden hebben voor wat er gebeurde. Voor de ander met merken dat het lichaam niet meer de hele dag op scherp staat. Er is geen goede of foute volgorde.
+Herstel na emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) is geen vast traject met een eindpunt. Voor de een begint het met eindelijk woorden hebben voor wat er gebeurde. Voor de ander met merken dat het lichaam niet meer de hele dag op scherp staat. Er is geen goede of foute volgorde.
 
 Een paar dingen komen vaak terug:
 
-- **Erkenning.** Dat wat je meemaakte serieus genomen wordt, door anderen en door jezelf. Ook als de ander het nooit zal erkennen.
-- **Weer leren voelen.** Niet alleen weten wat er speelde, maar ook merken wat het met je deed: verdriet, boosheid, opluchting, schaamte.
-- **Grenzen.** Langzaam weer ontdekken wat jij wilt en niet wilt, en dat eerst oefenen bij mensen bij wie dat veilig is.
-- **Steun.** Mensen om je heen die je niet hoeven te redden, maar wel kunnen luisteren.
+- **[Erkenning](nl/herstel/erkenning/).** Dat wat je meemaakte serieus genomen wordt, door anderen en door jezelf. Ook als de ander het nooit zal erkennen.
+- **[Weer leren voelen](nl/herstel/leren-voelen/).** Niet alleen weten wat er speelde, maar ook merken wat het met je deed: verdriet, boosheid, opluchting, schaamte.
+- **[Grenzen](nl/herstel/grenzen-leren-stellen/).** Langzaam weer ontdekken wat jij wilt en niet wilt, en dat eerst oefenen bij mensen bij wie dat veilig is.
+- **[Steun](nl/herstel/steunnetwerk/).** Mensen om je heen die je niet hoeven te redden, maar wel kunnen luisteren.
 
 Herstel betekent niet dat je alles moet vergeten of vergeven. Het betekent ook niet dat je ooit precies wordt zoals je vroeger was. Het kan ook betekenen dat je iemand wordt die beter weet wat hij of zij nodig heeft.
 

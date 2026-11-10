@@ -115,7 +115,7 @@ Eén ruzie of één kwetsende zin is dit niet. Het gaat om wat er steeds terugko
 ## Waarom een label soms meer kwaad dan goed doet
 
 - **Het kan je vastzetten.** Als 'narcist' het hele verhaal wordt, blijft er weinig ruimte voor je eigen verwerking en groei.
-- **Het kan tegen je werken**, bijvoorbeeld in een omgangsregeling. Hulpverleners en rechters kijken naar gedrag en gevolgen, niet naar diagnoses die een ex-partner stelt.
+- **Het kan tegen je werken**, bijvoorbeeld in een [omgangsregeling](nl/herstel/ouder-blijven-met-een-ex-die-controle-zoekt/). Hulpverleners en rechters kijken naar gedrag en gevolgen, niet naar diagnoses die een ex-partner stelt.
 - **Het stigmatiseert mensen met een persoonlijkheidsstoornis**, van wie velen zelf hulp zoeken en niemand kwaad doen.
 
 ## Wat kan helpen?

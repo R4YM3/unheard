@@ -52,11 +52,11 @@ reviewNotes:
 
 EMDR staat voor Eye Movement Desensitization and Reprocessing. Het is een traumagerichte behandeling: een vorm van therapie die werkt met belastende herinneringen aan wat iemand heeft meegemaakt.
 
-Thuisarts, de website van huisartsen voor patiënten, noemt EMDR als een van de traumagerichte behandelingen bij PTSS (posttraumatische stressstoornis), naast imaginaire exposure en cognitieve therapie. Vereniging EMDR Nederland, de beroepsvereniging, geeft een eigen uitleg van de methode.
+Thuisarts, de website van huisartsen voor patiënten, noemt EMDR als een van de traumagerichte behandelingen bij PTSS (posttraumatische stressstoornis), naast [imaginaire exposure](nl/herstel/therapievormen/exposuretherapie/) en [cognitieve therapie](nl/herstel/therapievormen/cognitieve-gedragstherapie/). Vereniging EMDR Nederland, de beroepsvereniging, geeft een eigen uitleg van de methode.
 
 Dat deze pagina over EMDR gaat, betekent niet dat jij PTSS hebt. Of er sprake is van PTSS of van andere klachten, kan alleen een bevoegde professional beoordelen. Een diagnose is ook niet nodig om je zorgen te bespreken.
 
-EMDR is geen behandeling voor 'misbruik', voor gaslighting of voor DARVO. Die woorden beschrijven gedrag van een ander. Therapie richt zich op wat jij ervaart en welke klachten je daarvan hebt, en welke behandeling past, beslis je samen met een professional.
+EMDR is geen behandeling voor 'misbruik', voor [gaslighting](nl/begrippen/gaslighting/) of voor [DARVO](nl/begrippen/darvo/). Die woorden beschrijven gedrag van een ander. Therapie richt zich op wat jij ervaart en welke klachten je daarvan hebt, en welke behandeling past, beslis je samen met een professional.
 
 ## Wat kun je verwachten?
 

@@ -133,9 +133,9 @@ Niet al deze dingen zijn zorgwekkend. Iedereen is weleens teleurgesteld, en soms
 
 ## Wat kan dit verklaren?
 
-Conflict vermijden is een begrijpelijke reactie op spanning. Als je merkt dat ingaan tegen iemand problemen geeft, leer je snel om dat niet meer te doen. Soms wordt dit omschreven als een “fawn-respons”: meegaan en pleasen om de dreiging te laten zakken. Dat is een beschrijvende term, geen diagnose, en hij verklaart lang niet alles.
+Conflict vermijden is een begrijpelijke reactie op spanning. Als je merkt dat ingaan tegen iemand problemen geeft, leer je snel om dat niet meer te doen. Soms wordt dit omschreven als een “[fawn-respons](nl/begrippen/fawn-respons/)”: meegaan en pleasen om de dreiging te laten zakken. Dat is een beschrijvende term, geen diagnose, en hij verklaart lang niet alles.
 
-In sommige relaties wordt nee zeggen structureel onmogelijk gemaakt. Er is dan sprake van een patroon waarin één persoon steeds meer bepaalt over tijd, contact, geld of keuzes van de ander. Dat wordt dwingende controle genoemd. Ook gesprekken waarin jouw grens wordt omgedraaid tot een aanval op de ander, zoals bij [DARVO](nl/begrippen/darvo/), kunnen het moeilijk maken om nog iets aan te geven. Of zoiets bij jou speelt, is niet af te leiden uit een paar herkenbare zinnen.
+In sommige relaties wordt nee zeggen structureel onmogelijk gemaakt. Er is dan sprake van een patroon waarin één persoon steeds meer bepaalt over tijd, contact, geld of keuzes van de ander. Dat wordt [dwingende controle](nl/begrippen/dwingende-controle/) genoemd. Ook gesprekken waarin jouw grens wordt omgedraaid tot een aanval op de ander, zoals bij [DARVO](nl/begrippen/darvo/), kunnen het moeilijk maken om nog iets aan te geven. Of zoiets bij jou speelt, is niet af te leiden uit een paar herkenbare zinnen.
 
 Het kan ook in jou zelf liggen, los van een ander. Misschien heb je nooit geleerd dat jouw nee welkom was. Misschien wil je graag aardig gevonden worden. Ook dat is iets om nieuwsgierig naar te zijn, niet om jezelf om te veroordelen.
 

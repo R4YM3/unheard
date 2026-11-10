@@ -59,7 +59,7 @@ Deze pagina helpt je om naar het verschil te kijken. Niet om een oordeel te vell
 
 Bij een **ongezond conflict** gaat het om ruzie tussen mensen die zich allebei vrij voelen om hun mening te geven. Het kan hard gaan, en allebei kunnen ze over grenzen gaan. Maar niemand is structureel bang voor de ander, en er is ruimte om het daarna weer goed te maken.
 
-Bij een **patroon van controle** gaat het om iets wat steeds terugkomt en waarbij één persoon steeds meer ruimte inneemt. De ander gaat zich aanpassen om spanning te voorkomen. Wat iemand mag zeggen, doen of vinden, wordt langzaam kleiner. Dat hoeft niet met geschreeuw te gaan. Het kan ook stil en beleefd gebeuren.
+Bij een **[patroon van controle](nl/begrippen/dwingende-controle/)** gaat het om iets wat steeds terugkomt en waarbij één persoon steeds meer ruimte inneemt. De ander gaat zich aanpassen om spanning te voorkomen. Wat iemand mag zeggen, doen of vinden, wordt langzaam kleiner. Dat hoeft niet met geschreeuw te gaan. Het kan ook stil en beleefd gebeuren.
 
 Hetzelfde gedrag kan dus in twee heel verschillende situaties voorkomen. Een harde opmerking in een ruzie tussen gelijken is iets anders dan dezelfde opmerking als onderdeel van een patroon waarin jij steeds kleiner wordt.
 
@@ -73,7 +73,7 @@ Eén nare avond is iets anders dan een vast patroon. Kijk naar een langere perio
 
 ### Is er een machtsverschil?
 
-Hebben jullie allebei evenveel te zeggen over geld, tijd, vrienden en beslissingen? Of bepaalt één persoon steeds meer, en heeft de ander steeds minder mogelijkheden om zijn of haar eigen weg te gaan? Afhankelijkheid, bijvoorbeeld van inkomen, woonruimte of contact met kinderen, kan een machtsverschil groter maken.
+Hebben jullie allebei evenveel te zeggen over geld, tijd, vrienden en beslissingen? Of bepaalt één persoon steeds meer, en heeft de ander steeds minder mogelijkheden om zijn of haar eigen weg te gaan? [Afhankelijkheid](nl/begrippen/macht-en-afhankelijkheid/), bijvoorbeeld van inkomen, woonruimte of contact met kinderen, kan een machtsverschil groter maken.
 
 ### Speelt angst een rol?
 
@@ -81,7 +81,7 @@ Ben je boos of verdrietig na een ruzie, of ben je bang? Bang voor de reactie als
 
 ### Mag je nee zeggen?
 
-In een gelijkwaardige relatie kan een nee teleurstellend zijn, maar het wordt geaccepteerd. Bij een patroon van controle kost een nee steeds meer: dagenlang zwijgen, verwijten, of een ruzie die zo uitputtend is dat je het voortaan niet meer probeert. Daarover gaat ook [Ik durf geen nee te zeggen](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/).
+In een gelijkwaardige relatie kan een nee teleurstellend zijn, maar het wordt geaccepteerd. Bij een patroon van controle kost een nee steeds meer: [dagenlang zwijgen](nl/begrippen/silent-treatment/), verwijten, of een ruzie die zo uitputtend is dat je het voortaan niet meer probeert. Daarover gaat ook [Ik durf geen nee te zeggen](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/).
 
 ### Wat gebeurt er na een conflict?
 
@@ -101,7 +101,7 @@ Iedereen past zich weleens aan in een relatie. Maar als jij voortdurend inschat 
 
 ## Wat het met je kan doen
 
-Leven met een patroon van controle kan ervoor zorgen dat je aan jezelf gaat twijfelen, je schuldig voelt of voortdurend op je hoede bent. Ook in een relatie met veel ongezond conflict kun je uitgeput raken. Meer daarover staat in [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).
+Leven met een patroon van controle kan ervoor zorgen dat je [aan jezelf gaat twijfelen](nl/begrippen/zelftwijfel/), je schuldig voelt of [voortdurend op je hoede bent](nl/begrippen/hyperwaakzaamheid/). Ook in een relatie met veel ongezond conflict kun je uitgeput raken. Meer daarover staat in [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).
 
 ## Wat kan helpen?
 

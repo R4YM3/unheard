@@ -39,7 +39,7 @@ sources:
 
 'Love bombing' is een populaire term voor een begin van een relatie waarin iemand je overlaadt met aandacht, complimenten, cadeaus, berichten en grote toekomstplannen, in een tempo dat overweldigend is. Het woord wordt vooral gebruikt wanneer die intensiteit achteraf een manier blijkt te zijn geweest om snel dichtbij te komen, invloed te krijgen of iemand afhankelijk te maken.
 
-Er is weinig onderzoek naar love bombing als afzonderlijk verschijnsel. Een vaak geciteerde studie (Strutzenberg e.a., 2017) is een verkennend onderzoek onder 484 Amerikaanse studenten. De onderzoekers omschreven love bombing als overmatige communicatie aan het begin van een relatie om macht en controle te krijgen. Ze vonden een samenhang met narcistische trekken, onzekere hechting en een lager zelfbeeld. Het is één studie bij jongvolwassenen, op basis van zelfrapportage; je kunt er geen conclusies uit trekken over een specifiek persoon.
+Er is weinig onderzoek naar love bombing als afzonderlijk verschijnsel. Een vaak geciteerde studie (Strutzenberg e.a., 2017) is een verkennend onderzoek onder 484 Amerikaanse studenten. De onderzoekers omschreven love bombing als overmatige communicatie aan het begin van een relatie om macht en controle te krijgen. Ze vonden een samenhang met [narcistische trekken](nl/begrippen/narcisme/), onzekere hechting en een lager zelfbeeld. Het is één studie bij jongvolwassenen, op basis van zelfrapportage; je kunt er geen conclusies uit trekken over een specifiek persoon.
 
 Nederlandse organisaties beschrijven iets vergelijkbaars vanuit de hulpverlening. De factsheet over intieme terreur noemt het 'versnellen van de honeymoonfase': iemand inpalmen en verleiden om snel te gaan samenwonen of trouwen, vaak samen met het afsluiten van vrienden en familie. Augeo stelt de vraag hardop: overladen worden met cadeautjes en altijd bij elkaar willen zijn is vaak gewoon leuk, maar wanneer slaat het door naar controle?
 
@@ -76,7 +76,7 @@ Augeo noemt in een leermodule voor professionals onder meer 'overladen met liefd
 ## Impact op de ontvanger
 
 - verwarring als de warmte later wegvalt: je verlangt naar 'hoe het in het begin was';
-- jezelf de schuld geven van de verandering;
+- [jezelf de schuld geven](nl/wat-voel-ik/ik-voel-me-schuldig/) van de verandering;
 - je eigen netwerk kwijtraken, omdat de relatie alle ruimte innam;
 - een sterke band die moeilijk te verbreken voelt, zie [traumabinding](nl/begrippen/traumabinding/);
 - schaamte: "Hoe heb ik dit niet gezien?"
@@ -85,7 +85,7 @@ Achteraf is het makkelijk om te zeggen dat je het had moeten zien. Op het moment
 
 ## Wat kan helpen?
 
-- **Neem je eigen tempo serieus.** Een relatie die goed is, kan ook rustig.
+- **[Neem je eigen tempo serieus](nl/herstel/grenzen-leren-stellen/).** Een relatie die goed is, kan ook rustig.
 - **Houd contact met je eigen mensen**, juist in een verliefde periode.
 - **Let op hoe een 'nee' wordt ontvangen.** Dat zegt vaak meer dan de grootste gebaren.
 - **Kijk terug zonder jezelf te veroordelen.** Wat je toen niet kon zien, kun je nu wel benoemen.

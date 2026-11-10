@@ -45,7 +45,7 @@ reviewNotes:
 
 ## Waarom het juist hier blijft schuren
 
-Na een relatie waarin één persoon veel controle had, stopt het contact vaak niet als je kinderen hebt. Afspraken over ophalen, school, vakanties en geld blijven nodig. Juist daar kan het oude patroon terugkomen: berichten die je uit balans brengen, afspraken die steeds weer ter discussie staan, of het gevoel dat je je moet verantwoorden.
+Na een relatie waarin [één persoon veel controle had](nl/begrippen/dwingende-controle/), stopt het contact vaak niet als je kinderen hebt. Afspraken over ophalen, school, vakanties en geld blijven nodig. Juist daar kan het oude patroon terugkomen: berichten die je uit balans brengen, afspraken die steeds weer ter discussie staan, of het gevoel dat je je moet verantwoorden.
 
 Dat je daar moe van wordt, is begrijpelijk. Het betekent niet dat je een slechte ouder bent, of dat je het niet goed genoeg probeert.
 

@@ -67,7 +67,7 @@ In het voorbeeld is niet het zwijgen zelf het punt, maar wat het oplevert: jij l
 
 Stilte is niet altijd een straf. Mensen hebben soms tijd nodig, zijn overweldigd of weten niet wat ze moeten zeggen. Sommige mensen klappen dicht bij conflict, uit angst of uit gewoonte.
 
-Communicatieonderzoek beschrijft het patroon waarin de één aandringt op een gesprek en de ander zich terugtrekt (_demand-withdraw_). Een overzichtsstudie vond dat dit patroon samenhangt met minder tevredenheid in de relatie, bij mannen en vrouwen in beide rollen. Dat patroon is niet automatisch misbruik: het is vaak een vastgelopen manier van omgaan met conflict, waar beide mensen in meedoen.
+Communicatieonderzoek beschrijft het patroon waarin de één aandringt op een gesprek en de ander zich terugtrekt (_demand-withdraw_). Een overzichtsstudie vond dat dit patroon samenhangt met minder tevredenheid in de relatie, bij mannen en vrouwen in beide rollen. [Dat patroon is niet automatisch misbruik](nl/begrijp-het/conflict-of-patroon/): het is vaak een vastgelopen manier van omgaan met conflict, waar beide mensen in meedoen.
 
 Vragen die kunnen helpen:
 
@@ -90,4 +90,4 @@ Vragen die kunnen helpen:
 - **Je hoeft de stilte niet op te lossen met excuses voor iets wat je niet deed.** Rust kopen werkt vaak maar kort.
 - **Zorg in de tussentijd voor jezelf.** Contact met anderen, beweging, slaap. Je hoeft niet te wachten tot de ander weer praat om je eigen dag in te vullen.
 - **Als jullie allebei vastlopen**, kan een relatietherapeut helpen om het patroon te doorbreken. Speelt er angst, dreiging of controle, dan is een gezamenlijk gesprek niet altijd veilig; bespreek dat eerst met een hulpverlener.
-- **Herken je dit als deel van een groter patroon** van controle, vernedering of isolatie? Dan kun je gratis advies vragen bij Veilig Thuis (0800-2000). Zie ook [Hulp vinden](nl/hulp-vinden/).
+- **Herken je dit als deel van een groter patroon** van controle, vernedering of [isolatie](nl/begrippen/isolatie/)? Dan kun je gratis advies vragen bij Veilig Thuis (0800-2000). Zie ook [Hulp vinden](nl/hulp-vinden/).

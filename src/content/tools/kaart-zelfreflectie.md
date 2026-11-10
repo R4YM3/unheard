@@ -62,7 +62,7 @@ reviewNotes:
 
 ## Wanneer deze kaart kan helpen
 
-Deze kaart is er als je merkt dat er iets speelt, en je er nog geen naam voor hebt. Dat kan midden in een relatie zijn, of lang nadat die is gestopt. Soms is het enige wat lukt een zin over hoe je lijf aanvoelt, of over wat je vandaag nodig hebt. Dat is genoeg.
+Deze kaart is er als je merkt dat er iets speelt, en je er nog geen naam voor hebt. Dat kan midden in een relatie zijn, of lang nadat die is gestopt. Soms is het enige wat lukt een zin over [hoe je lijf aanvoelt](nl/herstel/leren-voelen/), of over wat je vandaag nodig hebt. Dat is genoeg.
 
 Mannen schrijven dit soort zinnen soms jaren niet op, omdat het voelt alsof ze het alleen moeten kunnen dragen. Deze kaart is ook voor vrouwen en non-binaire lezers. Je hoeft niet te beslissen of het misbruik is voordat je een regel invult.
 

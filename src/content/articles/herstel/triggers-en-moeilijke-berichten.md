@@ -70,7 +70,7 @@ Thuisarts beschrijft ook manieren om met stress om te gaan, zoals bewegen, struc
 
 ### Laat iemand meelezen
 
-Een ander ziet een bericht vaak rustiger dan jij op dat moment. Vraag iemand die je vertrouwt om mee te lezen: wat staat er eigenlijk? Moet ik hier iets mee? Dat kan een vriend zijn, een familielid of een hulpverlener.
+Een ander ziet een bericht vaak rustiger dan jij op dat moment. Vraag [iemand die je vertrouwt](nl/herstel/steunnetwerk/) om mee te lezen: wat staat er eigenlijk? Moet ik hier iets mee? Dat kan een vriend zijn, een familielid of een hulpverlener.
 
 Kies iemand die niet meteen boos wordt namens jou of je aanspoort om hard terug te slaan. Je zoekt rust, geen extra vuur.
 

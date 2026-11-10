@@ -44,7 +44,7 @@ reviewNotes:
 
 ## Je hoeft niet alles tegelijk
 
-Na een breuk kan het voelen alsof alles tegelijk geregeld moet worden: wonen, geld, papieren, de kinderen. Zeker als je moe bent van een lange periode van spanning, is dat veel. Kies eerst wat nu het meest dringend is, en laat de rest even liggen.
+Na een breuk kan het voelen alsof alles tegelijk geregeld moet worden: wonen, [geld](nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/), papieren, de kinderen. Zeker als je moe bent van een lange periode van spanning, is dat veel. Kies eerst wat nu het meest dringend is, en laat de rest even liggen.
 
 ## Veilig vastleggen wat er gebeurt
 
@@ -74,4 +74,4 @@ Wil je aangifte doen of twijfel je daarover, dan kan [Slachtofferhulp Nederland]
 
 ## Ook dit hoort bij herstel
 
-Praktische zaken regelen is vaak geen kwestie van een middag. Het kan oude spanning oproepen, zeker als je weer contact moet hebben met de ander. Neem pauzes, vraag iemand om mee te lezen of mee te gaan, en wees mild voor jezelf als het langer duurt dan je had gehoopt.
+Praktische zaken regelen is vaak geen kwestie van een middag. Het kan oude spanning oproepen, zeker als je weer [contact moet hebben met de ander](nl/herstel/contact-na-een-breuk/). Neem pauzes, vraag iemand om mee te lezen of mee te gaan, en wees mild voor jezelf als het langer duurt dan je had gehoopt.

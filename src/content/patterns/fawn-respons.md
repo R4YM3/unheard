@@ -79,7 +79,7 @@ Voor mannen kan dit extra verwarrend zijn, omdat het botst met het beeld van de 
 ## Wat kan helpen?
 
 - **Vertraag je 'ja'.** "Ik laat het je straks weten" geeft je tijd om te voelen wat je wilt.
-- **Oefen met kleine voorkeuren**: kiezen waar je gaat eten, welke film je kijkt. Grenzen zijn een spier die je kunt trainen.
+- **[Oefen met kleine voorkeuren](nl/herstel/grenzen-leren-stellen/)**: kiezen waar je gaat eten, welke film je kijkt. Grenzen zijn een spier die je kunt trainen.
 - **Merk op wanneer het gebeurt**, zonder jezelf te veroordelen. Bewust worden is de eerste stap.
 - **Zoek een therapeut** als het patroon diep zit of samenhangt met wat je vroeger of in een relatie hebt meegemaakt. Zie [therapie](nl/herstel/therapievormen/).
 - **Is aanpassen nodig omdat je bang bent voor de reactie van je partner?** Dan gaat het niet alleen om jouw patroon. Lees over [dwingende controle](nl/begrippen/dwingende-controle/) of bel Veilig Thuis (0800-2000). Zie ook [Hulp vinden](nl/hulp-vinden/).

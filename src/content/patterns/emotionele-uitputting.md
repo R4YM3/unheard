@@ -87,7 +87,7 @@ Juist als je uitgeput bent, is het moeilijk om iets te veranderen. Dat is geen g
 
 - **Neem je moeheid serieus.** Het is een signaal, geen zwakte.
 - **Zoek ontspanning en beweging**, ook al is het klein: een korte wandeling, regelmatige maaltijden, vaste tijden om te slapen. Thuisarts raadt bij overspannenheid aan om te zorgen voor meer ontspanning, gezond te leven en erover te praten.
-- **Praat erover** met een vriend, familielid, je huisarts of de praktijkondersteuner.
+- **[Praat erover](nl/herstel/hoe-vertel-ik-het/)** met een vriend, familielid, je huisarts of de praktijkondersteuner.
 - **Kijk wat je energie kost**, en wat je energie geeft. Kleine verschuivingen kunnen helpen.
 - **Zoek hulp als het niet beter wordt.** Je huisarts kan meedenken en zo nodig verwijzen. Zie ook [herstel](nl/herstel/) en [therapie](nl/herstel/therapievormen/).
 - **Komt de uitputting door een situatie waarin je bang bent of gecontroleerd wordt?** Bel Veilig Thuis voor advies: 0800-2000, gratis en anoniem, dag en nacht.

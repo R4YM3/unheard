@@ -80,5 +80,5 @@ Telkens beschuldigd worden van iets wat je niet doet, is vermoeiend en verwarren
 
 - **Je hoeft de ander niet te analyseren.** Of het projectie is, onzekerheid of iets anders: je mag stilstaan bij wat het met jou doet.
 - **Blijf bij feiten en gevoelens.** "Ik word beschuldigd van iets wat ik niet heb gedaan, en dat maakt me onrustig." Dat is genoeg.
-- **Stop met verdedigen als het niets oplevert.** Een korte, rustige zin kan volstaan: "Dat klopt niet, en ik ga er nu niet verder over in." Doe dat alleen als het veilig voelt.
+- **[Stop met verdedigen als het niets oplevert](nl/herstel/grenzen-leren-stellen/).** Een korte, rustige zin kan volstaan: "Dat klopt niet, en ik ga er nu niet verder over in." Doe dat alleen als het veilig voelt.
 - **Zijn de beschuldigingen onderdeel van controle**, zoals je telefoon moeten laten zien of geen contact meer mogen hebben met anderen? Lees dan over [dwingende controle](nl/begrippen/dwingende-controle/) en kijk bij [Hulp vinden](nl/hulp-vinden/).

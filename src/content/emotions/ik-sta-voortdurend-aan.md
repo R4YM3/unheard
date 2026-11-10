@@ -125,7 +125,7 @@ Voortdurend aan staan ontstaat vaak in een situatie waarin het loonde om alert t
 - De sfeer thuis kon snel omslaan, en je leerde de signalen vroeg op te vangen.
 - Berichten of gesprekken waren onvoorspelbaar: soms warm, soms kil, zonder dat je wist waarom.
 - Er waren zorgen over geld, de kinderen of je woning waar je weinig grip op had.
-- Na een breuk is er nog contact dat steeds spanning geeft.
+- Na een breuk is er nog [contact dat steeds spanning geeft](nl/herstel/contact-na-een-breuk/).
 
 Het kan ook zonder een andere persoon: door een zware baan, ziekte in de familie of een lange periode van onzekerheid. Langdurige stress komt vaak voort uit onzekerheid, bijvoorbeeld over geld, familie of een relatie.
 
@@ -135,7 +135,7 @@ Wat opvalt is dat de spanning vaak blijft, ook als de situatie al veranderd is. 
 
 Je lichaam is gemaakt om te reageren op dreiging. Als je vaak spanning hebt meegemaakt, leert het om alert te blijven. Dat is een slimme aanpassing: wie de signalen vroeg ziet, kan zich voorbereiden. Maar die alertheid gaat niet vanzelf uit wanneer de situatie verandert.
 
-Dit wordt soms waakzaamheid of hyperwaakzaamheid genoemd. Dat zijn beschrijvende woorden, geen diagnose. Ze helpen om te zien dat je niet gek of overgevoelig bent, maar dat je lichaam doet wat het heeft geleerd.
+Dit wordt soms waakzaamheid of [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/) genoemd. Dat zijn beschrijvende woorden, geen diagnose. Ze helpen om te zien dat je niet gek of overgevoelig bent, maar dat je lichaam doet wat het heeft geleerd.
 
 Stress kan zich op veel manieren laten zien: moe zijn, slecht slapen, piekeren, prikkelbaar zijn. Iedereen heeft weleens stress. Het wordt zwaar als het lang duurt en je weinig momenten hebt waarop het zakt. Over hoe herinneringen en berichten spanning kunnen oproepen, lees je op [Triggers en moeilijke berichten](nl/herstel/triggers-en-moeilijke-berichten/).
 
@@ -157,4 +157,4 @@ Bij direct gevaar bel je [112](tel:112). Maak je je zorgen over je veiligheid th
 
 ## Een volgende stap
 
-Je hoeft het alarm niet in één keer uit te zetten. Begin bij één ding: een vaste bedtijd, een dagelijkse wandeling, of een kort moment waarop je merkt waar in je lichaam de spanning zit. Meer over hulp staat op [Hulp vinden](nl/hulp-vinden/).
+Je hoeft het alarm niet in één keer uit te zetten. Begin bij één ding: een vaste bedtijd, een dagelijkse wandeling, of een kort moment waarop je merkt [waar in je lichaam de spanning zit](nl/herstel/leren-voelen/). Meer over hulp staat op [Hulp vinden](nl/hulp-vinden/).

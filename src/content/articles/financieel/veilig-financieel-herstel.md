@@ -42,7 +42,7 @@ reviewNotes:
 
 ## Wat is financieel herstel?
 
-Na een periode van financiële controle of druk is de situatie soms praktisch opgelost, maar blijft geld spanning geven. Je schrikt van een brief, durft niet in je bankapp te kijken of voelt je schuldig bij elke aankoop. Financieel herstel gaat over beide kanten: de praktische, en het weer durven vertrouwen op je eigen keuzes.
+Na een periode van [financiële controle](nl/begrippen/controle-over-uitgaven/) of druk is de situatie soms praktisch opgelost, maar blijft geld spanning geven. Je schrikt van een brief, durft niet in je bankapp te kijken of voelt je schuldig bij elke aankoop. Financieel herstel gaat over beide kanten: de praktische, en het weer durven vertrouwen op je eigen keuzes.
 
 Herstel is geen eindpunt dat je moet halen. Het is een richting.
 
@@ -60,7 +60,7 @@ Het [Nibud](https://www.nibud.nl/onderwerpen/rondkomen/) heeft onafhankelijke in
 
 ## Waarom het niet in één keer gaat
 
-Herstel gaat zelden in een rechte lijn. Je kunt een tijd goed bezig zijn en dan door één bericht, een onverwachte rekening of een herinnering weer terugvallen in oude spanning. Dat betekent niet dat je het niet kunt of dat je niets bent opgeschoten.
+Herstel gaat zelden in een rechte lijn. Je kunt een tijd goed bezig zijn en dan door [één bericht](nl/herstel/triggers-en-moeilijke-berichten/), een onverwachte rekening of een herinnering weer terugvallen in oude spanning. Dat betekent niet dat je het niet kunt of dat je niets bent opgeschoten.
 
 Soms is het ook niet duidelijk of je onrust over geld komt door wat er gebeurde, of door gewone geldzorgen die iedereen kan hebben. Dat onderscheid hoef je niet scherp te maken. Beide mogen aandacht krijgen.
 

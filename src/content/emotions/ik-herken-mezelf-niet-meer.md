@@ -122,7 +122,7 @@ Jezelf kwijtraken gebeurt vaak in een omgeving waarin aanpassen loont en jezelf 
 
 - Je voorkeuren worden belachelijk gemaakt of afgedaan als onbelangrijk.
 - Beslissingen worden meestal door een ander genomen, ook over jouw tijd.
-- Contact met vrienden of familie geeft steeds gedoe, waardoor je het maar laat.
+- [Contact met vrienden of familie geeft steeds gedoe](nl/begrippen/isolatie/), waardoor je het maar laat.
 - Jouw rust hangt af van de stemming van een ander, dus je stemt alles daarop af.
 
 Het kan ook zonder dat iemand iets afdwingt. Een zware baan, de eerste jaren met jonge kinderen, mantelzorg of een lange periode van stress kunnen er allemaal voor zorgen dat je jezelf even niet meer tegenkomt.
@@ -131,7 +131,7 @@ Het kan ook zonder dat iemand iets afdwingt. Een zware baan, de eerste jaren met
 
 Aanpassen is een manier om verbinding en rust te bewaren. Dat is menselijk. Maar als het langere tijd de enige veilige manier lijkt, kunnen je eigen wensen naar de achtergrond verdwijnen. Ze worden niet weggevaagd; ze worden stil.
 
-In relaties waarin één persoon structureel bepaalt wat mag en wat niet, gebeurt dat sneller. Dan gaat het niet om één keer toegeven, maar om een patroon waarin jouw ruimte steeds kleiner wordt. Of dat bij jou speelt, kun je niet uit één voorbeeld afleiden, en het zegt niets over wie de ander is. Op [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/) lees je meer over hoe zulke patronen kunnen doorwerken.
+In relaties waarin één persoon structureel bepaalt wat mag en wat niet, gebeurt dat sneller. Dan gaat het niet om één keer toegeven, maar om [een patroon waarin jouw ruimte steeds kleiner wordt](nl/begrippen/dwingende-controle/). Of dat bij jou speelt, kun je niet uit één voorbeeld afleiden, en het zegt niets over wie de ander is. Op [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/) lees je meer over hoe zulke patronen kunnen doorwerken.
 
 Soms speelt ook iets van eerder mee. Wie al jong leerde dat zijn eigen behoeften minder belangrijk waren, past zich later makkelijker aan. Schematherapie richt zich onder meer op zulke terugkerende patronen; je leest erover op [Schematherapie](nl/herstel/therapievormen/schematherapie/).
 

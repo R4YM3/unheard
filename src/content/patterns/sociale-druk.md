@@ -88,8 +88,8 @@ Experimenteel onderzoek naar [DARVO](nl/begrippen/darvo/) laat bovendien zien da
 
 ## Wat kan helpen?
 
-- **Kies wie je wat vertelt.** Je hoeft niet iedereen het hele verhaal te geven. Eén of twee mensen die je echt vertrouwt, kunnen genoeg zijn.
+- **[Kies wie je wat vertelt](nl/herstel/hoe-vertel-ik-het/).** Je hoeft niet iedereen het hele verhaal te geven. Eén of twee mensen die je echt vertrouwt, kunnen genoeg zijn.
 - **Zeg wat je nodig hebt.** Bijvoorbeeld: "Ik wil niet dat je berichten van haar aan mij doorgeeft" of "Ik heb nu geen advies nodig, alleen dat je luistert."
-- **Je hoeft niet te overtuigen.** Je kunt een grens stellen zonder dat de ander het eens is met je redenen.
-- **Zoek steun buiten de kring**: een huisarts, een maatschappelijk werker, een lotgenotengroep. Zij hebben geen belang in de uitkomst.
+- **Je hoeft niet te overtuigen.** Je kunt [een grens stellen](nl/herstel/grenzen-leren-stellen/) zonder dat de ander het eens is met je redenen.
+- **[Zoek steun buiten de kring](nl/herstel/steunnetwerk/)**: een huisarts, een maatschappelijk werker, een lotgenotengroep. Zij hebben geen belang in de uitkomst.
 - **Twijfel je of je situatie veilig is?** Veilig Thuis geeft gratis en anoniem advies via 0800-2000. Zie ook [Hulp vinden](nl/hulp-vinden/).

@@ -73,7 +73,7 @@ Neem een moment waarop je rustig zit. Ga in gedachten langzaam langs je lichaam,
 
 ## Gevoelens een naam geven
 
-Als je merkt dat er iets is, kun je proberen het een naam te geven. Dat hoeft niet precies. "Iets van verdriet." "Een soort boosheid." "Ik weet het niet, maar het is zwaar."
+Als je merkt dat er iets is, kun je proberen [het een naam te geven](nl/hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig/). Dat hoeft niet precies. "Iets van verdriet." "Een soort boosheid." "Ik weet het niet, maar het is zwaar."
 
 Sommige mensen helpt het om een paar basiswoorden bij de hand te hebben: verdriet, boosheid, angst, schaamte, schuld, opluchting, blijdschap, eenzaamheid. Vaak zijn het er meerdere tegelijk.
 

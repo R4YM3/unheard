@@ -67,7 +67,7 @@ reviewNotes:
 
 ## Wanneer deze kaart kan helpen
 
-Soms wil je iets zeggen over wat je nodig hebt, en wil je eerst voor jezelf kijken of een gesprek daarvoor de juiste vorm is. Deze kaart is daarvoor, en alleen dan. Hij helpt je een zin te kiezen, of te merken dat je die zin vandaag niet wilt uitspreken.
+Soms wil je iets zeggen over [wat je nodig hebt](nl/herstel/grenzen-leren-stellen/), en wil je eerst voor jezelf kijken of een gesprek daarvoor de juiste vorm is. Deze kaart is daarvoor, en alleen dan. Hij helpt je een zin te kiezen, of te merken dat je die zin vandaag niet wilt uitspreken.
 
 Een goed moment is een moment waarop je niet bang bent voor de reactie, waarop je weg kunt als je dat wilt, en waarop je niet hoopt dat de ander eindelijk toegeeft wat er mis is. Herkenning op deze site is geen reden om het gesprek te openen.
 

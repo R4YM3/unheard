@@ -43,7 +43,7 @@ Het wordt een zorg wanneer afhankelijkheid wordt vergroot of gebruikt om je keuz
 
 - Je wordt ontmoedigd om te werken, meer uren te maken of een opleiding af te maken.
 - Afspraken voor sollicitaties of werk worden steeds doorkruist, of je wordt na een nieuwe baan onder druk gezet om te stoppen.
-- Je krijgt geld 'toebedeeld' en moet daarover verantwoording afleggen.
+- Je krijgt geld 'toebedeeld' en moet daarover [verantwoording afleggen](nl/begrippen/controle-over-uitgaven/).
 - Er wordt gedreigd met de financiële gevolgen als je weggaat: "Zonder mij heb je niets."
 - Je verdient zelf, maar je inkomen verdwijnt op een rekening waar je geen zicht op hebt.
 

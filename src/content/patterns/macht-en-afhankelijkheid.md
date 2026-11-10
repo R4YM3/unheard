@@ -45,7 +45,7 @@ Onderzoek naar [traumabinding](nl/begrippen/traumabinding/) (Dutton en Painter, 
 
 Afhankelijkheid ontstaat zelden in één keer. Vaak is het een optelsom van keuzes die op het moment zelf logisch voelden.
 
-- **Geld.** Eén inkomen, de rekening op naam van de ander, schulden op jouw naam. Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- **Geld.** Eén inkomen, de rekening op naam van de ander, [schulden op jouw naam](nl/begrippen/schulden-op-naam/). Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
 - **Wonen.** Het huis is van de ander, of je woont ver van je eigen netwerk.
 - **Kinderen.** Zorgen over omgang, of de angst dat de ander de kinderen tegen je opzet.
 - **Status en verblijf.** Een verblijfsvergunning die afhangt van de relatie, of werk in het bedrijf van de ander.
@@ -84,8 +84,8 @@ Vragen die kunnen helpen:
 
 ## Wat kan helpen?
 
-- **Breng je afhankelijkheden in kaart**, zonder oordeel. Wat is van jou, wat is gezamenlijk, wat is van de ander? Welke contracten staan op jouw naam?
-- **Bouw kleine stukjes zelfstandigheid op** als dat veilig kan: een eigen rekening, eigen contacten, kopieën van belangrijke documenten op een veilige plek.
-- **Vraag advies over je rechten.** Het Juridisch Loket geeft gratis informatie over bijvoorbeeld wonen, scheiden en schulden. Over geld kun je ook terecht bij de schuldhulp van je gemeente.
+- **[Breng je afhankelijkheden in kaart](nl/hulpmiddelen/financieel-overzicht-en-veiligheid/)**, zonder oordeel. Wat is van jou, wat is gezamenlijk, wat is van de ander? Welke contracten staan op jouw naam?
+- **Bouw kleine stukjes zelfstandigheid op** als dat veilig kan: een eigen rekening, eigen contacten, [kopieën van belangrijke documenten op een veilige plek](nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/).
+- **[Vraag advies over je rechten](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/).** Het Juridisch Loket geeft gratis informatie over bijvoorbeeld wonen, scheiden en schulden. Over geld kun je ook terecht bij de schuldhulp van je gemeente.
 - **Bespreek je situatie met Veilig Thuis** als afhankelijkheid wordt gebruikt om je onder druk te zetten: 0800-2000, gratis en anoniem, dag en nacht.
 - Zie ook [Hulp vinden](nl/hulp-vinden/).

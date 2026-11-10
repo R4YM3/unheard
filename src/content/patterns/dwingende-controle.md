@@ -51,7 +51,7 @@ Dwingende controle (in het Engels _coercive control_, in Nederland ook wel _inti
 
 De Amerikaanse onderzoeker Evan Stark heeft het begrip uitgewerkt. In een overzichtsartikel uit 2019 beschrijven Stark en Marianne Hester dwingende controle als een combinatie van geweld of dreiging met tactieken als isoleren, vernederen, uitbuiten en het reguleren van iemands dagelijkse leven. Volgens hen gaat het niet alleen om wat er gebeurt, maar om wat het oplevert: iemand verliest stap voor stap ruimte om eigen keuzes te maken.
 
-Veilig Thuis noemt als signalen onder meer: voortdurend genegeerd worden, chantage, vernedering, manipulatie, overmatige jaloezie, steeds moeten laten weten waar je bent, ongevraagd meekijken in je telefoon, isolatie van vrienden en familie, en intimidatie. Fysiek geweld kan er deel van zijn, maar hoeft niet.
+Veilig Thuis noemt als signalen onder meer: voortdurend genegeerd worden, chantage, vernedering, [manipulatie](nl/begrippen/psychische-manipulatie/), overmatige jaloezie, steeds moeten laten weten waar je bent, ongevraagd meekijken in je telefoon, isolatie van vrienden en familie, en intimidatie. Fysiek geweld kan er deel van zijn, maar hoeft niet.
 
 > **Over de wet.** In juni 2026 heeft het kabinet een wetsvoorstel in consultatie gebracht om dwingende controle en psychische mishandeling expliciet strafbaar te maken. Bij het schrijven van dit artikel is dat een voorstel, geen geldende wet. Of en in welke vorm het wordt aangenomen, is nog niet bekend.
 
@@ -62,7 +62,7 @@ Dwingende controle zit vaak in kleine, alledaagse dingen. Los bekeken lijken ze 
 - De ander wil altijd weten waar je bent, en wordt boos of ongerust als je niet direct antwoordt.
 - Je telefoon, mail of bankrekening wordt gecontroleerd.
 - Je ziet je vrienden of familie steeds minder, omdat het 'gedoe' geeft. Zie [isolatie](nl/begrippen/isolatie/).
-- Je moet verantwoording afleggen over uitgaven, of hebt geen eigen toegang tot geld. Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- Je moet [verantwoording afleggen over uitgaven](nl/begrippen/controle-over-uitgaven/), of hebt geen eigen toegang tot geld. Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
 - Er zijn regels over kleding, eten, slaap of wie je spreekt, uitgesproken of onuitgesproken.
 - Je wordt uitgelachen of gekleineerd, ook waar anderen bij zijn.
 - Je merkt dat je vooral bezig bent met het voorkomen van een uitbarsting.
@@ -106,8 +106,8 @@ Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft da
 
 ## Wat kan helpen?
 
-- **Schrijf op wat er gebeurt**, als dat veilig kan: data, wat er gezegd werd, wat je niet mocht. Een patroon is makkelijker te zien op papier dan in je hoofd. Bewaar het waar de ander er niet bij kan.
-- **Praat met iemand buiten de relatie** die je vertrouwt.
+- **Schrijf op wat er gebeurt**, als dat veilig kan: data, wat er gezegd werd, wat je niet mocht. Een patroon is makkelijker te zien op papier dan in je hoofd. Bewaar het [waar de ander er niet bij kan](nl/veilig-gebruik/).
+- **[Praat met iemand buiten de relatie](nl/herstel/hoe-vertel-ik-het/)** die je vertrouwt.
 - **Bel Veilig Thuis voor advies**: 0800-2000, gratis en anoniem, dag en nacht. Je hoeft niet zeker te weten of het 'erg genoeg' is.
 - **Wees voorzichtig met relatietherapie of bemiddeling.** Bij dwingende controle kan een gezamenlijk gesprek onveilig zijn, omdat wat je vertelt thuis tegen je kan worden gebruikt. Bespreek dat eerst met een hulpverlener.
 - **Denk vooraf na over veiligheid als je overweegt te vertrekken.** Veilig Thuis kan met je meedenken over hoe je dat zo veilig mogelijk doet.

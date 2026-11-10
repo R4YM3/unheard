@@ -67,7 +67,7 @@ Alle bronnen zijn rechtstreeks bij de uitgever geopend en nagelezen. Meer over h
 
 De meeste cijfers op deze pagina komen uit de Prevalentiemonitor Huiselijk Geweld en Seksueel Grensoverschrijdend Gedrag 2024 van het CBS en het WODC. Daarin wordt het begrip **psychisch geweld in huiselijke kring** gebruikt.
 
-Daaronder valt structurele verbale agressie, die minstens maandelijks voorkomt, en vormen van dwingende controle waarbij dreiging en intimidatie een rol spelen. Het gaat om gedrag van iemand uit de huiselijke kring. Dat is **breder dan partners of ex-partners**. Een cijfer over psychisch geweld is dus geen cijfer over relaties alleen.
+Daaronder valt structurele verbale agressie, die minstens maandelijks voorkomt, en vormen van [dwingende controle](nl/begrippen/dwingende-controle/) waarbij dreiging en intimidatie een rol spelen. Het gaat om gedrag van iemand uit de huiselijke kring. Dat is **breder dan partners of ex-partners**. Een cijfer over psychisch geweld is dus geen cijfer over relaties alleen.
 
 Het CBS gebruikte dit begrip in 2024 voor het eerst in deze vorm. Cijfers uit eerdere jaren zijn opnieuw berekend; vergelijkingen met oudere publicaties zijn daarom lastig. Het onderzoek is een online vragenlijst waarin mensen zelf aangeven wat ze hebben meegemaakt. Mensen die in een instelling wonen, doen niet mee.
 

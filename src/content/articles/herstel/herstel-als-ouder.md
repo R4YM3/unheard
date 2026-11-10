@@ -69,7 +69,7 @@ Een paar uitgangspunten die kunnen helpen:
 
 - **Deel je zorgen met volwassenen, niet met je kinderen.** Je kind is geen vertrouwenspersoon voor wat er tussen jou en de andere ouder speelde.
 - **Leg uit op hun niveau.** "Ik ben soms moe en verdrietig. Dat is niet jouw schuld, en ik zorg dat ik zelf hulp krijg." Daarmee geef je eerlijkheid zonder last.
-- **Laat ze geen boodschapper zijn.** Berichten, afspraken en vragen tussen ouders horen niet via het kind te lopen.
+- **[Laat ze geen boodschapper zijn](nl/begrippen/triangulatie/).** Berichten, afspraken en vragen tussen ouders horen niet via het kind te lopen.
 - **Laat ze kind zijn.** Ze hoeven jou niet te troosten of op te vrolijken.
 
 ## Hun eigen band en hun eigen verhaal

@@ -82,7 +82,7 @@ Dit is geen portret van een type mens. Het beschrijft wat je kunt meemaken als g
 - Werd er herhaaldelijk tegen je gelogen, over geld, contacten of waar iemand was?
 - Werd jouw nee genegeerd, of bestraft met stilte, dreiging of charme die snel weer omsloeg?
 - Was er intimidatie of geweld?
-- Werd je financieel uitgebuit, bijvoorbeeld met schulden op jouw naam? Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- Werd je financieel uitgebuit, bijvoorbeeld met [schulden op jouw naam](nl/begrippen/schulden-op-naam/)? Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
 - Duurde spijt kort, of werd jij juist de schuldige gemaakt? Zie [DARVO](nl/begrippen/darvo/).
 
 **Wat het met je gevoel kan doen.** Je vertrouwt je eigen oordeel minder, omdat de feiten steeds worden herschreven. Je schaamt je dat je iemand geloofde. Je wordt waakzaam en ontspant niet als het even rustig is. Boosheid en medelijden kunnen door elkaar lopen. Zie [zelftwijfel](nl/begrippen/zelftwijfel/) en [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/).
@@ -108,6 +108,6 @@ Eén leugen of één gebroken afspraak maakt iemand dit niet. Het gaat om een he
 
 ## Wat kan helpen?
 
-- **Beschrijf gedrag en feiten**, ook naar hulpverleners en instanties.
+- **[Beschrijf gedrag en feiten](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/)**, ook naar hulpverleners en instanties.
 - **Zoek hulp voor jezelf.** Een psycholoog kan je helpen om te verwerken wat er gebeurd is. Zie [therapie](nl/herstel/therapievormen/).
 - **Ben je slachtoffer van een misdrijf**, zoals fraude of bedreiging? [Slachtofferhulp Nederland](https://www.slachtofferhulp.nl/) biedt gratis ondersteuning.

@@ -129,13 +129,13 @@ Gehechtheid verdwijnt niet omdat je begrijpt wat er misging. Een band die je jar
 
 Gemis kan ook een vorm van rouw zijn. Je verliest niet alleen een persoon, maar ook een rol, een thuis, een toekomstbeeld. Rouw kan in golven komen en gaat niet in een rechte lijn. Op [Rouw](nl/herstel/rouw/) lees je meer over rouw om iets wat niet door overlijden verloren ging.
 
-Soms wordt het begrip traumabinding gebruikt. Daarmee wordt bedoeld dat afwisseling van spanning en warmte een band juist sterker kan maken, waardoor loskomen moeilijker voelt. Het is een populaire term en geen diagnose. Hij kan helpen om je gevoel te begrijpen, maar zegt niets over wie de ander is, en lang niet ieder gemis valt eronder.
+Soms wordt het begrip [traumabinding](nl/begrippen/traumabinding/) gebruikt. Daarmee wordt bedoeld dat afwisseling van spanning en warmte een band juist sterker kan maken, waardoor loskomen moeilijker voelt. Het is een populaire term en geen diagnose. Hij kan helpen om je gevoel te begrijpen, maar zegt niets over wie de ander is, en lang niet ieder gemis valt eronder.
 
 ## Wat het met je kan doen
 
 Op korte termijn kan gemis je onrustig maken. Je leest oude berichten terug, kijkt naar foto's of profielen, of overweegt contact op te nemen. Achteraf voel je je misschien dom of beschaamd.
 
-Op langere termijn kan het je laten twijfelen aan je eigen beslissingen of herinneringen. Als je de ander zo mist, was het dan misschien toch niet zo erg? Die vraag kan je terugbrengen naar zelftwijfel, waarover meer staat op [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
+Op langere termijn kan het je laten twijfelen aan je eigen beslissingen of herinneringen. Als je de ander zo mist, was het dan misschien toch niet zo erg? Die vraag kan je terugbrengen naar [zelftwijfel](nl/begrippen/zelftwijfel/), waarover meer staat op [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
 Gemis kan ook zachter worden. Niet doordat je de ander vergeet, maar doordat de goede en de pijnlijke herinneringen allebei een plek krijgen.
 

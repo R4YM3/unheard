@@ -30,7 +30,7 @@ Het doel is om te voldoen aan de **Web Content Accessibility Guidelines (WCAG) 2
 
 Concreet betekent dat:
 
-- **Leesbaarheid.** Gewone taal, korte alinea's, duidelijke tussenkoppen en één hoofdtitel per pagina. Moeilijke begrippen worden uitgelegd.
+- **Leesbaarheid.** Gewone taal, korte alinea's, duidelijke tussenkoppen en één hoofdtitel per pagina. Moeilijke [begrippen worden uitgelegd](nl/begrippen/).
 - **Toetsenbord.** Alles moet te bedienen zijn zonder muis. Je ziet duidelijk waar je bent, en bovenaan elke pagina staat een link waarmee je direct naar de inhoud springt.
 - **Schermlezers.** De pagina's gebruiken de gebruikelijke bouwstenen voor koppen, navigatie, lijsten en knoppen, zodat een schermlezer de structuur kan voorlezen. Tabbladen en uitklapbare onderdelen geven aan of ze open of dicht zijn.
 - **Contrast.** Tekst moet goed leesbaar zijn in het lichte en in het donkere thema. De site volgt bij je eerste bezoek de instelling van je apparaat, en je kunt het thema zelf wisselen.

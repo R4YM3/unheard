@@ -20,6 +20,27 @@ relation checks live in `src/lib/content.ts`.
 `published` is the build flag. `status` (`draft`, `in_review`, `approved`) is the editorial
 state and is shown on the page. Everything is `noindex,nofollow` while `NO_INDEX=true`.
 
+## Contextuele interne links
+
+Link bij een relevante vermelding in de lopende tekst naar de bestaande begrippenpagina,
+bijvoorbeeld `[gaslighting](nl/begrippen/gaslighting/)`. Geef begrippenpagina’s voorrang
+bij definities; verwijs voor praktische verdieping naar het passende artikel of de
+therapiepagina. Gebruik de relatieve route vanaf de sitebasis, zonder beginnende `/`.
+
+Eén link per bestemming per pagina is doorgaans genoeg. Behoud bewuste bestaande links
+en vermijd zelflinks, links in koppen of illustratieve citaten, en links op algemene
+woorden die in die context iets anders kunnen betekenen. Link uitsluitend naar pagina’s
+met `published: true` in dezelfde taal. Deze gewone Markdown-links staan ook zonder
+JavaScript in de HTML en blijven beschikbaar bij het printen.
+
+De tijdlijnteksten (`context.description`, `context.moments[].text`,
+`milestones[].description`, `milestones[].between[].text` en `lenses[].text`),
+de slotalinea’s van het verhaal en de persoonlijke tekstblokken met `Marked` ondersteunen
+ook deze expliciete interne linknotatie. Ze tonen gewone tekst en interne links, zonder
+HTML of volledige Markdown. Andere frontmattervelden ondersteunen niet automatisch
+Markdown; controleer altijd de gebouwde pagina. Gebruik geen linknotatie in titels,
+metadata, reflecties, citaten of kaarten die zelf al een link zijn.
+
 ## Folders and routes
 
 | Collection  | Folder                     | `slug` must start with    | Template                                                   |

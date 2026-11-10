@@ -89,7 +89,7 @@ Sociaal-psychologisch onderzoek naar buitensluiten laat zien dat het gemis aan v
 
 ## Wat kan helpen?
 
-- **Neem klein contact op.** Een kort bericht aan één persoon is genoeg om te beginnen. Je hoeft niet alles uit te leggen.
+- **[Neem klein contact op](nl/herstel/steunnetwerk/).** Een kort bericht aan één persoon is genoeg om te beginnen. Je hoeft niet alles uit te leggen.
 - **Je hoeft je niet te verontschuldigen** voor de afstand van de afgelopen tijd. Veel mensen begrijpen meer dan je denkt.
 - **Zoek ook nieuwe verbinding** als oude contacten niet meer passen: een cursus, sport, vrijwilligerswerk, een lotgenotengroep.
 - **Let op je veiligheid.** Als contact met anderen thuis tot dreiging leidt, bespreek dat met Veilig Thuis (0800-2000, gratis en anoniem, dag en nacht).

@@ -51,7 +51,7 @@ Je gedachten bepalen voor een deel hoe je je voelt en wat je doet. Denk je na ee
 
 Een woord over de namen. Cognitieve therapie richt zich vooral op gedachten: hoe je gebeurtenissen interpreteert en of die uitleg klopt of helpt. Gedragstherapie richt zich op wat je doet, bijvoorbeeld wat je vermijdt. In de praktijk worden ze vaak gecombineerd onder de overkoepelende naam cognitieve gedragstherapie. De VGCt, de beroepsvereniging, beschrijft CGT als werken aan gedachten en gedrag, met oefeningen en huiswerk.
 
-Thuisarts noemt cognitieve therapie ook als een van de traumagerichte behandelingen bij PTSS, naast EMDR en imaginaire exposure. Dat betekent niet dat iedereen die cognitieve therapie krijgt PTSS heeft, en ook niet dat jij dat hebt.
+Thuisarts noemt cognitieve therapie ook als een van de traumagerichte behandelingen bij PTSS, naast [EMDR](nl/herstel/therapievormen/emdr/) en [imaginaire exposure](nl/herstel/therapievormen/exposuretherapie/). Dat betekent niet dat iedereen die cognitieve therapie krijgt PTSS heeft, en ook niet dat jij dat hebt.
 
 CGT is geen behandeling voor 'misbruik' of voor wat een ander heeft gedaan. Het richt zich op wat jij ervaart. Welke vorm past, beslis je samen met een bevoegde professional.
 
@@ -64,7 +64,7 @@ De opzet verschilt per behandelaar, maar CGT is meestal vrij concreet en praktis
 - oefeningen en huiswerk tussen de sessies, bijvoorbeeld iets bijhouden of iets nieuws uitproberen;
 - duidelijke doelen en regelmatig terugkijken of het helpt.
 
-Een belangrijke kanttekening voor wie in een relatie veel twijfel aan zichzelf heeft ontwikkeld: werken met gedachten betekent niet dat jouw beleving 'fout' is. Een goede behandelaar neemt je ervaring serieus. Voelt het alsof je ervaring wordt weggeredeneerd, dan mag je dat zeggen.
+Een belangrijke kanttekening voor wie in een relatie veel [twijfel aan zichzelf heeft ontwikkeld](nl/begrippen/zelftwijfel/): werken met gedachten betekent niet dat jouw beleving 'fout' is. Een goede behandelaar neemt je ervaring serieus. Voelt het alsof je ervaring wordt weggeredeneerd, dan mag je dat zeggen.
 
 ## Wat is wel en niet aangetoond?
 

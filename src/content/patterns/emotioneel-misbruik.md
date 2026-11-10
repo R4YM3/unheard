@@ -67,7 +67,7 @@ De politie en het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk gew
 - **Kritiek op alles**: wat je doet, denkt of zegt is nooit goed.
 - **Controle**: bepalen met wie je omgaat, je straffen voor contact met anderen, alle aandacht opeisen.
 - **Dreigen**: met verlaten, met geweld, met zelfdoding, of via de kinderen.
-- **Manipulatie**: je waarneming in twijfel trekken of de schuld omdraaien.
+- **[Manipulatie](nl/begrippen/psychische-manipulatie/)**: je waarneming in twijfel trekken of de schuld omdraaien.
 - **Emotionele verwaarlozing**: structureel onbereikbaar of onverschillig zijn, je gevoelens ontkennen, je in de steek laten als je steun nodig hebt.
 
 > **Illustratief voorbeeld — verzonnen, geen echt gesprek**
@@ -107,7 +107,7 @@ Deze signalen kunnen ook andere oorzaken hebben. Herken je ze, dan zegt dat iets
 
 - **Neem je eigen ervaring serieus.** Dat er geen blauwe plekken zijn, betekent niet dat het niet erg is.
 - **Schrijf op wat er gebeurt**, als dat veilig kan. Op papier zie je een patroon vaak beter dan in je hoofd.
-- **Praat met iemand die je vertrouwt**, of met je huisarts.
+- **[Praat met iemand die je vertrouwt](nl/herstel/hoe-vertel-ik-het/)**, of met je huisarts.
 - **Vraag advies bij Veilig Thuis**: 0800-2000, gratis en anoniem, dag en nacht. Je hoeft niet zeker te weten of het 'erg genoeg' is.
 - **Bij direct gevaar bel je 112.** Heb je gedachten aan zelfdoding, bel dan 113 (0800-0113, gratis).
 - Meer adressen op [Hulp vinden](nl/hulp-vinden/).

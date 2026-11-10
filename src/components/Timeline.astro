@@ -21,7 +21,9 @@ const { label, milestones, context } = Astro.props;
       <aside class="timeline-context" aria-labelledby="timeline-context-heading">
         <p class="eyebrow">{context.eyebrow}</p>
         <h3 id="timeline-context-heading">{context.title}</h3>
-        <p>{context.description}</p>
+        <p>
+          <Marked text={context.description} />
+        </p>
         {context.moments.map((moment) => (
           <details>
             <summary>
@@ -44,7 +46,9 @@ const { label, milestones, context } = Astro.props;
             <article class="card">
               <p class="eyebrow">{milestone.eyebrow}</p>
               <h3>{milestone.title}</h3>
-              <p>{milestone.description}</p>
+              <p>
+                <Marked text={milestone.description} />
+              </p>
               {milestone.theme && <TimelineTheme theme={milestone.theme} />}
               {milestone.lenses.length > 0 && (
                 <details

@@ -80,7 +80,7 @@ reviewNotes:
 
 ## Wanneer deze kaart kan helpen
 
-Een afspraak duurt vaak korter dan het verhaal in je hoofd. Deze kaart helpt je van tevoren te kiezen wat je wilt zeggen, en wat niet. Je kunt hem meenemen, een zin voorlezen, of hem thuis laten en alleen onthouden waar je wilt beginnen.
+Een afspraak duurt vaak korter dan het verhaal in je hoofd. Deze kaart helpt je van tevoren te kiezen [wat je wilt zeggen, en wat niet](nl/herstel/hoe-vertel-ik-het/). Je kunt hem meenemen, een zin voorlezen, of hem thuis laten en alleen onthouden waar je wilt beginnen.
 
 Bij psychische klachten is de huisarts een ingang. Als je somber bent, kan de praktijkondersteuner (POH-GGZ) helpen. [Thuisarts](https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij) beschrijft ook wat je kunt doen als een partner of ex je mishandelt, en welke rol de huisarts daarin kan hebben. Mannen stellen zo’n afspraak soms uit omdat ze denken dat hun verhaal niet zwaar genoeg is. Je hoeft het niet eerst een naam te geven. Iedereen mag deze kaart gebruiken.
 

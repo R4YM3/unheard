@@ -76,31 +76,31 @@ Deze pagina beschrijft gevolgen die mensen vaak noemen. Het is **geen checklist*
 
 ### Twijfel aan jezelf
 
-Als je lange tijd te horen krijgt dat je het verkeerd ziet, verkeerd onthoudt of overdrijft, kan het vertrouwen in je eigen waarneming slijten. Je gaat gesprekken in je hoofd overdoen en vraagt je af of het misschien toch aan jou lag.
+Als je lange tijd te horen krijgt dat je het verkeerd ziet, verkeerd onthoudt of overdrijft, kan het [vertrouwen in je eigen waarneming slijten](nl/begrippen/zelftwijfel/). Je gaat gesprekken in je hoofd overdoen en vraagt je af of het misschien toch aan jou lag.
 
 ### Schuld en verantwoordelijkheid
 
-Veel mensen voelen zich verantwoordelijk voor de stemming van de ander. Als het misgaat, zoek je de oorzaak eerst bij jezelf. Sorry zeggen wordt een automatisme, ook als je niet weet waarvoor.
+Veel mensen [voelen zich verantwoordelijk voor de stemming van de ander](nl/wat-voel-ik/ik-voel-me-schuldig/). Als het misgaat, zoek je de oorzaak eerst bij jezelf. Sorry zeggen wordt een automatisme, ook als je niet weet waarvoor.
 
 ### Voortdurend op je hoede zijn
 
-Wie lang moest inschatten hoe de ander zou reageren, kan blijven scannen: op toon, gezichtsuitdrukkingen, het geluid van een sleutel in het slot. Dit wordt ook wel hyperwaakzaamheid genoemd. Het kan zich lichamelijk laten merken, bijvoorbeeld in slecht slapen, gespannen spieren of schrikken bij kleine dingen. Zulke klachten kunnen ook andere oorzaken hebben. Thuisarts beschrijft wat langdurige stress met je kan doen en wanneer je hulp kunt vragen.
+Wie lang moest inschatten hoe de ander zou reageren, kan blijven scannen: op toon, gezichtsuitdrukkingen, het geluid van een sleutel in het slot. Dit wordt ook wel [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/) genoemd. Het kan zich lichamelijk laten merken, bijvoorbeeld in slecht slapen, gespannen spieren of schrikken bij kleine dingen. Zulke klachten kunnen ook andere oorzaken hebben. Thuisarts beschrijft wat langdurige stress met je kan doen en wanneer je hulp kunt vragen.
 
 ### Uitputting
 
-Steeds alert zijn, ruzies voorkomen en alles goed willen doen kost veel energie. Mensen beschrijven een moeheid die dieper gaat dan lichamelijke vermoeidheid: weinig zin, weinig ruimte in je hoofd, het gevoel dat alles zwaar is.
+Steeds alert zijn, ruzies voorkomen en alles goed willen doen kost veel energie. Mensen beschrijven [een moeheid die dieper gaat dan lichamelijke vermoeidheid](nl/begrippen/emotionele-uitputting/): weinig zin, weinig ruimte in je hoofd, het gevoel dat alles zwaar is.
 
 ### Jezelf kwijtraken
 
-Als je je lang hebt aangepast, kun je vergeten wat je zelf wilt. Hobby's, vrienden en meningen zijn ongemerkt verdwenen. Na een relatie kan de vraag "wat wil ik eigenlijk?" verrassend moeilijk zijn.
+Als je je lang hebt aangepast, kun je [vergeten wat je zelf wilt](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/). Hobby's, vrienden en meningen zijn ongemerkt verdwenen. Na een relatie kan de vraag "wat wil ik eigenlijk?" verrassend moeilijk zijn.
 
 ### Conflicten vermijden
 
-Een nee of een andere mening leverde misschien steeds gedoe op. Dan is het logisch dat je conflicten gaat vermijden, ook bij mensen bij wie het wel veilig is. Wat ooit bescherming was, kan later in de weg zitten.
+Een nee of een andere mening leverde misschien steeds gedoe op. Dan is het logisch dat je [conflicten gaat vermijden](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/), ook bij mensen bij wie het wel veilig is. Wat ooit bescherming was, kan later in de weg zitten.
 
 ### Bevestiging zoeken
 
-Als je jezelf niet meer vertrouwt, ga je die zekerheid buiten jezelf zoeken. Je vraagt vaker of iets goed is, of je reactie normaal was, of de ander niet boos is.
+Als je jezelf niet meer vertrouwt, ga je die zekerheid buiten jezelf zoeken. Je [vraagt vaker of iets goed is](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/), of je reactie normaal was, of de ander niet boos is.
 
 ### Schaamte
 
@@ -108,7 +108,7 @@ Schaamte is vaak het gevoel dat het langst blijft. Schaamte dat het je overkwam,
 
 ## Over labels als traumabinding en fawn
 
-Je komt online veel begrippen tegen die deze gevolgen een naam geven. Twee bekende zijn **traumabinding** en de **fawn-respons**.
+Je komt online veel begrippen tegen die deze gevolgen een naam geven. Twee bekende zijn **[traumabinding](nl/begrippen/traumabinding/)** en de **[fawn-respons](nl/begrippen/fawn-respons/)**.
 
 Met traumabinding bedoelen mensen meestal een sterke band met iemand die je ook pijn doet, waarbij afwisseling van warmte en kou die band juist versterkt. Met de fawn-respons wordt een reactie op dreiging bedoeld waarbij je de ander probeert te sussen of tevreden te houden, in plaats van te vechten of te vluchten.
 

@@ -121,7 +121,7 @@ Je zoekt naar het ene zinnetje waarmee je het anders had kunnen zeggen. Je vraag
 
 > Misschien ligt het aan mij. Waarom denk ik dat steeds?
 
-Zelftwijfel hoort soms bij het leven en bij relaties. Maar als je merkt dat je steeds minder vertrouwen hebt in wat je waarneemt, voelt of nodig hebt, verdient dat aandacht.
+[Zelftwijfel](nl/begrippen/zelftwijfel/) hoort soms bij het leven en bij relaties. Maar als je merkt dat je steeds minder vertrouwen hebt in wat je waarneemt, voelt of nodig hebt, verdient dat aandacht.
 
 Het kan klein beginnen. Je leest een bericht vijf keer voordat je het verstuurt. Je begint zinnen met “misschien zie ik het verkeerd, maar…”. Je weet na afloop van een gesprek niet meer precies waar het over ging, alleen dat jij het weer verkeerd leek te hebben. Je herinnering voelt eerst helder, en later niet meer.
 
@@ -135,7 +135,7 @@ Zelftwijfel ontstaat zelden uit het niets. Vaak gaat er een gesprek of een reeks
 - Je gevoel wordt “overdreven”, “te gevoelig” of “drama” genoemd.
 - Een gesprek over jouw zorg eindigt bij iets wat jij fout zou hebben gedaan.
 - Je vraagt om uitleg, en krijgt een vraag terug over waarom je zo wantrouwig bent.
-- Anderen worden erbij gehaald: “iedereen vindt dat jij…”.
+- [Anderen worden erbij gehaald](nl/begrippen/sociale-druk/): “iedereen vindt dat jij…”.
 
 Elk van deze dingen kan gebeuren in een gewone ruzie of op een slechte dag. Mensen onthouden dingen verschillend, en niemand reageert altijd zorgvuldig. Wat het verschil kan maken is herhaling: gebeurt het één keer, of merk je dat jouw beleving steeds opnieuw minder telt?
 
@@ -143,7 +143,7 @@ Elk van deze dingen kan gebeuren in een gewone ruzie of op een slechte dag. Mens
 
 Soms gaat het om een misverstand of een moeilijk gesprek. Soms herken je een terugkerend patroon waarin jouw beleving steeds minder ruimte krijgt.
 
-Als iemand gebeurtenissen herhaaldelijk ontkent, verdraait of jouw waarneming ondermijnt, kan dat je vertrouwen in jezelf raken. Dat wordt soms gaslighting genoemd. Eén verschil in herinnering is niet genoeg om daar een conclusie aan te verbinden, en het woord zegt niets over wat iemand bedoelt of wie iemand is.
+Als iemand gebeurtenissen herhaaldelijk ontkent, verdraait of jouw waarneming ondermijnt, kan dat je vertrouwen in jezelf raken. Dat wordt soms [gaslighting](nl/begrippen/gaslighting/) genoemd. Eén verschil in herinnering is niet genoeg om daar een conclusie aan te verbinden, en het woord zegt niets over wat iemand bedoelt of wie iemand is.
 
 Een ander patroon is dat een gesprek ongemerkt kantelt: je begint over jouw pijn en eindigt met excuses. Daar bestaat een begrip voor, [DARVO](nl/begrippen/darvo/), dat beschrijft hoe ontkennen, aanvallen en de rollen omdraaien op elkaar kunnen volgen.
 

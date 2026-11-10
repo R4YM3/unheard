@@ -24,10 +24,10 @@ reviewNotes:
 
 ## Hoe gebruik je deze index?
 
-Je kunt per letter bladeren of, als JavaScript aanstaat, typen om te filteren. Elk begrip linkt naar een pagina met meer uitleg. In de index staan ook woorden voor mogelijke gevolgen, zoals zelftwijfel of schuldgevoel. Die verwijzen naar de pagina’s bij [Wat voel ik?](nl/wat-voel-ik/).
+Je kunt per letter bladeren of, als JavaScript aanstaat, typen om te filteren. Elk begrip linkt naar een pagina met meer uitleg. In de index staan ook woorden voor mogelijke gevolgen, zoals [zelftwijfel](nl/begrippen/zelftwijfel/) of schuldgevoel. Die verwijzen naar de pagina’s bij [Wat voel ik?](nl/wat-voel-ik/).
 
 ## Een woord is geen oordeel
 
-Een begrip kan helpen om iets wat verwarrend voelt te ordenen. Maar één gesprek, één zin of één ruzie bewijst geen patroon. En zelfs een patroon zegt niets over een diagnose. Termen als narcisme of psychopathie zijn klinische begrippen die alleen een bevoegde professional na eigen onderzoek kan gebruiken. Op deze site worden ze uitgelegd om verwarring weg te nemen, niet om iemand een etiket te geven.
+Een begrip kan helpen om iets wat verwarrend voelt te ordenen. Maar één gesprek, één zin of één ruzie bewijst geen patroon. En zelfs een patroon zegt niets over een diagnose. Termen als [narcisme](nl/begrippen/narcisme/) of [psychopathie](nl/begrippen/sociopathie-en-psychopathie/) zijn klinische begrippen die alleen een bevoegde professional na eigen onderzoek kan gebruiken. Op deze site worden ze uitgelegd om verwarring weg te nemen, niet om iemand een etiket te geven.
 
 Twijfel je of iets een gewoon conflict is of een terugkerend patroon van controle? Lees dan [Ongezond conflict of een patroon?](nl/begrijp-het/conflict-of-patroon/).
