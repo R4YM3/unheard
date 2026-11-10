@@ -143,13 +143,8 @@ h4 {
 .reading {
   max-width: var(--reading);
 }
-/* Reading columns share the left edge of the content grid instead of floating centred,
-   so text, headings and card rows line up while scrolling. */
+/* Centre standalone reading blocks; rail layouts keep their own column alignment. */
 .wrap.reading {
-  margin-inline: max(1.25rem, calc((100% - var(--content)) / 2)) auto;
-}
-/* Without a side rail, centre the reading column while keeping text left aligned. */
-.article-layout:not(.article-layout--rail) .wrap.reading {
   margin-inline: auto;
 }
 .print-only {

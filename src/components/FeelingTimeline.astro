@@ -3,6 +3,12 @@
  * A possible line through the feeling pages. Every step stays a link to its own page.
  * The order is a reading line, not a sequence a visitor is expected to follow.
  */
+import heart from '@phosphor-icons/core/assets/bold/heart-bold.svg?raw';
+import person from '@phosphor-icons/core/assets/bold/user-bold.svg?raw';
+import question from '@phosphor-icons/core/assets/bold/question-bold.svg?raw';
+import lightning from '@phosphor-icons/core/assets/bold/lightning-bold.svg?raw';
+import hand from '@phosphor-icons/core/assets/bold/hand-palm-bold.svg?raw';
+import money from '@phosphor-icons/core/assets/bold/currency-eur-bold.svg?raw';
 import { cardFor, findByKey, routeFor } from '../lib/content';
 
 interface Step {
@@ -21,11 +27,23 @@ interface Props {
   locale: string;
 }
 const { timeline, locale } = Astro.props;
+const icons: Record<string, string> = {
+  zelftwijfel: question,
+  schuldgevoel: heart,
+  spanning: lightning,
+  grenzen: hand,
+  identiteit: person,
+  bevestiging: question,
+  'geld-praten': money,
+  gemis: heart,
+  'pijn-na-inzicht': heart,
+};
 const steps = await Promise.all(
   timeline.steps.map(async (step) => {
     const entry = await findByKey(locale, step.key);
     if (!entry) throw new Error(`Feeling timeline: unknown or unpublished key "${step.key}"`);
     return {
+      icon: icons[step.key] ?? heart,
       href: routeFor(entry),
       title: cardFor(entry).title,
       feeling: entry.collection === 'emotions' ? entry.data.feeling : cardFor(entry).eyebrow,
@@ -44,6 +62,7 @@ const steps = await Promise.all(
       {
         steps.map((step) => (
           <li>
+            <span class="feeling-timeline__marker" aria-hidden="true" set:html={step.icon} />
             <article class="card card--link">
               <p class="eyebrow">{step.feeling}</p>
               <h3>
@@ -61,12 +80,41 @@ const steps = await Promise.all(
 
 <style>
   .feeling-timeline {
+    position: relative;
     display: grid;
     gap: 1.25rem;
     margin-block: 2rem;
     padding: 0;
-    padding-inline-start: clamp(1rem, 3vw, 2rem);
-    border-inline-start: 2px solid var(--border);
+    padding-inline-start: 3rem;
     list-style: none;
+  }
+  .feeling-timeline::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: calc(1rem - 1px);
+    inset-block: 2.5rem;
+    width: 2px;
+    background: var(--timeline-line);
+  }
+  .feeling-timeline > li {
+    position: relative;
+  }
+  .feeling-timeline__marker {
+    position: absolute;
+    inset-inline-start: -3rem;
+    inset-block-start: 1.5rem;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--timeline-line);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+  }
+  .feeling-timeline__marker :global(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
   }
 </style>
