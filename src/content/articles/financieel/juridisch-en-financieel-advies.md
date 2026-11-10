@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-10
 reviewedAt: null
 order: 80
 cardTitle: 'Juridisch en financieel advies'
@@ -23,6 +23,11 @@ related:
     hulp-vinden,
   ]
 sources:
+  - label: 'Augeo — De aanpak is anders bij intieme terreur'
+    url: 'https://www.augeo.nl/inzicht-in-intieme-terreur/aanpak/'
+    publisher: Augeo Foundation
+    checkedAt: 2026-11-10
+    note: 'Over het herkennen van machtsverschillen en het belang van een passende, veilige aanpak bij dwingende controle.'
   - label: 'Het Juridisch Loket — Contact'
     url: 'https://www.juridischloket.nl/contact/'
     publisher: 'Het Juridisch Loket'
@@ -78,6 +83,21 @@ Bij een scheiding of een geschil over verdeling, schulden of afspraken kan een a
 ### Je huisarts
 
 Spanning over geld kan zwaar drukken. Je huisarts kan meedenken over stress en je eventueel doorverwijzen. Ook dat is een vorm van hulp.
+
+## Zoek iemand die luistert én de situatie begrijpt
+
+Bij het zoeken naar een advocaat of hulpverlener mag je ook letten op hoe je wordt benaderd. Is er ruimte voor je verhaal? Luistert iemand met aandacht, zonder je te veroordelen? Wordt uitgelegd wat er mogelijk is, op een manier die je kunt volgen? Je hoeft je verhaal niet meteen helder of volledig te kunnen vertellen om serieus genomen te worden.
+
+Vraag ook naar ervaring met [financiële controle](nl/begrippen/controle-over-uitgaven/), [dwingende controle](nl/begrippen/dwingende-controle/) of druk na een scheiding. Iemand die zulke situaties kent, kan beter aansluiten bij vragen over angst, afhankelijkheid en de gevolgen van een volgende stap. [Augeo beschrijft](https://www.augeo.nl/inzicht-in-intieme-terreur/aanpak/) waarom het herkennen van de machtsverhouding belangrijk is voor passende hulp: een situatie van controle vraagt een andere aanpak dan een conflict tussen gelijkwaardige partners.
+
+Je kunt vooraf bijvoorbeeld vragen:
+
+- Heeft u ervaring met financiële of dwingende controle binnen een relatie of na een scheiding?
+- Hoe houdt u rekening met mijn veiligheid en met mogelijke druk van de ander?
+- Hoe helpt u mij om overzicht te krijgen als ik gespannen ben of moeilijk uit mijn woorden kom?
+- Kunt u uitleggen welke keuzes ik heb en mij tijd geven om die te begrijpen?
+
+Empathie en deskundigheid zijn allebei belangrijk. Een betrokken professional neemt je ervaringen serieus en kijkt zorgvuldig naar de feiten en mogelijkheden. Voel je je niet gehoord, dan mag je dat bespreken, iemand meenemen naar een gesprek of vragen of een andere professional beter past.
 
 ## Wanneer niet meteen duidelijk is wat je nodig hebt
 
