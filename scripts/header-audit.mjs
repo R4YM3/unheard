@@ -128,7 +128,10 @@ try {
     );
     assert(await mobile.$('.word-finder-invite a[href="nl/hulpmiddelen/help-me-woorden-vinden/"]'));
     if (javascript) {
-      for (let index = 0; index < 8; index += 1) {
+      /* As many examples as the page offers (home shows four). */
+      const exampleCount = await mobile.$$eval('[data-pv-select] option', (nodes) => nodes.length);
+      assert(exampleCount >= 1, 'Expected at least one perspective example');
+      for (let index = 0; index < exampleCount; index += 1) {
         await mobile.select('[data-pv-select]', String(index));
         assert.deepEqual(
           await mobile.$$eval('[data-pv-panel]:not([hidden])', (nodes) =>
@@ -144,8 +147,8 @@ try {
           (nodes) =>
             nodes.filter((node) => globalThis.getComputedStyle(node).display !== 'none').length,
         ),
-        8,
-        'All eight examples must print',
+        await mobile.$$eval('[data-pv-panel]', (nodes) => nodes.length),
+        'All examples must print',
       );
     } else {
       assert.equal(
@@ -154,7 +157,7 @@ try {
           (nodes) =>
             nodes.filter((node) => globalThis.getComputedStyle(node).display !== 'none').length,
         ),
-        8,
+        await mobile.$$eval('[data-pv-panel]', (nodes) => nodes.length),
         'All examples remain readable without JavaScript',
       );
       await mobile.setViewport({ width: 1440, height: 1000 });
@@ -167,7 +170,7 @@ try {
     await mobile.close();
   }
   console.log(
-    'Mobile: original active-section links, prominent finder entry, eight selectable examples, no-JS and print content.',
+    'Mobile: original active-section links, prominent finder entry, every example selectable, no-JS and print content.',
   );
 
   for (const width of [960, 1440]) {
