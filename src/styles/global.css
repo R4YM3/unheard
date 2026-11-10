@@ -2207,14 +2207,26 @@ a.card:focus-visible,
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media (max-width: 52rem) {
-  body {
-    overflow-x: clip;
+/* Keep the desktop header on one line between tablet and wide desktop widths. */
+@media (min-width: 60.001rem) and (max-width: 70rem) {
+  .header-row {
+    gap: 0.65rem;
   }
-  .wrap,
-  .article-layout--rail {
-    width: min(calc(100% - 2.25rem), var(--content));
+  .brand {
+    font-size: 1.35rem;
   }
+  .nav {
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    flex-wrap: nowrap;
+  }
+  .nav .nav-help {
+    padding-inline: 0.65rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 60rem) {
   .header-row {
     display: flex;
     min-height: 4.5rem;
@@ -2289,6 +2301,15 @@ a.card:focus-visible,
   .mobile-menu__panel a.mobile-menu__sub {
     padding-inline-start: 1.5rem;
     font-weight: 600;
+  }
+}
+@media (max-width: 52rem) {
+  body {
+    overflow-x: clip;
+  }
+  .wrap,
+  .article-layout--rail {
+    width: min(calc(100% - 2.25rem), var(--content));
   }
   .page-hero__grid,
   .home-hero__grid {

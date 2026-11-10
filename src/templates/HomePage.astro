@@ -4,6 +4,7 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
 import HeroArt from '../components/HeroArt.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import WordFinderInvite from '../components/WordFinderInvite.astro';
 import { routeFor } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 
@@ -72,6 +73,7 @@ const homeLists = [
   </section>
   <section class="section section--tape" aria-labelledby="gevoelens-heading" id="gevoelens">
     <div class="wrap">
+      {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
       <div class="section-heading">
         <div>
           <p class="eyebrow">{home.feelings.eyebrow}</p>

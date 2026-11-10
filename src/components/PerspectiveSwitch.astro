@@ -44,7 +44,7 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
       <h2 id={`${id}-heading`}>{heading}</h2>
       <p>{intro}</p>
     </div>
-    <div class="pv" data-pv>
+    <div class:list={['pv', { 'pv--many': scenarios.length > 3 }]} data-pv>
       {
         scenarios.length > 1 && (
           <div class="pv-choice" role="group" aria-label={t.chooseExample} hidden data-pv-choice>
@@ -59,6 +59,21 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
               </button>
             ))}
           </div>
+        )
+      }
+      {
+        scenarios.length > 3 && (
+          <label class="pv-select" hidden data-pv-select-label>
+            <span>{t.chooseExample}</span>
+            <select
+              data-pv-select
+              aria-controls={scenarios.map((_, index) => `${id}-scene-${index}`).join(' ')}
+            >
+              {scenarios.map((scenario, index) => (
+                <option value={index}>{scenario.label}</option>
+              ))}
+            </select>
+          </label>
         )
       }
       {
@@ -90,7 +105,9 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
     const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-pv-scene]')];
     const scenes = [...root.querySelectorAll<HTMLElement>('[data-pv-panel]')];
     if (buttons.length < 2 || scenes.length !== buttons.length) return;
+    const select = root.querySelector<HTMLSelectElement>('[data-pv-select]');
     const show = (scene: number) => {
+      if (select) select.value = String(scene);
       buttons.forEach((button, index) =>
         button.setAttribute('aria-pressed', String(index === scene)),
       );
@@ -101,6 +118,8 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
     buttons.forEach((button) =>
       button.addEventListener('click', () => show(Number(button.dataset.pvScene))),
     );
+    select?.addEventListener('change', () => show(Number(select.value)));
+    root.querySelector<HTMLElement>('[data-pv-select-label]')?.removeAttribute('hidden');
     root.querySelector<HTMLElement>('[data-pv-choice]')?.removeAttribute('hidden');
     root.dataset.enhanced = '';
     show(0);
@@ -108,3 +127,36 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
 
   document.querySelectorAll<HTMLElement>('[data-pv]').forEach(enhance);
 </script>
+
+<style>
+  .pv-select {
+    display: none;
+  }
+  @media (max-width: 40rem) {
+    .pv--many[data-enhanced] .pv-choice {
+      display: none;
+    }
+    .pv--many[data-enhanced] .pv-select {
+      display: grid;
+      gap: 0.5rem;
+      margin-block-end: 1.25rem;
+      font-weight: 600;
+    }
+    select {
+      width: 100%;
+      min-width: 0;
+      min-height: 2.75rem;
+      padding: 0.65rem 0.8rem;
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+    }
+  }
+  @media print {
+    .pv-select {
+      display: none !important;
+    }
+  }
+</style>

@@ -21,7 +21,7 @@ export interface Section {
   menu: NavLink;
   /** Accessible name of the section bar. */
   label: string;
-  /** At most four parts of the section, shown as sub-items in the mobile menu. */
+  /** At most four parts, shared by desktop dropdowns and the active mobile section. */
   tabs: NavLink[];
   /** Path prefixes that belong to this section (besides the tab paths themselves). */
   prefixes: string[];

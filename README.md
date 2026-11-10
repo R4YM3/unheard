@@ -25,6 +25,22 @@ Run `npm run audit:sources` now and then to check every source URL in the conten
 
 Use `npm run lint:fix` to apply safe lint fixes and `npm run format` to rewrite files in the shared Prettier style.
 
+## Menu and fonts
+
+Desktop section links have a separate native disclosure for subpages. Hover opens it;
+click, Enter and Space toggle it, and Arrow Down moves into it. Escape first closes an
+open dropdown, then keeps its existing safe-exit behavior. The mobile menu keeps its
+active-section subpages. Without JavaScript the desktop disclosure works by click.
+
+The first-screen Fraunces 600 and Source Sans 3 400/600 faces are preloaded. All five
+locally hosted faces use `font-display: optional`: on a slow first visit the browser may
+keep the system font for that page rather than move text after reading has begun.
+Subsequent pages can use the cached fonts. No font requests go to external providers.
+
+Run `npm run audit:header` for dropdown keyboard/hover checks, the unchanged mobile
+subpages, the homepage finder link and eight examples, and a delayed-font regression
+check at 960 and 1440px. This runs in CI after the general UX audit.
+
 ## Adding content
 
 All copy lives in `src/content/` as Markdown or YAML with Zod-validated frontmatter (`src/content.config.ts`). There is one folder per collection: `emotions`, `patterns`, `articles`, `therapies`, `tools`, `hubs`, `story` and `stats`. A single route, `src/pages/[locale]/[...slug].astro`, generates a page for every entry with `published: true` and picks the template by collection.

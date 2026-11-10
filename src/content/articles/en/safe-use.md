@@ -8,7 +8,7 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-04
+updatedAt: 2026-11-10
 reviewedAt: null
 cardTitle: 'Privacy and safe use'
 cardText: 'What is and is not stored when you visit this site, and what to watch out for on a shared device.'
@@ -35,7 +35,7 @@ If you are reading about emotional or financial abuse, you may not want anyone e
 
 ## Leaving the site quickly
 
-At the top of every page is the **Leave site** button. It takes you straight to the website of the KNMI (the Dutch national weather service). The **Esc key** does the same. Without JavaScript, the button works as a normal link; the Esc key then does not work.
+At the top of every page is the **Leave site** button. It takes you straight to the website of the KNMI (the Dutch national weather service). The **Esc key** does the same. If a desktop submenu is open, the first press closes that menu. Press Esc again to leave the site. Without JavaScript, the button works as a normal link; the Esc key then does not work.
 
 With JavaScript, the button replaces the current page in your browser history. Pages you visited earlier and other traces of your visit remain. The button does not erase your history and does not close other tabs.
 

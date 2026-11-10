@@ -1,9 +1,9 @@
 ---
-import '@fontsource/fraunces/latin-600.css';
-import '@fontsource/fraunces/latin-400-italic.css';
-import '@fontsource/source-sans-3/latin-400.css';
-import '@fontsource/source-sans-3/latin-600.css';
-import '@fontsource/source-sans-3/latin-700.css';
+import '../styles/fonts.css';
+import headingFont from '@fontsource/fraunces/files/fraunces-latin-600-normal.woff2?url';
+import bodyFont from '@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url';
+import menuFont from '@fontsource/source-sans-3/files/source-sans-3-latin-600-normal.woff2?url';
+import DesktopNavSection from '../components/DesktopNavSection.astro';
 import '../styles/global.css';
 import '../styles/print.css';
 import { isPublicLocale, type Locale } from '../i18n/config';
@@ -135,6 +135,11 @@ const publicAlternates = isPublicLocale(locale)
 <html lang={locale} dir={dir} data-theme="light">
   <head>
     <meta charset="utf-8" />
+    {
+      [headingFont, bodyFont, menuFont].map((href) => (
+        <link rel="preload" href={href} as="font" type="font/woff2" crossorigin="anonymous" />
+      ))
+    }
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     {noIndex && <meta name="robots" content="noindex,nofollow" />}
@@ -195,18 +200,27 @@ const publicAlternates = isPublicLocale(locale)
         <a class="brand" href={`${locale}/`}>{brandName}<span>.</span></a>
         <nav class="nav" aria-label={navLabel}>
           {
-            navigation.map(([href, label]) => (
-              <a
-                class:list={{
-                  'nav-home': href === homeHref,
-                  'nav-help': href === siteNavigation?.help.href,
-                }}
-                href={href}
-                aria-current={isCurrent(href) ? 'page' : undefined}
-              >
-                {label}
-              </a>
-            ))
+            navigation.map(([href, label]) => {
+              const section = siteNavigation?.sections.find((item) => item.menu.href === href);
+              return section ? (
+                <DesktopNavSection
+                  section={section}
+                  current={isCurrent(href)}
+                  activeHref={activeTab?.href}
+                />
+              ) : (
+                <a
+                  class:list={{
+                    'nav-home': href === homeHref,
+                    'nav-help': href === siteNavigation?.help.href,
+                  }}
+                  href={href}
+                  aria-current={isCurrent(href) ? 'page' : undefined}
+                >
+                  {label}
+                </a>
+              );
+            })
           }
         </nav>
         {
@@ -306,6 +320,9 @@ const publicAlternates = isPublicLocale(locale)
         'keydown',
         (event) => {
           if (event.key === 'Escape') {
+            // Escape closes an open desktop dropdown before it leaves the site.
+            const openMenu = document.querySelector('.desktop-subnav[open]');
+            if (openMenu?.getClientRects().length) return;
             event.preventDefault();
             leave();
           }

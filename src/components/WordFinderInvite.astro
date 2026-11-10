@@ -1,0 +1,54 @@
+---
+interface Props {
+  heading: string;
+  text: string;
+  note: string;
+  href: string;
+  label: string;
+}
+const { heading, text, note, href, label } = Astro.props;
+---
+
+<aside class="word-finder-invite" aria-labelledby="word-finder-invite-heading">
+  <div>
+    <h2 id="word-finder-invite-heading">{heading}</h2>
+    <p>{text}</p>
+    <p class="note">{note}</p>
+  </div>
+  <a class="button" href={href}>{label}<span aria-hidden="true"> →</span></a>
+</aside>
+<style>
+  .word-finder-invite {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 3rem);
+    padding: clamp(1.35rem, 3vw, 2.25rem);
+    margin-block-end: clamp(2.5rem, 5vw, 4rem);
+    border: 1px solid var(--safe-border);
+    border-radius: var(--radius);
+    background: var(--safe);
+    color: var(--text);
+  }
+  .button {
+    gap: 0.5rem;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    max-width: 28ch;
+  }
+  p {
+    max-width: 65ch;
+  }
+  .note {
+    margin-block-end: 0;
+  }
+  @media (max-width: 48rem) {
+    .word-finder-invite {
+      grid-template-columns: 1fr;
+    }
+    .button {
+      justify-self: start;
+    }
+  }
+</style>

@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: founder
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-10
 reviewedAt: null
 cardTitle: 'Home'
 heading: 'Je hoeft het nog geen misbruik te noemen.'
@@ -27,19 +27,46 @@ scenarios:
     outside: '“Je hoeft die bankrekening niet te bekijken. Ik regel alles.”'
     inside: 'Waarom durf ik niet eens te vragen wat er met ons geld gebeurt?'
     context: 'Taken verdelen is gewoon. Het wordt iets anders als je geen inzicht meer mag hebben of bang bent om ernaar te vragen.'
+  - label: 'Het was een grapje'
+    outside: 'Je kunt ook nergens tegen. Het was maar een grapje.'
+    inside: 'Het deed me pijn. Waarom schaam ik me nu dat ik er iets van zei?'
+    context: 'Een grap kan verkeerd vallen. Het maakt verschil of er ruimte is om te zeggen dat iets je raakte, of dat jouw gevoel telkens wordt weggewuifd.'
+  - label: 'Stilte na een ruzie'
+    outside: 'Als jij zo doet, heb ik je niets te zeggen.'
+    inside: 'Ik wil de stilte laten stoppen. Moet ik dan maar weer sorry zeggen?'
+    context: 'Even rust nodig hebben is iets anders dan iemand langdurig negeren om een keuze af te dwingen. Let op of het gesprek later weer mogelijk is.'
+  - label: 'Je eigen mensen zien'
+    outside: 'Waarom wil je alweer naar je vrienden? Je hebt ons toch?'
+    inside: 'Ik mis mijn vrienden, maar ik zie op tegen het gedoe als ik ga.'
+    context: 'Tijd verdelen kan lastig zijn. Het wordt zorgelijk als contact met vrienden of familie steeds spanning of straf oplevert en jouw wereld kleiner wordt.'
+  - label: 'Steeds aanpassen'
+    outside: 'Laat maar. Ik doe het zelf wel, zoals altijd.'
+    inside: 'Ik ben al moe, maar ik zeg toch weer ja. Anders voel ik me schuldig.'
+    context: 'Rekening houden met elkaar hoort bij een relatie. Je mag ook opmerken of er nog ruimte is voor jouw rust, voorkeuren en grenzen.'
+  - label: 'Een bericht na de breuk'
+    outside: 'Ik ben veranderd. Geef ons nog één kans.'
+    inside: 'Ik mis de mooie momenten. Maar ik herinner me ook waarom ik afstand nam.'
+    context: 'Gemis en twijfel kunnen naast elkaar bestaan. Je hoeft niet meteen te reageren; jouw behoefte aan afstand mag er ook zijn.'
+
 home:
   hero:
     eyebrow: 'Emotioneel & financieel misbruik · Herkenning · Herstel'
     lead: 'Soms raak je jezelf langzaam kwijt in een relatie. Je twijfelt aan jezelf, past je steeds meer aan of begrijpt niet waarom je voortdurend gespannen bent.'
     description: 'Ik deel mijn ervaringen om woorden te geven aan emotioneel en financieel misbruik. Ongehoord heeft bijzondere aandacht voor mannen en het stigma dat hen vaak het zwijgen oplegt. Iedereen is welkom.'
-    primary: { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal' }
-    secondary: { href: 'nl/wat-voel-ik/', label: 'Wat voel ik?' }
+    primary: { href: 'nl/hulpmiddelen/help-me-woorden-vinden/', label: 'Help me woorden vinden' }
+    secondary: { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal' }
   introduction:
     eyebrow: 'Welkom bij Ongehoord'
     heading: 'Je hoeft het nog geen misbruik te noemen.'
     paragraphs:
       - 'Misschien heb je nog geen woorden voor wat je meemaakt. Dat betekent niet dat je gevoel er niet mag zijn. Hier kun je herkennen, onderzoeken en begrijpen, zonder dat iemand voor jou bepaalt wat je hebt ervaren.'
       - 'Ik bouw Ongehoord vanuit mijn eigen ervaringen en herstel. Ik ben één persoon, geen hulporganisatie. Je vindt hier mijn verhaal, uitleg over patronen en gevolgen, en hulpmiddelen om je gevoelens te onderzoeken. De aandacht gaat vooral uit naar mannen, omdat het stigma het moeilijk kan maken om te praten. Iedereen is welkom.'
+  wordFinder:
+    heading: 'Weet je nog niet wat je voelt of waar je moet beginnen?'
+    text: 'Misschien voel je dat er iets niet klopt, maar weet je niet wat je zoekt of hoe je kunt vertellen wat je is overkomen. Een paar vrijblijvende vragen helpen je woorden en passende pagina’s te vinden.'
+    note: 'Geen test of diagnose. Je kunt vragen overslaan. Je antwoorden worden niet opgeslagen.'
+    href: 'nl/hulpmiddelen/help-me-woorden-vinden/'
+    label: 'Help me woorden vinden'
   feelings:
     eyebrow: 'Begin bij jezelf'
     heading: 'Wat herken jij?'
@@ -75,8 +102,8 @@ home:
           title: 'Ik durf niet over geld te praten.',
           href: 'nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/',
         }
-    moreHref: 'nl/hulpmiddelen/help-me-woorden-vinden/'
-    moreLabel: 'Help me woorden vinden'
+    moreHref: 'nl/wat-voel-ik/'
+    moreLabel: 'Bekijk alle gevoelens'
   topics:
     eyebrow: 'Begrijp het'
     heading: 'Er bestaan woorden voor wat je meemaakt.'

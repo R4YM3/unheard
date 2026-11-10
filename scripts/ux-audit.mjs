@@ -73,7 +73,10 @@ try {
       await page.setJavaScriptEnabled(javascript);
       await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
       for (const route of routes) {
-        await page.goto(`${origin}${route}`, { waitUntil: 'load' });
+        await page.goto(`${origin}${route}`, {
+          // The root deliberately redirects after 450ms; wait for that navigation before measuring.
+          waitUntil: route === '/' && javascript ? 'networkidle0' : 'load',
+        });
         const overflow = await page.evaluate(() => {
           const doc = globalThis.document.documentElement;
           const offenders = [...globalThis.document.querySelectorAll('main *')]

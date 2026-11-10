@@ -1,0 +1,147 @@
+---
+import type { Section } from '../lib/navigation';
+interface Props {
+  section: Section;
+  current: boolean;
+  activeHref?: string;
+}
+const { section, current, activeHref } = Astro.props;
+---
+
+<div class="desktop-nav-item">
+  <a href={section.menu.href} aria-current={current ? 'page' : undefined}>{section.menu.label}</a>
+  <details class="desktop-subnav">
+    <summary aria-label={section.label}>
+      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"
+        ><path d="m4 6 4 4 4-4"></path></svg
+      >
+    </summary>
+    <ul>
+      {
+        section.tabs.map(({ href, label }) => (
+          <li>
+            <a href={href} aria-current={activeHref === href ? 'page' : undefined}>
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</div>
+
+<style>
+  .desktop-nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .desktop-nav-item > a {
+    white-space: nowrap;
+  }
+  .desktop-subnav summary {
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    min-height: 2.75rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .desktop-subnav summary::-webkit-details-marker {
+    display: none;
+  }
+  .desktop-subnav summary::marker {
+    content: '';
+  }
+  .desktop-subnav summary::after {
+    content: none;
+  }
+  .desktop-subnav svg {
+    width: 0.8rem;
+    height: 0.8rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+  .desktop-subnav[open] svg {
+    transform: rotate(180deg);
+  }
+  .desktop-subnav ul {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-end: 0;
+    z-index: 1;
+    width: max-content;
+    min-width: 14rem;
+    max-width: 20rem;
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+    border: 1px solid var(--header-border);
+    border-radius: var(--radius);
+    background: var(--header-bg);
+    color: var(--header-text);
+    box-shadow: 0 0.65rem 1.5rem color-mix(in srgb, var(--text) 12%, transparent);
+  }
+  .desktop-subnav li {
+    margin: 0;
+  }
+  .desktop-subnav a {
+    display: flex;
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.3rem;
+  }
+  .desktop-subnav a:hover,
+  .desktop-subnav a:focus-visible,
+  .desktop-subnav a[aria-current] {
+    background: var(--safe);
+    color: var(--text);
+  }
+</style>
+
+<script>
+  const items = [...document.querySelectorAll<HTMLElement>('.desktop-nav-item')];
+  const closeOthers = (except?: HTMLDetailsElement) => {
+    for (const item of items) {
+      const details = item.querySelector('details')!;
+      if (details !== except) details.open = false;
+    }
+  };
+  for (const item of items) {
+    const details = item.querySelector('details')!;
+    const summary = details.querySelector('summary')!;
+    item.addEventListener('pointerenter', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      closeOthers(details);
+      details.open = true;
+    });
+    item.addEventListener('pointerleave', () => {
+      if (!item.contains(document.activeElement)) details.open = false;
+    });
+    item.addEventListener('focusout', (event) => {
+      if (!item.contains(event.relatedTarget as Node | null)) details.open = false;
+    });
+    summary.addEventListener('click', () => closeOthers(details));
+    summary.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      event.preventDefault();
+      closeOthers(details);
+      details.open = true;
+      const links = [...details.querySelectorAll('a')];
+      (event.key === 'ArrowDown' ? links[0] : links.at(-1))?.focus();
+    });
+  }
+  document.addEventListener('click', (event) => {
+    if (!items.some((item) => item.contains(event.target as Node))) closeOthers();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const open = items.find(
+      (item) => item.getClientRects().length && item.querySelector('details')?.open,
+    );
+    if (!open) return;
+    event.preventDefault();
+    closeOthers();
+    open.querySelector('summary')?.focus();
+  });
+</script>

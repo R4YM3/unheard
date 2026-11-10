@@ -40,7 +40,7 @@ const steps = await Promise.all(
     <p class="eyebrow">{timeline.eyebrow}</p>
     <h2 id="gevoel-tijdlijn-heading">{timeline.heading}</h2>
     <p class="reading">{timeline.lead}</p>
-    <ol class="timeline" aria-label={timeline.label}>
+    <ol class="feeling-timeline" role="list" aria-label={timeline.label}>
       {
         steps.map((step) => (
           <li>
@@ -58,3 +58,13 @@ const steps = await Promise.all(
     <p class="note reading">{timeline.note}</p>
   </div>
 </section>
+
+<style>
+  .feeling-timeline {
+    display: grid;
+    gap: 1.25rem;
+    margin-block: 2rem;
+    padding: 0;
+    list-style: none;
+  }
+</style>

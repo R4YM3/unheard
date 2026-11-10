@@ -381,7 +381,7 @@ const hubs = defineCollection({
     lead: z.string().min(20),
     listings: z.array(listing).default([]),
     cards: z.array(card).default([]),
-    scenarios: z.array(scenario).max(3).default([]),
+    scenarios: z.array(scenario).max(8).default([]),
     reflection: reflection.optional(),
     feelingTimeline: z
       .object({
@@ -420,6 +420,15 @@ const hubs = defineCollection({
           heading: z.string().min(8),
           paragraphs: z.array(z.string().min(20)).min(1),
         }),
+        wordFinder: z
+          .object({
+            heading: z.string().min(8),
+            text: z.string().min(20),
+            note: z.string().min(10),
+            href: internalHref,
+            label: z.string().min(4),
+          })
+          .optional(),
         feelings: z.object({
           eyebrow: z.string().min(2),
           heading: z.string().min(4),

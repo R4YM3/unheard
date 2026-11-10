@@ -8,12 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-04
+updatedAt: 2026-11-10
 reviewedAt: null
 order: 35
 cardTitle: 'Waarom overkwam dit mij?'
 cardText: 'Over de vraag die bijna iedereen achteraf stelt, en waarom het antwoord niet bij jouw tekortkoming ligt.'
-summary: 'Bijna iedereen vraagt zich achteraf af waarom het juist hem of haar overkwam, en waarom het zo lang duurde voordat het zichtbaar werd. Patronen van controle beginnen meestal klein en worden geleidelijk erger; goede periodes en beloftes houden de hoop levend. Dat zegt iets over hoe zulke patronen werken, niet over wat er mis is met jou.'
+summary: 'Bijna iedereen vraagt zich achteraf af waarom het juist hem of haar overkwam, en waarom het zo lang duurde voordat het zichtbaar werd. Controle kan geleidelijk ontstaan. Hoop, afhankelijkheid en zorgen over veiligheid kunnen loskomen moeilijk maken. Dat zegt iets over hoe zulke patronen werken, niet over wat er mis is met jou.'
 related: [schuldgevoel, traumabinding, dwingende-controle, herstel-erkenning, mannen-in-cijfers]
 sources:
   - label: 'Dwingende controle verwoest levens — signalen in een relatie'
@@ -36,6 +36,16 @@ sources:
     publisher: 'Thuisarts.nl (NHG)'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
     checkedAt: 2026-11-04
+  - label: 'De aanpak is anders bij intieme terreur'
+    publisher: 'Augeo Foundation'
+    url: 'https://www.augeo.nl/inzicht-in-intieme-terreur/aanpak/'
+    checkedAt: 2026-11-10
+    note: 'Professionele voorlichting over de beperkingen van standaardaanpakken en controle na een relatiebreuk.'
+  - label: 'Huntley e.a. (2019). Help-seeking by male victims of domestic violence and abuse: a systematic review and qualitative evidence synthesis.'
+    publisher: 'BMJ Open'
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6585830/'
+    checkedAt: 2026-11-10
+    note: 'Kwalitatieve synthese van twaalf studies; ervaringen met hulpverlening, geen Nederlandse prevalentieschatting.'
 founderNote:
   eyebrow: 'Mijn eigen antwoord'
   heading: 'Waarom ik denk dat het bij mij gebeurde'
@@ -43,7 +53,7 @@ founderNote:
     - '[OPRICHTER REVIEW NODIG] Op deze plek komt het persoonlijke antwoord van de oprichter, in zijn eigen woorden: wat hij achteraf ziet, wat hem in de relatie hield en wat hij nu anders begrijpt. Deze tekst wordt niet door de redactie geschreven.'
   needsReview: true
 reviewNotes:
-  - 'Concept, door de redactie opgezet. De algemene uitleg steunt op de bronnen hierboven; de alinea over eigenschappen als loyaliteit en zorgzaamheid is een redactionele overweging, geen onderzoeksbevinding. Graag inhoudelijk laten meelezen.'
+  - 'Redactioneel concept: laat de aanvullingen over veilig kunnen vertrekken, verantwoordelijkheid en niet-passende hulp inhoudelijk controleren. Ze zijn algemene informatie, geen beoordeling van een concrete relatie.'
   - 'De oprichter schrijft zelf de ik-passage onder "Mijn eigen antwoord". Tot die tijd blijft de markering staan; de build weigert die zodra de site vindbaar wordt.'
   - 'Vraag voor de oprichter: past "Misschien kon niemand je toen echt helpen" bij je eigen ervaring? Dat kan ook een plek krijgen in je eigen antwoord onderaan.'
   - 'Overweeg een link vanaf Mijn verhaal en vanaf "Ik voel me overal schuldig over" zodra de pagina is goedgekeurd.'
@@ -71,11 +81,19 @@ Juist die afwisseling kan je binden. Onderzoekers beschrijven dit als [traumabin
 
 Blijven is dus niet hetzelfde als het goedvinden. Vaak is het hoop, liefde, angst, afhankelijkheid of zorg om kinderen, en meestal een mengsel daarvan.
 
-## Wat jouw goede eigenschappen ermee te maken hebben
+## Weg willen en veilig kunnen vertrekken
 
-Mensen die achteraf hard over zichzelf oordelen, beschrijven zichzelf vaak als loyaal, geduldig of zorgzaam. Iemand die gewend is om problemen op te lossen, verantwoordelijkheid te nemen en het voor een ander goed te maken, blijft het langer proberen.
+Je kunt willen vertrekken en tegelijk niet weten hoe dat veilig of praktisch kan. Zorgen over je kinderen, je woning, inkomen of de reactie van de ander kunnen daarin meespelen. Dat vraagt om meer dan alleen een besluit nemen.
 
-Dat zijn geen zwaktes. Het zijn eigenschappen die in een gelijkwaardige relatie goed werken. In een relatie waarin één persoon steeds meer ruimte inneemt, kunnen ze ervoor zorgen dat je steeds meer inlevert, en dat je de schuld bij jezelf zoekt als het misgaat. Daarover gaat ook [Ik voel me overal schuldig over](nl/wat-voel-ik/ik-voel-me-schuldig/).
+Augeo legt uit dat dwingende controle na een relatiebreuk kan doorgaan. Een ander adres of minder contact betekent dus niet vanzelf dat de druk stopt. Dat zegt niet dat blijven altijd veiliger is; welke stappen veilig zijn, hangt af van je situatie. Je kunt daar vertrouwelijk over praten via [Hulp vinden](nl/hulp-vinden/). Moet er contact blijven, lees dan ook [Contact na een breuk](nl/herstel/contact-na-een-breuk/).
+
+## Jouw eigenschappen maken dit niet jouw schuld
+
+Misschien herken je bij jezelf loyaliteit, zorgzaamheid of de neiging om problemen op te lossen. Je mag onderzoeken hoe jij reageert en wat je nodig hebt. Daarmee word jij niet verantwoordelijk voor het kleineren, dreigen of controleren door een ander.
+
+De vraag hoe je jezelf beter kunt beschermen staat los van de vraag wie verantwoordelijk is voor schadelijk gedrag. Je hoeft niet eerst iets aan je karakter te veranderen om recht te hebben op veiligheid en steun.
+
+Over het gevoel overal verantwoordelijk voor te zijn gaat [Ik voel me overal schuldig over](nl/wat-voel-ik/ik-voel-me-schuldig/).
 
 ## Waarom zag ik het niet eerder?
 
@@ -95,7 +113,9 @@ Ook die vraag kan lang blijven knagen. Waarom zag mijn familie het niet? Waarom 
 
 Vaak was er van buitenaf weinig te zien. Wat er tussen twee mensen gebeurt, speelt zich grotendeels achter de voordeur af, en in losse momenten. Wie op bezoek kwam, zag misschien een gewone relatie. En als je zelf nog geen woorden had voor wat er gebeurde, kon je het ook niet vertellen, of vertelde je het in een vorm die anderen niet herkenden.
 
-Hulp moet je bovendien kunnen aannemen. Zolang je denkt dat het aan jou ligt, of dat het wel meevalt, wijs je een uitgestoken hand soms af, of zie je hem niet. Dat is geen fout van jou. Het hoort bij hoe zo'n patroon je kijk op jezelf verandert.
+Misschien heb je juist wel verteld wat er gebeurde en om hulp gevraagd. Toch kan het zijn dat niet goed werd gezien wat er speelde, of dat het advies niet bij jouw situatie paste. Dat maakt je ervaring niet minder belangrijk.
+
+Onderzoek naar hulp zoeken door mannen beschrijft zowel steunende als niet-passende professionele reacties. Het gaat om ervaringen uit verschillende studies, niet om een oordeel over alle hulpverlening. Als een eerste gesprek je niet verder hielp, mag je opnieuw steun vragen, bij dezelfde of een andere professional. Op [Hoe vertel ik het?](nl/herstel/hoe-vertel-ik-het/) vind je woorden om te beginnen; de [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je vragen te ordenen.
 
 Ook de weg naar hulp is niet vanzelfsprekend. Van de mensen die in 2024 psychisch geweld in huiselijke kring meemaakten, sprak ongeveer een derde met een zorgverlener zoals de huisarts of een psycholoog, en [2,5 procent met Veilig Thuis](https://www.cbs.nl/nl-nl/longread/rapportages/2024/prevalentiemonitor-huiselijk-geweld-en-seksueel-grensoverschrijdend-gedrag-2024/2-psychisch-geweld-in-huiselijke-kring). Veel mensen zoeken het dus nooit bij een hulporganisatie, en weten vaak niet dat dat kan.
 
@@ -105,7 +125,7 @@ Misschien kon niemand je toen echt helpen. Dat zegt iets over hoe onzichtbaar di
 
 Dat je jezelf deze vraag stelt, betekent niet dat het jouw schuld is. Het betekent ook niet dat er iets met je mis is waardoor je dit "aantrekt".
 
-Soms spelen eerdere ervaringen mee in hoe je reageert, bijvoorbeeld hoe je als kind leerde omgaan met spanning of boosheid. Dat kan iets verklaren, en het kan helpen om daar met een professional naar te kijken. Maar verklaren is iets anders dan schuld. Wat een ander deed, blijft van de ander.
+Eerdere ervaringen kunnen meespelen in hoe jij reageert en wat je nodig hebt om te herstellen. Daar kun je met een professional naar kijken, als dat voor jou belangrijk is. Je verleden is geen rechtvaardiging voor het schadelijke gedrag van een ander.
 
 ## Een volgende stap
 
