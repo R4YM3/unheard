@@ -20,7 +20,10 @@ hero:
   paragraphs:
     - 'Misschien schaam je je ervoor. Je weet wat er gebeurde, je hebt gezien wat het met je deed. En toch mis je de ander, de gewoontes, de goede momenten.'
   actions:
-    - { href: 'nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/#herken-je-dit', label: 'Herken je dit? ↓' }
+    - {
+        href: 'nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/#herken-je-dit',
+        label: 'Herken je dit? ↓',
+      }
     - { href: 'nl/herstel/rouw/', label: 'Lees over rouw', quiet: true }
 glossary:
   term: Gemis
