@@ -214,6 +214,33 @@ try {
     assert(await home.$(target), `Home section ${target} exists`);
   }
   assert(await home.$('.nav a[href="nl/begrijp-het/"]'), 'Begrijp het stays in the navigation');
+  assert(await home.$('#verhaal a[href="nl/over/#waarom-ik-hiermee-begon"]'));
+  assert(await home.$('#perspectief a[href="nl/hulp-vinden/"]'));
+  await home.setJavaScriptEnabled(false);
+  await home.reload();
+  await home.focus('#gevoelens a[href="nl/wat-voel-ik/#beginnen"]');
+  await Promise.all([home.waitForNavigation(), home.keyboard.press('Enter')]);
+  assert.equal(new URL(home.url()).pathname, '/nl/wat-voel-ik/');
+  assert.equal(new URL(home.url()).hash, '#beginnen');
+
+  const options = await home.$$('#beginnen details');
+  const labels = [
+    'Ik twijfel nog',
+    'Ik zit er nog middenin',
+    'De relatie is voorbij',
+    'Ik maak me zorgen om iemand',
+  ];
+  for (const [index, label] of labels.entries()) {
+    const option = options[index];
+    assert(option, `Missing starting route: ${label}`);
+    const summary = await option.$('summary');
+    assert(summary);
+    assert.equal(await summary.evaluate((node) => node.textContent.trim()), label);
+    await summary.focus();
+    await home.keyboard.press('Enter');
+    assert(await option.evaluate((node) => node.open), `Enter opens ${label}`);
+    assert(await option.$('a[href="nl/hulp-vinden/"]'), `Advice is available from ${label}`);
+  }
   await home.close();
 
   /* Link hierarchy: inline links underlined; stand-alone, navigation and cards are not. */
