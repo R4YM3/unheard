@@ -35,6 +35,7 @@ Completed:
 - Astro static build, typed Content Collection, semantic token system, theme selection, reduced-motion styling, print stylesheet, and public GitHub Pages workflow.
 - Dutch home, self-doubt, DARVO, financial abuse, recovery, therapy, founder-story, help, friends/family, and printable support-tools routes.
 - Native keyboard-operable perspective tabs, related-content cards, safety links, direct-call help contacts, source lists, and no stored reflection data.
+- The custom domain is serving the site over HTTPS.
 - Locale architecture for NL/EN/AR, NL-only public entry while translations are incomplete, RTL readiness, and noindex review stubs for EN/AR.
 - Canonical URLs, Open Graph metadata, sitemap, robots, JSON-LD for pages/articles/breadcrumbs, build-time route/link/schema/a11y checks, ESLint, Prettier, language tests, and GitHub Pages deployment.
 - Local Lighthouse baseline: 100 in Performance and Accessibility. SEO is intentionally reduced while `NO_INDEX=true` blocks discovery; it is not a launch-quality SEO signal until editorial approval removes that safeguard.
@@ -44,7 +45,6 @@ Still required before declaring an editorial launch complete:
 - Founder, clinical, and legal review of all sensitive wording and personal-story material.
 - Manual visual QA at the specified mobile/desktop zoom levels and print-to-PDF checks in Safari. Chrome A4 PDF smoke checks passed for the home, founder-story, therapy and article templates on 2026-10-19.
 - Review and publish any additional Dutch articles, then add only approved EN/AR translations and their equivalent routes.
-- The custom domain is serving the site over HTTPS.
 
 ## Active roadmap and AI handoff — 2026-11-11
 
