@@ -17,6 +17,14 @@ glossary:
   aliases: [coercive control, intieme terreur, controlerend gedrag]
   category: controle
 sources:
+  - label: 'Veilig Thuis — Advies bij zorgen of twijfel'
+    url: 'https://www.veiligthuis.nl/nl/over-ons/de-adviesfunctie-van-veilig-thuis'
+    publisher: Veilig Thuis
+    checkedAt: 2026-11-11
+  - label: 'Slachtofferhulp Nederland — Wat is stalkerware?'
+    url: 'https://www.slachtofferhulp.nl/gebeurtenissen/oplichting-en-fraude/stalkerware/'
+    publisher: Slachtofferhulp Nederland
+    checkedAt: 2026-11-11
   - label: 'Dwingende controle verwoest levens — signalen in een relatie'
     publisher: 'Veilig Thuis'
     url: 'https://www.veiligthuis.nl/nl/dwingendecontrole'
@@ -42,6 +50,7 @@ sources:
     url: 'https://www.movisie.nl/artikel/mannen-slachtoffer-huiselijk-geweld'
     checkedAt: 2026-10-20
 reviewNotes:
+  - 'Veiligheidsreview: controleer de voorbeelden en het advies in Digitale controle vóór publicatie.'
   - 'Het wetsvoorstel strafbaarstelling psychisch geweld is bij schrijven een voorstel (consultatie juni 2026). Bijwerken zodra de status verandert.'
 ---
 
@@ -102,7 +111,15 @@ Iemand die controlerend gedrag vertoont, heeft niet automatisch een persoonlijkh
 - schaamte, waardoor je er met niemand over praat;
 - moeite om het te benoemen, omdat er geen duidelijk 'incident' is.
 
-Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft dat mannen vaak moeite hebben zichzelf als slachtoffer te zien, en dat hulpverleners en politie soms afwijzend of bagatelliserend reageren. Dat zegt niets over de ernst van wat je meemaakt.
+Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft dat mannen vaak moeite hebben zichzelf als slachtoffer te zien, en dat hulpverleners en politie soms afwijzend of bagatelliserend reageren. Dat zegt niets over de ernst van wat je meemaakt.## Digitale controle
+
+**Voorbeeld.** Na een bericht aan een vriend wil je partner steeds weten wat je precies hebt geschreven. Je merkt dat je gesprekken gaat vermijden omdat je bang bent voor de reactie.
+
+**Voorbeeld.** Je deelt je locatie om praktische redenen. Wanneer je een keer stopt met delen, krijg je herhaaldelijk verwijten en vragen over waar je was.
+
+Delen kan een afspraak zijn die voor allebei werkt. Let op of je de ruimte hebt om nee te zeggen of van gedachten te veranderen. Herhaalde druk rond berichten, locatie of toegang tot accounts kan je vrijheid beperken. [Slachtofferhulp Nederland](https://www.slachtofferhulp.nl/gebeurtenissen/oplichting-en-fraude/stalkerware/) legt uit hoe iemand digitaal kan meekijken en waarom een wijziging kan opvallen.
+
+Heb je zorgen dat iemand meekijkt? Bij [Hulp vinden](nl/hulp-vinden/#veilig-zoeken-en-gedeelde-apparaten) lees je hoe je advies kunt vragen over wat veilig is in jouw situatie.
 
 ## Wat kan helpen?
 
