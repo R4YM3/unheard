@@ -130,7 +130,7 @@ Iemand die je telefoon of computer deelt, kan het scherm zien, open tabbladen, d
 
 Een privévenster beperkt wat de browser daarna in de gewone geschiedenis bewaart. Dat is een beperking, geen dekking. Iemand die meekijkt, ziet het scherm. Je provider, een netwerk van werk of school, de hosting van een site en software op het toestel kunnen een verbinding nog zien. Downloads kunnen blijven staan.
 
-Wachtwoorden wijzigen of uitloggen kan ook opvallen. Doe dat niet als je vreest voor de reactie. Vraag eerst advies, bijvoorbeeld bij Veilig Thuis. Geen website kan sporen voor je wissen. Ongehoord ook niet, en deze site belooft geen vertrouwelijkheid. Meer staat bij [veilig gebruik](nl/veilig-gebruik/).
+Wachtwoorden wijzigen of uitloggen kan ook opvallen. Doe dat niet als je vreest voor de reactie. Vraag eerst advies, bijvoorbeeld bij Veilig Thuis. Geen website kan sporen voor je wissen. Ongehoord ook niet, en deze site belooft geen vertrouwelijkheid. Meer staat bij [veilig gebruik](nl/veilig-gebruik/). Lees ook hoe [digitale controle](nl/begrippen/dwingende-controle/#digitale-controle) eruit kan zien.
 
 ## Printen en papier
 
