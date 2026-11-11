@@ -20,7 +20,7 @@ hero:
   paragraphs:
     - 'Misschien slaap je onrustig, schrik je van kleine geluiden of merk je dat je altijd een beetje op je hoede bent. Ontspannen voelt bijna onveilig.'
   actions:
-    - { href: 'nl/wat-voel-ik/ik-sta-voortdurend-aan/#herken-je-dit', label: 'Herken je dit? ↓' }
+    - { href: '#herken-je-dit', label: 'Herken je dit? ↓' }
     - {
         href: 'nl/herstel/triggers-en-moeilijke-berichten/',
         label: 'Omgaan met triggers',
