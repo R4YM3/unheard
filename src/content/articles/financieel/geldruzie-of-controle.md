@@ -87,3 +87,5 @@ Als ruzies over geld steeds op dezelfde manier eindigen, ga je er misschien vanu
 - **Zoek iemand die onafhankelijk meedenkt.** Een vriend die niet partij kiest, je huisarts of een hulpverlener. Bij twijfel over onveiligheid kun je gratis en anoniem advies vragen bij [Veilig Thuis](https://www.veiligthuis.nl/nl/contact) via [0800-2000](tel:08002000).
 - **Voel je geen verplichting om de ander te confronteren.** Een gesprek kan helpen als het veilig voelt, maar het hoeft niet. Op de [Rijksoverheid-pagina over huiselijk geweld](https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/vraag-en-antwoord/huiselijk-geweld/wat-moet-ik-doen-bij-huiselijk-geweld) lees je waar je terechtkunt.
 - **Gaat het vooral om geldzorgen samen?** Dan kan hulp bij budget of schulden een goede eerste stap zijn. Zie [Juridisch en financieel advies](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/).
+
+[Bekijk een gesprek over toegang tot de gezamenlijke rekening](nl/#perspectief-scene-2).
