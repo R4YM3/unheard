@@ -111,7 +111,9 @@ Iemand die controlerend gedrag vertoont, heeft niet automatisch een persoonlijkh
 - schaamte, waardoor je er met niemand over praat;
 - moeite om het te benoemen, omdat er geen duidelijk 'incident' is.
 
-Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft dat mannen vaak moeite hebben zichzelf als slachtoffer te zien, en dat hulpverleners en politie soms afwijzend of bagatelliserend reageren. Dat zegt niets over de ernst van wat je meemaakt.## Digitale controle
+Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft dat mannen vaak moeite hebben zichzelf als slachtoffer te zien, en dat hulpverleners en politie soms afwijzend of bagatelliserend reageren. Dat zegt niets over de ernst van wat je meemaakt.
+
+## Digitale controle
 
 **Voorbeeld.** Na een bericht aan een vriend wil je partner steeds weten wat je precies hebt geschreven. Je merkt dat je gesprekken gaat vermijden omdat je bang bent voor de reactie.
 
