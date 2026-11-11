@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: founder
 publishedAt: 2026-10-19
-updatedAt: 2026-11-10
+updatedAt: 2026-11-11
 reviewedAt: null
 cardTitle: 'Home'
 heading: 'Je hoeft het nog geen misbruik te noemen.'
@@ -18,14 +18,14 @@ scenarios:
   - label: 'Een gesprek begrijpen'
     outside: '“Zo heb ik dat niet bedoeld. Jij maakt het altijd groter dan het is.”'
     inside: 'Ik probeer uit te leggen waarom dit me raakte, maar ik vraag me af of ik het verkeerd heb onthouden.'
-    context: 'Verschillen in interpretatie zijn normaal. Wanneer jouw beleving herhaaldelijk terzijde wordt geschoven, kan je vertrouwen in je eigen gevoel afnemen.'
+    context: 'Mensen kunnen hetzelfde gesprek anders onthouden. Als jouw beleving steeds wordt weggewuifd, kan het helpen te kijken wat zich herhaalt en of je ruimte krijgt om jouw kant te vertellen.'
     followUp:
       href: 'nl/begrijp-het/conflict-of-patroon/'
       label: 'Wanneer wordt een conflict een patroon?'
   - label: 'Een grens aangeven'
     outside: '“Waarom doe je nu zo moeilijk? Ik vraag toch niet veel?”'
     inside: 'Ik voel spanning als ik nee wil zeggen en ben bang voor wat er daarna gebeurt.'
-    context: 'Een grens hoeft niet door iedereen prettig gevonden te worden om toch geldig te zijn. Let op of er ruimte is voor jouw keuze.'
+    context: 'Iemand kan teleurgesteld zijn als je nee zegt. Kijk of je keuze wordt gerespecteerd of dat er telkens druk volgt als je bij je grens blijft.'
     followUp:
       href: 'nl/begrippen/dwingende-controle/'
       label: 'Wanneer wordt druk rond grenzen controle?'
@@ -124,8 +124,8 @@ home:
     eyebrow: 'Waarom Ongehoord bestaat'
     heading: 'Ook ik zocht woorden voor wat ik voelde.'
     paragraphs:
-      - 'Ik begreep lange tijd niet waarom ik aan mezelf twijfelde en opnieuw bevestiging zocht. Door mijn ervaringen te onderzoeken, therapie te volgen en beter naar mezelf te leren luisteren, begon ik meer te begrijpen.'
-      - 'Ik ben vader. Ik bouw mijn leven opnieuw op. En sommige dingen blijven moeilijk. Daarom schrijf ik hier over wat ik heb ervaren en geleerd, zodat anderen zich mogelijk herkennen en woorden vinden voor wat zij voelen.'
+      - 'Ik miste woorden voor wat ik voelde. Ik twijfelde aan mezelf en mijn herinneringen, ook nadat ik was weggegaan. Ik zocht houvast om te begrijpen wat er was gebeurd en hoe ik verder kon.'
+      - 'Herkenning en erkenning hielpen mij om serieus te nemen wat ik voelde. Daarom begon ik Ongehoord. Ik wil anderen geven wat ik toen zelf miste: woorden voor wat je voelt, uitleg en een plek om je te oriënteren op herstel.'
     href: 'nl/mijn-verhaal/'
     label: 'Lees mijn verhaal'
   timelineTeaser:
