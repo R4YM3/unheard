@@ -10,21 +10,28 @@ export interface ChooserOption {
 
 export const startChooser: ChooserOption[] = [
   {
-    question: 'Ik twijfel of wat ik meemaak normaal is',
+    question: 'Ik twijfel nog',
     intro:
-      'Je hoeft het nog geen naam te geven. Begin bij wat je voelt, en lees daarna over het verschil tussen conflict en een patroon.',
-    keys: ['zelftwijfel', 'conflict-of-patroon', 'emotioneel-misbruik'],
+      'Je hoeft het nog geen naam te geven. Lees wat zelftwijfel met je kan doen, vergelijk een conflict met een terugkerend patroon en kies een vraag die je voor jezelf wilt verkennen.',
+    keys: ['zelftwijfel', 'conflict-of-patroon', 'kaart-zelfreflectie', 'hulp-vinden'],
   },
   {
-    question: 'Ik zit nog in de relatie en wil voorzichtig zijn',
+    question: 'Ik zit er nog middenin',
     intro:
-      'Veiligheid gaat voor gelijk krijgen. Lees eerst hoe je veilig informatie zoekt en waar je anoniem advies kunt vragen.',
-    keys: ['veilig-gebruik', 'hulp-vinden', 'kaart-zelfreflectie'],
+      'Lees hoe je herhaalde druk kunt herkennen en hoe je deze informatie veilig kunt bekijken. Als je wilt overleggen over jouw situatie, kun je advies vragen.',
+    keys: ['dwingende-controle', 'veilig-gebruik', 'hulp-vinden'],
   },
   {
-    question: 'De relatie is voorbij, maar het laat me niet los',
-    intro: 'Begrijpen en voelen gaan niet altijd in hetzelfde tempo. Daar is niets mis mee.',
-    keys: ['pijn-na-inzicht', 'gemis', 'herstel'],
+    question: 'De relatie is voorbij',
+    intro:
+      'Twijfel, gemis of pijn kunnen blijven. Lees waarom inzicht en gevoel niet altijd gelijk oplopen en hoe je steun om je heen kunt zoeken.',
+    keys: ['pijn-na-inzicht', 'herstel-steunnetwerk', 'hulp-vinden'],
+  },
+  {
+    question: 'Ik maak me zorgen om iemand',
+    intro:
+      'Lees hoe je iemand kunt steunen zonder te duwen. Gebruik de steunkaart voor een gesprek of vraag zelf advies als je je zorgen maakt.',
+    keys: ['voor-naasten', 'kaart-naaste', 'hulp-vinden'],
   },
   {
     question: 'Het gaat (ook) over geld',
@@ -36,10 +43,5 @@ export const startChooser: ChooserOption[] = [
     question: 'Ik ben altijd gespannen of op mijn hoede',
     intro: 'Langdurige spanning kan veel energie kosten. Je mag ook naar je lichaam luisteren.',
     keys: ['spanning', 'grenzen', 'hulp-vinden'],
-  },
-  {
-    question: 'Ik maak me zorgen om iemand anders',
-    intro: 'Steunen zonder te duwen is lastig. Je hoeft het ook niet alleen te doen.',
-    keys: ['voor-naasten', 'kaart-naaste', 'hulp-vinden'],
   },
 ];

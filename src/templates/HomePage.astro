@@ -94,6 +94,11 @@ const homeLists = [
         <a class="button button--quiet" href={home.feelings.moreHref}>{home.feelings.moreLabel} →</a
         >
       </p>
+      <p>
+        Liever beginnen bij je situatie? <a href="nl/wat-voel-ik/#beginnen"
+          >Kies waar je kunt beginnen</a
+        >.
+      </p>
     </div>
   </section>
   {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
@@ -104,7 +109,12 @@ const homeLists = [
         locale={data.locale}
         heading={home.perspective.heading}
         intro={home.perspective.lead}
-      />
+      >
+        <p>
+          Wil je met iemand bespreken wat je herkent?{' '}
+          <a href="nl/hulp-vinden/">Bekijk waar je terechtkunt voor advies</a>.
+        </p>
+      </PerspectiveSwitch>
     )
   }
   <section class="section section--paper" aria-labelledby="verhaal-heading" id="verhaal">
@@ -113,6 +123,7 @@ const homeLists = [
         <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
         <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
         {home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        <p><a href="nl/over/#waarom-ik-hiermee-begon">Lees waarom ik Ongehoord begon</a>.</p>
         <div class="actions">
           <a class="button" href={home.storyTeaser.href}>{home.storyTeaser.label}</a>
           <a class="text-link" href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a>
