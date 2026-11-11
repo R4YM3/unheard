@@ -53,6 +53,16 @@ const routes = [
     required: ['vragenkaart'],
   },
   {
+    id: 'partner-safety-card',
+    route: '/nl/hulpmiddelen/vragen-voor-een-gesprek-met-je-partner/',
+    required: ['Veiligheid eerst', 'Gebruik deze kaart nooit bij iemand voor wie je bang bent'],
+  },
+  {
+    id: 'financial-safety-card',
+    route: '/nl/hulpmiddelen/financieel-overzicht-en-veiligheid/',
+    required: ['Veiligheid eerst', 'Voelt dat niet veilig, verzamel dan niets'],
+  },
+  {
     id: 'word-finder',
     route: '/nl/hulpmiddelen/help-me-woorden-vinden/',
     required: ['Vraag 1 van 6', 'Vraag 6 van 6', 'Wat heb ik eigenlijk meegemaakt?', '112'],
