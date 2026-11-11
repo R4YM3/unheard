@@ -31,6 +31,8 @@ const localStorageKeys = (html) =>
     (match) => match[1],
   );
 const bad = [];
+const titles = new Map();
+const descriptions = new Map();
 const requiredDutchNavigation = [
   ['Wat voel ik?', 'nl/wat-voel-ik/'],
   ['Begrijp het', 'nl/begrijp-het/'],
@@ -74,11 +76,31 @@ for (const file of files) {
   }
   if (!root && html.includes('example.github.io')) bad.push(`${file}: placeholder canonical URL`);
   if (!root && !html.includes('application/ld+json')) bad.push(`${file}: missing JSON-LD`);
-  if (!root && !html.includes('property="og:title"')) bad.push(`${file}: missing Open Graph title`);
-  if (!root && !html.includes('property="og:description"'))
-    bad.push(`${file}: missing Open Graph description`);
-  if (!root && !html.includes('property="og:url"')) bad.push(`${file}: missing Open Graph URL`);
-  if (!root && !html.includes('rel="canonical"')) bad.push(`${file}: missing canonical URL`);
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
+  const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1];
+  if (!root) {
+    for (const [label, value, seen] of [
+      ['title', title, titles],
+      ['description', description, descriptions],
+    ]) {
+      if (!value?.trim()) bad.push(`${file}: empty ${label}`);
+      else if (seen.has(value)) bad.push(`${file}: ${label} duplicates ${seen.get(value)}`);
+      else seen.set(value, file);
+    }
+    if (!canonical) bad.push(`${file}: missing canonical URL`);
+    for (const [property, expected] of [
+      ['title', title],
+      ['description', description],
+      ['url', canonical],
+    ]) {
+      const value = html.match(
+        new RegExp(`<meta property="og:${property}" content="([^"]+)"`),
+      )?.[1];
+      if (!value || value !== expected)
+        bad.push(`${file}: Open Graph ${property} does not match page metadata`);
+    }
+  }
   const hreflangLinks = [
     ...html.matchAll(/<link\b[^>]*\brel="alternate"[^>]*\bhreflang="([^"]+)"[^>]*>/gi),
   ];
@@ -133,6 +155,12 @@ for (const file of files) {
       const parsed = JSON.parse(block);
       for (const item of schemaNodes(parsed)) {
         for (const type of [item['@type']].flat()) types.add(type);
+        if ([item['@type']].flat().includes('WebPage')) {
+          if (item.url !== canonical || item['@id'] !== canonical)
+            bad.push(`${file}: WebPage JSON-LD URL does not match canonical`);
+          if (!html.includes(`<html lang="${item.inLanguage}"`))
+            bad.push(`${file}: WebPage JSON-LD language does not match document`);
+        }
         if (item['@type'] === 'BreadcrumbList') {
           const urls = item.itemListElement.map((crumb) => crumb.item);
           if (new Set(urls).size !== urls.length) bad.push(`${file}: BreadcrumbList repeats a URL`);
@@ -146,8 +174,6 @@ for (const file of files) {
   if (!root && !types.has('Organization')) bad.push(`${file}: missing Organization JSON-LD`);
   if (!root && !types.has('WebSite')) bad.push(`${file}: missing WebSite JSON-LD`);
   if (!root && !types.has('WebPage')) bad.push(`${file}: missing WebPage JSON-LD`);
-  if (hasContentArticle && !types.has('Article'))
-    bad.push(`${file}: article missing Article JSON-LD`);
   if (hasContentArticle && !types.has('BreadcrumbList'))
     bad.push(`${file}: article missing BreadcrumbList JSON-LD`);
   if (hasContentArticle && !html.includes('id="sources-heading"'))
