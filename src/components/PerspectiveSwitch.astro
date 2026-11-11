@@ -46,6 +46,7 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
 >
   <div class="wrap">
     <div class="pv-head">
+      {locale === 'nl' && <p class="eyebrow">Voorbeeld</p>}
       <h2 id={`${id}-heading`}>{heading}</h2>
       <p>{intro}</p>
     </div>
