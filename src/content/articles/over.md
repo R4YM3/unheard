@@ -8,14 +8,13 @@ status: draft
 published: true
 author: founder
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-11
 reviewedAt: null
 cardTitle: 'Over Ongehoord'
 cardText: 'Waarom ik Ongehoord ben begonnen, voor wie het is en wat het nadrukkelijk niet is.'
 summary: 'Ongehoord is een informatie- en herkenningsplek over emotioneel en financieel misbruik, de nasleep ervan en herstel. Ik ben er in mijn eentje aan begonnen, vanuit mijn eigen ervaring en herstel. Er is geen team en geen organisatie. Ongehoord is geen zorginstelling en geeft geen therapie, diagnose of juridisch advies.'
 related: [mijn-verhaal, werkwijze, veilig-gebruik, hulp-vinden]
 reviewNotes:
-  - 'Oprichter: de alinea onder "Waarom ik hiermee begon" is een veilige algemene versie. Wil je in je eigen woorden beschrijven waarom je begon, zonder namen, data of details over betrokkenen?'
   - 'Oprichter: wil je onder "Voor wie het is" iets zeggen over hoe het zwijgen voor jou was? Zo niet, haal die placeholder weg.'
   - 'Oprichter: klopt de uitleg van de naam Ongehoord, of had je een andere betekenis in gedachten?'
   - 'Oprichter: wil je iets zeggen over je vaderschap op deze pagina, of laat je dat alleen in Mijn verhaal?'
@@ -24,9 +23,11 @@ reviewNotes:
 
 ## Waarom ik hiermee begon
 
-Ongehoord is begonnen vanuit mijn eigen ervaring en mijn eigen herstel.
+Ik ben Ongehoord begonnen omdat ik zelf de woorden miste voor wat ik meemaakte. Ik voelde dat er iets niet klopte, maar begreep niet wat mijn gevoelens me vertelden. Ik wist ook niet hoe ik moest herstellen.
 
-[OPRICHTER REVIEW NODIG] Hier komt in mijn eigen woorden waarom ik deze plek wilde maken: wat ik zelf miste toen ik zocht, en wat ik had willen lezen. Zonder namen, data of details over anderen.
+Ik twijfelde aan bijna alles. Lag het aan mij? Kon ik mijn herinneringen vertrouwen? Wie was ik eigenlijk nog? Ook nadat ik was weggegaan, bleven die vragen. Ik zocht grip op wat er was gebeurd en op mezelf.
+
+Wat mij enorm hielp, was herkenning en erkenning. Ergens lezen wat ik zelf nog niet kon zeggen, en bevestigd krijgen dat ik serieus mocht nemen wat ik voelde. Daarom heb ik Ongehoord gemaakt. Ik wil anderen die iets vergelijkbaars meemaken geven wat ik toen zelf miste: woorden voor wat je voelt, herkenning, uitleg en een plek om je te oriënteren op herstel.
 
 In mijn herstel heb ik verschillende [vormen van therapie en begeleiding](nl/herstel/therapievormen/) geprobeerd. Ik ben vader, en ik bouw mijn leven opnieuw op. Over die weg vertel ik meer in [Mijn verhaal](nl/mijn-verhaal/).
 
