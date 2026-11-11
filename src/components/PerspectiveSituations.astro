@@ -13,6 +13,7 @@ interface Scenario {
   outside: string;
   inside: string;
   context: string;
+  followUp?: { href: string; label: string };
 }
 interface Props {
   scenarios: Scenario[];
@@ -35,6 +36,7 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
 >
   <div class="wrap">
     <div class="pv-head">
+      {locale === 'nl' && <p class="eyebrow">Voorbeeld</p>}
       <h2 id={`${id}-heading`}>{heading}</h2>
       <p>{intro}</p>
     </div>
@@ -56,6 +58,13 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
                   <span>{scenario.inside}</span>
                 </p>
                 <p class="pv-context">{scenario.context}</p>
+                {scenario.followUp && (
+                  <p>
+                    <a class="text-link" href={scenario.followUp.href}>
+                      {scenario.followUp.label}
+                    </a>
+                  </p>
+                )}
               </div>
             </details>
           </li>
