@@ -56,16 +56,16 @@ Die woorden zijn hulpmiddelen. Een begrip als [gaslighting](nl/begrippen/gasligh
 
 Deze pagina's helpen je daarom om je eigen ervaring te verwoorden. Ze helpen niet om vast te stellen of je partner of ex een bepaalde persoonlijkheid heeft. Dat kan niemand op afstand, en het is ook niet nodig om je eigen gevoel serieus te nemen.
 
-## Van herkennen naar begrijpen naar herstellen
+## Waar wil je meer over begrijpen?
 
-Veel mensen beginnen bij een gevoel: twijfel, schuld, spanning, of het idee dat je jezelf kwijt bent. Daar gaat [Wat voel ik?](nl/wat-voel-ik/) over. Hier gaat het om de volgende stap: begrijpen wat er om je heen gebeurde, of nog gebeurt.
+Kies de vraag die nu bij je past. Wil je woorden geven aan twijfel, schuld of spanning? Bij [Wat voel ik?](nl/wat-voel-ik/) vind je beschrijvingen van die gevoelens. Hieronder kun je lezen over gedrag dat je misschien herkent en over wat het met je kan doen.
 
 - **[Wat is emotioneel misbruik?](nl/begrijp-het/emotioneel-misbruik/)** Een uitleg van het begrip, hoe het eruit kan zien en waarom het vaak lang onzichtbaar blijft. Ook voor mannen, die het soms niet herkennen omdat het niet past bij het beeld dat ze ervan hebben.
 - **[Ongezond conflict of een patroon?](nl/begrijp-het/conflict-of-patroon/)** Iedere relatie kent ruzie. Wat is het verschil tussen een pijnlijk maar gelijkwaardig conflict en een herhaald patroon van controle?
 - **[Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).** Over [zelftwijfel](nl/begrippen/zelftwijfel/), schuld, waakzaamheid, uitputting en schaamte, en over de grenzen van populaire labels.
 - **[Financieel misbruik](nl/begrijp-het/financieel-misbruik/).** Een eigen hoofdthema, omdat controle over geld, schulden en documenten ingrijpende gevolgen kan hebben, ook lang na een relatie.
 
-Begrijpen is waardevol, maar het is niet het eindpunt. Je kunt precies weten wat er gebeurde en het toch blijven voelen. Over de tijd daarna gaat [Herstel](nl/herstel/).
+Zoek je steun bij wat je nu voelt of bij het opnieuw opbouwen van vertrouwen? Bij [Herstel](nl/herstel/) kun je lezen over wat daarbij kan helpen.
 
 ## Neem het in je eigen tempo
 
