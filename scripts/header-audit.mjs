@@ -204,6 +204,57 @@ try {
     'Mobile: original active-section links, prominent finder entry, every example selectable, no-JS and print content.',
   );
 
+  /* Home hero: introduction and the two actions only; destinations stay reachable. */
+  const home = await browser.newPage();
+  await home.setViewport({ width: 1280, height: 900 });
+  await home.goto(`${origin}/nl/`, { waitUntil: 'networkidle0' });
+  assert.equal(await home.$('.hero-entries'), null, 'Hero has no separate entry row');
+  assert.equal(await home.$$eval('.home-hero__copy .actions a', (nodes) => nodes.length), 2);
+  for (const target of ['#gevoelens', '#perspectief']) {
+    assert(await home.$(target), `Home section ${target} exists`);
+  }
+  assert(await home.$('.nav a[href="nl/begrijp-het/"]'), 'Begrijp het stays in the navigation');
+  await home.close();
+
+  /* Link hierarchy: inline links underlined; stand-alone, navigation and cards are not. */
+  const links = await browser.newPage();
+  await links.setViewport({ width: 1280, height: 900 });
+  const underline = (selector) =>
+    links.$$eval(selector, (nodes) =>
+      nodes
+        .filter((node) => node.getClientRects().length)
+        .map((node) => globalThis.getComputedStyle(node).textDecorationLine.includes('underline')),
+    );
+  await links.goto(`${origin}/nl/begrijp-het/conflict-of-patroon/`, { waitUntil: 'networkidle0' });
+  const prose = await underline('.prose p a');
+  assert(prose.length > 0 && prose.every(Boolean), 'Links in running text are underlined');
+  for (const selector of ['.footer-grid nav a', '.breadcrumbs a', 'a.card', '.nav > a']) {
+    assert(
+      (await underline(selector)).every((value) => !value),
+      `${selector} has no underline`,
+    );
+  }
+  await links.goto(`${origin}/nl/wat-voel-ik/ik-twijfel-aan-mezelf/`, {
+    waitUntil: 'networkidle0',
+  });
+  const standalone = await links.$$eval('a.text-link', (nodes) =>
+    nodes
+      .filter((node) => node.getClientRects().length)
+      .map((node) => ({
+        line: globalThis.getComputedStyle(node).textDecorationLine,
+        arrow: globalThis.getComputedStyle(node, '::after').content,
+      })),
+  );
+  assert(standalone.length > 0, 'Feeling page has a stand-alone link');
+  for (const link of standalone) {
+    assert(!link.line.includes('underline'), 'Stand-alone link has no permanent underline');
+    assert(link.arrow.includes('→'), 'Stand-alone link shows an arrow');
+  }
+  await links.close();
+  console.log(
+    'Home hero without entry row; link hierarchy for inline, stand-alone, navigation and cards.',
+  );
+
   /* Variant A on feeling pages: direct pressed buttons, focus stays, short status, no select. */
   for (const width of [390, 1280]) {
     const feeling = await browser.newPage();

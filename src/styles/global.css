@@ -230,9 +230,12 @@ mark.review-marker {
 .nav .nav-home {
   padding-inline-end: 1.5rem;
 }
-.nav a:hover,
-.nav a.is-active,
-.nav a[aria-current] {
+.nav > a:hover,
+.nav > a.is-active,
+.nav > a[aria-current],
+.desktop-nav-item > a:hover,
+.desktop-nav-item > a.is-active,
+.desktop-nav-item > a[aria-current] {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.4em;
@@ -423,6 +426,8 @@ mark.review-marker {
   align-items: center;
   min-height: 2.75rem;
   padding-block: 0.2rem;
+}
+.footer-grid li a:hover {
   text-decoration: underline;
   text-decoration-thickness: 0.06em;
 }
@@ -476,12 +481,29 @@ mark.review-marker {
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
+/* Link hierarchy (see docs/CONTENT_GUIDE.md):
+   1. Inline links inside running text: always underlined (.prose a, .inline-link).
+   2. Stand-alone links on their own line: link colour, bold and an arrow; no permanent
+      underline, an underline on hover. (.text-link)
+   3. Navigation, cards and buttons: their shape, position or arrow already says "link". */
 .text-link {
   display: inline-flex;
   align-items: center;
+  gap: 0.35em;
   min-height: 2.75rem;
   color: var(--link);
   font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+.text-link::after {
+  content: '→';
+  text-decoration: none;
+}
+[dir='rtl'] .text-link::after {
+  content: '←';
+}
+.text-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
 }
@@ -698,46 +720,6 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   min-width: 0;
   padding-block: clamp(3rem, 6vw, 5rem);
 }
-/* Three equal ways in under the hero actions: quiet links, no steps, stacked on mobile. */
-.hero-entries {
-  margin-top: 1.75rem;
-  padding-top: 1.1rem;
-  border-top: 1px solid var(--border);
-}
-.hero-entries__label {
-  margin: 0 0 0.35rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.hero-entries ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.hero-entries li {
-  margin: 0;
-}
-.hero-entries a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  min-height: 2.75rem;
-  color: var(--link);
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.2em;
-}
-.hero-entries a span {
-  text-decoration: none;
-}
-[dir='rtl'] .hero-entries a span {
-  transform: scaleX(-1);
-}
 
 /* The image at the top of a page sits in one arched frame: a photo, or a quiet landscape. */
 .hero-art-frame {
@@ -847,12 +829,11 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   align-items: center;
   min-height: 2.75rem;
   color: var(--hero-eyebrow);
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  font-weight: 600;
   text-decoration-thickness: 0.08em;
 }
 .breadcrumbs a:hover {
-  text-decoration-color: currentColor;
+  text-decoration: underline;
 }
 .article-meta {
   display: flex;
@@ -1509,6 +1490,8 @@ a.card:focus-visible,
 .search-results li a {
   color: var(--link);
   font-weight: 700;
+}
+.search-results li a:hover {
   text-decoration: underline;
 }
 .search-results li p {
