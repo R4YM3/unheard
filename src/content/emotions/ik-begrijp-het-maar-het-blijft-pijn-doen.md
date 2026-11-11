@@ -20,10 +20,7 @@ hero:
   paragraphs:
     - 'Misschien begrijp je inmiddels veel van een patroon of van je eigen reactie, maar voel je je nog steeds verdrietig, boos, gespannen of leeg.'
   actions:
-    - {
-        href: 'nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/#herken-je-dit',
-        label: 'Herken je dit? ↓',
-      }
+    - { href: '#herken-je-dit', label: 'Herken je dit? ↓' }
     - {
         href: 'nl/hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen/',
         label: 'Bekijk de kaart',
