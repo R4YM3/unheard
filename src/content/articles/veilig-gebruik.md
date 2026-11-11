@@ -84,4 +84,4 @@ Een geprinte pagina of ingevulde kaart kan door iemand anders gevonden worden. B
 
 Als je denkt dat iemand je apparaat, berichten of accounts controleert, is het verstandig om eerst vertrouwelijk advies te vragen voordat je wachtwoorden of instellingen verandert. Een plotselinge verandering kan in sommige situaties spanning of risico geven. Veilig Thuis geeft gratis en anoniem advies via [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112).
 
-Meer over hulp en veilig advies vragen staat op [Hulp vinden](nl/hulp-vinden/).
+Meer over hulp en veilig advies vragen staat op [Hulp vinden](nl/hulp-vinden/). Lees ook hoe [digitale controle](nl/begrippen/dwingende-controle/#digitale-controle) eruit kan zien.
