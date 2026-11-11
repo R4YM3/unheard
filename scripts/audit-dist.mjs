@@ -15,7 +15,8 @@ const routeForFile = (file) => {
     .replace(/\\/g, '/');
   return route === '' ? '/' : route;
 };
-const publishedRoutes = new Set(files.map(routeForFile));
+const publishedRoutes = new Map(files.map((file) => [routeForFile(file), file]));
+const anchorsByFile = new Map();
 const internalHrefs = (html) =>
   [...html.matchAll(/<a\b[^>]*\bhref=(['"])(.*?)\1/gi)].map((match) => match[2]);
 const isExternalHref = (href) => /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href);
@@ -204,8 +205,26 @@ for (const file of files) {
     const basePath = new URL(base, 'https://audit.invalid').pathname.replace(/\/$/, '');
     if (!targetUrl.pathname.startsWith(`${basePath}/`) && targetUrl.pathname !== basePath) continue;
     const route = targetUrl.pathname.slice(basePath.length) || '/';
-    if (!publishedRoutes.has(route))
+    const targetFile = publishedRoutes.get(route);
+    if (!targetFile) {
       bad.push(`${file}: broken internal link ${href} (resolved ${route})`);
+      continue;
+    }
+    if (!targetUrl.hash || targetUrl.hash.startsWith('#:~:')) continue;
+    let fragment;
+    try {
+      fragment = decodeURIComponent(targetUrl.hash.slice(1).split(':~:')[0]);
+    } catch {
+      bad.push(`${file}: invalid internal link fragment ${href}`);
+      continue;
+    }
+    if (!anchorsByFile.has(targetFile)) {
+      const targetHtml = targetFile === file ? html : await readFile(targetFile, 'utf8');
+      const ids = [...targetHtml.matchAll(/<[a-z][^>]*?\sid=(['"])(.*?)\1/gi)].map((match) => match[2]);
+      anchorsByFile.set(targetFile, new Set(ids));
+    }
+    if (!anchorsByFile.get(targetFile).has(fragment))
+      bad.push(`${file}: broken internal link fragment ${href}`);
   }
 }
 // Bundled client scripts: no network calls, no storage beyond the theme choice.
