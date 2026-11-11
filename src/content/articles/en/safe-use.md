@@ -35,7 +35,7 @@ If you are reading about emotional or financial abuse, you may not want anyone e
 
 ## Leaving the site quickly
 
-At the top of every page is the **Leave site** button. It takes you straight to the website of the KNMI (the Dutch national weather service). The **Esc key** does the same. If a desktop submenu is open, the first press closes that menu. Press Esc again to leave the site. Without JavaScript, the button works as a normal link; the Esc key then does not work.
+At the bottom right of every page is the **Leave site** button. It takes you straight to the website of the KNMI (the Dutch national weather service). The **Esc key** does the same. If the menu or a submenu is open, the first press closes that menu. Press Esc again to leave the site. Without JavaScript, the button works as a normal link; the Esc key then does not work.
 
 With JavaScript, the button replaces the current page in your browser history. Pages you visited earlier and other traces of your visit remain. The button does not erase your history and does not close other tabs.
 
@@ -49,7 +49,7 @@ Unheard has no control over that. The site itself does not keep any visitor stat
 
 - **No cookies.** The site itself sets no cookies.
 - **No trackers or adverts.** No scripts, fonts or adverts from other parties are loaded. The site’s code contains an option for a visitor counter from Cloudflare, but it is switched off. If that ever changes, it will be stated on this page first.
-- **Only your theme choice.** If you click the light or dark button at the top right, your browser remembers that choice. This happens in your own browser’s local storage, under the name `ongehoord-theme`. Nothing else is kept, and this choice is not sent anywhere. If you do not click the button, nothing is stored.
+- **Only your theme choice.** If you click the light or dark button at the bottom right, your browser remembers that choice. This happens in your own browser’s local storage, under the name `ongehoord-theme`. Nothing else is kept, and this choice is not sent anywhere. If you do not click the button, nothing is stored.
 - **No forms that send anything.** You cannot send in a story here, create an account or send a message.
 - **Searching happens in your browser.** The search function filters a list that is already on the page. What you type is not sent or stored.
 
