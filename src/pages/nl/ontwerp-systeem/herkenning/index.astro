@@ -1,0 +1,148 @@
+---
+/**
+ * Internal comparison (noindex, outside the sitemap and navigation): the home recognition
+ * block as it is now (reference) next to variant B-light, with the same four situations
+ * from the home content file. Nothing here is a final choice.
+ */
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PerspectiveSwitch from '../../../../components/PerspectiveSwitch.astro';
+import PerspectiveSituations from '../../../../components/PerspectiveSituations.astro';
+import { findByKey } from '../../../../lib/content';
+
+const entry = await findByKey('nl', 'home');
+if (!entry || entry.collection !== 'hubs' || !entry.data.home) {
+  throw new Error('The comparison needs the published home hub.');
+}
+const { scenarios } = entry.data;
+const { perspective } = entry.data.home;
+const criteria = [
+  ['Eerste indruk', 'Eén voorbeeld open, vier knoppen erboven', 'Vier koppen met de gehoorde zin'],
+  ['Kiezen', 'Knop indrukken (mobiel: keuzelijst)', 'Een situatie openklappen'],
+  [
+    'Wat je ziet na kiezen',
+    'Je hoort, je voelt en context van één voorbeeld',
+    'Je voelt en context erbij, onder de gehoorde zin',
+  ],
+  ['Vergelijken', 'Eén voorbeeld tegelijk', 'Meerdere situaties tegelijk open'],
+  ['Zonder JavaScript en in print', 'Alle voorbeelden onder elkaar', 'Alle situaties open'],
+];
+---
+
+<BaseLayout
+  title="Herkenning vergelijken"
+  description="Interne vergelijking van twee varianten van het voorbeeldenblok op de homepage."
+  locale="nl"
+  canonicalPath="/nl/ontwerp-systeem/herkenning/"
+  indexable={false}
+>
+  <section class="section">
+    <div class="wrap reading">
+      <p class="eyebrow">Intern · ontwerpvergelijking</p>
+      <h1>Herkenning: huidige variant en B-light</h1>
+      <p class="lead">
+        Twee manieren om dezelfde vier situaties van de homepage te tonen. De homepage gebruikt de
+        huidige variant. Er is nog geen keuze gemaakt.
+      </p>
+      <nav aria-label="Varianten op deze pagina">
+        <ul class="compare-jump">
+          <li><a href="nl/ontwerp-systeem/herkenning/#variant-a">Huidige variant</a></li>
+          <li><a href="nl/ontwerp-systeem/herkenning/#variant-b">Variant B-light</a></li>
+          <li><a href="nl/ontwerp-systeem/herkenning/#verschillen">Verschillen</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <div id="variant-a" class="compare-label"><p class="wrap">Huidige variant (referentie)</p></div>
+  <PerspectiveSwitch
+    id="vergelijk-a"
+    scenarios={scenarios}
+    heading={perspective.heading}
+    intro={perspective.lead}
+  />
+  <div id="variant-b" class="compare-label"><p class="wrap">Variant B-light</p></div>
+  <PerspectiveSituations
+    id="vergelijk-b"
+    scenarios={scenarios}
+    heading={perspective.heading}
+    intro={perspective.lead}
+  />
+  <section class="section section--paper" aria-labelledby="verschillen-heading" id="verschillen">
+    <div class="wrap">
+      <h2 id="verschillen-heading">Verschillen</h2>
+      <div class="compare-table">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Aspect</th>
+              <th scope="col">Huidige variant</th>
+              <th scope="col">B-light</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              criteria.map(([aspect, a, b]) => (
+                <tr>
+                  <th scope="row">{aspect}</th>
+                  <td>{a}</td>
+                  <td>{b}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        Nog te toetsen met fictieve taken: tijd tot een passend voorbeeld, omwegen, contextbegrip en
+        leeslast. Kies B-light alleen bij aantoonbare meerwaarde.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .compare-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .compare-jump a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-weight: 700;
+  }
+  .compare-label {
+    position: sticky;
+    top: 4.5rem;
+    z-index: 5;
+    border-block: 1px solid var(--border-strong);
+    background: var(--surface);
+    scroll-margin-top: 4.5rem;
+  }
+  .compare-label p {
+    margin-block: 0;
+    padding-block: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+  .compare-table {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    min-width: 32rem;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    text-align: start;
+    vertical-align: top;
+  }
+</style>

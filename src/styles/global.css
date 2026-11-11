@@ -1258,6 +1258,35 @@ a.card:focus-visible,
     grid-template-columns: minmax(0, 1fr);
   }
 }
+/* Variant A: both sides of the moment next to each other, with the example named. */
+.pv--split .pv-line {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.pv--split[data-enhanced] .pv-scene__title {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+@media (min-width: 52rem) {
+  .pv--split .pv-lines {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+  .pv--split .pv-line--inside {
+    margin-top: 0;
+    padding-top: 0;
+    padding-inline-start: 2.5rem;
+    border-top: 0;
+    border-inline-start: 1px solid var(--border);
+  }
+  .pv--split .pv-line dd {
+    font-size: clamp(1.3rem, 2.1vw, 1.7rem);
+  }
+}
 
 /* ---------- Reflection, chooser, tools ---------- */
 .reflection {

@@ -174,6 +174,66 @@ try {
     'Mobile: original active-section links, prominent finder entry, every example selectable, no-JS and print content.',
   );
 
+  /* Variant A on feeling pages: direct pressed buttons, focus stays, short status, no select. */
+  for (const width of [390, 1280]) {
+    const feeling = await browser.newPage();
+    await feeling.setViewport({ width, height: 900 });
+    await feeling.goto(`${origin}/nl/wat-voel-ik/ik-twijfel-aan-mezelf/`, {
+      waitUntil: 'networkidle0',
+    });
+    assert.equal(await feeling.$('[data-pv-select]'), null, 'Variant A has no select');
+    const buttons = await feeling.$$('[data-pv-scene]');
+    assert(buttons.length >= 2, 'Feeling page offers direct example buttons');
+    await buttons[1].click();
+    const after = await feeling.evaluate(() => {
+      const doc = globalThis.document;
+      const lines = doc.querySelector('.pv--split [data-pv-panel]:not([hidden]) .pv-lines');
+      return {
+        pressed: [...doc.querySelectorAll('[data-pv-scene]')].map((node) =>
+          node.getAttribute('aria-pressed'),
+        ),
+        focus: doc.activeElement?.dataset.pvScene,
+        visible: [...doc.querySelectorAll('[data-pv-panel]:not([hidden])')].map(
+          (node) => node.dataset.pvPanel,
+        ),
+        status: doc.querySelector('[data-pv-status]')?.textContent ?? '',
+        columns: globalThis.getComputedStyle(lines).gridTemplateColumns.split(' ').length,
+      };
+    });
+    assert.equal(after.pressed.filter((value) => value === 'true').length, 1);
+    assert.equal(after.pressed[1], 'true');
+    assert.equal(after.focus, '1', 'Focus stays on the activated button');
+    assert.deepEqual(after.visible, ['1']);
+    assert(after.status.length > 0, 'A short status names the example');
+    assert.equal(after.columns, width >= 832 ? 2 : 1, `Perspectives layout at ${width}px`);
+    await feeling.close();
+  }
+  console.log(
+    'Feeling pages: pressed buttons, focus kept, short status, side by side on wide screens.',
+  );
+
+  /* Variant B-light: native disclosure, readable without JavaScript, everything in print. */
+  for (const javascript of [true, false]) {
+    const compare = await browser.newPage();
+    await compare.setJavaScriptEnabled(javascript);
+    await compare.setViewport({ width: 390, height: 844 });
+    await compare.goto(`${origin}/nl/ontwerp-systeem/herkenning/`, { waitUntil: 'networkidle0' });
+    const items = await compare.$$('#vergelijk-b .pvs-item');
+    assert.equal(items.length, 4, 'B-light shows the four home situations');
+    await compare.click('#vergelijk-b .pvs-item summary');
+    assert(await compare.$eval('#vergelijk-b .pvs-item', (node) => node.open));
+    await compare.emulateMediaType('print');
+    const hidden = await compare.$$eval(
+      '#vergelijk-b .pvs-item__felt',
+      (nodes) => nodes.filter((node) => node.getClientRects().length === 0).length,
+    );
+    assert.equal(hidden, 0, 'Every situation prints in full');
+    await compare.close();
+  }
+  console.log(
+    'B-light: four situations, native disclosure, full print with and without JavaScript.',
+  );
+
   /* Mobile menu safety: clear of the dock, Escape closes it, one current page, one link each. */
   for (const [width, height] of [
     [320, 568],

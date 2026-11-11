@@ -19,7 +19,7 @@ export default defineConfig({
             : '') &&
         // Locales without an approved translation (see src/i18n/language.mjs) stay out.
         !/\/(?:en|ar)\//.test(page) &&
-        !/\/nl\/(?:financieel-misbruik|herstel\/therapie|herstel\/therapievormen\/groepsschematherapie|ontwerp-systeem)\/$/.test(
+        !/\/nl\/(?:financieel-misbruik|herstel\/therapie|herstel\/therapievormen\/groepsschematherapie|ontwerp-systeem(?:\/herkenning)?)\/$/.test(
           page,
         ),
     }),
