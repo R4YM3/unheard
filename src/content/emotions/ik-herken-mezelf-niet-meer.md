@@ -20,7 +20,7 @@ hero:
   paragraphs:
     - 'Misschien merk je dat je minder ruimte inneemt, contacten vermijdt of niet meer goed weet wat je zelf wilt. Je kijkt in de spiegel en denkt: wanneer ben ik zo geworden?'
   actions:
-    - { href: '#herkenning', label: 'Herken je dit? ↓' }
+    - { href: 'nl/wat-voel-ik/ik-herken-mezelf-niet-meer/#herken-je-dit', label: 'Herken je dit? ↓' }
     - { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal', quiet: true }
 glossary:
   term: Identiteitsverlies
