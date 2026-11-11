@@ -23,8 +23,7 @@ const nl = {
   search: 'Zoeken',
   darkMode: 'Donkere modus',
   perspectiveHeading: 'Wat je hoort. Wat je voelt.',
-  perspectiveIntro:
-    'Hetzelfde moment, van twee kanten. Dit zijn fictieve voorbeelden, geen diagnoses.',
+  perspectiveIntro: 'Hetzelfde moment, van twee kanten.',
   youHear: 'Je hoort',
   youFeel: 'Je voelt',
   chooseExample: 'Kies een voorbeeld',
