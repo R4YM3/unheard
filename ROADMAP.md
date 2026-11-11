@@ -62,4 +62,11 @@ Track decisions in [#44](https://github.com/R4YM3/unheard/issues/44). The owner 
 - **B-light.** Compare [variant A](https://unheard.support/nl/ontwerp-systeem/herkenning/#vergelijk-a) and [B-light](https://unheard.support/nl/ontwerp-systeem/herkenning/#vergelijk-b). Which makes it easier to find the money example and understand the context?
 - **Pillar colors.** Compare the colored and neutral bands in the [design workshop](https://unheard.support/nl/ontwerp-systeem/#pijlerkleuren). Does the accent help you predict where the link leads?
 
-Sprint 4 changes are live through [PR #54](https://github.com/R4YM3/unheard/pull/54) and [Pages run 243](https://github.com/R4YM3/unheard/actions/runs/43109391009). Use the walkthrough to decide whether route labels, B-light or pillar accents should change. Keep the manual browser matrix, zoom, screen-reader and visual print checks open in [#42](https://github.com/R4YM3/unheard/issues/42) until the routes and design stabilize. Keep existing CI enabled.
+Sprint 4 changes are live through [PR #57](https://github.com/R4YM3/unheard/pull/57) and [Pages run 252](https://github.com/R4YM3/unheard/actions/runs/43116231543). Use the walkthrough to decide whether route labels, B-light or pillar accents should change. Keep the manual browser matrix, zoom, screen-reader and visual print checks open in [#42](https://github.com/R4YM3/unheard/issues/42) until the routes and design stabilize. Keep existing CI enabled.
+
+## Sprints 5–8
+
+- **Sprint 5 — Editorial review.** Run `npm run audit:editorial` for the per-entry inventory. Resolve recorded review questions with the founder, clinical reviewer or legal reviewer as applicable. Use [Editorial handoff](EDITORIAL_HANDOFF.md) for sign-off.
+- **Sprint 6 — Findability.** Improve and validate visible answers, page metadata and matching structured data while keeping the indexing gate in place.
+- **Sprint 7 — Quality checks.** Keep automated CI running. Complete the deferred manual QA in #42 when the routes and design are stable.
+- **Sprint 8 — Release.** Confirm the approved Dutch scope, editorial sign-offs and launch checks before enabling indexing. Keep untranslated or unreviewed equivalents at their current publication status.

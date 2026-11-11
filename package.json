@@ -18,6 +18,7 @@
     "audit:print": "npm run build && node scripts/print-audit.mjs",
     "audit:ux": "npm run build && node scripts/ux-audit.mjs",
     "audit:sources": "node scripts/check-sources.mjs",
+    "audit:editorial": "node scripts/validate-content.mjs --review-inventory",
     "audit:launch": "NO_INDEX=false node scripts/validate-content.mjs",
     "audit:header": "npm run build && node scripts/header-audit.mjs"
   },
