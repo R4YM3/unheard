@@ -20,7 +20,7 @@ hero:
   paragraphs:
     - 'Misschien weet je precies wat je niet wilt, maar voelt uitspreken daarvan spannend, vermoeiend of onmogelijk. Je zegt ja, en ergens vanbinnen zegt iets nee.'
   actions:
-    - { href: '#herkenning', label: 'Herken je dit? ↓' }
+    - { href: '#herken-je-dit', label: 'Herken je dit? ↓' }
     - { href: 'nl/herstel/grenzen-leren-stellen/', label: 'Grenzen leren stellen', quiet: true }
 glossary:
   term: Grenzen

@@ -20,7 +20,7 @@ hero:
   paragraphs:
     - 'Je weet wat je voelde. Maar na een gesprek vraag je je opnieuw af of je misschien hebt overdreven, iets verkeerd hebt onthouden of zelf het probleem bent.'
   actions:
-    - { href: '#herkenning', label: 'Herken je dit? ↓' }
+    - { href: '#herken-je-dit', label: 'Herken je dit? ↓' }
     - { href: 'nl/begrippen/darvo/', label: 'Wat kan er gebeuren?', quiet: true }
   visualNote: 'Fotografie volgt later. De ruimte en stilte zijn onderdeel van het ontwerp.'
 glossary:

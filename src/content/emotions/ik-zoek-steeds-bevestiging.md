@@ -20,7 +20,7 @@ hero:
   paragraphs:
     - 'Misschien vraag je vaker dan je zou willen: is dit normaal? Heb ik dit goed gedaan? Zie ik het verkeerd? En als iemand ja zegt, houdt de rust maar even stand.'
   actions:
-    - { href: '#herkenning', label: 'Herken je dit? ↓' }
+    - { href: '#herken-je-dit', label: 'Herken je dit? ↓' }
     - { href: 'nl/herstel/zelfvertrouwen/', label: 'Zelfvertrouwen terugvinden', quiet: true }
 glossary:
   term: Bevestiging zoeken

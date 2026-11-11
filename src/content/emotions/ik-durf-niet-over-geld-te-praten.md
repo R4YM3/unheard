@@ -20,7 +20,7 @@ hero:
   paragraphs:
     - 'Misschien weet je niet precies hoeveel er op de rekening staat, of op wiens naam welke schuld staat. Vragen ernaar voelt spannend, of je doet het al lang niet meer.'
   actions:
-    - { href: '#herkenning', label: 'Herken je dit? ↓' }
+    - { href: '#herken-je-dit', label: 'Herken je dit? ↓' }
     - {
         href: 'nl/begrijp-het/financieel-misbruik/',
         label: 'Over financieel misbruik',
