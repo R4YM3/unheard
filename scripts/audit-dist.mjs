@@ -220,7 +220,9 @@ for (const file of files) {
     }
     if (!anchorsByFile.has(targetFile)) {
       const targetHtml = targetFile === file ? html : await readFile(targetFile, 'utf8');
-      const ids = [...targetHtml.matchAll(/<[a-z][^>]*?\sid=(['"])(.*?)\1/gi)].map((match) => match[2]);
+      const ids = [...targetHtml.matchAll(/<[a-z][^>]*?\sid=(['"])(.*?)\1/gi)].map(
+        (match) => match[2],
+      );
       anchorsByFile.set(targetFile, new Set(ids));
     }
     if (!anchorsByFile.get(targetFile).has(fragment))
