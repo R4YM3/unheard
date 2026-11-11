@@ -45,3 +45,12 @@ Still required before declaring an editorial launch complete:
 - Manual visual QA at the specified mobile/desktop zoom levels and print-to-PDF checks in Safari. Chrome A4 PDF smoke checks passed for the home, founder-story, therapy and article templates on 2026-10-19.
 - Review and publish any additional Dutch articles, then add only approved EN/AR translations and their equivalent routes.
 - Verify the custom-domain TLS certificate before directing anyone to HTTPS; DNS can be correct while GitHub Pages is still provisioning that certificate.
+
+
+## Active roadmap and AI handoff — 2026-11-11
+
+- Start with [AGENTS.md](AGENTS.md), [CODEX_GOAL.md](CODEX_GOAL.md), [EDITORIAL_POLICY.md](EDITORIAL_POLICY.md), the current GitHub issues and pull requests, and this roadmap. Verify remote status before selecting work. Keep decisions, test evidence and the next executable task on the linked issue or PR.
+- [Sprint 3.1 issue #42](https://github.com/R4YM3/unheard/issues/42) and [PR #43](https://github.com/R4YM3/unheard/pull/43) cover mobile menu focus and Escape, the explicit exit, the calmer homepage hero and link styles. PR #43 was merged after a targeted diff review and green PR CI. Follow [Pages run 212](https://github.com/R4YM3/unheard/actions/runs/43086629431) for the production result. Real zoom, assistive technology and cross-browser checks remain open.
+- [Sprint 4 issue #44](https://github.com/R4YM3/unheard/issues/44) contains the inventory, research references, priorities and acceptance criteria. Start the content and navigation implementation from updated main. Keep feeling, recognition and understanding equally available in any order. Preserve the four examples and variant A. Use the small Voorbeeld label and centralize editorial provenance on Werkwijze. B-light and pillar colors require user validation before broad rollout.
+- Work uses GitHub as its handoff. ChatGPT Work owns execution and coordination. Bring in Claude Design for specialist visual work. Use the original QA and validation reports linked from #42 when accessible. The issues contain the actionable criteria for sessions without access to those files.
+- Release authorization was given on 11 November 2026 for tested work in this roadmap. Continue through authorized tasks, merge and verify deployments. Editorial and safety review requirements for sensitive content and indexing remain part of the release gates. Run targeted tests during changes and broader release audits once structure and visual design are stable.
