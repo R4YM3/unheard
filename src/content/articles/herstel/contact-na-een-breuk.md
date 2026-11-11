@@ -55,7 +55,7 @@ Niet elke moeizame samenwerking na een scheiding is een teken van misbruik. Veel
 Hoe minder er per keer besproken hoeft te worden, hoe minder ruimte er is voor onrust.
 
 - **Vaste afspraken.** Een vast schema voor bijvoorbeeld de kinderen of voor overleg betekent minder losse berichten en minder onderhandelen.
-- **Eén kanaal.** Spreek af via welk middel praktische zaken lopen, bijvoorbeeld e-mail of één berichtenapp. Dan weet je waar je moet kijken, en wanneer niet.
+- **Eén kanaal.** Spreek af via welk middel praktische zaken lopen, bijvoorbeeld e-mail of één berichtenapp. Dan weet je waar je moet kijken, en wanneer niet. Als iemand druk uitoefent om je berichten of locatie te kunnen volgen, lees dan over [digitale controle](nl/begrippen/dwingende-controle/#digitale-controle).
 - **Vaste momenten om te lezen.** Je hoeft niet de hele dag beschikbaar te zijn. Kijk op een moment dat jij kiest, bijvoorbeeld één keer per dag.
 
 ## Schriftelijk, kort en zakelijk
