@@ -66,6 +66,31 @@ for (const [collection, prefix] of Object.entries(collections)) {
   }
 }
 
+if (onlyFiles.has('--review-inventory')) {
+  if (errors.length) {
+    console.error(errors.join('\n'));
+    process.exit(1);
+  }
+
+  const marker = '[OPRICHTER REVIEW NODIG]';
+  for (const { file, data, body } of entries.sort((a, b) => a.file.localeCompare(b.file))) {
+    const published = data.published === true;
+    const missing = [
+      data.status !== 'approved' && 'status: approved',
+      !data.reviewedAt && 'reviewedAt',
+      JSON.stringify({ data, body }).includes(marker) && 'open oprichtersmarkering',
+    ].filter(Boolean);
+    const notes = Array.isArray(data.reviewNotes) ? data.reviewNotes : [];
+    const passages = body.split('\n').filter((line) => line.includes(marker));
+    console.log(`\n## ${file}`);
+    console.log(`- ${data.locale} · ${published ? 'online in preview' : 'ongepubliceerd'}`);
+    if (missing.length) console.log(`- Open voor indexering bij publicatie: ${missing.join(', ')}`);
+    for (const note of notes) console.log(`- Reviewvraag: ${note}`);
+    for (const passage of passages) console.log(`- Oprichterspassage: ${passage.trim()}`);
+  }
+  process.exit(0);
+}
+
 const isDate = (value) =>
   value instanceof Date || (typeof value === 'string' && !Number.isNaN(Date.parse(value)));
 const externalHref = /^(?:[a-z][a-z\d+.-]*:|\/\/)/i;

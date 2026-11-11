@@ -9,6 +9,10 @@ This document records the approvals needed before public discovery or a broader 
 - Do not add names, dates, locations, children's details, allegations about identifiable people, diagnoses of another person, therapy outcomes, or causal claims that are not already approved.
 - EN and AR are technical review stubs only. Publish a language switch and `hreflang` only when the equivalent translated page has been reviewed.
 
+## Review inventory
+
+Run `npm run audit:editorial` from the repository root. The output lists each content file, its locale and current publication state, missing indexing requirements and the review questions already recorded in its frontmatter. Body placeholders are listed separately. Inspect the linked source file for placeholders in structured content. Use the output as a working list and record approval in the relevant content entry after review. The existing `npm run audit:launch` remains the release check.
+
 ## Founder review
 
 Confirm, page by page:
