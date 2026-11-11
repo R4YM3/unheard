@@ -29,6 +29,7 @@ a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 input:focus-visible,
+select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
   outline: 3px solid var(--focus);
@@ -230,6 +231,7 @@ mark.review-marker {
   padding-inline-end: 1.5rem;
 }
 .nav a:hover,
+.nav a.is-active,
 .nav a[aria-current] {
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -251,6 +253,7 @@ mark.review-marker {
   line-height: 1.15;
 }
 .nav .nav-help:hover,
+.nav .nav-help.is-active,
 .nav .nav-help[aria-current] {
   text-decoration: underline;
   text-underline-offset: 0.25em;
@@ -297,7 +300,8 @@ mark.review-marker {
 .locale-selector {
   min-width: 2.75rem;
 }
-.mobile-menu {
+.mobile-menu,
+.header-help {
   display: none;
 }
 .header-search {
@@ -694,6 +698,47 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   min-width: 0;
   padding-block: clamp(3rem, 6vw, 5rem);
 }
+/* Three equal ways in under the hero actions: quiet links, no steps, stacked on mobile. */
+.hero-entries {
+  margin-top: 1.75rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+.hero-entries__label {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.hero-entries ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hero-entries li {
+  margin: 0;
+}
+.hero-entries a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+.hero-entries a span {
+  text-decoration: none;
+}
+[dir='rtl'] .hero-entries a span {
+  transform: scaleX(-1);
+}
+
 /* The image at the top of a page sits in one arched frame: a photo, or a quiet landscape. */
 .hero-art-frame {
   position: relative;
@@ -1212,6 +1257,35 @@ a.card:focus-visible,
 @media (max-width: 42rem) {
   .pv-line {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* Variant A: both sides of the moment next to each other, with the example named. */
+.pv--split .pv-line {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.pv--split[data-enhanced] .pv-scene__title {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+@media (min-width: 52rem) {
+  .pv--split .pv-lines {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+  .pv--split .pv-line--inside {
+    margin-top: 0;
+    padding-top: 0;
+    padding-inline-start: 2.5rem;
+    border-top: 0;
+    border-inline-start: 1px solid var(--border);
+  }
+  .pv--split .pv-line dd {
+    font-size: clamp(1.3rem, 2.1vw, 1.7rem);
   }
 }
 
@@ -2307,31 +2381,134 @@ a.card:focus-visible,
     height: 1px;
     background: currentColor;
   }
+  /* Help stays one tap away with the menu closed; search lives in the menu (one link each). */
+  .header-search {
+    display: none;
+  }
+  .header-help {
+    order: 1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border-radius: var(--radius-pill);
+    background: var(--help);
+    color: var(--help-text);
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  @media (max-width: 22rem) {
+    .header-row {
+      gap: 0.35rem;
+    }
+    .header-help {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+  .header-help:hover,
+  .header-help.is-active {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
   .mobile-menu__panel {
     position: absolute;
     z-index: 8;
     inset-block-start: calc(100% + 0.55rem);
     inset-inline-end: 0;
     display: grid;
-    min-inline-size: min(17rem, calc(100vw - 2.25rem));
-    max-height: calc(100dvh - 12rem);
+    inline-size: min(20rem, calc(100vw - 2.25rem));
+    /* Reserve the bottom of the screen for the safety dock (3rem + 1rem offset + gap). */
+    max-height: calc(100dvh - var(--menu-top, 9rem) - 0.55rem - 5.5rem);
     overflow-y: auto;
+    overscroll-behavior: contain;
     border: 1px solid var(--control-border);
     border-radius: var(--radius);
     background: var(--header-bg);
     box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 20%);
   }
-  .mobile-menu__panel a {
-    padding: 0.85rem 1rem;
-    border-bottom: 1px solid var(--header-border);
+  .mobile-menu__help {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0.6rem;
+    padding: 0.75rem;
+    border-radius: calc(var(--radius) - 0.25rem);
+    background: var(--safe);
+    color: var(--text);
+  }
+  .mobile-menu__help-title {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .mobile-menu__help-lines {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6.25rem, 1fr));
+    gap: 0.5rem;
+  }
+  .mobile-menu__help-lines a {
+    display: grid;
+    min-height: 2.75rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 0.6rem;
+    background: var(--header-bg);
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  .mobile-menu__help-lines span {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .mobile-menu__help-lines strong {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+  }
+  .mobile-menu__help-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    border-radius: var(--radius-pill);
+    background: var(--help);
+    color: var(--help-text);
+    font-weight: 700;
+  }
+  .mobile-menu__list,
+  .mobile-menu__list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mobile-menu__list li {
+    margin: 0;
+  }
+  .mobile-menu__list a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.7rem 1rem;
+    border-top: 1px solid var(--header-border);
     color: var(--header-text);
     font-weight: 700;
   }
-  .mobile-menu__panel a:last-child {
-    border-bottom: 0;
+  .mobile-menu__list a.is-active {
+    box-shadow: inset 4px 0 0 var(--help);
   }
-  .mobile-menu__panel a.mobile-menu__sub {
-    padding-inline-start: 1.5rem;
+  .mobile-menu__list a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+  }
+  [dir='rtl'] .mobile-menu__list a.is-active {
+    box-shadow: inset -4px 0 0 var(--help);
+  }
+  .mobile-menu__list a.mobile-menu__sub {
+    padding-inline-start: 1.75rem;
     font-weight: 600;
   }
 }

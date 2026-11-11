@@ -14,6 +14,9 @@ const { entry } = Astro.props;
 const { data } = entry;
 const { Content, headings } = await render(entry);
 const railGroups = await articleRailGroups(entry, headings);
+/* Lower-case the name inside a sentence, but keep acronyms such as EMDR. */
+const inSentence = (name: string) =>
+  /^[A-Z]{2,}\b/.test(name) ? name : name.charAt(0).toLowerCase() + name.slice(1);
 ---
 
 <EntryLayout
@@ -64,7 +67,7 @@ const railGroups = await articleRailGroups(entry, headings);
           <div class="wrap">
             <div class="card card--story founder-note">
               <p class="eyebrow">Persoonlijke ervaring · ik-passage</p>
-              <h2 id="ervaring-heading">Mijn ervaring met {data.name.toLowerCase()}</h2>
+              <h2 id="ervaring-heading">Mijn ervaring met {inSentence(data.name)}</h2>
               {data.founder.text.map((paragraph) => (
                 <p>
                   <Marked text={paragraph} />

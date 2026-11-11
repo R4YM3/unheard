@@ -39,6 +39,12 @@ home:
     description: 'Ik deel mijn ervaringen om woorden te geven aan emotioneel en financieel misbruik. Ongehoord heeft bijzondere aandacht voor mannen en het stigma dat hen vaak het zwijgen oplegt. Iedereen is welkom.'
     primary: { href: 'nl/hulpmiddelen/help-me-woorden-vinden/', label: 'Help me woorden vinden' }
     secondary: { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal' }
+    entries:
+      label: 'Of begin hier'
+      links:
+        - { href: '#gevoelens', label: 'Gevoelens bekijken' }
+        - { href: '#perspectief', label: 'Voorbeelden van gesprekken bekijken' }
+        - { href: 'nl/begrijp-het/', label: 'Begrijpen wat er gebeurt' }
   introduction:
     eyebrow: 'Welkom bij Ongehoord'
     heading: 'Je hoeft het nog geen misbruik te noemen.'
@@ -169,6 +175,7 @@ sources:
     publisher: CBS en WODC
     checkedAt: 2026-10-20
 reviewNotes:
+  - 'Bevestig de drie ingangen onder de hero (linklabels uit de design-handoff van 11 november 2026; ‘Of begin hier’ is nieuwe redactionele microcopy, geen tekst van de oprichter).'
   - 'Bevestig de introductietekst in ik-vorm en de zin “Ik ben één persoon, geen hulporganisatie”.'
   - 'Bevestig of de twee CBS-cijfers op de homepage mogen staan: 870.000 voor de hele bevolking en 4,9% voor mannen, nooit in de hero, en nooit als hetzelfde getal.'
 ---

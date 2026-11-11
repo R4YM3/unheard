@@ -2,3 +2,6 @@ dist/
 node_modules/
 references/
 package-lock.json
+
+# Research documents are kept as delivered.
+docs/research/2026-11-11-design-decision-report.md

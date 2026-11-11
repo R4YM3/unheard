@@ -2,14 +2,20 @@
 import type { Section } from '../lib/navigation';
 interface Props {
   section: Section;
+  /** The section holds the current page (visual cue only). */
   current: boolean;
-  activeHref?: string;
+  /** Path of the page itself; only that link gets aria-current="page". */
+  currentPath: string;
 }
-const { section, current, activeHref } = Astro.props;
+const { section, current, currentPath } = Astro.props;
 ---
 
 <div class="desktop-nav-item">
-  <a href={section.menu.href} aria-current={current ? 'page' : undefined}>{section.menu.label}</a>
+  <a
+    class:list={{ 'is-active': current }}
+    href={section.menu.href}
+    aria-current={section.menu.href === currentPath ? 'page' : undefined}>{section.menu.label}</a
+  >
   <details class="desktop-subnav">
     <summary aria-label={section.label}>
       <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"
@@ -20,7 +26,7 @@ const { section, current, activeHref } = Astro.props;
       {
         section.tabs.map(({ href, label }) => (
           <li>
-            <a href={href} aria-current={activeHref === href ? 'page' : undefined}>
+            <a href={href} aria-current={currentPath === href ? 'page' : undefined}>
               {label}
             </a>
           </li>

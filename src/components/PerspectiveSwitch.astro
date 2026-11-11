@@ -23,8 +23,13 @@ interface Props {
   outsideLabel?: string;
   insideLabel?: string;
   locale?: Locale;
+  /**
+   * 'stacked' (reference): what you hear above what you feel.
+   * 'split' (variant A): side by side on wide screens, stacked on mobile; direct buttons only.
+   */
+  layout?: 'stacked' | 'split';
 }
-const { scenarios, id = 'perspectief', locale = 'nl', ...rest } = Astro.props;
+const { scenarios, id = 'perspectief', locale = 'nl', layout = 'stacked', ...rest } = Astro.props;
 const t = ui(locale);
 const heading = rest.heading ?? t.perspectiveHeading;
 const intro = rest.intro ?? t.perspectiveIntro;
@@ -44,7 +49,14 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
       <h2 id={`${id}-heading`}>{heading}</h2>
       <p>{intro}</p>
     </div>
-    <div class:list={['pv', { 'pv--many': scenarios.length > 3 }]} data-pv>
+    <div
+      class:list={[
+        'pv',
+        `pv--${layout}`,
+        { 'pv--many': layout === 'stacked' && scenarios.length > 3 },
+      ]}
+      data-pv
+    >
       {
         scenarios.length > 1 && (
           <div class="pv-choice" role="group" aria-label={t.chooseExample} hidden data-pv-choice>
@@ -62,7 +74,7 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
         )
       }
       {
-        scenarios.length > 3 && (
+        layout === 'stacked' && scenarios.length > 3 && (
           <label class="pv-select" hidden data-pv-select-label>
             <span>{t.chooseExample}</span>
             <select
@@ -96,6 +108,18 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
           </article>
         ))
       }
+      {
+        scenarios.length > 1 && (
+          <p
+            class="sr-only"
+            role="status"
+            data-pv-status
+            data-labels={JSON.stringify(
+              scenarios.map((scenario) => t.shownExample(scenario.label)),
+            )}
+          />
+        )
+      }
     </div>
   </div>
 </section>
@@ -106,7 +130,11 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
     const scenes = [...root.querySelectorAll<HTMLElement>('[data-pv-panel]')];
     if (buttons.length < 2 || scenes.length !== buttons.length) return;
     const select = root.querySelector<HTMLSelectElement>('[data-pv-select]');
-    const show = (scene: number) => {
+    const status = root.querySelector<HTMLElement>('[data-pv-status]');
+    const labels: string[] = JSON.parse(status?.dataset.labels ?? '[]');
+    const show = (scene: number, announce = false) => {
+      // A short status names the example; the example itself is not a live region.
+      if (status && announce) status.textContent = labels[scene] ?? '';
       if (select) select.value = String(scene);
       buttons.forEach((button, index) =>
         button.setAttribute('aria-pressed', String(index === scene)),
@@ -116,9 +144,9 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
       });
     };
     buttons.forEach((button) =>
-      button.addEventListener('click', () => show(Number(button.dataset.pvScene))),
+      button.addEventListener('click', () => show(Number(button.dataset.pvScene), true)),
     );
-    select?.addEventListener('change', () => show(Number(select.value)));
+    select?.addEventListener('change', () => show(Number(select.value), true));
     root.querySelector<HTMLElement>('[data-pv-select-label]')?.removeAttribute('hidden');
     root.querySelector<HTMLElement>('[data-pv-choice]')?.removeAttribute('hidden');
     root.dataset.enhanced = '';

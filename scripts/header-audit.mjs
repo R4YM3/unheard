@@ -119,7 +119,8 @@ try {
       await mobile.$$eval('.mobile-menu__sub', (nodes) =>
         nodes.map((node) => node.textContent.trim()),
       ),
-      ['Het verhaal', 'Waarom Ongehoord', 'Werkwijze'],
+      /* 'Het verhaal' is the section link itself: one link per destination. */
+      ['Waarom Ongehoord', 'Werkwijze'],
     );
     await mobile.goto(`${origin}/nl/`, { waitUntil: 'networkidle0' });
     assert.equal(
@@ -171,6 +172,126 @@ try {
   }
   console.log(
     'Mobile: original active-section links, prominent finder entry, every example selectable, no-JS and print content.',
+  );
+
+  /* Variant A on feeling pages: direct pressed buttons, focus stays, short status, no select. */
+  for (const width of [390, 1280]) {
+    const feeling = await browser.newPage();
+    await feeling.setViewport({ width, height: 900 });
+    await feeling.goto(`${origin}/nl/wat-voel-ik/ik-twijfel-aan-mezelf/`, {
+      waitUntil: 'networkidle0',
+    });
+    assert.equal(await feeling.$('[data-pv-select]'), null, 'Variant A has no select');
+    const buttons = await feeling.$$('[data-pv-scene]');
+    assert(buttons.length >= 2, 'Feeling page offers direct example buttons');
+    await buttons[1].click();
+    const after = await feeling.evaluate(() => {
+      const doc = globalThis.document;
+      const lines = doc.querySelector('.pv--split [data-pv-panel]:not([hidden]) .pv-lines');
+      return {
+        pressed: [...doc.querySelectorAll('[data-pv-scene]')].map((node) =>
+          node.getAttribute('aria-pressed'),
+        ),
+        focus: doc.activeElement?.dataset.pvScene,
+        visible: [...doc.querySelectorAll('[data-pv-panel]:not([hidden])')].map(
+          (node) => node.dataset.pvPanel,
+        ),
+        status: doc.querySelector('[data-pv-status]')?.textContent ?? '',
+        columns: globalThis.getComputedStyle(lines).gridTemplateColumns.split(' ').length,
+      };
+    });
+    assert.equal(after.pressed.filter((value) => value === 'true').length, 1);
+    assert.equal(after.pressed[1], 'true');
+    assert.equal(after.focus, '1', 'Focus stays on the activated button');
+    assert.deepEqual(after.visible, ['1']);
+    assert(after.status.length > 0, 'A short status names the example');
+    assert.equal(after.columns, width >= 832 ? 2 : 1, `Perspectives layout at ${width}px`);
+    await feeling.close();
+  }
+  console.log(
+    'Feeling pages: pressed buttons, focus kept, short status, side by side on wide screens.',
+  );
+
+  /* Variant B-light: native disclosure, readable without JavaScript, everything in print. */
+  for (const javascript of [true, false]) {
+    const compare = await browser.newPage();
+    await compare.setJavaScriptEnabled(javascript);
+    await compare.setViewport({ width: 390, height: 844 });
+    await compare.goto(`${origin}/nl/ontwerp-systeem/herkenning/`, { waitUntil: 'networkidle0' });
+    const items = await compare.$$('#vergelijk-b .pvs-item');
+    assert.equal(items.length, 4, 'B-light shows the four home situations');
+    await compare.click('#vergelijk-b .pvs-item summary');
+    assert(await compare.$eval('#vergelijk-b .pvs-item', (node) => node.open));
+    await compare.emulateMediaType('print');
+    const hidden = await compare.$$eval(
+      '#vergelijk-b .pvs-item__felt',
+      (nodes) => nodes.filter((node) => node.getClientRects().length === 0).length,
+    );
+    assert.equal(hidden, 0, 'Every situation prints in full');
+    await compare.close();
+  }
+  console.log(
+    'B-light: four situations, native disclosure, full print with and without JavaScript.',
+  );
+
+  /* Mobile menu safety: clear of the dock, Escape closes it, one current page, one link each. */
+  for (const [width, height] of [
+    [320, 568],
+    [390, 844],
+    [667, 375],
+  ]) {
+    const small = await browser.newPage();
+    await small.setViewport({ width, height });
+    await small.goto(`${origin}/nl/herstel/grenzen-leren-stellen/`, { waitUntil: 'networkidle0' });
+    assert(
+      await small.$eval('.header-help', (node) => node.getClientRects().length > 0),
+      `Help link must be visible with the menu closed at ${width}px`,
+    );
+    await small.click('.mobile-menu > summary');
+    await delay(100);
+    const state = await small.evaluate(() => {
+      const doc = globalThis.document;
+      const panel = doc.querySelector('.mobile-menu__panel').getBoundingClientRect();
+      const dock = doc.querySelector('.safety-dock').getBoundingClientRect();
+      const hrefs = [...doc.querySelectorAll('.mobile-menu__panel a')].map((a) =>
+        a.getAttribute('href'),
+      );
+      const visible = (node) => node.getClientRects().length > 0 && !node.closest('footer');
+      const targets = [
+        ...doc.querySelectorAll(
+          '.site-header a, .site-header summary, .safety-dock a, .safety-dock button, .mobile-menu__panel a',
+        ),
+      ].filter(visible);
+      return {
+        overlap: panel.bottom > dock.top - 8 && panel.right > dock.left,
+        label: doc.querySelector('.mobile-menu > summary').getAttribute('aria-label'),
+        duplicates: hrefs.filter((href, index) => hrefs.indexOf(href) !== index),
+        current: [...doc.querySelectorAll('header [aria-current="page"]')].filter(visible).length,
+        search: [...doc.querySelectorAll('a[href="nl/zoeken/"]')].filter(visible).length,
+        tooSmall: targets
+          .map((node) => node.getBoundingClientRect())
+          .filter((box) => box.width < 44 || box.height < 44).length,
+      };
+    });
+    assert.equal(state.overlap, false, `Menu panel must stay clear of the dock at ${width}px`);
+    assert.equal(state.label, 'Menu sluiten', 'Open menu button must be named for closing');
+    assert.deepEqual(state.duplicates, [], 'One link per destination in the mobile menu');
+    assert.equal(state.current, 0, 'A section link is not the current page');
+    assert.equal(state.search, 1, 'Search appears once');
+    assert.equal(state.tooSmall, 0, `Mobile actions must be at least 44x44 at ${width}px`);
+    await small.keyboard.press('Escape');
+    await delay(100);
+    assert(small.url().endsWith('/nl/herstel/grenzen-leren-stellen/'), 'Escape must not leave');
+    assert.equal(await small.$eval('.mobile-menu', (node) => node.open), false);
+    assert.equal(
+      await small.evaluate(() => globalThis.document.activeElement?.getAttribute('aria-label')),
+      'Menu openen',
+      'Escape returns focus to the renamed menu button',
+    );
+    await small.close();
+  }
+  console.log(
+    'Mobile menu: help visible when closed, clear of the dock, Escape closes and returns focus, one current page, one search link, 44px targets at 320, 390 and landscape.',
   );
 
   for (const width of [960, 1440]) {

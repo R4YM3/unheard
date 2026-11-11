@@ -33,7 +33,7 @@ Als je over emotioneel of [financieel misbruik](nl/begrippen/financieel-economis
 
 ## Snel de site verlaten
 
-Bovenaan elke pagina staat de knop **Verlaat site**. Daarmee ga je meteen naar de website van het KNMI. Met de **Esc-toets** gebeurt hetzelfde. Staat er op desktop een submenu open, dan sluit de eerste druk op Esc dat menu. Druk nogmaals op Esc om de site te verlaten. Zonder JavaScript werkt de knop als een gewone link; de Esc-toets werkt dan niet.
+Rechtsonder op elke pagina staat de knop **Verlaat site**. Daarmee ga je meteen naar de website van het KNMI. Met de **Esc-toets** gebeurt hetzelfde. Staat het menu of een submenu open, dan sluit de eerste druk op Esc dat menu. Druk nogmaals op Esc om de site te verlaten. Zonder JavaScript werkt de knop als een gewone link; de Esc-toets werkt dan niet.
 
 Met JavaScript vervangt de knop de huidige pagina in je browsergeschiedenis. Eerder bezochte pagina’s en andere sporen van je bezoek blijven bestaan. De knop wist je geschiedenis niet en sluit geen andere tabbladen.
 
@@ -47,7 +47,7 @@ Daar heeft Ongehoord geen invloed op. Zelf houdt de site geen bezoekersstatistie
 
 - **Geen cookies.** De site zelf plaatst geen cookies.
 - **Geen trackers of advertenties.** Er worden geen scripts, lettertypen of advertenties van andere partijen geladen. In de code van de site zit een optie voor een bezoekersteller van Cloudflare, maar die staat niet aan. Als dat ooit verandert, wordt dat eerst op deze pagina vermeld.
-- **Alleen je themakeuze.** Als je rechtsboven op de knop voor licht of donker klikt, onthoudt je browser die keuze. Dat gebeurt in de lokale opslag van je eigen browser, onder de naam `ongehoord-theme`. Er wordt niets anders bewaard, en deze keuze wordt nergens naartoe gestuurd. Klik je niet op de knop, dan wordt er niets opgeslagen.
+- **Alleen je themakeuze.** Als je rechtsonder op de knop voor licht of donker klikt, onthoudt je browser die keuze. Dat gebeurt in de lokale opslag van je eigen browser, onder de naam `ongehoord-theme`. Er wordt niets anders bewaard, en deze keuze wordt nergens naartoe gestuurd. Klik je niet op de knop, dan wordt er niets opgeslagen.
 - **Geen formulieren die iets versturen.** Je kunt hier geen verhaal insturen, geen account aanmaken en geen bericht sturen.
 - **Zoeken gebeurt in je browser.** De [zoekfunctie](nl/zoeken/) filtert een lijst die al op de pagina staat. Wat je intypt, wordt niet verstuurd of bewaard.
 
