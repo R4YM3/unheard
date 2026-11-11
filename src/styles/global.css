@@ -2420,13 +2420,46 @@ a.card:focus-visible,
     display: grid;
     inline-size: min(20rem, calc(100vw - 2.25rem));
     /* Reserve the bottom of the screen for the safety dock (3rem + 1rem offset + gap). */
-    max-height: calc(100dvh - var(--menu-top, 9rem) - 0.55rem - 5.5rem);
+    --dock-space: 5.5rem;
+    max-height: calc(100dvh - var(--menu-top, 9rem) - 0.55rem - var(--dock-space));
     overflow-y: auto;
     overscroll-behavior: contain;
+    scroll-padding-block: 0.5rem;
     border: 1px solid var(--control-border);
     border-radius: var(--radius);
     background: var(--header-bg);
     box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 20%);
+  }
+  .mobile-menu[data-enhanced] .mobile-menu__panel {
+    position: fixed;
+    inset-block-start: calc(var(--menu-top, 4.5rem) + 0.55rem);
+    right: var(--menu-right, 1.125rem);
+  }
+  [dir='rtl'] .mobile-menu[data-enhanced] .mobile-menu__panel {
+    right: auto;
+    left: var(--menu-left, 1.125rem);
+  }
+  /* Focus rings stay inside the scrolling panel, so no edge clips them. */
+  .mobile-menu__panel a:focus-visible {
+    outline-offset: -3px;
+  }
+  .mobile-menu__exit {
+    display: none;
+  }
+  /* Short screens (landscape, high zoom): the dock would cover the panel. While the menu is
+     open, the exit moves to the top of the panel and the panel uses the full height. */
+  @media (max-height: 30rem) {
+    body:has(.mobile-menu[open]) .safety-dock {
+      display: none;
+    }
+    .mobile-menu__panel {
+      --dock-space: 0.5rem;
+    }
+    .mobile-menu__panel > .mobile-menu__exit {
+      display: flex;
+      margin: 0.6rem 0.6rem 0;
+      border-radius: var(--radius-pill);
+    }
   }
   .mobile-menu__help {
     display: grid;

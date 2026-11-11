@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-10
+updatedAt: 2026-11-11
 reviewedAt: null
 cardTitle: 'Privacy en veilig gebruik'
 cardText: 'Wat er wel en niet wordt opgeslagen als je deze site bezoekt, en waar je op kunt letten op een gedeeld apparaat.'
@@ -33,9 +33,9 @@ Als je over emotioneel of [financieel misbruik](nl/begrippen/financieel-economis
 
 ## Snel de site verlaten
 
-Rechtsonder op elke pagina staat de knop **Verlaat site**. Daarmee ga je meteen naar de website van het KNMI. Met de **Esc-toets** gebeurt hetzelfde. Staat het menu of een submenu open, dan sluit de eerste druk op Esc dat menu. Druk nogmaals op Esc om de site te verlaten. Zonder JavaScript werkt de knop als een gewone link; de Esc-toets werkt dan niet.
+Rechtsonder op elke pagina staat de knop **Verlaat site**. Daarmee ga je meteen naar de website van het KNMI. Op een laag scherm staat de knop bovenaan in het geopende menu. De knop werkt met muis, aanraking en de Enter-toets, ook zonder JavaScript. De **Esc-toets** verlaat de site niet: Esc sluit alleen een geopend menu.
 
-Met JavaScript vervangt de knop de huidige pagina in je browsergeschiedenis. Eerder bezochte pagina’s en andere sporen van je bezoek blijven bestaan. De knop wist je geschiedenis niet en sluit geen andere tabbladen.
+Met JavaScript vervangt de knop de huidige pagina in je browsergeschiedenis: met de terugknop kom je dan op de pagina die je vóór deze pagina bekeek. Zonder JavaScript komt de terugknop gewoon terug op deze pagina. Eerder bezochte pagina’s en andere sporen van je bezoek blijven bestaan. De knop wist je geschiedenis niet en sluit geen andere tabbladen.
 
 ## Wat de hosting registreert
 
