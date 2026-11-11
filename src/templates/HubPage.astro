@@ -176,6 +176,7 @@ const mainEntityId = termSet
   }
   {!woven && data.chooser && <StartChooser locale={data.locale} />}
   {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
+  {data.founderNote?.placement === 'before' && <FounderNote note={data.founderNote} />}
   {
     listings.map((listing, index) => (
       <>
@@ -264,5 +265,5 @@ const mainEntityId = termSet
     )
   }
   {data.reflection && <MiniReflection reflection={data.reflection} />}
-  {data.founderNote && <FounderNote note={data.founderNote} />}
+  {data.founderNote?.placement === 'after' && <FounderNote note={data.founderNote} />}
 </EntryLayout>

@@ -55,6 +55,7 @@ reflection:
   note: 'Gebruik deze reflectie alleen op een apparaat waarop je je veilig voelt. De antwoorden worden niet verzonden of opgeslagen.'
   writable: true
 founderNote:
+  placement: before
   eyebrow: 'Mijn zoektocht'
   heading: 'Ik zocht niet één antwoord. Ik zocht mezelf.'
   paragraphs:

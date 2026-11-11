@@ -86,6 +86,8 @@ const founderNote = z.object({
   heading: z.string().min(8),
   paragraphs: z.array(z.string().min(20)).min(1),
   needsReview: z.boolean().default(true),
+  /** Hub pages: 'before' places the note ahead of the listings, as framing for them. */
+  placement: z.enum(['before', 'after']).default('after'),
 });
 
 /** Shared editorial frontmatter for every routed page. */

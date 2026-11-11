@@ -29,6 +29,7 @@ a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 input:focus-visible,
+select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
   outline: 3px solid var(--focus);
@@ -2396,6 +2397,15 @@ a.card:focus-visible,
     font-weight: 700;
     font-size: 0.95rem;
     white-space: nowrap;
+  }
+  @media (max-width: 22rem) {
+    .header-row {
+      gap: 0.35rem;
+    }
+    .header-help {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
   }
   .header-help:hover,
   .header-help.is-active {

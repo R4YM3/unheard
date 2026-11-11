@@ -31,6 +31,9 @@ const {
 } = Astro.props;
 const menuLabels = navigationFor(locale)?.sections.map((section) => section.menu.label) ?? [];
 const trail = heroTrail(crumbs, eyebrow, menuLabels);
+/* A paragraph that only repeats the lead is shown once. */
+const plain = (text: string) => text.replace(/\s+/g, ' ').trim();
+const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(plain(paragraph)));
 ---
 
 <section class="hero page-hero">
@@ -41,7 +44,7 @@ const trail = heroTrail(crumbs, eyebrow, menuLabels);
         {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
         <h1>{heading}</h1>
         {lead && <p class="lead">{lead}</p>}
-        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        {extra.map((paragraph) => <p>{paragraph}</p>)}
         {
           actions.length > 0 && (
             <div class="actions">
