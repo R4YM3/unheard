@@ -220,6 +220,19 @@ try {
   );
   console.log(`Perspective checks: ${pvRoutes.length} routes × 2 themes`);
 
+  const linkedExample = await browser.newPage();
+  for (const index of [2, 0, 1, 3]) {
+    const id = `perspectief-scene-${index}`;
+    await linkedExample.goto(`${origin}/nl/#${id}`);
+    await linkedExample.waitForFunction((target) => {
+      const panel = globalThis.document.getElementById(target);
+      return panel?.closest('[data-enhanced]') && !panel.hidden;
+    }, {}, id);
+    const route = await linkedExample.$eval(`#${id} .text-link`, (link) => link.href);
+    if (!(await fetch(route)).ok) failures.push(`Example ${index + 1}: broken follow-up link`);
+  }
+  await linkedExample.close();
+
   // 4. Word finder: keyboard-only route, overview, privacy and contrast in both themes.
   const finderRoute = '/nl/hulpmiddelen/help-me-woorden-vinden/';
   for (const theme of ['light', 'dark']) {
