@@ -98,15 +98,45 @@ try {
       ? request.respond({ status: 200, body: '<title>Exit target</title>' })
       : request.continue(),
   );
-  await Promise.all([page.waitForNavigation(), page.keyboard.press('Escape')]);
+  /* Escape never leaves: repeated presses keep the page and the scroll position. */
+  await page.evaluate(() => globalThis.scrollTo({ top: 400, behavior: 'instant' }));
+  for (let press = 0; press < 3; press += 1) await page.keyboard.press('Escape');
+  await delay(200);
+  assert(page.url().endsWith('/nl/begrippen/gaslighting/'), 'Repeated Escape must not leave');
   assert.equal(
-    new URL(page.url()).hostname,
-    'www.knmi.nl',
-    'Second Escape retains the safe-exit behavior',
+    await page.evaluate(() => Math.round(globalThis.scrollY)),
+    400,
+    'Repeated Escape keeps the position',
   );
+  /* The explicit exit is a native link: Enter follows it. */
+  await page.focus('.safety-dock [data-safe-exit]');
+  await Promise.all([page.waitForNavigation(), page.keyboard.press('Enter')]);
+  assert.equal(new URL(page.url()).hostname, 'www.knmi.nl', 'Verlaat site leaves with Enter');
   await page.close();
+
+  /* Search keeps what was typed when Escape is pressed. */
+  const search = await browser.newPage();
+  await search.goto(`${origin}/nl/zoeken/`, { waitUntil: 'networkidle0' });
+  await search.type('input[type=search]', 'woorden');
+  for (let press = 0; press < 3; press += 1) await search.keyboard.press('Escape');
+  assert.equal(await search.$eval('input[type=search]', (node) => node.value), 'woorden');
+  await search.close();
+
+  /* Without JavaScript, Verlaat site is still a working link to the neutral page. */
+  const plain = await browser.newPage();
+  await plain.setJavaScriptEnabled(false);
+  await plain.setRequestInterception(true);
+  plain.on('request', (request) =>
+    request.url().startsWith('https://www.knmi.nl')
+      ? request.respond({ status: 200, body: '<title>Exit target</title>' })
+      : request.continue(),
+  );
+  await plain.goto(`${origin}/nl/`, { waitUntil: 'networkidle0' });
+  await Promise.all([plain.waitForNavigation(), plain.click('.safety-dock [data-safe-exit]')]);
+  assert.equal(new URL(plain.url()).hostname, 'www.knmi.nl', 'Verlaat site works without JS');
+  await plain.close();
   console.log(
-    'Desktop: hover, pointer transfer, keyboard, dismissal, safe exit and stable header across five widths.',
+    'Desktop: hover, pointer transfer, keyboard, dismissal, Escape stays, explicit exit (Enter, no JS), search keeps input.',
   );
 
   for (const javascript of [true, false]) {
@@ -174,6 +204,57 @@ try {
     'Mobile: original active-section links, prominent finder entry, every example selectable, no-JS and print content.',
   );
 
+  /* Home hero: introduction and the two actions only; destinations stay reachable. */
+  const home = await browser.newPage();
+  await home.setViewport({ width: 1280, height: 900 });
+  await home.goto(`${origin}/nl/`, { waitUntil: 'networkidle0' });
+  assert.equal(await home.$('.hero-entries'), null, 'Hero has no separate entry row');
+  assert.equal(await home.$$eval('.home-hero__copy .actions a', (nodes) => nodes.length), 2);
+  for (const target of ['#gevoelens', '#perspectief']) {
+    assert(await home.$(target), `Home section ${target} exists`);
+  }
+  assert(await home.$('.nav a[href="nl/begrijp-het/"]'), 'Begrijp het stays in the navigation');
+  await home.close();
+
+  /* Link hierarchy: inline links underlined; stand-alone, navigation and cards are not. */
+  const links = await browser.newPage();
+  await links.setViewport({ width: 1280, height: 900 });
+  const underline = (selector) =>
+    links.$$eval(selector, (nodes) =>
+      nodes
+        .filter((node) => node.getClientRects().length)
+        .map((node) => globalThis.getComputedStyle(node).textDecorationLine.includes('underline')),
+    );
+  await links.goto(`${origin}/nl/begrijp-het/conflict-of-patroon/`, { waitUntil: 'networkidle0' });
+  const prose = await underline('.prose p a');
+  assert(prose.length > 0 && prose.every(Boolean), 'Links in running text are underlined');
+  for (const selector of ['.footer-grid nav a', '.breadcrumbs a', 'a.card', '.nav > a']) {
+    assert(
+      (await underline(selector)).every((value) => !value),
+      `${selector} has no underline`,
+    );
+  }
+  await links.goto(`${origin}/nl/wat-voel-ik/ik-twijfel-aan-mezelf/`, {
+    waitUntil: 'networkidle0',
+  });
+  const standalone = await links.$$eval('a.text-link', (nodes) =>
+    nodes
+      .filter((node) => node.getClientRects().length)
+      .map((node) => ({
+        line: globalThis.getComputedStyle(node).textDecorationLine,
+        arrow: globalThis.getComputedStyle(node, '::after').content,
+      })),
+  );
+  assert(standalone.length > 0, 'Feeling page has a stand-alone link');
+  for (const link of standalone) {
+    assert(!link.line.includes('underline'), 'Stand-alone link has no permanent underline');
+    assert(link.arrow.includes('→'), 'Stand-alone link shows an arrow');
+  }
+  await links.close();
+  console.log(
+    'Home hero without entry row; link hierarchy for inline, stand-alone, navigation and cards.',
+  );
+
   /* Variant A on feeling pages: direct pressed buttons, focus stays, short status, no select. */
   for (const width of [390, 1280]) {
     const feeling = await browser.newPage();
@@ -236,8 +317,11 @@ try {
 
   /* Mobile menu safety: clear of the dock, Escape closes it, one current page, one link each. */
   for (const [width, height] of [
+    [320, 200],
     [320, 568],
+    [360, 740],
     [390, 844],
+    [430, 932],
     [667, 375],
   ]) {
     const small = await browser.newPage();
@@ -263,7 +347,8 @@ try {
         ),
       ].filter(visible);
       return {
-        overlap: panel.bottom > dock.top - 8 && panel.right > dock.left,
+        overlap: dock.height > 0 && panel.bottom > dock.top - 8 && panel.right > dock.left,
+        exits: [...doc.querySelectorAll('[data-safe-exit]')].filter(visible).length,
         label: doc.querySelector('.mobile-menu > summary').getAttribute('aria-label'),
         duplicates: hrefs.filter((href, index) => hrefs.indexOf(href) !== index),
         current: [...doc.querySelectorAll('header [aria-current="page"]')].filter(visible).length,
@@ -278,7 +363,51 @@ try {
     assert.deepEqual(state.duplicates, [], 'One link per destination in the mobile menu');
     assert.equal(state.current, 0, 'A section link is not the current page');
     assert.equal(state.search, 1, 'Search appears once');
+    assert.equal(state.exits, 1, 'Exactly one visible Verlaat site link');
     assert.equal(state.tooSmall, 0, `Mobile actions must be at least 44x44 at ${width}px`);
+    /* Tab and Shift+Tab: every focused item stays inside the panel, on screen, not under the dock. */
+    const focusVisible = () =>
+      small.evaluate(() => {
+        const doc = globalThis.document;
+        const active = doc.activeElement;
+        const panel = doc.querySelector('.mobile-menu__panel');
+        if (!panel.contains(active)) return null;
+        const box = active.getBoundingClientRect();
+        const frame = panel.getBoundingClientRect();
+        const dock = doc.querySelector('.safety-dock');
+        const shield = dock.getClientRects().length ? dock.getBoundingClientRect() : null;
+        const covered =
+          shield &&
+          box.bottom > shield.top &&
+          box.top < shield.bottom &&
+          box.right > shield.left &&
+          box.left < shield.right;
+        return (
+          box.top >= frame.top - 0.5 &&
+          box.bottom <= frame.bottom + 0.5 &&
+          box.bottom <= globalThis.innerHeight + 0.5 &&
+          !covered
+        );
+      });
+    const shiftTab = async () => {
+      await small.keyboard.down('Shift');
+      await small.keyboard.press('Tab');
+      await small.keyboard.up('Shift');
+    };
+    let seen = 0;
+    for (let step = 0; step < 16; step += 1) {
+      await small.keyboard.press('Tab');
+      const visible = await focusVisible();
+      if (visible === null) break;
+      assert(visible, `Focused menu item ${step + 1} must be visible at ${width}x${height}`);
+      seen += 1;
+    }
+    assert(seen >= 10, `Tab must reach every menu item at ${width}x${height}`);
+    await shiftTab();
+    for (let step = 0; step < seen; step += 1) {
+      assert(await focusVisible(), `Shift+Tab item must be visible at ${width}x${height}`);
+      await shiftTab();
+    }
     await small.keyboard.press('Escape');
     await delay(100);
     assert(small.url().endsWith('/nl/herstel/grenzen-leren-stellen/'), 'Escape must not leave');
@@ -288,10 +417,15 @@ try {
       'Menu openen',
       'Escape returns focus to the renamed menu button',
     );
+    const position = await small.evaluate(() => Math.round(globalThis.scrollY));
+    for (let press = 0; press < 3; press += 1) await small.keyboard.press('Escape');
+    await delay(200);
+    assert(small.url().endsWith('/nl/herstel/grenzen-leren-stellen/'), 'Repeated Escape stays');
+    assert.equal(await small.evaluate(() => Math.round(globalThis.scrollY)), position);
     await small.close();
   }
   console.log(
-    'Mobile menu: help visible when closed, clear of the dock, Escape closes and returns focus, one current page, one search link, 44px targets at 320, 390 and landscape.',
+    'Mobile menu: help visible when closed, clear of the dock, Escape closes and returns focus, one current page, one search link, 44px targets at 320x200, 320x568, 360, 390, 430 and landscape; every focused item visible, repeated Escape stays.',
   );
 
   for (const width of [960, 1440]) {

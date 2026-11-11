@@ -41,6 +41,21 @@ HTML of volledige Markdown. Andere frontmattervelden ondersteunen niet automatis
 Markdown; controleer altijd de gebouwde pagina. Gebruik geen linknotatie in titels,
 metadata, reflecties, citaten of kaarten die zelf al een link zijn.
 
+## Linkstijlen
+
+Eén hiërarchie, via gedeelde stijlen in `src/styles/global.css` (Sprint 3.1, #42):
+
+| Soort             | Waar                                                               | Aanwijzing                                           | Klasse                      |
+| ----------------- | ------------------------------------------------------------------ | ---------------------------------------------------- | --------------------------- |
+| Inline link       | In een zin: artikelen, samenvattingen, bronnen, hulpbanden         | Altijd onderstreept, linkkleur                       | `.prose a`, `.inline-link`  |
+| Zelfstandige link | Op een eigen regel, zoals ‘Ontdek de tijdlijn’ of ‘Alle gevoelens’ | Linkkleur, vet en een pijl; onderstreept bij hover   | `.text-link`                |
+| Navigatie         | Header, submenu, kruimelpad, footer, zoekresultaten                | Plaats en vorm; actieve pagina gemarkeerd            | component                   |
+| Kaart             | Klikbare kaart                                                     | Hele kaart is de link, met pijl en de titel als naam | `CardGrid`, `.feeling-card` |
+| Actie             | Hoofd- en vervolgacties                                            | Knopvorm                                             | `.button`, `.button--quiet` |
+
+Elke link heeft dezelfde zichtbare focusring (3 px). Zet een link die midden in een zin
+staat nooit in `.text-link`: die krijgt een pijl en geen onderstreping.
+
 ## Folders and routes
 
 | Collection  | Folder                     | `slug` must start with    | Template                                                   |

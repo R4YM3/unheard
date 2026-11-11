@@ -193,12 +193,8 @@ const publicAlternates = isPublicLocale(locale)
     <a class="skip" href={`${localPath}#main`}>{skipLabel}</a>
     <div class="safety-dock">
       <ThemeToggle locale={locale} />
-      <a
-        class="safe-exit"
-        data-safe-exit
-        href="https://www.knmi.nl"
-        rel="noreferrer"
-        aria-keyshortcuts="Escape">{t.safeExit}</a
+      <a class="safe-exit" data-safe-exit href="https://www.knmi.nl" rel="noreferrer"
+        >{t.safeExit}</a
       >
     </div>
     <p class="site-notice">{t.siteNotice}</p>
@@ -263,6 +259,12 @@ const publicAlternates = isPublicLocale(locale)
             <span></span><span></span><span></span>
           </summary>
           <nav class="mobile-menu__panel" aria-label={`${navLabel} ${t.mobileSuffix}`}>
+            <a
+              class="safe-exit mobile-menu__exit"
+              data-safe-exit
+              href="https://www.knmi.nl"
+              rel="noreferrer">{t.safeExit}</a
+            >
             {
               helpHref && (
                 <div class="mobile-menu__help">
@@ -388,50 +390,61 @@ const publicAlternates = isPublicLocale(locale)
       </div>
     </footer>
     <script>
-      const exit = document.querySelector<HTMLAnchorElement>('[data-safe-exit]');
-      const leave = () => {
-        if (exit) window.location.replace(exit.href);
-      };
-      exit?.addEventListener('click', (event) => {
-        event.preventDefault();
-        leave();
-      });
+      // 'Verlaat site' is a plain link; with JavaScript it also replaces this page in the history.
+      for (const exit of document.querySelectorAll<HTMLAnchorElement>('[data-safe-exit]')) {
+        exit.addEventListener('click', (event) => {
+          if (event.defaultPrevented || event.button !== 0) return;
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          window.location.replace(exit.href);
+        });
+      }
       const menu = document.querySelector<HTMLDetailsElement>('[data-mobile-menu]');
       const menuButton = menu?.querySelector<HTMLElement>('summary');
+      const header = document.querySelector<HTMLElement>('.site-header');
+      let scrollBefore: number | undefined;
       const syncMenu = () => {
         if (!menu || !menuButton) return;
         const label = menu.open ? menuButton.dataset.labelClose : menuButton.dataset.labelOpen;
         if (label) menuButton.setAttribute('aria-label', label);
-        // Keep the panel clear of the safety dock, wherever the page is scrolled to.
-        menu.style.setProperty('--menu-top', `${menuButton.getBoundingClientRect().bottom}px`);
+        if (menu.open) {
+          // On a short screen, let the sticky header reach the top so the panel gets the height.
+          const headerTop = header?.getBoundingClientRect().top ?? 0;
+          if (window.innerHeight < 480 && headerTop > 0) {
+            scrollBefore = window.scrollY;
+            window.scrollBy({ top: headerTop, behavior: 'instant' });
+          }
+          const box = menuButton.getBoundingClientRect();
+          menu.style.setProperty('--menu-top', `${box.bottom}px`);
+          menu.style.setProperty(
+            '--menu-right',
+            `${document.documentElement.clientWidth - box.right}px`,
+          );
+          menu.style.setProperty('--menu-left', `${box.left}px`);
+        } else if (scrollBefore !== undefined) {
+          window.scrollTo({ top: scrollBefore, behavior: 'instant' });
+          scrollBefore = undefined;
+        }
       };
       menu?.addEventListener('toggle', syncMenu);
-      const closeMenu = () => {
-        if (!menu?.open) return false;
-        menu.open = false;
-        menuButton?.focus();
-        return true;
-      };
+      // With JavaScript the panel is fixed to the viewport: focusing a link in it then never
+      // scrolls the page underneath.
+      if (menu) menu.dataset.enhanced = '';
       document.addEventListener('click', (event) => {
         if (menu?.open && !menu.contains(event.target as Node)) menu.open = false;
       });
-      document.addEventListener(
-        'keydown',
-        (event) => {
-          if (event.key !== 'Escape') return;
-          // Escape first closes an open menu (and returns focus); only then it leaves the site.
-          if (menu?.open && menu.getClientRects().length) {
-            event.preventDefault();
-            closeMenu();
-            return;
-          }
-          const openMenu = document.querySelector('.desktop-subnav[open]');
-          if (openMenu?.getClientRects().length) return;
+      // Escape closes the open menu and returns focus. It never leaves the site.
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        // Escape keeps what someone typed: browsers otherwise empty a search field.
+        if (event.target instanceof HTMLInputElement && event.target.type === 'search') {
           event.preventDefault();
-          leave();
-        },
-        { capture: true },
-      );
+        }
+        if (!menu?.open || !menu.getClientRects().length) return;
+        event.preventDefault();
+        menu.open = false;
+        menuButton?.focus({ preventScroll: true });
+      });
     </script>
     <script
       is:inline

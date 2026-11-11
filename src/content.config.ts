@@ -417,13 +417,6 @@ const hubs = defineCollection({
           description: z.string().min(20),
           primary: action,
           secondary: action,
-          /** Equal entry links under the hero actions, each to an existing destination. */
-          entries: z
-            .object({
-              label: z.string().min(4),
-              links: z.array(action).min(2).max(3),
-            })
-            .optional(),
         }),
         introduction: z.object({
           eyebrow: z.string().min(2),

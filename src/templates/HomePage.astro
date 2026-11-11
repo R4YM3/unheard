@@ -67,29 +67,6 @@ const homeLists = [
             >{home.hero.secondary.label}</a
           >
         </div>
-        {
-          home.hero.entries && (
-            <nav class="hero-entries" aria-label={home.hero.entries.label}>
-              <p class="hero-entries__label" aria-hidden="true">
-                {home.hero.entries.label}
-              </p>
-              <ul>
-                {home.hero.entries.links.map((link) => (
-                  <li>
-                    <a
-                      href={
-                        link.href.startsWith('#') ? `${routeFor(entry)}${link.href}` : link.href
-                      }
-                    >
-                      {link.label}
-                      <span aria-hidden="true">→</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )
-        }
       </div>
       <HeroArt slot="home" priority />
     </div>
