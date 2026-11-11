@@ -27,7 +27,7 @@ Ik ben Ongehoord begonnen omdat ik zelf de woorden miste voor wat ik meemaakte. 
 
 Ik twijfelde aan bijna alles. Lag het aan mij? Kon ik mijn herinneringen vertrouwen? Wie was ik eigenlijk nog? Ook nadat ik was weggegaan, bleven die vragen. Ik zocht grip op wat er was gebeurd en op mezelf.
 
-Wat mij enorm hielp, was herkenning en erkenning. Ergens lezen wat ik zelf nog niet kon zeggen, en bevestigd krijgen dat ik serieus mocht nemen wat ik voelde. Daarom heb ik Ongehoord gemaakt. Ik wil anderen die iets vergelijkbaars meemaken geven wat ik toen zelf miste: woorden voor wat je voelt, herkenning, uitleg en een plek om je te oriënteren op herstel.
+Wat mij enorm hielp, was herkenning en erkenning. Het hielp me om woorden te vinden en serieus te nemen wat ik voelde. Daarom heb ik Ongehoord gemaakt. Ik wil anderen die iets vergelijkbaars meemaken geven wat ik toen zelf miste: woorden voor wat je voelt, herkenning, uitleg en een plek om je te oriënteren op herstel.
 
 In mijn herstel heb ik verschillende [vormen van therapie en begeleiding](nl/herstel/therapievormen/) geprobeerd. Ik ben vader, en ik bouw mijn leven opnieuw op. Over die weg vertel ik meer in [Mijn verhaal](nl/mijn-verhaal/).
 
