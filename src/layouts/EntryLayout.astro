@@ -150,6 +150,12 @@ if (articleType) {
 }
 schema.push(...extraSchema);
 const heroData = 'hero' in data ? data.hero : undefined;
+const heroActions = (heroData?.actions?.length ? heroData.actions : fallbackActions)
+  .slice(0, 2)
+  .map((action) => ({
+    ...action,
+    href: action.href.startsWith('#') ? `${route}${action.href}` : action.href,
+  }));
 ---
 
 <BaseLayout
@@ -170,7 +176,7 @@ const heroData = 'hero' in data ? data.hero : undefined;
         eyebrow={eyebrow ?? heroData?.eyebrow}
         lead={lead}
         paragraphs={heroData?.paragraphs ?? []}
-        actions={(heroData?.actions?.length ? heroData.actions : fallbackActions).slice(0, 2)}
+        actions={heroActions}
         crumbs={crumbs}
         locale={data.locale}
         artSlot={slotFor(data.translationKey)}
