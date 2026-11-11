@@ -94,3 +94,5 @@ Sociaal-psychologisch onderzoek naar buitensluiten laat zien dat het gemis aan v
 - **Zoek ook nieuwe verbinding** als oude contacten niet meer passen: een cursus, sport, vrijwilligerswerk, een lotgenotengroep.
 - **Let op je veiligheid.** Als contact met anderen thuis tot dreiging leidt, bespreek dat met Veilig Thuis (0800-2000, gratis en anoniem, dag en nacht).
 - **Praat met je huisarts** als je je eenzaam, somber of vastgelopen voelt. Zie ook [Hulp vinden](nl/hulp-vinden/).
+
+[Bekijk een gesprek over contact met vrienden en familie](nl/#perspectief-scene-3).

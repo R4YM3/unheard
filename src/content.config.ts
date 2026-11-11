@@ -64,6 +64,7 @@ const scenario = z.object({
   outside: z.string().min(3),
   inside: z.string().min(10),
   context: z.string().min(20),
+  followUp: action.pick({ href: true, label: true }).optional(),
 });
 
 const reflection = z.object({

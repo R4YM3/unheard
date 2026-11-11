@@ -13,6 +13,7 @@ interface Scenario {
   outside: string;
   inside: string;
   context: string;
+  followUp?: { href: string; label: string };
 }
 interface Props {
   scenarios: Scenario[];
@@ -106,6 +107,13 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
               </div>
             </dl>
             <p class="pv-context">{scenario.context}</p>
+            {scenario.followUp && (
+              <p>
+                <a class="text-link" href={scenario.followUp.href}>
+                  {scenario.followUp.label}
+                </a>
+              </p>
+            )}
           </article>
         ))
       }
@@ -151,7 +159,15 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
     root.querySelector<HTMLElement>('[data-pv-select-label]')?.removeAttribute('hidden');
     root.querySelector<HTMLElement>('[data-pv-choice]')?.removeAttribute('hidden');
     root.dataset.enhanced = '';
-    show(0);
+    const showLinkedScene = () => {
+      const linkedScene = scenes.findIndex((scene) => `#${scene.id}` === window.location.hash);
+      if (linkedScene < 0) return false;
+      show(linkedScene);
+      scenes[linkedScene]?.scrollIntoView();
+      return true;
+    };
+    window.addEventListener('hashchange', showLinkedScene);
+    if (!showLinkedScene()) show(0);
   };
 
   document.querySelectorAll<HTMLElement>('[data-pv]').forEach(enhance);

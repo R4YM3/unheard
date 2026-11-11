@@ -19,18 +19,30 @@ scenarios:
     outside: '“Zo heb ik dat niet bedoeld. Jij maakt het altijd groter dan het is.”'
     inside: 'Ik probeer uit te leggen waarom dit me raakte, maar ik vraag me af of ik het verkeerd heb onthouden.'
     context: 'Verschillen in interpretatie zijn normaal. Wanneer jouw beleving herhaaldelijk terzijde wordt geschoven, kan je vertrouwen in je eigen gevoel afnemen.'
+    followUp:
+      href: 'nl/begrijp-het/conflict-of-patroon/'
+      label: 'Wanneer wordt een conflict een patroon?'
   - label: 'Een grens aangeven'
     outside: '“Waarom doe je nu zo moeilijk? Ik vraag toch niet veel?”'
     inside: 'Ik voel spanning als ik nee wil zeggen en ben bang voor wat er daarna gebeurt.'
     context: 'Een grens hoeft niet door iedereen prettig gevonden te worden om toch geldig te zijn. Let op of er ruimte is voor jouw keuze.'
+    followUp:
+      href: 'nl/begrippen/dwingende-controle/'
+      label: 'Wanneer wordt druk rond grenzen controle?'
   - label: 'Over geld praten'
     outside: '“Ik regel dat toch allemaal? Vertrouw je me soms niet?”'
     inside: 'Ik wil alleen weten hoe we ervoor staan. Waarom voel ik me daar schuldig over?'
     context: 'Taken verdelen is gewoon. Het wordt iets anders als je geen inzicht meer mag hebben of bang bent om ernaar te vragen.'
+    followUp:
+      href: 'nl/begrijp-het/financieel-misbruik/geldruzie-of-controle/'
+      label: 'Lees over geldruzie en controle'
   - label: 'Je eigen mensen zien'
     outside: 'Ga maar hoor. Dan zit ik hier wel weer alleen.'
     inside: 'Ik heb zin om te gaan, maar ik voel me nu al schuldig.'
     context: 'Tijd verdelen kan lastig zijn. Het wordt zorgelijk als contact met vrienden of familie steeds spanning of straf oplevert en jouw wereld kleiner wordt.'
+    followUp:
+      href: 'nl/begrippen/isolatie/'
+      label: 'Lees hoe isolatie kan ontstaan'
 
 home:
   hero:

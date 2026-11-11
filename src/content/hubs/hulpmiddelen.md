@@ -27,7 +27,7 @@ listings:
 cards:
   - eyebrow: 'Rustige route'
     title: 'Help me woorden vinden'
-    text: 'Zes korte vragen, één voor één. Je krijgt een eigen overzicht met pagina’s om te lezen, open vragen en mogelijke volgende stappen. Geen test en geen score.'
+    text: 'Zes korte vragen die je mag overslaan. Je krijgt een overzicht met passende pagina’s en vragen om bij stil te staan.'
     href: 'nl/hulpmiddelen/help-me-woorden-vinden/'
     label: 'Begin met de vragen'
 related: [woorden-vinden, hulp-vinden, herstel, wat-voel-ik]

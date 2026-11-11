@@ -112,3 +112,5 @@ Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft da
 - **Wees voorzichtig met relatietherapie of bemiddeling.** Bij dwingende controle kan een gezamenlijk gesprek onveilig zijn, omdat wat je vertelt thuis tegen je kan worden gebruikt. Bespreek dat eerst met een hulpverlener.
 - **Denk vooraf na over veiligheid als je overweegt te vertrekken.** Veilig Thuis kan met je meedenken over hoe je dat zo veilig mogelijk doet.
 - Bij direct gevaar bel je 112. Meer adressen vind je op [Hulp vinden](nl/hulp-vinden/).
+
+[Bekijk een gesprek waarin nee zeggen spanning oproept](nl/#perspectief-scene-1).
