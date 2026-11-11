@@ -111,3 +111,5 @@ Leven met een patroon van controle kan ervoor zorgen dat je [aan jezelf gaat twi
 - **Confronteer niet als dat onveilig kan zijn.** Bespreek eerst met iemand van buitenaf wat een veilige volgende stap is.
 
 Meer over emotioneel misbruik in het algemeen staat in [Wat is emotioneel misbruik?](nl/begrijp-het/emotioneel-misbruik/). Waar je terechtkunt, staat op [Hulp vinden](nl/hulp-vinden/).
+
+[Bekijk een gesprek waarin iemand aan zijn eigen waarneming gaat twijfelen](nl/#perspectief-scene-0).
