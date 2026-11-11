@@ -20,7 +20,7 @@ hero:
   paragraphs:
     - 'Misschien begon je een gesprek omdat iets je pijn deed. Toch eindig je met het gevoel dat jij het moet oplossen, uitleggen of goedmaken.'
   actions:
-    - { href: '#herkenning', label: 'Herken je dit? ↓' }
+    - { href: 'nl/wat-voel-ik/ik-voel-me-schuldig/#herken-je-dit', label: 'Herken je dit? ↓' }
     - { href: 'nl/herstel/erkenning/', label: 'Lees over erkenning', quiet: true }
 glossary:
   term: Schuldgevoel
