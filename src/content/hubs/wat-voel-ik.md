@@ -62,6 +62,8 @@ Veel mensen zoeken eerst naar een woord voor wat de ander doet. Dat is begrijpel
 
 Daarom begint Ongehoord bij jou. Elke pagina hieronder beschrijft een gevoel, wat er om je heen kan gebeuren, wat het kan verklaren en wat kan helpen. Er staan fictieve voorbeelden bij en vragen die je vrijblijvend kunt beantwoorden.
 
+Weet je nog niet welke pagina bij je past? [Help me woorden vinden](nl/hulpmiddelen/help-me-woorden-vinden/) biedt zes korte vragen die je mag overslaan.
+
 ## Wat deze pagina’s niet doen
 
 Deze pagina’s stellen geen diagnose, niet over jou en niet over iemand anders. Ze zeggen ook niet dat er sprake is van misbruik als je iets herkent. Gevoelens kunnen veel oorzaken hebben, en relaties zijn ingewikkeld. Wat ze wel doen: woorden geven, zodat je kunt onderzoeken wat er speelt en met wie je daarover wilt praten.
