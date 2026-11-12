@@ -163,16 +163,16 @@ try {
       'none',
       'Decorative home art stays hidden on mobile',
     );
-    const exampleSelector = '#perspectief-scene-0, #perspectief-scene-1, #perspectief-scene-2';
+    const exampleSelector = '#perspectief-scene-0, #perspectief-scene-2';
     const countVisibleExamples = () =>
       mobile.$$eval(
         exampleSelector,
         (nodes) => nodes.filter((node) => node.getBoundingClientRect().width > 0).length,
       );
-    assert.equal(await countVisibleExamples(), 3);
+    assert.equal(await countVisibleExamples(), 2);
     if (javascript) {
       await mobile.emulateMediaType('print');
-      assert.equal(await countVisibleExamples(), 3, 'All homepage examples must print');
+      assert.equal(await countVisibleExamples(), 2, 'All homepage examples must print');
     } else {
       await mobile.setViewport({ width: 1440, height: 1000 });
       await mobile.click('.desktop-nav-item summary');
@@ -206,11 +206,12 @@ try {
         [
           'gevoelens',
           'perspectief-scene-0',
+          'gedachte',
           'beginnen',
+          'verhaal-citaat',
           'perspectief-scene-2',
           'word-finder-invite-heading',
           'verhaal',
-          'perspectief-scene-1',
           'herstel',
         ].includes(id),
       ),
@@ -218,11 +219,12 @@ try {
   assert.deepEqual(homeOrder, [
     'gevoelens',
     'perspectief-scene-0',
+    'gedachte',
     'beginnen',
+    'verhaal-citaat',
     'perspectief-scene-2',
     'word-finder-invite-heading',
     'verhaal',
-    'perspectief-scene-1',
     'herstel',
   ]);
   await home.setJavaScriptEnabled(false);
