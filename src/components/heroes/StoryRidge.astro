@@ -1,59 +1,74 @@
 ---
-/* Mijn verhaal: the ridge of the pattern is the timeline. Each point is one of the founder's
-   milestones, with its own title, and links to that moment in the timeline below. Pointing
-   at or focusing a point shows its title in the quote card. */
+/* Mijn verhaal: the ridge of the pattern is the timeline. Two parts, as on the design canvas:
+   the quote card on the visual side (`part="quote"`) and the ridge edge to edge along the
+   bottom of the hero (`part="ridge"`). Each point is one of the founder's milestones, with
+   its own title, and links to that moment in the timeline below. Pointing at or focusing a
+   point shows its title in the card. All titles share one grid cell, so the card never
+   changes height. */
 interface Props {
   milestones: Array<{ title: string }>;
+  part: 'quote' | 'ridge';
 }
-const { milestones } = Astro.props;
-const ridgeY = (x: number) => 95 + 38 * Math.sin(x / 120 + 0.6) + 16 * Math.sin(x / 52 - 1.2);
-const width = 600;
-const ridge = Array.from({ length: 61 }, (_, i) => {
-  const x = (i / 60) * width;
-  return `${x.toFixed(1)} ${ridgeY(x).toFixed(1)}`;
-});
-const back = [0, 1, 2].map((k) =>
-  Array.from({ length: 61 }, (_, i) => {
-    const x = (i / 60) * width;
-    const y = 135 + k * 20 + (14 - k * 3) * Math.sin(x / (90 - k * 8) + k * 1.1);
-    return `${x.toFixed(1)} ${y.toFixed(1)}`;
-  }),
+const { milestones, part } = Astro.props;
+const width = 1440;
+const ridgeY = (x: number) => 118 + 44 * Math.sin(x / 230 + 0.6) + 18 * Math.sin(x / 96 - 1.2);
+const line = (fn: (x: number) => number) =>
+  'M' +
+  Array.from({ length: 73 }, (_, i) => {
+    const x = (i / 72) * width;
+    return `${x.toFixed(1)} ${fn(x).toFixed(1)}`;
+  }).join(' L');
+const back = [0, 1, 2, 3].map((k) =>
+  line((x) => 160 + k * 20 + (22 - k * 4) * Math.sin(x / (150 - k * 12) + k * 1.1)),
 );
 const dots = milestones.map((milestone, i) => {
-  const x = 30 + (i * (width - 60)) / Math.max(1, milestones.length - 1);
+  const x = 110 + (i * (width - 220)) / Math.max(1, milestones.length - 1);
   return { ...milestone, x, y: ridgeY(x), href: `#moment-${i + 1}` };
 });
 ---
 
-<div class="sr-ridge" data-story-ridge>
-  <figure class="hero-quote-card sr-ridge__card">
-    <p class="sr-ridge__count" data-sr-count>Moment 1 van {milestones.length}</p>
-    <blockquote>
-      <p data-sr-title>“{milestones[0]?.title}”</p>
-    </blockquote>
-    <figcaption>
-      Uit <a class="text-link" href="#tijdlijn" data-sr-link>de tijdlijn in Mijn verhaal</a>
-    </figcaption>
-  </figure>
-  <div class="sr-ridge__line">
-    <svg
-      viewBox={`0 0 ${width} 200`}
-      preserveAspectRatio="none"
-      aria-hidden="true"
-      focusable="false"
-    >
-      {back.map((line) => <path class="sr-ridge__back" d={`M${line.join(' L')}`} fill="none" />)}
-      <path class="sr-ridge__ridge" d={`M${ridge.join(' L')}`} fill="none"></path>
-    </svg>
-    <ol class="sr-ridge__dots">
-      {
-        dots.map((dot, i) => (
-          <li style={`--x: ${(dot.x / width) * 100}%; --y: ${(dot.y / 200) * 100}%`}>
+{
+  part === 'quote' ? (
+    <figure class="hero-quote-card sr-card" data-sr-card>
+      <div class="sr-card__titles">
+        {milestones.map((milestone, i) => (
+          <div class="sr-card__title" data-current={i === 0 ? '' : undefined}>
+            <p class="hero-quote-card__label">
+              Moment {i + 1} van {milestones.length}
+            </p>
+            <blockquote>
+              <p>“{milestone.title}”</p>
+            </blockquote>
+          </div>
+        ))}
+      </div>
+      <figcaption>
+        Uit{' '}
+        <a class="text-link" href="#tijdlijn" data-sr-link>
+          de tijdlijn in Mijn verhaal
+        </a>
+      </figcaption>
+    </figure>
+  ) : (
+    <div class="sr-ridge" dir="ltr" data-sr-ridge>
+      <svg
+        viewBox={`0 0 ${width} 240`}
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        focusable="false"
+      >
+        {back.map((d) => (
+          <path class="sr-ridge__back" d={d} />
+        ))}
+        <path class="sr-ridge__ridge" d={line(ridgeY)} />
+      </svg>
+      <ol class="sr-ridge__dots">
+        {dots.map((dot, i) => (
+          <li style={`--x: ${(dot.x / width) * 100}%; --y: ${(dot.y / 240) * 100}%`}>
             <a
               class="sr-ridge__dot"
               href={dot.href}
               data-sr-dot
-              data-title={dot.title}
               aria-current={i === 0 ? 'true' : undefined}
             >
               <span class="sr-only">
@@ -61,89 +76,79 @@ const dots = milestones.map((milestone, i) => {
               </span>
             </a>
           </li>
-        ))
-      }
-    </ol>
-  </div>
-</div>
+        ))}
+      </ol>
+    </div>
+  )
+}
 
 <script>
-  for (const root of document.querySelectorAll<HTMLElement>('[data-story-ridge]')) {
-    const count = root.querySelector<HTMLElement>('[data-sr-count]');
-    const title = root.querySelector<HTMLElement>('[data-sr-title]');
-    const link = root.querySelector<HTMLAnchorElement>('[data-sr-link]');
-    const dots = [...root.querySelectorAll<HTMLAnchorElement>('[data-sr-dot]')];
-    if (!count || !title || !link) continue;
+  import { previewOnFirstTap } from '../../lib/tap-preview';
+
+  const titles = [...document.querySelectorAll<HTMLElement>('[data-sr-card] .sr-card__title')];
+  const link = document.querySelector<HTMLAnchorElement>('[data-sr-link]');
+  const dots = [...document.querySelectorAll<HTMLAnchorElement>('[data-sr-dot]')];
+  if (link && titles.length === dots.length) {
     const show = (index: number) => {
+      titles.forEach((title, i) => title.toggleAttribute('data-current', i === index));
       dots.forEach((dot, i) => {
         if (i === index) dot.setAttribute('aria-current', 'true');
         else dot.removeAttribute('aria-current');
       });
-      count.textContent = `Moment ${index + 1} van ${dots.length}`;
-      title.textContent = `“${dots[index].dataset.title}”`;
       link.href = dots[index].href;
     };
     dots.forEach((dot, i) => {
-      dot.addEventListener('pointerenter', () => show(i));
+      dot.addEventListener('pointerenter', (event) => event.pointerType === 'mouse' && show(i));
       dot.addEventListener('focus', () => show(i));
+      previewOnFirstTap(
+        dot,
+        () => show(i),
+        () => dot.getAttribute('aria-current') === 'true',
+      );
     });
   }
 </script>
 
 <style>
-  .sr-ridge__count {
-    margin: 0 0 0.5rem;
-    color: var(--hero-eyebrow);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  /* The titles share one cell: the longest sets the height. */
+  .sr-card__titles {
+    display: grid;
   }
 
-  .sr-ridge__card blockquote {
-    margin: 0;
+  .sr-card__title {
+    grid-area: 1 / 1;
   }
 
-  .sr-ridge__card blockquote p {
-    margin: 0;
-    font-family: var(--font-serif);
-    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.45rem);
-    font-style: italic;
-    line-height: 1.35;
-    text-wrap: pretty;
+  .sr-card__title:not([data-current]) {
+    visibility: hidden;
   }
 
-  .sr-ridge__card figcaption {
-    margin-block-start: 0.75rem;
-    color: var(--hero-muted);
-    font-size: 0.9rem;
+  .sr-ridge {
+    position: absolute;
+    inset: 0;
   }
 
-  .sr-ridge__line {
-    position: relative;
-    margin-block-start: 1.25rem;
-    aspect-ratio: 3 / 1;
-  }
-
-  .sr-ridge__line svg {
+  .sr-ridge svg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
   }
 
-  .sr-ridge__back {
+  .sr-ridge svg path {
+    fill: none;
     stroke: var(--text);
-    stroke-opacity: 0.14;
-    stroke-width: 1.2;
     vector-effect: non-scaling-stroke;
   }
 
+  .sr-ridge__back {
+    stroke-opacity: 0.14;
+    stroke-width: 1.2;
+  }
+
   .sr-ridge__ridge {
-    stroke: var(--text);
     stroke-opacity: 0.55;
     stroke-width: 2;
-    vector-effect: non-scaling-stroke;
   }
 
   .sr-ridge__dots {
@@ -154,13 +159,9 @@ const dots = milestones.map((milestone, i) => {
 
   .sr-ridge__dots li {
     position: absolute;
-    inset-inline-start: var(--x);
-    inset-block-start: var(--y);
+    left: var(--x);
+    top: var(--y);
     transform: translate(-50%, -50%);
-  }
-
-  [dir='rtl'] .sr-ridge__dots li {
-    transform: translate(50%, -50%);
   }
 
   .sr-ridge__dot {
@@ -199,7 +200,12 @@ const dots = milestones.map((milestone, i) => {
   }
 
   @media print {
-    .sr-ridge__line {
+    .sr-card__title {
+      visibility: visible !important;
+      grid-area: auto;
+    }
+
+    .sr-ridge {
       display: none;
     }
   }

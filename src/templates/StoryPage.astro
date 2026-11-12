@@ -22,6 +22,8 @@ const { Content } = await render(entry);
 const crumbs = await breadcrumbsFor(entry);
 const route = routeFor(entry);
 const hasBody = Boolean(entry.body?.trim());
+/* The ridge hero (Dutch): the timeline drawn as the pillar's ridge, as on the design canvas. */
+const ridge = data.locale === 'nl' && Boolean(data.timeline);
 const trail = heroTrail(
   crumbs,
   data.eyebrow,
@@ -30,23 +32,41 @@ const trail = heroTrail(
 ---
 
 <EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
-  <section class:list={['hero page-hero', heroPillarClass(data.locale, route)]}>
+  <section
+    class:list={[
+      'hero page-hero',
+      heroPillarClass(data.locale, route),
+      { 'page-hero--band': ridge },
+    ]}
+    data-hero-layout={ridge ? 'quote' : undefined}
+  >
     <div class="wrap">
-      <div class:list={['page-hero__grid', { 'page-hero__grid--visual': data.locale === 'nl' }]}>
+      <div
+        class:list={[
+          'page-hero__grid',
+          { 'page-hero__grid--visual page-hero__grid--quote': ridge },
+        ]}
+      >
         <div class="page-hero__content">
           <Breadcrumbs ancestors={trail.ancestors} current={trail.current} locale={data.locale} />
           {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
           <h1>{data.heading}</h1>
           <p class="lead">{data.lead}</p>
           <p>{data.heroPersonal}</p>
-          <div class="actions">
-            <a class="button" href={`${route}#tijdlijn`}>Bekijk de tijdlijn</a>
-          </div>
+          {
+            !ridge && (
+              <div class="actions">
+                <a class="button" href={`${route}#tijdlijn`}>
+                  Bekijk de tijdlijn
+                </a>
+              </div>
+            )
+          }
         </div>
         {
-          data.locale === 'nl' && data.timeline ? (
+          ridge && data.timeline ? (
             <div class="page-hero__visual">
-              <StoryRidge milestones={data.timeline.milestones} />
+              <StoryRidge milestones={data.timeline.milestones} part="quote" />
             </div>
           ) : (
             <HeroArt slot="mijn-verhaal" />
@@ -54,6 +74,13 @@ const trail = heroTrail(
         }
       </div>
     </div>
+    {
+      ridge && data.timeline && (
+        <div class="page-hero__band">
+          <StoryRidge milestones={data.timeline.milestones} part="ridge" />
+        </div>
+      )
+    }
   </section>
   <section class="section" aria-labelledby="intro-heading">
     <div class="wrap reading">

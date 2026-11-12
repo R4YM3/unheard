@@ -1,14 +1,18 @@
 ---
 /* Herstel: a line that is not straight. Five topics along it, each with a sentence from its
-   own article. Pick a point (or play the line) and the line draws up to it, with a ripple
-   where it lands. Without JavaScript the five sentences are listed. */
+   own article (the build checks that the sentence is in it). Two parts, as on the design
+   canvas: the quote card on the visual side (`part="quote"`) and the line edge to edge along
+   the bottom of the hero (`part="line"`). Picking a point draws the line up to it, with a
+   ripple where it lands. The quotes share one grid cell, so the card never changes height.
+   Without JavaScript the five sentences are listed and the line is not shown. */
 import { recoverySteps } from '../../data/pillar-heroes';
 import { cardFor, findByKey } from '../../lib/content';
 
 interface Props {
   locale: string;
+  part: 'quote' | 'line';
 }
-const { locale } = Astro.props;
+const { locale, part } = Astro.props;
 const steps = await Promise.all(
   recoverySteps.map(async (step) => {
     const entry = await findByKey(locale, step.key);
@@ -16,18 +20,18 @@ const steps = await Promise.all(
     const text = `${entry.data.summary ?? ''} ${entry.body ?? ''}`.replace(/\s+/g, ' ');
     if (!text.includes(step.quote))
       throw new Error(`RecoveryLine: the sentence for "${step.key}" is not in that article`);
-    const card = cardFor(entry);
-    return { ...step, href: card.href, title: entry.data.title };
+    return { ...step, href: cardFor(entry).href, title: entry.data.title };
   }),
 );
-/* The line: up, down, back and up again. Points in a 600 × 200 box. */
+/* The line across a 1440 × 240 box: up, down, back and up again. Drawn left to right in
+   every language: it is a picture of time, not text. */
 const points: Array<[number, number]> = [
-  [20, 170],
-  [130, 80],
-  [220, 135],
-  [340, 55],
-  [430, 120],
-  [530, 30],
+  [-20, 200],
+  [260, 110],
+  [470, 175],
+  [740, 80],
+  [960, 150],
+  [1230, 55],
 ];
 const segments = points.slice(1).map(([x, y], i) => {
   const [ax, ay] = points[i];
@@ -36,13 +40,13 @@ const segments = points.slice(1).map(([x, y], i) => {
 });
 ---
 
-<div class="rl" data-recovery-line>
-  <ol class="rl__quotes">
-    {
-      steps.map((step) => (
-        <li class="rl__quote" data-rl-quote>
+{
+  part === 'quote' ? (
+    <ol class="rl-quotes" data-rl-quotes>
+      {steps.map((step, index) => (
+        <li class="rl-quote" data-current={index === 0 ? '' : undefined}>
           <figure class="hero-quote-card">
-            <p class="rl__topic">{step.name}</p>
+            <p class="hero-quote-card__label">{step.name}</p>
             <blockquote>
               <p>“{step.quote}”</p>
             </blockquote>
@@ -54,100 +58,59 @@ const segments = points.slice(1).map(([x, y], i) => {
             </figcaption>
           </figure>
         </li>
-      ))
-    }
-  </ol>
-  <div class="rl__line" data-rl-line hidden>
-    <svg viewBox="0 0 600 200" aria-hidden="true" focusable="false">
-      <path
-        class="rl__ghost"
-        d={`M${points.map((point) => point.join(' ')).join(' L')}`}
-        fill="none"></path>
-      {
-        segments.map((d) => (
-          <path class="rl__segment" d={d} pathLength="1" fill="none" data-rl-segment />
-        ))
-      }
-      <circle class="rl__ripple" r="6" cx={points[1][0]} cy={points[1][1]} data-rl-ripple></circle>
-    </svg>
-    {
-      steps.map((step, index) => (
+      ))}
+    </ol>
+  ) : (
+    <div class="rl-line" dir="ltr" data-rl-line hidden>
+      <svg viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="rl-line__ghost" d={`M${points.map((p) => p.join(' ')).join(' L')}`} />
+        {segments.map((d) => (
+          <path class="rl-line__segment" d={d} pathLength="1" data-rl-segment />
+        ))}
+      </svg>
+      <span class="rl-line__ripple" aria-hidden="true" data-rl-ripple />
+      {steps.map((step, index) => (
         <button
           type="button"
-          class="rl__point"
-          style={`--x: ${(points[index + 1][0] / 600) * 100}%; --y: ${(points[index + 1][1] / 200) * 100}%`}
+          class="rl-line__point"
+          style={`--x: ${(points[index + 1][0] / 1440) * 100}%; --y: ${(points[index + 1][1] / 240) * 100}%`}
+          aria-pressed={index === 0 ? 'true' : 'false'}
           data-rl-point
         >
-          <span class="rl__dot" aria-hidden="true" />
-          <span class="rl__name">{step.name}</span>
+          <span class="rl-line__dot" aria-hidden="true" />
+          <span class="rl-line__name">{step.name}</span>
         </button>
-      ))
-    }
-  </div>
-  <button type="button" class="button button--quiet rl__play" data-rl-play hidden>
-    Speel de lijn af <span aria-hidden="true">▶</span>
-  </button>
-</div>
+      ))}
+    </div>
+  )
+}
 
 <script>
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  for (const root of document.querySelectorAll<HTMLElement>('[data-recovery-line]')) {
-    const quotes = [...root.querySelectorAll<HTMLElement>('[data-rl-quote]')];
-    const segments = [...root.querySelectorAll<SVGPathElement>('[data-rl-segment]')];
-    const points = [...root.querySelectorAll<HTMLButtonElement>('[data-rl-point]')];
-    const ripple = root.querySelector<SVGCircleElement>('[data-rl-ripple]');
-    const line = root.querySelector<HTMLElement>('[data-rl-line]');
-    const play = root.querySelector<HTMLButtonElement>('[data-rl-play]');
-    if (!ripple || !line || !play || quotes.length !== points.length) continue;
-    let timer: number | undefined;
-
+  const quotes = [...document.querySelectorAll<HTMLElement>('[data-rl-quotes] > li')];
+  const line = document.querySelector<HTMLElement>('[data-rl-line]');
+  const segments = [...document.querySelectorAll<SVGPathElement>('[data-rl-segment]')];
+  const points = [...document.querySelectorAll<HTMLButtonElement>('[data-rl-point]')];
+  const ripple = document.querySelector<HTMLElement>('[data-rl-ripple]');
+  if (line && ripple && quotes.length > 0 && quotes.length === points.length) {
     const show = (index: number) => {
-      quotes.forEach((quote, i) => (quote.hidden = i !== index));
+      quotes.forEach((quote, i) => quote.toggleAttribute('data-current', i === index));
       segments.forEach((segment, i) => segment.classList.toggle('is-drawn', i <= index));
       points.forEach((point, i) => {
         point.classList.toggle('is-reached', i <= index);
         point.setAttribute('aria-pressed', String(i === index));
       });
-      const end = segments[index].getPointAtLength(segments[index].getTotalLength());
-      ripple.setAttribute('cx', String(end.x));
-      ripple.setAttribute('cy', String(end.y));
+      ripple.style.setProperty('--x', points[index].style.getPropertyValue('--x'));
+      ripple.style.setProperty('--y', points[index].style.getPropertyValue('--y'));
     };
-    const stop = () => {
-      clearInterval(timer);
-      timer = undefined;
-      play.firstChild!.textContent = 'Speel de lijn af ';
-    };
-
-    points.forEach((point, i) =>
-      point.addEventListener('click', () => {
-        stop();
-        show(i);
-      }),
-    );
-    play.addEventListener('click', () => {
-      if (timer) return stop();
-      let step = 0;
-      show(step);
-      play.firstChild!.textContent = 'Pauzeer ';
-      timer = window.setInterval(
-        () => {
-          step += 1;
-          if (step >= points.length) return stop();
-          show(step);
-        },
-        motion.matches ? 2500 : 1800,
-      );
-    });
-
-    root.dataset.enhanced = '';
+    points.forEach((point, i) => point.addEventListener('click', () => show(i)));
+    document.querySelector('[data-rl-quotes]')?.setAttribute('data-enhanced', '');
     line.hidden = false;
-    play.hidden = false;
     show(0);
   }
 </script>
 
 <style>
-  .rl__quotes {
+  .rl-quotes {
     display: grid;
     gap: 1rem;
     margin: 0;
@@ -155,99 +118,88 @@ const segments = points.slice(1).map(([x, y], i) => {
     list-style: none;
   }
 
-  .rl__quote[hidden] {
+  /* Enhanced: the five quotes in one cell, only the current one visible. */
+  .rl-quotes[data-enhanced] > li {
+    grid-area: 1 / 1;
+  }
+
+  .rl-quotes[data-enhanced] > li:not([data-current]) {
+    visibility: hidden;
+  }
+
+  .rl-quotes[data-enhanced] .hero-quote-card {
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .rl-line {
+    position: absolute;
+    inset: 0;
+  }
+
+  .rl-line[hidden] {
     display: none;
   }
 
-  .rl__topic {
-    margin: 0 0 0.5rem;
-    color: var(--hero-eyebrow);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .rl__quote blockquote {
-    margin: 0;
-  }
-
-  .rl__quote blockquote p {
-    margin: 0;
-    font-family: var(--font-serif);
-    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.45rem);
-    font-style: italic;
-    line-height: 1.35;
-    text-wrap: pretty;
-  }
-
-  .rl__quote figcaption {
-    margin-block-start: 0.75rem;
-    color: var(--hero-muted);
-    font-size: 0.9rem;
-  }
-
-  .rl__line {
-    position: relative;
-    margin-block-start: 1.5rem;
-    aspect-ratio: 3 / 1;
-  }
-
-  .rl__line[hidden] {
-    display: none;
-  }
-
-  .rl__line svg {
+  .rl-line svg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    overflow: visible;
   }
 
-  .rl__ghost {
+  .rl-line svg path {
+    fill: none;
     stroke: var(--hero-eyebrow);
-    stroke-dasharray: 3 7;
     stroke-linecap: round;
+  }
+
+  .rl-line__ghost {
+    stroke-dasharray: 3 7;
     stroke-opacity: 0.25;
     stroke-width: 2;
+    vector-effect: non-scaling-stroke;
   }
 
-  .rl__segment {
-    stroke: var(--hero-eyebrow);
+  .rl-line__segment {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    stroke-linecap: round;
     stroke-width: 3;
     transition: stroke-dashoffset 0.7s ease;
   }
 
-  .rl__segment.is-drawn {
+  .rl-line__segment.is-drawn {
     stroke-dashoffset: 0;
   }
 
-  .rl__ripple {
-    fill: none;
-    stroke: var(--hero-eyebrow);
-    stroke-width: 1.2;
+  .rl-line__ripple {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: 5rem;
+    height: 5rem;
+    border: 1.5px solid var(--hero-eyebrow);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.2);
     animation: rl-ripple 1.8s ease-out infinite;
   }
 
   @keyframes rl-ripple {
     from {
-      r: 6;
       opacity: 0.6;
+      transform: translate(-50%, -50%) scale(0.2);
     }
     to {
-      r: 40;
       opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
     }
   }
 
-  .rl__point {
+  .rl-line__point {
     position: absolute;
-    inset-inline-start: var(--x);
-    inset-block-start: var(--y);
+    left: var(--x);
+    top: var(--y);
     display: grid;
     width: 2.75rem;
     height: 2.75rem;
@@ -260,11 +212,7 @@ const segments = points.slice(1).map(([x, y], i) => {
     transform: translate(-50%, -50%);
   }
 
-  [dir='rtl'] .rl__point {
-    transform: translate(50%, -50%);
-  }
-
-  .rl__dot {
+  .rl-line__dot {
     width: 1rem;
     height: 1rem;
     border: 2px solid var(--hero-eyebrow);
@@ -273,66 +221,65 @@ const segments = points.slice(1).map(([x, y], i) => {
     transition: transform 0.2s ease;
   }
 
-  .rl__point.is-reached .rl__dot {
+  .rl-line__point.is-reached .rl-line__dot {
     background: var(--hero-eyebrow);
   }
 
-  .rl__point[aria-pressed='true'] .rl__dot {
+  .rl-line__point[aria-pressed='true'] .rl-line__dot {
     transform: scale(1.4);
   }
 
-  .rl__name {
+  .rl-line__name {
     position: absolute;
-    inset-block-end: 100%;
+    bottom: 100%;
     left: 50%;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     white-space: nowrap;
     transform: translateX(-50%);
     opacity: 0.65;
   }
 
-  .rl__point.is-reached .rl__name {
+  .rl-line__point.is-reached .rl-line__name {
     opacity: 1;
   }
 
-  .rl__point:focus-visible {
+  .rl-line__point:focus-visible {
     outline: 3px solid var(--focus);
     outline-offset: 2px;
     border-radius: 50%;
   }
 
-  .rl__play {
-    gap: 0.4rem;
-    margin-block-start: 0.75rem;
-  }
-
+  /* A phone: only the current point is named, so the names never collide. */
   @media (max-width: 42rem) {
-    .rl__name {
-      font-size: 0.75rem;
+    .rl-line__point:not([aria-pressed='true']) .rl-line__name {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .rl__segment,
-    .rl__dot {
+    .rl-line__segment,
+    .rl-line__dot {
       transition: none;
     }
 
-    .rl__ripple {
+    .rl-line__ripple {
       animation: none;
       opacity: 0.3;
-      r: 14;
+      transform: translate(-50%, -50%) scale(0.45);
     }
   }
 
   @media print {
-    .rl__quote[hidden] {
-      display: block;
+    .rl-quotes > li {
+      visibility: visible !important;
+      grid-area: auto !important;
     }
 
-    .rl__line,
-    .rl__play {
+    .rl-line {
       display: none !important;
     }
   }

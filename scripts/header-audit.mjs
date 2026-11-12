@@ -630,7 +630,7 @@ try {
           ).length,
       );
     await hero.goto(`${origin}/nl/wat-voel-ik/`, { waitUntil: 'networkidle0' });
-    assert.equal(await visible('.page-hero .fw__word'), 14, 'Fourteen feeling words, as links');
+    assert.equal(await visible('.page-hero .fw-word'), 14, 'Fourteen feeling words, as links');
     await hero.goto(`${origin}/nl/begrijp-het/`, { waitUntil: 'networkidle0' });
     assert.equal(
       await visible('.page-hero [data-lm-moment]'),
@@ -641,7 +641,7 @@ try {
       await hero.click('[data-lm-deeper]');
       assert.equal(
         await hero
-          .$$eval('[data-lm-moment]:not([hidden]) details[open]', (nodes) =>
+          .$$eval('[data-lm-moment][data-current] details[open]', (nodes) =>
             nodes.map((node) => node.className),
           )
           .then((names) => names.length === 1 && names[0].includes('lm__layer--2')),
@@ -650,11 +650,11 @@ try {
       );
     }
     await hero.goto(`${origin}/nl/herstel/`, { waitUntil: 'networkidle0' });
-    assert.equal(await visible('.page-hero [data-rl-quote]'), javascript ? 1 : 5);
+    assert.equal(await visible('.page-hero [data-rl-quotes] > li'), javascript ? 1 : 5);
     if (javascript) {
       await hero.click('[data-rl-point]:nth-of-type(3)');
       assert.match(
-        await hero.$eval('[data-rl-quote]:not([hidden])', (node) => node.textContent),
+        await hero.$eval('[data-rl-quotes] > li[data-current]', (node) => node.textContent),
         /grens/,
       );
     }
@@ -678,6 +678,44 @@ try {
   console.log(
     'Pillar heroes: content present with and without JavaScript; layers, line and ridge respond.',
   );
+
+  /* Pillar heroes never change height while you use them, and on a touch screen the first
+     tap previews instead of leaving the page. */
+  const steady = {
+    'wat-voel-ik': '.fw-word',
+    'begrijp-het': '[data-lm-deeper], [data-lm-next]',
+    herstel: '[data-rl-point]',
+    'mijn-verhaal': '[data-sr-dot]',
+    hulpmiddelen: '.cf__card',
+  };
+  for (const [width, height] of [
+    [1280, 900],
+    [390, 1200],
+  ]) {
+    for (const [slug, selector] of Object.entries(steady)) {
+      const page = await browser.newPage();
+      await page.setViewport({ width, height, hasTouch: width < 600, isMobile: width < 600 });
+      await page.goto(`${origin}/nl/${slug}/`, { waitUntil: 'networkidle0' });
+      const heroHeight = () =>
+        page.$eval('.page-hero', (node) => Math.round(node.getBoundingClientRect().height));
+      const start = await heroHeight();
+      const targets = await page.$$(selector);
+      for (const target of targets) {
+        if (slug === 'begrijp-het' || slug === 'herstel') await target.click();
+        else await target.focus();
+        await delay(120);
+        assert.equal(await heroHeight(), start, `${slug} at ${width}px keeps its height`);
+      }
+      if (width < 600 && !['begrijp-het', 'herstel'].includes(slug)) {
+        const url = page.url();
+        await (await page.$$(selector))[1].tap();
+        await delay(300);
+        assert.equal(page.url(), url, `${slug}: the first tap previews`);
+      }
+      await page.close();
+    }
+  }
+  console.log('Pillar heroes: steady height at 1280 and 390px; on touch the first tap previews.');
 } finally {
   await browser?.close();
   server.kill();

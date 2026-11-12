@@ -24,6 +24,8 @@ interface Props {
   entry: RoutedEntry;
   /** Set false when the template renders its own hero (home, story). */
   hero?: boolean;
+  /** A pillar hero's layout (see PageHero). */
+  heroLayout?: 'words' | 'layers' | 'quote' | 'fan' | 'help';
   heading?: string;
   lead?: string;
   eyebrow?: string;
@@ -43,6 +45,7 @@ interface Props {
 const {
   entry,
   hero = true,
+  heroLayout,
   heading,
   lead,
   eyebrow,
@@ -183,8 +186,11 @@ const heroActions = (heroData?.actions?.length ? heroData.actions : fallbackActi
         artNote={heroData?.visualNote}
         art={heroData ? 'article' : false}
         path={route}
+        layout={heroLayout}
       >
         {Astro.slots.has('hero-visual') && <slot name="hero-visual" slot="visual" />}
+        {Astro.slots.has('hero-copy') && <slot name="hero-copy" slot="copy" />}
+        {Astro.slots.has('hero-band') && <slot name="hero-band" slot="band" />}
       </PageHero>
     )
   }

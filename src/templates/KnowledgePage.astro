@@ -25,10 +25,17 @@ const darvo = 'darvo' in data ? data.darvo : undefined;
 const pageType = ['over', 'werkwijze'].includes(data.translationKey) ? 'AboutPage' : 'WebPage';
 ---
 
-<EntryLayout entry={entry} pageType={pageType} moreLinks={cards}>
+<EntryLayout
+  entry={entry}
+  pageType={pageType}
+  moreLinks={cards}
+  heroLayout={entry.data.locale === 'nl' && entry.data.translationKey === 'hulp-vinden'
+    ? 'help'
+    : undefined}
+>
   {
     entry.data.locale === 'nl' && entry.data.translationKey === 'hulp-vinden' && (
-      <HelpChoices slot="hero-visual" />
+      <HelpChoices slot="hero-copy" />
     )
   }
   {railGroups.length > 0 && <PageRail slot="rail" groups={railGroups} />}
