@@ -133,7 +133,11 @@ try {
   const withheld = await timelinePage.$('.timeline-withheld');
   for (const selector of withheld
     ? []
-    : ['.timeline-context details', '.timeline-between details', '.timeline-moment details']) {
+    : [
+        '.st__row--context details.st__card',
+        '#moment-1 .st__moments details',
+        'details.st__rail',
+      ]) {
     const summary = await timelinePage.$(`${selector} > summary`);
     if (!summary) throw new Error(`Missing timeline disclosure: ${selector}`);
     await summary.focus();
@@ -145,7 +149,9 @@ try {
       if (key) await timelinePage.keyboard.press(key);
       const signs = await summary.evaluate((element) => {
         const content = (node) => globalThis.getComputedStyle(node, '::after').content;
-        return [content(element), content(element.querySelector('.timeline-toggle'))]
+        return [element, element.querySelector('.timeline-toggle')]
+          .filter(Boolean)
+          .map(content)
           .map((value) => value.replaceAll('"', ''))
           .filter((value) => value && !['none', 'normal'].includes(value));
       });

@@ -1,0 +1,746 @@
+---
+/* The story timeline in layers (design canvas, artboard H). On the line: a label per moment
+   (phase, the moment's own label, its theme). Beside it: the main moment, which opens into
+   layers (what happened, the smaller moments inside it, and the four lenses once written).
+   Between the main moments: milestones as small points on the line, which open with their
+   reflection. Everything is in the HTML: without JavaScript every layer is listed under its
+   own heading, and print opens everything. The line runs behind the circles, never over
+   them. */
+import type { CollectionEntry } from 'astro:content';
+import Marked from './Marked.astro';
+import TimelineTheme from './TimelineTheme.astro';
+import { REVIEW_MARKER } from '../lib/review-marks';
+
+type TimelineData = CollectionEntry<'story'>['data']['timeline'];
+interface Props {
+  label: string;
+  milestones: TimelineData['milestones'];
+  context?: TimelineData['context'];
+}
+const { label, milestones, context } = Astro.props;
+const reflectionLabel = {
+  then: 'Wat ik toen dacht',
+  now: 'Als ik nu terugkijk',
+  felt: 'Wat ik voelde',
+};
+const firstSentence = (text: string) => {
+  const plain = text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  const match = plain.match(/^(.+?[.!?])(\s|$)/);
+  return match ? match[1] : plain;
+};
+let phaseCount = 0;
+const phases = milestones.map((milestone) => (milestone.phase ? ++phaseCount : 0));
+const phaseNames = milestones.filter((milestone) => milestone.phase).map((m) => m.phase!);
+---
+
+<div class="st" data-story-timeline>
+  {
+    phaseNames.length > 1 && (
+      <nav class="st__phases" aria-label="Fases in de tijdlijn">
+        <ol>
+          {phaseNames.map((name, i) => (
+            <li>
+              <a href={`#fase-${i + 1}`}>
+                <span aria-hidden="true">{i + 1} ·</span> {name}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )
+  }
+  <ol class="st__list" aria-label={label}>
+    {
+      context && (
+        <li class="st__row st__row--context">
+          <div class="st__label">
+            <p class="st__eyebrow">{context.eyebrow}</p>
+          </div>
+          <div class="st__node st__node--start" aria-hidden="true" />
+          <details class="st__card">
+            <summary>
+              <h3 class="st__title">{context.title}</h3>
+              <span class="st__teaser">{firstSentence(context.description)}</span>
+            </summary>
+            <div class="st__body">
+              <p>
+                <Marked text={context.description} />
+              </p>
+              {context.moments.length > 0 && (
+                <ul class="st__moments">
+                  {context.moments.map((moment) => (
+                    <li>
+                      <details>
+                        <summary>{moment.title}</summary>
+                        <p>
+                          <Marked text={moment.text} />
+                        </p>
+                      </details>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </details>
+        </li>
+      )
+    }
+    {
+      milestones.map((milestone, index) => {
+        const cards = milestone.between.filter((moment) => moment.placement !== 'rail');
+        const rails = milestone.between.filter((moment) => moment.placement === 'rail');
+        const lenses = milestone.lenses.filter((lens) => !lens.text.includes(REVIEW_MARKER));
+        return (
+          <>
+            <li
+              class="st__row st__row--moment"
+              id={`moment-${index + 1}`}
+              data-phase={phases[index] || undefined}
+            >
+              <div class="st__label">
+                {milestone.phase && (
+                  <h3 class="st__phase" id={`fase-${phases[index]}`}>
+                    {milestone.phase}
+                  </h3>
+                )}
+                <p class="st__eyebrow">{milestone.eyebrow}</p>
+                {milestone.theme && <TimelineTheme theme={milestone.theme} />}
+              </div>
+              <div class="st__node">
+                {milestone.theme && <TimelineTheme theme={milestone.theme} marker />}
+              </div>
+              <details class="st__card" open={index === 0}>
+                <summary>
+                  <h4 class="st__title">{milestone.title}</h4>
+                  <span class="st__teaser">{firstSentence(milestone.description)}</span>
+                </summary>
+                <div class="st__layers" data-st-layers>
+                  <div class="st__tabs" role="tablist" aria-label="Lagen van dit moment" hidden />
+                  <div class="st__panels">
+                    <section class="st__panel" data-st-panel>
+                      <h5 class="st__panel-title">Wat er gebeurde</h5>
+                      <p>
+                        <Marked text={milestone.description} />
+                      </p>
+                      {milestone.reflection && (
+                        <figure class="st__quote">
+                          <figcaption>
+                            {reflectionLabel[milestone.reflection.perspective]}
+                          </figcaption>
+                          <blockquote>
+                            <p>“{milestone.reflection.text}”</p>
+                          </blockquote>
+                        </figure>
+                      )}
+                    </section>
+                    {cards.length > 0 && (
+                      <section class="st__panel" data-st-panel data-st-count={cards.length}>
+                        <h5 class="st__panel-title">Momenten</h5>
+                        <ul class="st__moments">
+                          {cards.map((moment) => (
+                            <li>
+                              <details>
+                                <summary>{moment.title}</summary>
+                                <p>
+                                  <Marked text={moment.text} />
+                                </p>
+                              </details>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
+                    {lenses.map((lens) => (
+                      <section class="st__panel" data-st-panel>
+                        <h5 class="st__panel-title">{lens.heading}</h5>
+                        <p>
+                          <Marked text={lens.text} />
+                        </p>
+                      </section>
+                    ))}
+                  </div>
+                  {milestone.links.length > 0 && (
+                    <p class="st__recognise">
+                      <span>Herken je dit?</span>{' '}
+                      {milestone.links.map((link, i) => (
+                        <>
+                          {i > 0 && ' · '}
+                          <a href={link.href}>{link.label}</a>
+                        </>
+                      ))}
+                    </p>
+                  )}
+                </div>
+              </details>
+            </li>
+            {rails.map((moment) => (
+              <li class="st__row st__row--rail">
+                <div class="st__label">
+                  <p class="st__rail-kind">Mijlpaal</p>
+                </div>
+                <div class="st__node st__node--rail" aria-hidden="true" />
+                <details class="st__rail">
+                  <summary>{moment.title}</summary>
+                  <div class="st__rail-body">
+                    <p>
+                      <Marked text={moment.text} />
+                    </p>
+                    {moment.reflection && (
+                      <figure class="st__quote">
+                        <figcaption>{reflectionLabel[moment.reflection.perspective]}</figcaption>
+                        <blockquote>
+                          <p>“{moment.reflection.text}”</p>
+                        </blockquote>
+                      </figure>
+                    )}
+                  </div>
+                </details>
+              </li>
+            ))}
+          </>
+        );
+      })
+    }
+  </ol>
+</div>
+
+<script>
+  /* Layers become tabs: one panel at a time, arrow keys between tabs. All panels keep one grid
+     cell, so switching a layer never changes the height of the card. */
+  let uid = 0;
+  for (const layers of document.querySelectorAll<HTMLElement>('[data-st-layers]')) {
+    const tablist = layers.querySelector<HTMLElement>('[role="tablist"]');
+    const panels = [...layers.querySelectorAll<HTMLElement>('[data-st-panel]')];
+    if (!tablist || panels.length < 2) continue;
+    const id = `st-${(uid += 1)}`;
+    const tabs = panels.map((panel, i) => {
+      const title = panel.querySelector('.st__panel-title')?.textContent ?? `Laag ${i + 1}`;
+      const count = panel.dataset.stCount;
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.role = 'tab';
+      tab.id = `${id}-tab-${i}`;
+      tab.className = 'st__tab';
+      tab.textContent = count ? `${title} (${count})` : title;
+      tab.setAttribute('aria-controls', `${id}-panel-${i}`);
+      panel.id = `${id}-panel-${i}`;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tab.id);
+      tablist.append(tab);
+      return tab;
+    });
+    const select = (index: number, focus = false) => {
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === index));
+        tab.tabIndex = i === index ? 0 : -1;
+      });
+      panels.forEach((panel, i) => {
+        panel.toggleAttribute('data-current', i === index);
+        panel.inert = i !== index;
+      });
+      if (focus) tabs[index].focus();
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(i));
+      tab.addEventListener('keydown', (event) => {
+        const last = tabs.length - 1;
+        const next =
+          event.key === 'ArrowRight'
+            ? i === last
+              ? 0
+              : i + 1
+            : event.key === 'ArrowLeft'
+              ? i === 0
+                ? last
+                : i - 1
+              : event.key === 'Home'
+                ? 0
+                : event.key === 'End'
+                  ? last
+                  : -1;
+        if (next < 0) return;
+        event.preventDefault();
+        select(next, true);
+      });
+    });
+    tablist.hidden = false;
+    layers.dataset.enhanced = '';
+    select(0);
+  }
+</script>
+
+<style>
+  .st {
+    --st-label: 13rem;
+    --st-node: 3rem;
+    --st-line: var(--timeline-line, var(--border-strong));
+  }
+
+  /* Phases as a row of links to their first moment. */
+  .st__phases ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .st__phases a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border: 1px solid var(--chapter-line, var(--border));
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .st__phases a:hover {
+    border-color: var(--text);
+  }
+
+  .st__list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* The line runs in the node column, behind every circle. */
+  .st__list::before {
+    position: absolute;
+    z-index: 0;
+    inset-block: 0;
+    inset-inline-start: calc(var(--st-label) + var(--st-node) / 2 - 1px);
+    width: 2px;
+    background: var(--st-line);
+    content: '';
+  }
+
+  .st__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--st-label) var(--st-node) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .st__row--moment,
+  .st__row--context {
+    margin-block-end: 1.25rem;
+  }
+
+  .st__row--rail {
+    margin-block-end: 0.75rem;
+  }
+
+  .st__row--moment[data-phase] {
+    margin-block-start: 1.5rem;
+    scroll-margin-top: 7rem;
+  }
+
+  /* Labels on the line. */
+  .st__label {
+    padding-block-start: 0.9rem;
+    padding-inline-end: 1.25rem;
+    text-align: end;
+  }
+
+  .st__phase {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 1rem + 0.9vw, 1.6rem);
+    line-height: 1.15;
+    scroll-margin-top: 7rem;
+  }
+
+  .st__eyebrow {
+    margin: 0;
+    color: var(--hero-eyebrow);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .st__label :global(.timeline-theme) {
+    display: block;
+    margin-block-start: 0.2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .st__rail-kind {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding-block-start: 0.2rem;
+  }
+
+  /* Circles sit on top of the line, with their own background. */
+  .st__node {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding-block-start: 0.85rem;
+  }
+
+  .st__node :global(.timeline-marker) {
+    position: static;
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    border: 2px solid var(--text);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    transform: none;
+  }
+
+  .st__row--moment:has(> .st__card[open]) .st__node :global(.timeline-marker) {
+    background: var(--text);
+    color: var(--surface);
+  }
+
+  .st__node--start::before,
+  .st__node--rail::before {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-block-start: 0.15rem;
+    border: 2px solid var(--text);
+    border-radius: 50%;
+    background: var(--chapter-bg, var(--bg));
+    content: '';
+  }
+
+  .st__node--rail {
+    padding-block-start: 0.55rem;
+  }
+
+  .st__row--rail:has(> .st__rail[open]) .st__node--rail::before {
+    border-color: var(--link);
+    background: var(--link);
+  }
+
+  /* Main moment card. */
+  .st__card {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--chapter-line, var(--border));
+    border-radius: 1rem;
+    background: var(--surface);
+  }
+
+  .st__card > summary {
+    display: grid;
+    gap: 0.35rem;
+    min-height: 0;
+    padding: 1.1rem 3.25rem 1.1rem 1.25rem;
+  }
+
+  .st__card > summary::after {
+    inset-block-start: 1.35rem;
+    inset-inline-end: 1.25rem;
+  }
+
+  .st__title {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+    line-height: 1.25;
+  }
+
+  .st__teaser {
+    color: var(--muted);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .st__card[open] .st__teaser {
+    display: none;
+  }
+
+  .st__layers,
+  .st__body {
+    padding: 0 1.25rem 1.25rem;
+    border-block-start: 1px solid var(--border);
+  }
+
+  .st__body > p {
+    margin: 1rem 0 0;
+  }
+
+  .st__tabs:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-block: 0.85rem 0.25rem;
+  }
+
+  .st__tabs :global(.st__tab) {
+    min-height: 2.5rem;
+    padding: 0 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .st__tabs :global(.st__tab[aria-selected='true']) {
+    border-color: var(--text);
+    background: var(--text);
+    color: var(--surface);
+  }
+
+  .st__tabs :global(.st__tab:focus-visible) {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .st__panel {
+    padding-block-start: 1rem;
+  }
+
+  .st__panel > p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .st__panel-title {
+    margin: 0 0 0.5rem;
+    color: var(--hero-eyebrow);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Enhanced: the panels share one cell, the tab names the layer. */
+  .st__layers[data-enhanced] .st__panels {
+    display: grid;
+  }
+
+  .st__layers[data-enhanced] .st__panel {
+    grid-area: 1 / 1;
+  }
+
+  .st__layers[data-enhanced] .st__panel:not([data-current]) {
+    visibility: hidden;
+  }
+
+  .st__layers[data-enhanced] .st__panel-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  /* Smaller moments: plain rows with a line between, not boxes in the card. */
+  .st__moments {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .st__moments > li + li {
+    border-block-start: 1px solid var(--border);
+  }
+
+  .st__moments details {
+    margin: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .st__moments summary {
+    padding-inline-start: 0;
+    font-weight: 700;
+  }
+
+  .st__moments details > p {
+    margin: 0 0 0.85rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .st__recognise {
+    margin: 1rem 0 0;
+    padding-block-start: 0.85rem;
+    border-block-start: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+
+  .st__recognise span {
+    font-weight: 700;
+  }
+
+  .st__recognise a,
+  .st__panel a,
+  .st__rail-body a,
+  .st__body a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  /* Milestones on the line. */
+  .st__rail {
+    margin: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .st__rail > summary {
+    min-height: 2.75rem;
+    padding-inline-start: 0;
+    color: var(--link);
+    font-weight: 700;
+  }
+
+  .st__rail-body {
+    max-width: 38rem;
+    padding-block-end: 0.5rem;
+  }
+
+  .st__rail-body > p {
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .st__quote {
+    margin: 0.85rem 0 0;
+    padding: 0.85rem 1rem;
+    border-inline-start: 3px solid var(--accent);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--surface);
+  }
+
+  .st__quote figcaption {
+    margin: 0 0 0.25rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .st__quote blockquote {
+    margin: 0;
+  }
+
+  .st__quote blockquote p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* Phones and narrow screens: the line on the start side, the label above each card. */
+  @media (max-width: 52rem) {
+    .st {
+      --st-label: 0rem;
+      --st-node: 2.25rem;
+    }
+
+    .st__row {
+      grid-template-columns: var(--st-node) minmax(0, 1fr);
+      grid-template-areas:
+        'node label'
+        'node card';
+    }
+
+    .st__label {
+      grid-area: label;
+      padding: 0 0 0.4rem;
+      text-align: start;
+    }
+
+    .st__node {
+      grid-area: node;
+      justify-content: flex-start;
+      padding-block-start: 0;
+    }
+
+    .st__node :global(.timeline-marker) {
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-inline-start: 0.25rem;
+    }
+
+    .st__node :global(.timeline-marker svg) {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+
+    .st__node--start::before,
+    .st__node--rail::before {
+      margin-inline-start: 0.7rem;
+    }
+
+    .st__list::before {
+      inset-inline-start: calc(1.125rem - 1px);
+    }
+
+    .st__card,
+    .st__rail {
+      grid-area: card;
+    }
+
+    .st__row--rail {
+      grid-template-areas: 'node card';
+    }
+
+    .st__row--rail .st__label {
+      display: none;
+    }
+
+    .st__label :global(.timeline-theme) {
+      display: inline;
+      margin: 0;
+    }
+
+    .st__label :global(.timeline-theme)::before {
+      content: ' · ';
+    }
+
+    .st__eyebrow {
+      display: inline;
+    }
+  }
+
+  @media print {
+    .st__phases,
+    .st__tabs {
+      display: none !important;
+    }
+
+    .st__layers[data-enhanced] .st__panel {
+      visibility: visible !important;
+      grid-area: auto !important;
+    }
+
+    .st__layers[data-enhanced] .st__panel-title {
+      position: static;
+      width: auto;
+      height: auto;
+      clip: auto;
+    }
+
+    .st__teaser {
+      display: none;
+    }
+  }
+</style>
