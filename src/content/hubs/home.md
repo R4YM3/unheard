@@ -126,6 +126,7 @@ home:
     paragraphs:
       - 'Ik miste woorden voor wat ik voelde. Ik twijfelde aan mezelf en mijn herinneringen, ook nadat ik was weggegaan. Ik zocht houvast om te begrijpen wat er was gebeurd en hoe ik verder kon.'
       - 'Herkenning en erkenning hielpen mij om serieus te nemen wat ik voelde. Daarom begon ik Ongehoord. Ik wil anderen geven wat ik toen zelf miste: woorden voor wat je voelt, uitleg en een plek om je te oriënteren op herstel.'
+    quote: 'Ik dacht lang dat blijven zorgen bij liefde hoorde.'
     href: 'nl/mijn-verhaal/'
     label: 'Lees mijn verhaal'
   timelineTeaser:
