@@ -79,6 +79,7 @@ const nlSections: Section[] = [
     label: 'Binnen Mijn verhaal',
     tabs: [
       { href: 'nl/mijn-verhaal/', label: 'Het verhaal' },
+      { href: 'nl/mijn-verhaal/tijdlijn/', label: 'Tijdlijn' },
       { href: 'nl/over/', label: 'Waarom Ongehoord' },
       { href: 'nl/werkwijze/', label: 'Werkwijze' },
     ],

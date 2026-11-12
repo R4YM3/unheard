@@ -15,6 +15,11 @@ cardText: 'Begin bij wat je voelt, zonder dat je meteen een naam hoeft te hebben
 heading: 'Begin bij wat je voelt.'
 eyebrow: 'Wat voel ik?'
 lead: 'Misschien zoek je geen label, maar woorden voor wat er in jou gebeurt.'
+deeper:
+  href: 'nl/hulpmiddelen/help-me-woorden-vinden/'
+  eyebrow: 'Weet je nog niet welke pagina bij je past?'
+  label: 'Help me woorden vinden'
+  text: 'Zes korte vragen die je mag overslaan.'
 summary: 'Op deze pagina staan negen gevoelens die mensen kunnen herkennen na of tijdens een relatie waarin ze zichzelf kwijtraakten. Kies wat het dichtst bij jou komt. Een gevoel bewijst niets over een ander, maar het verdient wel aandacht.'
 chooser: true
 feelingTimeline:
@@ -52,6 +57,7 @@ listings:
     tone: neutral
 related: [begrijp-het, herstel, hulp-vinden]
 reviewNotes:
+  - 'Redactie: de zin over Help me woorden vinden staat nu als groene kaart in het introblok ("Zes korte vragen die je mag overslaan."). Klopt deze inkorting?'
   - 'Controleer of de volgorde van de negen gevoelens klopt met de prioriteit die de oprichter wil geven.'
   - 'Redactie: de tijdlijn is een leeslijn, geen verloop. Klopt de volgorde, en is elke zin algemeen genoeg?'
 ---
@@ -59,5 +65,3 @@ reviewNotes:
 Veel mensen zoeken eerst naar een woord voor wat de ander doet. Dat is begrijpelijk: je wilt weten wat er aan de hand is. Maar vaak is het eerste wat je zeker weet niet wat de ander bedoelt, maar wat het met jou doet. Je twijfelt meer aan jezelf. Je voelt je schuldig zonder te weten waarom. Je bent moe van het steeds opletten.
 
 Daarom begint Ongehoord bij jou. Elke pagina hieronder beschrijft een gevoel, wat er om je heen kan gebeuren, wat het kan verklaren en wat kan helpen. Er staan fictieve voorbeelden bij en vragen die je vrijblijvend kunt beantwoorden.
-
-Weet je nog niet welke pagina bij je past? [Help me woorden vinden](nl/hulpmiddelen/help-me-woorden-vinden/) biedt zes korte vragen die je mag overslaan.

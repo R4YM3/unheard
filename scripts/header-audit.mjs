@@ -150,7 +150,7 @@ try {
         nodes.map((node) => node.textContent.trim()),
       ),
       /* 'Het verhaal' is the section link itself: one link per destination. */
-      ['Waarom Ongehoord', 'Werkwijze'],
+      ['Tijdlijn', 'Waarom Ongehoord', 'Werkwijze'],
     );
     await mobile.goto(`${origin}/nl/`, { waitUntil: 'networkidle0' });
     assert.equal(
