@@ -90,7 +90,6 @@ const options = await Promise.all(
               {chapter.wordFinder.label}
               <span aria-hidden="true"> →</span>
             </a>
-            <p class="note">{chapter.wordFinder.note}</p>
           </div>
         )
       }
@@ -209,6 +208,9 @@ const options = await Promise.all(
   @media (min-width: 52rem) {
     .start-chooser-layout .start-chooser-groups {
       grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      /* An opened situation only grows the finder card, never the gap between the two
+         cards on the start side. */
+      grid-template-rows: auto 1fr;
       grid-template-areas:
         'needs situations'
         'finder situations';
