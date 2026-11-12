@@ -35,7 +35,6 @@ const hasSide = Boolean(deeper) || contents.length > 0;
       {opening && <p class="intro-block__opening">{opening}</p>}
       {rest && <p>{rest}</p>}
       {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-      {note && <p class="note">{note}</p>}
     </section>
     {
       Astro.slots.has('default') && (
@@ -44,6 +43,7 @@ const hasSide = Boolean(deeper) || contents.length > 0;
         </div>
       )
     }
+    {note && <p class="note intro-block__note">{note}</p>}
   </div>
   {
     hasSide && (
