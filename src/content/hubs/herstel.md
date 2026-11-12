@@ -34,14 +34,6 @@ cards:
     text: 'Printbare kaarten om te ordenen wat je voelt, een gesprek voor te bereiden of iemand in vertrouwen te nemen. Er wordt niets opgeslagen.'
     href: 'nl/hulpmiddelen/'
     label: 'Bekijk de hulpmiddelen'
-reflection:
-  heading: 'Vragen om rustig bij stil te staan'
-  questions:
-    - 'Wat heb ik op dit moment het meest nodig: rust, uitleg of iemand die luistert?'
-    - 'Wat begrijp ik al, en wat voel ik nog steeds?'
-    - 'Bij wie zou ik een klein stukje van mijn verhaal kunnen vertellen?'
-  note: 'Je hoeft deze vragen niet te beantwoorden. Ze zijn bedoeld om bij stil te staan, niet om jezelf te beoordelen.'
-  writable: false
 related: [pijn-na-inzicht, therapievormen, mijn-verhaal, hulp-vinden]
 reviewNotes:
   - 'Clinicus: klopt de beschrijving van wanneer je naar de huisarts of POH-GGZ gaat, zonder dat het als medisch advies leest?'

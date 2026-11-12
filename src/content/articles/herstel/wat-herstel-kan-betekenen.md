@@ -12,6 +12,14 @@ updatedAt: 2026-11-12
 reviewedAt: null
 order: 1
 cardTitle: 'Wat herstel kan betekenen'
+reflection:
+  heading: 'Vragen om rustig bij stil te staan'
+  questions:
+    - 'Wat heb ik op dit moment het meest nodig: rust, uitleg of iemand die luistert?'
+    - 'Wat begrijp ik al, en wat voel ik nog steeds?'
+    - 'Bij wie zou ik een klein stukje van mijn verhaal kunnen vertellen?'
+  note: 'Je hoeft deze vragen niet te beantwoorden. Ze zijn bedoeld om bij stil te staan, niet om jezelf te beoordelen.'
+  writable: false
 related: [herstel, herstel-leren-voelen, therapievormen, hulp-vinden]
 sources:
   - label: 'Thuisarts — Ik heb psychische klachten'

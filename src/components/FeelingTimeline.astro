@@ -54,22 +54,25 @@ const steps = await Promise.all(
 ---
 
 <section class="section" id="tijdlijn" aria-labelledby="gevoel-tijdlijn-heading">
-  <div class="wrap reading">
-    <p class="eyebrow">{timeline.eyebrow}</p>
-    <h2 id="gevoel-tijdlijn-heading">{timeline.heading}</h2>
-    <p class="reading">{timeline.lead}</p>
-    <ol class="feeling-timeline" role="list" aria-label={timeline.label}>
+  <div class="wrap">
+    <div class="reading feeling-timeline__intro">
+      <p class="eyebrow">{timeline.eyebrow}</p>
+      <h2 id="gevoel-tijdlijn-heading">{timeline.heading}</h2>
+      <p>{timeline.lead}</p>
+    </div>
+    {/* Styled like the timeline in Mijn verhaal: a label on the line, a circle, the card. */}
+    <ol class="feeling-timeline" aria-label={timeline.label}>
       {
         steps.map((step) => (
-          <li>
-            <span class="feeling-timeline__marker" aria-hidden="true" set:html={step.icon} />
-            <article class="card card--link">
-              <p class="eyebrow">{step.feeling}</p>
-              <h3>
-                <a href={step.href}>{step.title}</a>
-              </h3>
-              <p>{step.text}</p>
-            </article>
+          <li class="feeling-timeline__row">
+            <p class="feeling-timeline__label">{step.feeling}</p>
+            <span class="feeling-timeline__node" aria-hidden="true">
+              <span class="feeling-timeline__marker" set:html={step.icon} />
+            </span>
+            <a class="feeling-timeline__card" href={step.href}>
+              <span class="feeling-timeline__title">{step.title}</span>
+              <span class="feeling-timeline__text">{step.text}</span>
+            </a>
           </li>
         ))
       }
@@ -80,41 +83,145 @@ const steps = await Promise.all(
 
 <style>
   .feeling-timeline {
+    --ft-label: 13rem;
+    --ft-node: 3rem;
     position: relative;
-    display: grid;
-    gap: 1.25rem;
-    margin-block: 2rem;
+    margin: 2rem 0;
     padding: 0;
-    padding-inline-start: 3rem;
     list-style: none;
   }
+
+  /* The line runs in the node column, behind every circle. */
   .feeling-timeline::before {
-    content: '';
     position: absolute;
-    inset-inline-start: calc(1rem - 1px);
-    inset-block: 2.5rem;
+    z-index: 0;
+    inset-block: 0;
+    inset-inline-start: calc(var(--ft-label) + var(--ft-node) / 2 - 1px);
     width: 2px;
-    background: var(--timeline-line);
+    background: var(--timeline-line, var(--border-strong));
+    content: '';
   }
-  .feeling-timeline > li {
+
+  .feeling-timeline__row {
     position: relative;
-  }
-  .feeling-timeline__marker {
-    position: absolute;
-    inset-inline-start: -3rem;
-    inset-block-start: 1.5rem;
     display: grid;
+    grid-template-columns: var(--ft-label) var(--ft-node) minmax(0, 1fr);
+    align-items: start;
+    margin-block-end: 1rem;
+  }
+
+  .feeling-timeline__label {
+    margin: 0;
+    padding-block-start: 1.1rem;
+    padding-inline-end: 1.25rem;
+    color: var(--hero-eyebrow);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: end;
+    text-transform: uppercase;
+  }
+
+  .feeling-timeline__node {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding-block-start: 0.85rem;
+  }
+
+  .feeling-timeline__marker {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
     place-items: center;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid var(--timeline-line);
+    border: 2px solid var(--text);
     border-radius: 50%;
     background: var(--surface);
     color: var(--text);
   }
+
   .feeling-timeline__marker :global(svg) {
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1.05rem;
+    height: 1.05rem;
     fill: currentColor;
+  }
+
+  .feeling-timeline__card {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .feeling-timeline__card:hover {
+    border-color: var(--text);
+  }
+
+  .feeling-timeline__row:has(.feeling-timeline__card:is(:hover, :focus-visible))
+    .feeling-timeline__marker {
+    background: var(--text);
+    color: var(--surface);
+  }
+
+  .feeling-timeline__card:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .feeling-timeline__title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .feeling-timeline__text {
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Phones: the line on the start side, the label above each card. */
+  @media (max-width: 52rem) {
+    .feeling-timeline {
+      --ft-node: 2.25rem;
+    }
+
+    .feeling-timeline::before {
+      inset-inline-start: calc(1.125rem - 1px);
+    }
+
+    .feeling-timeline__row {
+      grid-template-columns: var(--ft-node) minmax(0, 1fr);
+      grid-template-areas:
+        'node label'
+        'node card';
+    }
+
+    .feeling-timeline__label {
+      grid-area: label;
+      padding: 0 0 0.4rem;
+      text-align: start;
+    }
+
+    .feeling-timeline__node {
+      grid-area: node;
+      justify-content: flex-start;
+      padding-block-start: 0;
+    }
+
+    .feeling-timeline__marker {
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-inline-start: 0.25rem;
+    }
+
+    .feeling-timeline__card {
+      grid-area: card;
+    }
   }
 </style>
