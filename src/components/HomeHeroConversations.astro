@@ -188,11 +188,6 @@ const { scenarios } = Astro.props;
     align-self: stretch;
   }
 
-  [data-conversation-frame][hidden] {
-    display: block;
-    visibility: hidden;
-  }
-
   .hero-conversations :global(.pv-line) {
     grid-template-columns: minmax(0, 1fr);
     width: fit-content;
@@ -317,6 +312,12 @@ const { scenarios } = Astro.props;
   }
 
   @media (max-width: 52rem) {
+    [data-conversation-frame][hidden] {
+      /* Keep all frames in the same grid cell so the longest one sets the height. */
+      display: block !important;
+      visibility: hidden;
+    }
+
     .hero-conversations__stage {
       padding-block-end: 3.5rem;
     }

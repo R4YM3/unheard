@@ -171,6 +171,25 @@ try {
       );
     assert.equal(await countVisibleExamples(), 1);
     if (javascript) {
+      const stage = '.hero-conversations__stage';
+      const activeQuote = '[data-conversation-frame]:not([hidden]):not([inert]) q';
+      const height = await mobile.$eval(stage, (node) => node.getBoundingClientRect().height);
+      const quote = await mobile.$eval(activeQuote, (node) => node.textContent);
+      await mobile.click('[data-conversation-next]');
+      await mobile.waitForFunction(
+        (selector, previous) => {
+          const current = globalThis.document.querySelector(selector);
+          return current && current.textContent !== previous;
+        },
+        {},
+        activeQuote,
+        quote,
+      );
+      assert.equal(
+        await mobile.$eval(stage, (node) => node.getBoundingClientRect().height),
+        height,
+        'The mobile chat keeps its height when the conversation changes',
+      );
       await mobile.emulateMediaType('print');
       assert.equal(await countVisibleExamples(), 1, 'All homepage examples must print');
     } else {
