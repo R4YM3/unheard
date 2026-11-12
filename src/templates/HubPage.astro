@@ -48,6 +48,7 @@ const listings = await Promise.all(
 const inlineCards = data.cards.filter((card) => data.cardsPlacement === 'inline' || !card.href);
 const isEmptyBody = !entry.body?.trim();
 const route = routeFor(entry);
+const compactFinancialArticles = data.translationKey === 'financieel-misbruik';
 /* Hubs weave their explanation and their lists: chapter, list, chapter, list, the rest. */
 const woven = listings.length > 0 && !data.finder && !isEmptyBody;
 const listingId = (listing: (typeof listings)[number], index: number) =>
@@ -71,7 +72,11 @@ const absolute = (path: string) => new URL(`${basePath}${path}`, site).href;
 const pageId = absolute(route);
 const listedCards = [
   ...listings.flatMap((listing) =>
-    listing.items.map((item) => ({ href: item.href, title: item.title, text: item.text })),
+    listing.items.map((item) => ({
+      href: item.href,
+      title: item.title,
+      text: compactFinancialArticles ? undefined : item.text,
+    })),
   ),
   ...data.cards.flatMap((card) =>
     card.href ? [{ href: card.href, title: card.title, text: card.text }] : [],
@@ -189,6 +194,7 @@ const mainEntityId = termSet
           class:list={[
             'section',
             {
+              'section--tight': compactFinancialArticles,
               'section--tension': listing.tone === 'tension',
               'section--soft': listing.tone === 'safe',
               'section--tint': listing.tone !== 'tension' && listing.tone !== 'safe',
@@ -202,7 +208,24 @@ const mainEntityId = termSet
           <div class="wrap">
             <h2 id={`listing-${index}-heading`}>{listing.heading}</h2>
             {listing.lead && <p class="reading">{listing.lead}</p>}
-            {listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
+            {compactFinancialArticles && listing.items.length > 0 ? (
+              <>
+                <p>
+                  <a class="inline-link" href={`${route}#wat-het-met-je-kan-doen`}>
+                    Lees verder in dit artikel: wat het met je kan doen
+                  </a>
+                </p>
+                <ul class="financial-article-links">
+                  {listing.items.map((item) => (
+                    <li>
+                      <a class="inline-link" href={item.href}>
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
               <div class="grid grid--3">
                 {listing.items.map((item) => (
                   <a class="card feeling-card" href={item.href}>
@@ -268,3 +291,16 @@ const mainEntityId = termSet
   {data.reflection && <MiniReflection reflection={data.reflection} />}
   {data.founderNote?.placement === 'after' && <FounderNote note={data.founderNote} />}
 </EntryLayout>
+
+<style>
+  .financial-article-links {
+    display: grid;
+    gap: 0.5rem 2rem;
+    padding-inline-start: 1.25rem;
+  }
+  @media (min-width: 45rem) {
+    .financial-article-links {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
