@@ -5,7 +5,7 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import HeroArt from '../components/HeroArt.astro';
 import CardGrid from '../components/CardGrid.astro';
-import Timeline from '../components/Timeline.astro';
+import StoryTimeline from '../components/StoryTimeline.astro';
 import Marked from '../components/Marked.astro';
 import { breadcrumbsFor, routeFor } from '../lib/content';
 import { navigationFor } from '../lib/navigation';
@@ -98,7 +98,11 @@ const trail = heroTrail(
       </div>
     )
   }
-  <section class="section section--soft" aria-labelledby="tijdlijn-heading" id="tijdlijn">
+  <section
+    class="section section--chapter chapter--story story-timeline-band"
+    aria-labelledby="tijdlijn-heading"
+    id="tijdlijn"
+  >
     <div class="wrap">
       <p class="eyebrow">{data.timeline.eyebrow}</p>
       <h2 id="tijdlijn-heading">{data.timeline.heading}</h2>
@@ -108,7 +112,7 @@ const trail = heroTrail(
         ) : (
           <>
             <p class="reading">{data.timeline.lead}</p>
-            <Timeline
+            <StoryTimeline
               label={data.timeline.label}
               milestones={data.timeline.milestones}
               context={data.timeline.context}
