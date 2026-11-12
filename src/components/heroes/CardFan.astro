@@ -1,14 +1,18 @@
 ---
-/* Hulpmiddelen: the six question cards as a fan, like printed cards in your hand. Each card
-   links to its page; pointing at or focusing one lifts it and shows its first step (from the
-   card's own instructions). Without JavaScript the cards are plain links. */
+/* Hulpmiddelen: the six question cards as a fan, like printed cards in your hand. Two parts,
+   as on the design canvas: the fan on the visual side (`part="fan"`) and the card's first
+   step under the lead (`part="preview"`). Each card links to its page; pointing at or
+   focusing one lifts it and shows its first step (from the card's own instructions). The
+   steps share one grid cell, so the hero never changes height. Without JavaScript the cards
+   are plain links. */
 import { fanCards } from '../../data/pillar-heroes';
 import { findByKey, routeFor } from '../../lib/content';
 
 interface Props {
   locale: string;
+  part: 'fan' | 'preview';
 }
-const { locale } = Astro.props;
+const { locale, part } = Astro.props;
 const cards = await Promise.all(
   fanCards.map(async (key) => {
     const entry = await findByKey(locale, key);
@@ -20,37 +24,55 @@ const cards = await Promise.all(
 const middle = (cards.length - 1) / 2;
 ---
 
-<div class="cf" data-card-fan>
-  <ul class="cf__fan">
-    {
-      cards.map((card, i) => (
+{
+  part === 'fan' ? (
+    <ul class="cf__fan" data-cf-fan>
+      {cards.map((card, i) => (
         <li style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --i: ${i}`}>
-          <a class="cf__card" href={card.href} data-step={card.step}>
+          <a class="cf__card" href={card.href} data-cf-index={i}>
             <span class="cf__number">Kaart {i + 1}</span>
             <span class="cf__title">{card.title}</span>
           </a>
         </li>
-      ))
-    }
-  </ul>
-  <p class="cf__step" aria-hidden="true" data-cf-step hidden>
-    <strong>Eerste stap:</strong>{' '}<span data-cf-text></span>
-  </p>
-</div>
+      ))}
+    </ul>
+  ) : (
+    <div class="cf__preview" data-cf-preview>
+      <p class="cf__hint" data-current>
+        Wijs een kaart aan om de eerste stap te lezen.
+      </p>
+      {cards.map((card) => (
+        <div class="cf__step">
+          <p class="cf__step-title">{card.title}</p>
+          <p>
+            <strong>Eerste stap:</strong> {card.step}
+          </p>
+          <p class="cf__open">
+            <a class="text-link" href={card.href}>
+              Open deze kaart
+            </a>
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 <script>
-  for (const root of document.querySelectorAll<HTMLElement>('[data-card-fan]')) {
-    const step = root.querySelector<HTMLElement>('[data-cf-step]');
-    const text = root.querySelector<HTMLElement>('[data-cf-text]');
-    if (!step || !text) continue;
-    for (const card of root.querySelectorAll<HTMLElement>('.cf__card')) {
-      const show = () => {
-        text.textContent = card.dataset.step ?? '';
-        step.hidden = false;
-      };
-      card.addEventListener('pointerenter', show);
-      card.addEventListener('focus', show);
-    }
+  import { previewOnFirstTap } from '../../lib/tap-preview';
+
+  const preview = document.querySelector<HTMLElement>('[data-cf-preview]');
+  const items = preview ? [...preview.children] : [];
+  for (const card of document.querySelectorAll<HTMLElement>('[data-cf-fan] .cf__card')) {
+    const index = Number(card.dataset.cfIndex) + 1;
+    const show = () => {
+      items.forEach((item, i) => item.toggleAttribute('data-current', i === index));
+      for (const other of document.querySelectorAll('[data-cf-fan] .cf__card'))
+        other.toggleAttribute('data-current', other === card);
+    };
+    card.addEventListener('pointerenter', (event) => event.pointerType === 'mouse' && show());
+    card.addEventListener('focus', show);
+    previewOnFirstTap(card, show, () => card.hasAttribute('data-current'));
   }
 </script>
 
@@ -124,15 +146,44 @@ const middle = (cards.length - 1) / 2;
     line-height: 1.2;
   }
 
-  .cf__step {
-    max-width: 34rem;
-    margin: 1rem auto 0;
-    color: var(--hero-muted);
-    text-align: center;
+  /* Hint and steps share one cell: the longest sets the height. */
+  .cf__preview {
+    display: grid;
   }
 
-  .cf__step[hidden] {
-    display: none;
+  .cf__preview > * {
+    grid-area: 1 / 1;
+    align-self: start;
+    margin: 0;
+  }
+
+  .cf__preview > :not([data-current]) {
+    visibility: hidden;
+  }
+
+  .cf__preview p {
+    margin: 0;
+  }
+
+  .cf__hint {
+    padding-inline-start: 0.875rem;
+    border-inline-start: 3px solid var(--text);
+    color: var(--hero-muted);
+  }
+
+  .cf__step {
+    color: var(--hero-muted);
+    line-height: 1.5;
+  }
+
+  .cf__open {
+    margin-block-start: 0.4rem !important;
+  }
+
+  .cf__step-title {
+    margin-block-end: 0.25rem !important;
+    color: var(--text);
+    font-weight: 700;
   }
 
   /* A phone: no fan, the cards in a row you can swipe through. */
@@ -163,8 +214,8 @@ const middle = (cards.length - 1) / 2;
       height: 12rem;
     }
 
-    .cf__step {
-      display: none;
+    .cf__fan li:has(.cf__card[data-current]) .cf__card {
+      border-color: var(--text);
     }
   }
 
@@ -175,7 +226,8 @@ const middle = (cards.length - 1) / 2;
   }
 
   @media print {
-    .cf {
+    .cf__fan,
+    .cf__preview {
       display: none;
     }
   }

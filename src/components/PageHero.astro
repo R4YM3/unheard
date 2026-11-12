@@ -21,6 +21,9 @@ interface Props {
   artNote?: string;
   /** The page's own path (nl/...), to give the hero its pillar's colour and pattern. */
   path?: string;
+  /** A pillar's own hero (see src/components/heroes): sets the column split from the design
+      canvas. Such a hero carries its own controls, so the generic hero buttons are left out. */
+  layout?: 'words' | 'layers' | 'quote' | 'fan' | 'help';
 }
 const {
   heading,
@@ -32,10 +35,21 @@ const {
   locale,
   artSlot,
   path = '',
+  layout,
 } = Astro.props;
 const pillar = heroPillarClass(locale, path);
 /* A pillar page can bring its own visual instead of the arched image. */
-const hasVisual = Astro.slots.has('visual');
+/* A conditional element in a slot counts as a filled slot even when it renders nothing, so
+   check what each slot actually renders. */
+const filled = async (name: string) =>
+  Astro.slots.has(name) ? (await Astro.slots.render(name)).trim() : '';
+const visualHtml = await filled('visual');
+const copyHtml = await filled('copy');
+const bandHtml = await filled('band');
+const hasVisual = visualHtml !== '';
+const hasCopy = copyHtml !== '';
+const hasBand = bandHtml !== '';
+const shownActions = layout ? [] : actions;
 const menuLabels = navigationFor(locale)?.sections.map((section) => section.menu.label) ?? [];
 const trail = heroTrail(crumbs, eyebrow, menuLabels);
 /* A paragraph that only repeats the lead is shown once. */
@@ -43,12 +57,19 @@ const plain = (text: string) => text.replace(/\s+/g, ' ').trim();
 const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(plain(paragraph)));
 ---
 
-<section class:list={['hero page-hero', pillar]}>
+<section
+  class:list={['hero page-hero', pillar, { 'page-hero--band': hasBand }]}
+  data-hero-layout={layout}
+>
   <div class="wrap">
     <div
       class:list={[
         'page-hero__grid',
-        { 'page-hero__grid--plain': !artSlot && !hasVisual, 'page-hero__grid--visual': hasVisual },
+        {
+          'page-hero__grid--plain': (!artSlot || layout) && !hasVisual,
+          'page-hero__grid--visual': hasVisual,
+          [`page-hero__grid--${layout}`]: Boolean(layout),
+        },
       ]}
     >
       <div class="page-hero__content">
@@ -58,9 +79,16 @@ const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(pl
         {lead && <p class="lead">{lead}</p>}
         {extra.map((paragraph) => <p>{paragraph}</p>)}
         {
-          actions.length > 0 && (
+          hasCopy && (
+            <div class="page-hero__copy">
+              <Fragment set:html={copyHtml} />
+            </div>
+          )
+        }
+        {
+          shownActions.length > 0 && (
             <div class="actions">
-              {actions.map((action) => (
+              {shownActions.map((action) => (
                 <a class:list={['button', { 'button--quiet': action.quiet }]} href={action.href}>
                   {action.label}
                 </a>
@@ -72,12 +100,19 @@ const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(pl
       {
         hasVisual ? (
           <div class="page-hero__visual">
-            <slot name="visual" />
+            <Fragment set:html={visualHtml} />
           </div>
         ) : (
-          artSlot && <HeroArt slot={artSlot} />
+          artSlot && !layout && <HeroArt slot={artSlot} />
         )
       }
     </div>
   </div>
+  {
+    hasBand && (
+      <div class="page-hero__band">
+        <Fragment set:html={bandHtml} />
+      </div>
+    )
+  }
 </section>

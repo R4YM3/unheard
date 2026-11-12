@@ -58,6 +58,13 @@ const compactFinancialArticles = data.translationKey === 'financieel-misbruik';
 const band = pillarBand(data.locale, route);
 /* Each pillar's own hero visual (Dutch pillar hubs only; others keep the arched image). */
 const heroVisual = data.locale === 'nl' ? data.translationKey : undefined;
+const heroLayouts = {
+  'wat-voel-ik': 'words',
+  'begrijp-het': 'layers',
+  herstel: 'quote',
+  hulpmiddelen: 'fan',
+} as const;
+const heroLayout = heroVisual ? heroLayouts[heroVisual as keyof typeof heroLayouts] : undefined;
 const homeEntry = heroVisual === 'begrijp-het' ? await findByKey('nl', 'home') : undefined;
 const homeScenarios = homeEntry && homeEntry.collection === 'hubs' ? homeEntry.data.scenarios : [];
 /* Hubs weave their explanation and their lists: chapter, list, chapter, list, the rest. */
@@ -182,15 +189,36 @@ const mainEntityId = termSet
   mainEntityId={mainEntityId}
   moreLinks={data.cardsPlacement === 'inline' ? [] : data.cards}
   actions={heroActions}
+  heroLayout={heroLayout}
 >
-  {heroVisual === 'wat-voel-ik' && <FeelingWords slot="hero-visual" locale={data.locale} />}
   {
-    heroVisual === 'begrijp-het' && homeScenarios.length > 0 && (
-      <LayeredMoment slot="hero-visual" scenarios={homeScenarios} />
+    heroVisual === 'wat-voel-ik' && (
+      <FeelingWords slot="hero-visual" locale={data.locale} part="words" />
     )
   }
-  {heroVisual === 'herstel' && <RecoveryLine slot="hero-visual" locale={data.locale} />}
-  {heroVisual === 'hulpmiddelen' && <CardFan slot="hero-visual" locale={data.locale} />}
+  {
+    heroVisual === 'wat-voel-ik' && (
+      <FeelingWords slot="hero-copy" locale={data.locale} part="preview" />
+    )
+  }
+  {
+    heroVisual === 'begrijp-het' && homeScenarios.length > 0 && (
+      <LayeredMoment slot="hero-visual" scenarios={homeScenarios} part="stack" />
+    )
+  }
+  {heroVisual === 'begrijp-het' && <LayeredMoment slot="hero-copy" part="controls" />}
+  {
+    heroVisual === 'herstel' && (
+      <RecoveryLine slot="hero-visual" locale={data.locale} part="quote" />
+    )
+  }
+  {heroVisual === 'herstel' && <RecoveryLine slot="hero-band" locale={data.locale} part="line" />}
+  {heroVisual === 'hulpmiddelen' && <CardFan slot="hero-visual" locale={data.locale} part="fan" />}
+  {
+    heroVisual === 'hulpmiddelen' && (
+      <CardFan slot="hero-copy" locale={data.locale} part="preview" />
+    )
+  }
   {
     !woven && !isEmptyBody && (
       <div class="wrap reading prose">
