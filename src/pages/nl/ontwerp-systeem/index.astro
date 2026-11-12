@@ -43,8 +43,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <div class="wrap reading">
       <h2 id="pijlerkleuren-heading">Pijlerkleuren</h2>
       <p>
-        Vergelijk de kleur en het patroon van de drie pijlers. De tweede band voor Begrijpen laat
-        dezelfde link op een neutrale achtergrond zien.
+        Vergelijk de kleur en het patroon van de drie pijlers. Bij de gekleurde Begrijpen-band valt
+        een zachte schaduw over de band erboven. De tweede band voor Begrijpen laat dezelfde link op
+        een neutrale achtergrond zien.
       </p>
     </div>
     <div class="section section--tight section--soft pillar-sample pillar-sample--feeling">
@@ -102,6 +103,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     background-size: 0.45rem 0.45rem;
   }
   .pillar-sample--understanding {
+    position: relative;
+    box-shadow: 0 -0.55rem 1rem -0.65rem color-mix(in srgb, var(--text) 30%, transparent);
     --pillar-pattern: repeating-linear-gradient(
       90deg,
       var(--border-strong) 0 1px,
