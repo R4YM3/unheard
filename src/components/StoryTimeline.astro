@@ -175,9 +175,7 @@ const phaseNames = milestones.filter((milestone) => milestone.phase).map((m) => 
             </li>
             {rails.map((moment) => (
               <li class="st__row st__row--rail">
-                <div class="st__label">
-                  <p class="st__rail-kind">Mijlpaal</p>
-                </div>
+                <div class="st__label" aria-hidden="true" />
                 <div class="st__node st__node--rail" aria-hidden="true" />
                 <details class="st__rail">
                   <summary>{moment.title}</summary>
@@ -438,15 +436,24 @@ const phaseNames = milestones.filter((milestone) => milestone.phase).map((m) => 
   }
 
   .st__card > summary {
-    display: grid;
-    gap: 0.35rem;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.5rem;
     min-height: 0;
-    padding: 1.1rem 3.25rem 1.1rem 1.25rem;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .st__card > summary .st__title {
+    flex: 0 1 auto;
   }
 
   .st__card > summary::after {
-    inset-block-start: 1.35rem;
-    inset-inline-end: 1.25rem;
+    order: 1;
+  }
+
+  .st__card > summary .st__teaser {
+    order: 2;
+    flex-basis: 100%;
   }
 
   .st__title {

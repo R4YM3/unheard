@@ -24,6 +24,7 @@ import {
 } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 import { ui } from '../i18n/ui';
+import { pillarBand } from '../lib/pillar';
 import FeelingWords from '../components/heroes/FeelingWords.astro';
 import LayeredMoment from '../components/heroes/LayeredMoment.astro';
 import RecoveryLine from '../components/heroes/RecoveryLine.astro';
@@ -53,6 +54,9 @@ const inlineCards = data.cards.filter((card) => data.cardsPlacement === 'inline'
 const isEmptyBody = !entry.body?.trim();
 const route = routeFor(entry);
 const compactFinancialArticles = data.translationKey === 'financieel-misbruik';
+/* Overview page lists alternate: the pillar's colour, then paper, then the colour again. */
+const band = pillarBand(data.locale, route);
+const banded = (index: number) => index % 2 === 0;
 /* Each pillar's own hero visual (Dutch pillar hubs only; others keep the arched image). */
 const heroVisual = data.locale === 'nl' ? data.translationKey : undefined;
 const heroLayouts = {
@@ -224,7 +228,6 @@ const mainEntityId = termSet
       </div>
     )
   }
-  {!woven && data.chooser && <StartChooser locale={data.locale} chapter={{ band: false }} />}
   {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
   {data.founderNote?.placement === 'before' && <FounderNote note={data.founderNote} />}
   {
@@ -235,9 +238,11 @@ const mainEntityId = termSet
             'section',
             {
               'section--tight': compactFinancialArticles,
-              'section--block': true,
+              'section--block': !banded(index),
+              'section--band': banded(index),
             },
           ]}
+          style={banded(index) ? `--section-bg: ${band}` : undefined}
           aria-labelledby={`listing-${index}-heading`}
           id={listingId(listing, index)}
         >
@@ -300,7 +305,15 @@ const mainEntityId = termSet
       </ProseSlice>
     )
   }
-  {woven && data.chooser && <StartChooser locale={data.locale} chapter={{ band: false }} />}
+  {
+    data.chooser && (
+      <StartChooser
+        locale={data.locale}
+        chapter={{ band: false }}
+        bandColour={banded(listings.length) ? band : undefined}
+      />
+    )
+  }
   {data.feelingTimeline && <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />}
   {
     inlineCards.length > 0 && (
