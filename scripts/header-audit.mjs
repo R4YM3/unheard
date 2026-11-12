@@ -159,18 +159,17 @@ try {
     );
     assert(await mobile.$('.word-finder-invite a[href="nl/hulpmiddelen/help-me-woorden-vinden/"]'));
     if (javascript) {
-      /* As many examples as the page offers (home shows four). */
-      const exampleCount = await mobile.$$eval('[data-pv-select] option', (nodes) => nodes.length);
-      assert(exampleCount >= 1, 'Expected at least one perspective example');
-      for (let index = 0; index < exampleCount; index += 1) {
-        await mobile.select('[data-pv-select]', String(index));
-        assert.deepEqual(
-          await mobile.$$eval('[data-pv-panel]:not([hidden])', (nodes) =>
-            nodes.map((node) => node.dataset.pvPanel),
-          ),
-          [String(index)],
-        );
-      }
+      const track = await mobile.$eval('[data-pv-scenes]', (node) => {
+        const cards = [...node.querySelectorAll('[data-pv-panel]:not([hidden])')];
+        const right = node.getBoundingClientRect().right;
+        const next = cards[1]?.getBoundingClientRect();
+        return {
+          count: cards.length,
+          canScroll: node.scrollWidth > node.clientWidth,
+          nextVisible: Boolean(next && next.left < right && next.right > right),
+        };
+      });
+      assert.deepEqual(track, { count: 4, canScroll: true, nextVisible: true });
       await mobile.emulateMediaType('print');
       assert.equal(
         await mobile.$$eval(

@@ -29,8 +29,16 @@ interface Props {
    * 'split' (variant A): side by side on wide screens, stacked on mobile; direct buttons only.
    */
   layout?: 'stacked' | 'split';
+  swipe?: boolean;
 }
-const { scenarios, id = 'perspectief', locale = 'nl', layout = 'stacked', ...rest } = Astro.props;
+const {
+  scenarios,
+  id = 'perspectief',
+  locale = 'nl',
+  layout = 'stacked',
+  swipe = false,
+  ...rest
+} = Astro.props;
 const t = ui(locale);
 const heading = rest.heading ?? t.perspectiveHeading;
 const intro = rest.intro ?? t.perspectiveIntro;
@@ -58,6 +66,7 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
         { 'pv--many': layout === 'stacked' && scenarios.length > 3 },
       ]}
       data-pv
+      data-pv-swipe={swipe || undefined}
     >
       {
         scenarios.length > 1 && (
@@ -76,7 +85,7 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
         )
       }
       {
-        layout === 'stacked' && scenarios.length > 3 && (
+        !swipe && layout === 'stacked' && scenarios.length > 3 && (
           <label class="pv-select" hidden data-pv-select-label>
             <span>{t.chooseExample}</span>
             <select
@@ -90,33 +99,41 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
           </label>
         )
       }
-      {
-        scenarios.map((scenario, index) => (
-          <article class="pv-scene" id={`${id}-scene-${index}`} data-pv-panel={index}>
-            <h3 class="pv-scene__title">{scenario.label}</h3>
-            <dl class="pv-lines">
-              <div class="pv-line pv-line--outside">
-                <dt>{outsideLabel}</dt>
-                <dd>
-                  <q>{unquote(scenario.outside)}</q>
-                </dd>
+      <div class="pv-scenes" data-pv-scenes aria-label={swipe ? heading : undefined}>
+        {
+          scenarios.map((scenario, index) => (
+            <article class="pv-scene" id={`${id}-scene-${index}`} data-pv-panel={index}>
+              <h3 class="pv-scene__title">{scenario.label}</h3>
+              <dl class="pv-lines">
+                <div class="pv-line pv-line--outside">
+                  <dt>{outsideLabel}</dt>
+                  <dd>
+                    <q>{unquote(scenario.outside)}</q>
+                  </dd>
+                </div>
+                <div class="pv-line pv-line--inside">
+                  <dt>{insideLabel}</dt>
+                  <dd>{scenario.inside}</dd>
+                </div>
+              </dl>
+              <div class="pv-detail">
+                <p class="pv-context">{scenario.context}</p>
+                {scenario.followUp && (
+                  <p>
+                    <a
+                      class={swipe ? 'button button--quiet' : 'text-link'}
+                      data-pv-follow-up
+                      href={scenario.followUp.href}
+                    >
+                      {scenario.followUp.label}
+                    </a>
+                  </p>
+                )}
               </div>
-              <div class="pv-line pv-line--inside">
-                <dt>{insideLabel}</dt>
-                <dd>{scenario.inside}</dd>
-              </div>
-            </dl>
-            <p class="pv-context">{scenario.context}</p>
-            {scenario.followUp && (
-              <p>
-                <a class="text-link" href={scenario.followUp.href}>
-                  {scenario.followUp.label}
-                </a>
-              </p>
-            )}
-          </article>
-        ))
-      }
+            </article>
+          ))
+        }
+      </div>
       {
         scenarios.length > 1 && (
           <p
@@ -142,7 +159,14 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
     const select = root.querySelector<HTMLSelectElement>('[data-pv-select]');
     const status = root.querySelector<HTMLElement>('[data-pv-status]');
     const labels: string[] = JSON.parse(status?.dataset.labels ?? '[]');
+    const mobile = window.matchMedia('screen and (max-width: 40rem)');
+    const track = root.querySelector<HTMLElement>('[data-pv-scenes]');
+    let active = 0;
     const show = (scene: number, announce = false) => {
+      active = scene;
+      const swipe = root.hasAttribute('data-pv-swipe') && mobile.matches;
+      if (swipe) track?.setAttribute('tabindex', '0');
+      else track?.removeAttribute('tabindex');
       // A short status names the example; the example itself is not a live region.
       if (status && announce) status.textContent = labels[scene] ?? '';
       if (select) select.value = String(scene);
@@ -150,7 +174,7 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
         button.setAttribute('aria-pressed', String(index === scene)),
       );
       scenes.forEach((section, index) => {
-        section.hidden = index !== scene;
+        section.hidden = !swipe && index !== scene;
       });
     };
     buttons.forEach((button) =>
@@ -168,6 +192,11 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
       return true;
     };
     window.addEventListener('hashchange', showLinkedScene);
+    if (root.hasAttribute('data-pv-swipe')) {
+      mobile.addEventListener('change', () => {
+        if (!showLinkedScene()) show(active);
+      });
+    }
     if (!showLinkedScene()) show(0);
   };
 
@@ -175,6 +204,40 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
 </script>
 
 <style>
+  .pv-scenes {
+    display: contents;
+  }
+  [data-pv-swipe] .pv-detail {
+    margin-block-start: 1.25rem;
+    padding-block-start: 0.85rem;
+    border-block-start: 1px solid var(--border);
+  }
+  [data-pv-swipe] .pv-context {
+    margin-block-start: 0;
+    font-size: 0.95rem;
+  }
+  [data-pv-swipe] .pv-detail > p + p {
+    margin-block: 0.75rem 0;
+  }
+  @media screen and (max-width: 40rem) {
+    [data-pv-swipe] .pv-choice {
+      display: none;
+    }
+    [data-pv-swipe] .pv-scenes {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 88%;
+      gap: 0.75rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0.2rem 0.2rem 0.55rem;
+    }
+    [data-pv-swipe] .pv-scene {
+      min-width: 0;
+      margin: 0;
+      scroll-snap-align: start;
+    }
+  }
   .pv-select {
     display: none;
   }
