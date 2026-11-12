@@ -233,7 +233,7 @@ try {
   assert.equal(await home.$('#woorden-vinden'), null, 'The word finder is part of Beginnen');
   /* Neighbouring chapters never share a band colour. */
   const bands = await home.$$eval('main > section, main > .section', (nodes) =>
-    nodes.map((node) => getComputedStyle(node).backgroundColor),
+    nodes.map((node) => globalThis.getComputedStyle(node).backgroundColor),
   );
   for (let i = 1; i < bands.length; i += 1) {
     assert.notEqual(bands[i], bands[i - 1], `Bands ${i - 1} and ${i} have the same colour`);
@@ -245,7 +245,8 @@ try {
   assert.equal(
     await home.$$eval(
       `${carousel} [data-pc-slide]`,
-      (nodes) => nodes.filter((node) => getComputedStyle(node).visibility === 'visible').length,
+      (nodes) =>
+        nodes.filter((node) => globalThis.getComputedStyle(node).visibility === 'visible').length,
     ),
     1,
   );
@@ -267,8 +268,8 @@ try {
   await home.click(`${carousel} [data-pc-prev]`);
   assert.equal(await currentQuote(), firstQuote, 'Previous goes back');
   const align = await home.$eval(`${carousel} [data-current]`, (node) => [
-    getComputedStyle(node.querySelector('.pv-line--outside')).textAlign,
-    getComputedStyle(node.querySelector('.pv-line--inside')).textAlign,
+    globalThis.getComputedStyle(node.querySelector('.pv-line--outside')).textAlign,
+    globalThis.getComputedStyle(node.querySelector('.pv-line--inside')).textAlign,
   ]);
   assert.deepEqual(align, ['start', 'end'], 'Je hoort aligns to the start, Je voelt to the end');
   await home.setJavaScriptEnabled(false);
@@ -282,7 +283,7 @@ try {
         nodes.filter(
           (node) =>
             node.getBoundingClientRect().height > 0 &&
-            getComputedStyle(node).visibility === 'visible',
+            globalThis.getComputedStyle(node).visibility === 'visible',
         ).length,
     ),
     slideCount,
