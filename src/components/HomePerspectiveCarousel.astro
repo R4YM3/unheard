@@ -507,26 +507,19 @@ const ordered = scenarios
     }
   }
 
+  /* Like a chat: the next example comes in from above, going back it comes from below. */
   @keyframes pc-from-end {
     from {
       opacity: 0;
-      transform: translateX(1.75rem);
+      transform: translateY(-2rem);
     }
   }
 
   @keyframes pc-from-start {
     from {
       opacity: 0;
-      transform: translateX(-1.75rem);
+      transform: translateY(2rem);
     }
-  }
-
-  :global([dir='rtl']) .pc-enter {
-    animation-name: pc-from-start;
-  }
-
-  :global([dir='rtl']) .pc-enter--back {
-    animation-name: pc-from-end;
   }
 
   @keyframes pc-shake {
