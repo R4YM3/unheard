@@ -665,7 +665,7 @@ try {
           ).length,
       );
     await hero.goto(`${origin}/nl/wat-voel-ik/`, { waitUntil: 'networkidle0' });
-    assert.equal(await visible('.page-hero .fw-word'), 14, 'Fourteen feeling words, as links');
+    assert.equal(await visible('.page-hero .fw-word'), 17, 'Seventeen feeling words, as links');
     await hero.goto(`${origin}/nl/begrijp-het/`, { waitUntil: 'networkidle0' });
     assert.equal(
       await visible('.page-hero [data-lm-moment]'),

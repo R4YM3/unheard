@@ -64,6 +64,8 @@ const {
   subpage,
 } = Astro.props;
 const hasRail = Astro.slots.has('rail');
+const hasAfter = Astro.slots.has('after');
+const hasSources = showSources && entry.data.sources.length > 0;
 const { data } = entry;
 const route = subpage?.path ?? routeFor(entry);
 const crumbs = [
@@ -238,6 +240,18 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
         )
       }
       <slot />
+      {
+        /* The dates close the article itself, directly below its text. Without sources, the
+           same line says the page rests on experience, so no empty Bronnen band is needed. */
+        articleType && (
+          <ArticleMeta
+            publishedAt={data.publishedAt}
+            updatedAt={data.updatedAt}
+            locale={data.locale}
+            note={showSources && data.sources.length === 0 ? ui(data.locale).noSources : undefined}
+          />
+        )
+      }
     </div>
   </div>
   {
@@ -245,16 +259,17 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
       personal note) and everything after them run full width, so the rail never floats
       over a coloured band. */
   }
-  <slot name="after" />
-  {showSources && <SourceList sources={data.sources} />}
   {
-    articleType && (
-      <ArticleMeta
-        author={data.author}
-        publishedAt={data.publishedAt}
-        updatedAt={data.updatedAt}
-        locale={data.locale}
-      />
+    /* Below the article, every block is a band: the pillar's colour (with its pattern) and
+       the page colour in turn, the sources included. */
+    (hasAfter || hasSources) && (
+      <div
+        class:list={['detail-bands', `pillar-bands--${pillarName(data.locale, route)}`]}
+        style={`--pillar-band: ${pillarColour}`}
+      >
+        <slot name="after" />
+        {hasSources && <SourceList sources={data.sources} />}
+      </div>
     )
   }
   <RelatedContent items={related} band={relatedBand} pillar={relatedPillar} />

@@ -35,6 +35,7 @@ cards:
     label: 'Begin met de vragen'
 related: [hulpmiddelen-over-de-kaarten, woorden-vinden, hulp-vinden, herstel, wat-voel-ik]
 reviewNotes:
+  - 'Redactie: Waar kan ik beginnen? heeft hier eigen tekst (src/data/start-chooser.ts, toolsChooser en chooserCopy.tools). Klopt de toon en de keuze van de kaarten?'
   - 'Redactie: is de zin over browsers die tekst terugzetten nauwkeurig genoeg, of moet die alleen op veilig-gebruik staan?'
 ---
 
