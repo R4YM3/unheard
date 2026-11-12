@@ -328,6 +328,28 @@ try {
     await page.close();
   }
   console.log('Word finder checks: keyboard route, privacy and contrast × 2 themes');
+
+  /* Overview intro: the text side is always at least as long as the card side. */
+  const intro = await browser.newPage();
+  const overviews = ['wat-voel-ik', 'begrijp-het', 'herstel', 'hulpmiddelen', 'mijn-verhaal'];
+  for (const width of [900, 1100, 1280, 1440, 1920]) {
+    await intro.setViewport({ width, height: 1000 });
+    for (const slug of overviews) {
+      await intro.goto(`${origin}/nl/${slug}/`, { waitUntil: 'networkidle0' });
+      const [main, side] = await intro.evaluate(() =>
+        ['.intro-block__main', '.intro-block__side'].map(
+          (selector) => globalThis.document.querySelector(selector)?.offsetHeight ?? 0,
+        ),
+      );
+      if (!main) fail(`/nl/${slug}/ has no intro block`);
+      else if (main < side)
+        fail(
+          `/nl/${slug}/ at ${width}px: intro text (${main}px) shorter than the side (${side}px)`,
+        );
+    }
+  }
+  await intro.close();
+  console.log('Overview intro: text side never shorter than the card side, 900 to 1920px');
 } finally {
   await browser?.close();
   server.kill();
