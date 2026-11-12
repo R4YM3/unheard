@@ -6,25 +6,23 @@ interface Props {
   id: string;
   scenario: CollectionEntry<'hubs'>['data']['scenarios'][number];
   sectionId?: string;
-  followsPaper?: boolean;
+  concept?: { href: string; label: string };
 }
-const { id, scenario, sectionId, followsPaper } = Astro.props;
+const { id, scenario, sectionId, concept } = Astro.props;
 ---
 
 <section
-  class:list={[
-    'section section--tint pillar--recognition home-conversation',
-    { 'home-conversation--first': sectionId, 'home-conversation--after-paper': followsPaper },
-  ]}
+  class="section section--tint pillar--recognition"
   id={sectionId}
   aria-labelledby={`${id}-heading`}
 >
   <div class="wrap">
     <h2 id={`${id}-heading`} class="sr-only">Voorbeeld: {scenario.label}</h2>
-    <div id={id} class="pv pv--split">
+    <div id={id} class="pv pv--split" data-home-conversation>
       <PerspectiveLines
         outside={scenario.outside}
         inside={scenario.inside}
+        splitOutsideOnDesktop
         outsideLabel="Je hoort"
         insideLabel="Je voelt"
       />
@@ -34,12 +32,36 @@ const { id, scenario, sectionId, followsPaper } = Astro.props;
             <a class="button button--quiet" href={scenario.followUp.href}>
               {scenario.followUp.label}
             </a>
+            {concept && (
+              <a class="button button--quiet" href={concept.href}>
+                {concept.label}
+              </a>
+            )}
           </div>
         )
       }
     </div>
   </div>
 </section>
+
+<script>
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.intersectionRatio < 0.6) continue;
+          entry.target.classList.add('home-conversation-shake');
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.6 },
+    );
+
+    document.querySelectorAll('[data-home-conversation] .pv-line--outside').forEach((bubble) => {
+      observer.observe(bubble);
+    });
+  }
+</script>
 
 <style>
   .pv :global(.pv-line--outside) {
@@ -52,25 +74,89 @@ const { id, scenario, sectionId, followsPaper } = Astro.props;
     text-align: end;
   }
 
-  .actions {
-    justify-content: center;
+  @media screen {
+    .pv :global(.pv-line--outside),
+    .pv :global(.pv-line--inside) {
+      width: fit-content;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: clamp(1rem, 2.5vw, 1.5rem);
+      border-radius: 1.25rem;
+    }
+
+    .pv :global(.pv-line--outside) {
+      justify-self: start;
+      background: var(--surface);
+      position: relative;
+    }
+
+    .pv :global(.pv-line--outside)::before {
+      position: absolute;
+      inset-inline-end: 100%;
+      inset-block-start: 1.25rem;
+      border-block: 0.45rem solid transparent;
+      border-inline-end: 0.6rem solid var(--surface);
+      content: '';
+    }
+
+    .pv :global(.pv-line--inside) {
+      justify-self: end;
+      border: 2px dashed var(--border-strong);
+      background: transparent;
+    }
   }
 
-  @media screen {
-    .home-conversation {
-      --conversation-above: var(--safe);
-      background-image:
-        repeating-linear-gradient(-45deg, var(--conversation-above) 0 14px, transparent 14px 28px),
-        repeating-linear-gradient(-45deg, var(--safe) 0 14px, transparent 14px 28px);
-      background-position: top, bottom;
-      background-repeat: no-repeat;
-      background-size: 100% 12px;
+  @media screen and (min-width: 52rem) {
+    .pv :global(.pv-lines) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.5rem;
     }
-    .home-conversation--first {
-      --conversation-above: var(--bg);
+
+    .pv :global(.pv-line--outside),
+    .pv :global(.pv-line--inside) {
+      max-width: calc((100% - 1.5rem) / 2);
     }
-    .home-conversation--after-paper {
-      --conversation-above: var(--paper-section);
+
+    .pv :global(.pv-line--outside) {
+      min-width: min(24rem, calc((100% - 1.5rem) / 2));
     }
+  }
+
+  @media screen and (max-width: 51.99rem) {
+    .pv :global(.pv-line--outside) {
+      max-width: calc(100% - 1.5rem);
+    }
+
+    .pv :global(.pv-line--inside) {
+      max-width: calc(100% - 1.5rem);
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .pv :global(.home-conversation-shake) {
+      animation: conversation-shake 460ms ease-in-out;
+    }
+  }
+
+  @keyframes conversation-shake {
+    18% {
+      transform: rotate(-3deg);
+    }
+    36% {
+      transform: rotate(2.5deg);
+    }
+    54% {
+      transform: rotate(-1.75deg);
+    }
+    72% {
+      transform: rotate(1deg);
+    }
+  }
+
+  .actions {
+    justify-content: center;
+    margin-block-start: 2rem;
   }
 </style>

@@ -132,9 +132,37 @@ const homeLists = [
             id="perspectief-scene-0"
             sectionId="perspectief"
             scenario={data.scenarios[0]}
+            concept={{ href: 'nl/begrippen/gaslighting/', label: 'Wat is gaslighting?' }}
           />
         )}
-        <StartChooser locale={data.locale} />
+        <div class="section" id="gedachte">
+          <div class="wrap reading">
+            <p class="eyebrow home-thought-label">
+              <a href={home.timelineTeaser.href}>Uit mijn verhaal</a>
+            </p>
+            <blockquote class="home-story-quote">
+              <p>
+                “Als ik iets voor mezelf wilde, kon ik dagen nadenken over hoe ik het moest
+                brengen.”
+              </p>
+            </blockquote>
+          </div>
+        </div>
+        <StartChooser locale={data.locale} columns />
+        <div class="section home-story-quote-band" id="verhaal-citaat">
+          <div class="wrap reading">
+            <blockquote class="home-story-quote">
+              <p>
+                “Ook nadat ik was weggegaan, twijfelde ik nog aan mezelf en mijn herinneringen.”
+              </p>
+            </blockquote>
+            <div class="actions">
+              <a class="button button--quiet" href={home.timelineTeaser.href}>
+                {home.timelineTeaser.label}
+              </a>
+            </div>
+          </div>
+        </div>
         {data.scenarios[2] && (
           <HomeConversation id="perspectief-scene-2" scenario={data.scenarios[2]} />
         )}
@@ -167,33 +195,42 @@ const homeLists = [
         <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
         <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
         {home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        <p>
-          <a class="inline-link" href="nl/over/#waarom-ik-hiermee-begon"
-            >Lees waarom ik Ongehoord begon</a
-          >.
-        </p>
-        <p>
-          Zoek je herkenning of wil je weten of iemand anders dit ook voelde? In mijn verhaal lees
-          je hoe het voor mij was.
-        </p>
+        {
+          !dutch && (
+            <p>
+              Zoek je herkenning of wil je weten of iemand anders dit ook voelde? In mijn verhaal
+              lees je hoe het voor mij was.
+            </p>
+          )
+        }
         <div class="actions">
           <a class="button" href={home.storyTeaser.href}>{home.storyTeaser.label}</a>
-          <a class="text-link" href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a>
+          {
+            !dutch && (
+              <a class="text-link" href={home.timelineTeaser.href}>
+                {home.timelineTeaser.label}
+              </a>
+            )
+          }
+          <a class="text-link" href="nl/over/#waarom-ik-hiermee-begon">Waarom ik Ongehoord begon</a>
         </div>
       </div>
     </div>
   </section>
-  {
-    dutch && data.scenarios[1] && (
-      <HomeConversation id="perspectief-scene-1" scenario={data.scenarios[1]} followsPaper />
-    )
-  }
   <section class="section section--soft" aria-labelledby="herstel-heading" id="herstel">
     <div class="wrap">
       <div class="section-heading">
         <div>
           <p class="eyebrow">{home.resources.eyebrow}</p>
           <h2 id="herstel-heading">{home.resources.heading}</h2>
+          {
+            dutch && (
+              <p>
+                Misschien wil je weer voelen wat je zelf wilt, oefenen met grenzen of met iemand
+                praten over wat je meemaakt.
+              </p>
+            )
+          }
         </div>
       </div>
       <CardGrid
@@ -224,6 +261,27 @@ const homeLists = [
 </EntryLayout>
 
 <style>
+  .home-story-quote-band .actions {
+    justify-content: center;
+    margin-block-start: 1.5rem;
+  }
+
+  .home-thought-label {
+    text-align: center;
+  }
+
+  .home-story-quote {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .home-story-quote p {
+    margin: 0;
+  }
+
   .home-hero-visual {
     display: contents;
   }

@@ -4,8 +4,9 @@ import { cardFor, findByKey, type LinkCard } from '../lib/content';
 
 interface Props {
   locale?: string;
+  columns?: boolean;
 }
-const { locale = 'nl' } = Astro.props;
+const { locale = 'nl', columns = false } = Astro.props;
 const options = await Promise.all(
   startChooser.map(async (option) => {
     const links: LinkCard[] = [];
@@ -20,49 +21,114 @@ const options = await Promise.all(
 ---
 
 <section class="section section--soft" aria-labelledby="start-heading" id="beginnen">
-  <div class="wrap reading">
+  <div class:list={['wrap', columns ? 'start-chooser-layout' : 'reading']}>
     <h2 id="start-heading">Waar kan ik beginnen?</h2>
     <p>
       Begin bij wat je nu nodig hebt of kies de situatie die het dichtst bij jouw ervaring komt.
     </p>
-    <h3>Waar heb je nu behoefte aan?</h3>
-    <ul>
-      <li>
-        <a class="inline-link" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
-          >Ik twijfel steeds aan mezelf</a
-        >
-      </li>
-      <li>
-        <a class="inline-link" href="nl/hulpmiddelen/help-me-woorden-vinden/"
-          >Ik wil begrijpen wat ik voel</a
-        >
-      </li>
-      <li><a class="inline-link" href="nl/herstel/">Hoe vind ik weer wat rust?</a></li>
-    </ul>
-    <h3>Welke situatie past bij jou?</h3>
-    <div class="start-chooser">
-      {
-        options.map((option) => (
-          <details name="start-chooser">
-            <summary>{option.question}</summary>
-            <div class="start-chooser__body">
-              <p>{option.intro}</p>
-              <ul>
-                {option.links.map((link) => (
-                  <li>
-                    <a href={link.href}>
-                      <span>
-                        {link.title}
-                        <span class="note">{link.eyebrow}</span>
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </details>
-        ))
-      }
+    <div class="start-chooser-groups">
+      <div>
+        <h3>Waar heb je nu behoefte aan?</h3>
+        <ul class="start-chooser-direct">
+          <li>
+            <a class="inline-link" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
+              >Ik twijfel steeds aan mezelf</a
+            >
+          </li>
+          <li>
+            <a class="inline-link" href="nl/hulpmiddelen/help-me-woorden-vinden/"
+              >Ik wil begrijpen wat ik voel</a
+            >
+          </li>
+          <li><a class="inline-link" href="nl/herstel/">Hoe vind ik weer wat rust?</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Welke situatie past bij jou?</h3>
+        <div class="start-chooser">
+          {
+            options.map((option) => (
+              <details name="start-chooser">
+                <summary>{option.question}</summary>
+                <div class="start-chooser__body">
+                  <p>{option.intro}</p>
+                  <ul>
+                    {option.links.map((link) => (
+                      <li>
+                        <a href={link.href}>
+                          <span>
+                            {link.title}
+                            <span class="note">{link.eyebrow}</span>
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .start-chooser-layout > p {
+    max-width: 60ch;
+  }
+
+  .start-chooser-layout .start-chooser-groups {
+    display: grid;
+    gap: clamp(1.75rem, 4vw, 3.5rem);
+    margin-block-start: 2rem;
+  }
+
+  .start-chooser-layout .start-chooser-direct {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .start-chooser-layout .start-chooser-direct a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+  }
+
+  .start-chooser-layout .start-chooser-direct a::after {
+    content: '→' / '';
+  }
+
+  .start-chooser-layout .start-chooser-direct li + li {
+    margin-block-start: 0.5rem;
+  }
+
+  .start-chooser-layout details {
+    margin: 0;
+    border: 0;
+    border-block-end: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .start-chooser-layout details + details {
+    margin-block-start: 0;
+  }
+
+  .start-chooser-layout summary {
+    padding-inline: 0.75rem;
+  }
+
+  @media (min-width: 52rem) {
+    .start-chooser-layout .start-chooser-groups {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
