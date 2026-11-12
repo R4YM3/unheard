@@ -643,7 +643,7 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   }
   .section--dossier {
     position: relative;
-    box-shadow: 0 -0.55rem 1rem -0.65rem rgb(0 0 0 / 0.24);
+    box-shadow: 0 -0.9rem 1.6rem -0.85rem rgb(0 0 0 / 0.24);
   }
 }
 .hero + .section--tape {
@@ -1792,7 +1792,7 @@ a.card:focus-visible,
   border-radius: 0.5rem;
   background: var(--safe);
 }
-.timeline-lens h4 {
+.timeline-lens :is(h4, h5) {
   margin-bottom: 0.25rem;
 }
 .timeline-lens p {

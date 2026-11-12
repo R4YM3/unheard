@@ -49,6 +49,7 @@ timeline:
         text: Ik voel dingen snel aan. Ik zie niet snel slechte intenties en pas me snel aan.
   milestones:
     - eyebrow: Gezien worden
+      phase: Hoe het begon
       title: Iemand deed iets voor mij, en dat betekende veel.
       theme: emotional
       lenses: []
@@ -76,6 +77,7 @@ timeline:
         - href: nl/wat-voel-ik/ik-zoek-steeds-bevestiging/
           label: Ik zoek steeds bevestiging
     - eyebrow: Geld
+      phase: Hoe ik mezelf verloor
       title: Mijn inkomen groeide, maar mijn ruimte niet.
       theme: money
       lenses: []
@@ -255,6 +257,7 @@ timeline:
         - href: nl/begrippen/financieel-economisch-misbruik/
           label: Financieel en economisch misbruik
     - eyebrow: Weggaan en terugkomen
+      phase: Weggaan en terugkomen
       title: Ik vertrok, maar bleef alles dragen.
       theme: emotional
       lenses: []

@@ -62,7 +62,7 @@ const trail = heroTrail(
     )
   }
   <section class="section section--soft" aria-labelledby="tijdlijn-heading" id="tijdlijn">
-    <div class="wrap reading">
+    <div class="wrap">
       <p class="eyebrow">{data.timeline.eyebrow}</p>
       <h2 id="tijdlijn-heading">{data.timeline.heading}</h2>
       {
@@ -70,15 +70,15 @@ const trail = heroTrail(
           <p class="timeline-withheld">{data.timeline.withheld}</p>
         ) : (
           <>
-            <p>{data.timeline.lead}</p>
+            <p class="reading">{data.timeline.lead}</p>
             <Timeline
               label={data.timeline.label}
               milestones={data.timeline.milestones}
               context={data.timeline.context}
             />
-            <p class="note">{data.timeline.note}</p>
+            <p class="note reading">{data.timeline.note}</p>
             {data.timeline.preview && (
-              <aside class="timeline-preview" aria-labelledby="timeline-preview-heading">
+              <aside class="timeline-preview reading" aria-labelledby="timeline-preview-heading">
                 <h3 id="timeline-preview-heading">{data.timeline.preview.heading}</h3>
                 <p>{data.timeline.preview.text}</p>
                 <details>

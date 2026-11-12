@@ -454,6 +454,39 @@ try {
     'Mobile menu: help visible when closed, clear of the dock, Escape closes and returns focus, one current page, one search link, 44px targets at 320x200, 320x568, 360, 390, 430 and landscape; every focused item visible, repeated Escape stays.',
   );
 
+  const story = await browser.newPage();
+  await story.setViewport({ width: 1280, height: 850 });
+  await story.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+  const phases = await story.$$('.timeline-phase');
+  assert.equal(phases.length, 3);
+  for (const phase of phases.slice(0, 2)) {
+    const geometry = await phase.evaluate((node) => {
+      const label = node.querySelector('.timeline-phase__label');
+      globalThis.scrollTo({
+        top: node.getBoundingClientRect().top + globalThis.scrollY + 180,
+        behavior: 'instant',
+      });
+      return {
+        top: label.getBoundingClientRect().top,
+        stickyTop: parseFloat(globalThis.getComputedStyle(label).top),
+      };
+    });
+    assert(
+      Math.abs(geometry.top - geometry.stickyTop) < 2,
+      'The current phase label stays under navigation',
+    );
+  }
+  await story.setViewport({ width: 375, height: 850 });
+  assert.equal(
+    await story.$eval(
+      '.timeline-phase__label',
+      (label) => globalThis.getComputedStyle(label).position,
+    ),
+    'static',
+    'Small screens use a single reading column',
+  );
+  await story.close();
+
   for (const width of [960, 1440]) {
     const slow = await browser.newPage();
     await slow.setViewport({ width, height: 1000 });

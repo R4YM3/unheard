@@ -13,9 +13,18 @@ interface Props {
   context?: TimelineData['context'];
 }
 const { label, milestones, context } = Astro.props;
+const phases: { title?: string; milestones: TimelineData['milestones'] }[] = [];
+for (const milestone of milestones) {
+  if (milestone.phase || phases.length === 0)
+    phases.push({ title: milestone.phase, milestones: [] });
+  phases.at(-1)?.milestones.push(milestone);
+}
+const phased = phases.some((phase) => phase.title);
+const MomentHeading = phased ? 'h4' : 'h3';
+const LensHeading = phased ? 'h5' : 'h4';
 ---
 
-<div class="story-timeline">
+<div class:list={['story-timeline', { 'story-timeline--phased': phased }]}>
   {
     context && (
       <aside class="timeline-context" aria-labelledby="timeline-context-heading">
@@ -37,101 +46,157 @@ const { label, milestones, context } = Astro.props;
       </aside>
     )
   }
-  <ol class="timeline" aria-label={label}>
-    {
-      milestones.map((milestone) => (
-        <>
-          <li class="timeline-milestone">
-            {milestone.theme && <TimelineTheme theme={milestone.theme} marker />}
-            <article class="card">
-              <p class="eyebrow">{milestone.eyebrow}</p>
-              <h3>{milestone.title}</h3>
-              <p>
-                <Marked text={milestone.description} />
-              </p>
-              {milestone.theme && <TimelineTheme theme={milestone.theme} />}
-              {milestone.lenses.length > 0 && (
-                <details
-                  class:list={{
-                    'needs-review': milestone.lenses.every((lens) =>
-                      lens.text.includes(REVIEW_MARKER),
-                    ),
-                  }}
-                >
-                  <summary>
-                    <TimelineTitle title="Lees de vier lagen van dit moment" />
-                  </summary>
-                  <div class="timeline-lenses">
-                    {milestone.lenses.map((lens) => (
-                      <section class="timeline-lens">
-                        <h4>{lens.heading}</h4>
-                        <p>
-                          <Marked text={lens.text} />
-                        </p>
-                      </section>
-                    ))}
-                  </div>
-                </details>
-              )}
-              {milestone.between.some((moment) => moment.placement !== 'rail') && (
-                <div class="timeline-between">
-                  {milestone.between
-                    .filter((moment) => moment.placement !== 'rail')
-                    .map((moment) => (
+  {
+    phases.map((phase) => (
+      <div class:list={{ 'timeline-phase': phased }}>
+        {phase.title && <h3 class="timeline-phase__label">{phase.title}</h3>}
+        <ol class="timeline" aria-label={phase.title ?? label}>
+          {phase.milestones.map((milestone) => (
+            <>
+              <li class="timeline-milestone">
+                {milestone.theme && <TimelineTheme theme={milestone.theme} marker />}
+                <article class="card">
+                  <p class="eyebrow">{milestone.eyebrow}</p>
+                  <MomentHeading>{milestone.title}</MomentHeading>
+                  <p>
+                    <Marked text={milestone.description} />
+                  </p>
+                  {milestone.theme && <TimelineTheme theme={milestone.theme} />}
+                  {milestone.lenses.length > 0 && (
+                    <details
+                      class:list={{
+                        'needs-review': milestone.lenses.every((lens) =>
+                          lens.text.includes(REVIEW_MARKER),
+                        ),
+                      }}
+                    >
+                      <summary>
+                        <TimelineTitle title="Lees de vier lagen van dit moment" />
+                      </summary>
+                      <div class="timeline-lenses">
+                        {milestone.lenses.map((lens) => (
+                          <section class="timeline-lens">
+                            <LensHeading>{lens.heading}</LensHeading>
+                            <p>
+                              <Marked text={lens.text} />
+                            </p>
+                          </section>
+                        ))}
+                      </div>
+                    </details>
+                  )}
+                  {milestone.between.some((moment) => moment.placement !== 'rail') && (
+                    <div class="timeline-between">
+                      {milestone.between
+                        .filter((moment) => moment.placement !== 'rail')
+                        .map((moment) => (
+                          <details>
+                            <summary>
+                              <TimelineTitle title={moment.title} />
+                            </summary>
+                            <p>
+                              <Marked text={moment.text} />
+                            </p>
+                            {moment.theme && <TimelineTheme theme={moment.theme} />}
+                          </details>
+                        ))}
+                    </div>
+                  )}
+                  {milestone.links.length > 0 && (
+                    <p class="timeline-recognise">
+                      <span>Herken je dit?</span>{' '}
+                      {milestone.links.map((link, index) => (
+                        <>
+                          {index > 0 && ' · '}
+                          <a href={link.href}>{link.label}</a>
+                        </>
+                      ))}
+                    </p>
+                  )}
+                </article>
+              </li>
+              {milestone.between
+                .filter((moment) => moment.placement === 'rail')
+                .map((moment) => (
+                  <>
+                    <li
+                      class:list={[
+                        'timeline-moment',
+                        { 'timeline-moment--themed': Boolean(moment.theme) },
+                      ]}
+                    >
+                      {moment.theme && <TimelineTheme theme={moment.theme} marker />}
                       <details>
                         <summary>
                           <TimelineTitle title={moment.title} />
                         </summary>
-                        <p>
-                          <Marked text={moment.text} />
-                        </p>
-                        {moment.theme && <TimelineTheme theme={moment.theme} />}
+                        <div class="timeline-moment__context">
+                          <p>
+                            <Marked text={moment.text} />
+                          </p>
+                          {moment.theme && <TimelineTheme theme={moment.theme} />}
+                        </div>
                       </details>
-                    ))}
-                </div>
-              )}
-              {milestone.links.length > 0 && (
-                <p class="timeline-recognise">
-                  <span>Herken je dit?</span>{' '}
-                  {milestone.links.map((link, index) => (
-                    <>
-                      {index > 0 && ' · '}
-                      <a href={link.href}>{link.label}</a>
-                    </>
-                  ))}
-                </p>
-              )}
-            </article>
-          </li>
-          {milestone.between
-            .filter((moment) => moment.placement === 'rail')
-            .map((moment) => (
-              <>
-                <li
-                  class:list={[
-                    'timeline-moment',
-                    { 'timeline-moment--themed': Boolean(moment.theme) },
-                  ]}
-                >
-                  {moment.theme && <TimelineTheme theme={moment.theme} marker />}
-                  <details>
-                    <summary>
-                      <TimelineTitle title={moment.title} />
-                    </summary>
-                    <div class="timeline-moment__context">
-                      <p>
-                        <Marked text={moment.text} />
-                      </p>
-                      {moment.theme && <TimelineTheme theme={moment.theme} />}
-                    </div>
-                  </details>
-                </li>
-                {moment.reflection && <TimelineReflection {...moment.reflection} />}
-              </>
-            ))}
-          {milestone.reflection && <TimelineReflection {...milestone.reflection} />}
-        </>
-      ))
-    }
-  </ol>
+                    </li>
+                    {moment.reflection && <TimelineReflection {...moment.reflection} />}
+                  </>
+                ))}
+              {milestone.reflection && <TimelineReflection {...milestone.reflection} />}
+            </>
+          ))}
+        </ol>
+      </div>
+    ))
+  }
 </div>
+
+<style>
+  .timeline-phase__label {
+    margin-block: 2rem 0;
+    margin-inline-start: var(--timeline-inset);
+    font-family: var(--font-serif);
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+  }
+  @media screen and (min-width: 64rem) {
+    .story-timeline--phased {
+      --phase-column: 34%;
+      padding-inline-start: 0;
+    }
+    .story-timeline--phased .timeline-context {
+      margin-inline-start: calc(var(--phase-column) + var(--timeline-inset));
+    }
+    .story-timeline--phased .timeline-context::after {
+      display: none;
+    }
+    .timeline-phase {
+      position: relative;
+      display: grid;
+      grid-template-columns: var(--phase-column) minmax(0, 1fr);
+      align-items: start;
+      padding-block-start: 1.5rem;
+    }
+    .timeline-phase::before {
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: var(--phase-column);
+      width: 2px;
+      background: var(--timeline-line);
+      content: '';
+    }
+    .timeline-phase__label {
+      position: sticky;
+      top: 7rem;
+      margin: 0;
+      padding-block: 1rem;
+      padding-inline-end: 2.5rem;
+      text-align: end;
+    }
+    .timeline-phase .timeline {
+      grid-column: 2;
+      margin-block-start: 0;
+    }
+    .timeline-phase .timeline::before {
+      display: none;
+    }
+  }
+</style>
