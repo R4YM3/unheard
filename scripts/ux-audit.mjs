@@ -221,11 +221,11 @@ try {
   console.log(`Perspective checks: ${pvRoutes.length} routes × 2 themes`);
 
   const linkedExample = await browser.newPage();
-  for (const index of [2, 0, 1, 3]) {
+  for (const index of [0, 2]) {
     const id = `perspectief-scene-${index}`;
     await linkedExample.goto(`${origin}/nl/#${id}`);
-    await linkedExample.waitForSelector(`[data-enhanced] #${id}:not([hidden])`);
-    const route = await linkedExample.$eval(`#${id} [data-pv-follow-up]`, (link) => link.href);
+    await linkedExample.waitForSelector(`#${id}`, { visible: true });
+    const route = await linkedExample.$eval(`#${id} a`, (link) => link.href);
     if (!(await fetch(route)).ok) failures.push(`Example ${index + 1}: broken follow-up link`);
   }
   await linkedExample.close();

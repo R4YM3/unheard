@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PerspectiveLines from './PerspectiveLines.astro';
+
+interface Props {
+  id: string;
+  scenario: CollectionEntry<'hubs'>['data']['scenarios'][number];
+  sectionId?: string;
+}
+const { id, scenario, sectionId } = Astro.props;
+---
+
+<section
+  class="section section--tint pillar--recognition"
+  id={sectionId}
+  aria-labelledby={`${id}-heading`}
+>
+  <div class="wrap reading">
+    <h2 id={`${id}-heading`} class="sr-only">Voorbeeld: {scenario.label}</h2>
+    <div id={id} class="pv">
+      <PerspectiveLines
+        outside={scenario.outside}
+        inside={scenario.inside}
+        outsideLabel="Je hoort"
+        insideLabel="Je voelt"
+      />
+      {
+        scenario.followUp && (
+          <p>
+            <a class="inline-link" href={scenario.followUp.href}>
+              {scenario.followUp.label}
+            </a>
+          </p>
+        )
+      }
+    </div>
+  </div>
+</section>

@@ -21,17 +21,25 @@ const options = await Promise.all(
 
 <section class="section section--soft" aria-labelledby="start-heading" id="beginnen">
   <div class="wrap reading">
-    <p class="eyebrow">Geen test, geen diagnose</p>
     <h2 id="start-heading">Waar kan ik beginnen?</h2>
     <p>
-      Kies wat het dichtst bij jouw situatie komt. Je krijgt een paar pagina’s om mee te beginnen.
-      Je kunt altijd iets anders kiezen.
+      Begin bij wat je nu nodig hebt of kies de situatie die het dichtst bij jouw ervaring komt.
     </p>
+    <h3>Waar heb je nu behoefte aan?</h3>
     <ul>
-      <li><a href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/">Ik twijfel steeds aan mezelf</a></li>
-      <li><a href="nl/hulpmiddelen/help-me-woorden-vinden/">Ik wil begrijpen wat ik voel</a></li>
-      <li><a href="nl/herstel/">Hoe vind ik weer wat rust?</a></li>
+      <li>
+        <a class="inline-link" href="nl/wat-voel-ik/ik-twijfel-aan-mezelf/"
+          >Ik twijfel steeds aan mezelf</a
+        >
+      </li>
+      <li>
+        <a class="inline-link" href="nl/hulpmiddelen/help-me-woorden-vinden/"
+          >Ik wil begrijpen wat ik voel</a
+        >
+      </li>
+      <li><a class="inline-link" href="nl/herstel/">Hoe vind ik weer wat rust?</a></li>
     </ul>
+    <h3>Welke situatie past bij jou?</h3>
     <div class="start-chooser">
       {
         options.map((option) => (

@@ -132,4 +132,6 @@ Heb je zorgen dat iemand meekijkt? Bij [Hulp vinden](nl/hulp-vinden/#veilig-zoek
 - **Denk vooraf na over veiligheid als je overweegt te vertrekken.** Veilig Thuis kan met je meedenken over hoe je dat zo veilig mogelijk doet.
 - Bij direct gevaar bel je 112. Meer adressen vind je op [Hulp vinden](nl/hulp-vinden/).
 
-[Bekijk een gesprek waarin nee zeggen spanning oproept](nl/#perspectief-scene-1).
+**Voorbeeld.** Je hoort: “Waarom doe je nu zo moeilijk? Ik vraag toch niet veel?”
+
+Je voelt: _Ik voel spanning als ik nee wil zeggen en ben bang voor wat er daarna gebeurt._

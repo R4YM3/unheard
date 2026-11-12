@@ -48,7 +48,7 @@ home:
   hero:
     eyebrow: 'Emotioneel & financieel misbruik · Herkenning · Herstel'
     lead: 'Soms raak je jezelf langzaam kwijt in een relatie. Je twijfelt aan jezelf, past je steeds meer aan of begrijpt niet waarom je voortdurend gespannen bent.'
-    description: 'Ik deel mijn ervaringen om woorden te geven aan emotioneel en financieel misbruik. Ongehoord heeft bijzondere aandacht voor mannen en het stigma dat hen vaak het zwijgen oplegt. Iedereen is welkom.'
+    description: 'Ik twijfelde aan mezelf en zocht bevestiging, erkenning en een manier om mezelf terug te vinden. Die zoektocht is voor mij nog steeds niet voorbij. Daarom maakte ik Ongehoord: om anderen iets te geven wat ik toen zelf miste, woorden voor wat je voelt en herkenning in wat je meemaakt. Ik schrijf met bijzondere aandacht voor mannen. Iedereen is welkom.'
     primary: { href: 'nl/hulpmiddelen/help-me-woorden-vinden/', label: 'Help me woorden vinden' }
     secondary: { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal' }
   introduction:
@@ -60,7 +60,7 @@ home:
   wordFinder:
     heading: 'Weet je nog niet wat je voelt of waar je moet beginnen?'
     text: 'Misschien voel je dat er iets niet klopt, maar weet je niet wat je zoekt of hoe je kunt vertellen wat je is overkomen. Een paar vrijblijvende vragen helpen je woorden en passende pagina’s te vinden.'
-    note: 'Geen test of diagnose. Je kunt vragen overslaan. Je antwoorden worden niet opgeslagen.'
+    note: 'Je kunt vragen overslaan. Je antwoorden worden niet opgeslagen.'
     href: 'nl/hulpmiddelen/help-me-woorden-vinden/'
     label: 'Help me woorden vinden'
   feelings:

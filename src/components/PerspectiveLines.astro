@@ -1,0 +1,24 @@
+---
+interface Props {
+  outside: string;
+  inside: string;
+  outsideLabel: string;
+  insideLabel: string;
+}
+const { outside, inside, outsideLabel, insideLabel } = Astro.props;
+/* Content may already carry its own quotation marks; <q> adds them once. */
+const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’']+$/g, '');
+---
+
+<dl class="pv-lines">
+  <div class="pv-line pv-line--outside">
+    <dt>{outsideLabel}</dt>
+    <dd>
+      <q>{unquote(outside)}</q>
+    </dd>
+  </div>
+  <div class="pv-line pv-line--inside">
+    <dt>{insideLabel}</dt>
+    <dd>{inside}</dd>
+  </div>
+</dl>

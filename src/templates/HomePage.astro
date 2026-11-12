@@ -4,6 +4,8 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
 import HeroArt from '../components/HeroArt.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
+import HomeConversation from '../components/HomeConversation.astro';
+import StartChooser from '../components/StartChooser.astro';
 import WordFinderInvite from '../components/WordFinderInvite.astro';
 import { routeFor } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
@@ -14,6 +16,7 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const home = data.home;
+const dutch = data.locale === 'nl';
 if (!home) throw new Error(`HomePage requires a home block; received ${entry.id}.`);
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
@@ -68,7 +71,15 @@ const homeLists = [
           >
         </div>
       </div>
-      <HeroArt slot="home" priority />
+      {
+        dutch ? (
+          <div class="home-hero-visual">
+            <HeroArt slot="home" priority />
+          </div>
+        ) : (
+          <HeroArt slot="home" priority />
+        )
+      }
     </div>
   </section>
   <section class="section section--tape" aria-labelledby="gevoelens-heading" id="gevoelens">
@@ -78,7 +89,7 @@ const homeLists = [
           <p class="eyebrow">{home.feelings.eyebrow}</p>
           <h2 id="gevoelens-heading">{home.feelings.heading}</h2>
         </div>
-        <p>{home.feelings.lead}</p>
+        {!dutch && <p>{home.feelings.lead}</p>}
       </div>
       <div class="grid grid--3">
         {
@@ -94,29 +105,43 @@ const homeLists = [
         <a class="button button--quiet" href={home.feelings.moreHref}>{home.feelings.moreLabel} →</a
         >
       </p>
-      <p>
-        Liever beginnen bij je situatie? <a href="nl/wat-voel-ik/#beginnen"
-          >Kies waar je kunt beginnen</a
-        >.
-      </p>
     </div>
   </section>
-  {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
   {
-    data.scenarios.length > 0 && (
-      <PerspectiveSwitch
-        scenarios={data.scenarios}
-        locale={data.locale}
-        heading={home.perspective.heading}
-        intro={home.perspective.lead}
-        layout="split"
-        swipe
-      >
-        <p>
-          Wil je met iemand bespreken wat je herkent?{' '}
-          <a href="nl/hulp-vinden/">Bekijk waar je terechtkunt voor advies</a>.
-        </p>
-      </PerspectiveSwitch>
+    dutch ? (
+      <>
+        {data.scenarios[0] && (
+          <HomeConversation
+            id="perspectief-scene-0"
+            sectionId="perspectief"
+            scenario={data.scenarios[0]}
+          />
+        )}
+        <StartChooser locale={data.locale} />
+        {data.scenarios[2] && (
+          <HomeConversation id="perspectief-scene-2" scenario={data.scenarios[2]} />
+        )}
+        {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
+      </>
+    ) : (
+      <>
+        {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
+        {data.scenarios.length > 0 && (
+          <PerspectiveSwitch
+            scenarios={data.scenarios}
+            locale={data.locale}
+            heading={home.perspective.heading}
+            intro={home.perspective.lead}
+            layout="split"
+            swipe
+          >
+            <p>
+              Wil je met iemand bespreken wat je herkent?{' '}
+              <a href="nl/hulp-vinden/">Bekijk waar je terechtkunt voor advies</a>.
+            </p>
+          </PerspectiveSwitch>
+        )}
+      </>
     )
   }
   <section class="section section--paper" aria-labelledby="verhaal-heading" id="verhaal">
@@ -125,7 +150,11 @@ const homeLists = [
         <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
         <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
         {home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        <p><a href="nl/over/#waarom-ik-hiermee-begon">Lees waarom ik Ongehoord begon</a>.</p>
+        <p>
+          <a class="inline-link" href="nl/over/#waarom-ik-hiermee-begon"
+            >Lees waarom ik Ongehoord begon</a
+          >.
+        </p>
         <p>
           Zoek je herkenning of wil je weten of iemand anders dit ook voelde? In mijn verhaal lees
           je hoe het voor mij was.
@@ -171,3 +200,15 @@ const homeLists = [
     </div>
   </section>
 </EntryLayout>
+
+<style>
+  .home-hero-visual {
+    display: contents;
+  }
+
+  @media (max-width: 52rem) {
+    .home-hero-visual {
+      display: none;
+    }
+  }
+</style>
