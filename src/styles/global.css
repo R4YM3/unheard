@@ -643,7 +643,7 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   }
   .section--dossier {
     position: relative;
-    box-shadow: 0 -0.55rem 1rem -0.65rem color-mix(in srgb, var(--text) 30%, transparent);
+    box-shadow: 0 -0.55rem 1rem -0.65rem rgb(0 0 0 / 0.24);
   }
 }
 .hero + .section--tape {
