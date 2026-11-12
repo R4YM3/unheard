@@ -897,9 +897,13 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
 .site-notice p {
   margin: 0;
 }
+.site-notice > p,
+.site-notice details,
 .site-notice summary {
-  width: fit-content;
-  margin: 0.15rem auto 0;
+  display: inline;
+}
+.site-notice summary {
+  margin-inline-start: 0.35rem;
   color: var(--link);
   cursor: pointer;
   text-decoration: underline;
