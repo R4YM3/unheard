@@ -27,9 +27,11 @@ const { scenarios } = Astro.props;
         </div>
       ))
     }
-    <div class="hero-conversations__history" data-conversation-history inert></div>
   </div>
   <div class="hero-conversations__controls" data-conversation-controls hidden>
+    <button type="button" data-conversation-prev aria-label="Vorig voorbeeld" title="Vorige">
+      <span class="arrow-icon arrow-icon--prev" aria-hidden="true"></span>
+    </button>
     <div class="hero-conversations__dots">
       {
         scenarios.map((scenario, index) => (
@@ -44,9 +46,6 @@ const { scenarios } = Astro.props;
     <p class="hero-conversations__count" data-conversation-count aria-live="off">
       1 van {scenarios.length} · {scenarios[0]?.label}
     </p>
-    <button type="button" data-conversation-prev aria-label="Vorig voorbeeld" title="Vorige">
-      <span class="arrow-icon arrow-icon--prev" aria-hidden="true"></span>
-    </button>
     <button
       type="button"
       data-conversation-toggle
@@ -70,31 +69,20 @@ const { scenarios } = Astro.props;
     const count = group.querySelector<HTMLElement>('[data-conversation-count]');
     const labels = dots.map((dot) => dot.textContent?.replace(/^\s*Voorbeeld \d+:\s*/, '').trim());
     const frames = [...group.querySelectorAll<HTMLElement>('[data-conversation-frame]')];
-    const history = group.querySelector<HTMLElement>('[data-conversation-history]');
     const controls = group.querySelector<HTMLElement>('[data-conversation-controls]');
     const toggle = group.querySelector<HTMLButtonElement>('[data-conversation-toggle]');
     const back = group.querySelector<HTMLButtonElement>('[data-conversation-prev]');
     const next = group.querySelector<HTMLButtonElement>('[data-conversation-next]');
     const playIcon = toggle?.querySelector<HTMLElement>('.play-icon');
     const pauseIcon = toggle?.querySelector<HTMLElement>('.pause-icon');
-    if (
-      !history ||
-      !controls ||
-      !toggle ||
-      !back ||
-      !next ||
-      !playIcon ||
-      !pauseIcon ||
-      frames.length < 2
-    )
+    if (!controls || !toggle || !back || !next || !playIcon || !pauseIcon || frames.length < 2)
       continue;
 
     let current = 0;
-    const visited: number[] = [];
     let paused = false;
     let switching = false;
     let timer: number | undefined;
-    const slideDuration = 420;
+    const phone = matchMedia('(max-width: 52rem)');
 
     const updatePlayback = () => {
       clearInterval(timer);
@@ -136,27 +124,19 @@ const { scenarios } = Astro.props;
       const outgoing = frames[current];
 
       const showNext = () => {
-        if (direction > 0) {
-          if (visited.length === frames.length) visited.shift();
-          visited.push(current);
-        } else if (visited.at(-1) === nextIndex) {
-          visited.pop();
-        }
-
         outgoing.hidden = true;
         outgoing.inert = false;
-        outgoing.classList.remove('conversation-exit', 'conversation-exit--up');
-
-        history.classList.remove('history-moving', 'history-moving--up');
-        const prior = visited.at(-1);
-        history.replaceChildren(
-          ...(prior === undefined
-            ? []
-            : [...frames[prior].children].map((node) => node.cloneNode(true))),
-        );
+        outgoing.classList.remove('conversation-exit', 'conversation-exit--back');
 
         current = nextIndex;
-        frames[current].hidden = false;
+        const incoming = frames[current];
+        incoming.classList.remove('conversation-enter', 'conversation-enter--back');
+        if (!motion.matches) {
+          void incoming.offsetWidth;
+          incoming.classList.add('conversation-enter');
+          incoming.classList.toggle('conversation-enter--back', direction < 0);
+        }
+        incoming.hidden = false;
         switching = false;
         mark(byUser);
         updatePlayback();
@@ -167,18 +147,14 @@ const { scenarios } = Astro.props;
         return;
       }
 
+      /* The current conversation steps aside, then the next one comes in, shakes and gets
+         its answer. */
       switching = true;
-      outgoing.style.setProperty('--history-offset', `${history.offsetTop - outgoing.offsetTop}px`);
-      history.style.setProperty(
-        '--history-offset',
-        outgoing.style.getPropertyValue('--history-offset'),
-      );
-      history.classList.add('history-moving');
-      history.classList.toggle('history-moving--up', direction < 0);
+      outgoing.classList.remove('conversation-enter', 'conversation-enter--back');
       outgoing.classList.add('conversation-exit');
-      outgoing.classList.toggle('conversation-exit--up', direction < 0);
+      outgoing.classList.toggle('conversation-exit--back', direction < 0);
       outgoing.inert = true;
-      window.setTimeout(showNext, slideDuration);
+      window.setTimeout(showNext, phone.matches ? 420 : 300);
     };
 
     back.addEventListener('click', () => advance(-1));
@@ -216,7 +192,6 @@ const { scenarios } = Astro.props;
 <style>
   .hero-conversations {
     --bubble-gap: 1.25rem;
-    --history-gap: calc(2 * var(--bubble-gap));
     position: relative;
     display: grid;
     min-width: 0;
@@ -225,18 +200,21 @@ const { scenarios } = Astro.props;
   .hero-conversations__stage {
     display: grid;
     overflow: clip;
-    align-content: stretch;
+    align-content: start;
     padding: 0.75rem;
     margin-inline: -0.75rem;
   }
 
-  .hero-conversations__history {
-    display: none;
-  }
-
+  /* All conversations share one grid cell, so the longest one sets the height and nothing
+     below moves when the conversation changes. */
   [data-conversation-frame] {
     grid-area: 1 / 1;
-    align-self: stretch;
+    align-self: start;
+  }
+
+  [data-conversation-frame][hidden] {
+    display: block !important;
+    visibility: hidden;
   }
 
   .hero-conversations :global(.pv-line) {
@@ -250,6 +228,7 @@ const { scenarios } = Astro.props;
 
   .hero-conversations :global(.pv-line dd) {
     font-size: clamp(1.1rem, 1.5vw, 1.45rem);
+    text-wrap: pretty;
   }
 
   /* As on the canvas: two solid bubbles, both read from the start. What is said sits on the
@@ -270,10 +249,6 @@ const { scenarios } = Astro.props;
     background: var(--badge);
   }
 
-  .hero-conversations :global(.pv-line dd) {
-    text-wrap: pretty;
-  }
-
   .hero-conversations__link {
     display: block;
     width: fit-content;
@@ -282,49 +257,73 @@ const { scenarios } = Astro.props;
     text-align: end;
   }
 
+  /* Controls as in "Wat je hoort. Wat je voelt.": arrows, dots and pause in one row. */
   .hero-conversations__controls:not([hidden]) {
     display: flex;
+    align-items: center;
+    gap: 0.25rem 0.5rem;
+    margin-block-start: 1rem;
+  }
+
+  .hero-conversations__dots {
+    display: flex;
+  }
+
+  .hero-conversations__count {
     position: absolute;
-    inset-inline: 0;
-    inset-block-end: 0.875rem;
-    justify-content: center;
-    gap: 0.375rem;
-    pointer-events: none;
-  }
-
-  .hero-conversations__controls button {
-    pointer-events: auto;
-  }
-
-  @media (width > 52rem) and (hover: hover) and (pointer: fine) {
-    .hero-conversations__controls {
-      opacity: 0;
-    }
-
-    .hero-conversations:is(:hover, :focus-within) .hero-conversations__controls {
-      opacity: 1;
-    }
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   button:not([hidden]) {
-    display: grid;
+    display: inline-grid;
     width: 2.75rem;
     height: 2.75rem;
     place-items: center;
     padding: 0;
-    border: 1px solid transparent;
+    border: 1.5px solid var(--text);
     border-radius: 50%;
-    background: #fff;
-    color: var(--palette-ink);
+    background: transparent;
+    color: var(--text);
     cursor: pointer;
   }
 
-  button:is(:hover, :focus-visible) {
-    color: var(--link);
+  button:hover {
+    background: var(--surface);
   }
 
-  :global([data-theme='dark']) button:is(:hover, :focus-visible) {
-    color: var(--palette-rosewood-900);
+  button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  [data-conversation-toggle]:not([hidden]) {
+    border-color: transparent;
+  }
+
+  button.hero-conversations__dot:not([hidden]) {
+    width: 1.5rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .hero-conversations__dot::before {
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--border-strong);
+    content: '';
+    transition: width 200ms ease;
+  }
+
+  .hero-conversations__dot[aria-current='true']::before {
+    width: 1.25rem;
+    background: var(--link);
   }
 
   .arrow-icon {
@@ -356,63 +355,9 @@ const { scenarios } = Astro.props;
     border-inline: 0.1875rem solid currentColor;
   }
 
-  @media (width > 52rem) {
-    .hero-conversations__stage {
-      padding-block-start: 0.75rem;
-    }
-  }
-
-  @media (max-width: 52rem) {
-    [data-conversation-frame][hidden] {
-      /* Keep all frames in the same grid cell so the longest one sets the height. */
-      display: block !important;
-      visibility: hidden;
-    }
-
-    .hero-conversations__stage {
-      padding-block-end: 3.5rem;
-    }
-
-    .conversation-exit {
-      --exit-offset: calc(100% + 3.5rem);
-    }
-  }
-
-  @media screen and (width > 52rem) and (prefers-reduced-motion: no-preference) {
-    .hero-conversations__stage {
-      grid-template-rows: max-content 4rem;
-      align-content: start;
-      row-gap: var(--history-gap);
-      padding-block-end: 0;
-    }
-
-    .hero-conversations__history {
-      display: block;
-      grid-area: 2 / 1;
-      opacity: 0.71;
-      filter: blur(1px);
-    }
-  }
-
   @media screen and (prefers-reduced-motion: no-preference) {
     [data-conversation-frame]:not([hidden]):not(.conversation-exit) :global(.pv-line--outside) {
       animation: hero-message-shake 380ms ease-in-out;
-    }
-
-    .conversation-exit {
-      animation: hero-chat-slide-out 420ms ease-in-out both;
-    }
-
-    .conversation-exit--up {
-      animation-name: hero-chat-slide-out-up;
-    }
-
-    .history-moving {
-      animation: hero-chat-slide-out 420ms ease-in-out both;
-    }
-
-    .history-moving--up {
-      animation-name: hero-chat-history-up;
     }
 
     [data-conversation-frame]:not([hidden]):not(.conversation-exit) :global(.pv-line--inside),
@@ -421,26 +366,77 @@ const { scenarios } = Astro.props;
     }
   }
 
-  @keyframes hero-chat-slide-out {
-    to {
-      transform: translateY(var(--exit-offset, var(--history-offset)));
-      opacity: 0.71;
-      filter: blur(1px);
+  /* Wide screens: the conversation steps aside and the next one slides in from the side it
+     comes from, then shakes and gets its answer. */
+  @media screen and (width > 52rem) and (prefers-reduced-motion: no-preference) {
+    .conversation-exit {
+      animation: hero-chat-out 300ms ease-in both;
+    }
+
+    .conversation-exit--back {
+      animation-name: hero-chat-out-back;
+    }
+
+    .conversation-enter {
+      animation: hero-chat-in 420ms ease-out both;
+    }
+
+    .conversation-enter--back {
+      animation-name: hero-chat-in-back;
+    }
+
+    .conversation-enter:not(.conversation-exit) :global(.pv-line--outside) {
+      animation: hero-message-shake 380ms ease-in-out 140ms;
+    }
+
+    .conversation-enter:not(.conversation-exit) :global(.pv-line--inside),
+    .conversation-enter:not(.conversation-exit) .hero-conversations__link {
+      animation: hero-message-in 300ms ease-out 440ms both;
     }
   }
 
-  @keyframes hero-chat-history-up {
+  @keyframes hero-chat-out {
     to {
-      transform: translateY(calc(-1 * var(--history-offset)));
-    }
-  }
-
-  @keyframes hero-chat-slide-out-up {
-    to {
-      transform: translateY(calc(-100% - 5rem));
       opacity: 0;
-      filter: blur(1px);
+      transform: translateX(-1.75rem);
     }
+  }
+
+  @keyframes hero-chat-out-back {
+    to {
+      opacity: 0;
+      transform: translateX(1.75rem);
+    }
+  }
+
+  @keyframes hero-chat-in {
+    from {
+      opacity: 0;
+      transform: translateX(1.75rem);
+    }
+  }
+
+  @keyframes hero-chat-in-back {
+    from {
+      opacity: 0;
+      transform: translateX(-1.75rem);
+    }
+  }
+
+  :global([dir='rtl']) .conversation-exit {
+    animation-name: hero-chat-out-back;
+  }
+
+  :global([dir='rtl']) .conversation-exit--back {
+    animation-name: hero-chat-out;
+  }
+
+  :global([dir='rtl']) .conversation-enter {
+    animation-name: hero-chat-in-back;
+  }
+
+  :global([dir='rtl']) .conversation-enter--back {
+    animation-name: hero-chat-in;
   }
 
   @keyframes hero-message-shake {
@@ -463,11 +459,6 @@ const { scenarios } = Astro.props;
       opacity: 0;
       transform: translateY(0.4rem);
     }
-  }
-
-  .hero-conversations__dots,
-  .hero-conversations__count {
-    display: none;
   }
 
   /* Phone (Voorstel 1): the conversation is one card below the heading, with two solid
@@ -510,12 +501,9 @@ const { scenarios } = Astro.props;
     }
 
     .hero-conversations__controls:not([hidden]) {
-      position: static;
-      align-items: center;
       justify-content: space-between;
       gap: 0.25rem;
       margin-block-start: 0.5rem;
-      pointer-events: auto;
     }
 
     .hero-conversations__controls [data-conversation-prev],
@@ -523,12 +511,13 @@ const { scenarios } = Astro.props;
       display: none;
     }
 
-    .hero-conversations__dots {
-      display: flex;
-    }
-
     .hero-conversations__count {
-      display: block;
+      position: static;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
       flex: 1;
       margin: 0;
       color: var(--muted);
@@ -536,42 +525,17 @@ const { scenarios } = Astro.props;
       text-align: end;
     }
 
-    button.hero-conversations__dot:not([hidden]) {
-      width: 1.5rem;
-      height: 2.75rem;
-      border: 0;
-      border-radius: 0;
+    button:not([hidden]) {
+      border-color: transparent;
+    }
+
+    button:hover {
       background: transparent;
-    }
-
-    .hero-conversations__dot::before {
-      display: block;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 999px;
-      background: var(--border-strong);
-      content: '';
-    }
-
-    .hero-conversations__dot[aria-current='true']::before {
-      width: 1.25rem;
-      background: var(--link);
-    }
-
-    .hero-conversations__controls button:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 2px;
-    }
-
-    .hero-conversations__controls [data-conversation-toggle]:not([hidden]) {
-      background: transparent;
-      color: var(--text);
     }
   }
 
   @media screen and (max-width: 52rem) and (prefers-reduced-motion: no-preference) {
-    .conversation-exit,
-    .conversation-exit--up {
+    .conversation-exit {
       animation: hero-chat-fade-out 260ms ease-in both;
     }
   }
