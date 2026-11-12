@@ -641,10 +641,6 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
     );
     --pillar-pattern-width: 1.5rem;
   }
-  .section--dossier {
-    position: relative;
-    box-shadow: 0 -0.9rem 1.6rem -0.85rem rgb(0 0 0 / 0.24);
-  }
 }
 .hero + .section--tape {
   --tape-above: var(--hero-bg);
