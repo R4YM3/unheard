@@ -366,8 +366,8 @@ const { scenarios } = Astro.props;
     }
   }
 
-  /* Wide screens: the conversation steps aside and the next one slides in from the side it
-     comes from, then shakes and gets its answer. */
+  /* Wide screens: like a chat, the next conversation comes in from above and the current one
+     moves down and out; going back, it comes from below. Then it shakes and gets its answer. */
   @media screen and (width > 52rem) and (prefers-reduced-motion: no-preference) {
     .conversation-exit {
       animation: hero-chat-out 300ms ease-in both;
@@ -398,45 +398,29 @@ const { scenarios } = Astro.props;
   @keyframes hero-chat-out {
     to {
       opacity: 0;
-      transform: translateX(-1.75rem);
+      transform: translateY(2rem);
     }
   }
 
   @keyframes hero-chat-out-back {
     to {
       opacity: 0;
-      transform: translateX(1.75rem);
+      transform: translateY(-2rem);
     }
   }
 
   @keyframes hero-chat-in {
     from {
       opacity: 0;
-      transform: translateX(1.75rem);
+      transform: translateY(-2rem);
     }
   }
 
   @keyframes hero-chat-in-back {
     from {
       opacity: 0;
-      transform: translateX(-1.75rem);
+      transform: translateY(2rem);
     }
-  }
-
-  :global([dir='rtl']) .conversation-exit {
-    animation-name: hero-chat-out-back;
-  }
-
-  :global([dir='rtl']) .conversation-exit--back {
-    animation-name: hero-chat-out;
-  }
-
-  :global([dir='rtl']) .conversation-enter {
-    animation-name: hero-chat-in-back;
-  }
-
-  :global([dir='rtl']) .conversation-enter--back {
-    animation-name: hero-chat-in;
   }
 
   @keyframes hero-message-shake {
@@ -581,7 +565,7 @@ const { scenarios } = Astro.props;
   @keyframes hero-chat-fade-out {
     to {
       opacity: 0;
-      transform: translateX(-1rem);
+      transform: translateY(1rem);
     }
   }
 
