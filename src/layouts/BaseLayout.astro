@@ -197,7 +197,22 @@ const publicAlternates = isPublicLocale(locale)
         >{t.safeExit}</a
       >
     </div>
-    <p class="site-notice">{t.siteNotice}</p>
+    {
+      locale === 'nl' ? (
+        <div class="site-notice">
+          <p>
+            Ongehoord stelt geen diagnoses. De gesprekken zijn fictieve voorbeelden die je kunnen
+            helpen woorden te vinden voor wat je zelf ervaart.
+          </p>
+          <details>
+            <summary>Over deze conceptversie</summary>
+            <p>{t.siteNotice}</p>
+          </details>
+        </div>
+      ) : (
+        <p class="site-notice">{t.siteNotice}</p>
+      )
+    }
     <header class="site-header">
       <div class="wrap header-row">
         <a class="brand" href={`${locale}/`}>{brandName}<span>.</span></a>

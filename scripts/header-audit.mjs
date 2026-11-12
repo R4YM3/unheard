@@ -158,11 +158,11 @@ try {
       'nl/hulpmiddelen/help-me-woorden-vinden/',
     );
     assert(await mobile.$('.word-finder-invite a[href="nl/hulpmiddelen/help-me-woorden-vinden/"]'));
-    assert.equal(
-      await mobile.$eval('.home-hero-visual', (node) => globalThis.getComputedStyle(node).display),
-      'none',
-      'Decorative home art stays hidden on mobile',
+    const visibleHeroConversation = await mobile.waitForSelector(
+      '[data-conversation-frame]:not([hidden])',
+      { visible: true },
     );
+    assert(visibleHeroConversation, 'The home conversation is visible on mobile');
     const exampleSelector = '#perspectief-scene-0, #perspectief-scene-2';
     const countVisibleExamples = () =>
       mobile.$$eval(

@@ -1,0 +1,409 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PerspectiveLines from './PerspectiveLines.astro';
+
+interface Props {
+  scenarios: CollectionEntry<'hubs'>['data']['scenarios'];
+}
+const { scenarios } = Astro.props;
+---
+
+<div class="hero-conversations" data-hero-conversations>
+  <div class="hero-conversations__stage">
+    {
+      scenarios.map((scenario, index) => (
+        <div data-conversation-frame hidden={index !== 0}>
+          <PerspectiveLines
+            outside={scenario.outside}
+            inside={scenario.inside}
+            outsideLabel="Je hoort"
+            insideLabel="Je voelt"
+          />
+          {scenario.followUp && (
+            <a class="text-link hero-conversations__link" href={scenario.followUp.href}>
+              {scenario.followUp.label}
+            </a>
+          )}
+        </div>
+      ))
+    }
+    <div class="hero-conversations__history" data-conversation-history inert></div>
+  </div>
+  <div class="hero-conversations__controls" data-conversation-controls hidden>
+    <button type="button" data-conversation-prev aria-label="Vorig voorbeeld" title="Vorige">
+      <span class="arrow-icon arrow-icon--prev" aria-hidden="true"></span>
+    </button>
+    <button
+      type="button"
+      data-conversation-toggle
+      aria-label="Pauzeer voorbeelden"
+      title="Pauzeren"
+    >
+      <span class="play-icon" aria-hidden="true" hidden></span>
+      <span class="pause-icon" aria-hidden="true"></span>
+    </button>
+    <button type="button" data-conversation-next aria-label="Volgend voorbeeld" title="Volgende">
+      <span class="arrow-icon arrow-icon--next" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+<script>
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  for (const group of document.querySelectorAll('[data-hero-conversations]')) {
+    const frames = [...group.querySelectorAll<HTMLElement>('[data-conversation-frame]')];
+    const history = group.querySelector<HTMLElement>('[data-conversation-history]');
+    const controls = group.querySelector<HTMLElement>('[data-conversation-controls]');
+    const toggle = group.querySelector<HTMLButtonElement>('[data-conversation-toggle]');
+    const back = group.querySelector<HTMLButtonElement>('[data-conversation-prev]');
+    const next = group.querySelector<HTMLButtonElement>('[data-conversation-next]');
+    const playIcon = toggle?.querySelector<HTMLElement>('.play-icon');
+    const pauseIcon = toggle?.querySelector<HTMLElement>('.pause-icon');
+    if (
+      !history ||
+      !controls ||
+      !toggle ||
+      !back ||
+      !next ||
+      !playIcon ||
+      !pauseIcon ||
+      frames.length < 2
+    )
+      continue;
+
+    let current = 0;
+    const visited: number[] = [];
+    let paused = false;
+    let switching = false;
+    let timer: number | undefined;
+    const slideDuration = 420;
+
+    const updatePlayback = () => {
+      clearInterval(timer);
+      controls.hidden = false;
+      toggle.hidden = motion.matches;
+      toggle.setAttribute('aria-label', paused ? 'Speel voorbeelden af' : 'Pauzeer voorbeelden');
+      toggle.title = paused ? 'Afspelen' : 'Pauzeren';
+      playIcon.hidden = !paused;
+      pauseIcon.hidden = paused;
+      if (paused || motion.matches || switching) return;
+
+      timer = window.setInterval(() => {
+        if (
+          document.hidden ||
+          group.getClientRects().length === 0 ||
+          frames[current].contains(document.activeElement)
+        )
+          return;
+        advance(1);
+      }, 6000);
+    };
+
+    const advance = (direction: number) => {
+      if (switching) return;
+      clearInterval(timer);
+      const outgoing = frames[current];
+      const nextIndex = (current + direction + frames.length) % frames.length;
+
+      const showNext = () => {
+        if (direction > 0) {
+          if (visited.length === frames.length) visited.shift();
+          visited.push(current);
+        } else if (visited.at(-1) === nextIndex) {
+          visited.pop();
+        }
+
+        outgoing.hidden = true;
+        outgoing.inert = false;
+        outgoing.classList.remove('conversation-exit', 'conversation-exit--up');
+
+        history.classList.remove('history-moving', 'history-moving--up');
+        const prior = visited.at(-1);
+        history.replaceChildren(
+          ...(prior === undefined
+            ? []
+            : [...frames[prior].children].map((node) => node.cloneNode(true))),
+        );
+
+        current = nextIndex;
+        frames[current].hidden = false;
+        switching = false;
+        updatePlayback();
+      };
+
+      if (motion.matches) {
+        showNext();
+        return;
+      }
+
+      switching = true;
+      outgoing.style.setProperty('--history-offset', `${history.offsetTop - outgoing.offsetTop}px`);
+      history.style.setProperty(
+        '--history-offset',
+        outgoing.style.getPropertyValue('--history-offset'),
+      );
+      history.classList.add('history-moving');
+      history.classList.toggle('history-moving--up', direction < 0);
+      outgoing.classList.add('conversation-exit');
+      outgoing.classList.toggle('conversation-exit--up', direction < 0);
+      outgoing.inert = true;
+      window.setTimeout(showNext, slideDuration);
+    };
+
+    back.addEventListener('click', () => advance(-1));
+    next.addEventListener('click', () => advance(1));
+    toggle.addEventListener('click', () => {
+      paused = !paused;
+      updatePlayback();
+    });
+    motion.addEventListener('change', updatePlayback);
+    updatePlayback();
+  }
+</script>
+
+<style>
+  .hero-conversations {
+    --bubble-gap: 1.25rem;
+    --history-gap: calc(2 * var(--bubble-gap));
+    position: relative;
+    display: grid;
+    min-width: 0;
+  }
+
+  .hero-conversations__stage {
+    display: grid;
+    overflow: clip;
+    align-content: stretch;
+    padding: 0.75rem;
+    margin-inline: -0.75rem;
+  }
+
+  .hero-conversations__history {
+    display: none;
+  }
+
+  [data-conversation-frame] {
+    grid-area: 1 / 1;
+    align-self: stretch;
+  }
+
+  [data-conversation-frame][hidden] {
+    display: block;
+    visibility: hidden;
+  }
+
+  .hero-conversations :global(.pv-line) {
+    grid-template-columns: minmax(0, 1fr);
+    width: fit-content;
+    max-width: 92%;
+    padding: 0.75rem 1rem;
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+  }
+
+  .hero-conversations :global(.pv-line dd) {
+    font-size: clamp(1.1rem, 1.5vw, 1.45rem);
+  }
+
+  .hero-conversations :global(.pv-line--outside) {
+    position: relative;
+    justify-self: start;
+    background: var(--surface);
+  }
+
+  .hero-conversations :global(.pv-line--outside)::before {
+    position: absolute;
+    inset-inline-end: 100%;
+    inset-block-start: 1.25rem;
+    border-block: 0.45rem solid transparent;
+    border-inline-end: 0.6rem solid var(--surface);
+    content: '';
+  }
+
+  .hero-conversations :global(.pv-line--inside) {
+    justify-self: end;
+    margin-block-start: var(--bubble-gap);
+    border: 2px dashed var(--border-strong);
+    text-align: end;
+  }
+
+  .hero-conversations__link {
+    display: block;
+    width: fit-content;
+    margin-block-start: 1rem;
+    margin-inline-start: auto;
+    text-align: end;
+  }
+
+  .hero-conversations__controls:not([hidden]) {
+    display: flex;
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0.875rem;
+    justify-content: center;
+    gap: 0.375rem;
+    pointer-events: none;
+  }
+
+  .hero-conversations__controls button {
+    pointer-events: auto;
+  }
+
+  @media (width > 52rem) and (hover: hover) and (pointer: fine) {
+    .hero-conversations__controls {
+      opacity: 0;
+    }
+
+    .hero-conversations:is(:hover, :focus-within) .hero-conversations__controls {
+      opacity: 1;
+    }
+  }
+
+  button:not([hidden]) {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--palette-ink);
+    cursor: pointer;
+  }
+
+  button:is(:hover, :focus-visible) {
+    color: var(--link);
+  }
+
+  :global([data-theme='dark']) button:is(:hover, :focus-visible) {
+    color: var(--palette-rosewood-900);
+  }
+
+  .arrow-icon {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-block-start: 2px solid currentColor;
+    border-inline-end: 2px solid currentColor;
+  }
+
+  .arrow-icon--prev {
+    transform: translateX(1px) rotate(-135deg);
+  }
+
+  .arrow-icon--next {
+    transform: translateX(-1px) rotate(45deg);
+  }
+
+  .play-icon {
+    width: 0.625rem;
+    height: 0.75rem;
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transform: translateX(1px);
+  }
+
+  .pause-icon {
+    width: 0.625rem;
+    height: 0.75rem;
+    border-inline: 0.1875rem solid currentColor;
+  }
+
+  @media (width > 52rem) {
+    .hero-conversations__stage {
+      padding-block-start: clamp(3rem, 6vw, 5rem);
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .hero-conversations__stage {
+      grid-template-rows: max-content 4rem;
+      align-content: start;
+      row-gap: var(--history-gap);
+      padding-block-end: 0;
+    }
+
+    .hero-conversations__history {
+      display: block;
+      grid-area: 2 / 1;
+      opacity: 0.71;
+      filter: blur(1px);
+    }
+
+    [data-conversation-frame]:not([hidden]):not(.conversation-exit) :global(.pv-line--outside) {
+      animation: hero-message-shake 380ms ease-in-out;
+    }
+
+    .conversation-exit {
+      animation: hero-chat-slide-out 420ms ease-in-out both;
+    }
+
+    .conversation-exit--up {
+      animation-name: hero-chat-slide-out-up;
+    }
+
+    .history-moving {
+      animation: hero-chat-slide-out 420ms ease-in-out both;
+    }
+
+    .history-moving--up {
+      animation-name: hero-chat-history-up;
+    }
+
+    [data-conversation-frame]:not([hidden]):not(.conversation-exit) :global(.pv-line--inside),
+    [data-conversation-frame]:not([hidden]):not(.conversation-exit) .hero-conversations__link {
+      animation: hero-message-in 280ms ease-out 240ms both;
+    }
+  }
+
+  @keyframes hero-chat-slide-out {
+    to {
+      transform: translateY(var(--history-offset));
+      opacity: 0.71;
+      filter: blur(1px);
+    }
+  }
+
+  @keyframes hero-chat-history-up {
+    to {
+      transform: translateY(calc(-1 * var(--history-offset)));
+    }
+  }
+
+  @keyframes hero-chat-slide-out-up {
+    to {
+      transform: translateY(calc(-100% - 5rem));
+      opacity: 0;
+      filter: blur(1px);
+    }
+  }
+
+  @keyframes hero-message-shake {
+    18% {
+      transform: rotate(-3deg);
+    }
+    36% {
+      transform: rotate(2.5deg);
+    }
+    54% {
+      transform: rotate(-1.75deg);
+    }
+    72% {
+      transform: rotate(1deg);
+    }
+  }
+
+  @keyframes hero-message-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.4rem);
+    }
+  }
+
+  @media print {
+    .hero-conversations {
+      display: none;
+    }
+  }
+</style>
