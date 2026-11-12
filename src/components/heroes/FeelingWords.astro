@@ -73,6 +73,9 @@ const sizes = [1.6, 1.25, 1.45, 1.2, 1.5, 1.25, 1.35, 1.55, 1.2, 1.45, 1.25, 1.1
     word.addEventListener('focus', show);
     previewOnFirstTap(word, show, () => word.hasAttribute('data-current'));
   }
+  /* Start with one word open, picked at random, so the hint is not needed. */
+  const words = [...document.querySelectorAll<HTMLElement>('[data-fw-words] .fw-word')];
+  words[Math.floor(Math.random() * words.length)]?.dispatchEvent(new Event('focus'));
 </script>
 
 <style>

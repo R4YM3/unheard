@@ -26,16 +26,21 @@ const middle = (cards.length - 1) / 2;
 
 {
   part === 'fan' ? (
-    <ul class="cf__fan" data-cf-fan>
-      {cards.map((card, i) => (
-        <li style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --i: ${i}`}>
-          <a class="cf__card" href={card.href} data-cf-index={i}>
-            <span class="cf__number">Kaart {i + 1}</span>
-            <span class="cf__title">{card.title}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul class="cf__fan" data-cf-fan>
+        {cards.map((card, i) => (
+          <li style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --i: ${i}`}>
+            <a class="cf__card" href={card.href} data-cf-index={i}>
+              <span class="cf__number">Kaart {i + 1}</span>
+              <span class="cf__title">{card.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="cf__swipe" aria-hidden="true">
+        Veeg voor meer kaarten <span>→</span>
+      </p>
+    </>
   ) : (
     <div class="cf__preview" data-cf-preview>
       <p class="cf__hint" data-current>
@@ -74,6 +79,8 @@ const middle = (cards.length - 1) / 2;
     card.addEventListener('focus', show);
     previewOnFirstTap(card, show, () => card.hasAttribute('data-current'));
   }
+  /* Start with the first card chosen. */
+  document.querySelector<HTMLElement>('[data-cf-fan] .cf__card')?.dispatchEvent(new Event('focus'));
 </script>
 
 <style>
@@ -104,6 +111,23 @@ const middle = (cards.length - 1) / 2;
   .cf__fan li:has(.cf__card:is(:hover, :focus-visible)) {
     z-index: 10;
     transform: rotate(0deg) translateY(-1.25rem);
+  }
+
+  /* Chosen but not pointed at: lifted a little in its place, so it hides no other card. */
+  .cf__fan li:has(.cf__card[data-current]):not(:has(.cf__card:is(:hover, :focus-visible))) {
+    transform: rotate(var(--turn)) translateY(-0.75rem);
+  }
+
+  /* The chosen card: dark, so it reads as chosen on every screen. */
+  .cf__card[data-current] {
+    border-color: var(--text);
+    background: var(--text);
+    color: var(--surface);
+  }
+
+  .cf__card[data-current] .cf__number {
+    color: inherit;
+    opacity: 0.8;
   }
 
   .cf__card {
@@ -186,15 +210,33 @@ const middle = (cards.length - 1) / 2;
     font-weight: 700;
   }
 
-  /* A phone: no fan, the cards in a row you can swipe through. */
+  .cf__swipe {
+    display: none;
+  }
+
+  /* A phone: no fan, the cards in a row you can swipe through. The row runs to the edge of
+     the screen so the next card peeks in, with a fade at the edge and a hint below. */
   @media (max-width: 42rem) {
     .cf__fan {
       display: flex;
       height: auto;
       gap: 0.75rem;
+      margin-inline: -1.125rem;
       overflow-x: auto;
-      padding-block: 0.25rem 0.75rem;
+      padding: 0.75rem 3rem 0.75rem 1.125rem;
+      scroll-padding-inline: 1.125rem;
       scroll-snap-type: x mandatory;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 3rem), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 3rem), transparent);
+    }
+
+    .cf__swipe {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0.25rem 0 0;
+      color: var(--hero-muted);
+      font-size: 0.9rem;
     }
 
     .cf__fan li,
@@ -210,12 +252,12 @@ const middle = (cards.length - 1) / 2;
     }
 
     .cf__card {
-      width: 11rem;
-      height: 12rem;
+      width: 9.75rem;
+      height: 11.5rem;
     }
 
-    .cf__fan li:has(.cf__card[data-current]) .cf__card {
-      border-color: var(--text);
+    .cf__fan li:has(.cf__card[data-current]) {
+      transform: translateY(-0.4rem);
     }
   }
 
