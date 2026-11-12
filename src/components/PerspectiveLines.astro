@@ -1,0 +1,50 @@
+---
+interface Props {
+  outside: string;
+  inside: string;
+  outsideLabel: string;
+  splitOutsideOnDesktop?: boolean;
+  insideLabel: string;
+}
+const { outside, inside, outsideLabel, insideLabel, splitOutsideOnDesktop } = Astro.props;
+/* Content may already carry its own quotation marks; <q> adds them once. */
+const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’']+$/g, '');
+const quote = unquote(outside);
+const sentences = splitOutsideOnDesktop ? quote.match(/^(.+?[.!?]) (.+)$/) : null;
+---
+
+<dl class="pv-lines">
+  <div class="pv-line pv-line--outside">
+    <dt>{outsideLabel}</dt>
+    <dd>
+      <q>
+        {
+          sentences ? (
+            <>
+              {sentences[1]} <br class="pv-desktop-break" />
+              {sentences[2]}
+            </>
+          ) : (
+            quote
+          )
+        }
+      </q>
+    </dd>
+  </div>
+  <div class="pv-line pv-line--inside">
+    <dt>{insideLabel}</dt>
+    <dd>{inside}</dd>
+  </div>
+</dl>
+
+<style>
+  .pv-desktop-break {
+    display: none;
+  }
+
+  @media screen and (min-width: 64rem) {
+    .pv-desktop-break {
+      display: inline;
+    }
+  }
+</style>

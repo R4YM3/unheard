@@ -95,4 +95,6 @@ Sociaal-psychologisch onderzoek naar buitensluiten laat zien dat het gemis aan v
 - **Let op je veiligheid.** Als contact met anderen thuis tot dreiging leidt, bespreek dat met Veilig Thuis (0800-2000, gratis en anoniem, dag en nacht).
 - **Praat met je huisarts** als je je eenzaam, somber of vastgelopen voelt. Zie ook [Hulp vinden](nl/hulp-vinden/).
 
-[Bekijk een gesprek over contact met vrienden en familie](nl/#perspectief-scene-3).
+**Voorbeeld.** Je hoort: “Ga maar hoor. Dan zit ik hier wel weer alleen.”
+
+Je voelt: _Ik heb zin om te gaan, maar ik voel me nu al schuldig._

@@ -5,6 +5,7 @@
  * reader picks one scenario at a time with plain toggle buttons; both sides stay visible,
  * because seeing them side by side is the point.
  */
+import PerspectiveLines from './PerspectiveLines.astro';
 import type { Locale } from '../i18n/config';
 import { ui } from '../i18n/ui';
 
@@ -44,8 +45,6 @@ const heading = rest.heading ?? t.perspectiveHeading;
 const intro = rest.intro ?? t.perspectiveIntro;
 const outsideLabel = rest.outsideLabel ?? t.youHear;
 const insideLabel = rest.insideLabel ?? t.youFeel;
-/* Content may already carry its own quotation marks; <q> adds them once. */
-const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’']+$/g, '');
 ---
 
 <section
@@ -109,18 +108,12 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
           scenarios.map((scenario, index) => (
             <article class="pv-scene" id={`${id}-scene-${index}`} data-pv-panel={index}>
               <h3 class="pv-scene__title">{scenario.label}</h3>
-              <dl class="pv-lines">
-                <div class="pv-line pv-line--outside">
-                  <dt>{outsideLabel}</dt>
-                  <dd>
-                    <q>{unquote(scenario.outside)}</q>
-                  </dd>
-                </div>
-                <div class="pv-line pv-line--inside">
-                  <dt>{insideLabel}</dt>
-                  <dd>{scenario.inside}</dd>
-                </div>
-              </dl>
+              <PerspectiveLines
+                outside={scenario.outside}
+                inside={scenario.inside}
+                {outsideLabel}
+                {insideLabel}
+              />
               <div class="pv-detail">
                 <p class="pv-context">{scenario.context}</p>
                 {scenario.followUp && (

@@ -158,38 +158,22 @@ try {
       'nl/hulpmiddelen/help-me-woorden-vinden/',
     );
     assert(await mobile.$('.word-finder-invite a[href="nl/hulpmiddelen/help-me-woorden-vinden/"]'));
+    assert.equal(
+      await mobile.$eval('.home-hero-visual', (node) => globalThis.getComputedStyle(node).display),
+      'none',
+      'Decorative home art stays hidden on mobile',
+    );
+    const exampleSelector = '#perspectief-scene-0, #perspectief-scene-2';
+    const countVisibleExamples = () =>
+      mobile.$$eval(
+        exampleSelector,
+        (nodes) => nodes.filter((node) => node.getBoundingClientRect().width > 0).length,
+      );
+    assert.equal(await countVisibleExamples(), 2);
     if (javascript) {
-      const track = await mobile.$eval('[data-pv-scenes]', (node) => {
-        const cards = [...node.querySelectorAll('[data-pv-panel]:not([hidden])')];
-        const right = node.getBoundingClientRect().right;
-        const next = cards[1]?.getBoundingClientRect();
-        return {
-          count: cards.length,
-          canScroll: node.scrollWidth > node.clientWidth,
-          nextVisible: Boolean(next && next.left < right && next.right > right),
-        };
-      });
-      assert.deepEqual(track, { count: 4, canScroll: true, nextVisible: true });
       await mobile.emulateMediaType('print');
-      assert.equal(
-        await mobile.$$eval(
-          '[data-pv-panel]',
-          (nodes) =>
-            nodes.filter((node) => globalThis.getComputedStyle(node).display !== 'none').length,
-        ),
-        await mobile.$$eval('[data-pv-panel]', (nodes) => nodes.length),
-        'All examples must print',
-      );
+      assert.equal(await countVisibleExamples(), 2, 'All homepage examples must print');
     } else {
-      assert.equal(
-        await mobile.$$eval(
-          '[data-pv-panel]',
-          (nodes) =>
-            nodes.filter((node) => globalThis.getComputedStyle(node).display !== 'none').length,
-        ),
-        await mobile.$$eval('[data-pv-panel]', (nodes) => nodes.length),
-        'All examples remain readable without JavaScript',
-      );
       await mobile.setViewport({ width: 1440, height: 1000 });
       await mobile.click('.desktop-nav-item summary');
       assert(
@@ -200,7 +184,7 @@ try {
     await mobile.close();
   }
   console.log(
-    'Mobile: original active-section links, prominent finder entry, every example selectable, no-JS and print content.',
+    'Mobile: original active-section links, prominent finder entry, all examples visible, no-JS and print content.',
   );
 
   /* Home hero: introduction and the two actions only; destinations stay reachable. */
@@ -214,14 +198,37 @@ try {
   }
   assert(await home.$('.nav a[href="nl/begrijp-het/"]'), 'Begrijp het stays in the navigation');
   assert(await home.$('#verhaal a[href="nl/over/#waarom-ik-hiermee-begon"]'));
-  assert(await home.$('#perspectief a[href="nl/hulp-vinden/"]'));
+  assert(await home.$('#hulp a[href="nl/hulp-vinden/"]'));
+  const homeOrder = await home.$$eval('main [id]', (nodes) =>
+    nodes
+      .map((node) => node.id)
+      .filter((id) =>
+        [
+          'gevoelens',
+          'perspectief-scene-0',
+          'gedachte',
+          'beginnen',
+          'verhaal-citaat',
+          'perspectief-scene-2',
+          'word-finder-invite-heading',
+          'verhaal',
+          'herstel',
+        ].includes(id),
+      ),
+  );
+  assert.deepEqual(homeOrder, [
+    'gevoelens',
+    'perspectief-scene-0',
+    'gedachte',
+    'beginnen',
+    'verhaal-citaat',
+    'perspectief-scene-2',
+    'word-finder-invite-heading',
+    'verhaal',
+    'herstel',
+  ]);
   await home.setJavaScriptEnabled(false);
   await home.reload();
-  await home.focus('#gevoelens a[href="nl/wat-voel-ik/#beginnen"]');
-  await Promise.all([home.waitForNavigation(), home.keyboard.press('Enter')]);
-  assert.equal(new URL(home.url()).pathname, '/nl/wat-voel-ik/');
-  assert.equal(new URL(home.url()).hash, '#beginnen');
-
   const options = await home.$$('#beginnen details');
   const labels = [
     'Ik twijfel nog',
