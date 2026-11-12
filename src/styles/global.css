@@ -739,10 +739,16 @@ mark.review-marker {
 .intro-block__text > :first-child {
   margin-top: 0;
 }
-/* The page's own text follows the short version, below a quiet line. */
+/* One reading flow on the start side: the opening line, then every paragraph (the rest of
+   the short version and the page's own text) in the same size, a quiet note last. */
+.intro-block__main {
+  font-size: 1.125rem;
+}
+.intro-block__main p {
+  margin-block: 0 1.1rem;
+}
 .intro-block__text {
-  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
-  border-top: 1px solid var(--border);
+  margin: 0;
 }
 .intro-block__short .eyebrow,
 .intro-contents .eyebrow {
@@ -752,7 +758,7 @@ mark.review-marker {
 .intro-block__opening {
   margin: 0 0 1rem;
   font-family: var(--font-serif);
-  font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
   font-weight: 400;
   line-height: 1.4;
 }
@@ -760,8 +766,26 @@ mark.review-marker {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2rem);
 }
+/* On wide screens the end side stays in view while the start side is read: it sticks below
+   the header (with the rail's spacing) and stops at the block's bottom padding, so it never
+   runs into the first band. Not on low screens, where it could not fit. */
+@media (min-width: 52.0625rem) and (min-height: 40rem) {
+  .intro-block__side {
+    position: sticky;
+    top: 7rem;
+  }
+}
 .intro-block .intro-block__text {
-  padding: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
+  padding: 0;
+  font-size: inherit;
+}
+.intro-block__main > :last-child,
+.intro-block__main > :last-child > :last-child {
+  margin-bottom: 0;
+}
+.intro-block__main .intro-block__note {
+  margin-top: 2rem;
+  font-size: 0.95rem;
 }
 .intro-block .intro-block__text > :first-child {
   margin-top: 0;
@@ -826,9 +850,9 @@ mark.review-marker {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 2.75rem;
+  min-height: 2.5rem;
   align-items: center;
-  padding-block: 0.5rem;
+  padding-block: 0.4rem;
   color: var(--text);
   font-weight: 600;
   text-decoration: none;
