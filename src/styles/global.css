@@ -739,6 +739,11 @@ mark.review-marker {
 .intro-block__text > :first-child {
   margin-top: 0;
 }
+/* The page's own text follows the short version, below a quiet line. */
+.intro-block__text {
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-top: 1px solid var(--border);
+}
 .intro-block__short .eyebrow,
 .intro-contents .eyebrow {
   margin: 0 0 0.75rem;
@@ -756,7 +761,10 @@ mark.review-marker {
   gap: clamp(1.5rem, 3vw, 2rem);
 }
 .intro-block .intro-block__text {
-  padding: 0;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
+}
+.intro-block .intro-block__text > :first-child {
+  margin-top: 0;
 }
 .intro-block__text > :last-child {
   margin-bottom: 0;
@@ -796,6 +804,10 @@ mark.review-marker {
 }
 .intro-card:has(.intro-card__cta) .intro-card__title::after {
   content: none;
+}
+.intro-card__text {
+  color: var(--band-text);
+  line-height: 1.5;
 }
 .intro-card__cta {
   margin-top: 0.35rem;
