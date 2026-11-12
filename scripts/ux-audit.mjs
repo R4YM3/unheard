@@ -160,7 +160,7 @@ try {
   const pvRoutes = [];
   for (const route of routes) {
     const html = await readFile(join('dist', route, 'index.html'), 'utf8').catch(() => '');
-    if (html.includes('data-pv')) pvRoutes.push(route);
+    if (/<div\b[^>]*\sdata-pv(?=[\s=>])/.test(html)) pvRoutes.push(route);
   }
   // Both themes at once, three tabs each, sharing one queue of routes per theme.
   const checkPerspective = async (theme, queue) => {
@@ -225,7 +225,7 @@ try {
     const id = `perspectief-scene-${index}`;
     await linkedExample.goto(`${origin}/nl/#${id}`);
     await linkedExample.waitForSelector(`[data-enhanced] #${id}:not([hidden])`);
-    const route = await linkedExample.$eval(`#${id} .text-link`, (link) => link.href);
+    const route = await linkedExample.$eval(`#${id} [data-pv-follow-up]`, (link) => link.href);
     if (!(await fetch(route)).ok) failures.push(`Example ${index + 1}: broken follow-up link`);
   }
   await linkedExample.close();

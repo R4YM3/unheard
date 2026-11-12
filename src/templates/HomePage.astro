@@ -109,6 +109,8 @@ const homeLists = [
         locale={data.locale}
         heading={home.perspective.heading}
         intro={home.perspective.lead}
+        layout="split"
+        swipe
       >
         <p>
           Wil je met iemand bespreken wat je herkent?{' '}
@@ -124,6 +126,10 @@ const homeLists = [
         <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
         {home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
         <p><a href="nl/over/#waarom-ik-hiermee-begon">Lees waarom ik Ongehoord begon</a>.</p>
+        <p>
+          Zoek je herkenning of wil je weten of iemand anders dit ook voelde? In mijn verhaal lees
+          je hoe het voor mij was.
+        </p>
         <div class="actions">
           <a class="button" href={home.storyTeaser.href}>{home.storyTeaser.label}</a>
           <a class="text-link" href={home.timelineTeaser.href}>{home.timelineTeaser.label}</a>
@@ -133,8 +139,12 @@ const homeLists = [
   </section>
   <section class="section section--soft" aria-labelledby="herstel-heading" id="herstel">
     <div class="wrap">
-      <p class="eyebrow">{home.resources.eyebrow}</p>
-      <h2 id="herstel-heading">{home.resources.heading}</h2>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">{home.resources.eyebrow}</p>
+          <h2 id="herstel-heading">{home.resources.heading}</h2>
+        </div>
+      </div>
       <CardGrid
         columns={home.resources.cards.length % 3 === 0 ? 3 : 2}
         items={home.resources.cards.map((card) => ({
