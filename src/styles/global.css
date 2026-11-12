@@ -587,8 +587,8 @@ mark.review-marker {
     .pillar-band--recognition
   ) {
     background-image: var(--pattern-hero) !important;
-    background-size: cover;
-    background-position: center;
+    background-size: max(100%, 90rem) auto;
+    background-position: center top;
     background-repeat: no-repeat;
   }
   :is(.pillar-bands--tools > :nth-child(odd of :not(script, style)), .pillar-band--tools) {
@@ -614,8 +614,8 @@ mark.review-marker {
   }
   :is(.pillar-bands--recovery > :nth-child(odd of :not(script, style)), .pillar-band--recovery) {
     background-image: var(--pattern-ripples) !important;
-    background-size: cover;
-    background-position: center;
+    background-size: max(100%, 90rem) auto;
+    background-position: center top;
     background-repeat: no-repeat;
   }
 }
@@ -658,22 +658,57 @@ mark.review-marker {
   --section-bg: var(--bg) !important;
   background-image: none !important;
 }
-/* In het kort carries the pillar's colour. */
-.summary-box {
-  background: var(--pillar-band, var(--safe));
-}
 /* Verder lezen: three cards in view, the rest one scroll away. */
+.related-scroller {
+  position: relative;
+}
 .related-scroller > .grid {
   grid-auto-flow: column;
   grid-template-columns: none;
   grid-auto-columns: calc((100% - 2 * var(--space)) / 3);
   overflow-x: auto;
-  padding-block-end: 0.75rem;
+  /* Room above and below, so a card lifting on hover is never cut off. */
+  margin-block: -1rem -1.5rem;
+  padding-block: 1rem 2.25rem;
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--border-strong) transparent;
 }
 .related-scroller > .grid > * {
   scroll-snap-align: start;
+}
+.related-scroller[data-more-end] > .grid {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 4rem), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 4rem), transparent);
+}
+.related-scroller__nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-block-start: 1rem;
+}
+.related-scroller__nav[hidden] {
+  display: none;
+}
+.related-scroller__nav button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  padding: 0;
+  border: 1.5px solid var(--text);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.related-scroller__nav button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.related-scroller__nav button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 @media (max-width: 52rem) {
   .related-scroller > .grid {
@@ -888,8 +923,8 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   /* Ripples spread out behind the cards. */
   :is(.section, .hero).chapter--recovery {
     background-image: var(--pattern-ripples);
-    background-size: cover;
-    background-position: center;
+    background-size: max(100%, 90rem) auto;
+    background-position: center top;
   }
 }
 @media screen and (max-width: 42rem) {
@@ -1375,9 +1410,10 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   margin-top: clamp(2rem, 4vw, 3rem);
   margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   padding: clamp(1.25rem, 3vw, 1.75rem);
-  border: 1px solid var(--safe-border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--safe);
+  /* In het kort: a white card on every page. */
+  background: var(--surface);
 }
 .summary-box h2 {
   font-family: var(--font-sans);

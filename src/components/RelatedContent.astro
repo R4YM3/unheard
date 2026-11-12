@@ -31,7 +31,7 @@ const { items, heading = t.readMore, band, pillar } = Astro.props;
     >
       <div class="wrap">
         <h2 id="related-heading">{heading}</h2>
-        <div class="related-scroller">
+        <div class="related-scroller" data-related-scroller>
           <CardGrid
             items={items.map((item) => ({
               eyebrow: item.eyebrow,
@@ -41,8 +41,41 @@ const { items, heading = t.readMore, band, pillar } = Astro.props;
               tone: item.collection === 'patterns' ? ('tension' as const) : ('neutral' as const),
             }))}
           />
+          <div class="related-scroller__nav" data-related-nav hidden>
+            <button type="button" data-related-prev aria-label="Vorige artikelen">
+              ←
+            </button>
+            <button type="button" data-related-next aria-label="Volgende artikelen">
+              →
+            </button>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+
+<script>
+  /* Verder lezen scrolls sideways: arrows page through it, a fade shows there is more. */
+  for (const scroller of document.querySelectorAll<HTMLElement>('[data-related-scroller]')) {
+    const row = scroller.querySelector<HTMLElement>('.grid');
+    const nav = scroller.querySelector<HTMLElement>('[data-related-nav]');
+    const prev = scroller.querySelector<HTMLButtonElement>('[data-related-prev]');
+    const next = scroller.querySelector<HTMLButtonElement>('[data-related-next]');
+    if (!row || !nav || !prev || !next) continue;
+    const update = () => {
+      const more = row.scrollWidth - row.clientWidth > 4;
+      nav.hidden = !more;
+      prev.disabled = row.scrollLeft <= 4;
+      next.disabled = row.scrollLeft + row.clientWidth >= row.scrollWidth - 4;
+      scroller.toggleAttribute('data-more-end', more && !next.disabled);
+    };
+    const page = (direction: number) =>
+      row.scrollBy({ left: direction * row.clientWidth * 0.9, behavior: 'smooth' });
+    prev.addEventListener('click', () => page(-1));
+    next.addEventListener('click', () => page(1));
+    row.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+</script>
