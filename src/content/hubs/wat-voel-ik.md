@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-12
 reviewedAt: null
 cardTitle: 'Wat voel ik?'
 cardText: 'Begin bij wat je voelt, zonder dat je meteen een naam hoeft te hebben voor wat je meemaakt.'
@@ -56,18 +56,4 @@ reviewNotes:
   - 'Redactie: de tijdlijn is een leeslijn, geen verloop. Klopt de volgorde, en is elke zin algemeen genoeg?'
 ---
 
-## Waarom beginnen bij een gevoel?
-
-Veel mensen zoeken eerst naar een woord voor wat de ander doet. Dat is begrijpelijk: je wilt weten wat er aan de hand is. Maar vaak is het eerste wat je zeker weet niet wat de ander bedoelt, maar wat het met jou doet. Je twijfelt meer aan jezelf. Je voelt je schuldig zonder te weten waarom. Je bent moe van het steeds opletten.
-
-Daarom begint Ongehoord bij jou. Elke pagina hieronder beschrijft een gevoel, wat er om je heen kan gebeuren, wat het kan verklaren en wat kan helpen. Er staan fictieve voorbeelden bij en vragen die je vrijblijvend kunt beantwoorden.
-
 Weet je nog niet welke pagina bij je past? [Help me woorden vinden](nl/hulpmiddelen/help-me-woorden-vinden/) biedt zes korte vragen die je mag overslaan.
-
-## Wat deze pagina’s niet doen
-
-Deze pagina’s stellen geen diagnose, niet over jou en niet over iemand anders. Ze zeggen ook niet dat er sprake is van misbruik als je iets herkent. Gevoelens kunnen veel oorzaken hebben, en relaties zijn ingewikkeld. Wat ze wel doen: woorden geven, zodat je kunt onderzoeken wat er speelt en met wie je daarover wilt praten.
-
-Ongehoord heeft bijzondere aandacht voor mannen, omdat het voor hen vaak extra moeilijk voelt om hierover te praten. Maar iedereen is welkom, ongeacht gender of relatievorm.
-
-Wil je eerst meer weten over patronen? Kijk dan bij [Begrijp het](nl/begrijp-het/). Heb je nu hulp nodig? Ga naar [Hulp vinden](nl/hulp-vinden/).
