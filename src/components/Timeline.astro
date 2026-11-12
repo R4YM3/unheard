@@ -53,7 +53,7 @@ const LensHeading = phased ? 'h5' : 'h4';
         <ol class="timeline" aria-label={phase.title ?? label}>
           {phase.milestones.map((milestone) => (
             <>
-              <li class="timeline-milestone">
+              <li class="timeline-milestone" id={`moment-${milestones.indexOf(milestone) + 1}`}>
                 {milestone.theme && <TimelineTheme theme={milestone.theme} marker />}
                 <article class="card">
                   <p class="eyebrow">{milestone.eyebrow}</p>
