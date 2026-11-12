@@ -618,32 +618,53 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   background-repeat: no-repeat;
   background-position: top;
 }
-/* A dossier edge can repeat on overview pages. The destination pillar supplies the pattern. */
+/* A soft paper edge separates dossiers without adding a second decorative line. */
 @media screen {
-  .section.pillar--recognition,
-  .section.pillar--understanding {
-    background-image: var(--pillar-pattern);
-    background-position: top;
-    background-repeat: repeat-x;
-    background-size: var(--pillar-pattern-width) 0.45rem;
-  }
   .section.pillar--recognition {
     --section-bg: color-mix(in srgb, var(--accent) 12%, var(--surface));
-    --pillar-pattern: radial-gradient(circle, var(--hero-eyebrow) 1px, transparent 1.5px);
-    --pillar-pattern-width: 0.45rem;
   }
   .section.pillar--understanding {
     --section-bg: var(--tint);
-    --pillar-pattern: repeating-linear-gradient(
-      90deg,
-      var(--border-strong) 0 1px,
-      transparent 1px 6px
-    );
-    --pillar-pattern-width: 1.5rem;
   }
-  .section--dossier {
+  .section.section--dossier {
     position: relative;
-    box-shadow: 0 -0.9rem 1.6rem -0.85rem rgb(0 0 0 / 0.24);
+    background-image: none;
+  }
+  .section--dossier::before {
+    position: absolute;
+    inset-block-end: 100%;
+    inset-inline: 0;
+    block-size: 3rem;
+    background: linear-gradient(to top, rgb(0 0 0 / 0.24), transparent 85%);
+    content: '';
+    pointer-events: none;
+    transform: scaleY(0.65);
+    transform-origin: center bottom;
+  }
+}
+
+@supports (animation-timeline: view()) and (animation-range: entry-crossing) {
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .section--dossier {
+      view-timeline: --dossier-edge block;
+    }
+    .section--dossier::before {
+      animation: dossier-shadow auto linear both;
+    }
+    .section.section--dossier::before {
+      animation-timeline: --dossier-edge;
+      animation-range: entry-crossing 0% entry-crossing 100%;
+    }
+    @keyframes dossier-shadow {
+      0%,
+      20% {
+        transform: scaleY(1);
+      }
+      67%,
+      100% {
+        transform: scaleY(0);
+      }
+    }
   }
 }
 .hero + .section--tape {
