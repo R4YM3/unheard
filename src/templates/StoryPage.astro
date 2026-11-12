@@ -10,6 +10,7 @@ import Marked from '../components/Marked.astro';
 import { breadcrumbsFor, routeFor } from '../lib/content';
 import { navigationFor } from '../lib/navigation';
 import { heroTrail } from '../lib/trail';
+import { heroPillarClass } from '../lib/pillar';
 
 interface Props {
   entry: CollectionEntry<'story'>;
@@ -28,7 +29,7 @@ const trail = heroTrail(
 ---
 
 <EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
-  <section class="hero page-hero">
+  <section class:list={['hero page-hero', heroPillarClass(data.locale, route)]}>
     <div class="wrap">
       <div class="page-hero__grid">
         <div class="page-hero__content">

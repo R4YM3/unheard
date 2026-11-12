@@ -24,6 +24,7 @@ import {
 } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 import { ui } from '../i18n/ui';
+import { pillarBand } from '../lib/pillar';
 
 interface Props {
   entry: CollectionEntry<'hubs'>;
@@ -49,6 +50,8 @@ const inlineCards = data.cards.filter((card) => data.cardsPlacement === 'inline'
 const isEmptyBody = !entry.body?.trim();
 const route = routeFor(entry);
 const compactFinancialArticles = data.translationKey === 'financieel-misbruik';
+/* On a pillar's own pages the lists sit on the pillar's colour, like its homepage chapter. */
+const band = pillarBand(data.locale, route);
 /* Hubs weave their explanation and their lists: chapter, list, chapter, list, the rest. */
 const woven = listings.length > 0 && !data.finder && !isEmptyBody;
 const listingId = (listing: (typeof listings)[number], index: number) =>
@@ -179,7 +182,7 @@ const mainEntityId = termSet
       </div>
     )
   }
-  {!woven && data.chooser && <StartChooser locale={data.locale} />}
+  {!woven && data.chooser && <StartChooser locale={data.locale} chapter={{}} />}
   {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
   {data.founderNote?.placement === 'before' && <FounderNote note={data.founderNote} />}
   {
@@ -199,9 +202,13 @@ const mainEntityId = termSet
               'section--soft': listing.tone === 'safe',
               'section--tint': listing.tone !== 'tension' && listing.tone !== 'safe',
               'section--tape': listing.tape,
-              'pillar--understanding': data.translationKey === 'begrijp-het',
             },
           ]}
+          style={
+            listing.tone !== 'tension' && listing.tone !== 'safe'
+              ? `--section-bg: ${band}`
+              : undefined
+          }
           aria-labelledby={`listing-${index}-heading`}
           id={listingId(listing, index)}
         >
@@ -264,7 +271,7 @@ const mainEntityId = termSet
       </ProseSlice>
     )
   }
-  {woven && data.chooser && <StartChooser locale={data.locale} />}
+  {woven && data.chooser && <StartChooser locale={data.locale} chapter={{}} />}
   {data.feelingTimeline && <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />}
   {
     inlineCards.length > 0 && (
