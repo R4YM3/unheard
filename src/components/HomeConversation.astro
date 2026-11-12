@@ -6,9 +6,8 @@ interface Props {
   id: string;
   scenario: CollectionEntry<'hubs'>['data']['scenarios'][number];
   sectionId?: string;
-  concept?: { href: string; label: string };
 }
-const { id, scenario, sectionId, concept } = Astro.props;
+const { id, scenario, sectionId } = Astro.props;
 ---
 
 <section
@@ -32,11 +31,6 @@ const { id, scenario, sectionId, concept } = Astro.props;
             <a class="button button--quiet" href={scenario.followUp.href}>
               {scenario.followUp.label}
             </a>
-            {concept && (
-              <a class="button button--quiet" href={concept.href}>
-                {concept.label}
-              </a>
-            )}
           </div>
         )
       }
