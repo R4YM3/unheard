@@ -1225,6 +1225,7 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
 /* ---------- Summary & prose ---------- */
 .summary-box {
   margin-top: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   padding: clamp(1.25rem, 3vw, 1.75rem);
   border: 1px solid var(--safe-border);
   border-radius: var(--radius);
