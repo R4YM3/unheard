@@ -41,6 +41,18 @@ const { id, scenario, sectionId } = Astro.props;
 </section>
 
 <style>
+  .pv :global(.pv-line--outside) {
+    text-align: start;
+  }
+
+  .pv :global(.pv-line--inside) {
+    text-align: end;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
   @media screen {
     .home-conversation {
       --conversation-above: var(--safe);
