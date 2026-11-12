@@ -930,6 +930,16 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   height: clamp(11rem, 18vw, 16rem);
   margin-block-start: clamp(0.5rem, 2vw, 1.5rem);
 }
+/* Wide screens: the line and the ridge sit a little higher, closer to the text (founder
+   review): Herstel 75px, Mijn verhaal 100px. */
+@media (width > 52rem) {
+  .page-hero--band.chapter--recovery .page-hero__band {
+    margin-block-start: calc(clamp(0.5rem, 2vw, 1.5rem) - 75px);
+  }
+  .page-hero--band.chapter--story .page-hero__band {
+    margin-block-start: calc(clamp(0.5rem, 2vw, 1.5rem) - 100px);
+  }
+}
 @media (max-width: 52rem) {
   .page-hero[data-hero-layout] {
     display: flex;
