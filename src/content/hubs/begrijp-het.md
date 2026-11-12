@@ -47,3 +47,9 @@ related: [wat-voel-ik, herstel, hulp-vinden]
 reviewNotes:
   - 'Redactie: klopt de volgorde van de artikellisting (emotioneel misbruik, conflict of patroon, wat het met je kan doen)? Zo niet, voeg order-waarden toe aan de artikelen.'
 ---
+
+Misschien heb je lang gedacht dat het aan jou lag. Dat je te gevoelig was, te moeilijk, of dat je het verkeerd had onthouden. Misschien merk je pas achteraf hoeveel je jezelf hebt aangepast. Het kan dan helpen om te lezen dat anderen iets vergelijkbaars hebben meegemaakt, en dat er woorden voor bestaan.
+
+Die woorden zijn hulpmiddelen. Een begrip als [gaslighting](nl/begrippen/gaslighting/) of [dwingende controle](nl/begrippen/dwingende-controle/) beschrijft gedrag en het effect daarvan. Het zegt niets over wie iemand is, en het is geen diagnose. Herken je iets, dan betekent dat niet automatisch dat er sprake is van misbruik. Eén voorbeeld of één gevoel bewijst niets. Wat telt, is wat er steeds opnieuw gebeurt en wat het met je doet.
+
+Lees verder: [Woorden om te ordenen, niet om te oordelen](nl/begrijp-het/woorden-om-te-ordenen/).

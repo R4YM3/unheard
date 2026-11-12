@@ -239,7 +239,7 @@ mark.review-marker {
 .nav > a:not(.nav-help)[aria-current],
 .desktop-nav-item:has(> a.is-active, > a[aria-current]) {
   border-radius: var(--radius-pill);
-  background: var(--safe);
+  background: var(--item-pillar, var(--safe));
   box-shadow: inset 0 0 0 1px var(--safe-border);
 }
 /* Every item keeps the same room, so the pill never shifts the menu. */
@@ -568,6 +568,124 @@ mark.review-marker {
    homepage chapters, Verder lezen and the help band. */
 .section--block {
   --section-bg: transparent;
+}
+/* Overview pages: below the intro every block is a band, alternating the pillar's colour
+   (with its pattern) and the page colour. Each band keeps its full spacing, so a heading
+   never sits right against the band before it. */
+.hub-bands > :not(script, style) {
+  padding-block: clamp(3.25rem, 7vw, 5.5rem) !important;
+  background-color: transparent;
+  background-image: none;
+}
+.hub-bands > :nth-child(odd of :not(script, style)) {
+  background-color: var(--pillar-band) !important;
+}
+/* The pillar's pattern on its bands (overview bands and Verder lezen). */
+@media screen {
+  :is(
+    .pillar-bands--recognition > :nth-child(odd of :not(script, style)),
+    .pillar-band--recognition
+  ) {
+    background-image: var(--pattern-hero) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  :is(.pillar-bands--tools > :nth-child(odd of :not(script, style)), .pillar-band--tools) {
+    background-image: var(--pattern-roads) !important;
+    background-size: max(100%, 90rem) auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  :is(
+    .pillar-bands--understanding > :nth-child(odd of :not(script, style)),
+    .pillar-band--understanding
+  ) {
+    background-image: var(--pattern-strata) !important;
+    background-size: auto 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+  :is(.pillar-bands--story > :nth-child(odd of :not(script, style)), .pillar-band--story) {
+    background-image: var(--pattern-ridge) !important;
+    background-size: 100% 16.25rem;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  :is(.pillar-bands--recovery > :nth-child(odd of :not(script, style)), .pillar-band--recovery) {
+    background-image: var(--pattern-ripples) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 42rem) {
+  :is(
+    .pillar-bands--recognition > :nth-child(odd of :not(script, style)),
+    .pillar-band--recognition
+  ) {
+    background-image: var(--pattern-hero-mobile) !important;
+    background-size: 100% auto;
+    background-position: center top;
+  }
+  :is(.pillar-bands--tools > :nth-child(odd of :not(script, style)), .pillar-band--tools) {
+    background-image: var(--pattern-roads-mobile) !important;
+    background-size: 100% auto;
+  }
+  :is(
+    .pillar-bands--understanding > :nth-child(odd of :not(script, style)),
+    .pillar-band--understanding
+  ) {
+    background-image: var(--pattern-strata-mobile) !important;
+    background-size: 100% auto;
+    background-position: center top;
+  }
+  :is(.pillar-bands--story > :nth-child(odd of :not(script, style)), .pillar-band--story) {
+    background-image: var(--pattern-ridge-mobile) !important;
+    background-size: 100% 8.75rem;
+  }
+  :is(.pillar-bands--recovery > :nth-child(odd of :not(script, style)), .pillar-band--recovery) {
+    background-image: var(--pattern-ripples-mobile) !important;
+    background-size: 100% auto;
+    background-position: center top;
+  }
+}
+/* Verder lezen never meets a band of its own colour: after a coloured last band it is plain. */
+.article-layout:has(
+    .hub-bands > :nth-last-child(1 of :not(script, style)):nth-child(odd of :not(script, style))
+  )
+  + .related-band {
+  --section-bg: var(--bg) !important;
+  background-image: none !important;
+}
+/* In het kort carries the pillar's colour. */
+.summary-box {
+  background: var(--pillar-band, var(--safe));
+}
+/* Verder lezen: three cards in view, the rest one scroll away. */
+.related-scroller > .grid {
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  grid-auto-columns: calc((100% - 2 * var(--space)) / 3);
+  overflow-x: auto;
+  padding-block-end: 0.75rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--border-strong) transparent;
+}
+.related-scroller > .grid > * {
+  scroll-snap-align: start;
+}
+@media (max-width: 52rem) {
+  .related-scroller > .grid {
+    grid-auto-columns: 82%;
+  }
+}
+@media print {
+  .related-scroller > .grid {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
 }
 /* Overview pages: In het kort at the top of the start column, the text flowing on into the
    end column; one column on a phone. */

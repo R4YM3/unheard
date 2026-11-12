@@ -6,7 +6,7 @@
 import BaseLayout from './BaseLayout.astro';
 import HelpBlock from '../components/HelpBlock.astro';
 import PageHero from '../components/PageHero.astro';
-import { pillarBand } from '../lib/pillar';
+import { pillarBand, pillarName } from '../lib/pillar';
 import RelatedContent from '../components/RelatedContent.astro';
 import SourceList from '../components/SourceList.astro';
 import { ui } from '../i18n/ui';
@@ -164,6 +164,7 @@ const heroActions = (heroData?.actions?.length ? heroData.actions : fallbackActi
    chapter. Pages in the mist pillar take sand, so the band never runs into the help band. */
 const pillarColour = pillarBand(data.locale, route);
 const relatedBand = pillarColour === 'var(--safe)' ? 'var(--tint)' : pillarColour;
+const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data.locale, route);
 ---
 
 <BaseLayout
@@ -199,7 +200,10 @@ const relatedBand = pillarColour === 'var(--safe)' ? 'var(--tint)' : pillarColou
       </PageHero>
     )
   }
-  <div class:list={['article-layout', { 'article-layout--rail': hasRail }]}>
+  <div
+    class:list={['article-layout', { 'article-layout--rail': hasRail }]}
+    style={`--pillar-band: ${pillarColour}`}
+  >
     {
       hasRail && (
         <aside class="page-rail" aria-label={ui(data.locale).pageNavigation}>
@@ -247,6 +251,6 @@ const relatedBand = pillarColour === 'var(--safe)' ? 'var(--tint)' : pillarColou
       />
     )
   }
-  <RelatedContent items={related} band={relatedBand} />
+  <RelatedContent items={related} band={relatedBand} pillar={relatedPillar} />
   {showHelp && <HelpBlock />}
 </BaseLayout>
