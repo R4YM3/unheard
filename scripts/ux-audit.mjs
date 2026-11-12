@@ -224,9 +224,11 @@ try {
   const id = 'perspectief-scene-2';
   await linkedExample.goto(`${origin}/nl/#${id}`);
   await linkedExample.waitForSelector(`#${id}`, { visible: true });
-  const routes = await linkedExample.$$eval(`#${id} a`, (links) => links.map((link) => link.href));
-  if (routes.length === 0) failures.push('Money example: missing follow-up links');
-  for (const route of routes) {
+  const followUpRoutes = await linkedExample.$$eval(`#${id} a`, (links) =>
+    links.map((link) => link.href),
+  );
+  if (followUpRoutes.length === 0) failures.push('Money example: missing follow-up links');
+  for (const route of followUpRoutes) {
     if (!(await fetch(route)).ok) failures.push('Money example: broken follow-up link');
   }
   await linkedExample.close();
