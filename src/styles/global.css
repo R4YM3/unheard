@@ -675,6 +675,19 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
     background-size: cover;
     background-position: center;
   }
+  /* Herkennen stays a breather on paper; the hero contours run on into its top edge and
+     fade out above the cards. */
+  .chapter--recognition {
+    background-color: var(--bg);
+    background-image: linear-gradient(transparent, var(--bg) 18rem), var(--pattern-hero);
+    background-repeat: no-repeat;
+    background-size:
+      100% 100%,
+      max(100%, 90rem) auto;
+    background-position:
+      top,
+      center top;
+  }
   /* Roads wind along the top of the band. */
   .chapter--tools {
     background-image: var(--pattern-roads);
@@ -731,6 +744,12 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   }
   .chapter--recovery {
     --pattern-mobile: var(--pattern-ripples-mobile);
+  }
+  .chapter--recognition {
+    background-image: linear-gradient(transparent, var(--bg) 8.75rem), var(--pattern-hero-mobile);
+    background-size:
+      100% 100%,
+      100% auto;
   }
   .chapter--story {
     background-image: var(--pattern-ridge-mobile);
