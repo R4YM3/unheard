@@ -13,7 +13,7 @@ const entry = await findByKey('nl', 'home');
 if (!entry || entry.collection !== 'hubs' || !entry.data.home) {
   throw new Error('The comparison needs the published home hub.');
 }
-const { scenarios } = entry.data;
+const scenarios = entry.data.scenarios.slice(0, 4);
 const { perspective } = entry.data.home;
 const criteria = [
   ['Eerste indruk', 'Eén voorbeeld open, vier knoppen erboven', 'Vier koppen met de gehoorde zin'],

@@ -5,6 +5,7 @@ import CardGrid from '../components/CardGrid.astro';
 import HeroArt from '../components/HeroArt.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
 import HomeConversation from '../components/HomeConversation.astro';
+import HomeHeroConversations from '../components/HomeHeroConversations.astro';
 import StartChooser from '../components/StartChooser.astro';
 import WordFinderInvite from '../components/WordFinderInvite.astro';
 import { routeFor } from '../lib/content';
@@ -58,7 +59,14 @@ const homeLists = [
   mainEntityId={homeLists[0] ? `${pageId}#gevoelens` : undefined}
 >
   <section class="hero" id="top">
-    <div class="wrap home-hero__grid">
+    <div class:list={['wrap home-hero__grid', { 'home-hero__grid--conversation': dutch }]}>
+      {
+        dutch && (
+          <div class="home-hero-visual">
+            <HomeHeroConversations scenarios={data.scenarios} />
+          </div>
+        )
+      }
       <div class="home-hero__copy">
         <p class="eyebrow">{home.hero.eyebrow}</p>
         <h1>{data.heading}</h1>
@@ -71,15 +79,7 @@ const homeLists = [
           >
         </div>
       </div>
-      {
-        dutch ? (
-          <div class="home-hero-visual">
-            <HeroArt slot="home" priority />
-          </div>
-        ) : (
-          <HeroArt slot="home" priority />
-        )
-      }
+      {!dutch && <HeroArt slot="home" priority />}
     </div>
   </section>
   <section
@@ -280,7 +280,8 @@ const homeLists = [
   }
 
   .home-hero-visual {
-    display: contents;
+    display: grid;
+    min-width: 0;
   }
 
   .feelings-heading h2 {
@@ -290,10 +291,29 @@ const homeLists = [
     .feelings-heading > .button {
       margin-block-start: 1rem;
     }
+
+    #gevoelens .feeling-card {
+      min-height: 0;
+      padding: 1rem 1.125rem;
+    }
+
+    #gevoelens .feeling-card h3 {
+      font-size: 1.4rem;
+    }
   }
+  @media (width > 52rem) {
+    .home-hero__grid--conversation {
+      grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.1fr);
+    }
+  }
+
   @media (max-width: 52rem) {
     .home-hero-visual {
-      display: none;
+      padding-block-start: 1rem;
+    }
+
+    .home-hero__grid--conversation .home-hero__copy {
+      padding-block-start: 0.75rem;
     }
   }
 </style>
