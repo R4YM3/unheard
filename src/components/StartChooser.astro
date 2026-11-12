@@ -8,6 +8,8 @@ interface Props {
      word finder in the empty corner. */
   chapter?: {
     eyebrow?: string;
+    /** false: inside an article (a hub page), the cards without the sand band. */
+    band?: boolean;
     wordFinder?: { heading: string; text: string; note: string; href: string; label: string };
   };
 }
@@ -27,7 +29,14 @@ const options = await Promise.all(
 ---
 
 <section
-  class:list={['section', chapter ? 'section--chapter chapter--tools' : 'section--soft']}
+  class:list={[
+    'section',
+    chapter
+      ? chapter.band === false
+        ? 'section--block'
+        : 'section--chapter chapter--tools'
+      : 'section--soft',
+  ]}
   aria-labelledby="start-heading"
   id="beginnen"
 >

@@ -6,6 +6,7 @@
 import BaseLayout from './BaseLayout.astro';
 import HelpBlock from '../components/HelpBlock.astro';
 import PageHero from '../components/PageHero.astro';
+import { pillarBand } from '../lib/pillar';
 import RelatedContent from '../components/RelatedContent.astro';
 import SourceList from '../components/SourceList.astro';
 import { ui } from '../i18n/ui';
@@ -159,6 +160,10 @@ const heroActions = (heroData?.actions?.length ? heroData.actions : fallbackActi
     ...action,
     href: action.href.startsWith('#') ? `${route}${action.href}` : action.href,
   }));
+/* Verder lezen takes the pillar's colour, like the hero: the page opens and closes in its
+   chapter. Pages in the mist pillar take sand, so the band never runs into the help band. */
+const pillarColour = pillarBand(data.locale, route);
+const relatedBand = pillarColour === 'var(--safe)' ? 'var(--tint)' : pillarColour;
 ---
 
 <BaseLayout
@@ -231,7 +236,6 @@ const heroActions = (heroData?.actions?.length ? heroData.actions : fallbackActi
       over a coloured band. */
   }
   <slot name="after" />
-  <RelatedContent items={related} />
   {showSources && <SourceList sources={data.sources} />}
   {
     articleType && (
@@ -243,5 +247,6 @@ const heroActions = (heroData?.actions?.length ? heroData.actions : fallbackActi
       />
     )
   }
+  <RelatedContent items={related} band={relatedBand} />
   {showHelp && <HelpBlock />}
 </BaseLayout>

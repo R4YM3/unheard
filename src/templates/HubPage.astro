@@ -24,7 +24,6 @@ import {
 } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 import { ui } from '../i18n/ui';
-import { pillarBand } from '../lib/pillar';
 import FeelingWords from '../components/heroes/FeelingWords.astro';
 import LayeredMoment from '../components/heroes/LayeredMoment.astro';
 import RecoveryLine from '../components/heroes/RecoveryLine.astro';
@@ -54,8 +53,6 @@ const inlineCards = data.cards.filter((card) => data.cardsPlacement === 'inline'
 const isEmptyBody = !entry.body?.trim();
 const route = routeFor(entry);
 const compactFinancialArticles = data.translationKey === 'financieel-misbruik';
-/* On a pillar's own pages the lists sit on the pillar's colour, like its homepage chapter. */
-const band = pillarBand(data.locale, route);
 /* Each pillar's own hero visual (Dutch pillar hubs only; others keep the arched image). */
 const heroVisual = data.locale === 'nl' ? data.translationKey : undefined;
 const heroLayouts = {
@@ -226,7 +223,7 @@ const mainEntityId = termSet
       </div>
     )
   }
-  {!woven && data.chooser && <StartChooser locale={data.locale} chapter={{}} />}
+  {!woven && data.chooser && <StartChooser locale={data.locale} chapter={{ band: false }} />}
   {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
   {data.founderNote?.placement === 'before' && <FounderNote note={data.founderNote} />}
   {
@@ -242,17 +239,9 @@ const mainEntityId = termSet
             'section',
             {
               'section--tight': compactFinancialArticles,
-              'section--tension': listing.tone === 'tension',
-              'section--soft': listing.tone === 'safe',
-              'section--tint': listing.tone !== 'tension' && listing.tone !== 'safe',
-              'section--tape': listing.tape,
+              'section--block': true,
             },
           ]}
-          style={
-            listing.tone !== 'tension' && listing.tone !== 'safe'
-              ? `--section-bg: ${band}`
-              : undefined
-          }
           aria-labelledby={`listing-${index}-heading`}
           id={listingId(listing, index)}
         >
@@ -315,7 +304,7 @@ const mainEntityId = termSet
       </ProseSlice>
     )
   }
-  {woven && data.chooser && <StartChooser locale={data.locale} chapter={{}} />}
+  {woven && data.chooser && <StartChooser locale={data.locale} chapter={{ band: false }} />}
   {data.feelingTimeline && <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />}
   {
     inlineCards.length > 0 && (

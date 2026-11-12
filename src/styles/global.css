@@ -566,6 +566,12 @@ mark.review-marker {
 .section--surface {
   --section-bg: var(--surface);
 }
+/* A block inside an article (a list of cards, examples, questions, figures): on the page
+   itself, so reading is never interrupted by a coloured band. Bands are for the hero, the
+   homepage chapters, Verder lezen and the help band. */
+.section--block {
+  --section-bg: transparent;
+}
 .section--chrome {
   --section-bg: var(--band-bg);
   color: var(--band-text);
@@ -2135,26 +2141,6 @@ a.card:focus-visible,
   }
   .source-list {
     --section-bg: var(--bg);
-  }
-  .related-band::before,
-  .related-band::after,
-  .source-list::before {
-    content: '';
-    position: absolute;
-    inset-inline: 0;
-    height: 16px;
-    background: radial-gradient(circle at center, var(--section-bg) 0 6px, transparent 6.5px)
-      center / clamp(2rem, 3vw, 2.75rem) 16px repeat-x;
-    pointer-events: none;
-  }
-  .related-band::before,
-  .source-list::before {
-    inset-block-start: -8px;
-    z-index: 2;
-  }
-  .related-band::after {
-    inset-block-end: -8px;
-    z-index: 1;
   }
 }
 
