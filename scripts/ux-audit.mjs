@@ -341,9 +341,9 @@ try {
           (selector) => globalThis.document.querySelector(selector)?.offsetHeight ?? 0,
         ),
       );
-      if (!main) fail(`/nl/${slug}/ has no intro block`);
+      if (!main) failures.push(`/nl/${slug}/ has no intro block`);
       else if (main < side)
-        fail(
+        failures.push(
           `/nl/${slug}/ at ${width}px: intro text (${main}px) shorter than the side (${side}px)`,
         );
     }
