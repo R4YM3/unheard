@@ -11,13 +11,16 @@ const { id, scenario, sectionId } = Astro.props;
 ---
 
 <section
-  class="section section--tint pillar--recognition"
+  class:list={[
+    'section section--tint pillar--recognition home-conversation',
+    { 'home-conversation--first': sectionId },
+  ]}
   id={sectionId}
   aria-labelledby={`${id}-heading`}
 >
-  <div class="wrap reading">
+  <div class="wrap">
     <h2 id={`${id}-heading`} class="sr-only">Voorbeeld: {scenario.label}</h2>
-    <div id={id} class="pv">
+    <div id={id} class="pv pv--split">
       <PerspectiveLines
         outside={scenario.outside}
         inside={scenario.inside}
@@ -26,13 +29,30 @@ const { id, scenario, sectionId } = Astro.props;
       />
       {
         scenario.followUp && (
-          <p>
-            <a class="inline-link" href={scenario.followUp.href}>
+          <div class="actions">
+            <a class="button button--quiet" href={scenario.followUp.href}>
               {scenario.followUp.label}
             </a>
-          </p>
+          </div>
         )
       }
     </div>
   </div>
 </section>
+
+<style>
+  @media screen {
+    .home-conversation {
+      --conversation-above: var(--safe);
+      background-image:
+        repeating-linear-gradient(-45deg, var(--conversation-above) 0 14px, transparent 14px 28px),
+        repeating-linear-gradient(-45deg, var(--safe) 0 14px, transparent 14px 28px);
+      background-position: top, bottom;
+      background-repeat: no-repeat;
+      background-size: 100% 12px;
+    }
+    .home-conversation--first {
+      --conversation-above: var(--bg);
+    }
+  }
+</style>

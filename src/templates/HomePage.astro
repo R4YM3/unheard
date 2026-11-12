@@ -82,14 +82,26 @@ const homeLists = [
       }
     </div>
   </section>
-  <section class="section section--tape" aria-labelledby="gevoelens-heading" id="gevoelens">
+  <section
+    class:list={['section', { 'section--tape': !dutch }]}
+    aria-labelledby="gevoelens-heading"
+    id="gevoelens"
+  >
     <div class="wrap">
-      <div class="section-heading">
+      <div class:list={['section-heading', { 'feelings-heading': dutch }]}>
         <div>
           <p class="eyebrow">{home.feelings.eyebrow}</p>
           <h2 id="gevoelens-heading">{home.feelings.heading}</h2>
         </div>
-        {!dutch && <p>{home.feelings.lead}</p>}
+        {
+          dutch ? (
+            <a class="button button--quiet" href={home.feelings.moreHref}>
+              {home.feelings.moreLabel} →
+            </a>
+          ) : (
+            <p>{home.feelings.lead}</p>
+          )
+        }
       </div>
       <div class="grid grid--3">
         {
@@ -101,10 +113,15 @@ const homeLists = [
           ))
         }
       </div>
-      <p class="listing-more">
-        <a class="button button--quiet" href={home.feelings.moreHref}>{home.feelings.moreLabel} →</a
-        >
-      </p>
+      {
+        !dutch && (
+          <p class="listing-more">
+            <a class="button button--quiet" href={home.feelings.moreHref}>
+              {home.feelings.moreLabel} →
+            </a>
+          </p>
+        )
+      }
     </div>
   </section>
   {
@@ -206,6 +223,14 @@ const homeLists = [
     display: contents;
   }
 
+  .feelings-heading h2 {
+    margin-block-end: 0;
+  }
+  @media (max-width: 42rem) {
+    .feelings-heading > .button {
+      margin-block-start: 1rem;
+    }
+  }
   @media (max-width: 52rem) {
     .home-hero-visual {
       display: none;

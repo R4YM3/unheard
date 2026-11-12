@@ -620,7 +620,6 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
 }
 /* A dossier edge can repeat on overview pages. The destination pillar supplies the pattern. */
 @media screen {
-  .section.pillar--recognition,
   .section.pillar--understanding {
     background-image: var(--pillar-pattern);
     background-position: top;
@@ -629,8 +628,6 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   }
   .section.pillar--recognition {
     --section-bg: color-mix(in srgb, var(--accent) 12%, var(--surface));
-    --pillar-pattern: radial-gradient(circle, var(--hero-eyebrow) 1px, transparent 1.5px);
-    --pillar-pattern-width: 0.45rem;
   }
   .section.pillar--understanding {
     --section-bg: var(--tint);
