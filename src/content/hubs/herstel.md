@@ -48,3 +48,7 @@ reviewNotes:
   - 'Oprichter: past de neutrale verwijzing naar je eigen therapie-ervaringen bij hoe je die wilt delen?'
   - 'Redactie: heading wijkt bewust af van "Herstellen is meer dan begrijpen." op de therapiepagina; graag bevestigen.'
 ---
+
+Herstel na emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) is geen vast traject met een eindpunt. Voor de een begint het met eindelijk woorden hebben voor wat er gebeurde. Voor de ander met merken dat het lichaam niet meer de hele dag op scherp staat. Er is geen goede of foute volgorde.
+
+Lees verder: [Wat herstel kan betekenen](nl/herstel/wat-herstel-kan-betekenen/).

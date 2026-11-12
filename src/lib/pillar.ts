@@ -20,6 +20,12 @@ export const heroPillarClass = (locale: Locale, path: string): string => {
   return (section && chapterByMenu[section.menu.href]) ?? 'hero--home';
 };
 
+/** The pillar's short name, for its band and pattern classes (pillar-band--…). */
+export const pillarName = (locale: Locale, path: string): string => {
+  const chapter = heroPillarClass(locale, path);
+  return chapter === 'hero--home' ? 'recognition' : chapter.replace('chapter--', '');
+};
+
 /** The band colour of the pillar, for the lists on its own pages (no pattern there). */
 export const pillarBand = (locale: Locale, path: string): string => {
   const chapter = heroPillarClass(locale, path);

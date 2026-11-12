@@ -1,5 +1,7 @@
 ---
 import type { Section } from '../lib/navigation';
+import type { Locale } from '../i18n/config';
+import { pillarBand } from '../lib/pillar';
 interface Props {
   section: Section;
   /** The section holds the current page (visual cue only). */
@@ -8,9 +10,12 @@ interface Props {
   currentPath: string;
 }
 const { section, current, currentPath } = Astro.props;
+/* The pillar's colour: the active pill and the hovered submenu item use it. */
+const locale = section.menu.href.split('/')[0] as Locale;
+const colour = pillarBand(locale, section.menu.href);
 ---
 
-<div class="desktop-nav-item">
+<div class="desktop-nav-item" style={`--item-pillar: ${colour}`}>
   <a
     class:list={{ 'is-active': current }}
     href={section.menu.href}
@@ -102,7 +107,7 @@ const { section, current, currentPath } = Astro.props;
   .desktop-subnav a:hover,
   .desktop-subnav a:focus-visible,
   .desktop-subnav a[aria-current] {
-    background: var(--safe);
+    background: var(--item-pillar, var(--safe));
     color: var(--text);
   }
 </style>

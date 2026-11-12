@@ -24,7 +24,7 @@ import {
 } from '../lib/content';
 import { itemList, type SchemaNode } from '../lib/schema';
 import { ui } from '../i18n/ui';
-import { pillarBand } from '../lib/pillar';
+import { pillarBand, pillarName } from '../lib/pillar';
 import FeelingWords from '../components/heroes/FeelingWords.astro';
 import LayeredMoment from '../components/heroes/LayeredMoment.astro';
 import RecoveryLine from '../components/heroes/RecoveryLine.astro';
@@ -54,9 +54,10 @@ const inlineCards = data.cards.filter((card) => data.cardsPlacement === 'inline'
 const isEmptyBody = !entry.body?.trim();
 const route = routeFor(entry);
 const compactFinancialArticles = data.translationKey === 'financieel-misbruik';
-/* Overview page lists alternate: the pillar's colour, then paper, then the colour again. */
+/* Overview pages: every block below the intro is a band, alternating the pillar's colour (with
+   its pattern) and the page colour. */
 const band = pillarBand(data.locale, route);
-const banded = (index: number) => index % 2 === 0;
+const pillar = pillarName(data.locale, route);
 /* Each pillar's own hero visual (Dutch pillar hubs only; others keep the arched image). */
 const heroVisual = data.locale === 'nl' ? data.translationKey : undefined;
 const heroLayouts = {
@@ -229,7 +230,7 @@ const mainEntityId = termSet
   }
   {
     pillarIntro && (data.summary || !isEmptyBody) && (
-      <div class="wrap hub-intro">
+      <div class="wrap hub-intro" style={`--pillar-band: ${band}`}>
         {data.summary && (
           <section class="summary-box" aria-labelledby="summary-heading">
             <h2 id="summary-heading">{ui(data.locale).inShort}</h2>
@@ -251,117 +252,115 @@ const mainEntityId = termSet
       </div>
     )
   }
-  {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
-  {data.founderNote?.placement === 'before' && <FounderNote note={data.founderNote} />}
-  {
-    listings.map((listing, index) => (
-      <>
-        <section
-          class:list={[
-            'section',
-            {
-              'section--tight': compactFinancialArticles,
-              'section--block': !banded(index),
-              'section--band': banded(index),
-            },
-          ]}
-          style={banded(index) ? `--section-bg: ${band}` : undefined}
-          aria-labelledby={`listing-${index}-heading`}
-          id={listingId(listing, index)}
-        >
-          <div class="wrap">
-            <h2 id={`listing-${index}-heading`}>{listing.heading}</h2>
-            {listing.lead && <p class="reading">{listing.lead}</p>}
-            {compactFinancialArticles && listing.items.length > 0 ? (
-              <>
-                <p>
-                  <a class="inline-link" href={`${route}#wat-het-met-je-kan-doen`}>
-                    Lees verder in dit artikel: wat het met je kan doen
+  <div class:list={['hub-bands', `pillar-bands--${pillar}`]} style={`--pillar-band: ${band}`}>
+    {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
+    {data.founderNote?.placement === 'before' && <FounderNote note={data.founderNote} />}
+    {
+      listings.map((listing, index) => (
+        <>
+          <section
+            class:list={[
+              'section',
+              {
+                'section--tight': compactFinancialArticles,
+                'section--block': true,
+              },
+            ]}
+            aria-labelledby={`listing-${index}-heading`}
+            id={listingId(listing, index)}
+          >
+            <div class="wrap">
+              <h2 id={`listing-${index}-heading`}>{listing.heading}</h2>
+              {listing.lead && <p class="reading">{listing.lead}</p>}
+              {compactFinancialArticles && listing.items.length > 0 ? (
+                <>
+                  <p>
+                    <a class="inline-link" href={`${route}#wat-het-met-je-kan-doen`}>
+                      Lees verder in dit artikel: wat het met je kan doen
+                    </a>
+                  </p>
+                  <ul class="financial-article-links">
+                    {listing.items.map((item) => (
+                      <li>
+                        <a class="inline-link" href={item.href}>
+                          {item.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
+                <div class="grid grid--3">
+                  {listing.items.map((item) => (
+                    <a class="card feeling-card" href={item.href}>
+                      {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
+                      <h3>{item.title}</h3>
+                      {item.text && <p>{item.text}</p>}
+                    </a>
+                  ))}
+                </div>
+              ) : listing.items.length > 0 ? (
+                <CardGrid
+                  items={listing.items.map((item) => ({
+                    ...item,
+                    tone: listing.tone === 'tension' ? ('tension' as const) : ('neutral' as const),
+                  }))}
+                />
+              ) : (
+                <p class="note">{ui(data.locale).pagesComingSoon}</p>
+              )}
+              {listing.more && (
+                <p class="listing-more">
+                  <a class="button button--quiet" href={listing.more.href}>
+                    {listing.more.label}
                   </a>
                 </p>
-                <ul class="financial-article-links">
-                  {listing.items.map((item) => (
-                    <li>
-                      <a class="inline-link" href={item.href}>
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
-              <div class="grid grid--3">
-                {listing.items.map((item) => (
-                  <a class="card feeling-card" href={item.href}>
-                    {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
-                    <h3>{item.title}</h3>
-                    {item.text && <p>{item.text}</p>}
-                  </a>
-                ))}
-              </div>
-            ) : listing.items.length > 0 ? (
-              <CardGrid
-                items={listing.items.map((item) => ({
-                  ...item,
-                  tone: listing.tone === 'tension' ? ('tension' as const) : ('neutral' as const),
-                }))}
-              />
-            ) : (
-              <p class="note">{ui(data.locale).pagesComingSoon}</p>
-            )}
-            {listing.more && (
-              <p class="listing-more">
-                <a class="button button--quiet" href={listing.more.href}>
-                  {listing.more.label}
-                </a>
-              </p>
-            )}
+              )}
+            </div>
+          </section>
+        </>
+      ))
+    }
+    {
+      woven && !pillarIntro && (
+        <section class="section">
+          <ProseSlice from={0}>
+            <Content />
+          </ProseSlice>
+        </section>
+      )
+    }
+    {data.chooser && <StartChooser locale={data.locale} chapter={{ band: false }} />}
+    {
+      data.feelingTimeline && (
+        <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />
+      )
+    }
+    {
+      inlineCards.length > 0 && (
+        <section class="section" aria-labelledby="hub-cards-heading">
+          <div class="wrap">
+            <h2 id="hub-cards-heading">{ui(data.locale).alsoGoodToKnow}</h2>
+            <CardGrid items={inlineCards} />
           </div>
         </section>
-      </>
-    ))
-  }
-  {
-    woven && !pillarIntro && (
-      <ProseSlice from={0}>
-        <Content />
-      </ProseSlice>
-    )
-  }
-  {
-    data.chooser && (
-      <StartChooser
-        locale={data.locale}
-        chapter={{ band: false }}
-        bandColour={banded(listings.length) ? band : undefined}
-      />
-    )
-  }
-  {data.feelingTimeline && <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />}
-  {
-    inlineCards.length > 0 && (
-      <section class="section" aria-labelledby="hub-cards-heading">
-        <div class="wrap">
-          <h2 id="hub-cards-heading">{ui(data.locale).alsoGoodToKnow}</h2>
-          <CardGrid items={inlineCards} />
-        </div>
-      </section>
-    )
-  }
-  {
-    data.glossaryIndex && (
-      <GlossaryIndex locale={data.locale} pagePath={`${data.locale}/${data.slug}/`} />
-    )
-  }
-  {data.stats && <StatsList />}
-  {data.searchIndex && <SearchIndex locale={data.locale} />}
-  {
-    data.scenarios.length > 0 && (
-      <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
-    )
-  }
-  {data.reflection && <MiniReflection reflection={data.reflection} />}
-  {data.founderNote?.placement === 'after' && <FounderNote note={data.founderNote} />}
+      )
+    }
+    {
+      data.glossaryIndex && (
+        <GlossaryIndex locale={data.locale} pagePath={`${data.locale}/${data.slug}/`} />
+      )
+    }
+    {data.stats && <StatsList />}
+    {data.searchIndex && <SearchIndex locale={data.locale} />}
+    {
+      data.scenarios.length > 0 && (
+        <PerspectiveSwitch scenarios={data.scenarios} locale={data.locale} />
+      )
+    }
+    {data.reflection && <MiniReflection reflection={data.reflection} />}
+    {data.founderNote?.placement === 'after' && <FounderNote note={data.founderNote} />}
+  </div>
 </EntryLayout>
 
 <style>

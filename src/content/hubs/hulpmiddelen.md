@@ -34,3 +34,9 @@ related: [hulpmiddelen-over-de-kaarten, woorden-vinden, hulp-vinden, herstel, wa
 reviewNotes:
   - 'Redactie: is de zin over browsers die tekst terugzetten nauwkeurig genoeg, of moet die alleen op veilig-gebruik staan?'
 ---
+
+De kaarten op deze pagina zijn vragen die je zelf kunt beantwoorden. Je leest ze, vult ze in op het scherm, of print ze. Ze zijn er terwijl je nog in een relatie zit, en ook daarna. Je hebt geen etiket nodig voor wat er gebeurt of gebeurde.
+
+De ene kaart helpt je woorden te vinden voor wat je voelt en nodig hebt. Een andere is alleen bedoeld voor een gesprek met je partner als dat veilig voelt. Er is een voorbereiding voor de huisarts of een therapeut, een kaart voor wie een vriend of familielid wil steunen, een checklist voor geld en papieren, en een kaart voor als je het begrijpt en het toch pijn blijft doen.
+
+Lees verder: [Over de kaarten](nl/hulpmiddelen/over-de-kaarten/).

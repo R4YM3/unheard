@@ -29,9 +29,7 @@ const middle = (cards.length - 1) / 2;
     <>
       <ul class="cf__fan" data-cf-fan>
         {cards.map((card, i) => (
-          <li
-            style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --z: ${10 - Math.round(Math.abs(i - middle) * 2)}`}
-          >
+          <li style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --i: ${i}`}>
             <a class="cf__card" href={card.href} data-cf-index={i}>
               <span class="cf__number">Kaart {i + 1}</span>
               <span class="cf__title">{card.title}</span>
@@ -81,14 +79,17 @@ const middle = (cards.length - 1) / 2;
     card.addEventListener('focus', show);
     previewOnFirstTap(card, show, () => card.hasAttribute('data-current'));
   }
-  /* Start with the middle card chosen. */
+  /* Start with the top card of the fan chosen. */
   const fanCards = [...document.querySelectorAll<HTMLElement>('[data-cf-fan] .cf__card')];
-  fanCards[Math.floor((fanCards.length - 1) / 2)]?.dispatchEvent(new Event('focus'));
+  fanCards.at(-1)?.dispatchEvent(new Event('focus'));
 </script>
 
 <style>
   .cf__fan {
     position: relative;
+    /* The cards' own stacking stays inside the fan, so a lifted card never covers the
+       header when the page scrolls. */
+    isolation: isolate;
     height: 20rem;
     margin: 0;
     padding: 0;
@@ -100,8 +101,7 @@ const middle = (cards.length - 1) / 2;
     --spread: clamp(2rem, 3vw, 3rem);
     left: calc(50% - 5.75rem + var(--step) * var(--spread));
     top: 1.5rem;
-    /* The middle cards lie on top, each card further out a little lower. */
-    z-index: var(--z);
+    z-index: var(--i);
     transform: rotate(var(--turn));
     transform-origin: 50% 130%;
     transition: transform 0.28s ease;
@@ -119,7 +119,6 @@ const middle = (cards.length - 1) / 2;
 
   /* Chosen but not pointed at: lifted a little in its place, so it hides no other card. */
   .cf__fan li:has(.cf__card[data-current]):not(:has(.cf__card:is(:hover, :focus-visible))) {
-    z-index: 11;
     transform: rotate(var(--turn)) translateY(-0.75rem);
   }
 
