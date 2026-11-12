@@ -18,14 +18,14 @@ export const startChooser: ChooserOption[] = [
   {
     question: 'Ik zit er nog middenin',
     intro:
-      'Lees hoe je herhaalde druk kunt herkennen en hoe je deze informatie veilig kunt bekijken. Als je wilt overleggen over jouw situatie, kun je advies vragen.',
-    keys: ['dwingende-controle', 'veilig-gebruik', 'hulp-vinden'],
+      'Lees hoe herhaalde druk kan werken en wat die met je kan doen. Je vindt ook stappen die je nu al kunt zetten: een grens oefenen waar het veilig is, of het aan iemand vertellen.',
+    keys: ['dwingende-controle', 'wat-het-met-je-kan-doen', 'herstel-grenzen', 'het-vertellen'],
   },
   {
     question: 'De relatie is voorbij',
     intro:
-      'Twijfel, gemis of pijn kunnen blijven. Lees waarom inzicht en gevoel niet altijd gelijk oplopen en hoe je steun om je heen kunt zoeken.',
-    keys: ['pijn-na-inzicht', 'herstel-steunnetwerk', 'hulp-vinden'],
+      'Twijfel, gemis of pijn kunnen blijven. Lees waarom inzicht en gevoel niet altijd gelijk oplopen, wat je praktisch kunt regelen en hoe je steun om je heen kunt zoeken.',
+    keys: ['praktisch-na-breuk', 'pijn-na-inzicht', 'gemis', 'herstel-steunnetwerk'],
   },
   {
     question: 'Ik maak me zorgen om iemand',
