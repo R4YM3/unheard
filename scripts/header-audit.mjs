@@ -163,16 +163,16 @@ try {
       'none',
       'Decorative home art stays hidden on mobile',
     );
-    const exampleSelector = '#perspectief-scene-0, #perspectief-scene-2';
+    const exampleSelector = '#perspectief-scene-0, #perspectief-scene-1, #perspectief-scene-2';
     const countVisibleExamples = () =>
       mobile.$$eval(
         exampleSelector,
         (nodes) => nodes.filter((node) => node.getBoundingClientRect().width > 0).length,
       );
-    assert.equal(await countVisibleExamples(), 2);
+    assert.equal(await countVisibleExamples(), 3);
     if (javascript) {
       await mobile.emulateMediaType('print');
-      assert.equal(await countVisibleExamples(), 2, 'Both homepage examples must print');
+      assert.equal(await countVisibleExamples(), 3, 'All homepage examples must print');
     } else {
       await mobile.setViewport({ width: 1440, height: 1000 });
       await mobile.click('.desktop-nav-item summary');
@@ -184,7 +184,7 @@ try {
     await mobile.close();
   }
   console.log(
-    'Mobile: original active-section links, prominent finder entry, both examples visible, no-JS and print content.',
+    'Mobile: original active-section links, prominent finder entry, all examples visible, no-JS and print content.',
   );
 
   /* Home hero: introduction and the two actions only; destinations stay reachable. */
@@ -210,6 +210,7 @@ try {
           'perspectief-scene-2',
           'word-finder-invite-heading',
           'verhaal',
+          'perspectief-scene-1',
           'herstel',
         ].includes(id),
       ),
@@ -221,6 +222,7 @@ try {
     'perspectief-scene-2',
     'word-finder-invite-heading',
     'verhaal',
+    'perspectief-scene-1',
     'herstel',
   ]);
   await home.setJavaScriptEnabled(false);

@@ -166,13 +166,6 @@ const homeLists = [
       <div>
         <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
         <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
-        {
-          home.storyTeaser.quote && (
-            <div class="prose">
-              <blockquote>{home.storyTeaser.quote}</blockquote>
-            </div>
-          )
-        }
         {home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
         <p>
           <a class="inline-link" href="nl/over/#waarom-ik-hiermee-begon"
@@ -190,6 +183,11 @@ const homeLists = [
       </div>
     </div>
   </section>
+  {
+    dutch && data.scenarios[1] && (
+      <HomeConversation id="perspectief-scene-1" scenario={data.scenarios[1]} followsPaper />
+    )
+  }
   <section class="section section--soft" aria-labelledby="herstel-heading" id="herstel">
     <div class="wrap">
       <div class="section-heading">

@@ -455,7 +455,6 @@ const hubs = defineCollection({
           eyebrow: z.string().min(2),
           heading: z.string().min(8),
           paragraphs: z.array(z.string().min(20)).min(1),
-          quote: z.string().min(10).optional(),
           href: internalHref,
           label: z.string().min(2),
         }),

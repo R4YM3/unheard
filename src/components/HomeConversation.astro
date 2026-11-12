@@ -6,14 +6,15 @@ interface Props {
   id: string;
   scenario: CollectionEntry<'hubs'>['data']['scenarios'][number];
   sectionId?: string;
+  followsPaper?: boolean;
 }
-const { id, scenario, sectionId } = Astro.props;
+const { id, scenario, sectionId, followsPaper } = Astro.props;
 ---
 
 <section
   class:list={[
     'section section--tint pillar--recognition home-conversation',
-    { 'home-conversation--first': sectionId },
+    { 'home-conversation--first': sectionId, 'home-conversation--after-paper': followsPaper },
   ]}
   id={sectionId}
   aria-labelledby={`${id}-heading`}
@@ -67,6 +68,9 @@ const { id, scenario, sectionId } = Astro.props;
     }
     .home-conversation--first {
       --conversation-above: var(--bg);
+    }
+    .home-conversation--after-paper {
+      --conversation-above: var(--paper-section);
     }
   }
 </style>

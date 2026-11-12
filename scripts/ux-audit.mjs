@@ -221,7 +221,7 @@ try {
   console.log(`Perspective checks: ${pvRoutes.length} routes × 2 themes`);
 
   const linkedExample = await browser.newPage();
-  for (const index of [0, 2]) {
+  for (const index of [0, 1, 2]) {
     const id = `perspectief-scene-${index}`;
     await linkedExample.goto(`${origin}/nl/#${id}`);
     await linkedExample.waitForSelector(`#${id}`, { visible: true });
