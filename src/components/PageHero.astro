@@ -50,6 +50,9 @@ const hasVisual = visualHtml !== '';
 const hasCopy = copyHtml !== '';
 const hasBand = bandHtml !== '';
 const shownActions = layout ? [] : actions;
+/* A detail page (no image, no pillar visual): the hero holds only the trail and the title.
+   The intro and its buttons follow directly below it, in the reading column. */
+const detail = !hasVisual && !layout && !artSlot;
 const menuLabels = navigationFor(locale)?.sections.map((section) => section.menu.label) ?? [];
 const trail = heroTrail(crumbs, eyebrow, menuLabels);
 /* A paragraph that only repeats the lead is shown once. */
@@ -58,7 +61,11 @@ const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(pl
 ---
 
 <section
-  class:list={['hero page-hero', pillar, { 'page-hero--band': hasBand }]}
+  class:list={[
+    'hero page-hero',
+    pillar,
+    { 'page-hero--band': hasBand, 'page-hero--detail': detail },
+  ]}
   data-hero-layout={layout}
 >
   <div class="wrap">
@@ -74,10 +81,10 @@ const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(pl
     >
       <div class="page-hero__content">
         <Breadcrumbs ancestors={trail.ancestors} current={trail.current} locale={locale} />
-        {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
+        {!detail && trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
         <h1>{heading}</h1>
-        {lead && <p class="lead">{lead}</p>}
-        {extra.map((paragraph) => <p>{paragraph}</p>)}
+        {!detail && lead && <p class="lead">{lead}</p>}
+        {!detail && extra.map((paragraph) => <p>{paragraph}</p>)}
         {
           hasCopy && (
             <div class="page-hero__copy">
@@ -86,7 +93,7 @@ const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(pl
           )
         }
         {
-          shownActions.length > 0 && (
+          !detail && shownActions.length > 0 && (
             <div class="actions">
               {shownActions.map((action) => (
                 <a class:list={['button', { 'button--quiet': action.quiet }]} href={action.href}>
@@ -116,3 +123,22 @@ const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(pl
     )
   }
 </section>
+{
+  detail && (lead || extra.length > 0 || shownActions.length > 0) && (
+    <div class="wrap reading page-intro">
+      {lead && <p class="lead">{lead}</p>}
+      {extra.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+      {shownActions.length > 0 && (
+        <div class="actions">
+          {shownActions.map((action) => (
+            <a class:list={['button', { 'button--quiet': action.quiet }]} href={action.href}>
+              {action.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
