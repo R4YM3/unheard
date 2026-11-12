@@ -250,15 +250,20 @@ try {
     ),
     1,
   );
-  const [prevBox, stageBox, nextBox] = await Promise.all(
-    ['[data-pc-prev]', '.pc__slides', '[data-pc-next]'].map((selector) =>
+  /* The arrows sit in one row with the dots and pause, below the examples. */
+  const [prevBox, stageBox, controlsBox, nextBox] = await Promise.all(
+    ['[data-pc-prev]', '.pc__slides', '[data-pc-controls]', '[data-pc-next]'].map((selector) =>
       home.$eval(`${carousel} ${selector}`, (node) => {
         const box = node.getBoundingClientRect();
-        return { left: box.left, right: box.right };
+        return { left: box.left, right: box.right, top: box.top, bottom: box.bottom };
       }),
     ),
   );
-  assert(prevBox.right <= stageBox.left && nextBox.left >= stageBox.right, 'Arrows beside');
+  assert(prevBox.top >= stageBox.bottom && nextBox.top >= stageBox.bottom, 'Arrows below');
+  assert(
+    prevBox.right <= controlsBox.left && nextBox.left >= controlsBox.right,
+    'Arrows on either side of the dots',
+  );
   await home.click(`${carousel} [data-pc-next]`);
   assert.notEqual(await currentQuote(), firstQuote, 'Next shows another example');
   assert.equal(
@@ -306,8 +311,33 @@ try {
     await summary.focus();
     await home.keyboard.press('Enter');
     assert(await option.evaluate((node) => node.open), `Enter opens ${label}`);
-    assert(await option.$('a[href="nl/hulp-vinden/"]'), `Advice is available from ${label}`);
+    assert(
+      (await option.$$('.start-chooser__body a')).length >= 3,
+      `${label} offers at least three next steps`,
+    );
   }
+  /* Being in it, or just out of it: routes that help or inform, not the help page or the
+     privacy notes again (help is in the header and the closing band). */
+  for (const label of ['Ik zit er nog middenin', 'De relatie is voorbij']) {
+    const hrefs = await home.$$eval(
+      '#beginnen details',
+      (nodes, wanted) => {
+        const option = nodes.find(
+          (node) => node.querySelector('summary').textContent.trim() === wanted,
+        );
+        return [...option.querySelectorAll('.start-chooser__body a')].map((a) =>
+          a.getAttribute('href'),
+        );
+      },
+      label,
+    );
+    assert(!hrefs.includes('nl/hulp-vinden/') && !hrefs.includes('nl/veilig-gebruik/'), label);
+  }
+  assert.equal(
+    await home.$eval('#beginnen', (node) => node.textContent.includes('niet opgeslagen')),
+    false,
+    'The storage note stays on the word finder itself',
+  );
   await home.close();
 
   /* Link hierarchy: inline links underlined; stand-alone, navigation and cards are not. */

@@ -424,8 +424,11 @@ const ordered = scenarios
       grid-template-areas: 'slide';
     }
 
+    /* The pair of bubbles keeps its own height and sits in the middle of the room the
+       longest example needs. */
     .pc[data-enhanced] .pc__slide {
       grid-area: slide;
+      align-self: center;
     }
 
     .pc[data-enhanced] .pc__slide:not([data-current]) {
@@ -470,17 +473,18 @@ const ordered = scenarios
       margin-block-start: 3.5rem;
     }
 
+    /* Wide screens: arrows join the dots and pause in one calm row below, as in the hero. */
     .pc[data-enhanced] {
-      grid-template-columns: 3.5rem minmax(0, 1fr) 3.5rem;
+      grid-template-columns: minmax(0, 1fr) auto auto auto minmax(0, 1fr);
       grid-template-areas:
-        'prev stage next'
-        '. controls .';
-      gap: 1.25rem clamp(1rem, 3vw, 2.5rem);
+        'stage stage stage stage stage'
+        '. prev controls next .';
+      gap: 1.5rem 0.5rem;
     }
 
     .pc__arrow {
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
     }
   }
 
