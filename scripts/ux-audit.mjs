@@ -128,7 +128,7 @@ try {
   // Timeline disclosures must show exactly one sign in both native states.
   const timelinePage = await browser.newPage();
   await timelinePage.setJavaScriptEnabled(false);
-  await timelinePage.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+  await timelinePage.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, { waitUntil: 'networkidle0' });
   /* While the timeline is withheld (legal review), there are no disclosures to check. */
   const withheld = await timelinePage.$('.timeline-withheld');
   for (const selector of withheld

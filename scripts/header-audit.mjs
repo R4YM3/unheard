@@ -556,7 +556,7 @@ try {
      circles, layers as tabs, milestones that open with their reflection. */
   const story = await browser.newPage();
   await story.setViewport({ width: 1280, height: 850 });
-  await story.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+  await story.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, { waitUntil: 'networkidle0' });
   const phaseLinks = await story.$$eval('.st__phases a', (nodes) =>
     nodes.map((node) => node.getAttribute('href')),
   );
@@ -698,7 +698,13 @@ try {
       nodes.map((node) => node.getAttribute('href')),
     );
     assert.equal(ridge.length, 8);
-    for (const href of ridge) assert(await hero.$(href), `${href} exists in the timeline`);
+    /* The ridge points go to the moments on the timeline's own page. */
+    await hero.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, { waitUntil: 'networkidle0' });
+    for (const href of ridge) {
+      const [path, hash] = href.split('#');
+      assert.equal(path, 'nl/mijn-verhaal/tijdlijn/', `${href} points at the timeline page`);
+      assert(await hero.$(`#${hash}`), `${href} exists in the timeline`);
+    }
     await hero.goto(`${origin}/nl/hulpmiddelen/`, { waitUntil: 'networkidle0' });
     assert.equal(await visible('.page-hero .cf__card'), 6, 'Six cards in the fan');
     await hero.goto(`${origin}/nl/hulp-vinden/`, { waitUntil: 'networkidle0' });

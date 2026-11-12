@@ -12,6 +12,9 @@ updatedAt: 2026-11-12
 reviewedAt: null
 cardTitle: 'Herstel'
 cardText: 'Erkenning, leren voelen, grenzen, rouw en steun: onderwerpen voor de tijd na het begrijpen.'
+deeper:
+  href: 'nl/herstel/wat-herstel-kan-betekenen/'
+  label: 'Wat herstel kan betekenen'
 summary: 'Herstel na emotioneel of financieel misbruik is geen vast stappenplan. Het kan gaan over erkenning, weer leren voelen, grenzen oefenen en steun vinden. Begrijpen wat er gebeurde helpt, maar maakt de pijn niet vanzelf stil. Je mag je eigen tempo houden en hulp vragen wanneer het te zwaar wordt.'
 heading: 'Herstel hoeft geen rechte lijn te zijn.'
 eyebrow: 'Herstel'
@@ -42,5 +45,3 @@ reviewNotes:
 ---
 
 Herstel na emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) is geen vast traject met een eindpunt. Voor de een begint het met eindelijk woorden hebben voor wat er gebeurde. Voor de ander met merken dat het lichaam niet meer de hele dag op scherp staat. Er is geen goede of foute volgorde.
-
-Lees verder: [Wat herstel kan betekenen](nl/herstel/wat-herstel-kan-betekenen/).
