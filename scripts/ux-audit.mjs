@@ -160,7 +160,7 @@ try {
   const pvRoutes = [];
   for (const route of routes) {
     const html = await readFile(join('dist', route, 'index.html'), 'utf8').catch(() => '');
-    if (html.includes('data-pv')) pvRoutes.push(route);
+    if (/<div\b[^>]*\sdata-pv(?=[\s=>])/.test(html)) pvRoutes.push(route);
   }
   // Both themes at once, three tabs each, sharing one queue of routes per theme.
   const checkPerspective = async (theme, queue) => {

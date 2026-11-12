@@ -49,7 +49,10 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
 ---
 
 <section
-  class="section section--tint section--tape pv-section"
+  class:list={[
+    'section section--tint section--tape pv-section',
+    { 'pillar--recognition section--dossier': swipe },
+  ]}
   aria-labelledby={`${id}-heading`}
   id={id}
 >
