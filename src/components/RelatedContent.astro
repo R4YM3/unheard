@@ -9,15 +9,18 @@ type RelatedItem = Pick<LinkCard, 'href' | 'title' | 'text'> &
 interface Props {
   items: RelatedItem[];
   heading?: string;
+  /** The band colour (a CSS colour or var); the pillar's colour on its pages. */
+  band?: string;
 }
 const t = ui(localeFromPath(Astro.url.pathname, import.meta.env.BASE_URL));
-const { items, heading = t.readMore } = Astro.props;
+const { items, heading = t.readMore, band } = Astro.props;
 ---
 
 {
   items.length > 0 && (
     <section
       class="section section--tint related-band"
+      style={band ? `--section-bg: ${band}` : undefined}
       aria-labelledby="related-heading"
       id="gerelateerd"
     >
