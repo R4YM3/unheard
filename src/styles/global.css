@@ -849,6 +849,14 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
 .page-hero__grid--plain {
   grid-template-columns: minmax(0, 1fr);
 }
+/* Detail pages (no image beside the text): the heading and intro use the width of the page
+   instead of a narrow column. The intro stops at a readable line length. */
+.page-hero__grid--plain h1 {
+  max-width: none;
+}
+.page-hero__grid--plain .page-hero__content > p:not(.eyebrow) {
+  max-width: 62rem;
+}
 /* A pillar's own hero visual (words, layers, a line, the ridge, the cards, the help choices):
    a narrower text column, so the visual has room. */
 .page-hero__grid--visual {
