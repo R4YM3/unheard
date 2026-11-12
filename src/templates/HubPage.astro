@@ -65,7 +65,12 @@ const heroLayouts = {
   herstel: 'quote',
   hulpmiddelen: 'fan',
 } as const;
-const heroLayout = heroVisual ? heroLayouts[heroVisual as keyof typeof heroLayouts] : undefined;
+function heroLayoutFor(key: string) {
+  return heroLayouts[key as keyof typeof heroLayouts];
+}
+const heroLayout = heroVisual ? heroLayoutFor(heroVisual) : undefined;
+/* Pillar overview pages open with the 50/50 intro (In het kort, then the text). */
+const pillarIntro = Boolean(heroVisual && heroLayoutFor(heroVisual));
 const homeEntry = heroVisual === 'begrijp-het' ? await findByKey('nl', 'home') : undefined;
 const homeScenarios = homeEntry && homeEntry.collection === 'hubs' ? homeEntry.data.scenarios : [];
 /* An overview page goes from "In het kort" straight to its lists; the explanation follows
@@ -192,6 +197,7 @@ const mainEntityId = termSet
   moreLinks={data.cardsPlacement === 'inline' ? [] : data.cards}
   actions={heroActions}
   heroLayout={heroLayout}
+  showSummary={!pillarIntro}
 >
   {
     heroVisual === 'wat-voel-ik' && (
@@ -222,7 +228,24 @@ const mainEntityId = termSet
     )
   }
   {
-    !woven && !isEmptyBody && (
+    pillarIntro && (data.summary || !isEmptyBody) && (
+      <div class="wrap hub-intro">
+        {data.summary && (
+          <section class="summary-box" aria-labelledby="summary-heading">
+            <h2 id="summary-heading">{ui(data.locale).inShort}</h2>
+            <p>{data.summary}</p>
+          </section>
+        )}
+        {!isEmptyBody && (
+          <div class="prose hub-intro__text">
+            <Content />
+          </div>
+        )}
+      </div>
+    )
+  }
+  {
+    !pillarIntro && !woven && !isEmptyBody && (
       <div class="wrap reading prose">
         <Content />
       </div>
@@ -299,7 +322,7 @@ const mainEntityId = termSet
     ))
   }
   {
-    woven && (
+    woven && !pillarIntro && (
       <ProseSlice from={0}>
         <Content />
       </ProseSlice>

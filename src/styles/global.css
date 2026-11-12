@@ -569,6 +569,31 @@ mark.review-marker {
 .section--block {
   --section-bg: transparent;
 }
+/* Overview pages: In het kort at the top of the start column, the text flowing on into the
+   end column; one column on a phone. */
+.hub-intro {
+  columns: 2;
+  column-gap: clamp(2rem, 5vw, 4rem);
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+.hub-intro .summary-box {
+  margin-top: 0;
+  break-inside: avoid;
+}
+.hub-intro__text {
+  padding: 0;
+}
+.hub-intro__text > :first-child {
+  margin-top: 0;
+}
+.hub-intro__text :is(h2, h3) {
+  break-after: avoid;
+}
+@media (max-width: 52rem) {
+  .hub-intro {
+    columns: 1;
+  }
+}
 /* An overview list in the pillar's colour (HubPage sets the colour). */
 .section--band + .related-band,
 .section--band + script + .related-band,
@@ -902,19 +927,21 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
 }
 /* Column splits from the design canvas (artboard G). */
 @media (width > 52rem) {
+  /* Wat voel ik?, Begrijp het, Hulpmiddelen: the interactive part on the start side, the
+     text on the end side, both the same width. Phones keep their own order. */
   .page-hero__grid--words,
-  .page-hero__grid--layers {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  .page-hero__grid--layers,
+  .page-hero__grid--fan {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(2.5rem, 5vw, 4rem);
+  }
+  :is(.page-hero__grid--words, .page-hero__grid--layers, .page-hero__grid--fan) .page-hero__visual {
+    order: -1;
   }
   .page-hero__grid--quote {
     grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
     gap: clamp(2.5rem, 5vw, 3.5rem);
     align-items: start;
-  }
-  .page-hero__grid--fan {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: clamp(2rem, 4vw, 3rem);
   }
   .page-hero__grid--quote .page-hero__visual {
     padding-block-start: clamp(3rem, 6vw, 4.5rem);
@@ -2188,6 +2215,11 @@ a.card:focus-visible,
   padding: 0;
   list-style: none;
 }
+/* The help band is the dark pine band, as on the homepage; the number cards stay light. */
+.section--chrome .help-band__numbers a {
+  color: var(--text);
+  text-decoration: none;
+}
 .help-band__numbers a {
   display: flex;
   align-items: center;
@@ -2986,7 +3018,6 @@ a.card:focus-visible,
    the sand bands, so it returns without being everywhere. The tile repeats across the whole
    band. Decoration only; print.css resets these backgrounds. */
 .hero,
-.help-band,
 .section--soft,
 .section--children {
   background-image: var(--pattern-contours);
