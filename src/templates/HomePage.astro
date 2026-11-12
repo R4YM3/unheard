@@ -281,12 +281,11 @@ const homeLists = [
 
 <style>
   /* Mijn verhaal: the founder's own words on the start side, why the site exists on a card
-     beside them. The ridge pattern closes the band below both. */
+     beside them. The ridge pattern runs along the bottom of the band, under the card. */
   .home-story {
     display: grid;
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: start;
-    padding-block-end: clamp(3rem, 9vw, 8rem);
   }
 
   .home-story__eyebrow {
@@ -377,6 +376,11 @@ const homeLists = [
 
     .home-hero__grid--conversation {
       align-items: center;
+    }
+
+    /* Room above and below, equal, so the controls under the centred chat stay inside. */
+    .home-hero__grid--conversation .home-hero__copy {
+      padding-block: clamp(4.5rem, 7vw, 6rem);
     }
 
     .home-hero__grid--conversation .home-hero-visual {
