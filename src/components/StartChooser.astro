@@ -7,7 +7,7 @@ interface Props {
   /* The homepage chapter: a sand band with its own pattern, the lists on cards and the
      word finder in the empty corner. */
   chapter?: {
-    eyebrow: string;
+    eyebrow?: string;
     wordFinder?: { heading: string; text: string; note: string; href: string; label: string };
   };
 }
@@ -32,7 +32,7 @@ const options = await Promise.all(
   id="beginnen"
 >
   <div class:list={['wrap', columns ? 'start-chooser-layout' : 'reading']}>
-    {chapter && <p class="eyebrow">{chapter.eyebrow}</p>}
+    {chapter?.eyebrow && <p class="eyebrow">{chapter.eyebrow}</p>}
     <h2 id="start-heading">Waar kan ik beginnen?</h2>
     <p>
       Begin bij wat je nu nodig hebt of kies de situatie die het dichtst bij jouw ervaring komt.

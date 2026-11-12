@@ -5,6 +5,7 @@ import type { PhotoSlot } from '../lib/photos';
 import type { Locale } from '../i18n/config';
 import { navigationFor } from '../lib/navigation';
 import { heroTrail } from '../lib/trail';
+import { heroPillarClass } from '../lib/pillar';
 
 interface Props {
   heading: string;
@@ -18,6 +19,8 @@ interface Props {
   artSlot?: PhotoSlot;
   art?: 'article' | 'story' | false;
   artNote?: string;
+  /** The page's own path (nl/...), to give the hero its pillar's colour and pattern. */
+  path?: string;
 }
 const {
   heading,
@@ -28,7 +31,9 @@ const {
   crumbs = [],
   locale,
   artSlot,
+  path = '',
 } = Astro.props;
+const pillar = heroPillarClass(locale, path);
 const menuLabels = navigationFor(locale)?.sections.map((section) => section.menu.label) ?? [];
 const trail = heroTrail(crumbs, eyebrow, menuLabels);
 /* A paragraph that only repeats the lead is shown once. */
@@ -36,7 +41,7 @@ const plain = (text: string) => text.replace(/\s+/g, ' ').trim();
 const extra = paragraphs.filter((paragraph) => !lead || !plain(lead).includes(plain(paragraph)));
 ---
 
-<section class="hero page-hero">
+<section class:list={['hero page-hero', pillar]}>
   <div class="wrap">
     <div class:list={['page-hero__grid', { 'page-hero__grid--plain': !artSlot }]}>
       <div class="page-hero__content">

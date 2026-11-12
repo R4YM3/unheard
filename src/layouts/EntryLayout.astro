@@ -182,6 +182,7 @@ const heroActions = (heroData?.actions?.length ? heroData.actions : fallbackActi
         artSlot={slotFor(data.translationKey)}
         artNote={heroData?.visualNote}
         art={heroData ? 'article' : false}
+        path={route}
       />
     )
   }

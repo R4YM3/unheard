@@ -238,8 +238,8 @@ mark.review-marker {
 }
 /* The section you are in: a soft pill around the label (and its menu arrow), so it reads as
    "you are here" and never looks like a hover. */
-.nav > a.is-active,
-.nav > a[aria-current],
+.nav > a:not(.nav-help).is-active,
+.nav > a:not(.nav-help)[aria-current],
 .desktop-nav-item:has(> a.is-active, > a[aria-current]) {
   border-radius: var(--radius-pill);
   background: var(--safe);
@@ -252,8 +252,8 @@ mark.review-marker {
 .nav > .desktop-nav-item {
   padding-inline: 0.75rem 0.375rem;
 }
-.nav > a.is-active:hover,
-.nav > a[aria-current]:hover,
+.nav > a:not(.nav-help).is-active:hover,
+.nav > a:not(.nav-help)[aria-current]:hover,
 .desktop-nav-item > a.is-active:hover,
 .desktop-nav-item > a[aria-current]:hover {
   text-decoration: none;
@@ -683,8 +683,14 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   --chapter-bg: var(--chapter-recovery);
   --chapter-line: var(--chapter-recovery-line);
 }
+/* Page heroes take their pillar's band too (src/lib/pillar.ts). */
+.hero[class*='chapter--'] {
+  --section-bg: var(--chapter-bg);
+  background-color: var(--chapter-bg);
+}
 @media screen {
   .section--chapter[class*='chapter--'],
+  .hero[class*='chapter--'],
   .hero.hero--home {
     background-repeat: no-repeat;
   }
@@ -695,7 +701,7 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
   }
   /* Herkennen stays a breather on paper; the hero contours run on into its top edge and
      fade out above the cards. */
-  .chapter--recognition {
+  :is(.section, .hero).chapter--recognition {
     background-color: var(--bg);
     background-image: linear-gradient(transparent, var(--bg) 18rem), var(--pattern-hero);
     background-repeat: no-repeat;
@@ -707,28 +713,28 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
       center top;
   }
   /* Roads wind along the top of the band. */
-  .chapter--tools {
+  :is(.section, .hero).chapter--tools {
     background-image: var(--pattern-roads);
     background-size: max(100%, 90rem) auto;
     background-position: center top;
   }
   /* Strata run down the end side, away from the text. */
-  .chapter--understanding {
+  :is(.section, .hero).chapter--understanding {
     background-image: var(--pattern-strata);
     background-size: auto 100%;
     background-position: right center;
   }
-  [dir='rtl'] .chapter--understanding {
+  [dir='rtl'] :is(.section, .hero).chapter--understanding {
     background-position: left center;
   }
   /* The ridge closes the band at the bottom. */
-  .chapter--story {
+  :is(.section, .hero).chapter--story {
     background-image: var(--pattern-ridge);
     background-size: 100% 16.25rem;
     background-position: center bottom;
   }
   /* Ripples spread out behind the cards. */
-  .chapter--recovery {
+  :is(.section, .hero).chapter--recovery {
     background-image: var(--pattern-ripples);
     background-size: cover;
     background-position: center;
@@ -736,9 +742,9 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
 }
 @media screen and (max-width: 42rem) {
   .hero.hero--home,
-  .chapter--tools,
-  .chapter--understanding,
-  .chapter--recovery {
+  :is(.section, .hero).chapter--tools,
+  :is(.section, .hero).chapter--understanding,
+  :is(.section, .hero).chapter--recovery {
     --fade: 8.75rem;
     background-image:
       linear-gradient(transparent, var(--section-bg, var(--hero-bg)) var(--fade)),
@@ -754,22 +760,22 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
     --fade: 18.75rem;
     --pattern-mobile: var(--pattern-hero-mobile);
   }
-  .chapter--tools {
+  :is(.section, .hero).chapter--tools {
     --pattern-mobile: var(--pattern-roads-mobile);
   }
-  .chapter--understanding {
+  :is(.section, .hero).chapter--understanding {
     --pattern-mobile: var(--pattern-strata-mobile);
   }
-  .chapter--recovery {
+  :is(.section, .hero).chapter--recovery {
     --pattern-mobile: var(--pattern-ripples-mobile);
   }
-  .chapter--recognition {
+  :is(.section, .hero).chapter--recognition {
     background-image: linear-gradient(transparent, var(--bg) 8.75rem), var(--pattern-hero-mobile);
     background-size:
       100% 100%,
       100% auto;
   }
-  .chapter--story {
+  :is(.section, .hero).chapter--story {
     background-image: var(--pattern-ridge-mobile);
     background-size: 100% 8.75rem;
   }
