@@ -63,6 +63,8 @@ Bij een **[patroon van controle](nl/begrippen/dwingende-controle/)** gaat het om
 
 Hetzelfde gedrag kan dus in twee heel verschillende situaties voorkomen. Een harde opmerking in een ruzie tussen gelijken is iets anders dan dezelfde opmerking als onderdeel van een patroon waarin jij steeds kleiner wordt.
 
+> “Ik vroeg me na elk gesprek af of ik overdreef. Op een gegeven moment zei ik liever niets meer.”
+
 ## Waar kun je op letten?
 
 Geen enkel punt hieronder is op zichzelf doorslaggevend. Samen kunnen ze helpen om te zien wat er speelt.

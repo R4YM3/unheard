@@ -39,7 +39,7 @@ listings:
     prefix: 'begrijp-het/financieel-misbruik/'
     eyebrow: 'Verdieping'
     heading: 'Praktische deelartikelen'
-    lead: 'Kies een onderwerp dat nu bij je past: signalen, het verschil met gewone geldruzie, je eigen documenten, een overzicht maken, afhankelijkheid, druk na een scheiding, herstel en advies.'
+    lead: 'Kies een onderwerp dat bij je vraag past of lees hieronder verder.'
 cardsPlacement: inline
 cards:
   - title: 'Ik moet voor elke uitgave toestemming vragen'
@@ -119,8 +119,6 @@ Over financieel misbruik tussen partners bestaan in Nederland weinig cijfers. Da
 Financiële druk kan uitmonden in chronische stress, schaamte, besluiteloosheid, verlies van zelfstandigheid en het gevoel dat je geen eigen toekomst kunt plannen. Soms ga je jezelf overal verantwoordelijk voor voelen, ook als je niet over de beslissing mocht meebeslissen.
 
 > “Ik zocht niet alleen duidelijkheid over geld. Ik wilde mijn eigen keuzes weer durven maken.”
-
-_Illustratieve quote, geen letterlijk getuigenis van de oprichter of van een bezoeker._
 
 Geld raakt aan bijna alles: waar je woont, wat je je kinderen kunt geven, of je durft weg te gaan, of je een plan voor later kunt maken. [Movisie](https://www.movisie.nl/artikel/financiele-kwetsbaarheid-huiselijk-geweld-kindermishandeling) beschrijft hoe [economische afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/) het lastig kan maken om een onveilige relatie te verlaten. Dat is geen zwakte. Het is een praktische en emotionele drempel die serieus genomen mag worden.
 

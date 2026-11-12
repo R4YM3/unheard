@@ -27,7 +27,7 @@ Op Ongehoord staan drie soorten tekst naast elkaar. Ze hebben elk een ander doel
 
 **Het ervaringsverhaal.** In [Mijn verhaal](nl/mijn-verhaal/) en in apart gemarkeerde passages vertelt de oprichter in de ik-vorm over zijn eigen ervaring en herstel. Dat is zijn beleving. Het is geen advies en geen bewijs dat iets voor iedereen zo werkt. Bovenaan zulke pagina's staat als auteur "De oprichter van Ongehoord (persoonlijke ervaring)".
 
-**Algemene uitleg.** De meeste pagina's leggen in gewone taal uit wat een begrip betekent, hoe iets eruit kan zien en wat kan helpen. Die teksten zijn neutraal geschreven en worden ondertekend met "Ongehoord (algemene uitleg)". Het label ‘Voorbeeld’ staat bij samengestelde gesprekssituaties die laten zien hoe iets kan klinken en voelen. De situaties zijn geschreven ter illustratie en beschrijven geen specifieke persoon.
+**Algemene uitleg.** De meeste pagina's leggen in gewone taal uit wat een begrip betekent, hoe iets eruit kan zien en wat kan helpen. Die teksten zijn neutraal geschreven en worden ondertekend met "Ongehoord (algemene uitleg)". Het label ‘Voorbeeld’ staat bij samengestelde gesprekssituaties die laten zien hoe iets kan klinken en voelen. Ook de korte voorbeeldcitaten in de ik-vorm op uitlegpagina’s zijn geschreven om herkenbare gevoelens onder woorden te brengen. Voorbeelden en voorbeeldcitaten beschrijven geen specifieke persoon.
 
 **Gecontroleerde cijfers.** Cijfers staan alleen op [Mannen in cijfers](nl/mannen-in-cijfers/). Daar staat bij elk cijfer uit welk onderzoek het komt, over welk jaar, welke definitie, welke groep mensen en welke periode, met de beperkingen en een directe link naar de bron. Op andere pagina's staan bewust geen percentages.
 

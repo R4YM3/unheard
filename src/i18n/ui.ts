@@ -45,7 +45,7 @@ const nl = {
   footerWorried: 'Zorgen over huiselijk geweld?',
   footerAllHelp: 'Alle hulp',
   footerMeta: (photos: boolean) =>
-    `Conceptsite in ontwikkeling. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.${photos ? ' De foto’s op deze site zijn met AI gemaakt.' : ''}`,
+    `Conceptsite in ontwikkeling. Gesprekssituaties en voorbeeldcitaten zijn illustratief. Voorbeelden en begrippen helpen patronen verkennen; ze zijn geen diagnose of oordeel over iemand.${photos ? ' De foto’s op deze site zijn met AI gemaakt.' : ''}`,
   shareImageAlt: 'Ongehoord: Je hoeft het nog geen misbruik te noemen.',
   mobileSuffix: '(mobiel)',
   draftStatus: 'Conceptversie',
