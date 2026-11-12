@@ -760,6 +760,15 @@ mark.review-marker {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2rem);
 }
+/* On wide screens the end side stays in view while the start side is read: it sticks below
+   the header (with the rail's spacing) and stops at the block's bottom padding, so it never
+   runs into the first band. Not on low screens, where it could not fit. */
+@media (min-width: 52.0625rem) and (min-height: 40rem) {
+  .intro-block__side {
+    position: sticky;
+    top: 7rem;
+  }
+}
 .intro-block .intro-block__text {
   padding: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
 }
