@@ -4,9 +4,15 @@ import { cardFor, findByKey, type LinkCard } from '../lib/content';
 
 interface Props {
   locale?: string;
-  columns?: boolean;
+  /* The homepage chapter: a sand band with its own pattern, the lists on cards and the
+     word finder in the empty corner. */
+  chapter?: {
+    eyebrow: string;
+    wordFinder?: { heading: string; text: string; note: string; href: string; label: string };
+  };
 }
-const { locale = 'nl', columns = false } = Astro.props;
+const { locale = 'nl', chapter } = Astro.props;
+const columns = Boolean(chapter);
 const options = await Promise.all(
   startChooser.map(async (option) => {
     const links: LinkCard[] = [];
@@ -20,14 +26,19 @@ const options = await Promise.all(
 );
 ---
 
-<section class="section section--soft" aria-labelledby="start-heading" id="beginnen">
+<section
+  class:list={['section', chapter ? 'section--chapter chapter--tools' : 'section--soft']}
+  aria-labelledby="start-heading"
+  id="beginnen"
+>
   <div class:list={['wrap', columns ? 'start-chooser-layout' : 'reading']}>
+    {chapter && <p class="eyebrow">{chapter.eyebrow}</p>}
     <h2 id="start-heading">Waar kan ik beginnen?</h2>
     <p>
       Begin bij wat je nu nodig hebt of kies de situatie die het dichtst bij jouw ervaring komt.
     </p>
     <div class="start-chooser-groups">
-      <div>
+      <div class="start-chooser-needs">
         <h3>Waar heb je nu behoefte aan?</h3>
         <ul class="start-chooser-direct">
           <li>
@@ -43,7 +54,7 @@ const options = await Promise.all(
           <li><a class="inline-link" href="nl/herstel/">Hoe vind ik weer wat rust?</a></li>
         </ul>
       </div>
-      <div>
+      <div class="start-chooser-situations">
         <h3>Welke situatie past bij jou?</h3>
         <div class="start-chooser">
           {
@@ -70,19 +81,44 @@ const options = await Promise.all(
           }
         </div>
       </div>
+      {
+        chapter?.wordFinder && (
+          <div class="start-chooser-finder">
+            <h3>Weet je het nog niet?</h3>
+            <p>{chapter.wordFinder.text}</p>
+            <a class="button" href={chapter.wordFinder.href}>
+              {chapter.wordFinder.label}
+              <span aria-hidden="true"> →</span>
+            </a>
+            <p class="note">{chapter.wordFinder.note}</p>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>
 
 <style>
-  .start-chooser-layout > p {
-    max-width: 60ch;
+  .start-chooser-layout > p:not(.eyebrow) {
+    max-width: none;
   }
 
   .start-chooser-layout .start-chooser-groups {
     display: grid;
-    gap: clamp(1.75rem, 4vw, 3.5rem);
+    gap: clamp(1rem, 2vw, 1.5rem);
     margin-block-start: 2rem;
+  }
+
+  /* Each list sits on a plain card, so the pattern never runs behind the text. */
+  .start-chooser-layout :is(.start-chooser-needs, .start-chooser-situations) {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    border: 1px solid var(--chapter-line, var(--border));
+    border-radius: 1rem;
+    background: var(--surface);
+  }
+
+  .start-chooser-layout h3 {
+    margin-block: 0 0.75rem;
   }
 
   .start-chooser-layout .start-chooser-direct {
@@ -98,11 +134,19 @@ const options = await Promise.all(
     gap: 1rem;
     min-height: 3.25rem;
     padding: 0.75rem 1rem;
-    background: var(--surface);
-    border-radius: var(--radius);
+    background: var(--bg);
+    border-radius: 0.625rem;
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .start-chooser-layout .start-chooser-direct a:hover {
+    color: var(--link);
   }
 
   .start-chooser-layout .start-chooser-direct a::after {
+    color: var(--link);
     content: '→' / '';
   }
 
@@ -113,7 +157,7 @@ const options = await Promise.all(
   .start-chooser-layout details {
     margin: 0;
     border: 0;
-    border-block-end: 1px solid var(--border);
+    border-block-start: 1px solid var(--chapter-line, var(--border));
     border-radius: 0;
     background: transparent;
   }
@@ -123,12 +167,74 @@ const options = await Promise.all(
   }
 
   .start-chooser-layout summary {
-    padding-inline: 0.75rem;
+    padding-inline: 0.125rem;
+  }
+
+  .start-chooser-layout details[open] summary {
+    border-block-end: 0;
+  }
+
+  .start-chooser-layout .start-chooser__body {
+    padding: 0 0.125rem 1rem;
+  }
+
+  /* Not sure yet: the word finder, as the one dark card in the chapter. */
+  .start-chooser-finder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: clamp(1.25rem, 2.5vw, 1.5rem);
+    border-radius: 1rem;
+    background: var(--band-bg);
+    color: var(--band-text);
+  }
+
+  .start-chooser-finder p {
+    margin: 0;
+  }
+
+  .start-chooser-finder .button {
+    margin-block: 0.5rem;
+    border-color: var(--band-text);
+    background: var(--band-text);
+    color: var(--band-bg);
+  }
+
+  .start-chooser-finder .note {
+    margin-block-start: auto;
+    color: var(--band-muted);
   }
 
   @media (min-width: 52rem) {
     .start-chooser-layout .start-chooser-groups {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      grid-template-areas:
+        'needs situations'
+        'finder situations';
+      align-items: start;
+    }
+
+    .start-chooser-needs {
+      grid-area: needs;
+    }
+
+    .start-chooser-situations {
+      grid-area: situations;
+      align-self: stretch;
+    }
+
+    .start-chooser-finder {
+      grid-area: finder;
+      align-self: stretch;
+    }
+  }
+
+  @media print {
+    .start-chooser-finder {
+      border: 1px solid #000;
+      background: none;
+      color: #000;
     }
   }
 </style>

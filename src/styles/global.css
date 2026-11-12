@@ -587,6 +587,7 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
       .section--therapy,
       .section--tint,
       .section--surface,
+      .section--chapter,
       .section--chrome
     )
   )
@@ -599,6 +600,7 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
       .section--therapy,
       .section--tint,
       .section--surface,
+      .section--chapter,
       .section--chrome
     )
   ) {
@@ -637,6 +639,121 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
       transparent 1px 6px
     );
     --pillar-pattern-width: 1.5rem;
+  }
+}
+/* ---------- Homepage chapters ----------
+   One band per pillar. Colour marks the chapter; plain paper is a breather between them.
+   Each chapter has its own line pattern, placed as on the design canvas: the lines run off
+   the edges of the band. On a phone a pattern only shows at the top of the band and fades
+   into its colour, so it never sits behind text. Decoration only; print resets it. */
+.section--chapter {
+  --section-bg: var(--chapter-bg, var(--bg));
+}
+.chapter--tools {
+  --chapter-bg: var(--chapter-tools);
+  --chapter-line: var(--chapter-tools-line);
+}
+.chapter--understanding {
+  --chapter-bg: var(--chapter-understanding);
+  --chapter-line: var(--chapter-understanding-line);
+}
+.chapter--story {
+  --chapter-bg: var(--chapter-story);
+  --chapter-line: var(--chapter-story-line);
+}
+.chapter--recovery {
+  --chapter-bg: var(--chapter-recovery);
+  --chapter-line: var(--chapter-recovery-line);
+}
+@media screen {
+  .section--chapter[class*='chapter--'],
+  .hero.hero--home {
+    background-repeat: no-repeat;
+  }
+  .hero.hero--home {
+    background-image: var(--pattern-hero);
+    background-size: cover;
+    background-position: center;
+  }
+  /* Herkennen stays a breather on paper; the hero contours run on into its top edge and
+     fade out above the cards. */
+  .chapter--recognition {
+    background-color: var(--bg);
+    background-image: linear-gradient(transparent, var(--bg) 18rem), var(--pattern-hero);
+    background-repeat: no-repeat;
+    background-size:
+      100% 100%,
+      max(100%, 90rem) auto;
+    background-position:
+      top,
+      center top;
+  }
+  /* Roads wind along the top of the band. */
+  .chapter--tools {
+    background-image: var(--pattern-roads);
+    background-size: max(100%, 90rem) auto;
+    background-position: center top;
+  }
+  /* Strata run down the end side, away from the text. */
+  .chapter--understanding {
+    background-image: var(--pattern-strata);
+    background-size: auto 100%;
+    background-position: right center;
+  }
+  [dir='rtl'] .chapter--understanding {
+    background-position: left center;
+  }
+  /* The ridge closes the band at the bottom. */
+  .chapter--story {
+    background-image: var(--pattern-ridge);
+    background-size: 100% 16.25rem;
+    background-position: center bottom;
+  }
+  /* Ripples spread out behind the cards. */
+  .chapter--recovery {
+    background-image: var(--pattern-ripples);
+    background-size: cover;
+    background-position: center;
+  }
+}
+@media screen and (max-width: 42rem) {
+  .hero.hero--home,
+  .chapter--tools,
+  .chapter--understanding,
+  .chapter--recovery {
+    --fade: 8.75rem;
+    background-image:
+      linear-gradient(transparent, var(--section-bg, var(--hero-bg)) var(--fade)),
+      var(--pattern-mobile);
+    background-size:
+      100% 100%,
+      100% auto;
+    background-position:
+      top,
+      center top;
+  }
+  .hero.hero--home {
+    --fade: 18.75rem;
+    --pattern-mobile: var(--pattern-hero-mobile);
+  }
+  .chapter--tools {
+    --pattern-mobile: var(--pattern-roads-mobile);
+  }
+  .chapter--understanding {
+    --pattern-mobile: var(--pattern-strata-mobile);
+  }
+  .chapter--recovery {
+    --pattern-mobile: var(--pattern-ripples-mobile);
+  }
+  .chapter--recognition {
+    background-image: linear-gradient(transparent, var(--bg) 8.75rem), var(--pattern-hero-mobile);
+    background-size:
+      100% 100%,
+      100% auto;
+  }
+  .chapter--story {
+    background-image: var(--pattern-ridge-mobile);
+    background-size: 100% 8.75rem;
   }
 }
 .hero + .section--tape {
@@ -2671,6 +2788,7 @@ a.card:focus-visible,
     .section--therapy,
     .section--tint,
     .section--surface,
+    .section--chapter,
     .section--chrome
   ) {
   padding-top: 0;

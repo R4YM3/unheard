@@ -157,7 +157,9 @@ try {
       await mobile.$eval('.home-hero__copy .button', (node) => node.getAttribute('href')),
       'nl/hulpmiddelen/help-me-woorden-vinden/',
     );
-    assert(await mobile.$('.word-finder-invite a[href="nl/hulpmiddelen/help-me-woorden-vinden/"]'));
+    assert(
+      await mobile.$('.start-chooser-finder a[href="nl/hulpmiddelen/help-me-woorden-vinden/"]'),
+    );
     const visibleHeroConversation = await mobile.waitForSelector(
       '[data-conversation-frame]:not([hidden])',
       { visible: true },
@@ -175,7 +177,8 @@ try {
       const activeQuote = '[data-conversation-frame]:not([hidden]):not([inert]) q';
       const height = await mobile.$eval(stage, (node) => node.getBoundingClientRect().height);
       const quote = await mobile.$eval(activeQuote, (node) => node.textContent);
-      await mobile.click('[data-conversation-next]');
+      /* Voorstel 1: on a phone the card turns with its dots (and a swipe). */
+      await mobile.click('[data-conversation-dot="1"]');
       await mobile.waitForFunction(
         (selector, previous) => {
           const current = globalThis.document.querySelector(selector);
@@ -218,34 +221,75 @@ try {
   assert(await home.$('.nav a[href="nl/begrijp-het/"]'), 'Begrijp het stays in the navigation');
   assert(await home.$('#verhaal a[href="nl/over/#waarom-ik-hiermee-begon"]'));
   assert(await home.$('#hulp a[href="nl/hulp-vinden/"]'));
-  const homeOrder = await home.$$eval('main [id]', (nodes) =>
-    nodes
-      .map((node) => node.id)
-      .filter((id) =>
-        [
-          'gevoelens',
-          'gedachte',
-          'beginnen',
-          'verhaal-citaat',
-          'perspectief-scene-2',
-          'word-finder-invite-heading',
-          'verhaal',
-          'herstel',
-        ].includes(id),
-      ),
+  /* Six chapters, one per pillar: hero, Herkennen, Hulpmiddelen, Begrijpen, Mijn verhaal,
+     Herstel, Hulp. */
+  const chapters = ['gevoelens', 'beginnen', 'perspectief', 'verhaal', 'herstel', 'hulp'];
+  const homeOrder = await home.$$eval(
+    'main section[id]',
+    (nodes, wanted) => nodes.map((node) => node.id).filter((id) => wanted.includes(id)),
+    chapters,
   );
-  assert.deepEqual(homeOrder, [
-    'gevoelens',
-    'gedachte',
-    'beginnen',
-    'verhaal-citaat',
-    'perspectief-scene-2',
-    'word-finder-invite-heading',
-    'verhaal',
-    'herstel',
+  assert.deepEqual(homeOrder, chapters);
+  assert.equal(await home.$('#woorden-vinden'), null, 'The word finder is part of Beginnen');
+  /* Neighbouring chapters never share a band colour. */
+  const bands = await home.$$eval('main > section, main > .section', (nodes) =>
+    nodes.map((node) => globalThis.getComputedStyle(node).backgroundColor),
+  );
+  for (let i = 1; i < bands.length; i += 1) {
+    assert.notEqual(bands[i], bands[i - 1], `Bands ${i - 1} and ${i} have the same colour`);
+  }
+  /* Begrijpen: one example at a time, arrows on both sides, the count announced on request. */
+  const carousel = '[data-perspective-carousel]';
+  const currentQuote = () => home.$eval(`${carousel} [data-current] q`, (node) => node.textContent);
+  const firstQuote = await currentQuote();
+  assert.equal(
+    await home.$$eval(
+      `${carousel} [data-pc-slide]`,
+      (nodes) =>
+        nodes.filter((node) => globalThis.getComputedStyle(node).visibility === 'visible').length,
+    ),
+    1,
+  );
+  const [prevBox, stageBox, nextBox] = await Promise.all(
+    ['[data-pc-prev]', '.pc__slides', '[data-pc-next]'].map((selector) =>
+      home.$eval(`${carousel} ${selector}`, (node) => {
+        const box = node.getBoundingClientRect();
+        return { left: box.left, right: box.right };
+      }),
+    ),
+  );
+  assert(prevBox.right <= stageBox.left && nextBox.left >= stageBox.right, 'Arrows beside');
+  await home.click(`${carousel} [data-pc-next]`);
+  assert.notEqual(await currentQuote(), firstQuote, 'Next shows another example');
+  assert.equal(
+    await home.$eval(`${carousel} [data-pc-count]`, (node) => node.getAttribute('aria-live')),
+    'polite',
+  );
+  await home.click(`${carousel} [data-pc-prev]`);
+  assert.equal(await currentQuote(), firstQuote, 'Previous goes back');
+  const align = await home.$eval(`${carousel} [data-current]`, (node) => [
+    globalThis.getComputedStyle(node.querySelector('.pv-line--outside')).textAlign,
+    globalThis.getComputedStyle(node.querySelector('.pv-line--inside')).textAlign,
   ]);
+  assert.deepEqual(align, ['start', 'end'], 'Je hoort aligns to the start, Je voelt to the end');
   await home.setJavaScriptEnabled(false);
   await home.reload();
+  const slideCount = await home.$$eval('[data-pc-slide]', (nodes) => nodes.length);
+  assert(slideCount > 1);
+  assert.equal(
+    await home.$$eval(
+      '[data-pc-slide]',
+      (nodes) =>
+        nodes.filter(
+          (node) =>
+            node.getBoundingClientRect().height > 0 &&
+            globalThis.getComputedStyle(node).visibility === 'visible',
+        ).length,
+    ),
+    slideCount,
+    'Without JavaScript every example is listed',
+  );
+  assert.equal(await home.$('[data-pc-next]:not([hidden])'), null, 'No arrows without JavaScript');
   const options = await home.$$('#beginnen details');
   const labels = [
     'Ik twijfel nog',
