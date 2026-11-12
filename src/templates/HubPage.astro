@@ -67,7 +67,8 @@ const heroLayouts = {
 const heroLayout = heroVisual ? heroLayouts[heroVisual as keyof typeof heroLayouts] : undefined;
 const homeEntry = heroVisual === 'begrijp-het' ? await findByKey('nl', 'home') : undefined;
 const homeScenarios = homeEntry && homeEntry.collection === 'hubs' ? homeEntry.data.scenarios : [];
-/* Hubs weave their explanation and their lists: chapter, list, chapter, list, the rest. */
+/* An overview page goes from "In het kort" straight to its lists; the explanation follows
+   below them, for whoever wants to read on. */
 const woven = listings.length > 0 && !data.finder && !isEmptyBody;
 const listingId = (listing: (typeof listings)[number], index: number) =>
   listing.collection === 'emotions' ? 'gevoelens' : `lijst-${index + 1}`;
@@ -232,11 +233,6 @@ const mainEntityId = termSet
   {
     listings.map((listing, index) => (
       <>
-        {woven && (
-          <ProseSlice from={index} to={index + 1}>
-            <Content />
-          </ProseSlice>
-        )}
         <section
           class:list={[
             'section',
@@ -310,7 +306,7 @@ const mainEntityId = termSet
   }
   {
     woven && (
-      <ProseSlice from={listings.length}>
+      <ProseSlice from={0}>
         <Content />
       </ProseSlice>
     )
