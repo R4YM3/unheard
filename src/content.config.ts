@@ -556,6 +556,7 @@ const story = defineCollection({
         .array(
           z.object({
             eyebrow: z.string().min(2),
+            phase: z.string().min(3).optional(),
             title: z.string().min(8),
             description: z.string().min(20),
             lenses: z.array(lens).refine((items) => items.length === 0 || items.length === 4),
