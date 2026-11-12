@@ -46,11 +46,12 @@ Rules:
 - The heading and lead come first, then the conversation as one card with two solid bubbles, dots, a count and pause.
 - The card can be swiped.
 
-## Text that moved (founder review)
+## Text on the homepage (founder review)
 
-These texts moved unchanged:
+Unchanged text that moved or is no longer shown:
 
-- The hero description ("Ik begon Ongehoord vanuit mijn eigen zoektocht …") is now the last paragraph of the "Ook ik zocht woorden" card.
-- The two quotes now open the Mijn verhaal chapter.
+- The two quotes now open the Mijn verhaal chapter, at the same size, beside the "Ook ik zocht woorden" card.
+- As on the canvas, the card shows only the last storyTeaser paragraph.
+- The first paragraph ("Ik zocht houvast …") and the former hero description ("Ik begon Ongehoord vanuit mijn eigen zoektocht …") are no longer shown on the Dutch homepage. They are still in `src/content/hubs/home.md`.
 
 Chapter eyebrows are now pillar names: Wat voel ik?, Hulpmiddelen, Begrijp het, Mijn verhaal, Herstel. They replace "Begin bij jezelf", "Twee kanten van één gesprek" and "Herstel & hulpmiddelen" on the Dutch homepage only.

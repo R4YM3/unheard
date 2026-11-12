@@ -203,9 +203,17 @@ const ordered = scenarios
 </script>
 
 <style>
+  /* The examples are symmetrical (start side, end side), so the heading sits in the middle
+     above them. */
   .chapter-heading {
     max-width: 44rem;
-    margin-block-end: clamp(1.5rem, 3vw, 2.5rem);
+    margin-inline: auto;
+    margin-block-end: clamp(1.75rem, 4vw, 3rem);
+    text-align: center;
+  }
+
+  .chapter-heading .eyebrow {
+    color: var(--link);
   }
 
   .chapter-heading h2 {
@@ -266,6 +274,7 @@ const ordered = scenarios
 
     .pc :global(.pv-line dd) {
       font-size: clamp(1.2rem, 1rem + 0.9vw, 1.6rem);
+      text-wrap: pretty;
     }
 
     /* What is said: the start side, aligned to the start. */
@@ -305,13 +314,13 @@ const ordered = scenarios
     .pc__arrow {
       width: 3rem;
       height: 3rem;
-      border: 1px solid var(--chapter-line);
+      border: 1.5px solid var(--text);
       border-radius: 50%;
-      background: var(--surface);
+      background: transparent;
     }
 
     .pc__arrow:hover {
-      border-color: var(--border-strong);
+      background: var(--surface);
     }
 
     .pc__chevron {

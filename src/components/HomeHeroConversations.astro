@@ -242,9 +242,9 @@ const { scenarios } = Astro.props;
   .hero-conversations :global(.pv-line) {
     grid-template-columns: minmax(0, 1fr);
     width: fit-content;
-    max-width: 92%;
-    padding: 0.75rem 1rem;
-    border-radius: 1.25rem;
+    max-width: min(92%, 24rem);
+    padding: 1rem 1.25rem;
+    border-radius: 1.125rem;
     box-sizing: border-box;
   }
 
@@ -252,26 +252,26 @@ const { scenarios } = Astro.props;
     font-size: clamp(1.1rem, 1.5vw, 1.45rem);
   }
 
+  /* As on the canvas: two solid bubbles, both read from the start. What is said sits on the
+     start side, what it does inside on the end side, in a quiet green that differs from the
+     rose of the Begrijpen chapter. */
   .hero-conversations :global(.pv-line--outside) {
-    position: relative;
     justify-self: start;
+    border: 1px solid var(--safe-border);
+    border-end-start-radius: 0.25rem;
     background: var(--surface);
-  }
-
-  .hero-conversations :global(.pv-line--outside)::before {
-    position: absolute;
-    inset-inline-end: 100%;
-    inset-block-start: 1.25rem;
-    border-block: 0.45rem solid transparent;
-    border-inline-end: 0.6rem solid var(--surface);
-    content: '';
   }
 
   .hero-conversations :global(.pv-line--inside) {
     justify-self: end;
     margin-block-start: var(--bubble-gap);
-    border: 2px dashed var(--border-strong);
-    text-align: end;
+    border: 1px solid var(--safe-border);
+    border-end-end-radius: 0.25rem;
+    background: var(--badge);
+  }
+
+  .hero-conversations :global(.pv-line dd) {
+    text-wrap: pretty;
   }
 
   .hero-conversations__link {
@@ -358,7 +358,7 @@ const { scenarios } = Astro.props;
 
   @media (width > 52rem) {
     .hero-conversations__stage {
-      padding-block-start: clamp(3rem, 6vw, 5rem);
+      padding-block-start: 0.75rem;
     }
   }
 
@@ -488,7 +488,6 @@ const { scenarios } = Astro.props;
     .hero-conversations :global(.pv-line) {
       max-width: 88%;
       padding: 0.625rem 0.875rem;
-      border: 0;
     }
 
     .hero-conversations :global(.pv-line dd) {
@@ -500,13 +499,8 @@ const { scenarios } = Astro.props;
       background: var(--bg);
     }
 
-    .hero-conversations :global(.pv-line--outside)::before {
-      content: none;
-    }
-
     .hero-conversations :global(.pv-line--inside) {
       margin-block-start: 0.625rem;
-      border: 0;
       border-radius: 1rem 1rem 0.25rem 1rem;
       background: var(--badge);
     }

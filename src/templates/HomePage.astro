@@ -152,7 +152,7 @@ const homeLists = [
               <blockquote class="home-story-quote">
                 <p>“Als ik iets wilde, kon ik dagen nadenken over hoe ik het moest brengen.”</p>
               </blockquote>
-              <blockquote class="home-story-quote home-story-quote--second">
+              <blockquote class="home-story-quote">
                 <p>
                   “Ook nadat ik was weggegaan, twijfelde ik nog aan mezelf en mijn herinneringen.”
                 </p>
@@ -161,10 +161,9 @@ const homeLists = [
             <div class="home-story__card">
               <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
               <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
-              {home.storyTeaser.paragraphs.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-              <p>{home.hero.description}</p>
+              {/* As on the canvas: the last paragraph only. The first paragraph and the old hero
+                  description stay in the content file for the founder to place. */}
+              <p>{home.storyTeaser.paragraphs.at(-1)}</p>
               <div class="actions">
                 <a class="button" href={home.storyTeaser.href}>
                   {home.storyTeaser.label}
@@ -316,16 +315,6 @@ const homeLists = [
     line-height: 1.2;
   }
 
-  .home-story-quote--second {
-    padding-inline-start: 1.375rem;
-    border-inline-start: 3px solid var(--accent);
-    color: var(--muted);
-    font-size: clamp(1.3rem, 1.05rem + 0.9vw, 1.6rem);
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.3;
-  }
-
   .home-story-quote p {
     margin: 0;
   }
@@ -383,6 +372,10 @@ const homeLists = [
   @media (width > 52rem) {
     .home-hero__grid--conversation {
       grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .home-hero__grid--conversation {
+      align-items: center;
     }
 
     .home-hero__grid--conversation .home-hero-visual {
