@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import HelpChoices from '../components/heroes/HelpChoices.astro';
 import PageRail from '../components/PageRail.astro';
 import { articleRailGroups } from '../lib/article-rail';
 import CardGrid from '../components/CardGrid.astro';
@@ -25,6 +26,11 @@ const pageType = ['over', 'werkwijze'].includes(data.translationKey) ? 'AboutPag
 ---
 
 <EntryLayout entry={entry} pageType={pageType} moreLinks={cards}>
+  {
+    entry.data.locale === 'nl' && entry.data.translationKey === 'hulp-vinden' && (
+      <HelpChoices slot="hero-visual" />
+    )
+  }
   {railGroups.length > 0 && <PageRail slot="rail" groups={railGroups} />}
   <div class="wrap reading prose"><Content /></div>
   <Fragment slot="after">

@@ -25,6 +25,10 @@ import {
 import { itemList, type SchemaNode } from '../lib/schema';
 import { ui } from '../i18n/ui';
 import { pillarBand } from '../lib/pillar';
+import FeelingWords from '../components/heroes/FeelingWords.astro';
+import LayeredMoment from '../components/heroes/LayeredMoment.astro';
+import RecoveryLine from '../components/heroes/RecoveryLine.astro';
+import CardFan from '../components/heroes/CardFan.astro';
 
 interface Props {
   entry: CollectionEntry<'hubs'>;
@@ -52,6 +56,10 @@ const route = routeFor(entry);
 const compactFinancialArticles = data.translationKey === 'financieel-misbruik';
 /* On a pillar's own pages the lists sit on the pillar's colour, like its homepage chapter. */
 const band = pillarBand(data.locale, route);
+/* Each pillar's own hero visual (Dutch pillar hubs only; others keep the arched image). */
+const heroVisual = data.locale === 'nl' ? data.translationKey : undefined;
+const homeEntry = heroVisual === 'begrijp-het' ? await findByKey('nl', 'home') : undefined;
+const homeScenarios = homeEntry && homeEntry.collection === 'hubs' ? homeEntry.data.scenarios : [];
 /* Hubs weave their explanation and their lists: chapter, list, chapter, list, the rest. */
 const woven = listings.length > 0 && !data.finder && !isEmptyBody;
 const listingId = (listing: (typeof listings)[number], index: number) =>
@@ -175,6 +183,14 @@ const mainEntityId = termSet
   moreLinks={data.cardsPlacement === 'inline' ? [] : data.cards}
   actions={heroActions}
 >
+  {heroVisual === 'wat-voel-ik' && <FeelingWords slot="hero-visual" locale={data.locale} />}
+  {
+    heroVisual === 'begrijp-het' && homeScenarios.length > 0 && (
+      <LayeredMoment slot="hero-visual" scenarios={homeScenarios} />
+    )
+  }
+  {heroVisual === 'herstel' && <RecoveryLine slot="hero-visual" locale={data.locale} />}
+  {heroVisual === 'hulpmiddelen' && <CardFan slot="hero-visual" locale={data.locale} />}
   {
     !woven && !isEmptyBody && (
       <div class="wrap reading prose">

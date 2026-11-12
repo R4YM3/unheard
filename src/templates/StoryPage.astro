@@ -11,6 +11,7 @@ import { breadcrumbsFor, routeFor } from '../lib/content';
 import { navigationFor } from '../lib/navigation';
 import { heroTrail } from '../lib/trail';
 import { heroPillarClass } from '../lib/pillar';
+import StoryRidge from '../components/heroes/StoryRidge.astro';
 
 interface Props {
   entry: CollectionEntry<'story'>;
@@ -31,7 +32,7 @@ const trail = heroTrail(
 <EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
   <section class:list={['hero page-hero', heroPillarClass(data.locale, route)]}>
     <div class="wrap">
-      <div class="page-hero__grid">
+      <div class:list={['page-hero__grid', { 'page-hero__grid--visual': data.locale === 'nl' }]}>
         <div class="page-hero__content">
           <Breadcrumbs ancestors={trail.ancestors} current={trail.current} locale={data.locale} />
           {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
@@ -42,7 +43,15 @@ const trail = heroTrail(
             <a class="button" href={`${route}#tijdlijn`}>Bekijk de tijdlijn</a>
           </div>
         </div>
-        <HeroArt slot="mijn-verhaal" />
+        {
+          data.locale === 'nl' && data.timeline ? (
+            <div class="page-hero__visual">
+              <StoryRidge milestones={data.timeline.milestones} />
+            </div>
+          ) : (
+            <HeroArt slot="mijn-verhaal" />
+          )
+        }
       </div>
     </div>
   </section>

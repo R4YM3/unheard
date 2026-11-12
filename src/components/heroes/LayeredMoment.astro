@@ -1,0 +1,245 @@
+---
+/* Begrijp het: a cross-section of one moment, in three layers like the strata of its pattern.
+   What you hear, what it does to you, and what you can look at, all from the homepage
+   examples. Each layer is a native disclosure, so it works without JavaScript; there every
+   moment is listed. With JavaScript one moment shows at a time. */
+import type { CollectionEntry } from 'astro:content';
+import { layeredMoments } from '../../data/pillar-heroes';
+
+interface Props {
+  scenarios: CollectionEntry<'hubs'>['data']['scenarios'];
+}
+const { scenarios } = Astro.props;
+const moments = layeredMoments.map((index) => {
+  const scenario = scenarios[index];
+  if (!scenario) throw new Error(`LayeredMoment: no homepage scenario ${index}`);
+  return scenario;
+});
+const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’']+$/g, '');
+---
+
+<div class="lm" data-layered-moment>
+  <ol class="lm__moments">
+    {
+      moments.map((moment, index) => (
+        <li class="lm__moment" data-lm-moment>
+          <p class="lm__label">
+            Moment {index + 1} van {moments.length} · {moment.label}
+          </p>
+          <div class="lm__stack">
+            <details class="lm__layer lm__layer--1" name={`lm-${index}`} open>
+              <summary>Laag 1 · Wat je hoort</summary>
+              <div class="lm__body">
+                <p class="lm__heard">
+                  <q>{unquote(moment.outside)}</q>
+                </p>
+              </div>
+            </details>
+            <details class="lm__layer lm__layer--2" name={`lm-${index}`}>
+              <summary>Laag 2 · Wat het met je doet</summary>
+              <div class="lm__body">
+                <p class="lm__felt">{moment.inside}</p>
+              </div>
+            </details>
+            <details class="lm__layer lm__layer--3" name={`lm-${index}`}>
+              <summary>Laag 3 · Wat je kunt bekijken</summary>
+              <div class="lm__body">
+                <p class="lm__context">{moment.context}</p>
+                {moment.followUp && (
+                  <p class="lm__more">
+                    <a class="text-link" href={moment.followUp.href}>
+                      {moment.followUp.label}
+                    </a>
+                  </p>
+                )}
+              </div>
+            </details>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+  <div class="lm__controls" data-lm-controls hidden>
+    <button type="button" class="button" data-lm-deeper>Een laag dieper ↓</button>
+    <button type="button" class="button button--quiet" data-lm-next>Ander moment →</button>
+  </div>
+</div>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-layered-moment]')) {
+    const moments = [...root.querySelectorAll<HTMLElement>('[data-lm-moment]')];
+    const controls = root.querySelector<HTMLElement>('[data-lm-controls]');
+    const deeper = root.querySelector<HTMLButtonElement>('[data-lm-deeper]');
+    const next = root.querySelector<HTMLButtonElement>('[data-lm-next]');
+    if (!controls || !deeper || !next || moments.length === 0) continue;
+    let current = 0;
+
+    const layers = () => [...moments[current].querySelectorAll<HTMLDetailsElement>('details')];
+    const depth = () =>
+      Math.max(
+        0,
+        layers().findIndex((layer) => layer.open),
+      );
+    const label = () => {
+      deeper.textContent = depth() >= 2 ? 'Terug naar boven ↑' : 'Een laag dieper ↓';
+    };
+    const open = (index: number) => {
+      layers().forEach((layer, i) => (layer.open = i === index));
+      label();
+    };
+    const show = (index: number) => {
+      current = (index + moments.length) % moments.length;
+      moments.forEach((moment, i) => (moment.hidden = i !== current));
+      open(0);
+    };
+
+    for (const moment of moments) {
+      for (const layer of moment.querySelectorAll<HTMLDetailsElement>('details')) {
+        /* One layer open at a time, also where `details[name]` is not supported. */
+        layer.addEventListener('toggle', () => {
+          if (!layer.open) return;
+          for (const other of moment.querySelectorAll<HTMLDetailsElement>('details'))
+            if (other !== layer) other.open = false;
+          label();
+        });
+      }
+    }
+    deeper.addEventListener('click', () => open(depth() >= 2 ? 0 : depth() + 1));
+    next.addEventListener('click', () => show(current + 1));
+    root.dataset.enhanced = '';
+    controls.hidden = false;
+    show(0);
+  }
+</script>
+
+<style>
+  .lm__moments {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .lm__moment[hidden] {
+    display: none;
+  }
+
+  .lm__label {
+    margin: 0 0 0.6rem;
+    color: var(--hero-muted);
+    font-size: 0.9rem;
+  }
+
+  .lm__stack {
+    overflow: hidden;
+    border: 1px solid var(--chapter-understanding-line);
+    border-radius: 1.375rem;
+    box-shadow: 0 0.6rem 1.8rem color-mix(in srgb, var(--text) 8%, transparent);
+  }
+
+  /* Each layer a little deeper in colour, like soil. */
+  .lm__layer {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--surface);
+  }
+
+  .lm__layer + .lm__layer {
+    border-block-start: 1px solid var(--chapter-understanding-line);
+  }
+
+  .lm__layer--2 {
+    background: color-mix(in srgb, var(--chapter-understanding-bubble) 70%, var(--surface));
+  }
+
+  .lm__layer--3 {
+    background: var(--chapter-understanding-bubble);
+  }
+
+  .lm__layer summary {
+    min-height: 3rem;
+    padding: 0 3rem 0 1.4rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .lm__layer summary::after {
+    inset-inline-end: 1.25rem;
+  }
+
+  .lm__body {
+    display: flex;
+    min-height: 13rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.25rem 1.75rem 1.75rem;
+  }
+
+  .lm__body p {
+    margin: 0;
+  }
+
+  .lm__heard {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem);
+    font-weight: 600;
+    line-height: 1.25;
+    text-wrap: pretty;
+  }
+
+  .lm__heard q {
+    quotes: '“' '”';
+  }
+
+  .lm__felt {
+    color: var(--hero-eyebrow);
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 1rem + 0.9vw, 1.7rem);
+    font-style: italic;
+    line-height: 1.35;
+    text-wrap: pretty;
+  }
+
+  .lm__context {
+    font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+    line-height: 1.55;
+  }
+
+  .lm__more {
+    margin-block-start: 0.85rem !important;
+  }
+
+  .lm__controls:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-block-start: 1rem;
+  }
+
+  @media (max-width: 42rem) {
+    .lm__body {
+      min-height: 0;
+      padding: 0.25rem 1.25rem 1.25rem;
+    }
+  }
+
+  @media print {
+    .lm__moment[hidden] {
+      display: block;
+    }
+
+    .lm__controls {
+      display: none !important;
+    }
+
+    .lm__stack {
+      box-shadow: none;
+    }
+  }
+</style>

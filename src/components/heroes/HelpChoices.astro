@@ -1,0 +1,104 @@
+---
+/* Hulp vinden: no effect on purpose. Someone here may be in need, so three large choices that
+   call straight away. The numbers are the ones on this page and in the help band. */
+const choices = [
+  {
+    when: 'Bij direct gevaar',
+    number: '112',
+    tel: '112',
+    note: 'Politie, brandweer of ambulance.',
+    strong: true,
+  },
+  {
+    when: 'Bij gedachten aan zelfdoding',
+    number: '113',
+    tel: '113',
+    note: 'Bel of chat, gratis en anoniem, dag en nacht. Of bel 0800-0113.',
+  },
+  {
+    when: 'Bij zorgen over huiselijk geweld',
+    number: '0800-2000',
+    tel: '08002000',
+    note: 'Veilig Thuis: gratis en anoniem advies, ook als man.',
+  },
+];
+---
+
+<ul class="hc">
+  {
+    choices.map((choice) => (
+      <li>
+        <a
+          class:list={['hc__choice', { 'hc__choice--strong': choice.strong }]}
+          href={`tel:${choice.tel}`}
+        >
+          <span class="hc__when">{choice.when}</span>
+          <span class="hc__number">{choice.number}</span>
+          <span class="hc__note">{choice.note}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .hc {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hc__choice {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.1rem 1.35rem;
+    border: 1px solid var(--safe-border);
+    border-radius: 1.125rem;
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .hc__choice--strong {
+    border-color: var(--help);
+    background: var(--help);
+    color: var(--help-text);
+  }
+
+  .hc__choice:hover .hc__number {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.15em;
+  }
+
+  .hc__choice:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .hc__when {
+    font-weight: 700;
+  }
+
+  .hc__number {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .hc__note {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  @media print {
+    .hc__choice {
+      border: 1px solid #000;
+      background: none;
+      color: #000;
+    }
+  }
+</style>

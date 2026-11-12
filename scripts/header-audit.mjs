@@ -613,6 +613,71 @@ try {
     await slow.close();
   }
   console.log('Slow fonts: no late reflow at 960 and 1440px with a 1.8-second font delay.');
+
+  /* Pillar heroes: every visual is in the HTML and readable without JavaScript. */
+  for (const javascript of [false, true]) {
+    const hero = await browser.newPage();
+    await hero.setJavaScriptEnabled(javascript);
+    await hero.setViewport({ width: 1280, height: 900 });
+    const visible = (selector) =>
+      hero.$$eval(
+        selector,
+        (nodes) =>
+          nodes.filter(
+            (node) =>
+              node.getClientRects().length > 0 &&
+              globalThis.getComputedStyle(node).visibility === 'visible',
+          ).length,
+      );
+    await hero.goto(`${origin}/nl/wat-voel-ik/`, { waitUntil: 'networkidle0' });
+    assert.equal(await visible('.page-hero .fw__word'), 14, 'Fourteen feeling words, as links');
+    await hero.goto(`${origin}/nl/begrijp-het/`, { waitUntil: 'networkidle0' });
+    assert.equal(
+      await visible('.page-hero [data-lm-moment]'),
+      javascript ? 1 : 3,
+      'One moment at a time, or all three without JavaScript',
+    );
+    if (javascript) {
+      await hero.click('[data-lm-deeper]');
+      assert.equal(
+        await hero
+          .$$eval('[data-lm-moment]:not([hidden]) details[open]', (nodes) =>
+            nodes.map((node) => node.className),
+          )
+          .then((names) => names.length === 1 && names[0].includes('lm__layer--2')),
+        true,
+        'One layer deeper opens layer 2 only',
+      );
+    }
+    await hero.goto(`${origin}/nl/herstel/`, { waitUntil: 'networkidle0' });
+    assert.equal(await visible('.page-hero [data-rl-quote]'), javascript ? 1 : 5);
+    if (javascript) {
+      await hero.click('[data-rl-point]:nth-of-type(3)');
+      assert.match(
+        await hero.$eval('[data-rl-quote]:not([hidden])', (node) => node.textContent),
+        /grens/,
+      );
+    }
+    await hero.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    const ridge = await hero.$$eval('.page-hero [data-sr-dot]', (nodes) =>
+      nodes.map((node) => node.getAttribute('href')),
+    );
+    assert.equal(ridge.length, 8);
+    for (const href of ridge) assert(await hero.$(href), `${href} exists in the timeline`);
+    await hero.goto(`${origin}/nl/hulpmiddelen/`, { waitUntil: 'networkidle0' });
+    assert.equal(await visible('.page-hero .cf__card'), 6, 'Six cards in the fan');
+    await hero.goto(`${origin}/nl/hulp-vinden/`, { waitUntil: 'networkidle0' });
+    assert.deepEqual(
+      await hero.$$eval('.page-hero .hc a', (nodes) =>
+        nodes.map((node) => node.getAttribute('href')),
+      ),
+      ['tel:112', 'tel:113', 'tel:08002000'],
+    );
+    await hero.close();
+  }
+  console.log(
+    'Pillar heroes: content present with and without JavaScript; layers, line and ridge respond.',
+  );
 } finally {
   await browser?.close();
   server.kill();

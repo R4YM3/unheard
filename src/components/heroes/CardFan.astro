@@ -1,0 +1,182 @@
+---
+/* Hulpmiddelen: the six question cards as a fan, like printed cards in your hand. Each card
+   links to its page; pointing at or focusing one lifts it and shows its first step (from the
+   card's own instructions). Without JavaScript the cards are plain links. */
+import { fanCards } from '../../data/pillar-heroes';
+import { findByKey, routeFor } from '../../lib/content';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const cards = await Promise.all(
+  fanCards.map(async (key) => {
+    const entry = await findByKey(locale, key);
+    if (!entry || entry.collection !== 'tools')
+      throw new Error(`CardFan: unknown or unpublished tool "${key}"`);
+    return { title: entry.data.card.title, step: entry.data.usage[0], href: routeFor(entry) };
+  }),
+);
+const middle = (cards.length - 1) / 2;
+---
+
+<div class="cf" data-card-fan>
+  <ul class="cf__fan">
+    {
+      cards.map((card, i) => (
+        <li style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --i: ${i}`}>
+          <a class="cf__card" href={card.href} data-step={card.step}>
+            <span class="cf__number">Kaart {i + 1}</span>
+            <span class="cf__title">{card.title}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="cf__step" aria-hidden="true" data-cf-step hidden>
+    <strong>Eerste stap:</strong>{' '}<span data-cf-text></span>
+  </p>
+</div>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-card-fan]')) {
+    const step = root.querySelector<HTMLElement>('[data-cf-step]');
+    const text = root.querySelector<HTMLElement>('[data-cf-text]');
+    if (!step || !text) continue;
+    for (const card of root.querySelectorAll<HTMLElement>('.cf__card')) {
+      const show = () => {
+        text.textContent = card.dataset.step ?? '';
+        step.hidden = false;
+      };
+      card.addEventListener('pointerenter', show);
+      card.addEventListener('focus', show);
+    }
+  }
+</script>
+
+<style>
+  .cf__fan {
+    position: relative;
+    height: 20rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cf__fan li {
+    position: absolute;
+    --spread: clamp(2.25rem, 4.5vw, 4.25rem);
+    left: calc(50% - 6.5rem + var(--step) * var(--spread));
+    top: 1.5rem;
+    z-index: var(--i);
+    transform: rotate(var(--turn));
+    transform-origin: 50% 130%;
+    transition: transform 0.28s ease;
+  }
+
+  [dir='rtl'] .cf__fan li {
+    left: auto;
+    right: calc(50% - 6.5rem + var(--step) * var(--spread));
+  }
+
+  .cf__fan li:has(.cf__card:is(:hover, :focus-visible)) {
+    z-index: 10;
+    transform: rotate(0deg) translateY(-1.25rem);
+  }
+
+  .cf__card {
+    display: flex;
+    width: 13rem;
+    height: 17rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 1px solid var(--chapter-tools-line);
+    border-radius: 1rem;
+    background: var(--surface);
+    box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, var(--text) 8%, transparent);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .cf__card:is(:hover, :focus-visible) {
+    box-shadow: 0 0.9rem 1.75rem color-mix(in srgb, var(--text) 16%, transparent);
+  }
+
+  .cf__card:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .cf__number {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cf__title {
+    margin-block-start: 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .cf__step {
+    max-width: 34rem;
+    margin: 1rem auto 0;
+    color: var(--hero-muted);
+    text-align: center;
+  }
+
+  .cf__step[hidden] {
+    display: none;
+  }
+
+  /* A phone: no fan, the cards in a row you can swipe through. */
+  @media (max-width: 42rem) {
+    .cf__fan {
+      display: flex;
+      height: auto;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding-block: 0.25rem 0.75rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .cf__fan li,
+    [dir='rtl'] .cf__fan li {
+      position: static;
+      flex: 0 0 auto;
+      transform: none;
+      scroll-snap-align: start;
+    }
+
+    .cf__fan li:has(.cf__card:is(:hover, :focus-visible)) {
+      transform: none;
+    }
+
+    .cf__card {
+      width: 11rem;
+      height: 12rem;
+    }
+
+    .cf__step {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cf__fan li {
+      transition: none;
+    }
+  }
+
+  @media print {
+    .cf {
+      display: none;
+    }
+  }
+</style>
