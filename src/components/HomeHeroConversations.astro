@@ -30,6 +30,20 @@ const { scenarios } = Astro.props;
     <div class="hero-conversations__history" data-conversation-history inert></div>
   </div>
   <div class="hero-conversations__controls" data-conversation-controls hidden>
+    <div class="hero-conversations__dots">
+      {
+        scenarios.map((scenario, index) => (
+          <button type="button" class="hero-conversations__dot" data-conversation-dot={index}>
+            <span class="sr-only">
+              Voorbeeld {index + 1}: {scenario.label}
+            </span>
+          </button>
+        ))
+      }
+    </div>
+    <p class="hero-conversations__count" data-conversation-count aria-live="off">
+      1 van {scenarios.length} · {scenarios[0]?.label}
+    </p>
     <button type="button" data-conversation-prev aria-label="Vorig voorbeeld" title="Vorige">
       <span class="arrow-icon arrow-icon--prev" aria-hidden="true"></span>
     </button>
@@ -51,7 +65,10 @@ const { scenarios } = Astro.props;
 <script>
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
 
-  for (const group of document.querySelectorAll('[data-hero-conversations]')) {
+  for (const group of document.querySelectorAll<HTMLElement>('[data-hero-conversations]')) {
+    const dots = [...group.querySelectorAll<HTMLButtonElement>('[data-conversation-dot]')];
+    const count = group.querySelector<HTMLElement>('[data-conversation-count]');
+    const labels = dots.map((dot) => dot.textContent?.replace(/^\s*Voorbeeld \d+:\s*/, '').trim());
     const frames = [...group.querySelectorAll<HTMLElement>('[data-conversation-frame]')];
     const history = group.querySelector<HTMLElement>('[data-conversation-history]');
     const controls = group.querySelector<HTMLElement>('[data-conversation-controls]');
@@ -96,15 +113,27 @@ const { scenarios } = Astro.props;
           frames[current].contains(document.activeElement)
         )
           return;
-        advance(1);
+        advance(1, undefined, false);
       }, 6000);
     };
 
-    const advance = (direction: number) => {
+    const mark = (byUser: boolean) => {
+      dots.forEach((dot, i) => {
+        if (i === current) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+      if (!count) return;
+      /* Automatic turns stay silent; a turn the reader asked for is announced. */
+      count.setAttribute('aria-live', byUser ? 'polite' : 'off');
+      count.textContent = `${current + 1} van ${frames.length} · ${labels[current] ?? ''}`;
+    };
+
+    const advance = (direction: number, target?: number, byUser = true) => {
       if (switching) return;
+      const nextIndex = target ?? (current + direction + frames.length) % frames.length;
+      if (nextIndex === current) return;
       clearInterval(timer);
       const outgoing = frames[current];
-      const nextIndex = (current + direction + frames.length) % frames.length;
 
       const showNext = () => {
         if (direction > 0) {
@@ -129,6 +158,7 @@ const { scenarios } = Astro.props;
         current = nextIndex;
         frames[current].hidden = false;
         switching = false;
+        mark(byUser);
         updatePlayback();
       };
 
@@ -153,6 +183,27 @@ const { scenarios } = Astro.props;
 
     back.addEventListener('click', () => advance(-1));
     next.addEventListener('click', () => advance(1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => advance(i > current ? 1 : -1, i)));
+
+    /* On a phone the card can be swiped sideways. */
+    let startX: number | undefined;
+    let startY = 0;
+    group.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'touch') return;
+      startX = event.clientX;
+      startY = event.clientY;
+    });
+    group.addEventListener('pointerup', (event) => {
+      if (startX === undefined) return;
+      const dx = event.clientX - startX;
+      const dy = event.clientY - startY;
+      startX = undefined;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) advance(dx < 0 ? 1 : -1);
+    });
+    group.addEventListener('pointercancel', () => {
+      startX = undefined;
+    });
+    mark(false);
     toggle.addEventListener('click', () => {
       paused = !paused;
       updatePlayback();
@@ -411,6 +462,130 @@ const { scenarios } = Astro.props;
     from {
       opacity: 0;
       transform: translateY(0.4rem);
+    }
+  }
+
+  .hero-conversations__dots,
+  .hero-conversations__count {
+    display: none;
+  }
+
+  /* Phone (Voorstel 1): the conversation is one card below the heading, with two solid
+     bubbles, dots and a count. The card can be swiped; the dots and pause stay as buttons. */
+  @media screen and (max-width: 52rem) {
+    .hero-conversations {
+      padding: 0.875rem;
+      border: 1px solid var(--safe-border);
+      border-radius: 1.125rem;
+      background: var(--surface);
+    }
+
+    .hero-conversations__stage {
+      padding: 0;
+      margin: 0;
+    }
+
+    .hero-conversations :global(.pv-line) {
+      max-width: 88%;
+      padding: 0.625rem 0.875rem;
+      border: 0;
+    }
+
+    .hero-conversations :global(.pv-line dd) {
+      font-size: 1.0625rem;
+    }
+
+    .hero-conversations :global(.pv-line--outside) {
+      border-radius: 1rem 1rem 1rem 0.25rem;
+      background: var(--bg);
+    }
+
+    .hero-conversations :global(.pv-line--outside)::before {
+      content: none;
+    }
+
+    .hero-conversations :global(.pv-line--inside) {
+      margin-block-start: 0.625rem;
+      border: 0;
+      border-radius: 1rem 1rem 0.25rem 1rem;
+      background: var(--badge);
+    }
+
+    .hero-conversations__link {
+      margin-block-start: 0.75rem;
+    }
+
+    .hero-conversations__controls:not([hidden]) {
+      position: static;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.25rem;
+      margin-block-start: 0.5rem;
+      pointer-events: auto;
+    }
+
+    .hero-conversations__controls [data-conversation-prev],
+    .hero-conversations__controls [data-conversation-next] {
+      display: none;
+    }
+
+    .hero-conversations__dots {
+      display: flex;
+    }
+
+    .hero-conversations__count {
+      display: block;
+      flex: 1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.875rem;
+      text-align: end;
+    }
+
+    button.hero-conversations__dot:not([hidden]) {
+      width: 1.5rem;
+      height: 2.75rem;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .hero-conversations__dot::before {
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: var(--border-strong);
+      content: '';
+    }
+
+    .hero-conversations__dot[aria-current='true']::before {
+      width: 1.25rem;
+      background: var(--link);
+    }
+
+    .hero-conversations__controls button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .hero-conversations__controls [data-conversation-toggle]:not([hidden]) {
+      background: transparent;
+      color: var(--text);
+    }
+  }
+
+  @media screen and (max-width: 52rem) and (prefers-reduced-motion: no-preference) {
+    .conversation-exit,
+    .conversation-exit--up {
+      animation: hero-chat-fade-out 260ms ease-in both;
+    }
+  }
+
+  @keyframes hero-chat-fade-out {
+    to {
+      opacity: 0;
+      transform: translateX(-1rem);
     }
   }
 

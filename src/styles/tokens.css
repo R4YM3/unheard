@@ -8,6 +8,14 @@
   --palette-mist-line: #cdd5d0;
   --palette-sand: #e7e0d6;
   --palette-sand-line: #d0c6b8;
+  /* Homepage chapters: one band per pillar. Warm sits next to warm, cool next to cool. */
+  --palette-rose: #efe5e3;
+  --palette-rose-line: #dcc9c5;
+  --palette-rose-bubble: #e5d4d0;
+  --palette-linnen: #f1ece4;
+  --palette-linnen-line: #e2d9cc;
+  --palette-salie: #dde5dc;
+  --palette-salie-line: #c9d4c8;
   --palette-ink: #1f2321;
   --palette-ink-soft: #3c443f;
   --palette-ink-muted: #4e5651;
@@ -27,6 +35,11 @@
   --palette-night-850: #222c27;
   --palette-night-800: #26302a;
   --palette-night-line: #36423b;
+  --palette-night-rose: #36262d;
+  --palette-night-sand: #2d2a20;
+  --palette-night-rose-bubble: #4a3540;
+  --palette-night-linnen: #2a2620;
+  --palette-night-salie: #2b3830;
   --palette-night-line-strong: #7a877f;
   --palette-pine-light: #b8c8bd;
   --palette-cream: #ece9e3;

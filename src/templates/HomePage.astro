@@ -4,8 +4,8 @@ import EntryLayout from '../layouts/EntryLayout.astro';
 import CardGrid from '../components/CardGrid.astro';
 import HeroArt from '../components/HeroArt.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
-import HomeConversation from '../components/HomeConversation.astro';
 import HomeHeroConversations from '../components/HomeHeroConversations.astro';
+import HomePerspectiveCarousel from '../components/HomePerspectiveCarousel.astro';
 import StartChooser from '../components/StartChooser.astro';
 import WordFinderInvite from '../components/WordFinderInvite.astro';
 import { routeFor } from '../lib/content';
@@ -58,20 +58,13 @@ const homeLists = [
   extraSchema={homeLists}
   mainEntityId={homeLists[0] ? `${pageId}#gevoelens` : undefined}
 >
-  <section class="hero" id="top">
+  <section class:list={['hero', { 'hero--home': dutch }]} id="top">
     <div class:list={['wrap home-hero__grid', { 'home-hero__grid--conversation': dutch }]}>
-      {
-        dutch && (
-          <div class="home-hero-visual" id="gesprekschat">
-            <HomeHeroConversations scenarios={data.scenarios} />
-          </div>
-        )
-      }
       <div class="home-hero__copy">
         <p class="eyebrow">{home.hero.eyebrow}</p>
         <h1>{data.heading}</h1>
         <p class="lead">{home.hero.lead}</p>
-        <p>{home.hero.description}</p>
+        {!dutch && <p>{home.hero.description}</p>}
         <div class="actions">
           <a class="button" href={home.hero.primary.href}>{home.hero.primary.label}</a>
           <a class="button button--quiet" href={home.hero.secondary.href}
@@ -79,6 +72,13 @@ const homeLists = [
           >
         </div>
       </div>
+      {
+        dutch && (
+          <div class="home-hero-visual" id="gesprekschat">
+            <HomeHeroConversations scenarios={data.scenarios} />
+          </div>
+        )
+      }
       {!dutch && <HeroArt slot="home" priority />}
     </div>
   </section>
@@ -90,7 +90,7 @@ const homeLists = [
     <div class="wrap">
       <div class:list={['section-heading', { 'feelings-heading': dutch }]}>
         <div>
-          <p class="eyebrow">{home.feelings.eyebrow}</p>
+          <p class="eyebrow">{dutch ? 'Wat voel ik?' : home.feelings.eyebrow}</p>
           <h2 id="gevoelens-heading">{home.feelings.heading}</h2>
         </div>
         {
@@ -127,39 +127,60 @@ const homeLists = [
   {
     dutch ? (
       <>
-        <div class="section section--tint" id="gedachte">
-          <div class="wrap reading">
-            <p class="eyebrow home-thought-label">
-              <a href={home.timelineTeaser.href}>Uit mijn verhaal</a>
+        <StartChooser
+          locale={data.locale}
+          chapter={{ eyebrow: 'Hulpmiddelen', wordFinder: home.wordFinder }}
+        />
+        <HomePerspectiveCarousel
+          scenarios={data.scenarios}
+          start={2}
+          eyebrow="Begrijp het"
+          heading={home.perspective.heading}
+          lead={home.perspective.lead}
+          more={{ href: 'nl/begrijp-het/', label: 'Alles over Begrijp het' }}
+        />
+        <section
+          class="section section--chapter chapter--story"
+          aria-labelledby="verhaal-heading"
+          id="verhaal"
+        >
+          <div class="wrap home-story">
+            <p class="eyebrow home-story__eyebrow">
+              <a href={home.storyTeaser.href}>Mijn verhaal</a>
             </p>
-            <blockquote class="home-story-quote">
-              <p>“Als ik iets wilde, kon ik dagen nadenken over hoe ik het moest brengen.”</p>
-            </blockquote>
-          </div>
-        </div>
-        <StartChooser locale={data.locale} columns />
-        <div class="section home-story-quote-band" id="verhaal-citaat">
-          <div class="wrap reading">
-            <blockquote class="home-story-quote">
-              <p>
-                “Ook nadat ik was weggegaan, twijfelde ik nog aan mezelf en mijn herinneringen.”
+            <div class="home-story__quotes">
+              <blockquote class="home-story-quote">
+                <p>“Als ik iets wilde, kon ik dagen nadenken over hoe ik het moest brengen.”</p>
+              </blockquote>
+              <blockquote class="home-story-quote">
+                <p>
+                  “Ook nadat ik was weggegaan, twijfelde ik nog aan mezelf en mijn herinneringen.”
+                </p>
+              </blockquote>
+            </div>
+            <div class="home-story__card">
+              <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
+              <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
+              {home.storyTeaser.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+              <p>{home.hero.description}</p>
+              <div class="actions">
+                <a class="button" href={home.storyTeaser.href}>
+                  {home.storyTeaser.label}
+                </a>
+                <a class="button button--quiet" href={home.timelineTeaser.href}>
+                  {home.timelineTeaser.label}
+                </a>
+              </div>
+              <p class="home-story__why">
+                <a class="text-link" href="nl/over/#waarom-ik-hiermee-begon">
+                  Waarom ik Ongehoord begon
+                </a>
               </p>
-            </blockquote>
-            <div class="actions">
-              <a class="button button--quiet" href={home.timelineTeaser.href}>
-                {home.timelineTeaser.label}
-              </a>
             </div>
           </div>
-        </div>
-        {data.scenarios[2] && (
-          <HomeConversation
-            id="perspectief-scene-2"
-            sectionId="perspectief"
-            scenario={data.scenarios[2]}
-          />
-        )}
-        {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
+        </section>
       </>
     ) : (
       <>
@@ -182,39 +203,45 @@ const homeLists = [
       </>
     )
   }
-  <section class="section section--paper" aria-labelledby="verhaal-heading" id="verhaal">
-    <div class="wrap reading">
-      <div>
-        <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
-        <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
-        {home.storyTeaser.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        {
-          !dutch && (
+  {
+    !dutch && (
+      <section class="section section--paper" aria-labelledby="verhaal-heading" id="verhaal">
+        <div class="wrap reading">
+          <div>
+            <p class="eyebrow">{home.storyTeaser.eyebrow}</p>
+            <h2 id="verhaal-heading">{home.storyTeaser.heading}</h2>
+            {home.storyTeaser.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
             <p>
               Zoek je herkenning of wil je weten of iemand anders dit ook voelde? In mijn verhaal
               lees je hoe het voor mij was.
             </p>
-          )
-        }
-        <div class="actions">
-          <a class="button" href={home.storyTeaser.href}>{home.storyTeaser.label}</a>
-          {
-            !dutch && (
+            <div class="actions">
+              <a class="button" href={home.storyTeaser.href}>
+                {home.storyTeaser.label}
+              </a>
               <a class="text-link" href={home.timelineTeaser.href}>
                 {home.timelineTeaser.label}
               </a>
-            )
-          }
-          <a class="text-link" href="nl/over/#waarom-ik-hiermee-begon">Waarom ik Ongehoord begon</a>
+              <a class="text-link" href="nl/over/#waarom-ik-hiermee-begon">
+                Waarom ik Ongehoord begon
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section--soft" aria-labelledby="herstel-heading" id="herstel">
+      </section>
+    )
+  }
+  <section
+    class:list={['section', dutch ? 'section--chapter chapter--recovery' : 'section--soft']}
+    aria-labelledby="herstel-heading"
+    id="herstel"
+  >
     <div class="wrap">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">{home.resources.eyebrow}</p>
+          <p class="eyebrow">{dutch ? 'Herstel' : home.resources.eyebrow}</p>
           <h2 id="herstel-heading">{home.resources.heading}</h2>
           {
             dutch && (
@@ -254,21 +281,58 @@ const homeLists = [
 </EntryLayout>
 
 <style>
-  .home-story-quote-band .actions {
-    justify-content: center;
-    margin-block-start: 1.5rem;
+  /* Mijn verhaal: the founder's own words first, then why the site exists, on one card. */
+  .home-story {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding-block-end: clamp(2rem, 6vw, 5rem);
   }
 
-  .home-thought-label {
-    text-align: center;
+  .home-story__eyebrow {
+    margin: 0;
+  }
+
+  .home-story__eyebrow a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .home-story__eyebrow a:hover {
+    text-decoration: underline;
+  }
+
+  .home-story__quotes {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
   }
 
   .home-story-quote {
+    max-width: 30ch;
     margin: 0;
-    text-align: center;
     font-family: var(--font-serif);
-    font-size: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+    font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
     line-height: 1.2;
+  }
+
+  .home-story-quote + .home-story-quote {
+    justify-self: end;
+    text-align: end;
+  }
+
+  .home-story__card {
+    max-width: 44rem;
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    border: 1px solid var(--chapter-line);
+    border-radius: 1.25rem;
+    background: var(--surface);
+  }
+
+  .home-story__card h2 {
+    font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem);
+  }
+
+  .home-story__why {
+    margin: 1rem 0 0;
   }
 
   .home-story-quote p {
@@ -297,32 +361,21 @@ const homeLists = [
       font-size: 1.4rem;
     }
   }
+  /* The heading comes first in the page; on a wide screen the conversation sits beside it,
+     on the start side, as before. */
   @media (width > 52rem) {
     .home-hero__grid--conversation {
       grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.1fr);
     }
+
+    .home-hero__grid--conversation .home-hero-visual {
+      order: -1;
+    }
   }
 
   @media (max-width: 52rem) {
-    .home-hero-visual {
-      position: relative;
-      isolation: isolate;
-      padding-block-start: 1rem;
-    }
-
-    .home-hero-visual::before {
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      --chat-band-bg: color-mix(in srgb, var(--hero-bg) 92%, var(--hero-text));
-      background: var(--chat-band-bg);
-      box-shadow: 0 0 0 100vmax var(--chat-band-bg);
-      clip-path: inset(0 -100vmax);
-      content: '';
-    }
-
-    .home-hero__grid--conversation .home-hero__copy {
-      padding-block-start: 0.75rem;
+    .home-hero__grid--conversation {
+      gap: 1.5rem;
     }
   }
 </style>
