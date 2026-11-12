@@ -461,6 +461,44 @@ const { scenarios } = Astro.props;
     }
   }
 
+  /* Wide screens: the bubbles are centred as one stack in the hero's height; the controls
+     hang centred below them, outside that measure. The arrows only show while the pointer
+     is on the chat or focus is in it, so a keyboard reader always finds them. */
+  @media screen and (width > 52rem) {
+    .hero-conversations__stage {
+      align-content: center;
+    }
+
+    [data-conversation-frame] {
+      align-self: center;
+    }
+
+    .hero-conversations__controls:not([hidden]) {
+      position: absolute;
+      inset-block-start: 100%;
+      inset-inline: 0;
+      justify-content: center;
+      margin-block-start: 0.25rem;
+    }
+
+    .hero-conversations__controls :is([data-conversation-prev], [data-conversation-next]) {
+      opacity: 0;
+      transition: opacity 160ms ease;
+    }
+
+    .hero-conversations:is(:hover, :focus-within)
+      .hero-conversations__controls
+      :is([data-conversation-prev], [data-conversation-next]) {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (width > 52rem) and (hover: none) {
+    .hero-conversations__controls :is([data-conversation-prev], [data-conversation-next]) {
+      opacity: 1;
+    }
+  }
+
   /* Phone (Voorstel 1): the conversation is one card below the heading, with two solid
      bubbles, dots and a count. The card can be swiped; the dots and pause stay as buttons. */
   @media screen and (max-width: 52rem) {
