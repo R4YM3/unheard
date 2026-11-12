@@ -62,7 +62,6 @@ textarea:focus-visible,
 summary {
   position: relative;
   min-height: 2.75rem;
-  padding-inline-end: 2rem;
   list-style: none;
   cursor: pointer;
 }
@@ -72,22 +71,20 @@ summary::-webkit-details-marker {
 summary::marker {
   content: '';
 }
-/* The +/− sits in the summary's own right padding, centred on its first line. */
+/* The +/− follows the title directly, so it reads as part of it. */
 summary {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 summary::after {
+  flex: none;
   content: '+';
-  position: absolute;
-  inset-inline-end: 0.75rem;
-  top: 50%;
   width: 1.25rem;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1;
   text-align: center;
-  transform: translateY(-50%);
 }
 details[open] > summary::after {
   content: '−';
@@ -571,6 +568,12 @@ mark.review-marker {
    homepage chapters, Verder lezen and the help band. */
 .section--block {
   --section-bg: transparent;
+}
+/* An overview list in the pillar's colour (HubPage sets the colour). */
+.section--band + .related-band,
+.section--band + script + .related-band,
+.section--band + section[id='beginnen'][style] + .related-band {
+  --section-bg: var(--surface) !important;
 }
 .section--chrome {
   --section-bg: var(--band-bg);

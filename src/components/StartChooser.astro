@@ -4,6 +4,8 @@ import { cardFor, findByKey, type LinkCard } from '../lib/content';
 
 interface Props {
   locale?: string;
+  /** On an overview page: the band colour when it is this block's turn in the alternation. */
+  bandColour?: string;
   /* The homepage chapter: a sand band with its own pattern, the lists on cards and the
      word finder in the empty corner. */
   chapter?: {
@@ -13,7 +15,7 @@ interface Props {
     wordFinder?: { heading: string; text: string; note: string; href: string; label: string };
   };
 }
-const { locale = 'nl', chapter } = Astro.props;
+const { locale = 'nl', chapter, bandColour } = Astro.props;
 const columns = Boolean(chapter);
 const options = await Promise.all(
   startChooser.map(async (option) => {
@@ -37,6 +39,7 @@ const options = await Promise.all(
         : 'section--chapter chapter--tools'
       : 'section--soft',
   ]}
+  style={bandColour ? `--section-bg: ${bandColour}` : undefined}
   aria-labelledby="start-heading"
   id="beginnen"
 >
