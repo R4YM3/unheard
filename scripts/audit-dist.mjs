@@ -176,7 +176,13 @@ for (const file of files) {
   if (!root && !types.has('WebPage')) bad.push(`${file}: missing WebPage JSON-LD`);
   if (hasContentArticle && !types.has('BreadcrumbList'))
     bad.push(`${file}: article missing BreadcrumbList JSON-LD`);
-  if (hasContentArticle && !html.includes('id="sources-heading"'))
+  /* Sources as a list, or (without sources) the line under the article saying what the page
+     rests on. */
+  if (
+    hasContentArticle &&
+    !html.includes('id="sources-heading"') &&
+    !html.includes('data-source-note')
+  )
     bad.push(`${file}: article missing visible source attribution`);
   if (hasContentArticle && !html.includes('"citation":['))
     bad.push(`${file}: article missing structured-data citations`);

@@ -340,7 +340,15 @@ const mainEntityId = termSet
         </section>
       )
     }
-    {data.chooser && <StartChooser locale={data.locale} chapter={{ band: false }} />}
+    {
+      data.chooser && (
+        <StartChooser
+          locale={data.locale}
+          chapter={{ band: false }}
+          variant={data.translationKey === 'hulpmiddelen' ? 'tools' : 'default'}
+        />
+      )
+    }
     {
       data.feelingTimeline && (
         <FeelingTimeline timeline={data.feelingTimeline} locale={data.locale} />

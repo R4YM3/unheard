@@ -28,6 +28,18 @@ export const feelingWords: Array<{ word: string; sentence: string; key: string }
     sentence: 'Waarom loskomen zo moeilijk kan zijn.',
     key: 'traumabinding',
   },
+  /* What the body does. Sentences come from the linked pages' own card text and titles. */
+  {
+    word: 'mijn lichaam',
+    sentence: 'Je lichaam slaat alarm voordat je weet waarom.',
+    key: 'spanning',
+  },
+  {
+    word: 'voelen',
+    sentence: 'Lichaamssignalen opmerken en emoties een naam geven.',
+    key: 'herstel-leren-voelen',
+  },
+  { word: 'onrustig', sentence: 'Als een bericht je uit balans brengt.', key: 'herstel-triggers' },
 ];
 
 /** Begrijp het: which homepage examples the cross-section shows (index in home `scenarios`). */
