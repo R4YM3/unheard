@@ -9,15 +9,27 @@ import { getPublishedEntries, type RoutedEntry } from '../../lib/content';
 
 export async function getStaticPaths() {
   const entries = await getPublishedEntries();
-  return entries
+  const pages = entries
     .filter((entry) => entry.data.slug !== 'home')
     .map((entry) => ({
       params: { locale: entry.data.locale, slug: entry.data.slug },
-      props: { entry },
+      props: { entry, view: 'page' as const },
     }));
+  /* Mijn verhaal is an overview; its timeline has a page of its own. */
+  const timelines = entries.flatMap((entry) =>
+    entry.collection === 'story' && entry.data.timeline && !entry.data.timeline.withheld
+      ? [
+          {
+            params: { locale: entry.data.locale, slug: `${entry.data.slug}/tijdlijn` },
+            props: { entry, view: 'timeline' as const },
+          },
+        ]
+      : [],
+  );
+  return [...pages, ...timelines];
 }
 
-const { entry } = Astro.props as { entry: RoutedEntry };
+const { entry, view } = Astro.props as { entry: RoutedEntry; view: 'page' | 'timeline' };
 ---
 
 {
@@ -30,7 +42,7 @@ const { entry } = Astro.props as { entry: RoutedEntry };
   ) : entry.collection === 'hubs' ? (
     <HubPage entry={entry} />
   ) : entry.collection === 'story' ? (
-    <StoryPage entry={entry} />
+    <StoryPage entry={entry} view={view} />
   ) : (
     <KnowledgePage entry={entry} />
   )

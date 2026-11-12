@@ -12,16 +12,35 @@ import { navigationFor } from '../lib/navigation';
 import { heroTrail } from '../lib/trail';
 import { heroPillarClass } from '../lib/pillar';
 import StoryRidge from '../components/heroes/StoryRidge.astro';
+import IntroBlock from '../components/IntroBlock.astro';
 
 interface Props {
   entry: CollectionEntry<'story'>;
+  /** The overview, or the timeline on its own page. */
+  view?: 'page' | 'timeline';
 }
-const { entry } = Astro.props;
+const { entry, view = 'page' } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 const crumbs = await breadcrumbsFor(entry);
 const route = routeFor(entry);
 const hasBody = Boolean(entry.body?.trim());
+const timeline = data.timeline;
+/* The timeline has its own page under the story, unless it is held back. */
+const timelinePage = timeline && !timeline.withheld ? `${route}tijdlijn/` : undefined;
+/* Its description: the timeline's own opening sentences, up to a search-result length. */
+const timelineDescription = timeline
+  ? (timeline.lead.match(/[^.!?]+[.!?]/g) ?? [timeline.lead]).reduce(
+      (text, sentence) => (text.length >= 70 ? text : `${text}${sentence}`.trim()),
+      '',
+    )
+  : '';
+const contents = [
+  { href: `${route}#therapie`, label: data.therapy.eyebrow },
+  { href: `${route}#vaderschap`, label: data.fatherhood.eyebrow },
+  { href: `${route}#voor-mijn-kinderen`, label: data.letter.heading },
+  { href: `${route}#slot`, label: data.closing.heading },
+];
 /* The ridge hero (Dutch): the timeline drawn as the pillar's ridge, as on the design canvas. */
 const ridge = data.locale === 'nl' && Boolean(data.timeline);
 const trail = heroTrail(
@@ -31,169 +50,220 @@ const trail = heroTrail(
 );
 ---
 
-<EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
-  <section
-    class:list={[
-      'hero page-hero',
-      heroPillarClass(data.locale, route),
-      { 'page-hero--band': ridge },
-    ]}
-    data-hero-layout={ridge ? 'quote' : undefined}
-  >
-    <div class="wrap">
-      <div
-        class:list={[
-          'page-hero__grid',
-          { 'page-hero__grid--visual page-hero__grid--quote': ridge },
-        ]}
-      >
-        <div class="page-hero__content">
-          <Breadcrumbs ancestors={trail.ancestors} current={trail.current} locale={data.locale} />
-          {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
-          <h1>{data.heading}</h1>
-          <p class="lead">{data.lead}</p>
-          <p>{data.heroPersonal}</p>
-          {
-            !ridge && (
-              <div class="actions">
-                <a class="button" href={`${route}#tijdlijn`}>
-                  Bekijk de tijdlijn
-                </a>
-              </div>
-            )
-          }
-        </div>
+{
+  view === 'timeline' && timeline && timelinePage ? (
+    <EntryLayout
+      entry={entry}
+      heading={timeline.heading}
+      eyebrow={timeline.eyebrow}
+      lead={timeline.lead}
+      showSummary={false}
+      subpage={{
+        path: timelinePage,
+        title: `${data.cardTitle ?? 'Mijn verhaal'}: ${timeline.heading.replace(/\.$/, '')}`,
+        description: timelineDescription,
+        crumb: 'Tijdlijn',
+      }}
+      moreLinks={[
         {
-          ridge && data.timeline ? (
-            <div class="page-hero__visual">
-              <StoryRidge milestones={data.timeline.milestones} part="quote" />
-            </div>
+          href: route,
+          title: data.cardTitle ?? data.title,
+          text: data.cardText ?? data.description,
+        },
+      ]}
+    >
+      <section
+        class="section section--chapter chapter--story story-timeline-band"
+        aria-labelledby="tijdlijn-heading"
+        id="tijdlijn"
+      >
+        <div class="wrap">
+          <h2 class="sr-only" id="tijdlijn-heading">
+            {data.timeline.label}
+          </h2>
+          {data.timeline.withheld ? (
+            <p class="timeline-withheld">{data.timeline.withheld}</p>
           ) : (
-            <HeroArt slot="mijn-verhaal" />
-          )
-        }
-      </div>
-    </div>
-    {
-      ridge && data.timeline && (
-        <div class="page-hero__band">
-          <StoryRidge milestones={data.timeline.milestones} part="ridge" />
+            <>
+              <StoryTimeline
+                label={data.timeline.label}
+                milestones={data.timeline.milestones}
+                context={data.timeline.context}
+              />
+              <p class="note reading">{data.timeline.note}</p>
+              {data.timeline.preview && (
+                <aside class="timeline-preview reading" aria-labelledby="timeline-preview-heading">
+                  <h3 id="timeline-preview-heading">{data.timeline.preview.heading}</h3>
+                  <p>{data.timeline.preview.text}</p>
+                  <details>
+                    <summary>Al gedeeld over latere jaren</summary>
+                    {data.timeline.preview.moments.map((moment) => (
+                      <section>
+                        <h4>{moment.title}</h4>
+                        <p>{moment.text}</p>
+                      </section>
+                    ))}
+                  </details>
+                </aside>
+              )}
+            </>
+          )}
         </div>
-      )
-    }
-  </section>
-  <section class="section" aria-labelledby="intro-heading">
-    <div class="wrap reading">
-      <p class="eyebrow">{data.introduction.eyebrow}</p>
-      <h2 id="intro-heading">{data.introduction.heading}</h2>
-      <p class="lead">{data.introduction.lead}</p>
-      {data.introduction.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-      <p class="note">{data.introduction.note}</p>
-    </div>
-  </section>
-  {
-    hasBody && (
-      <div class="wrap reading prose">
-        <Content />
-      </div>
-    )
-  }
-  <section
-    class="section section--chapter chapter--story story-timeline-band"
-    aria-labelledby="tijdlijn-heading"
-    id="tijdlijn"
-  >
-    <div class="wrap">
-      <p class="eyebrow">{data.timeline.eyebrow}</p>
-      <h2 id="tijdlijn-heading">{data.timeline.heading}</h2>
-      {
-        data.timeline.withheld ? (
-          <p class="timeline-withheld">{data.timeline.withheld}</p>
-        ) : (
-          <>
-            <p class="reading">{data.timeline.lead}</p>
-            <StoryTimeline
-              label={data.timeline.label}
-              milestones={data.timeline.milestones}
-              context={data.timeline.context}
-            />
-            <p class="note reading">{data.timeline.note}</p>
-            {data.timeline.preview && (
-              <aside class="timeline-preview reading" aria-labelledby="timeline-preview-heading">
-                <h3 id="timeline-preview-heading">{data.timeline.preview.heading}</h3>
-                <p>{data.timeline.preview.text}</p>
-                <details>
-                  <summary>Al gedeeld over latere jaren</summary>
-                  {data.timeline.preview.moments.map((moment) => (
-                    <section>
-                      <h4>{moment.title}</h4>
-                      <p>{moment.text}</p>
-                    </section>
-                  ))}
-                </details>
-              </aside>
+      </section>
+    </EntryLayout>
+  ) : (
+    <EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
+      <section
+        class:list={[
+          'hero page-hero',
+          heroPillarClass(data.locale, route),
+          { 'page-hero--band': ridge },
+        ]}
+        data-hero-layout={ridge ? 'quote' : undefined}
+      >
+        <div class="wrap">
+          <div
+            class:list={[
+              'page-hero__grid',
+              { 'page-hero__grid--visual page-hero__grid--quote': ridge },
+            ]}
+          >
+            <div class="page-hero__content">
+              <Breadcrumbs
+                ancestors={trail.ancestors}
+                current={trail.current}
+                locale={data.locale}
+              />
+              {trail.eyebrow && <p class="eyebrow">{trail.eyebrow}</p>}
+              <h1>{data.heading}</h1>
+              <p class="lead">{data.lead}</p>
+              <p>{data.heroPersonal}</p>
+              {!ridge && (
+                <div class="actions">
+                  <a class="button" href={timelinePage ?? `${route}#tijdlijn`}>
+                    Bekijk de tijdlijn
+                  </a>
+                </div>
+              )}
+            </div>
+            {ridge && data.timeline ? (
+              <div class="page-hero__visual">
+                <StoryRidge
+                  milestones={data.timeline.milestones}
+                  part="quote"
+                  timelineHref={timelinePage ?? `${route}#tijdlijn`}
+                />
+              </div>
+            ) : (
+              <HeroArt slot="mijn-verhaal" />
             )}
-          </>
-        )
-      }
-    </div>
-  </section>
-  <section class="section section--block" aria-labelledby="therapie-heading" id="therapie">
-    <div class="wrap">
-      <p class="eyebrow">{data.therapy.eyebrow}</p>
-      <h2 id="therapie-heading">{data.therapy.heading}</h2>
-      <div class="reading">{data.therapy.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
-      <CardGrid
-        columns={2}
-        items={data.therapy.cards.map((card) => ({ title: card.title, text: card.description }))}
-      />
-      <div class="actions">
-        <a class="button" href={data.therapy.href}>{data.therapy.label}</a>
+          </div>
+        </div>
+        {ridge && data.timeline && (
+          <div class="page-hero__band">
+            <StoryRidge
+              milestones={data.timeline.milestones}
+              part="ridge"
+              timelineHref={timelinePage ?? `${route}#tijdlijn`}
+            />
+          </div>
+        )}
+      </section>
+      <IntroBlock
+        locale={data.locale}
+        label={data.introduction.eyebrow}
+        text={data.introduction.lead}
+        paragraphs={data.introduction.paragraphs}
+        note={data.introduction.note}
+        deeper={
+          timelinePage && timeline
+            ? {
+                href: timelinePage,
+                eyebrow: timeline.eyebrow,
+                label: timeline.heading,
+                cta: 'Bekijk de tijdlijn',
+              }
+            : undefined
+        }
+        contents={contents}
+      >
+        {hasBody && <Content />}
+      </IntroBlock>
+      <div class="hub-bands pillar-bands--story" style="--pillar-band: var(--chapter-story)">
+        <section class="section section--block" aria-labelledby="therapie-heading" id="therapie">
+          <div class="wrap">
+            <p class="eyebrow">{data.therapy.eyebrow}</p>
+            <h2 id="therapie-heading">{data.therapy.heading}</h2>
+            <div class="reading">
+              {data.therapy.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+            <CardGrid
+              columns={2}
+              items={data.therapy.cards.map((card) => ({
+                title: card.title,
+                text: card.description,
+              }))}
+            />
+            <div class="actions">
+              <a class="button" href={data.therapy.href}>
+                {data.therapy.label}
+              </a>
+            </div>
+          </div>
+        </section>
+        <section
+          class="section section--block"
+          aria-labelledby="vaderschap-heading"
+          id="vaderschap"
+        >
+          <div class="wrap">
+            <p class="eyebrow">{data.fatherhood.eyebrow}</p>
+            <h2 id="vaderschap-heading">{data.fatherhood.heading}</h2>
+            <CardGrid
+              columns={2}
+              items={data.fatherhood.cards.map((card) => ({
+                title: card.title,
+                text: card.description,
+              }))}
+            />
+          </div>
+        </section>
+        {/* A personal note, not a highlight: quiet type and no card, on its own light band. */}
+        <section
+          class="section section--block story-letter"
+          aria-labelledby="brief-heading"
+          id="voor-mijn-kinderen"
+        >
+          <div class="wrap reading">
+            <h2 id="brief-heading">{data.letter.heading}</h2>
+            {data.letter.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+            <p class="story-letter__signature">{data.letter.signature}</p>
+          </div>
+        </section>
+        <section class="section section--block" aria-labelledby="slot-heading" id="slot">
+          <div class="wrap reading">
+            <p class="eyebrow">{data.closing.eyebrow}</p>
+            <h2 id="slot-heading">{data.closing.heading}</h2>
+            {data.closing.paragraphs.map((paragraph) => (
+              <p>
+                <Marked text={paragraph} />
+              </p>
+            ))}
+            <div class="actions">
+              <a class="button" href="nl/wat-voel-ik/">
+                Begin bij wat je voelt
+              </a>
+              <a class="button button--quiet" href="nl/begrijp-het/">
+                Begrijp patronen
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-  </section>
-  <section
-    class="section"
-    style="--section-bg: var(--chapter-story)"
-    aria-labelledby="vaderschap-heading"
-    id="vaderschap"
-  >
-    <div class="wrap">
-      <p class="eyebrow">{data.fatherhood.eyebrow}</p>
-      <h2 id="vaderschap-heading">{data.fatherhood.heading}</h2>
-      <CardGrid
-        columns={2}
-        items={data.fatherhood.cards.map((card) => ({ title: card.title, text: card.description }))}
-      />
-    </div>
-  </section>
-  {/* A personal note, not a highlight: quiet type and no card, on its own light band. */}
-  <section
-    class="section section--tight section--surface story-letter"
-    aria-labelledby="brief-heading"
-    id="voor-mijn-kinderen"
-  >
-    <div class="wrap reading">
-      <h2 id="brief-heading">{data.letter.heading}</h2>
-      {data.letter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-      <p class="story-letter__signature">{data.letter.signature}</p>
-    </div>
-  </section>
-  <section class="section section--paper" aria-labelledby="slot-heading">
-    <div class="wrap reading">
-      <p class="eyebrow">{data.closing.eyebrow}</p>
-      <h2 id="slot-heading">{data.closing.heading}</h2>
-      {
-        data.closing.paragraphs.map((paragraph) => (
-          <p>
-            <Marked text={paragraph} />
-          </p>
-        ))
-      }
-      <div class="actions">
-        <a class="button" href="nl/wat-voel-ik/">Begin bij wat je voelt</a>
-        <a class="button button--quiet" href="nl/begrijp-het/">Begrijp patronen</a>
-      </div>
-    </div>
-  </section>
-</EntryLayout>
+    </EntryLayout>
+  )
+}

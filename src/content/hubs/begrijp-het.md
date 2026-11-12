@@ -12,6 +12,9 @@ updatedAt: 2026-11-12
 reviewedAt: null
 cardTitle: 'Begrijp het'
 cardText: 'Uitleg over emotioneel en financieel misbruik, patronen van controle en de begrippen die je misschien tegenkomt.'
+deeper:
+  href: 'nl/begrijp-het/woorden-om-te-ordenen/'
+  label: 'Woorden om te ordenen, niet om te oordelen'
 summary: 'Op deze pagina vind je uitleg over emotioneel en financieel misbruik, over het verschil tussen ruzie en een patroon van controle, en over wat zulke ervaringen met je kunnen doen. De begrippen helpen om iets onder woorden te brengen. Ze zijn geen diagnose en geen oordeel over een ander.'
 heading: 'Er bestaan woorden voor wat je meemaakt.'
 eyebrow: 'Begrijp het'
@@ -51,5 +54,3 @@ reviewNotes:
 Misschien heb je lang gedacht dat het aan jou lag. Dat je te gevoelig was, te moeilijk, of dat je het verkeerd had onthouden. Misschien merk je pas achteraf hoeveel je jezelf hebt aangepast. Het kan dan helpen om te lezen dat anderen iets vergelijkbaars hebben meegemaakt, en dat er woorden voor bestaan.
 
 Die woorden zijn hulpmiddelen. Een begrip als [gaslighting](nl/begrippen/gaslighting/) of [dwingende controle](nl/begrippen/dwingende-controle/) beschrijft gedrag en het effect daarvan. Het zegt niets over wie iemand is, en het is geen diagnose. Herken je iets, dan betekent dat niet automatisch dat er sprake is van misbruik. Eén voorbeeld of één gevoel bewijst niets. Wat telt, is wat er steeds opnieuw gebeurt en wat het met je doet.
-
-Lees verder: [Woorden om te ordenen, niet om te oordelen](nl/begrijp-het/woorden-om-te-ordenen/).

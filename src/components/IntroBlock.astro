@@ -1,0 +1,74 @@
+---
+/**
+ * The intro under an overview page's hero, in the hero's own 50/50 shape.
+ * Start side: the short version, its first sentence set large as the page's opening.
+ * End side: the page's own text (slot), a link on to the deeper page, and the page's
+ * contents. The contents come from the band headings, so the end side is never empty.
+ */
+import { ui } from '../i18n/ui';
+import type { Locale } from '../i18n/config';
+
+interface Props {
+  locale: Locale;
+  /** The heading of the short version ("In het kort", or the story's own eyebrow). */
+  label: string;
+  /** The short version. Its first sentence is the large opening line. */
+  text?: string;
+  /** Extra paragraphs after the short version, in normal type. */
+  paragraphs?: string[];
+  note?: string;
+  deeper?: { href: string; label: string; eyebrow?: string; cta?: string };
+  contents?: Array<{ href: string; label: string }>;
+}
+const { locale, label, text = '', paragraphs = [], note, deeper, contents = [] } = Astro.props;
+const t = ui(locale);
+const split = /^(.+?[.!?])\s+(\S[\s\S]*)$/.exec(text.trim());
+const opening = split ? split[1] : text.trim();
+const rest = split ? split[2] : '';
+const hasSide = Astro.slots.has('default') || Boolean(deeper) || contents.length > 0;
+---
+
+<div class:list={['wrap intro-block', { 'intro-block--single': !hasSide }]}>
+  <section class="intro-block__short" aria-labelledby="summary-heading">
+    <h2 class="eyebrow" id="summary-heading">{label}</h2>
+    {opening && <p class="intro-block__opening">{opening}</p>}
+    {rest && <p>{rest}</p>}
+    {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    {note && <p class="note">{note}</p>}
+  </section>
+  {
+    hasSide && (
+      <div class="intro-block__side">
+        {Astro.slots.has('default') && (
+          <div class="prose intro-block__text">
+            <slot />
+          </div>
+        )}
+        {deeper && (
+          <a class="intro-card" href={deeper.href}>
+            <span class="intro-card__eyebrow">{deeper.eyebrow ?? t.readOn}</span>
+            <span class="intro-card__title">{deeper.label}</span>
+            {deeper.cta && <span class="intro-card__cta">{deeper.cta} →</span>}
+          </a>
+        )}
+        {contents.length > 0 && (
+          <nav class="intro-contents" aria-labelledby="intro-contents-heading">
+            <h2 class="eyebrow" id="intro-contents-heading">
+              {t.onThisPage}
+            </h2>
+            <ul>
+              {contents.map((item) => (
+                <li>
+                  <a href={item.href}>
+                    <span>{item.label}</span>
+                    <span aria-hidden="true">↓</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </div>
+    )
+  }
+</div>

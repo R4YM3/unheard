@@ -8,8 +8,10 @@
 interface Props {
   milestones: Array<{ title: string }>;
   part: 'quote' | 'ridge';
+  /** The timeline page the points link to. */
+  timelineHref: string;
 }
-const { milestones, part } = Astro.props;
+const { milestones, part, timelineHref } = Astro.props;
 const width = 1440;
 const ridgeY = (x: number) => 118 + 44 * Math.sin(x / 230 + 0.6) + 18 * Math.sin(x / 96 - 1.2);
 const line = (fn: (x: number) => number) =>
@@ -23,7 +25,7 @@ const back = [0, 1, 2, 3].map((k) =>
 );
 const dots = milestones.map((milestone, i) => {
   const x = 110 + (i * (width - 220)) / Math.max(1, milestones.length - 1);
-  return { ...milestone, x, y: ridgeY(x), href: `#moment-${i + 1}` };
+  return { ...milestone, x, y: ridgeY(x), href: `${timelineHref}#moment-${i + 1}` };
 });
 ---
 
@@ -44,7 +46,7 @@ const dots = milestones.map((milestone, i) => {
       </div>
       <figcaption>
         Uit{' '}
-        <a class="text-link" href="#tijdlijn" data-sr-link>
+        <a class="text-link" href={timelineHref} data-sr-link>
           de tijdlijn in Mijn verhaal
         </a>
       </figcaption>

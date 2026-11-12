@@ -109,7 +109,7 @@ home:
     eyebrow: 'A story in layers'
     heading: 'From then to now.'
     description: 'A personal timeline with four layers for each moment: what happened, what I felt, who I became and what I understand now.'
-    href: 'nl/mijn-verhaal/#tijdlijn'
+    href: 'nl/mijn-verhaal/tijdlijn/'
     label: 'Explore the timeline (in Dutch)'
   resources:
     eyebrow: 'Recovery & tools'

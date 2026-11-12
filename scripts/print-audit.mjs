@@ -17,11 +17,12 @@ const routes = [
   {
     id: 'story',
     route: '/nl/mijn-verhaal/',
-    required: [
-      'Hoe mijn wereld steeds kleiner werd.',
-      'Ik tekende zonder alles te overzien.',
-      'Voor mijn kinderen.',
-    ],
+    required: ['Waarom ik dit deel', 'Hoe mijn wereld steeds kleiner werd.', 'Voor mijn kinderen.'],
+  },
+  {
+    id: 'story-timeline',
+    route: '/nl/mijn-verhaal/tijdlijn/',
+    required: ['Hoe mijn wereld steeds kleiner werd.', 'Ik tekende zonder alles te overzien.'],
   },
   {
     id: 'emotion',

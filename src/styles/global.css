@@ -722,29 +722,120 @@ mark.review-marker {
     overflow: visible;
   }
 }
-/* Overview pages: In het kort at the top of the start column, the text flowing on into the
-   end column; one column on a phone. */
-.hub-intro {
-  columns: 2;
-  column-gap: clamp(2rem, 5vw, 4rem);
-  padding-block: clamp(2rem, 4vw, 3rem);
+/* Overview pages: the intro under the hero, in the hero's 50/50 shape. Start side: In het
+   kort, its first sentence as the page's opening line. End side: the page's text, a card to
+   the deeper page and the page's contents. One column on a phone. */
+.intro-block {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+  padding-block: clamp(2.5rem, 5vw, 4rem);
 }
-.hub-intro .summary-box {
+.intro-block--single {
+  grid-template-columns: minmax(0, var(--reading));
+}
+.intro-block__short > :first-child,
+.intro-block__text > :first-child {
   margin-top: 0;
-  break-inside: avoid;
 }
-.hub-intro__text {
+.intro-block__short .eyebrow,
+.intro-contents .eyebrow {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-sans);
+}
+.intro-block__opening {
+  margin: 0 0 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.4;
+}
+.intro-block__side {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+.intro-block .intro-block__text {
   padding: 0;
 }
-.hub-intro__text > :first-child {
-  margin-top: 0;
+.intro-block__text > :last-child {
+  margin-bottom: 0;
 }
-.hub-intro__text :is(h2, h3) {
-  break-after: avoid;
+.intro-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.35rem 1.6rem;
+  border-radius: var(--radius);
+  background: var(--band-bg);
+  color: var(--band-text);
+  text-decoration: none;
+  transition: transform 180ms ease;
+}
+.intro-card:hover {
+  transform: translateY(-2px);
+}
+.intro-card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.intro-card__eyebrow {
+  color: var(--band-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.intro-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+.intro-card__title::after {
+  content: ' →';
+}
+.intro-card:has(.intro-card__cta) .intro-card__title::after {
+  content: none;
+}
+.intro-card__cta {
+  margin-top: 0.35rem;
+  font-weight: 700;
+}
+.intro-contents ul {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+.intro-contents li {
+  border-bottom: 1px solid var(--border);
+}
+.intro-contents a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 2.75rem;
+  align-items: center;
+  padding-block: 0.5rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+.intro-contents a span:last-child {
+  color: var(--accent);
+}
+.intro-contents a:hover span:first-child {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-card {
+    transition: none;
+  }
 }
 @media (max-width: 52rem) {
-  .hub-intro {
-    columns: 1;
+  .intro-block {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 /* An overview list in the pillar's colour (HubPage sets the colour). */

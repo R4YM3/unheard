@@ -387,6 +387,8 @@ const hubs = defineCollection({
     cardsPlacement: z.enum(['related', 'inline']).default('related'),
     scenarios: z.array(scenario).max(8).default([]),
     reflection: reflection.optional(),
+    /** The page that explains this overview in depth; a card in the intro block. */
+    deeper: z.object({ href: z.string().min(3), label: z.string().min(3) }).optional(),
     feelingTimeline: z
       .object({
         eyebrow: z.string().min(2),

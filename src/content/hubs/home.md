@@ -153,7 +153,7 @@ home:
     eyebrow: 'Een verhaal in lagen'
     heading: 'Van toen tot nu.'
     description: 'Een persoonlijke tijdlijn met per moment vier lagen: wat gebeurde er, wat voelde ik, wie werd ik en wat begrijp ik nu.'
-    href: 'nl/mijn-verhaal/#tijdlijn'
+    href: 'nl/mijn-verhaal/tijdlijn/'
     label: 'Ontdek de tijdlijn'
   resources:
     eyebrow: 'Herstel & hulpmiddelen'

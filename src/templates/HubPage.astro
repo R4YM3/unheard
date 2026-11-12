@@ -11,6 +11,7 @@ import MiniReflection from '../components/MiniReflection.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
 import SearchIndex from '../components/SearchIndex.astro';
 import FeelingTimeline from '../components/FeelingTimeline.astro';
+import IntroBlock from '../components/IntroBlock.astro';
 import StartChooser from '../components/StartChooser.astro';
 import StatsList from '../components/StatsList.astro';
 import WordFinder from '../components/WordFinder.astro';
@@ -107,6 +108,19 @@ const listedCards = [
   ...data.cards.flatMap((card) =>
     card.href ? [{ href: card.href, title: card.title, text: card.text }] : [],
   ),
+];
+/* The intro's "Op deze pagina": the headings of the bands below, in order. */
+const contents = [
+  ...listings.map((listing, index) => ({
+    href: `${route}#${listingId(listing, index)}`,
+    label: listing.heading,
+  })),
+  ...(data.feelingTimeline
+    ? [{ href: `${route}#tijdlijn`, label: data.feelingTimeline.heading }]
+    : []),
+  ...(inlineCards.length > 0
+    ? [{ href: `${route}#ook-goed-om-te-weten`, label: ui(data.locale).alsoGoodToKnow }]
+    : []),
 ];
 const feelingSteps = data.feelingTimeline
   ? await Promise.all(
@@ -230,19 +244,15 @@ const mainEntityId = termSet
   }
   {
     pillarIntro && (data.summary || !isEmptyBody) && (
-      <div class="wrap hub-intro" style={`--pillar-band: ${band}`}>
-        {data.summary && (
-          <section class="summary-box" aria-labelledby="summary-heading">
-            <h2 id="summary-heading">{ui(data.locale).inShort}</h2>
-            <p>{data.summary}</p>
-          </section>
-        )}
-        {!isEmptyBody && (
-          <div class="prose hub-intro__text">
-            <Content />
-          </div>
-        )}
-      </div>
+      <IntroBlock
+        locale={data.locale}
+        label={ui(data.locale).inShort}
+        text={data.summary}
+        deeper={data.deeper}
+        contents={contents}
+      >
+        {!isEmptyBody && <Content />}
+      </IntroBlock>
     )
   }
   {
@@ -338,7 +348,7 @@ const mainEntityId = termSet
     }
     {
       inlineCards.length > 0 && (
-        <section class="section" aria-labelledby="hub-cards-heading">
+        <section class="section" aria-labelledby="hub-cards-heading" id="ook-goed-om-te-weten">
           <div class="wrap">
             <h2 id="hub-cards-heading">{ui(data.locale).alsoGoodToKnow}</h2>
             <CardGrid items={inlineCards} />

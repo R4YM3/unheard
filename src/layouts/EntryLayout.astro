@@ -40,6 +40,8 @@ interface Props {
   mainEntityId?: string;
   /** Link cards the template wants in the single "Verder lezen" block, before related pages. */
   moreLinks?: Array<{ href?: string; title: string; text: string; eyebrow?: string }>;
+  /** A page of its own under this entry (Mijn verhaal's timeline): path, title and crumb. */
+  subpage?: { path: string; title: string; description: string; crumb: string };
   /** Hero buttons when the content itself defines none (at most two). */
   actions?: Array<{ href: string; label: string; quiet?: boolean }>;
 }
@@ -59,11 +61,15 @@ const {
   mainEntityId,
   moreLinks = [],
   actions: fallbackActions = [],
+  subpage,
 } = Astro.props;
 const hasRail = Astro.slots.has('rail');
 const { data } = entry;
-const route = routeFor(entry);
-const crumbs = await breadcrumbsFor(entry);
+const route = subpage?.path ?? routeFor(entry);
+const crumbs = [
+  ...(await breadcrumbsFor(entry)),
+  ...(subpage ? [{ href: subpage.path, label: subpage.crumb }] : []),
+];
 /* One "Verder lezen" block per page: the template's own links first, then related pages,
    without duplicates and at most six. */
 const named = [
@@ -125,7 +131,7 @@ if (articleType) {
     '@type': articleType,
     '@id': articleId,
     headline: visibleHeading,
-    description: data.description,
+    description: subpage?.description ?? data.description,
     inLanguage: data.locale,
     /* Inline objects rather than @id references: not every validator resolves references. */
     author:
@@ -168,8 +174,8 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
 ---
 
 <BaseLayout
-  title={data.title}
-  description={data.description}
+  title={subpage?.title ?? data.title}
+  description={subpage?.description ?? data.description}
   locale={data.locale}
   canonicalPath={`/${route}`}
   schema={schema}
