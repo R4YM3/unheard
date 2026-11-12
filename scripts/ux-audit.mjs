@@ -221,17 +221,13 @@ try {
   console.log(`Perspective checks: ${pvRoutes.length} routes × 2 themes`);
 
   const linkedExample = await browser.newPage();
-  for (const index of [0, 2]) {
-    const id = `perspectief-scene-${index}`;
-    await linkedExample.goto(`${origin}/nl/#${id}`);
-    await linkedExample.waitForSelector(`#${id}`, { visible: true });
-    const routes = await linkedExample.$$eval(`#${id} a`, (links) =>
-      links.map((link) => link.href),
-    );
-    if (routes.length === 0) failures.push(`Example ${index + 1}: missing follow-up links`);
-    for (const route of routes) {
-      if (!(await fetch(route)).ok) failures.push(`Example ${index + 1}: broken follow-up link`);
-    }
+  const id = 'perspectief-scene-2';
+  await linkedExample.goto(`${origin}/nl/#${id}`);
+  await linkedExample.waitForSelector(`#${id}`, { visible: true });
+  const routes = await linkedExample.$$eval(`#${id} a`, (links) => links.map((link) => link.href));
+  if (routes.length === 0) failures.push('Money example: missing follow-up links');
+  for (const route of routes) {
+    if (!(await fetch(route)).ok) failures.push('Money example: broken follow-up link');
   }
   await linkedExample.close();
 

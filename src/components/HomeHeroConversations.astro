@@ -316,7 +316,17 @@ const { scenarios } = Astro.props;
     }
   }
 
-  @media screen and (prefers-reduced-motion: no-preference) {
+  @media (max-width: 52rem) {
+    .hero-conversations__stage {
+      padding-block-end: 3.5rem;
+    }
+
+    .conversation-exit {
+      --exit-offset: calc(100% + 3.5rem);
+    }
+  }
+
+  @media screen and (width > 52rem) and (prefers-reduced-motion: no-preference) {
     .hero-conversations__stage {
       grid-template-rows: max-content 4rem;
       align-content: start;
@@ -330,7 +340,9 @@ const { scenarios } = Astro.props;
       opacity: 0.71;
       filter: blur(1px);
     }
+  }
 
+  @media screen and (prefers-reduced-motion: no-preference) {
     [data-conversation-frame]:not([hidden]):not(.conversation-exit) :global(.pv-line--outside) {
       animation: hero-message-shake 380ms ease-in-out;
     }
@@ -359,7 +371,7 @@ const { scenarios } = Astro.props;
 
   @keyframes hero-chat-slide-out {
     to {
-      transform: translateY(var(--history-offset));
+      transform: translateY(var(--exit-offset, var(--history-offset)));
       opacity: 0.71;
       filter: blur(1px);
     }

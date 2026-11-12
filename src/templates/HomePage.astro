@@ -62,7 +62,7 @@ const homeLists = [
     <div class:list={['wrap home-hero__grid', { 'home-hero__grid--conversation': dutch }]}>
       {
         dutch && (
-          <div class="home-hero-visual">
+          <div class="home-hero-visual" id="gesprekschat">
             <HomeHeroConversations scenarios={data.scenarios} />
           </div>
         )
@@ -127,15 +127,7 @@ const homeLists = [
   {
     dutch ? (
       <>
-        {data.scenarios[0] && (
-          <HomeConversation
-            id="perspectief-scene-0"
-            sectionId="perspectief"
-            scenario={data.scenarios[0]}
-            concept={{ href: 'nl/begrippen/gaslighting/', label: 'Wat is gaslighting?' }}
-          />
-        )}
-        <div class="section" id="gedachte">
+        <div class="section section--tint" id="gedachte">
           <div class="wrap reading">
             <p class="eyebrow home-thought-label">
               <a href={home.timelineTeaser.href}>Uit mijn verhaal</a>
@@ -161,7 +153,11 @@ const homeLists = [
           </div>
         </div>
         {data.scenarios[2] && (
-          <HomeConversation id="perspectief-scene-2" scenario={data.scenarios[2]} />
+          <HomeConversation
+            id="perspectief-scene-2"
+            sectionId="perspectief"
+            scenario={data.scenarios[2]}
+          />
         )}
         {home.wordFinder && <WordFinderInvite {...home.wordFinder} />}
       </>
@@ -309,7 +305,20 @@ const homeLists = [
 
   @media (max-width: 52rem) {
     .home-hero-visual {
+      position: relative;
+      isolation: isolate;
       padding-block-start: 1rem;
+    }
+
+    .home-hero-visual::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      --chat-band-bg: color-mix(in srgb, var(--hero-bg) 92%, var(--hero-text));
+      background: var(--chat-band-bg);
+      box-shadow: 0 0 0 100vmax var(--chat-band-bg);
+      clip-path: inset(0 -100vmax);
+      content: '';
     }
 
     .home-hero__grid--conversation .home-hero__copy {

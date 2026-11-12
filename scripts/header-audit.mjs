@@ -163,16 +163,16 @@ try {
       { visible: true },
     );
     assert(visibleHeroConversation, 'The home conversation is visible on mobile');
-    const exampleSelector = '#perspectief-scene-0, #perspectief-scene-2';
+    const exampleSelector = '#perspectief-scene-2';
     const countVisibleExamples = () =>
       mobile.$$eval(
         exampleSelector,
         (nodes) => nodes.filter((node) => node.getBoundingClientRect().width > 0).length,
       );
-    assert.equal(await countVisibleExamples(), 2);
+    assert.equal(await countVisibleExamples(), 1);
     if (javascript) {
       await mobile.emulateMediaType('print');
-      assert.equal(await countVisibleExamples(), 2, 'All homepage examples must print');
+      assert.equal(await countVisibleExamples(), 1, 'All homepage examples must print');
     } else {
       await mobile.setViewport({ width: 1440, height: 1000 });
       await mobile.click('.desktop-nav-item summary');
@@ -205,7 +205,6 @@ try {
       .filter((id) =>
         [
           'gevoelens',
-          'perspectief-scene-0',
           'gedachte',
           'beginnen',
           'verhaal-citaat',
@@ -218,7 +217,6 @@ try {
   );
   assert.deepEqual(homeOrder, [
     'gevoelens',
-    'perspectief-scene-0',
     'gedachte',
     'beginnen',
     'verhaal-citaat',

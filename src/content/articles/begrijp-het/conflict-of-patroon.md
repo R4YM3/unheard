@@ -114,4 +114,4 @@ Leven met een patroon van controle kan ervoor zorgen dat je [aan jezelf gaat twi
 
 Meer over emotioneel misbruik in het algemeen staat in [Wat is emotioneel misbruik?](nl/begrijp-het/emotioneel-misbruik/). Waar je terechtkunt, staat op [Hulp vinden](nl/hulp-vinden/).
 
-[Bekijk een gesprek waarin iemand aan zijn eigen waarneming gaat twijfelen](nl/#perspectief-scene-0).
+[Bekijk de gespreksvoorbeelden op de homepage](nl/#gesprekschat).
