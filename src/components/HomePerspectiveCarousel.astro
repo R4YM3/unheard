@@ -258,7 +258,8 @@ const ordered = scenarios
       max-width: min(100%, 34rem);
       margin: 0;
       padding: clamp(1rem, 2.5vw, 1.5rem);
-      border: 0;
+      /* Every block on the homepage has a line; the bubbles too. */
+      border: 1px solid var(--chapter-line);
       border-radius: 1.25rem;
       box-sizing: border-box;
     }

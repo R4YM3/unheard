@@ -145,14 +145,14 @@ const homeLists = [
           id="verhaal"
         >
           <div class="wrap home-story">
-            <p class="eyebrow home-story__eyebrow">
-              <a href={home.storyTeaser.href}>Mijn verhaal</a>
-            </p>
             <div class="home-story__quotes">
+              <p class="eyebrow home-story__eyebrow">
+                <a href={home.storyTeaser.href}>Mijn verhaal</a>
+              </p>
               <blockquote class="home-story-quote">
                 <p>“Als ik iets wilde, kon ik dagen nadenken over hoe ik het moest brengen.”</p>
               </blockquote>
-              <blockquote class="home-story-quote">
+              <blockquote class="home-story-quote home-story-quote--second">
                 <p>
                   “Ook nadat ik was weggegaan, twijfelde ik nog aan mezelf en mijn herinneringen.”
                 </p>
@@ -281,11 +281,13 @@ const homeLists = [
 </EntryLayout>
 
 <style>
-  /* Mijn verhaal: the founder's own words first, then why the site exists, on one card. */
+  /* Mijn verhaal: the founder's own words on the start side, why the site exists on a card
+     beside them. The ridge pattern closes the band below both. */
   .home-story {
     display: grid;
     gap: clamp(1.5rem, 4vw, 3rem);
-    padding-block-end: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+    padding-block-end: clamp(3rem, 9vw, 8rem);
   }
 
   .home-story__eyebrow {
@@ -303,32 +305,47 @@ const homeLists = [
 
   .home-story__quotes {
     display: grid;
-    gap: clamp(1.25rem, 3vw, 2.5rem);
+    gap: clamp(1.25rem, 2.5vw, 1.75rem);
   }
 
   .home-story-quote {
-    max-width: 30ch;
     margin: 0;
     font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
+    font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem);
+    font-weight: 600;
     line-height: 1.2;
   }
 
-  .home-story-quote + .home-story-quote {
-    justify-self: end;
-    text-align: end;
+  .home-story-quote--second {
+    padding-inline-start: 1.375rem;
+    border-inline-start: 3px solid var(--accent);
+    color: var(--muted);
+    font-size: clamp(1.3rem, 1.05rem + 0.9vw, 1.6rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .home-story-quote p {
+    margin: 0;
   }
 
   .home-story__card {
-    max-width: 44rem;
-    padding: clamp(1.25rem, 3vw, 2.25rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
     border: 1px solid var(--chapter-line);
     border-radius: 1.25rem;
     background: var(--surface);
   }
 
   .home-story__card h2 {
-    font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem);
+    font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem);
+  }
+
+  @media (min-width: 52rem) {
+    .home-story {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(2rem, 4vw, 3rem);
+    }
   }
 
   .home-story__why {
