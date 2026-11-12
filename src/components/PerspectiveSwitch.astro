@@ -99,7 +99,12 @@ const unquote = (text: string) => text.trim().replace(/^["“„‘']+|["”’'
           </label>
         )
       }
-      <div class="pv-scenes" data-pv-scenes aria-label={swipe ? heading : undefined}>
+      <div
+        class="pv-scenes"
+        data-pv-scenes
+        role={swipe ? 'group' : undefined}
+        aria-label={swipe ? heading : undefined}
+      >
         {
           scenarios.map((scenario, index) => (
             <article class="pv-scene" id={`${id}-scene-${index}`} data-pv-panel={index}>
