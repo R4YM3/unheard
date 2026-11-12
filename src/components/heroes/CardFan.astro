@@ -29,7 +29,9 @@ const middle = (cards.length - 1) / 2;
     <>
       <ul class="cf__fan" data-cf-fan>
         {cards.map((card, i) => (
-          <li style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --i: ${i}`}>
+          <li
+            style={`--turn: ${(i - middle) * 7}deg; --step: ${i - middle}; --z: ${10 - Math.round(Math.abs(i - middle) * 2)}`}
+          >
             <a class="cf__card" href={card.href} data-cf-index={i}>
               <span class="cf__number">Kaart {i + 1}</span>
               <span class="cf__title">{card.title}</span>
@@ -79,8 +81,9 @@ const middle = (cards.length - 1) / 2;
     card.addEventListener('focus', show);
     previewOnFirstTap(card, show, () => card.hasAttribute('data-current'));
   }
-  /* Start with the first card chosen. */
-  document.querySelector<HTMLElement>('[data-cf-fan] .cf__card')?.dispatchEvent(new Event('focus'));
+  /* Start with the middle card chosen. */
+  const fanCards = [...document.querySelectorAll<HTMLElement>('[data-cf-fan] .cf__card')];
+  fanCards[Math.floor((fanCards.length - 1) / 2)]?.dispatchEvent(new Event('focus'));
 </script>
 
 <style>
@@ -94,10 +97,11 @@ const middle = (cards.length - 1) / 2;
 
   .cf__fan li {
     position: absolute;
-    --spread: clamp(2.25rem, 4.5vw, 4.25rem);
-    left: calc(50% - 6.5rem + var(--step) * var(--spread));
+    --spread: clamp(2rem, 3vw, 3rem);
+    left: calc(50% - 5.75rem + var(--step) * var(--spread));
     top: 1.5rem;
-    z-index: var(--i);
+    /* The middle cards lie on top, each card further out a little lower. */
+    z-index: var(--z);
     transform: rotate(var(--turn));
     transform-origin: 50% 130%;
     transition: transform 0.28s ease;
@@ -105,7 +109,7 @@ const middle = (cards.length - 1) / 2;
 
   [dir='rtl'] .cf__fan li {
     left: auto;
-    right: calc(50% - 6.5rem + var(--step) * var(--spread));
+    right: calc(50% - 5.75rem + var(--step) * var(--spread));
   }
 
   .cf__fan li:has(.cf__card:is(:hover, :focus-visible)) {
@@ -115,6 +119,7 @@ const middle = (cards.length - 1) / 2;
 
   /* Chosen but not pointed at: lifted a little in its place, so it hides no other card. */
   .cf__fan li:has(.cf__card[data-current]):not(:has(.cf__card:is(:hover, :focus-visible))) {
+    z-index: 11;
     transform: rotate(var(--turn)) translateY(-0.75rem);
   }
 
@@ -132,8 +137,8 @@ const middle = (cards.length - 1) / 2;
 
   .cf__card {
     display: flex;
-    width: 13rem;
-    height: 17rem;
+    width: 11.5rem;
+    height: 15.5rem;
     box-sizing: border-box;
     flex-direction: column;
     padding: 1.25rem;
