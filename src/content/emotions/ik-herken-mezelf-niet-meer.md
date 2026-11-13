@@ -14,7 +14,7 @@ order: 30
 feeling: Jezelf kwijt
 cardTitle: 'Ik ben mezelf kwijt'
 cardText: 'Iemand vraagt wat je zelf wilt, en je merkt dat je het antwoord echt niet meer weet.'
-summary: 'Het gevoel jezelf kwijt te zijn kan ontstaan als je je lange tijd hebt aangepast, bijvoorbeeld om spanning te voorkomen. Je eigen wensen worden dan stil, niet weg. Je hoeft niet in één keer te weten wie je bent; kleine dingen kunnen een begin zijn.'
+summary: 'Het gevoel jezelf kwijt te zijn kan ontstaan als je je lange tijd hebt aangepast, bijvoorbeeld om spanning te voorkomen. Ook langdurige stress of veel zorgen voor anderen kunnen meespelen. Begin eventueel met één kleine keuze die je zelf wilt maken.'
 hero:
   eyebrow: 'Wat voel ik? / Jezelf kwijt'
   paragraphs:
@@ -106,15 +106,13 @@ reviewNotes:
 
 ## Herken je dit?
 
-Iemand vraagt wat je dit weekend wilt doen, en je merkt dat je het antwoord niet weet. Niet omdat je moe bent, maar omdat de vraag ergens geen houvast meer vindt. Je kleding, je muziek, je vrienden, je mening aan tafel: het is allemaal een beetje van iemand anders geworden.
+_Voorbeeld_
 
-> Ik weet niet meer wat ik zelf vind. Ik weet alleen nog wat een ander ervan vindt.
+1. **Eén avond afzeggen.** Je wilt met een vriend afspreken. Thuis krijg je te horen dat je blijkbaar liever bij hem bent. Je voelt je schuldig en zegt af. Die avond is er rust, maar je mist het gesprek waar je naar uitkeek.
+2. **Al afwegen voordat je iets vraagt.** Ook bij volgende afspraken ontstaat gedoe. Je denkt al bij de uitnodiging aan de reactie thuis en zegt dat je geen tijd hebt. Na een tijdje vraagt je vriend minder vaak of je meegaat. Zo kan [je wereld langzaam kleiner worden](nl/begrippen/isolatie/).
+3. **Een vrije middag voelt leeg.** Iemand vraagt wat jíj wilt doen. Je zoekt eerst naar wat voor iedereen goed uitkomt. Als je helemaal zelf mag kiezen, weet je amper waar je zin in hebt.
 
-Het kan voelen als een langzaam vervagen. Er was geen moment waarop je besloot jezelf op te geven. Het waren kleine aanpassingen, elke keer redelijk. Een hobby die ruzie gaf, liet je liggen. Een vriend die niet welkom was, zag je minder. Een mening die spanning opleverde, hield je voor je.
-
-Misschien voel je het vooral in je lichaam: je maakt je kleiner, praat zachter, beweegt voorzichtiger. Of je voelt het als leegte, als je even alleen bent en niet weet wat je met de tijd moet.
-
-Voor mannen kan dit extra verwarrend zijn. Je functioneert, je werkt, je zorgt. Van buiten lijkt alles te kloppen. Juist daardoor kan het lang duren voordat je merkt dat jij zelf uit beeld bent geraakt.
+Dit is één mogelijk verloop. Ook werkdruk, mantelzorg of weinig tijd voor jezelf kunnen maken dat je minder goed weet wat je wilt. Een vraag die kan helpen is hoeveel ruimte je hebt om weer iets te kiezen dat bij jou past.
 
 ## Wat gebeurt er om je heen?
 
@@ -153,4 +151,4 @@ Soms hoort het gevoel van leegte of vlakheid bij iets wat meer aandacht vraagt. 
 
 Je hoeft niet in één keer te weten wie je bent of wat je wilt. Misschien kun je beginnen bij iets kleins: een persoon bij wie je rustig kunt zijn, een activiteit die vroeger goed voelde, of een moment waarop je lichaam iets ontspant.
 
-Dat is geen oplossing of diagnose. Het zijn aanknopingspunten om opnieuw aandacht te geven aan jouw ervaring. In [Mijn verhaal](nl/mijn-verhaal/) beschrijft de oprichter van Ongehoord hoe hij zelf zocht naar woorden voor wat hij voelde.
+Vraag jezelf eens af wat je met tien vrije minuten zou doen als niemand iets van je nodig had. Je mag het antwoord laten liggen of iets kleins proberen. Wil je meer woorden voor wat je merkt, lees dan [Van begrijpen naar voelen](nl/herstel/leren-voelen/). In [Mijn verhaal](nl/mijn-verhaal/) beschrijft de oprichter van Ongehoord hoe hij zelf zocht naar woorden voor wat hij voelde.

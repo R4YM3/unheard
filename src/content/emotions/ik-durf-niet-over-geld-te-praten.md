@@ -120,6 +120,12 @@ Geld raakt aan veel dingen tegelijk: zekerheid, vrijheid, zelfrespect, de vraag 
 
 Je bent daarin niet de enige, en het zegt niets over je waarde.
 
+## Wanneer wordt vragen om overzicht moeilijk?
+
+_Voorbeeld_
+
+De rekeningen worden meestal door de ander betaald. Je vraagt wat er deze maand nog afgaat en krijgt de vraag waarom je ineens zo wantrouwig doet. Later zeg je een etentje af omdat je niet weet wat je kunt uitgeven. In [Geldruzie of controle?](nl/begrijp-het/financieel-misbruik/geldruzie-of-controle/) lees je waarom toegang tot informatie en ruimte om vragen te stellen ertoe doen.
+
 ## Wat gebeurt er om je heen?
 
 Soms is het gewoon zwaar: een laag inkomen, onverwachte kosten, een scheiding waardoor alles dubbel betaald moet worden. Geldzorgen maken veel mensen stil.

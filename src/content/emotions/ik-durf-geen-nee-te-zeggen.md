@@ -119,6 +119,12 @@ Dat kan voelen als zwakte. Maar vaak is het een vorm van voorzichtigheid die je 
 
 Mannen krijgen vaak het beeld mee dat ze stevig moeten staan en voor zichzelf moeten opkomen. Juist dat beeld kan het moeilijker maken om toe te geven dat nee zeggen je angst geeft.
 
+## Wanneer begint het ja zeggen al?
+
+_Voorbeeld_
+
+Je krijgt een verzoek terwijl je aan het werk bent. Nog voordat je in je agenda kijkt, typ je dat je het wel regelt. Later schuif je je eigen afspraak op. Als je een nee steeds vermijdt uit angst voor de reactie, kan het helpen te lezen [wanneer druk rond grenzen controle wordt](nl/begrippen/dwingende-controle/).
+
 ## Wat gebeurt er om je heen?
 
 Grenzen worden moeilijk als er iets tegenover staat. Bijvoorbeeld:

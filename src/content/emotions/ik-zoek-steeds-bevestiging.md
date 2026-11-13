@@ -111,6 +111,12 @@ Het is vermoeiend, voor jou en soms ook voor de mensen om je heen. Misschien sch
 
 Bevestiging zoeken is iets anders dan advies vragen. Advies vragen helpt je verder. Bevestiging zoeken voelt eerder als een lus: vragen, kort rust, nieuwe twijfel, opnieuw vragen.
 
+## Wat zoek je als je het nog een keer vraagt?
+
+_Voorbeeld_
+
+Een vriend zegt dat je bericht prima klinkt. Even later lees je het opnieuw en vraag je nog iemand om mee te kijken. De twijfel gaat inmiddels ook over gewone beslissingen, zoals iets afzeggen of een middag voor jezelf nemen. Vraag jezelf eventueel af welke steun je zoekt: iemand die even luistert, iemand die met je meedenkt of iemand die de keuze van je overneemt.
+
 ## Wat gebeurt er om je heen?
 
 Soms ontstaat de behoefte aan bevestiging in een omgeving waarin jouw oordeel vaak werd betwist. Als je regelmatig hoorde dat je iets verkeerd zag, verkeerd onthield of overdreef, is het logisch dat je anderen gaat vragen of het klopt.
