@@ -27,7 +27,7 @@ const sizes = [1.6, 1.25, 1.45, 1.2, 1.5, 1.25, 1.35, 1.55, 1.2, 1.45, 1.25, 1.1
   part === 'words' ? (
     <ul class="fw-words" data-fw-words>
       {words.map((word, index) => (
-        <li>
+        <li class:list={{ 'fw-words__more': !word.phone }}>
           <a
             class="fw-word"
             href={word.href}
@@ -53,6 +53,17 @@ const sizes = [1.6, 1.25, 1.45, 1.2, 1.5, 1.25, 1.35, 1.55, 1.2, 1.45, 1.25, 1.1
           </p>
         </div>
       ))}
+      <button
+        type="button"
+        class="fw-toggle"
+        data-fw-toggle
+        aria-label="Pauzeer het wisselen"
+        title="Pauzeren"
+        hidden
+      >
+        <span class="fw-toggle__pause" aria-hidden="true" />
+        <span class="fw-toggle__play" aria-hidden="true" hidden />
+      </button>
     </div>
   )
 }
@@ -61,21 +72,99 @@ const sizes = [1.6, 1.25, 1.45, 1.2, 1.5, 1.25, 1.35, 1.55, 1.2, 1.45, 1.25, 1.1
   import { previewOnFirstTap } from '../../lib/tap-preview';
 
   const preview = document.querySelector<HTMLElement>('[data-fw-preview]');
-  const items = preview ? [...preview.children] : [];
-  for (const word of document.querySelectorAll<HTMLElement>('[data-fw-words] .fw-word')) {
-    const show = () => {
-      const index = Number(word.dataset.fwIndex) + 1;
-      items.forEach((item, i) => item.toggleAttribute('data-current', i === index));
-      for (const other of document.querySelectorAll('.fw-word'))
-        other.toggleAttribute('data-current', other === word);
-    };
-    word.addEventListener('pointerenter', (event) => event.pointerType === 'mouse' && show());
-    word.addEventListener('focus', show);
-    previewOnFirstTap(word, show, () => word.hasAttribute('data-current'));
-  }
-  /* Start with one word open, picked at random, so the hint is not needed. */
+  const list = document.querySelector<HTMLElement>('[data-fw-words]');
+  const items = preview ? [...preview.querySelectorAll(':scope > :is(.fw-hint, .fw-card)')] : [];
   const words = [...document.querySelectorAll<HTMLElement>('[data-fw-words] .fw-word')];
-  words[Math.floor(Math.random() * words.length)]?.dispatchEvent(new Event('focus'));
+  const toggle = preview?.querySelector<HTMLButtonElement>('[data-fw-toggle]');
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let current = -1;
+
+  const show = (word: HTMLElement) => {
+    const index = Number(word.dataset.fwIndex);
+    current = index;
+    items.forEach((item, i) => item.toggleAttribute('data-current', i === index + 1));
+    for (const other of words) other.toggleAttribute('data-current', other === word);
+  };
+
+  /* Every few seconds the next word (of those shown) opens its sentence. It waits while the
+     pointer is over the words or the sentence, while focus is inside, and when paused; with
+     reduced motion it starts paused. */
+  const INTERVAL = 4500;
+  let paused = motion.matches;
+  let holding = 0;
+  let timer: number | undefined;
+  const shown = () => words.filter((word) => word.getClientRects().length > 0);
+  const step = () => {
+    const visible = shown();
+    if (visible.length === 0) return;
+    const at = visible.findIndex((word) => Number(word.dataset.fwIndex) === current);
+    show(visible[(at + 1) % visible.length]);
+  };
+  const schedule = () => {
+    clearInterval(timer);
+    timer = undefined;
+    if (!paused && holding === 0)
+      timer = window.setInterval(() => !document.hidden && step(), INTERVAL);
+  };
+  const setPaused = (value: boolean) => {
+    paused = value;
+    if (toggle) {
+      toggle.setAttribute('aria-label', paused ? 'Start het wisselen' : 'Pauzeer het wisselen');
+      toggle.title = paused ? 'Afspelen' : 'Pauzeren';
+      toggle.querySelector<HTMLElement>('.fw-toggle__pause')!.hidden = paused;
+      toggle.querySelector<HTMLElement>('.fw-toggle__play')!.hidden = !paused;
+    }
+    schedule();
+  };
+  const hold = (area: HTMLElement | null | undefined) => {
+    if (!area) return;
+    area.addEventListener('pointerenter', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      holding += 1;
+      schedule();
+    });
+    area.addEventListener('pointerleave', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      holding = Math.max(0, holding - 1);
+      schedule();
+    });
+    /* Focus on a word or a sentence link holds; focus on the play button does not. */
+    area.addEventListener('focusin', (event) => {
+      if (event.target === toggle) return;
+      holding += 1;
+      schedule();
+    });
+    area.addEventListener('focusout', (event) => {
+      if (event.target === toggle) return;
+      holding = Math.max(0, holding - 1);
+      schedule();
+    });
+  };
+
+  for (const word of words) {
+    word.addEventListener('pointerenter', (event) => event.pointerType === 'mouse' && show(word));
+    word.addEventListener('focus', () => show(word));
+    /* A tap previews the word and gives it a full turn before the next one. */
+    previewOnFirstTap(
+      word,
+      () => {
+        show(word);
+        schedule();
+      },
+      () => word.hasAttribute('data-current'),
+    );
+  }
+  hold(list);
+  hold(preview);
+  toggle?.addEventListener('click', () => setPaused(!paused));
+  motion.addEventListener('change', () => setPaused(motion.matches || paused));
+
+  /* Start with one shown word open, picked at random, so the hint is not needed. */
+  const start = shown();
+  const first = start[Math.floor(Math.random() * start.length)];
+  if (first) show(first);
+  if (toggle) toggle.hidden = false;
+  setPaused(paused);
 </script>
 
 <style>
@@ -128,14 +217,69 @@ const sizes = [1.6, 1.25, 1.45, 1.2, 1.5, 1.25, 1.35, 1.55, 1.2, 1.45, 1.25, 1.1
     display: grid;
   }
 
-  .fw-preview > * {
+  .fw-preview > :is(.fw-hint, .fw-card) {
     grid-area: 1 / 1;
     align-self: start;
     margin: 0;
   }
 
-  .fw-preview > :not([data-current]) {
+  .fw-preview > :is(.fw-hint, .fw-card):not([data-current]) {
     visibility: hidden;
+  }
+
+  /* Play/pause for the automatic turns, under the sentence on the end side. */
+  /* Its place is kept before the script runs, so the hero does not grow when it appears. */
+  .fw-toggle[hidden] {
+    display: inline-grid;
+    visibility: hidden;
+  }
+
+  .fw-toggle {
+    display: inline-grid;
+    justify-self: end;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-block-start: 0.5rem;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .fw-toggle:hover {
+    border-color: var(--safe-border);
+    background: var(--surface);
+  }
+
+  .fw-toggle:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .fw-toggle__pause:not([hidden]) {
+    display: block;
+    width: 0.75rem;
+    height: 0.875rem;
+    border-inline: 0.25rem solid currentColor;
+    box-sizing: border-box;
+  }
+
+  .fw-toggle__play:not([hidden]) {
+    display: block;
+    width: 0.75rem;
+    height: 0.875rem;
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  /* On a phone fewer words, spread over the topics; every word still has its page. */
+  @media (max-width: 42rem) {
+    .fw-words__more {
+      display: none;
+    }
   }
 
   .fw-hint {
