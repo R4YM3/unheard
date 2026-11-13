@@ -500,11 +500,12 @@ const { scenarios } = Astro.props;
 
     .hero-conversations :global(.pv-line) {
       max-width: 88%;
-      padding: 0.625rem 0.875rem;
+      padding: 0.55rem 0.8rem;
     }
 
+    /* Compact at the top of the page: the two bubbles and the dots fit one card. */
     .hero-conversations :global(.pv-line dd) {
-      font-size: 1.0625rem;
+      font-size: 1rem;
     }
 
     .hero-conversations :global(.pv-line--outside) {
@@ -520,6 +521,7 @@ const { scenarios } = Astro.props;
 
     .hero-conversations__link {
       margin-block-start: 0.75rem;
+      font-size: 0.95rem;
     }
 
     .hero-conversations__controls:not([hidden]) {
@@ -533,19 +535,8 @@ const { scenarios } = Astro.props;
       display: none;
     }
 
-    .hero-conversations__count {
-      position: static;
-      width: auto;
-      height: auto;
-      overflow: visible;
-      clip: auto;
-      white-space: normal;
-      flex: 1;
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.875rem;
-      text-align: end;
-    }
+    /* The count is not shown on a phone: the dots already show where you are, and the
+       count stays for screen readers, so the card keeps one short row of controls. */
 
     button:not([hidden]) {
       border-color: transparent;

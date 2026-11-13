@@ -392,9 +392,46 @@ const homeLists = [
     }
   }
 
+  /* Phone (canvas board J, variant C): the conversation opens the page as its statement, with
+     a little air above and below; the heading, lead and both buttons follow in the first
+     screen. The heading stays first in the source, as on wide screens. */
   @media (max-width: 52rem) {
     .home-hero__grid--conversation {
-      gap: 1.5rem;
+      gap: 1.75rem;
+      padding-block-start: 1.75rem;
+    }
+
+    .home-hero__grid--conversation .home-hero-visual {
+      order: -1;
+    }
+
+    .home-hero__grid--conversation .home-hero__copy {
+      padding-block: 0 2.5rem;
+    }
+
+    .home-hero__grid--conversation .home-hero__copy > .eyebrow {
+      display: none;
+    }
+
+    .home-hero__grid--conversation h1 {
+      font-size: clamp(1.65rem, 7vw, 2rem);
+    }
+
+    .home-hero__grid--conversation .lead {
+      font-size: 1rem;
+    }
+
+    .home-hero__grid--conversation .actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .home-hero__grid--conversation .actions .button {
+      min-height: 2.75rem;
+      padding-inline: 0.75rem;
+      font-size: 0.875rem;
     }
   }
 </style>
