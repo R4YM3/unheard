@@ -127,6 +127,12 @@ Het kan klein beginnen. Je leest een bericht vijf keer voordat je het verstuurt.
 
 Misschien heb je ook geleerd dat je je niet zo moet aanstellen, dat je sterk moet zijn of het zelf moet oplossen. Veel mannen herkennen dat. Dan voelt twijfel al snel als zwakte, en praat je er nog minder over. Maar twijfel is geen karakterfout. Het is een signaal dat iets je bezighoudt.
 
+## Welke vraag stel je jezelf na het gesprek?
+
+_Voorbeeld_
+
+Je wilde vertellen dat een opmerking je raakte. Als het gesprek voorbij is, blader je oude berichten door om te zien of je je de woorden goed herinnert. Misschien herken je vooral dat je pas durft te praten als je het kunt bewijzen. Lees [hoe zelftwijfel kan groeien](nl/begrippen/zelftwijfel/) of [hoe je weer op je eigen waarneming kunt leren vertrouwen](nl/herstel/zelfvertrouwen/).
+
 ## Wat gebeurt er om je heen?
 
 Zelftwijfel ontstaat zelden uit het niets. Vaak gaat er een gesprek of een reeks gesprekken aan vooraf. Misschien herken je een of meer van deze situaties:

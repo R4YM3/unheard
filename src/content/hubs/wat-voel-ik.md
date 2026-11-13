@@ -64,4 +64,8 @@ reviewNotes:
 
 Veel mensen zoeken eerst naar een woord voor wat de ander doet. Dat is begrijpelijk: je wilt weten wat er aan de hand is. Maar vaak is het eerste wat je zeker weet niet wat de ander bedoelt, maar wat het met jou doet. Je twijfelt meer aan jezelf. Je voelt je schuldig zonder te weten waarom. Je bent moe van het steeds opletten.
 
+Twijfel je vooral aan je herinnering of oordeel? Begin bij [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Merk je vooral dat je anderen steeds om geruststelling vraagt? Lees [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/).
+
+Weet je nog niet welke pagina past? [Help me woorden vinden](nl/hulpmiddelen/help-me-woorden-vinden/) biedt korte vragen die je mag overslaan.
+
 Daarom begint Ongehoord bij jou. Elke pagina hieronder beschrijft een gevoel, wat er om je heen kan gebeuren, wat het kan verklaren en wat kan helpen. Er staan fictieve voorbeelden bij en vragen die je vrijblijvend kunt beantwoorden.

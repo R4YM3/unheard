@@ -118,6 +118,12 @@ Begrijpen is iets anders dan verwerken. Inzicht verandert wat je weet. Herstel v
 
 Wie gewend is problemen op te lossen door ze te snappen, loopt hier vaak tegenaan. Voor veel mannen is denken een veilige manier om met moeilijke dingen om te gaan. Voelen is dan onbekender terrein.
 
+## Wat als een gewone dag ineens omslaat?
+
+_Voorbeeld_
+
+Je bent op je werk en krijgt een bericht over een afspraak die nog geregeld moet worden. Je begrijpt waarom het je raakt, maar je leest dezelfde mail drie keer voordat je weer verder kunt. Op [de kaart voor als het pijn blijft doen](nl/hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen/) kun je naast elkaar zetten wat je al begrijpt en waar je vandaag nog last van hebt.
+
 ## Wat gebeurt er om je heen?
 
 Soms is het de omgeving die het lastig maakt. Mensen gaan ervan uit dat het na een tijd wel over moet zijn. Ze vragen er niet meer naar, of reageren ongeduldig als je er toch over begint.

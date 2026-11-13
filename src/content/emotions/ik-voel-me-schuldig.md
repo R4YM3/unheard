@@ -120,6 +120,12 @@ Dat gevoel kan heel echt en heel zwaar zijn. Het betekent niet dat het klopt. Sc
 
 Voor veel mannen speelt daar nog iets doorheen. Je wilt een goede partner, vader, zoon of collega zijn. Je voelt je verantwoordelijk voor de rust. Als het niet goed gaat, ligt de conclusie dat jij tekortschiet dan dichtbij.
 
+## Waarvoor maak je uiteindelijk excuses?
+
+_Voorbeeld_
+
+Je begint over een afspraak die steeds wordt afgezegd. Aan het eind bied je excuses aan voor je toon en de afspraak blijft onbesproken. Je kunt spijt hebben van hoe je iets zei en nog steeds terug willen komen op de afspraak. Als jouw aandeel telkens het hele gesprek overneemt, lees dan over [schuldverschuiving](nl/begrippen/schuldverschuiving/) of [wat als ik zelf ook fout zat?](nl/begrijp-het/wat-als-ik-zelf-ook-fout-zat/).
+
 ## Wat gebeurt er om je heen?
 
 Schuldgevoel groeit vaak in een bepaalde omgeving. Je hoort bijvoorbeeld:

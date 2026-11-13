@@ -118,6 +118,12 @@ Misschien weet je niet eens meer hoe het voelt om echt te ontspannen. Of je merk
 
 Veel mannen zijn gewend om door te gaan. Spanning wordt dan iets wat je wegdrukt met werk, sport of een biertje. Van buitenaf ziet niemand het. Maar je lichaam houdt het wel bij.
 
+## Waar merk je dat je nog steeds oplet?
+
+_Voorbeeld_
+
+Je zit bij vrienden en je telefoon licht op. Voor je hebt gelezen wie het is, bedenk je al wat je straks moet uitleggen. Het kost moeite om weer bij het gesprek aan tafel te komen. Als berichten je vaker uit balans brengen, vind je hier [manieren om met moeilijke berichten om te gaan](nl/herstel/triggers-en-moeilijke-berichten/).
+
 ## Wat gebeurt er om je heen?
 
 Voortdurend aan staan ontstaat vaak in een situatie waarin het loonde om alert te zijn. Bijvoorbeeld:

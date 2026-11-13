@@ -115,6 +115,12 @@ Veel mensen schamen zich voor dit gevoel. Omdat vrienden of familie opgelucht zi
 
 Voor mannen kan het extra eenzaam zijn. Verdriet om een relatie wordt al niet altijd gezien. Verdriet om een relatie die ook pijn deed, past al helemaal in geen enkel plaatje.
 
+## Wat mis je op dat moment precies?
+
+_Voorbeeld_
+
+Op zondag pak je bijna vanzelf je telefoon. Je mist de grap die jullie altijd maakten bij het ontbijt. Later die dag ben je opgelucht dat je je eigen plannen kunt maken. Als je wilt, kun je bij één herinnering stilstaan: mis je de persoon, iets wat jullie deelden of de toekomst die je had voorgesteld? Bij [rouw](nl/herstel/rouw/) is ruimte voor die verschillende vormen van gemis.
+
 ## Wat gebeurt er om je heen?
 
 Gemis wordt vaak wakker gemaakt door iets concreets. Een bericht, een foto die je telefoon automatisch laat zien, een gemeenschappelijke vriend, een plek. Of het stille moment waarop het huis leeg is.
