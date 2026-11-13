@@ -47,13 +47,21 @@ reviewNotes:
   - 'Redactie: de zin over psychomotorische therapie claimt alleen dat lichaamsbeleving daar centraal staat (bron: Vaktherapie Nederland); graag controleren.'
 ---
 
+## Herken je dit?
+
+Je kunt precies uitleggen wat er gebeurde en toch geen antwoord hebben op de vraag wat het met je deed. Misschien merk je vooral onrust, moeheid of prikkelbaarheid. Misschien voel je pas iets wanneer je alleen bent, of wanneer een bericht je onverwacht raakt. Dat maakt je niet ongevoelig; het betekent dat voelen nu niet vanzelf gaat.
+
 ## Begrijpen is niet hetzelfde als voelen
 
 Wie lang in een moeilijke relatie zat, wordt vaak goed in nadenken. Je analyseert, je zoekt verklaringen, je probeert te snappen wat er gebeurt. Dat kan je helpen overeind te blijven.
 
-Maar nadenken over gevoel is iets anders dan het voelen. Je kunt weten dat je verdrietig zou moeten zijn en dat toch niet merken. Of je merkt alleen een vage onrust, moeheid of prikkelbaarheid, zonder te weten wat eronder zit.
+Maar nadenken over gevoel is iets anders dan het voelen. Je kunt verwachten dat je verdriet voelt en dat toch niet merken. Of je merkt alleen een vage onrust, moeheid of prikkelbaarheid, zonder te weten wat eronder zit.
 
-Dat is geen tekortkoming. Vaak is het een manier waarop je jezelf hebt beschermd. Als gevoelens er lange tijd niet mochten zijn, of als ze tegen je werden gebruikt, leer je ze weg te zetten. Dat kun je weer langzaam ombuigen.
+Dat is geen tekortkoming. Als gevoelens lange tijd geen ruimte kregen, of tegen je werden gebruikt, kan wegzetten een manier zijn geweest om door te gaan. Je kunt weer leren opmerken wat er in je gebeurt, in een tempo dat bij jou past.
+
+## Hoe kun je hierin vastlopen?
+
+Wie lang heeft gezorgd, doorgezet of geprobeerd de rust te bewaren, raakt vaak gewend aan eerst doen en nadenken. Ook schaamte, weinig veilige ruimte of eerdere ervaringen kunnen het moeilijk maken om stil te staan bij een gevoel. Empathie, loyaliteit en zelfreflectie zijn geen tekortkomingen en veroorzaken geen grensoverschrijdend gedrag van een ander. Ze kunnen wel maken dat je lang doorgaat voordat je aandacht aan jezelf geeft.
 
 ## Het lichaam als begin
 

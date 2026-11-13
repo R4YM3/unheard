@@ -54,6 +54,10 @@ reviewNotes:
   - 'Het wetsvoorstel strafbaarstelling psychisch geweld is bij schrijven een voorstel (consultatie juni 2026). Bijwerken zodra de status verandert.'
 ---
 
+## Herken je dit?
+
+Je hoeft niet eerst zeker te weten hoe je ervaring heet om aandacht te geven aan wat er gebeurt. Als je je steeds meer aanpast om gedoe, vernedering, angst of een reactie te voorkomen, kan je vrijheid kleiner worden — ook wanneer er aan de buitenkant geen ruzie is.
+
 ## Wat is dwingende controle?
 
 Dwingende controle (in het Engels _coercive control_, in Nederland ook wel _intieme terreur_ genoemd) is een patroon waarin iemand een ander stelselmatig vernedert, bang maakt of in zijn of haar vrijheid beperkt, om macht over die persoon te houden. Zo omschrijft de Rijksoverheid het in een nieuwsbericht uit 2026, met de nadruk op: _geen losstaand incident, maar patroonmatig gedrag_.
@@ -63,6 +67,12 @@ De Amerikaanse onderzoeker Evan Stark heeft het begrip uitgewerkt. In een overzi
 Veilig Thuis noemt als signalen onder meer: voortdurend genegeerd worden, chantage, vernedering, [manipulatie](nl/begrippen/psychische-manipulatie/), overmatige jaloezie, steeds moeten laten weten waar je bent, ongevraagd meekijken in je telefoon, isolatie van vrienden en familie, en intimidatie. Fysiek geweld kan er deel van zijn, maar hoeft niet.
 
 > **Over de wet.** In juni 2026 heeft het kabinet een wetsvoorstel in consultatie gebracht om dwingende controle en psychische mishandeling expliciet strafbaar te maken. Bij het schrijven van dit artikel is dat een voorstel, geen geldende wet. Of en in welke vorm het wordt aangenomen, is nog niet bekend.
+
+## Voorbeeld: een regel die steeds verder gaat
+
+**Voorbeeld — verzonnen situatie.** Je bent later thuis dan afgesproken. Eerst vraagt je partner waar je was. Daarna komt het verwijt dat je niet betrouwbaar bent. Vervolgens moet je je locatie delen om te bewijzen dat er niets aan de hand is. Later denk je bij elke afspraak al aan de uitleg die je moet geven.
+
+Een vraag naar waar je was is op zichzelf geen dwingende controle. In dit voorbeeld gaat het om de opbouw: een regel, een verwijt, een nieuwe eis, en een redenering waarin weigeren al verdacht is.
 
 ## Hoe kan het eruitzien?
 
@@ -75,18 +85,6 @@ Dwingende controle zit vaak in kleine, alledaagse dingen. Los bekeken lijken ze 
 - Er zijn regels over kleding, eten, slaap of wie je spreekt, uitgesproken of onuitgesproken.
 - Je wordt uitgelachen of gekleineerd, ook waar anderen bij zijn.
 - Je merkt dat je vooral bezig bent met het voorkomen van een uitbarsting.
-
-> **Illustratief voorbeeld — verzonnen, geen echt gesprek**
->
-> De ander: "Ik vraag gewoon waar je was. Mag ik me geen zorgen maken?"
->
-> Jij: "Ik was bij mijn zus. Dat had ik gezegd."
->
-> De ander: "Je zou om zes uur thuis zijn. Het is kwart over. Ik wil je locatie voortaan zien. Als je niets te verbergen hebt, is dat toch geen probleem?"
->
-> Jij, later: _Het klinkt redelijk als de ander het zegt. Waarom voel ik me dan zo klein?_
-
-Eén vraag naar waar je was is geen dwingende controle. In het voorbeeld gaat het om de opbouw: een regel, een verwijt, een nieuwe eis, en een redenering waarin weigeren al verdacht is.
 
 ## Wanneer is het niet zomaar af te leiden?
 
@@ -102,6 +100,16 @@ Het verschil zit vaak in een paar vragen:
 Augeo benadrukt dat losse signalen er los van elkaar normaal uit kunnen zien; het gaat om het patroon. Het artikel [Ongezond conflict of een patroon van controle?](nl/begrijp-het/conflict-of-patroon/) gaat dieper in op dat verschil.
 
 Iemand die controlerend gedrag vertoont, heeft niet automatisch een persoonlijkheidsstoornis. Dit artikel gaat over gedrag en de gevolgen ervan, niet over een diagnose van de ander.
+
+## Hoe groeit het patroon?
+
+Controle kan beginnen met iets alledaags en zich uitbreiden naar tijd, contact, geld, telefoon of slaap. De samenhang is de kern: na een reactie pas je je aan, de ruimte voor een eigen keuze wordt kleiner, en de volgende regel voelt daardoor minder vreemd. Dat is waarom een rustige dag niet automatisch betekent dat je vrij bent om te kiezen.
+
+## Waarom kan iemand hierin vastlopen?
+
+Het is begrijpelijk dat je probeert de rust te bewaren, de ander tegemoet te komen of te zoeken naar jouw aandeel in een conflict. Empathie, loyaliteit en zelfreflectie zijn geen oorzaak van dwingende controle. De verantwoordelijkheid voor vernederen, dreigen, isoleren of iemands vrijheid beperken ligt bij degene die dat gedrag inzet.
+
+Praktische afhankelijkheid, kinderen, schaamte, weinig steun of eerdere ervaringen kunnen het moeilijk maken om ruimte te maken voor jezelf of om hulp te vragen. Vertrekken en veilig kunnen vertrekken zijn ook niet hetzelfde. Je hoeft die afweging niet alleen te maken.
 
 ## Impact op de ontvanger
 
@@ -125,13 +133,10 @@ Heb je zorgen dat iemand meekijkt? Bij [Hulp vinden](nl/hulp-vinden/#veilig-zoek
 
 ## Wat kan helpen?
 
-- **Schrijf op wat er gebeurt**, als dat veilig kan: data, wat er gezegd werd, wat je niet mocht. Een patroon is makkelijker te zien op papier dan in je hoofd. Bewaar het [waar de ander er niet bij kan](nl/veilig-gebruik/).
+- **Vraag eerst vertrouwelijk advies als je twijfelt over veiligheid.** Je hoeft niets te bewijzen of een confrontatie uit te lokken. Veilig Thuis kan met je meedenken over wat in jouw situatie verstandig is.
+- **Schrijf alleen iets op als dat veilig kan:** wat er gebeurde en wat het met je deed. Een patroon is soms makkelijker te zien op papier dan in je hoofd. Kijk bij [Veilig gebruik](nl/veilig-gebruik/) wat delen, bewaren of veranderen op een apparaat kan betekenen.
 - **[Praat met iemand buiten de relatie](nl/herstel/hoe-vertel-ik-het/)** die je vertrouwt.
 - **Bel Veilig Thuis voor advies**: 0800-2000, gratis en anoniem, dag en nacht. Je hoeft niet zeker te weten of het 'erg genoeg' is.
 - **Wees voorzichtig met relatietherapie of bemiddeling.** Bij dwingende controle kan een gezamenlijk gesprek onveilig zijn, omdat wat je vertelt thuis tegen je kan worden gebruikt. Bespreek dat eerst met een hulpverlener.
 - **Denk vooraf na over veiligheid als je overweegt te vertrekken.** Veilig Thuis kan met je meedenken over hoe je dat zo veilig mogelijk doet.
 - Bij direct gevaar bel je 112. Meer adressen vind je op [Hulp vinden](nl/hulp-vinden/).
-
-**Voorbeeld.** Je hoort: “Waarom doe je nu zo moeilijk? Ik vraag toch niet veel?”
-
-Je voelt: _Ik voel spanning als ik nee wil zeggen en ben bang voor wat er daarna gebeurt._
