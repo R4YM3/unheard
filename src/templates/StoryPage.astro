@@ -35,6 +35,7 @@ const timelineDescription = timeline
       '',
     )
   : '';
+/* The overview is not an article: no dates or source line there; the timeline page has them. */
 const contents = [
   { href: `${route}#therapie`, label: data.therapy.eyebrow },
   { href: `${route}#vaderschap`, label: data.fatherhood.eyebrow },
@@ -112,7 +113,13 @@ const trail = heroTrail(
       </section>
     </EntryLayout>
   ) : (
-    <EntryLayout entry={entry} hero={false} heading={data.heading} showSummary={false}>
+    <EntryLayout
+      entry={entry}
+      hero={false}
+      heading={data.heading}
+      showSummary={false}
+      articleType={false}
+    >
       <section
         class:list={[
           'hero page-hero',
