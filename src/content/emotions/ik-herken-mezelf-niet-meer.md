@@ -129,9 +129,17 @@ Het kan ook zonder dat iemand iets afdwingt. Een zware baan, de eerste jaren met
 
 Aanpassen is een manier om verbinding en rust te bewaren. Dat is menselijk. Maar als het langere tijd de enige veilige manier lijkt, kunnen je eigen wensen naar de achtergrond verdwijnen. Ze worden niet weggevaagd; ze worden stil.
 
-In relaties waarin één persoon structureel bepaalt wat mag en wat niet, gebeurt dat sneller. Dan gaat het niet om één keer toegeven, maar om [een patroon waarin jouw ruimte steeds kleiner wordt](nl/begrippen/dwingende-controle/). Of dat bij jou speelt, kun je niet uit één voorbeeld afleiden, en het zegt niets over wie de ander is. Op [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/) lees je meer over hoe zulke patronen kunnen doorwerken.
+In relaties waarin één persoon structureel bepaalt wat mag en wat niet, gebeurt dat sneller. Dan gaat het niet om één keer toegeven, maar om [een patroon waarin jouw ruimte steeds kleiner wordt](nl/begrippen/dwingende-controle/). Op [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/) lees je hoe zulke patronen kunnen doorwerken.
 
-Soms speelt ook iets van eerder mee. Wie al jong leerde dat zijn eigen behoeften minder belangrijk waren, past zich later makkelijker aan. Schematherapie richt zich onder meer op zulke terugkerende patronen; je leest erover op [Schematherapie](nl/herstel/therapievormen/schematherapie/).
+## Hoe kan het een patroon worden?
+
+Een opmerking, een afgezegde afspraak of een drukke periode vertelt niet het hele verhaal. Het wordt belangrijk als je vooraf steeds meer rekening houdt met een reactie, minder vrij kiest en je wereld daardoor kleiner wordt. Dan lijkt aanpassen op korte termijn rust te geven, terwijl je op langere termijn steeds minder ruimte overhoudt voor wat jij wilt.
+
+## Waarom kun je hierin vastlopen?
+
+Wie loyaal is, goed wil zorgen of veel zelfreflectie heeft, probeert vaak eerst te begrijpen wat er nodig is om de verbinding rustig te houden. Dat zijn sterke eigenschappen. Ze zijn niet de oorzaak van kleineren, druk uitoefenen of bepalen wat jij mag doen. Binnen een patroon waarin jouw keuzes telkens gevolgen hebben, kunnen ze er wel toe leiden dat je nog harder je best doet en jezelf verder naar de achtergrond schuift.
+
+Ook eerdere ervaringen, weinig steun, mantelzorg, kinderen, werkdruk of afhankelijkheid kunnen het moeilijker maken om stil te staan bij wat je zelf nodig hebt. Dat verklaart niet waarom iemand anders grensoverschrijdend gedrag vertoont. Het helpt wel begrijpen waarom één kleine eigen keuze soms al groot kan voelen.
 
 ## Wat het met je kan doen
 
@@ -139,7 +147,7 @@ Op korte termijn merk je het vooral aan kleine dingen: geen idee hebben wat je w
 
 Op langere termijn kan het je zelfbeeld raken. Je ziet jezelf vooral in je rol, en minder als iemand met eigen verlangens. Na een relatie of breuk kan dat extra hard aankomen: de structuur waar je je op aanpaste is weg, en wat overblijft voelt onbekend.
 
-Dat kan ook ruimte geven. Sommige mensen ontdekken eigen wensen terug via iets anders dan praten. Bij [beeldende therapie](nl/herstel/therapievormen/beeldende-therapie/) werk je bijvoorbeeld met materialen en maak je iets concreets, wat soms een andere ingang geeft dan woorden.
+Dat kan ook ruimte geven. Sommige mensen ontdekken eigen wensen terug via iets anders dan praten. Bij [beeldende therapie](nl/herstel/therapievormen/beeldende-therapie/) werk je bijvoorbeeld met materialen en maak je iets concreets, wat een andere ingang kan geven dan woorden.
 
 ## Wanneer is het iets anders?
 
