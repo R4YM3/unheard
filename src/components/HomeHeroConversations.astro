@@ -28,6 +28,19 @@ const { scenarios } = Astro.props;
       ))
     }
   </div>
+  {
+    /* Phone only: one link under the bubbles, start side, that changes with the conversation
+       without moving along with it. */
+    scenarios[0]?.followUp && (
+      <a
+        class="text-link hero-conversations__current"
+        href={scenarios[0].followUp.href}
+        data-conversation-current
+      >
+        {scenarios[0].followUp.label}
+      </a>
+    )
+  }
   <div class="hero-conversations__controls" data-conversation-controls hidden>
     <button type="button" data-conversation-prev aria-label="Vorig voorbeeld" title="Vorige">
       <span class="arrow-icon arrow-icon--prev" aria-hidden="true"></span>
@@ -67,6 +80,7 @@ const { scenarios } = Astro.props;
   for (const group of document.querySelectorAll<HTMLElement>('[data-hero-conversations]')) {
     const dots = [...group.querySelectorAll<HTMLButtonElement>('[data-conversation-dot]')];
     const count = group.querySelector<HTMLElement>('[data-conversation-count]');
+    const currentLink = group.querySelector<HTMLAnchorElement>('[data-conversation-current]');
     const labels = dots.map((dot) => dot.textContent?.replace(/^\s*Voorbeeld \d+:\s*/, '').trim());
     const frames = [...group.querySelectorAll<HTMLElement>('[data-conversation-frame]')];
     const controls = group.querySelector<HTMLElement>('[data-conversation-controls]');
@@ -106,6 +120,17 @@ const { scenarios } = Astro.props;
     };
 
     const mark = (byUser: boolean) => {
+      /* The phone link takes the shown conversation's link, at once and without motion. */
+      const frameLink = frames[current].querySelector<HTMLAnchorElement>(
+        '.hero-conversations__link',
+      );
+      if (currentLink) {
+        currentLink.hidden = !frameLink;
+        if (frameLink) {
+          currentLink.href = frameLink.href;
+          currentLink.textContent = frameLink.textContent;
+        }
+      }
       dots.forEach((dot, i) => {
         if (i === current) dot.setAttribute('aria-current', 'true');
         else dot.removeAttribute('aria-current');
@@ -195,6 +220,10 @@ const { scenarios } = Astro.props;
     position: relative;
     display: grid;
     min-width: 0;
+  }
+
+  .hero-conversations__current {
+    display: none;
   }
 
   .hero-conversations__stage {
@@ -520,8 +549,15 @@ const { scenarios } = Astro.props;
     }
 
     .hero-conversations__link {
+      display: none;
+    }
+
+    .hero-conversations__current:not([hidden]) {
+      display: block;
+      justify-self: start;
       margin-block-start: 0.75rem;
       font-size: 0.95rem;
+      text-align: start;
     }
 
     .hero-conversations__controls:not([hidden]) {

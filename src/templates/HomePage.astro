@@ -392,21 +392,18 @@ const homeLists = [
     }
   }
 
-  /* Phone (canvas board J, variant C): the conversation opens the page as its statement, with
-     a little air above and below; the heading, lead and both buttons follow in the first
-     screen. The heading stays first in the source, as on wide screens. */
+  /* Phone (canvas board J, variant C): the heading as the statement, the conversation right
+     below it with a little air around, then the lead and both buttons, all in the first
+     screen. The copy's children join the hero grid so the chat can sit between them; the
+     source order (heading, lead, buttons, chat) stays as on wide screens. */
   @media (max-width: 52rem) {
     .home-hero__grid--conversation {
-      gap: 1.75rem;
-      padding-block-start: 1.75rem;
-    }
-
-    .home-hero__grid--conversation .home-hero-visual {
-      order: -1;
+      gap: 0;
+      padding-block: 1.75rem 2.5rem;
     }
 
     .home-hero__grid--conversation .home-hero__copy {
-      padding-block: 0 2.5rem;
+      display: contents;
     }
 
     .home-hero__grid--conversation .home-hero__copy > .eyebrow {
@@ -414,10 +411,18 @@ const homeLists = [
     }
 
     .home-hero__grid--conversation h1 {
+      order: -2;
+      margin: 0 0 1.25rem;
       font-size: clamp(1.65rem, 7vw, 2rem);
     }
 
+    .home-hero__grid--conversation .home-hero-visual {
+      order: -1;
+      margin-block-end: 1.5rem;
+    }
+
     .home-hero__grid--conversation .lead {
+      margin: 0 0 1rem;
       font-size: 1rem;
     }
 
@@ -426,6 +431,7 @@ const homeLists = [
       flex-wrap: wrap;
       align-items: center;
       gap: 0.5rem;
+      margin: 0;
     }
 
     .home-hero__grid--conversation .actions .button {
