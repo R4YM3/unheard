@@ -16,8 +16,8 @@ readerMoment:
   feeling: 'Geldzaken na een breuk kunnen oude spanning weer wakker maken, zeker als er ook druk of controle was.'
 order: 60
 cardTitle: 'Druk na een scheiding'
-cardText: 'Een scheiding is financieel bijna altijd zwaar. Soms wordt geld daarna een middel om druk te blijven zetten. Over het verschil en waar je advies vindt.'
-summary: 'Een scheiding brengt voor bijna iedereen financiële zorgen en onenigheid mee. Dat is nog geen misbruik. Economische druk na een scheiding gaat over een patroon waarin geld, schulden of procedures steeds worden ingezet om controle te houden of de ander klein te krijgen. Dit artikel geeft geen juridisch oordeel; een advocaat, mediator of Het Juridisch Loket kan meekijken naar jouw situatie.'
+cardText: 'Als geld na een breuk een middel blijft om druk uit te oefenen. Over herkenning, het verschil met een geschil en onafhankelijke steun.'
+summary: 'Een brief, rekening of verzoek om te tekenen kan na een breuk veel spanning geven. Economische druk gaat over controle via geld of verplichtingen, niet over ieder financieel meningsverschil. Je mag steun zoeken om het patroon én de juridische vragen uit elkaar te halen. Bij dreiging vraagt ook je veiligheid aandacht.'
 related:
   [
     financieel-misbruik,
@@ -27,6 +27,14 @@ related:
     hulp-vinden,
   ]
 sources:
+  - label: 'Als uit elkaar gaan een strijd wordt'
+    url: 'https://www.veiligthuis.nl/nl/signalen/complexe-scheiding'
+    publisher: Veilig Thuis
+    checkedAt: 2026-11-14
+  - label: 'Complexe conflictscheidingen — veiligheid en passende hulp'
+    url: 'https://gezinsprofielen.augeo.nl/augeo-special-gezinsprofielen/complexe-conflictscheidingen'
+    publisher: Augeo Foundation
+    checkedAt: 2026-11-14
   - label: 'Schouders Eronder — Van signalering tot hulp: handreiking financieel misbruik (2024, PDF)'
     url: 'https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'
     publisher: 'Schouders Eronder / Huiselijkgeweld.nl'
@@ -34,12 +42,13 @@ sources:
   - label: 'Het Juridisch Loket — Contact'
     url: 'https://www.juridischloket.nl/contact/'
     publisher: 'Het Juridisch Loket'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-14
   - label: 'Rijksoverheid — Schulden'
     url: 'https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/schulden'
     publisher: Rijksoverheid
     checkedAt: 2026-10-20
 reviewNotes:
+  - 'Raymond wijst vóór publicatie van deze revisie een familierechtjurist en veiligheidsreviewer aan: onderscheid financiële druk en legitiem geschil, voorbeeld met stukken onder druk, mediation en bestaande verplichtingen. Codex verwerkt hun opmerkingen.'
   - 'Juridische review (familierecht): bevat dit artikel geen uitspraken die als individueel juridisch advies kunnen worden gelezen? Is de waarschuwing om niet eenzijdig te stoppen met betalen of afspraken te wijzigen zonder advies correct en voldoende algemeen?'
   - 'Juridische review: klopt de algemene omschrijving van de rol van advocaat en mediator? Geen kosten, toevoegingen of procedures noemen zonder bron.'
   - 'Oprichter: dit onderwerp raakt mogelijk aan je eigen ervaring. Er staat bewust geen persoonlijke passage in. Wil je hier later iets toevoegen? [OPRICHTER REVIEW NODIG]'
@@ -47,7 +56,7 @@ reviewNotes:
 
 ## Wat is economische druk na een scheiding?
 
-Een scheiding is bijna altijd financieel ingrijpend. Twee huishoudens kosten meer dan één, gezamenlijke bezittingen en schulden moeten worden verdeeld, en afspraken over kinderen hebben vaak ook een financiële kant. Daarover onenigheid hebben is gewoon, hoe zwaar het ook kan zijn.
+Je dacht dat er na de breuk meer ruimte zou komen. Toch schuif je een envelop opzij, omdat je opziet tegen wat er nu weer geregeld moet worden. Geldzaken kunnen veel van je vragen: overzicht krijgen, woonlasten dragen of afspraken over bezittingen en schulden afronden.
 
 Economische druk na een scheiding is iets anders. Het gaat om een patroon waarin geld, schulden of procedures steeds worden ingezet om controle te houden, om de ander uit te putten of om keuzes af te dwingen. [Financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) stopt niet altijd bij het einde van een relatie; soms verandert het alleen van vorm.
 
@@ -55,12 +64,16 @@ De [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijk
 
 ## Hoe het eruit kan zien
 
+**Voorbeeld — fictieve situatie.** Je vraagt om de gegevens die nodig zijn om een gezamenlijke rekening af te ronden. In plaats van de stukken krijg je de boodschap dat je eerst met een andere afspraak moet instemmen. Dat gebeurt opnieuw bij het volgende document. Je wilt verder en overweegt maar te tekenen, terwijl je nog niet weet wat het betekent.
+
+Dit voorbeeld gaat over informatie en instemming als drukmiddel. Het zegt niets over welke rechten of verplichtingen in een echte situatie gelden. Daarvoor is onafhankelijk juridisch advies nodig.
+
 Algemene voorbeelden, geen beschrijving van een specifieke situatie:
 
 - **Gezamenlijke schulden** worden niet afgelost zoals afgesproken, waardoor jij aangesproken blijft worden.
 - **Verdeling van bezittingen** loopt steeds vast, wordt uitgesteld of opnieuw ter discussie gesteld.
 - **Afspraken over alimentatie of kosten voor kinderen** worden een terugkerend strijdpunt, met dreiging of verwijten in plaats van overleg.
-- **Procedures** worden aangespannen of gerekt op een manier die vooral tijd, geld en energie lijkt te kosten.
+- **Dreigen met procedures** wordt verbonden aan eisen buiten het concrete geschil, bijvoorbeeld om persoonlijke keuzes te beïnvloeden. Dat een zaak lang duurt of veel kost, bewijst op zichzelf geen misbruik.
 - **Informatie** over inkomen, schulden of gezamenlijke rekeningen wordt achtergehouden.
 - **Geld en kinderen** raken verweven, bijvoorbeeld als financiële afspraken gekoppeld worden aan contact of omgang.
 
@@ -68,7 +81,17 @@ Algemene voorbeelden, geen beschrijving van een specifieke situatie:
 
 Na een scheiding staan twee mensen vaak lijnrecht tegenover elkaar. Beide kanten kunnen zich onrechtvaardig behandeld voelen. Iemand die een procedure start of een afspraak betwist, kan daar een goede reden voor hebben. Het recht rond scheiding, verdeling en alimentatie is ingewikkeld, en wat redelijk is, hangt af van veel factoren.
 
-Daarom trekt dit artikel geen conclusies over wat in jouw situatie wel of niet mag, of wie gelijk heeft. Dat kan alleen iemand die je situatie en de regels kent. Wat je wel kunt doen, is kijken naar het patroon: gaat het om een geschil dat ooit opgelost kan worden, of lijkt geld steeds weer een middel om druk te houden?
+Een langlopend geschil kan een legitieme reden hebben. Tegelijk mag de juridische vorm niet verhullen dat iemand wordt bedreigd of onder druk gezet. Kijk naar concrete gebeurtenissen: welke informatie ontbreekt, welke eisen worden gesteld, wat gebeurt er als je om uitleg vraagt? Een juridisch adviseur kan de rechten en verplichtingen beoordelen; een deskundige op het gebied van huiselijk geweld kan meedenken over controle en veiligheid.
+
+## Waarom toegeven logisch kon voelen
+
+Je wilt een woning behouden, schulden niet laten oplopen of voorkomen dat de kinderen last hebben van onzekerheid. Onder die omstandigheden kan een snelle handtekening voelen als de enige weg naar rust. Dat je verantwoordelijkheid neemt of wilt blijven meewerken, maakt jou niet verantwoordelijk voor de druk die een ander uitoefent.
+
+Achteraf kun je merken dat iedere toegeving werd gevolgd door een nieuwe voorwaarde. Dan krijgen eerdere momenten een andere betekenis. Je hoeft jezelf niet te verwijten dat je toen vooral de eerstvolgende rekening of afspraak probeerde op te lossen.
+
+> **Voorbeeldgedachte — fictief**
+>
+> Ik dacht steeds: als dit ene papier geregeld is, kan ik verder. Maar er kwam telkens iets bij.
 
 ## Wat het met je kan doen
 
@@ -80,8 +103,14 @@ Voor vaders kan het extra zwaar zijn als financiële conflicten samenvallen met 
 
 - **Neem geen grote financiële stappen zonder advies.** Stop bijvoorbeeld niet op eigen houtje met betalen en verander niet eenzijdig afspraken, ook als dat begrijpelijk voelt. Laat eerst iemand meekijken.
 - **Vraag algemene juridische informatie.** Op de website van [Het Juridisch Loket](https://www.juridischloket.nl/contact/) vind je algemene juridische informatie, voor iedereen. Heb je een laag inkomen en weinig spaargeld, dan kun je daar ook gratis advies vragen via [0800-8020](tel:08008020), op werkdagen van 9.00 tot 17.00 uur.
-- **Een mediator of advocaat** kan helpen bij afspraken of geschillen. Een mediator begeleidt gesprekken tussen beide partijen; een advocaat behartigt jouw belangen. Welke vorm past, hangt af van de situatie en van hoe veilig overleg voelt.
+- **Vraag onafhankelijk advies over de passende route.** Een mediator begeleidt beide partijen; een eigen advocaat behartigt jouw belangen. Bij dwang of dreiging is gezamenlijk onderhandelen niet vanzelfsprekend veilig. Bespreek dat eerst afzonderlijk met een deskundige en een juridisch adviseur, voordat je instemt met mediation.
 - **Schulden die je niet meer kunt dragen?** Via je gemeente kun je hulp krijgen bij schulden. Zie de [Rijksoverheid-pagina over schulden](https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/schulden).
 - **Voelt contact met je ex onveilig?** Dan kun je gratis en anoniem advies vragen bij [Veilig Thuis](https://www.veiligthuis.nl/nl/contact) via [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112).
 
 Meer over wie wat doet lees je in [Juridisch en financieel advies](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/).
+
+## Geld in een nieuwe relatie
+
+Ook wanneer er nieuw vertrouwen groeit, kan een gezamenlijke rekening of vraag over geld beladen voelen. **Voorbeeld — fictief:** een nieuwe partner stelt voor om vakantiekosten samen bij te houden. Jij voelt meteen druk om toestemming te vragen voor iedere uitgave. Je mag benoemen wat die afspraak bij je oproept en vragen om uitleg, zonder je hele verleden te hoeven vertellen.
+
+Een nieuwe relatie hoeft oude geldzaken niet op te lossen. Je mag tijd nemen voor overzicht en advies voordat je nieuwe gezamenlijke verplichtingen aangaat. Voor de spanning rond het gesprek kun je verder lezen bij [Ik durf niet over geld te praten](nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/).
