@@ -216,3 +216,24 @@ alle gepubliceerde behandelvormen blijven bereikbaar in een compacte lijst.
 Geen nieuwe diagnose-, behandel- of werkingsclaim. De persoonlijke teksten zijn
 niet veranderd en hun bestaande oprichtersreview blijft open. Nieuwe browser-
 en printcontrole voor deze hub volgt nog; andere hubs zijn geen bewijs hiervoor.
+
+## Hulpmiddelen: één rustige ingang, volledig aanbod
+
+De volledige kaartteksten voor zelfreflectie, partnergesprek, hulpverlener en naaste,
+plus Over de kaarten, zijn gelezen. De hub herhaalde zijn bestemmingen in de tools-
+keuzehulp, een losse woordenvinderkaart en zes grote kaarten. De hub gebruikt nu
+korte tekstingangen en de bestaande compacte HubPage-lijst. De woordenvinder blijft
+ongewijzigd; geen nieuwe vragen of invulvelden. Steun vragen aan een hulpverlener
+is duidelijk onderscheiden van een partnergesprek dat alleen veilig kan plaatsvinden.
+Alle zes kaarten blijven rechtstreeks bereikbaar. De bestaande StartChooser blijft
+elders beschikbaar; niet elke pijler krijgt dezelfde interface.
+
+De browseraudit krijgt echte no-JavaScript-klikken naar gespreksvoorbereiding en
+Begrippen A–Z op 390 en 1440px; de printaudit legt de hub apart vast. Resultaten en
+visuele beoordeling van deze wijziging zijn nog te bevestigen.
+
+Validatie: CI 43653670173 op 63936a6 is geslaagd, inclusief de gecorrigeerde
+no-JavaScript-ontdekroutes, axe, print, UX en header. De daaropvolgende
+Hulpmiddelen-wijziging slaagt lokaal voor `npm run check` (35 tests, geen failures)
+en de noindex-productiebuild (109 HTML-pagina’s, distributie-audit geslaagd).
+De browserresultaten van 63936a6 gelden nog niet voor deze laatste hubwijziging.

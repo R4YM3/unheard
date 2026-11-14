@@ -23,6 +23,11 @@ const routes = [
       'Beginnen kan ook anders',
     ],
   },
+  {
+    id: 'tools-hub',
+    route: '/nl/hulpmiddelen/',
+    required: ['Waar kan ik je mee helpen?', 'Alle kaarten, zonder vaste volgorde'],
+  },
   { id: 'home', route: '/nl/', required: ['Wat herken jij?', 'Er mag weer ruimte ontstaan.'] },
   {
     id: 'story',
@@ -147,6 +152,7 @@ try {
         'emotion-hub',
         'understanding-hub',
         'therapy-hub',
+        'tools-hub',
         'emotion',
         'knowledge',
         'therapy',
