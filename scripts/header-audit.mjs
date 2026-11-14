@@ -478,19 +478,26 @@ try {
     'B-light: four situations, native disclosure, full print with and without JavaScript.',
   );
 
-  // A consolidated article must remain reachable through its former URL.
-  for (const javascript of [true, false]) {
-    const moved = await browser.newPage();
-    await moved.setJavaScriptEnabled(javascript);
-    await moved.setViewport({ width: javascript ? 1440 : 390, height: 1000 });
-    await moved.goto(`${origin}/nl/begrijp-het/woorden-om-te-ordenen/#neem-het-in-je-eigen-tempo`, {
-      waitUntil: 'networkidle0',
-    });
-    await moved.waitForFunction(() => globalThis.location.pathname === '/nl/begrijp-het/');
-    assert(await moved.$('#neem-het-in-je-eigen-tempo'), 'Transferred section exists');
-    if (javascript) assert.equal(new URL(moved.url()).hash, '#neem-het-in-je-eigen-tempo');
-    assert.equal((await moved.$$('h1')).length, 1);
-    await moved.close();
+  // Consolidated introductions retain their old URLs and section links.
+  for (const [oldRoute, targetRoute, anchor] of [
+    ['begrijp-het/woorden-om-te-ordenen/', 'begrijp-het/', 'neem-het-in-je-eigen-tempo'],
+    ['herstel/wat-herstel-kan-betekenen/', 'herstel/', 'van-begrijpen-naar-voelen'],
+  ]) {
+    for (const javascript of [true, false]) {
+      const moved = await browser.newPage();
+      await moved.setJavaScriptEnabled(javascript);
+      await moved.setViewport({ width: javascript ? 1440 : 390, height: 1000 });
+      await moved.goto(`${origin}/nl/${oldRoute}#${anchor}`, { waitUntil: 'networkidle0' });
+      await moved.waitForFunction(
+        (path) => globalThis.location.pathname === path,
+        {},
+        `/nl/${targetRoute}`,
+      );
+      assert(await moved.$(`#${anchor}`), 'Transferred section exists');
+      if (javascript) assert.equal(new URL(moved.url()).hash, `#${anchor}`);
+      assert.equal((await moved.$$('h1')).length, 1);
+      await moved.close();
+    }
   }
 
   /* Both discovery and known-topic routes remain usable without JavaScript. */
