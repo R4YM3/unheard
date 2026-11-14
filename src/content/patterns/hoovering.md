@@ -1,6 +1,6 @@
 ---
 title: 'Hoovering: als iemand je steeds terug probeert te trekken'
-description: 'Wat hoovering betekent, waarom het geen wetenschappelijk begrip is en wat kan helpen om bij je eigen keuze te blijven als iemand steeds weer contact zoekt.'
+description: 'Over hoop en twijfel wanneer iemand opnieuw contact zoekt, wat het woord hoovering beschrijft en hoe je ruimte houdt voor je eigen afweging en veiligheid.'
 locale: nl
 translationKey: hoovering
 slug: begrippen/hoovering
@@ -8,7 +8,7 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 related:
   [
@@ -51,7 +51,7 @@ sources:
 
 'Hoovering' komt van het Engelse merk stofzuigers. Het woord wordt in populaire taal gebruikt voor het patroon waarin iemand, nadat jij afstand hebt genomen, je steeds opnieuw probeert terug te trekken in de relatie of in het contact. Met spijt, beloftes, nostalgie, een crisis of juist met druk.
 
-Belangrijk om te weten: hoovering is geen wetenschappelijk of klinisch begrip. Er is, voor zover bij het schrijven van dit artikel na te gaan was, geen onderzoek dat het als afzonderlijk verschijnsel definieert of meet. Het is een woord dat veel mensen helpt om een herkenbare ervaring te benoemen. Daarom houdt dit artikel het bij beschrijven wat je kunt meemaken, zonder er harde uitspraken over te doen.
+Het woord is een populaire beschrijving, geen diagnose. De bronnen hieronder gaan over beloftes na geweld, controle en emotionele binding; ze onderbouwen niet dat ieder nieuw bericht dezelfde bedoeling heeft. Kijk naar het concrete contact en wat er gebeurt met jouw ruimte om te kiezen.
 
 Wat wél beschreven is in onderzoek en door hulporganisaties, is het verloop dat er dicht bij ligt. Veilig Thuis beschrijft bij partnergeweld een spiraal waarin na een uitbarsting vaak beloftes volgen dat het nooit meer zal gebeuren, met periodes waarin de relatie goed lijkt. Onderzoek naar [traumabinding](nl/begrippen/traumabinding/) laat zien dat afwisselend goed en slecht behandeld worden de emotionele band met iemand kan versterken.
 
@@ -81,7 +81,7 @@ Wat kan helpen om te ordenen:
 - **Herhaalt het verloop zich?** Afstand, spijt, toenadering, en daarna weer hetzelfde gedrag als eerst?
 - **Hoe voel jij je erbij?** Rust, of vooral verwarring, schuld en onrust?
 
-Bij gezamenlijke kinderen is contact vaak noodzakelijk. Dan gaat het er niet om óf er contact is, maar hoe. [Duidelijke, zakelijke afspraken](nl/herstel/contact-na-een-breuk/) kunnen helpen.
+Bij gezamenlijke kinderen of andere verplichtingen kan contact nodig blijven. Dreiging of controle vraagt dan eerst om een veilige en passende afweging met deskundige hulp. [Contact na een breuk](nl/herstel/contact-na-een-breuk/) gaat over die situatie; een zakelijk antwoord maakt onveilig contact niet vanzelf veilig.
 
 ## Impact op de ontvanger
 
@@ -95,10 +95,16 @@ Steeds weer teruggetrokken worden kan uitputtend zijn. Mensen beschrijven onder 
 
 Dat je [iemand mist die je pijn heeft gedaan](nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/), is geen teken van zwakte. Gehechtheid werkt niet volgens logica.
 
+## Wat je achteraf anders kunt zien
+
+**Voorbeeld — verzonnen:** eerst lees je ieder bericht als een afzonderlijk excuus. Later merk je dat de warme woorden telkens worden gevolgd door verwijten zodra je geen afspraak wilt maken. Dat verband helpt je kijken naar wat er na de belofte gebeurt, zonder te hoeven raden wat de ander vanbinnen bedoelt.
+
+Dat je eerder hoopte op verandering, maakt jou niet verantwoordelijk voor nieuwe druk. Je kunt iemand missen en tegelijk meer afstand nodig hebben. In een nieuwe relatie mag je ook je eigen tempo houden; je hoeft vertrouwen niet te bewijzen door meteen op ieder bericht te reageren.
+
 ## Wat kan helpen?
 
-- **Besluit vooraf hoe je met contact omgaat**, op een rustig moment. Bijvoorbeeld: alleen schriftelijk, alleen over de kinderen, of helemaal niet.
-- **[Vertraag je reactie](nl/herstel/triggers-en-moeilijke-berichten/).** Je hoeft niet meteen te antwoorden. Laat een bericht een dag liggen, of lees het samen met iemand die je vertrouwt.
-- **Maak onderscheid tussen een echte noodsituatie en een oproep.** Bij echte nood kun je ook anderen inschakelen; jij hoeft niet altijd degene te zijn die helpt.
-- **Wees mild voor jezelf als je toch reageert.** Terugvallen hoort bij losmaken; het zegt niet dat je gefaald hebt.
+- **Kijk eerst naar veiligheid en verplichtingen.** Bij dreiging of aanhoudend ongewenst contact kun je hulp vragen bij een passende stap. Bestaande afspraken over kinderen of andere zaken vragen soms juridisch advies. Kies niet op grond van een algemene tip voor blokkeren, antwoorden of afspreken.
+- **[Neem ruimte voor je afweging](nl/herstel/triggers-en-moeilijke-berichten/)** wanneer het bericht kan wachten. Er is geen vaste wachttijd die altijd past. Iemand die je vertrouwt kan met je meekijken; je hoeft niet alleen te beslissen.
+- **Je hoeft een crisis niet alleen op te lossen.** Als iemand in gevaar is, schakel passende hulp in. Je hoeft de ernst niet zelf vast te stellen of veiligheid te beloven door opnieuw contact of een relatie aan te gaan.
+- **Contact opnemen maakt je niet zwak.** Als je toch reageerde of afsprak, mag je opnieuw bekijken wat je nu nodig hebt. Je hoeft geen schaamte te overwinnen voordat je steun mag vragen.
 - **Voel je je onveilig, of wordt er gedreigd na een afwijzing?** Neem dat serieus. Veilig Thuis is dag en nacht gratis bereikbaar via 0800-2000; bij direct gevaar bel je 112. Zie ook [Hulp vinden](nl/hulp-vinden/).

@@ -151,3 +151,24 @@ garantie op veiligheid of behandeladvies. Bestaande koppen/ankers blijven intact
 De nieuwe scènes zijn redactionele illustraties, geen uit bronnen overgenomen
 casussen. Raymond wijst een klinische/veiligheidsreviewer aan voor de uitleg en
 antwoordvoorwaarden; dit brononderzoek is geen menselijke goedkeuring.
+
+## Aanvulling 15 november: opnieuw contact en hoop
+
+`patterns/hoovering.md` is volledig gelezen in de overlapreview. De eigen vraag
+is hoop/twijfel bij hernieuwd contact; dit verschilt van structurele praktische
+contactafspraken en een eenmalig ontregelend bericht. De bestaande bronverwijzingen
+zijn behouden; de claim dat er geen onderzoek bestaat is vervangen door een
+precieze begrenzing van de geraadpleegde bronnen. Geen nieuwe literatuurreview
+of geverifieerde verklaring van de bedoeling van een ex-partner geclaimd.
+
+De eerdere universele tips ‘laat een bericht een dag liggen’, zelfstandig
+kiezen voor helemaal geen contact en zelf onderscheiden of een crisis echt is,
+zijn vervangen door situationele afweging en passende hulp. Dit sluit aan op de
+hiervoor gelezen stalking-/veiligheidsbronnen en is geen individueel advies over
+omgang of een crisisprotocol. Een fictieve scène laat zien hoe herhaald druk
+uitoefenen na vriendelijke woorden achteraf duidelijk kan worden. De passage
+over een nieuwe relatie gaat over eigen tempo, niet over bewezen veiligheid.
+‘Terugvallen hoort bij losmaken’ is geschrapt: opnieuw contact wordt niet als
+falen of verplichte herstelfase neergezet. Raymond wijst een veiligheids-/klinische
+reviewer aan voor contactvoorwaarden en crisistaal. Persoonlijke tekst is niet
+verzonnen. Deze vijfde verwante artikelrevisie blijft onderdeel van concept-PR #108.
