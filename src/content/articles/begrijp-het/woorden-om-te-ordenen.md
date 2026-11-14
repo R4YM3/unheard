@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-11-12
-updatedAt: 2026-11-12
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik zoek geen etiket voor de ander. Ik wil begrijpen wat er met mij is gebeurd.'
+  feeling: 'Een woord kan houvast geven zonder dat het jouw ervaring kleiner maakt of iemand op afstand diagnosticeert.'
 order: 1
 cardTitle: 'Waarom woorden helpen'
 related: [begrijp-het, emotioneel-misbruik, conflict-of-patroon, begrippen]

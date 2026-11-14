@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Iedereen heeft ruzie. Waarom zeg ik dan steeds minder omdat ik bang ben voor wat er volgt?'
+  feeling: 'Het verschil zit niet in één harde zin, maar in herhaling, ruimte om nee te zeggen en wie zich steeds moet aanpassen.'
 order: 20
 cardTitle: 'Ongezond conflict of een patroon?'
 cardText: 'Over het verschil tussen ruzie tussen gelijken en een herhaald patroon waarin één persoon steeds meer ruimte inneemt.'

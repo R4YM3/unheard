@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Er zijn geen blauwe plekken. Waarom voel ik me dan zo klein en op mijn hoede?'
+  feeling: 'Woorden, controle en herhaalde vernedering kunnen diep doorwerken, ook als anderen het niet meteen zien.'
 order: 10
 cardTitle: 'Wat is emotioneel misbruik?'
 cardText: 'Over kleineren, controleren, isoleren en bang maken, en waarom dat vaak pas laat zichtbaar wordt.'
