@@ -79,6 +79,17 @@ inhoud en menselijke review. De nieuwe kernpagina over herkenning achteraf staat
 in PR #103 ongepubliceerd en wordt hier nog niet gelinkt.
 
 Een extra menu-item vraagt toetsenbord-, zoom-, mobiel- en visuele headercontrole.
-Browsertoegang was in de andere reviewcheckout niet beschikbaar; succesvolle builds
-zijn geen vervanging voor die controle. Geen merge of deployment als onderdeel van
-deze stap.
+De lokale browserhost was niet beschikbaar. GitHub CI heeft inmiddels de axe-,
+print-, UX- en headercontroles uitgevoerd. De extra ingang bracht twee echte
+headerproblemen aan het licht: het eerste submenu viel buiten het scherm bij
+961px, en de navigatie brak af bij 1280px. Het eerste submenu is nu aan de
+beginzijde uitgelijnd en de compacte desktopopmaak loopt door tot 1440px.
+Run 43647100244 is volledig geslaagd, inclusief de ongewijzigde eisen voor
+viewportgrenzen en navigatieregels. De verouderde telling van vijf secties is
+vervangen door controle van de zes bedoelde bestemmingen.
+
+Raymond heeft doorlopende merge- en releaseautorisatie gegeven. Deze branch is
+bijgewerkt op main na #107. CI bewaart nu screenshots van de vijf gecontroleerde
+desktopbreedtes en van de nieuwe hub op 390/1440px, plus de A4-uitvoer. Visuele
+beoordeling van deze bestanden volgt; Safari en een echte screenreadersessie zijn
+nog niet uitgevoerd. De automatische checks gelden daarvoor niet als bewijs.

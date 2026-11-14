@@ -1,5 +1,6 @@
 /** Browser regression checks for desktop dropdowns, slow font loading and home entry points. */
 import assert from 'node:assert/strict';
+import { mkdir } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 import puppeteer from 'puppeteer-core';
@@ -27,6 +28,7 @@ try {
   }
   browser = await puppeteer.launch({ executablePath: chromePath, headless: true });
   const page = await browser.newPage();
+  await mkdir('work/print-audit', { recursive: true });
   for (const width of [961, 1024, 1120, 1280, 1440]) {
     await page.setViewport({ width, height: 1000 });
     await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
@@ -51,6 +53,7 @@ try {
         .map((node) => node.getBoundingClientRect().y),
     );
     assert(Math.max(...rows) - Math.min(...rows) < 2, `Header wraps at ${width}px`);
+    await page.screenshot({ path: `work/print-audit/header-${width}.png` });
     const mainTop = await page.$eval('main', (node) => node.getBoundingClientRect().y);
     for (const item of items) {
       await item.hover();

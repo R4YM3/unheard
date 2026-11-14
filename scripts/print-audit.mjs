@@ -13,6 +13,11 @@ const chromePath =
     : '/usr/bin/google-chrome');
 
 const routes = [
+  {
+    id: 'recognition-hub',
+    route: '/nl/wat-herken-ik/',
+    required: ['Je hoeft het nog geen naam te geven', 'Beginnen kan ook anders'],
+  },
   { id: 'home', route: '/nl/', required: ['Wat herken jij?', 'Er mag weer ruimte ontstaan.'] },
   {
     id: 'story',
@@ -107,7 +112,9 @@ try {
 
   for (const item of routes) {
     await page.goto(`${origin}${item.route}`, { waitUntil: 'networkidle0' });
-    if (['emotion', 'knowledge', 'therapy', 'tool', 'pattern'].includes(item.id)) {
+    if (
+      ['recognition-hub', 'emotion', 'knowledge', 'therapy', 'tool', 'pattern'].includes(item.id)
+    ) {
       await page.emulateMediaType('screen');
       for (const width of [390, 1440]) {
         await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
