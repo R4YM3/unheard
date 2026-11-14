@@ -15,6 +15,10 @@ feeling: Schuldgevoel
 cardTitle: 'Ik voel me overal schuldig over'
 cardText: 'Je begon over iets wat je raakte, en eindigde met excuses voor iets wat je niet precies kunt aanwijzen.'
 summary: 'Schuldgevoel is geen bewijs dat je iets verkeerd hebt gedaan. Het kan een gezond signaal zijn, maar ook een gewoonte die is gegroeid in gesprekken waarin jij steeds de verantwoordelijkheid kreeg. Je kunt onderzoeken welk deel van jou is, zonder iemand anders te veroordelen.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik maar sorry zeg, wordt het weer rustig.'
+  feeling: 'Wanneer excuses de spanning steeds moeten oplossen, kan schuldgevoel als een reflex gaan voelen. Rust verdienen is iets anders dan verantwoordelijkheid dragen.'
 hero:
   eyebrow: 'Wat voel ik? / Schuldgevoel'
   paragraphs:

@@ -15,6 +15,10 @@ feeling: Bevestiging zoeken
 cardTitle: 'Ik zoek steeds bevestiging'
 cardText: 'Je laat een bericht drie keer meelezen, en zelfs als iedereen zegt dat het goed is, durf je het niet te versturen.'
 summary: 'Steeds bevestiging zoeken komt vaak voort uit onzekerheid over je eigen oordeel. Geruststelling geeft dan even rust, maar die zakt snel weer weg. Dat zegt niets over je waarde; het laat zien hoe groot de twijfel is. Vertrouwen in jezelf kan in kleine stappen groeien.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Zeg jij even dat ik het goed zie?'
+  feeling: 'De vraag om bevestiging kan even opluchten en daarna opnieuw terugkomen. Dat maakt je niet lastig; het laat zien hoeveel houvast je op dat moment nodig hebt.'
 hero:
   eyebrow: 'Wat voel ik? / Bevestiging zoeken'
   paragraphs:

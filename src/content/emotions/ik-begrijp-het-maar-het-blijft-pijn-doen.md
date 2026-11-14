@@ -15,6 +15,10 @@ feeling: Pijn na inzicht
 cardTitle: 'Ik begrijp het, maar het blijft pijn doen'
 cardText: 'Je kunt precies uitleggen wat er gebeurde, en toch krimpt je maag als je eraan denkt.'
 summary: 'Begrijpen is iets anders dan verwerken. Inzicht verandert wat je weet; herstel verandert, vaak langzamer, hoe het voelt. Dat gevoelens blijven terugkomen betekent niet dat je terug bij af bent of iets verkeerd doet.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik begrijp het. Waarom doet het dan nog zo pijn?'
+  feeling: 'Je hoofd kan verder zijn dan je gevoel. Dat is geen mislukking van herstel, maar een uitnodiging om ook ruimte te maken voor wat nog gevoeld wordt.'
 hero:
   eyebrow: 'Wat voel ik? / Pijn na inzicht'
   paragraphs:

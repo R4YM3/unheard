@@ -112,6 +112,13 @@ const base = z.object({
   reviewNotes: z.array(z.string().min(10)).default([]),
   cardTitle: z.string().min(4).optional(),
   cardText: z.string().min(10).max(200).optional(),
+  readerMoment: z
+    .object({
+      label: z.string().min(3).max(80),
+      thought: z.string().min(10).max(240),
+      feeling: z.string().min(20).max(420),
+    })
+    .optional(),
   order: z.number().int().optional(),
 });
 

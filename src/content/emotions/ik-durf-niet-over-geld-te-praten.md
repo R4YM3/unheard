@@ -15,6 +15,10 @@ feeling: Geld en schaamte
 cardTitle: 'Ik durf niet over geld te praten'
 cardText: 'Een vraag over de rekening voelt als iets verkeerds, en over je schulden praat je met niemand.'
 summary: 'Niet over geld durven praten kan voortkomen uit schaamte, uit afhankelijkheid of uit ervaring dat vragen tot ruzie leidt. Geldzorgen zijn op zichzelf geen misbruik. Als geld stelselmatig wordt gebruikt om je te beperken of te controleren, kan dat financieel misbruik zijn. Vraag dan eerst vertrouwelijk advies.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik zou dit zelf moeten kunnen oplossen.'
+  feeling: 'Schaamte rond geld kan je stil maken, juist wanneer je overzicht of steun nodig hebt. Een vraag stellen over jouw geld of jouw veiligheid is legitiem.'
 hero:
   eyebrow: 'Wat voel ik? / Geld en schaamte'
   paragraphs:

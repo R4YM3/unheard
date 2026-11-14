@@ -19,6 +19,10 @@ related:
     het-vertellen,
     hulp-vinden,
   ]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik maar voorkom dat het escaleert, blijft het rustig.'
+  feeling: 'Wanneer je dag steeds meer draait om iemands reactie voorkomen, kan je eigen ruimte ongemerkt kleiner worden. Dat is een reden om het patroon serieus te nemen.'
 glossary:
   term: 'Dwingende controle'
   definition: 'Een patroon waarin iemand een ander stelselmatig vernedert, bang maakt of in de vrijheid beperkt om macht te houden. Geen losstaand incident, maar patroonmatig gedrag.'

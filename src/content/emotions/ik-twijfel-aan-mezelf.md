@@ -15,6 +15,10 @@ feeling: Zelftwijfel
 cardTitle: 'Ik twijfel aan mezelf'
 cardText: 'Na een gesprek vraag je je af of je overdreef, het verkeerd onthield of zelf het probleem bent.'
 summary: 'Zelftwijfel kan ontstaan na een gewoon misverstand, maar ook wanneer je beleving steeds opnieuw ter discussie komt te staan. Je hoeft de oorzaak niet te kennen om je gevoel serieus te nemen. Begin bij wat er gezegd werd, wat je voelde en wat je nu nodig hebt.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik het niet kan bewijzen, zal ik wel ongelijk hebben.'
+  feeling: 'Zelftwijfel kan je laten zoeken naar zekerheid voordat je jezelf toestemming geeft om iets serieus te nemen. Je ervaring hoeft niet eerst een rechtszaak te worden.'
 hero:
   eyebrow: 'Wat voel ik? / Zelftwijfel'
   paragraphs:

@@ -13,6 +13,7 @@ import { ui } from '../i18n/ui';
 import { slotFor } from '../lib/photos';
 import { brandName, founderName, shareImage } from '../lib/site';
 import ArticleMeta from '../components/ArticleMeta.astro';
+import ReaderMoment from '../components/ReaderMoment.astro';
 import {
   breadcrumbsFor,
   resolveRelated,
@@ -239,6 +240,7 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
           </div>
         )
       }
+      {data.readerMoment && <ReaderMoment moment={data.readerMoment} />}
       <slot />
       {
         /* The dates close the article itself, directly below its text. Without sources, the
