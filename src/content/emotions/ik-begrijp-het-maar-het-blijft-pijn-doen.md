@@ -15,6 +15,10 @@ feeling: Pijn na inzicht
 cardTitle: 'Ik begrijp het, maar het blijft pijn doen'
 cardText: 'Je kunt precies uitleggen wat er gebeurde, en toch krimpt je maag als je eraan denkt.'
 summary: 'Begrijpen is iets anders dan verwerken. Inzicht verandert wat je weet; herstel verandert, vaak langzamer, hoe het voelt. Dat gevoelens blijven terugkomen betekent niet dat je terug bij af bent of iets verkeerd doet.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik begrijp het. Waarom doet het dan nog zo pijn?'
+  feeling: 'Je hoofd kan verder zijn dan je gevoel. Dat is geen mislukking van herstel, maar een uitnodiging om ook ruimte te maken voor wat nog gevoeld wordt.'
 hero:
   eyebrow: 'Wat voel ik? / Pijn na inzicht'
   paragraphs:
@@ -84,7 +88,7 @@ helps:
       title: 'Zoek een aanpak die verder gaat dan praten',
       text: 'Sommige therapievormen richten zich op ervaren en verwerken, niet alleen op inzicht. Een huisarts kan meedenken.',
     }
-related: [herstel-rouw, herstel-leren-voelen, therapievormen, kaart-pijn-na-inzicht]
+related: [herstel-rouw, herstel-leren-voelen, therapievormen, het-vertellen, kaart-pijn-na-inzicht]
 sources:
   - label: 'Thuisarts — Ik heb lichte psychische klachten. Hoe ga ik me beter voelen?'
     url: 'https://www.thuisarts.nl/psychische-klachten-bij-volwassenen/ik-heb-lichte-psychische-klachten-hoe-ga-ik-me-beter-voelen'
@@ -145,6 +149,8 @@ En soms is begrijpen ook een manier om gevoel op afstand te houden. Zolang je an
 Op korte termijn kan het frustreren. Je verwijt jezelf dat je nog niet verder bent. Je gaat nog meer lezen of analyseren, in de hoop dat het laatste puzzelstukje de pijn laat verdwijnen.
 
 Op langere termijn kan het je onzeker maken over je herstel. Je vraagt je af of het ooit beter wordt. Of je trekt je terug, omdat je niet steeds hetzelfde verhaal wilt vertellen.
+
+Na een relatie of breuk kan pijn ook samengaan met meer ruimte. Misschien hoef je minder op te letten, maar voelt een gewone avond, een bericht of een eigen keuze nog steeds beladen. Dat is geen teken dat je terug moet of dat je inzicht niet klopt. Het laat zien dat herstel niet alleen gaat over begrijpen wat er gebeurde, maar ook over weer wennen aan wat er nu mogelijk is.
 
 Het kan helpen om terugval anders te zien. Een gevoel dat terugkomt is geen bewijs dat er niets veranderd is. Vaak merk je pas achteraf dat golven minder lang duren, of dat je er anders mee omgaat dan eerst.
 

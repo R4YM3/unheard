@@ -14,6 +14,10 @@ order: 20
 cardTitle: 'Zelfvertrouwen'
 cardText: 'Vertrouwen in je eigen waarneming terugvinden, in kleine stappen.'
 summary: 'Na een relatie waarin je beleving steeds werd betwist, kan het lastig zijn om jezelf te geloven. Zelfvertrouwen komt meestal niet in één keer terug. Het groeit door kleine ervaringen waarin je merkt dat je waarneming klopt, en door mensen die je serieus nemen.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet wat ik voel, maar durf ik daar wel op te vertrouwen?'
+  feeling: 'Vertrouwen in jezelf komt vaak terug in kleine momenten. Je hoeft niet te wachten tot alle twijfel verdwenen is.'
 hero:
   eyebrow: 'Herstel / Zelfvertrouwen'
   paragraphs:
@@ -74,6 +78,14 @@ Vragen of iets klopt is niet verkeerd. Maar als je merkt dat je bij alles een an
 ### Kies mensen die je serieus nemen
 
 Zelfvertrouwen groeit makkelijker in de buurt van mensen die je laten uitpraten, die vragen wat je bedoelt en die je beleving niet meteen corrigeren. Je hoeft je niet te verantwoorden bij iedereen. Het is genoeg als er een paar mensen zijn bij wie je dat niet hoeft.
+
+## In een nieuwe relatie
+
+Een nieuwe relatie kan tegelijk fijn en spannend zijn. Misschien wil je graag vertrouwen, maar let je extra scherp op een toon, een stilte of een verschil van mening. Je kunt bang zijn om weer te veel ruimte in te leveren, of juist bang zijn dat je door je twijfel moeilijk bent voor de ander.
+
+Dat is geen bewijs dat er in de nieuwe relatie iets mis is. Het kan een teken zijn dat je nog leert vertrouwen op wat je ziet, voelt en nodig hebt. Je hoeft niet te testen of iemand veilig is, en een nieuwe partner hoeft je oude pijn niet op te lossen. Het helpt vaak om je tempo te mogen kiezen, kleine voorkeuren uit te spreken en te merken hoe daar rustig op wordt gereageerd.
+
+Blijft een nieuw contact je vaak terugbrengen naar oude spanning, lees dan ook [Triggers en moeilijke berichten](nl/herstel/triggers-en-moeilijke-berichten/) of praat erover met iemand die je serieus neemt. Bij zorgen over terugkerende druk, kleineren of controle kun je [woorden en patronen ordenen](nl/begrijp-het/).
 
 ## Voor mannen die gewend zijn het zelf te weten
 

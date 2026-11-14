@@ -14,6 +14,10 @@ order: 70
 cardTitle: 'Contact na een breuk'
 cardText: 'Omgaan met blijvend contact rond kinderen of gedeelde zaken, met structuur en afstand.'
 summary: 'Soms blijf je na een breuk contact houden, bijvoorbeeld rond kinderen, een huis of financiën. Structuur kan helpen: vaste afspraken, kort en schriftelijk contact, en steun van anderen. Deze pagina geeft geen juridisch advies. Bij twijfel over je veiligheid gaat die voor.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Eén bericht kan mijn hele dag overnemen.'
+  feeling: 'Ook wanneer een relatie voorbij is, kan noodzakelijk contact oude spanning wakker maken. Structuur is dan bedoeld om ruimte voor jezelf te houden, niet om de ander te veranderen.'
 hero:
   eyebrow: 'Herstel / Contact na een breuk'
   paragraphs:
@@ -49,6 +53,12 @@ Na een breuk willen veel mensen afstand. Maar soms kan dat niet helemaal. Je dee
 Als de relatie werd gekenmerkt door verwijten, verdraaiingen of druk, kan dat na de breuk doorgaan. Berichten over een simpele afspraak kunnen uitlopen op discussies over vroeger. Een overdracht van de kinderen kan elke keer een gespannen moment zijn. Thuisarts beschrijft dat langdurige stress vaak voortkomt uit onzekerheid, bijvoorbeeld over geld, familie of een relatie.
 
 Niet elke moeizame samenwerking na een scheiding is een teken van misbruik. Veel ex-partners hebben het lastig met elkaar. Maar als je merkt dat je [bij elk contact op je hoede bent](nl/begrippen/hyperwaakzaamheid/), mag je jezelf daarbij helpen.
+
+## Wat het na een breuk nog met je kan doen
+
+Na een breuk kan er meer ruimte zijn, terwijl je lichaam en gedachten nog reageren alsof ieder bericht direct iets van jou vraagt. Misschien lees je een bericht steeds opnieuw, bereid je je uren voor op een overdracht of twijfel je aan een eenvoudige keuze. Dat is geen teken dat je faalt of dat de breuk niets heeft veranderd.
+
+Wie lang heeft geprobeerd de rust te bewaren, heeft vaak geleerd snel te reageren, uit te leggen of toe te geven. Empathie, loyaliteit en willen doorzetten zijn geen oorzaak van druk of controle door een ander. Ze kunnen wel maken dat het tijd kost om weer te voelen waar jouw grens ligt, vooral wanneer contact om kinderen, geld of een huis nodig blijft.
 
 ## Structuur geeft rust
 

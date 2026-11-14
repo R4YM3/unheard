@@ -15,6 +15,10 @@ feeling: Spanning
 cardTitle: 'Ik sta voortdurend aan'
 cardText: 'Een melding op je telefoon, een toon in iemands stem: je lichaam slaat alarm voordat je weet waarom.'
 summary: 'Voortdurend aan staan kan ontstaan als je lange tijd alert moest zijn op spanning of onvoorspelbaarheid. Je lichaam blijft dan waakzaam, ook als het niet meer nodig is. Dat is geen zwakte. Rust kan stap voor stap terugkomen; bij aanhoudende klachten kan de huisarts meedenken.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Er staat een alarm aan dat ik niet kan vinden.'
+  feeling: 'Als je lang moest opletten, kan je lichaam sneller reageren dan je hoofd kan uitleggen. Dat maakt je niet overgevoelig; het kost alleen veel energie.'
 hero:
   eyebrow: 'Wat voel ik? / Spanning'
   paragraphs:
@@ -88,7 +92,7 @@ helps:
       title: 'Zoek contact',
       text: 'Praat met iemand bij wie je rustig kunt zijn. Je hoeft niet uit te leggen waarom je gespannen bent.',
     }
-related: [hyperwaakzaamheid, herstel-triggers, therapie-meditatie, hulp-vinden]
+related: [hyperwaakzaamheid, herstel-triggers, therapie-meditatie, het-vertellen, hulp-vinden]
 sources:
   - label: 'Thuisarts — Ik wil beter omgaan met stress'
     url: 'https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress'

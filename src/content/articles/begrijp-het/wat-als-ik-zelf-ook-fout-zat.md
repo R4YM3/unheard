@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-04
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik heb ook dingen gezegd waar ik spijt van heb. Mag ik dan nog benoemen wat mij is aangedaan?'
+  feeling: 'Eerlijk kijken naar je eigen aandeel hoeft niet te betekenen dat je de verantwoordelijkheid voor het gedrag van de ander overneemt.'
 order: 36
 cardTitle: 'Wat als ik zelf ook fout zat?'
 cardText: 'Over fouten, samen escaleren en een patroon van controle, en eerlijk naar jezelf kijken.'

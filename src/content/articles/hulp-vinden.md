@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet niet of het erg genoeg is om hulp te vragen.'
+  feeling: 'Je hoeft niet eerst zeker te weten hoe je situatie heet om advies te mogen vragen of een eerste gesprek te voeren.'
 cardTitle: 'Hulp vinden'
 cardText: '112 bij direct gevaar, 113 bij gedachten aan zelfdoding, Veilig Thuis bij zorgen over huiselijk geweld. Ongehoord belt niet met je mee.'
 summary: 'Bij direct gevaar bel je 112. Bij gedachten aan zelfdoding bel of chat je met 113, gratis en anoniem, dag en nacht. 0800-0113 is het gratis alternatief. Bij zorgen over huiselijk geweld of misbruik bel je Veilig Thuis op 0800-2000. Ongehoord heeft zelf geen hulplijn.'

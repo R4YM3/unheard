@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-04
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Er is zoveel te regelen dat ik niet weet waar ik moet beginnen.'
+  feeling: 'Na een breuk kunnen kleine, veilige stappen meer houvast geven dan alles in één keer proberen op te lossen.'
 order: 75
 cardTitle: 'Praktische stappen na een breuk'
 cardText: 'Veilig vastleggen, advies vragen en afspraken maken, zonder dat het je hele leven wordt.'

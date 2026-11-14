@@ -10,7 +10,11 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [framing, sociale-druk, isolatie, identiteit, hulp-vinden]
+related: [framing, sociale-druk, isolatie, identiteit, herstel-steunnetwerk, het-vertellen]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Wie heeft dit allemaal gehoord over mij?'
+  feeling: 'Als anderen ineens een beeld van jou lijken te hebben dat je niet herkent, kan je je alleen voelen in je eigen kring.'
 glossary:
   term: 'Triangulatie'
   definition: 'Een derde persoon, zoals familie, een vriend of een ex, wordt in een conflict betrokken, waardoor jij minder rechtstreeks met de ander kunt praten.'

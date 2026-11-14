@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik vermijd die herinnering niet voor niets. Hoe kan ik ernaar kijken zonder kopje-onder te gaan?'
+  feeling: 'Met moeilijke herinneringen werken vraagt een zorgvuldig tempo en professionele begeleiding, niet doorzetten in je eentje.'
 order: 40
 name: Exposuretherapie
 cardTitle: Exposuretherapie

@@ -15,6 +15,10 @@ feeling: Gemis
 cardTitle: 'Ik mis iemand die mij pijn heeft gedaan'
 cardText: 'Je weet waarom het niet goed was, en toch verlang je soms terug naar hoe het voelde toen het wel goed was.'
 summary: 'Je kunt iemand missen en tegelijk weten dat het contact je pijn deed. Gehechtheid verdwijnt niet omdat je inziet wat er misging. Gemis zegt niet dat je je vergist, en ook niet dat je terug moet. Het is vaak een vorm van rouw.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Hoe kan ik iemand missen die me pijn deed?'
+  feeling: 'Gemis en opluchting kunnen naast elkaar bestaan. Dat dubbele gevoel maakt de pijn niet kleiner en verplicht je niet tot contact.'
 hero:
   eyebrow: 'Wat voel ik? / Gemis'
   paragraphs:
@@ -87,7 +91,7 @@ helps:
       title: 'Zoek iemand die niet oordeelt',
       text: 'Iemand die niet meteen zegt dat je blij moet zijn, maar ook niet aanspoort om terug te gaan.',
     }
-related: [traumabinding, herstel-rouw, herstel-contact-na-breuk, hulp-vinden]
+related: [traumabinding, herstel-rouw, herstel-contact-na-breuk, het-vertellen, hulp-vinden]
 sources:
   - label: 'Thuisarts — Rouw'
     url: 'https://www.thuisarts.nl/rouw'

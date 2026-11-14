@@ -15,6 +15,10 @@ feeling: Geld en schaamte
 cardTitle: 'Ik durf niet over geld te praten'
 cardText: 'Een vraag over de rekening voelt als iets verkeerds, en over je schulden praat je met niemand.'
 summary: 'Niet over geld durven praten kan voortkomen uit schaamte, uit afhankelijkheid of uit ervaring dat vragen tot ruzie leidt. Geldzorgen zijn op zichzelf geen misbruik. Als geld stelselmatig wordt gebruikt om je te beperken of te controleren, kan dat financieel misbruik zijn. Vraag dan eerst vertrouwelijk advies.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik zou dit zelf moeten kunnen oplossen.'
+  feeling: 'Schaamte rond geld kan je stil maken, juist wanneer je overzicht of steun nodig hebt. Een vraag stellen over jouw geld of jouw veiligheid is legitiem.'
 hero:
   eyebrow: 'Wat voel ik? / Geld en schaamte'
   paragraphs:
@@ -88,7 +92,7 @@ helps:
       title: 'Praat met één persoon',
       text: 'Schaamte wordt vaak kleiner zodra je het één keer hardop zegt tegen iemand die niet oordeelt.',
     }
-related: [financieel-misbruik, financieel-signalen, kaart-financieel, hulp-vinden]
+related: [financieel-misbruik, financieel-signalen, kaart-financieel, het-vertellen, hulp-vinden]
 sources:
   - label: 'Schouders Eronder — Van signalering tot hulp: handreiking financieel misbruik (2024)'
     url: 'https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'

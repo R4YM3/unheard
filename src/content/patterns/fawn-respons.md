@@ -10,7 +10,12 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [grenzen, hyperwaakzaamheid, identiteit, schuldgevoel, hulp-vinden]
+related:
+  [grenzen, hyperwaakzaamheid, identiteit, schuldgevoel, herstel-grenzen, herstel-leren-voelen]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik het maar goed doe, blijft het rustig.'
+  feeling: 'Aanpassen kan ooit een manier zijn geweest om spanning te verminderen. Dat maakt je niet verantwoordelijk voor de druk die een ander op je legt.'
 glossary:
   term: 'Fawn-respons'
   definition: 'Veiligheid zoeken door je aan te passen aan de wensen van een ander en je eigen behoeften opzij te zetten. Een klinische term, geen officiële diagnose.'

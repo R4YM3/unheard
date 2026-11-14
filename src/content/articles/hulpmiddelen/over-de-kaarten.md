@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-11-12
-updatedAt: 2026-11-12
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik kan mijn verhaal nog niet vertellen. Kan ik wel gewoon bij één vraag beginnen?'
+  feeling: 'Je hoeft niets af te maken of te bewijzen; één vraag kan genoeg ruimte geven om te merken wat je nodig hebt.'
 order: 1
 cardTitle: 'Over de kaarten'
 related: [hulpmiddelen, veilig-gebruik, woorden-vinden]

@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik kan het hele verhaal uitleggen, maar als iemand vraagt wat ik voel, blijft het stil.'
+  feeling: 'Begrijpen en voelen lopen niet altijd gelijk; soms begint voelen met één lichamelijk signaal opmerken.'
 order: 60
 cardTitle: 'Leren voelen'
 cardText: 'Van begrijpen naar voelen: lichaamssignalen opmerken en emoties een naam geven.'

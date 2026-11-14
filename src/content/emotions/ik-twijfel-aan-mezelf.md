@@ -15,6 +15,10 @@ feeling: Zelftwijfel
 cardTitle: 'Ik twijfel aan mezelf'
 cardText: 'Na een gesprek vraag je je af of je overdreef, het verkeerd onthield of zelf het probleem bent.'
 summary: 'Zelftwijfel kan ontstaan na een gewoon misverstand, maar ook wanneer je beleving steeds opnieuw ter discussie komt te staan. Je hoeft de oorzaak niet te kennen om je gevoel serieus te nemen. Begin bij wat er gezegd werd, wat je voelde en wat je nu nodig hebt.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik het niet kan bewijzen, zal ik wel ongelijk hebben.'
+  feeling: 'Zelftwijfel kan je laten zoeken naar zekerheid voordat je jezelf toestemming geeft om iets serieus te nemen. Je ervaring hoeft niet eerst een rechtszaak te worden.'
 hero:
   eyebrow: 'Wat voel ik? / Zelftwijfel'
   paragraphs:
@@ -89,7 +93,7 @@ helps:
       title: 'Neem je spanning serieus',
       text: 'Je hoeft niets meteen op te lossen. Rust en afstand kunnen een eerste stap zijn.',
     }
-related: [gaslighting, darvo, herstel-zelfvertrouwen, kaart-zelfreflectie, hulp-vinden]
+related: [gaslighting, darvo, herstel-zelfvertrouwen, het-vertellen, hulp-vinden]
 sources:
   - label: 'Thuisarts — Ik word mishandeld door mijn partner of ex-partner'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
@@ -153,13 +157,21 @@ Als iemand gebeurtenissen herhaaldelijk ontkent, verdraait of jouw waarneming on
 
 Een ander patroon is dat een gesprek ongemerkt kantelt: je begint over jouw pijn en eindigt met excuses. Daar bestaat een begrip voor, [DARVO](nl/begrippen/darvo/), dat beschrijft hoe ontkennen, aanvallen en de rollen omdraaien op elkaar kunnen volgen.
 
-Zelftwijfel kan ook andere wortels hebben. Eerdere ervaringen kunnen ervoor zorgen dat je sneller bij jezelf de fout zoekt. Stress, weinig slaap of een zware periode maken het moeilijker om helder te denken. Vaak spelen meerdere dingen tegelijk. Je hoeft niet te kiezen welke verklaring de juiste is om te merken wat het met je doet.
+Zelftwijfel kan ook andere wortels hebben. Stress, weinig slaap of een zware periode maken het moeilijker om helder te denken. Vaak spelen meerdere dingen tegelijk. Je hoeft niet te kiezen welke verklaring de juiste is om te merken wat het met je doet.
+
+## Waarom kan twijfel blijven terugkomen?
+
+Wie zorgvuldig wil zijn, loyaal is of veel zelfreflectie heeft, zoekt vaak eerst naar het eigen aandeel in een moeilijk gesprek. Dat zijn sterke eigenschappen. Ze zijn niet de oorzaak van ontkennen, verdraaien of kleineren door een ander. In een omgeving waarin jouw beleving steeds wordt betwist, kunnen ze er wel toe leiden dat je nog harder probeert het precies goed te doen.
+
+Schaamte, weinig steun, afhankelijkheid, werkdruk of eerdere ervaringen kunnen het daarnaast moeilijk maken om je eigen waarneming weer ruimte te geven. Dat verklaart niet waarom een ander grensoverschrijdend gedrag vertoont. Het helpt wel begrijpen waarom vertrouwen op jezelf na zo'n periode niet meteen vanzelf terugkomt.
 
 ## Wat het met je kan doen
 
 Op korte termijn kost twijfel vooral energie. Je piekert, slaapt slechter of blijft een gesprek terugspoelen. Je stelt beslissingen uit, omdat je niet zeker weet of je eigen oordeel klopt.
 
 Op langere termijn kan twijfel zich nestelen in hoe je naar jezelf kijkt. Je gaat vragen of je iets mag voelen voordat je het voelt. Je laat keuzes aan anderen over. Je zoekt telkens bevestiging, en die geeft maar kort rust. Over dat laatste gaat de pagina [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/).
+
+Na een relatie of breuk kan de twijfel blijven doorwerken, ook wanneer je meer afstand hebt. Je kijkt terug op gesprekken en vraagt je af of je het wel goed hebt gezien. Dat je die vragen hebt, maakt je ervaring niet minder echt. Het kan tijd kosten om weer te merken wat jij denkt, voelt en nodig hebt.
 
 Het goede nieuws is voorzichtig, maar echt: vertrouwen in je eigen waarneming kan stap voor stap terugkomen. Op [Zelfvertrouwen terugvinden](nl/herstel/zelfvertrouwen/) lees je hoe dat eruit kan zien.
 

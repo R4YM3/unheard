@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik begon over wat mij pijn deed. Waarom ben ik nu degene die sorry wil zeggen?'
+  feeling: 'Wanneer een gesprek steeds omdraait, kan je vertrouwen in je eigen punt en herinnering slijten.'
 related:
   [
     gaslighting,

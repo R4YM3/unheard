@@ -15,6 +15,10 @@ feeling: Grenzen
 cardTitle: 'Ik durf geen grenzen aan te geven'
 cardText: 'Je weet wat je niet wilt, maar je zegt al ja voordat je er goed over hebt nagedacht.'
 summary: 'Nee zeggen kan moeilijk zijn omdat je conflict wilt voorkomen, iemand niet wilt teleurstellen of omdat een nee eerder iets heeft gekost. Je hoeft niet te oefenen bij iemand bij wie het onveilig voelt. Veiligheid en je eigen tempo gaan voor.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik nee zeg, wordt het alleen maar erger.'
+  feeling: 'Een grens kan groot voelen als je eerder merkte dat een nee gedoe, stilte of angst opleverde. Voorzichtig zijn is dan geen zwakte.'
 hero:
   eyebrow: 'Wat voel ik? / Grenzen'
   paragraphs:
@@ -87,7 +91,7 @@ helps:
       title: 'Overleg voordat je beslist',
       text: '“Ik ga dit eerst met iemand bespreken” geeft ruimte, zonder dat je in het moment hoeft te kiezen.',
     }
-related: [herstel-grenzen, darvo, dwingende-controle, kaart-partnergesprek]
+related: [herstel-grenzen, darvo, dwingende-controle, het-vertellen, kaart-partnergesprek]
 sources:
   - label: 'Thuisarts — Ik word mishandeld door mijn partner of ex-partner'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'

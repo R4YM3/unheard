@@ -51,6 +51,8 @@ const nl = {
   draftStatus: 'Conceptversie',
   inShort: 'In het kort',
   readMore: 'Verder lezen',
+  relatedIntro:
+    'Kies wat nu het beste aansluit: een gevoel herkennen, een patroon beter begrijpen of steun vragen.',
   readOn: 'Lees verder',
   sources: 'Bronnen',
   checkedOn: 'gecontroleerd op',
@@ -131,6 +133,8 @@ const en: UiStrings = {
   draftStatus: 'Draft',
   inShort: 'In short',
   readMore: 'Read more',
+  relatedIntro:
+    'Choose what fits best right now: recognising a feeling, understanding a pattern, or asking for support.',
   readOn: 'Read on',
   sources: 'Sources',
   checkedOn: 'checked on',

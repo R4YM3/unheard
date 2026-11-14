@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Het is ook mijn geld. Waarom voelt vragen naar inzicht alsof ik iets fout doe?'
+  feeling: 'Een vraag om overzicht of zeggenschap hoort niet te betekenen dat je bang wordt voor de reactie.'
 order: 20
 cardTitle: 'Geldruzie of controle?'
 cardText: 'Ruzie over geld is gewoon en kan heftig zijn. Controle is iets anders: een patroon waarin één persoon de ruimte van de ander inperkt.'

@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-10
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Hoe kon ik dit niet eerder zien? Wat zegt dat over mij?'
+  feeling: 'Dat je het niet meteen herkende zegt niet dat er iets mis is met jou; patronen kunnen geleidelijk je ruimte en vertrouwen kleiner maken.'
 order: 35
 cardTitle: 'Waarom overkwam dit mij?'
 cardText: 'Over de vraag die bijna iedereen achteraf stelt, en waarom het antwoord niet bij jouw tekortkoming ligt.'

@@ -15,6 +15,10 @@ feeling: Jezelf kwijt
 cardTitle: 'Ik ben mezelf kwijt'
 cardText: 'Iemand vraagt wat je zelf wilt, en je merkt dat je het antwoord echt niet meer weet.'
 summary: 'Het gevoel jezelf kwijt te zijn kan ontstaan als je je lange tijd hebt aangepast, bijvoorbeeld om spanning te voorkomen. Ook langdurige stress of veel zorgen voor anderen kunnen meespelen. Begin eventueel met één kleine keuze die je zelf wilt maken.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet niet meer wat ik zelf wil.'
+  feeling: 'Als jouw eigen voorkeuren lang op de achtergrond stonden, kan een vrije keuze leeg of onwennig voelen. Dat betekent niet dat ze weg zijn.'
 hero:
   eyebrow: 'Wat voel ik? / Jezelf kwijt'
   paragraphs:
@@ -84,7 +88,7 @@ helps:
       title: 'Onderzoek met begeleiding',
       text: 'Sommige therapievormen werken niet alleen met praten, maar ook met materiaal of beweging. Dat kan helpen als woorden ontbreken.',
     }
-related: [verlies-van-identiteit, therapie-beeldend, therapie-schematherapie, mijn-verhaal]
+related: [dwingende-controle, herstel-leren-voelen, het-vertellen, mijn-verhaal]
 sources:
   - label: 'Thuisarts — Ik heb psychische klachten. Van wie krijg ik hulp?'
     url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'

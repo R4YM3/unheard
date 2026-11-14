@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-04
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet niet hoe ik het moet noemen. Mag ik dan gewoon zeggen dat het niet goed voelde?'
+  feeling: 'Je hoeft geen volledig verhaal of sluitende uitleg te hebben om één persoon te vertellen wat er speelt.'
 order: 95
 cardTitle: 'Hoe vertel ik het aan iemand?'
 cardText: 'Aan wie, met welke woorden, en wat je doet als iemand niet goed reageert.'

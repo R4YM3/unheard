@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-10
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet niet eens welke vraag ik moet stellen. Is het dan al te vroeg om hulp te zoeken?'
+  feeling: 'Je hoeft je situatie niet eerst volledig te begrijpen om een eerste, vertrouwelijke vraag te mogen stellen.'
 order: 80
 cardTitle: 'Juridisch en financieel advies'
 cardText: 'Wie kan meedenken bij geld, schulden of juridische vragen, en welke vragen kun je stellen? Een overzicht van wie wat doet.'

@@ -14,6 +14,10 @@ order: 30
 cardTitle: 'Grenzen leren stellen'
 cardText: 'Grenzen opnieuw ontdekken en oefenen, te beginnen bij mensen bij wie dat veilig is.'
 summary: 'Grenzen stellen is een vaardigheid die je kunt oefenen. Begin bij kleine dingen en bij mensen die je vertrouwt. Een grens oefenen bij iemand die je eerder onveilig liet voelen, is geen goede plek om te beginnen. Je veiligheid gaat voor.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik voel een nee, maar ik hoor mezelf alweer ja zeggen.'
+  feeling: 'Een grens opmerken is al een stap. Je hoeft hem niet meteen uit te spreken op een plek waar dat onveilig voelt.'
 hero:
   eyebrow: 'Herstel / Grenzen'
   paragraphs:

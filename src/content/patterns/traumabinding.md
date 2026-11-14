@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet waarom ik weg wilde. Waarom verlang ik dan juist nu naar de goede momenten?'
+  feeling: 'Pijn en verlangen kunnen naast elkaar bestaan; dat maakt je niet zwak en het wist niet uit wat er is gebeurd.'
 related: [hoovering, macht-en-afhankelijkheid, pijn-na-inzicht, love-bombing, hulp-vinden]
 glossary:
   term: 'Traumabinding'

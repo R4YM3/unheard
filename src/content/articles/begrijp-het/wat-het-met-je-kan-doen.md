@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik snap dat het voorbij is. Waarom reageert mijn hoofd en lichaam dan nog alsof ik moet opletten?'
+  feeling: 'Wat je lang hebt gedaan om met spanning om te gaan kan nog doorwerken, ook wanneer je de situatie beter begrijpt.'
 order: 30
 cardTitle: 'Wat het met je kan doen'
 cardText: 'Over zelftwijfel, schuld, voortdurend aanstaan, uitputting en schaamte, en waarom labels maar een deel vertellen.'

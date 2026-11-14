@@ -16,6 +16,10 @@ cardTitle: Schematherapie
 cardText: 'Onderzoekt terugkerende patronen, overtuigingen en emotionele behoeften. Individueel, in een groep of een combinatie van beide.'
 focus: 'Terugkerende patronen in hoe je denkt, voelt en reageert, en de emotionele behoeften die daaronder kunnen liggen.'
 summary: 'Schematherapie is een vorm van psychotherapie die terugkerende patronen onderzoekt: hoe je denkt, voelt en reageert, en welke behoeften daaronder kunnen liggen. Het kan individueel, in een groep of gecombineerd. Of het bij jouw klachten past, bespreek je met een bevoegde professional.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Waarom pas ik me steeds aan, zelfs wanneer ik dat niet wil?'
+  feeling: 'Een patroon herkennen kan ruimte geven om er nieuwsgierig naar te kijken. Het zegt niet dat jij de oorzaak bent van gedrag van een ander.'
 professionalQuestions:
   - 'Ben je opgeleid in schematherapie, en sta je in het BIG-register of ben je aangesloten bij een beroepsvereniging?'
   - 'Waarom denk je dat schematherapie past bij de klachten waarmee ik kom, en welke andere mogelijkheden zijn er?'
@@ -28,7 +32,7 @@ founder:
     - '[OPRICHTER REVIEW NODIG] Wat schematherapie mij persoonlijk heeft gebracht, vul ik later zelf aan.'
     - 'Dit is mijn persoonlijke ervaring. Het zegt niet of schematherapie voor jou passend is.'
   needsReview: true
-related: [therapievormen, identiteit, mijn-verhaal, kaart-hulpverlener]
+related: [therapievormen, identiteit, zelftwijfel, herstel-leren-voelen, kaart-hulpverlener]
 sources:
   - label: 'Vereniging voor Schematherapie — Schematherapie'
     url: 'https://www.schematherapie.nl/schematherapie'
@@ -88,4 +92,4 @@ Wil je weten wat er bekend is over de werkzaamheid bij jouw klachten? Vraag dat 
 
 Daar is geen test of beslisschema voor, en deze site geeft geen behandeladvies. Misschien herken je jezelf in vragen als: waarom reageer ik steeds zo? Waarom voel ik me zo snel verantwoordelijk? Zulke vragen zijn een goed begin van een gesprek, maar geen automatische reden voor schematherapie.
 
-Een praktische eerste stap is een afspraak met je huisarts. Bij psychische klachten kun je daar terecht. De huisarts of de praktijkondersteuner (POH-GGZ) kijkt samen met jou wat er speelt en welke hulp past. Neem gerust mee wat je eerder hebt geprobeerd en wat je daarvan merkte. Een [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je gedachten op een rij te zetten.
+Een praktische eerste stap is een afspraak met je huisarts. Bij psychische klachten kun je daar terecht. De huisarts of de praktijkondersteuner (POH-GGZ) kijkt samen met jou wat er speelt en welke hulp past. Neem gerust mee wat je eerder hebt geprobeerd en wat je daarvan merkte. Een [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je gedachten op een rij te zetten. Lees ook over [zelftwijfel](nl/begrippen/zelftwijfel/) of [leren voelen](nl/herstel/leren-voelen/) als die woorden dichter bij je ervaring liggen.

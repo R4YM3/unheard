@@ -10,7 +10,19 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [hyperwaakzaamheid, fawn-respons, herstel, emotioneel-misbruik, hulp-vinden]
+related:
+  [
+    hyperwaakzaamheid,
+    fawn-respons,
+    herstel,
+    emotioneel-misbruik,
+    herstel-steunnetwerk,
+    het-vertellen,
+  ]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Er is niks aan de hand. Ik ben alleen altijd moe.'
+  feeling: 'Langdurig doorgaan kan het moeilijk maken om te merken hoeveel je draagt. Uitputting is geen tekort aan wilskracht.'
 glossary:
   term: 'Emotionele uitputting'
   definition: 'Het gevoel dat je emotioneel leeg bent na langdurige spanning, met een moeheid die niet overgaat na rust. Een beschrijving, geen diagnose.'

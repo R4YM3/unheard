@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik wilde zelf kiezen, maar aan het eind voelde het alsof er maar één veilige keuze overbleef.'
+  feeling: 'Wanneer schuld, angst en halve informatie zich opstapelen, kan het moeilijk worden om nog op je eigen afweging te leunen.'
 related: [gaslighting, schuldverschuiving, darvo, emotioneel-misbruik, hulp-vinden]
 glossary:
   term: 'Psychische manipulatie'

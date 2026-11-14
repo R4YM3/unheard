@@ -220,6 +220,22 @@ for (const { file, data } of entries.filter(({ data }) => data.published === tru
   }
 }
 
+/* A detail page needs a connection in its own text, not only a card at the end. The route
+   cards then offer breadth; the contextual link tells the reader why the next page fits. */
+const detailCollections = new Set(['emotions', 'patterns', 'articles', 'therapies', 'tools']);
+for (const { file, collection, data, body } of entries.filter(
+  ({ data }) => data.published === true && data.locale === 'nl',
+)) {
+  if (!detailCollections.has(collection)) continue;
+  const related = Array.isArray(data.related)
+    ? data.related
+    : Object.values(data.related ?? {}).flat();
+  if (related.length < 3)
+    errors.push(`${file}: published detail page needs at least three related routes`);
+  if (!/\]\(nl\//.test(body))
+    errors.push(`${file}: published detail page needs a contextual internal link in its body`);
+}
+
 const statsFiles = (await walk(join(root, 'stats')).catch(() => [])).filter((file) =>
   /\.ya?ml$/.test(file),
 );

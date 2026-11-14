@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Mijn kinderen hebben mij nodig. Mag ik zelf dan ook een moeilijke dag hebben?'
+  feeling: 'Herstellen als ouder vraagt veel tegelijk; aanwezig zijn hoeft niet te betekenen dat je alles alleen of perfect draagt.'
 order: 80
 cardTitle: 'Herstel als ouder'
 cardText: 'Er zijn voor je kinderen terwijl je zelf herstelt, zonder hen je last te laten dragen.'

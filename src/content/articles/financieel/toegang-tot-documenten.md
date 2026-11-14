@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet niet waar mijn papieren zijn. Mag ik die eigenlijk wel zelf inzien?'
+  feeling: 'Geen toegang hebben tot je eigen documenten kan je onzeker maken; je hoeft daarbij geen onveilige stap te zetten.'
 order: 30
 cardTitle: 'Toegang tot documenten'
 cardText: 'Je identiteitsbewijs, bankgegevens, contracten en loonstroken: weten waar ze zijn, zonder risico te nemen als iemand meekijkt.'

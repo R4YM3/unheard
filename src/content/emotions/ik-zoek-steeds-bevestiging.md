@@ -15,6 +15,10 @@ feeling: Bevestiging zoeken
 cardTitle: 'Ik zoek steeds bevestiging'
 cardText: 'Je laat een bericht drie keer meelezen, en zelfs als iedereen zegt dat het goed is, durf je het niet te versturen.'
 summary: 'Steeds bevestiging zoeken komt vaak voort uit onzekerheid over je eigen oordeel. Geruststelling geeft dan even rust, maar die zakt snel weer weg. Dat zegt niets over je waarde; het laat zien hoe groot de twijfel is. Vertrouwen in jezelf kan in kleine stappen groeien.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Zeg jij even dat ik het goed zie?'
+  feeling: 'De vraag om bevestiging kan even opluchten en daarna opnieuw terugkomen. Dat maakt je niet lastig; het laat zien hoeveel houvast je op dat moment nodig hebt.'
 hero:
   eyebrow: 'Wat voel ik? / Bevestiging zoeken'
   paragraphs:
@@ -83,7 +87,7 @@ helps:
       title: 'Spreid je steun',
       text: 'Leun niet op één persoon voor alle geruststelling. Een paar mensen bij wie je terechtkunt geeft meer rust.',
     }
-related: [zelftwijfel, gaslighting, herstel-zelfvertrouwen, herstel-steunnetwerk]
+related: [zelftwijfel, gaslighting, herstel-zelfvertrouwen, het-vertellen, herstel-steunnetwerk]
 sources:
   - label: 'Thuisarts — Ik heb lichte psychische klachten. Hoe ga ik me beter voelen?'
     url: 'https://www.thuisarts.nl/psychische-klachten-bij-volwassenen/ik-heb-lichte-psychische-klachten-hoe-ga-ik-me-beter-voelen'
@@ -131,7 +135,13 @@ Bevestiging zoeken is meestal een reactie op onzekerheid over je eigen waarnemin
 
 Die onzekerheid kan gegroeid zijn door gesprekken waarin je beleving steeds werd tegengesproken. Als dat herhaaldelijk en stelselmatig gebeurt, wordt dat weleens [gaslighting](nl/begrippen/gaslighting/) genoemd. Maar of dat bij jou speelt, kun je niet afleiden uit het feit dat je bevestiging zoekt; veel mensen doen dat om heel andere redenen. Over het verlies van vertrouwen in je eigen waarneming gaat de pagina [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
-Het kan ook ouder zijn. Wie vroeger vooral waardering kreeg voor presteren of aanpassen, zoekt later makkelijker naar een teken dat het goed genoeg is. En in periodes van stress of verlies vraagt iedereen meer houvast.
+Stress, verlies of weinig steun kunnen de behoefte aan houvast sterker maken. Ook wie zorgvuldig wil zijn, loyaliteit belangrijk vindt of bang is anderen tot last te zijn, kan steeds harder proberen het goed te doen. Dat zijn geen zwakke eigenschappen en ze maken niemand verantwoordelijk voor kleineren, dwang of controle.
+
+## Waarom kan de lus blijven doorgaan?
+
+Een antwoord van iemand anders kan de spanning voor even laten zakken. Daardoor voelt opnieuw vragen logisch. Maar de volgende twijfel krijgt dan opnieuw alle ruimte. Je eigen oordeel heeft tijd nodig om weer hoorbaar te worden, zeker als je lang hebt geleerd dat een ander beslist wat klopt.
+
+Na een relatie of breuk kan die lus doorgaan, ook als niemand je meer rechtstreeks tegenspreekt. Je wilt dan misschien van vrienden horen dat je de juiste keuze maakte of dat je reactie normaal was. Steun vragen mag. Het verschil zit niet in sterk zijn of alles alleen doen, maar in een gesprekspartner die je helpt jouw eigen antwoord te horen in plaats van het voor je over te nemen.
 
 ## Wat het met je kan doen
 

@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik verdien niet genoeg om zelf te kiezen. Mag ik dan nog wel iets vragen?'
+  feeling: 'Financiële afhankelijkheid kan schaamte geven en je ruimte kleiner laten voelen, ook als je er niet voor hebt gekozen.'
 order: 50
 cardTitle: 'Afhankelijkheid'
 cardText: 'Financieel afhankelijk zijn is niet hetzelfde als misbruik. Het wordt zorgelijk als afhankelijkheid wordt gebruikt om je keuzes te beperken.'

@@ -21,6 +21,10 @@ hero:
     - 'Dat is geen zwakte. Het is een lichaam dat heeft geleerd op te letten.'
 related:
   [spanning, herstel-contact-na-breuk, herstel-leren-voelen, herstel-steunnetwerk, hulp-vinden]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik moet nu meteen reageren, anders wordt het erger.'
+  feeling: 'Een bericht kan je lichaam sneller in alarm brengen dan je hoofd kan uitleggen. Een pauze nemen is geen zwakte en geen antwoord opgeven.'
 sources:
   - label: 'Thuisarts — Ik wil beter omgaan met stress'
     url: 'https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress'

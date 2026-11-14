@@ -690,6 +690,39 @@ mark.review-marker {
 .related-scroller {
   position: relative;
 }
+.related-band__intro {
+  max-width: 43rem;
+  margin: -0.35rem 0 1.25rem;
+}
+.reader-moment {
+  margin-block: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-inline-start: 0.3rem solid var(--accent);
+  background: var(--tint);
+}
+.reader-moment__label {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.reader-moment__thought {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 1.1rem + 1.5vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+.reader-moment__thought p,
+.reader-moment__feeling {
+  margin: 0;
+}
+.reader-moment__feeling {
+  margin-top: 1rem;
+  font-size: 1.08rem;
+}
 .related-scroller > .grid {
   grid-auto-flow: column;
   grid-template-columns: none;
