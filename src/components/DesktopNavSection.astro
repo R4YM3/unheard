@@ -99,6 +99,11 @@ const colour = pillarBand(locale, section.menu.href);
   .desktop-subnav li {
     margin: 0;
   }
+  /* The first dropdown has less room on its start side on compact desktops. */
+  :global(.desktop-nav-item:first-of-type) .desktop-subnav ul {
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+  }
   .desktop-subnav a {
     display: flex;
     padding: 0.65rem 0.85rem;

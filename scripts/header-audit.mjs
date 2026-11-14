@@ -65,7 +65,11 @@ try {
         left: node.getBoundingClientRect().left,
         right: node.getBoundingClientRect().right,
       }));
-      assert(bounds.left >= 0 && bounds.right <= width, `Submenu overflows at ${width}px`);
+      const destination = await item.$eval('a', (node) => node.getAttribute('href'));
+      assert(
+        bounds.left >= 0 && bounds.right <= width,
+        `Submenu ${destination} overflows at ${width}px: ${JSON.stringify(bounds)}`,
+      );
       assert.equal(
         await page.$eval('main', (node) => node.getBoundingClientRect().y),
         mainTop,
