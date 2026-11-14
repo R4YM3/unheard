@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Misschien maak ik het groter dan het is. Waarom durf ik dan niet gewoon naar onze rekening te vragen?'
+  feeling: 'Twijfel is begrijpelijk als een gewone vraag steeds eindigt in schuld, spanning of minder vrijheid.'
 order: 10
 cardTitle: 'Signalen'
 cardText: 'Waar je op kunt letten als geld steeds over controle lijkt te gaan. Eén signaal is geen bewijs; het patroon zegt meer.'

@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik alles op een rij zet, wordt het misschien pas echt. Toch wil ik weten waar ik sta.'
+  feeling: 'Overzicht maken kan spanning geven; één bedrag, brief of vraag opschrijven is al een begin.'
 order: 40
 cardTitle: 'Overzicht van geld en schulden'
 cardText: 'Wat komt er binnen, wat gaat eruit en wat staat op jouw naam? Een overzicht geeft houvast, ook als het nog onvolledig is.'

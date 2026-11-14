@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'De relatie is voorbij. Waarom bepaalt een bericht over geld nog steeds mijn hele dag?'
+  feeling: 'Geldzaken na een breuk kunnen oude spanning weer wakker maken, zeker als er ook druk of controle was.'
 order: 60
 cardTitle: 'Druk na een scheiding'
 cardText: 'Een scheiding is financieel bijna altijd zwaar. Soms wordt geld daarna een middel om druk te blijven zetten. Over het verschil en waar je advies vindt.'

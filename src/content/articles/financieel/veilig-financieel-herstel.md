@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik kan een rekening betalen, maar waarom raak ik al in paniek als ik mijn bankapp open?'
+  feeling: 'Geld kan na controle of schulden lang beladen blijven; vertrouwen groeit vaak via kleine, veilige keuzes.'
 order: 70
 cardTitle: 'Veilig financieel herstel'
 cardText: 'Weer vertrouwen krijgen in je eigen keuzes over geld gaat in kleine stappen. Terugval hoort erbij, en hulp bij schulden is gewoon.'
