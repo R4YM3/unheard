@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-11-12
-updatedAt: 2026-11-12
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Het is voorbij. Waarom voel ik me dan nog niet zoals vroeger?'
+  feeling: 'Herstel is geen rechte lijn en geen toets die je kunt halen; wat er met je gebeurde mag tijd nodig hebben.'
 order: 1
 cardTitle: 'Wat herstel kan betekenen'
 reflection:

@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-04
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Het bericht gaat over de kinderen. Waarom voel ik me daarna weer urenlang gespannen?'
+  feeling: 'Wanneer contact nodig blijft, kan zelfs een praktische vraag oude druk of alertheid oproepen.'
 order: 85
 cardTitle: 'Ouder blijven met een ex die controle zoekt'
 cardText: 'Als elk bericht over de kinderen spanning geeft: afspraken, één kanaal en parallel ouderschap.'
