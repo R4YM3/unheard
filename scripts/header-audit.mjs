@@ -493,8 +493,13 @@ try {
     await discovery.setViewport({ width, height: 1000 });
     for (const [hub, destination] of discoveryRoutes) {
       await discovery.goto(`${origin}/nl/${hub}`, { waitUntil: 'networkidle0' });
-      const link = await discovery.$(`main a[href="${destination}"]`);
+      const link = await discovery.$(`main .prose a[href="${destination}"]`);
       assert(link, `${hub} offers ${destination} in its own content without JavaScript`);
+      assert(
+        await link.evaluate((node) => node.getClientRects().length > 0),
+        `${hub} discovery link must be visible at ${width}px`,
+      );
+      console.log(`No-JS discovery ${width}px: ${hub} -> ${destination}`);
       await Promise.all([discovery.waitForNavigation({ waitUntil: 'networkidle0' }), link.click()]);
       assert.equal(new URL(discovery.url()).pathname, `/${destination}`);
       assert.equal((await discovery.$$('h1')).length, 1, `${destination} opens a real page`);

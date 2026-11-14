@@ -192,3 +192,14 @@ verborgen inhoud. Twee kolommen waar ruimte is, één op mobiel en op papier.
 Andere kaarten en componenten veranderen niet. Dit nieuwe resultaat moet nog
 met de volgende browserbeelden worden gecontroleerd; de eerdere steekproef is
 geen visueel akkoord op deze wijziging.
+
+## Correctie browserselectie — 15 november
+
+CI 43652805538 slaagde voor project/build, axe, print en UX, maar liep in de
+nieuwe ontdekroutecontrole vast op navigatie. De eerste selector zocht iedere
+link in main; op Wat voel ik kiest die het hero-woord ‘bevestiging’, dat volgens
+het bestaande ontwerp op 390px verborgen is. Dat controleert niet de nieuwe
+zichtbare ontdekkingsingang. De test kiest nu de link in de lopende hubtekst,
+controleert zichtbaarheid en logt iedere route vóór de echte klik. Geen fout
+omzeild door rechtstreeks naar de doel-URL te navigeren. De nieuwe CI moet het
+resultaat nog bevestigen.
