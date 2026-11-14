@@ -35,10 +35,17 @@ formatter/lint/contentvalidatie en productiebuild (108 HTML-pagina’s, distribu
 
 CI bewaart begin- en middenbeelden en de bestaande A4-bestanden als
 `browser-review`. De oude live layout heeft zichtbaar een zijrail op desktop;
-de nieuwe browserasserties kunnen daarop niet slagen. Lokale browseruitvoering
-was eerder niet beschikbaar, dus een geslaagde CI-run en visuele beoordeling van
-de nieuwe artifacten zijn nog nodig vóór release. Safari en een echte
-screenreadersessie blijven afzonderlijke open controles; axe vervangt die niet.
+de nieuwe browserasserties kunnen daarop niet slagen. CI-run 43649769611 is geslaagd, inclusief axe, print-, UX- en headeraudit.
+De nieuwe voortgangsasserties en toetsenbordbediening zonder JavaScript zijn dus
+in Chromium uitgevoerd. Visueel bekeken: artikelmidden op 1440px en artikelstart
+op 390px, beide in donker thema. De leeskolom heeft geen concurrerend zijmenu;
+de mobiele inhoudsopgave is compact en gesloten. De eerste A4-pagina van de
+12 pagina's tellende emotie-PDF is bekeken: titel, kort antwoord en voorbeeld
+passen zonder afsnijden; inhoudsopgave en voortgangsbalk zijn verborgen.
+De kleurcorrectie van de voorbeeldgedachte voor zwart-witprint staat afzonderlijk
+in #103 en moet bij integratie behouden blijven.
+Safari, een echte screenreadersessie en bredere visuele dekking blijven open;
+axe en deze steekproef vervangen die niet.
 
 ## Afbakening
 
