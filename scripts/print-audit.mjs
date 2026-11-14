@@ -129,6 +129,8 @@ try {
   await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
 
   for (const item of routes) {
+    // Load each route as a screen page; the preceding PDF leaves print media active.
+    await page.emulateMediaType('screen');
     await page.goto(`${origin}${item.route}`, { waitUntil: 'networkidle0' });
     if (
       [
