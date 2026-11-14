@@ -80,3 +80,7 @@ Parallel ouderschap betekent niet dat je minder betrokken bent bij je kinderen. 
 Ouders kunnen samen tot afspraken komen, [eventueel met hulp van een mediator](https://www.nji.nl/kennis/scheiding/hoe-kom-je-tot-een-ouderschapsplan) of andere hulpverlener. Na een relatie met controle is gelijkwaardig onderhandelen niet altijd vanzelfsprekend. Bespreek daarom vooraf met een advocaat, mediator of het [Juridisch Loket](https://www.juridischloket.nl/contact/) welke route bij jullie situatie past.
 
 ## Als je je zorgen maakt over veiligheid
+
+Maak je je zorgen om jouw veiligheid of die van je kinderen? Je kunt gratis en anoniem advies vragen bij [Veilig Thuis](https://www.veiligthuis.nl/nl/contact), dag en nacht via [0800-2000](tel:08002000). Bij direct gevaar bel je [112](tel:112).
+
+Op [Hulp vinden](nl/hulp-vinden/) vind je meer mogelijkheden om met iemand te bespreken wat er gebeurt en welke steun je nodig hebt.
