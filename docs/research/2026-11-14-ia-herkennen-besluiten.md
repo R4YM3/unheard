@@ -203,3 +203,16 @@ zichtbare ontdekkingsingang. De test kiest nu de link in de lopende hubtekst,
 controleert zichtbaarheid en logt iedere route vóór de echte klik. Geen fout
 omzeild door rechtstreeks naar de doel-URL te navigeren. De nieuwe CI moet het
 resultaat nog bevestigen.
+
+## Therapieoverzicht: ervaring is geen behandelkeuze
+
+Na volledige lezing van het therapieoverzicht en alle negen therapiebestanden
+(inclusief de ongepubliceerde groepsschematherapie) zijn de vier directe
+ervaring-naar-therapiekaarten uit de hub verwijderd. Een terugkerende gedachte
+wees meteen naar CGT, moeite met voelen naar beeldende therapie en belastende
+herinneringen naar EMDR. Een disclaimer neemt die suggestie niet vanzelf weg.
+De intro biedt nu ervaringspagina's en de bestaande gespreksvoorbereiding;
+alle gepubliceerde behandelvormen blijven bereikbaar in een compacte lijst.
+Geen nieuwe diagnose-, behandel- of werkingsclaim. De persoonlijke teksten zijn
+niet veranderd en hun bestaande oprichtersreview blijft open. Nieuwe browser-
+en printcontrole voor deze hub volgt nog; andere hubs zijn geen bewijs hiervoor.

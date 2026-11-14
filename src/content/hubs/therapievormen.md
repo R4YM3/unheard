@@ -8,7 +8,7 @@ status: draft
 published: true
 author: founder
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 cardTitle: Therapievormen
 cardText: 'Vormen van therapie en begeleiding, algemene uitleg los van mijn persoonlijke ervaring. Schematherapie en groepsschematherapie staan op één pagina. Geen ranglijst.'
@@ -25,28 +25,12 @@ hero:
 summary: 'Er zijn verschillende vormen van therapie en begeleiding. Welke past, hangt af van wat je ervaart en van je situatie, en bespreek je met je huisarts of een bevoegde professional. Per vorm vind je hier algemene uitleg, met mijn persoonlijke ervaring apart gelabeld. Mijn ervaring is geen aanbeveling.'
 listings:
   - collection: therapies
+    cardStyle: list
     prefix: 'herstel/therapievormen/'
     eyebrow: 'Vormen'
     heading: 'Verschillende wegen naar zelfinzicht.'
     lead: 'Geen ranglijst en geen wondermiddelen. Per vorm vertel ik waarom ik eraan begon. De algemene uitleg is bewust gescheiden van mijn persoonlijke verhaal.'
     tone: safe
-cards:
-  - title: 'Ik herken mezelf niet meer.'
-    text: 'Lees over zelfonderzoek en patronen.'
-    href: 'nl/wat-voel-ik/ik-herken-mezelf-niet-meer/'
-    label: 'Lees: Ik herken mezelf niet meer'
-  - title: 'Mijn gedachten blijven maar doorgaan.'
-    text: 'Lees over gedachten en het leren hanteren ervan.'
-    href: 'nl/herstel/therapievormen/cognitieve-gedragstherapie/'
-    label: 'Lees over cognitieve (gedrags)therapie'
-  - title: 'Ik weet niet goed wat ik voel of wil.'
-    text: 'Verken creatieve en ervaringsgerichte benaderingen.'
-    href: 'nl/herstel/therapievormen/beeldende-therapie/'
-    label: 'Lees over beeldende therapie'
-  - title: 'Herinneringen blijven me raken.'
-    text: 'Lees over traumagerichte behandelvormen.'
-    href: 'nl/herstel/therapievormen/emdr/'
-    label: 'Lees over EMDR en exposure'
 reflection:
   heading: 'Wat vraagt vandaag energie van mij?'
   questions:
@@ -90,7 +74,7 @@ reviewNotes:
   - 'Klinische review: is de oriëntatie (huisarts en POH-GGZ als startpunt, keuze afhankelijk van klachten en situatie) correct en voldoende neutraal?'
   - 'Oprichter: de goedgekeurde zin "Voor betrouwbare algemene informatie over traumagerichte zorg verwijzen we naar Thuisarts" is aangepast naar "vind je bij Thuisarts", omdat de site geen wij-vorm gebruikt. Akkoord?'
   - 'Oprichter: de quote "Ik wilde niet alleen begrijpen wat ik voelde..." staat nu als laatste alinea van de oprichtersnotitie, omdat het hub-schema geen apart quoteveld heeft. Akkoord?'
-  - 'Oprichter: de vier vragenkaarten verwijzen nu naar Ik herken mezelf niet meer, cognitieve (gedrags)therapie, beeldende therapie en EMDR. Dit is een leesroute, geen behandelkeuze. Kloppen deze bestemmingen?'
+  - 'Redactie: de vier kaarten die ervaringen rechtstreeks aan therapieën koppelden zijn vervangen door contextuele ervaringsroutes en gespreksvoorbereiding. De volledige therapielijst blijft rechtstreeks bereikbaar.'
   - 'Oprichter: de goedgekeurde sectiekop "Je hoeft de naam van een therapie niet te kennen." en de bijbehorende lead staan in de body, omdat het hub-schema geen kop voor de kaarten heeft. Controleer of de template ze naast elkaar toont.'
   - 'Techniek: bevestig dat de schrijfbare reflectie werkelijk niets verzendt of opslaat, zodat de notitie "worden niet verzonden of opgeslagen" klopt.'
   - "Oprichter: de oude velden kind, therapy.experiences en therapy.closing zijn omgezet naar listings, de body en de aparte therapiepagina's. De persoonlijke zinnen per vorm staan nu in het founder-veld van elke therapiepagina."
@@ -107,6 +91,8 @@ Op de pagina's per therapievorm staat de algemene uitleg los van mijn eigen erva
 Misschien herken je vooral een vraag. Dat kan een beginpunt zijn voor een gesprek met een hulpverlener, niet een automatische behandelingskeuze.
 
 Welke vorm van hulp past, hangt af van wat je ervaart, hoe lang al, wat je eerder hebt geprobeerd en wat er in je situatie mogelijk is. Dat is geen keuze die je alleen hoeft te maken. Bij psychische klachten kun je terecht bij je huisarts. De huisarts of de praktijkondersteuner (POH-GGZ) kijkt samen met jou wat er speelt en welke hulp past.
+
+Wil je eerst woorden voor wat je merkt? Bij [Ik herken mezelf niet meer](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/) gaat het over eigen wensen die op de achtergrond zijn geraakt. [Ik begrijp het, maar het blijft pijn doen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/) geeft ruimte aan gevoelens die naast inzicht blijven bestaan. Deze vragen kun je meenemen naar een gesprek, zonder vooraf een behandeling te kiezen.
 
 Je hoeft daarvoor geen etiket te hebben. Je kunt beginnen met wat je merkt: dat je slecht slaapt, dat je steeds aan iets terugdenkt, dat je jezelf kwijt bent geraakt. Vertel ook wat eerdere hulp je bracht, en wat niet. Een [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je gedachten op een rij te zetten.
 

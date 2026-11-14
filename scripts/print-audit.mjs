@@ -53,6 +53,14 @@ const routes = [
     route: '/nl/begrijp-het/',
     required: ['Waar wil je meer over begrijpen?', 'Ken je het onderwerp al?'],
   },
+  {
+    id: 'therapy-hub',
+    route: '/nl/herstel/therapievormen/',
+    required: [
+      'Je hoeft de naam van een therapie niet te kennen',
+      'zonder vooraf een behandeling te kiezen',
+    ],
+  },
   { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
   { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
   {
@@ -138,6 +146,7 @@ try {
         'recovery-hub',
         'emotion-hub',
         'understanding-hub',
+        'therapy-hub',
         'emotion',
         'knowledge',
         'therapy',
