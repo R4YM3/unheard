@@ -16,12 +16,12 @@ cardText: 'Rouw om een relatie, om wie je was en om de toekomst die je voor ogen
 summary: 'Na een relatie waarin je pijn is gedaan, kun je toch rouwen. Om de ander, om wie je zelf was, om plannen die niet uitkwamen. Opluchting en verdriet kunnen naast elkaar bestaan. Rouw heeft geen vaste volgorde en geen vaste duur.'
 readerMoment:
   label: 'Voorbeeldgedachte'
-  thought: 'Ik weet dat het voorbij moest zijn, maar ik mis het toch.'
-  feeling: 'Verdriet en opluchting sluiten elkaar niet uit. Je hoeft het verlies niet kleiner te maken om te weten dat iets je pijn deed.'
+  thought: 'Ik mis ook het leven dat we nooit hebben gekregen.'
+  feeling: 'Een gezamenlijk plan kan verdwijnen terwijl het voor jou nog veel betekent. Ook om die toekomst mag je verdriet hebben.'
 hero:
   eyebrow: 'Herstel / Rouw'
   paragraphs:
-    - 'Je weet dat het niet goed was. Toch mis je iets. Soms de ander, soms de persoon die je zelf was voordat het begon, soms het leven dat je had gepland.'
+    - 'Een relatie kan eindigen, terwijl de plannen die erbij hoorden nog overal opduiken. Een huis, een gezin, een reis of meer tijd voor jezelf: ook om wat niet kwam kun je verdriet hebben.'
     - 'Ook dat is rouw, en het mag er zijn.'
 reflection:
   heading: 'Waar rouw ik om?'
@@ -53,7 +53,7 @@ Na een relatie waarin je pijn is gedaan, voelt rouw soms ongepast. Je zou toch b
 
 ## Waar je om kunt rouwen
 
-**Voorbeeld — verzonnen situatie.** Op zondag maak je ontbijt voor jezelf. Je bent opgelucht dat niemand commentaar geeft op hoe je het doet. Toch mis je het geluid van iemand in de keuken. Later zie je een foto van een vakantie waar jullie plannen maakten. Je mist niet alleen die dag, maar ook de toekomst die toen nog mogelijk leek. Opluchting maakt dat verdriet niet ongeldig.
+**Voorbeeld — verzonnen situatie.** Je ziet in je agenda de week waarin jullie samen op reis zouden gaan. De reis gaat niet door. Je wilt niet terug naar de relatie, maar de lege week raakt je: je had gehoopt dat jullie daar eindelijk tijd voor elkaar zouden hebben. Wat je mist is niet alleen een vakantie, maar ook het leven waar je naartoe werkte.
 
 ### Om de relatie en de ander
 

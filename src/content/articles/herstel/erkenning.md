@@ -75,6 +75,8 @@ Erkenning kan komen van mensen die gewoon luisteren. Een vriend die zegt: dat kl
 
 Het hoeft geen groot gesprek te zijn. Soms geeft één rustige reactie ruimte om verder te vertellen.
 
+Steun en erkenning vragen mag. Merk je dat je dezelfde geruststelling steeds opnieuw nodig hebt en dat die maar kort rust geeft? Dan kan [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/) helpen om die lus te begrijpen. Dat is een andere vraag dan of jouw ervaring serieus genomen mag worden.
+
 Het kan ook helpen om te lezen over patronen of de ervaringen van anderen. Herkenning in andermans woorden is een vorm van erkenning: blijkbaar ben je niet de enige.
 
 Wie meldt of aangifte doet, hoopt soms ook op erkenning. Dat kan een belangrijke stap zijn, maar de uitkomst ligt niet in jouw handen. Het is goed om je eigen erkenning daar niet volledig van te laten afhangen.

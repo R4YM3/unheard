@@ -90,3 +90,14 @@ SITE_URL=https://unheard.support` slaagde met 108 HTML-pagina's en distributie-a
 Visuele browser-/printcontrole en menselijke inhoudelijke goedkeuring zijn hiermee
 niet verkregen. De medische bronverwijzingen die al in de frontmatter stonden zijn
 niet allemaal opnieuw beoordeeld in deze gerichte broncontrole.
+
+## Afbakening na volledige clustervergelijking
+
+Rouw is vergeleken met de gevoelspagina's gemis en pijn na inzicht. De opening en
+fictieve scène zijn aangescherpt rond verlies van plannen en een verwachte
+toekomst. Daarmee herhaalt rouw niet opnieuw het zondagse ontbijt en verlangen
+naar de persoon uit de gemispagina. Het artikel behoudt ook verlies van rollen,
+tijd en kansen. Erkenning verwijst nu specifiek naar de geruststellingslus als
+andere bezoekersvraag; steun vragen wordt niet als probleem gepresenteerd.
+Deze tekstwijzigingen voegen geen diagnose, onderzoeksclaim of persoonlijke
+oprichterservaring toe. De eerder genoemde menselijke reviewpunten blijven open.
