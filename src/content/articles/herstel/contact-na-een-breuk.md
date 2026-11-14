@@ -14,6 +14,10 @@ order: 70
 cardTitle: 'Contact na een breuk'
 cardText: 'Omgaan met blijvend contact rond kinderen of gedeelde zaken, met structuur en afstand.'
 summary: 'Soms blijf je na een breuk contact houden, bijvoorbeeld rond kinderen, een huis of financiën. Structuur kan helpen: vaste afspraken, kort en schriftelijk contact, en steun van anderen. Deze pagina geeft geen juridisch advies. Bij twijfel over je veiligheid gaat die voor.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Eén bericht kan mijn hele dag overnemen.'
+  feeling: 'Ook wanneer een relatie voorbij is, kan noodzakelijk contact oude spanning wakker maken. Structuur is dan bedoeld om ruimte voor jezelf te houden, niet om de ander te veranderen.'
 hero:
   eyebrow: 'Herstel / Contact na een breuk'
   paragraphs:

@@ -14,6 +14,10 @@ order: 50
 cardTitle: 'Rouw'
 cardText: 'Rouw om een relatie, om wie je was en om de toekomst die je voor ogen had.'
 summary: 'Na een relatie waarin je pijn is gedaan, kun je toch rouwen. Om de ander, om wie je zelf was, om plannen die niet uitkwamen. Opluchting en verdriet kunnen naast elkaar bestaan. Rouw heeft geen vaste volgorde en geen vaste duur.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet dat het voorbij moest zijn, maar ik mis het toch.'
+  feeling: 'Verdriet en opluchting sluiten elkaar niet uit. Je hoeft het verlies niet kleiner te maken om te weten dat iets je pijn deed.'
 hero:
   eyebrow: 'Herstel / Rouw'
   paragraphs:

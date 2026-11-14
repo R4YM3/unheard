@@ -14,6 +14,10 @@ order: 20
 cardTitle: 'Zelfvertrouwen'
 cardText: 'Vertrouwen in je eigen waarneming terugvinden, in kleine stappen.'
 summary: 'Na een relatie waarin je beleving steeds werd betwist, kan het lastig zijn om jezelf te geloven. Zelfvertrouwen komt meestal niet in één keer terug. Het groeit door kleine ervaringen waarin je merkt dat je waarneming klopt, en door mensen die je serieus nemen.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet wat ik voel, maar durf ik daar wel op te vertrouwen?'
+  feeling: 'Vertrouwen in jezelf komt vaak terug in kleine momenten. Je hoeft niet te wachten tot alle twijfel verdwenen is.'
 hero:
   eyebrow: 'Herstel / Zelfvertrouwen'
   paragraphs:

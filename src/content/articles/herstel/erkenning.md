@@ -14,6 +14,10 @@ order: 10
 cardTitle: 'Erkenning'
 cardText: 'Erkenning van anderen en van jezelf, zonder dat de ander hoeft toe te geven wat er gebeurde.'
 summary: 'Erkenning betekent dat wat je meemaakte serieus genomen wordt. Dat kan komen van mensen die luisteren, en van jezelf. Je hoeft niet te wachten tot de ander het erkent; dat gebeurt soms nooit. Erkenning is geen oordeel over de ander, maar ruimte voor jouw ervaring.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als de ander het niet toegeeft, telt mijn verhaal dan wel?'
+  feeling: 'Het verlangen om geloofd te worden is menselijk. Je ervaring mag ruimte krijgen, ook als de ander die niet bevestigt.'
 hero:
   eyebrow: 'Herstel / Erkenning'
   paragraphs:

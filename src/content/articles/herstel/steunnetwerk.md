@@ -14,6 +14,10 @@ order: 90
 cardTitle: 'Steunnetwerk'
 cardText: 'Een paar veilige mensen om je heen, en weten waar je professionele steun vindt.'
 summary: 'Een steunnetwerk is een klein aantal mensen bij wie je terechtkunt: om te praten, voor praktische hulp of gewoon voor gezelschap. Het hoeft niet groot te zijn. Kies mensen bij wie je je veilig voelt, en weet daarnaast waar je professionele hulp kunt vinden.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik wil niemand lastigvallen met mijn verhaal.'
+  feeling: 'Hulp vragen hoeft geen groot gesprek te zijn. Eén bericht, een wandeling of iemand die alleen luistert kan al een begin zijn.'
 hero:
   eyebrow: 'Herstel / Steunnetwerk'
   paragraphs:
