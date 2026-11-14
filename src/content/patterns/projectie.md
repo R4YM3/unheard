@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik word beschuldigd van precies wat ik zelf zie gebeuren. Waarom ga ik dan toch aan mezelf twijfelen?'
+  feeling: 'Beschuldigingen die niet passen bij wat jij meemaakt kunnen je in een eindeloze verdediging trekken.'
 related: [schuldverschuiving, darvo, begrip-zelftwijfel, hulp-vinden]
 glossary:
   term: 'Projectie'

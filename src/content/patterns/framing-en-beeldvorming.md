@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik het uitleg, klink ik precies zoals ik word neergezet. Als ik niets zeg, blijft dat beeld hangen.'
+  feeling: 'Het kan eenzaam en machteloos voelen wanneer anderen een verhaal over jou lijken te kennen dat jij niet herkent.'
 related: [triangulatie, darvo, sociale-druk, gaslighting, hulp-vinden]
 glossary:
   term: 'Framing en beeldvorming'

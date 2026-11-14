@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik wil weg uit dit gesprek, maar waar moet ik heen met de kinderen, het huis en het geld?'
+  feeling: 'Afhankelijkheid kan je ruimte om te kiezen kleiner maken, zonder dat jij verantwoordelijk bent voor hoe iemand daarmee omgaat.'
 related: [dwingende-controle, economisch-misbruik, traumabinding, isolatie, hulp-vinden]
 glossary:
   term: 'Macht en afhankelijkheid'

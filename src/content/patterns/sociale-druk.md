@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ze bedoelen het goed, maar waarom voel ik me na elk advies weer de schuldige?'
+  feeling: 'Druk uit je omgeving kan zwaar wegen wanneer je zelf al weinig ruimte of steun ervaart.'
 related: [triangulatie, framing, isolatie, schuldgevoel, hulp-vinden]
 glossary:
   term: 'Sociale druk'

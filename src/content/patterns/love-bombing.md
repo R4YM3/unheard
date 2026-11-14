@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'In het begin voelde alle aandacht als liefde. Waarom voelt die nu als iets waar ik aan vastzit?'
+  feeling: 'Een intense start kan achteraf verwarrend zijn, vooral als warmte later samenvalt met druk of controle.'
 related: [dwingende-controle, hoovering, isolatie, traumabinding, hulp-vinden]
 glossary:
   term: 'Love bombing'

@@ -8,8 +8,12 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Mijn naam staat erop. Had ik dit dan moeten tegenhouden?'
+  feeling: 'Schaamte en verwarring zijn begrijpelijk als druk, afhankelijkheid of misbruik van gegevens tot schulden hebben geleid.'
 related:
   [
     economisch-misbruik,
