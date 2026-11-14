@@ -125,6 +125,12 @@ try {
       headerHidden: !(await visibility(page, '.site-header')),
       footerHidden: !(await visibility(page, '.site-footer')),
       themeHidden: !(await visibility(page, '.theme-toggle')),
+      relatedControlsHidden: !(await visibility(page, '[data-related-nav]')),
+      relatedCardsUnmasked: await page.evaluate(() =>
+        [...globalThis.document.querySelectorAll('.related-scroller > .grid')].every(
+          (element) => globalThis.getComputedStyle(element).maskImage === 'none',
+        ),
+      ),
       hiddenPanelsVisible: await page.evaluate(() =>
         [
           ...globalThis.document.querySelectorAll(
@@ -146,6 +152,8 @@ try {
     };
     if (!printState.headerHidden || !printState.footerHidden || !printState.themeHidden)
       throw new Error(`${item.route}: print UI must hide site navigation and fixed controls.`);
+    if (!printState.relatedControlsHidden || !printState.relatedCardsUnmasked)
+      throw new Error(`${item.route}: printed related articles must not have controls or fading.`);
     if (!printState.hiddenPanelsVisible)
       throw new Error(`${item.route}: print must reveal tab panel content.`);
     if (!printState.privateInputHidden)
