@@ -145,3 +145,13 @@ eerste keuzes zien. Daarom staat de situatiesectie nu direct na het korte
 antwoord; de uitleg ‘Je hoeft het nog geen naam te geven’ volgt erna. De bestaande
 ankernaam blijft behouden. Deze laatste volgordewijziging is nog niet visueel
 beoordeeld. Safari en een echte screenreader blijven open controles.
+
+### Herstel: beginnen bij een behoefte
+
+De herstelhub heeft nu vier korte tekstingangen: ruimte voor gevoel, eigen
+keuzes, blijvend contact en steun. De bestaande IntroBlock/Markdownweergave en
+het volledige onderwerpenoverzicht blijven gebruikt; geen nieuwe component of
+vragenlijst. Financieel herstel is ook rechtstreeks vanuit deze pijler bereikbaar,
+met behoud van de bestaande financiële URL. Therapie en hulp blijven direct
+beschikbaar. De nieuwe herstelintro moet nog visueel op mobiel en desktop worden
+gecontroleerd; de wijziging is niet gedekt door oudere screenshots van de hub.

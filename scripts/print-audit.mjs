@@ -52,7 +52,11 @@ const routes = [
     required: ['Je hoort', 'Bronnen'],
   },
   { id: 'financial-hub', route: '/nl/begrijp-het/financieel-misbruik/', required: ['Wat is het?'] },
-  { id: 'recovery-hub', route: '/nl/herstel/', required: ['Herstel'] },
+  {
+    id: 'recovery-hub',
+    route: '/nl/herstel/',
+    required: ['Herstel', 'Wat heb je op dit moment nodig?', 'financieel herstel'],
+  },
   {
     id: 'therapy',
     route: '/nl/herstel/therapievormen/schematherapie/',
@@ -118,7 +122,15 @@ try {
   for (const item of routes) {
     await page.goto(`${origin}${item.route}`, { waitUntil: 'networkidle0' });
     if (
-      ['recognition-hub', 'emotion', 'knowledge', 'therapy', 'tool', 'pattern'].includes(item.id)
+      [
+        'recognition-hub',
+        'recovery-hub',
+        'emotion',
+        'knowledge',
+        'therapy',
+        'tool',
+        'pattern',
+      ].includes(item.id)
     ) {
       await page.emulateMediaType('screen');
       for (const width of [390, 1440]) {
