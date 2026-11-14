@@ -153,13 +153,21 @@ Als iemand gebeurtenissen herhaaldelijk ontkent, verdraait of jouw waarneming on
 
 Een ander patroon is dat een gesprek ongemerkt kantelt: je begint over jouw pijn en eindigt met excuses. Daar bestaat een begrip voor, [DARVO](nl/begrippen/darvo/), dat beschrijft hoe ontkennen, aanvallen en de rollen omdraaien op elkaar kunnen volgen.
 
-Zelftwijfel kan ook andere wortels hebben. Eerdere ervaringen kunnen ervoor zorgen dat je sneller bij jezelf de fout zoekt. Stress, weinig slaap of een zware periode maken het moeilijker om helder te denken. Vaak spelen meerdere dingen tegelijk. Je hoeft niet te kiezen welke verklaring de juiste is om te merken wat het met je doet.
+Zelftwijfel kan ook andere wortels hebben. Stress, weinig slaap of een zware periode maken het moeilijker om helder te denken. Vaak spelen meerdere dingen tegelijk. Je hoeft niet te kiezen welke verklaring de juiste is om te merken wat het met je doet.
+
+## Waarom kan twijfel blijven terugkomen?
+
+Wie zorgvuldig wil zijn, loyaal is of veel zelfreflectie heeft, zoekt vaak eerst naar het eigen aandeel in een moeilijk gesprek. Dat zijn sterke eigenschappen. Ze zijn niet de oorzaak van ontkennen, verdraaien of kleineren door een ander. In een omgeving waarin jouw beleving steeds wordt betwist, kunnen ze er wel toe leiden dat je nog harder probeert het precies goed te doen.
+
+Schaamte, weinig steun, afhankelijkheid, werkdruk of eerdere ervaringen kunnen het daarnaast moeilijk maken om je eigen waarneming weer ruimte te geven. Dat verklaart niet waarom een ander grensoverschrijdend gedrag vertoont. Het helpt wel begrijpen waarom vertrouwen op jezelf na zo'n periode niet meteen vanzelf terugkomt.
 
 ## Wat het met je kan doen
 
 Op korte termijn kost twijfel vooral energie. Je piekert, slaapt slechter of blijft een gesprek terugspoelen. Je stelt beslissingen uit, omdat je niet zeker weet of je eigen oordeel klopt.
 
 Op langere termijn kan twijfel zich nestelen in hoe je naar jezelf kijkt. Je gaat vragen of je iets mag voelen voordat je het voelt. Je laat keuzes aan anderen over. Je zoekt telkens bevestiging, en die geeft maar kort rust. Over dat laatste gaat de pagina [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/).
+
+Na een relatie of breuk kan de twijfel blijven doorwerken, ook wanneer je meer afstand hebt. Je kijkt terug op gesprekken en vraagt je af of je het wel goed hebt gezien. Dat je die vragen hebt, maakt je ervaring niet minder echt. Het kan tijd kosten om weer te merken wat jij denkt, voelt en nodig hebt.
 
 Het goede nieuws is voorzichtig, maar echt: vertrouwen in je eigen waarneming kan stap voor stap terugkomen. Op [Zelfvertrouwen terugvinden](nl/herstel/zelfvertrouwen/) lees je hoe dat eruit kan zien.
 

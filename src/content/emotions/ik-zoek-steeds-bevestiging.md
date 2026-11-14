@@ -131,7 +131,13 @@ Bevestiging zoeken is meestal een reactie op onzekerheid over je eigen waarnemin
 
 Die onzekerheid kan gegroeid zijn door gesprekken waarin je beleving steeds werd tegengesproken. Als dat herhaaldelijk en stelselmatig gebeurt, wordt dat weleens [gaslighting](nl/begrippen/gaslighting/) genoemd. Maar of dat bij jou speelt, kun je niet afleiden uit het feit dat je bevestiging zoekt; veel mensen doen dat om heel andere redenen. Over het verlies van vertrouwen in je eigen waarneming gaat de pagina [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
-Het kan ook ouder zijn. Wie vroeger vooral waardering kreeg voor presteren of aanpassen, zoekt later makkelijker naar een teken dat het goed genoeg is. En in periodes van stress of verlies vraagt iedereen meer houvast.
+Stress, verlies of weinig steun kunnen de behoefte aan houvast sterker maken. Ook wie zorgvuldig wil zijn, loyaliteit belangrijk vindt of bang is anderen tot last te zijn, kan steeds harder proberen het goed te doen. Dat zijn geen zwakke eigenschappen en ze maken niemand verantwoordelijk voor kleineren, dwang of controle.
+
+## Waarom kan de lus blijven doorgaan?
+
+Een antwoord van iemand anders kan de spanning voor even laten zakken. Daardoor voelt opnieuw vragen logisch. Maar de volgende twijfel krijgt dan opnieuw alle ruimte. Je eigen oordeel heeft tijd nodig om weer hoorbaar te worden, zeker als je lang hebt geleerd dat een ander beslist wat klopt.
+
+Na een relatie of breuk kan die lus doorgaan, ook als niemand je meer rechtstreeks tegenspreekt. Je wilt dan misschien van vrienden horen dat je de juiste keuze maakte of dat je reactie normaal was. Steun vragen mag. Het verschil zit niet in sterk zijn of alles alleen doen, maar in een gesprekspartner die je helpt jouw eigen antwoord te horen in plaats van het voor je over te nemen.
 
 ## Wat het met je kan doen
 
