@@ -29,7 +29,6 @@ import { pillarBand, pillarName } from '../lib/pillar';
 import FeelingWords from '../components/heroes/FeelingWords.astro';
 import LayeredMoment from '../components/heroes/LayeredMoment.astro';
 import RecoveryLine from '../components/heroes/RecoveryLine.astro';
-import CardFan from '../components/heroes/CardFan.astro';
 
 interface Props {
   entry: CollectionEntry<'hubs'>;
@@ -65,7 +64,7 @@ const heroLayouts = {
   'wat-voel-ik': 'words',
   'begrijp-het': 'layers',
   herstel: 'quote',
-  hulpmiddelen: 'fan',
+  hulpmiddelen: 'plain',
 } as const;
 function heroLayoutFor(key: string) {
   return heroLayouts[key as keyof typeof heroLayouts];
@@ -236,12 +235,6 @@ const mainEntityId = termSet
     )
   }
   {heroVisual === 'herstel' && <RecoveryLine slot="hero-band" locale={data.locale} part="line" />}
-  {heroVisual === 'hulpmiddelen' && <CardFan slot="hero-visual" locale={data.locale} part="fan" />}
-  {
-    heroVisual === 'hulpmiddelen' && (
-      <CardFan slot="hero-copy" locale={data.locale} part="preview" />
-    )
-  }
   {
     pillarIntro && (data.summary || !isEmptyBody) && (
       <IntroBlock

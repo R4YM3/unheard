@@ -253,3 +253,14 @@ Lokale validatie van de volgorde: check geslaagd (35 tests), build en audit van
 109 HTML-pagina’s geslaagd. In de gebouwde HTML staat het ontdekhoofdstuk één
 keer vóór listing-0-heading; het bestaande contextanker blijft één keer aanwezig.
 Dit bevestigt de DOM-volgorde, niet de nieuwe visuele weergave.
+
+## Hulpmiddelen: kaartwaaier verwijderen
+
+De 390px-steekproef uit CI 43654308317 toont naast de verbeterde tekstingangen
+nog de bestaande interactieve kaartwaaier met stapvoorbeeld. Die verdubbelt het
+volledige aanbod en vraagt op touch eerst een previewtik. De hub gebruikt nu de
+bestaande enkelkoloms hero-opmaak zonder waaier of preview. Alle zes kaarten
+blijven gewone links in het compacte overzicht; de woordenvinder verandert niet.
+De derde Over de kaarten-promotie is verwijderd; de contextuele tekstlink blijft.
+Browsercontrole controleert dat alle zes hulpmiddelen zonder JavaScript zichtbaar
+blijven. Visuele bevestiging van deze vereenvoudiging volgt nog.
