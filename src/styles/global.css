@@ -3044,7 +3044,7 @@ a.card:focus-visible,
   }
 }
 /* Keep the desktop header on one line between tablet and wide desktop widths. */
-@media (min-width: 60.001rem) and (max-width: 70rem) {
+@media (min-width: 60.001rem) and (max-width: 90rem) {
   .header-row {
     gap: 0.65rem;
   }
