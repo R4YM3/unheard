@@ -3044,7 +3044,7 @@ a.card:focus-visible,
   }
 }
 /* Keep the desktop header on one line between tablet and wide desktop widths. */
-@media (min-width: 60.001rem) and (max-width: 90rem) {
+@media (min-width: 70.001rem) and (max-width: 90rem) {
   .header-row {
     gap: 0.65rem;
   }
@@ -3062,7 +3062,7 @@ a.card:focus-visible,
     white-space: nowrap;
   }
 }
-@media (max-width: 60rem) {
+@media (max-width: 70rem) {
   .header-row {
     display: flex;
     min-height: 4.5rem;

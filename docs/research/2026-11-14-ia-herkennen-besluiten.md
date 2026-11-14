@@ -93,3 +93,19 @@ bijgewerkt op main na #107. CI bewaart nu screenshots van de vijf gecontroleerde
 desktopbreedtes en van de nieuwe hub op 390/1440px, plus de A4-uitvoer. Visuele
 beoordeling van deze bestanden volgt; Safari en een echte screenreadersessie zijn
 nog niet uitgevoerd. De automatische checks gelden daarvoor niet als bewijs.
+
+### Visuele nacontrole en tabletmenu
+
+Browserartifact van run 43648506278 visueel bekeken: de herkenningshub op 390px
+is leesbaar, maar de header op 961px liet ondanks de geslaagde rijtest overlap
+tussen logo en eerste navigatielink zien. De rijtest controleerde alleen verticale
+posities en miste horizontale overlap. De compacte menupresentatie geldt daarom
+nu tot en met 1120px. Vanaf 1121px controleert de browseraudit ook de afstand tussen
+logo en eerste link. Op 961, 1024 en 1120px controleert hij dat het compacte menu
+opent en Herkennen rechtstreeks bevat. De nieuwe browserrun moet deze correctie
+nog bevestigen; de eerdere groene run bewijst de correctie niet.
+
+De hub heeft nog een lange reeks van zes kaarten onder de generieke kop ‘Ook goed
+om te weten’. In de volgende ontdekkingsronde moet dit de primaire situatiesectie
+worden, met een passende kop en compactere keuzevorm. De huidige screenshot is
+geen bewijs dat de nieuwste eis voor redactionele rust al volledig is gehaald.

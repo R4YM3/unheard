@@ -29,7 +29,17 @@ try {
   browser = await puppeteer.launch({ executablePath: chromePath, headless: true });
   const page = await browser.newPage();
   await mkdir('work/print-audit', { recursive: true });
-  for (const width of [961, 1024, 1120, 1280, 1440]) {
+  for (const width of [961, 1024, 1120]) {
+    await page.setViewport({ width, height: 1000 });
+    await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    assert.equal(await page.$eval('.nav', (node) => node.getBoundingClientRect().width), 0);
+    await page.click('.mobile-menu > summary');
+    assert(await page.$eval('.mobile-menu', (node) => node.open));
+    const destination = await page.$('.mobile-menu a[href="nl/wat-herken-ik/"]');
+    assert(destination, 'Recognition stays directly reachable in the compact menu');
+    await page.screenshot({ path: `work/print-audit/header-${width}.png` });
+  }
+  for (const width of [1121, 1280, 1440]) {
     await page.setViewport({ width, height: 1000 });
     await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
     const items = await page.$$('.desktop-nav-item');
@@ -47,6 +57,9 @@ try {
       ],
       'Feeling, recognition and understanding remain equal main entrances',
     );
+    const brandRight = await page.$eval('.brand', (node) => node.getBoundingClientRect().right);
+    const firstLinkLeft = await page.$eval('.nav > *', (node) => node.getBoundingClientRect().left);
+    assert(firstLinkLeft >= brandRight + 8, `Navigation overlaps the brand at ${width}px`);
     const rows = await page.$$eval('.nav > *', (nodes) =>
       nodes
         .filter((node) => node.getBoundingClientRect().height > 0)
