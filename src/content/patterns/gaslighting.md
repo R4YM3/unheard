@@ -10,7 +10,19 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [begrip-zelftwijfel, darvo, psychische-manipulatie, zelftwijfel, hulp-vinden]
+related:
+  [
+    begrip-zelftwijfel,
+    darvo,
+    psychische-manipulatie,
+    zelftwijfel,
+    herstel-zelfvertrouwen,
+    het-vertellen,
+  ]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Misschien klopt er iets niet met mij.'
+  feeling: 'Als een gesprek steeds eindigt met twijfel aan jouw geheugen of gevoel, kan je houvast langzaam verschuiven naar het verhaal van de ander.'
 glossary:
   term: 'Gaslighting'
   definition: 'Een patroon waarbij iemand herhaaldelijk jouw waarneming, herinnering of gevoel ondermijnt, waardoor je meer gaat vertrouwen op het verhaal van de ander dan op je eigen ervaring.'

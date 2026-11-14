@@ -10,7 +10,12 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [dwingende-controle, triangulatie, sociale-druk, identiteit, hulp-vinden]
+related:
+  [dwingende-controle, triangulatie, sociale-druk, identiteit, herstel-steunnetwerk, het-vertellen]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Thuisblijven geeft minder gedoe.'
+  feeling: 'Wanneer contact steeds een prijs lijkt te hebben, kan terugtrekken als de makkelijkste keuze voelen. Intussen wordt je wereld kleiner.'
 glossary:
   term: 'Isolatie'
   definition: 'Stap voor stap afgesneden raken van vrienden, familie, werk of eigen geld, vaak geleidelijk en soms verpakt als liefde of bezorgdheid.'

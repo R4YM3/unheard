@@ -12,6 +12,10 @@ updatedAt: 2026-10-20
 reviewedAt: null
 related:
   [economisch-misbruik, schulden-op-naam, dwingende-controle, financieel-misbruik, hulp-vinden]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Voor dit kleine bedrag moet ik straks weer uitleg geven.'
+  feeling: 'Afspraken over geld kunnen gezond zijn. Als alleen jij je steeds moet verantwoorden, kan een gewone uitgave al voelen als een risico.'
 glossary:
   term: 'Controle over uitgaven'
   definition: 'Eén persoon bepaalt eenzijdig wat de ander mag uitgeven, en de ander moet daarover verantwoording afleggen.'

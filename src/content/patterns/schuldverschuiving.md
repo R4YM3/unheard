@@ -10,7 +10,11 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [darvo, projectie, schuldgevoel, gaslighting, hulp-vinden]
+related: [darvo, projectie, schuldgevoel, gaslighting, herstel-erkenning, het-vertellen]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik het anders had gedaan, was dit niet gebeurd.'
+  feeling: 'Zelf naar jouw aandeel kijken kan gezond zijn. Het wordt zwaar wanneer jij steeds het hele gewicht van een gesprek of reactie gaat dragen.'
 glossary:
   term: 'Schuldverschuiving'
   definition: 'Een patroon waarin de verantwoordelijkheid voor wat er misging steeds bij jou wordt gelegd, ook als het gedrag van de ander de aanleiding was.'

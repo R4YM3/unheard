@@ -10,7 +10,19 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [traumabinding, love-bombing, silent-treatment, pijn-na-inzicht, hulp-vinden]
+related:
+  [
+    traumabinding,
+    love-bombing,
+    silent-treatment,
+    pijn-na-inzicht,
+    herstel-contact-na-breuk,
+    het-vertellen,
+  ]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Wat als het nu echt anders is?'
+  feeling: 'Hoop, gemis en twijfel kunnen tegelijk opkomen wanneer iemand opnieuw contact zoekt. Die gevoelens zijn geen opdracht om meteen te beslissen.'
 glossary:
   term: 'Hoovering'
   definition: 'Populaire term voor herhaalde pogingen om je na afstand terug te trekken in een relatie of contact, met spijt, beloftes, nostalgie of druk.'
