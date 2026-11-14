@@ -10,7 +10,12 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [emotioneel-misbruik, schuldgevoel, grenzen, hyperwaakzaamheid, hulp-vinden]
+related:
+  [emotioneel-misbruik, schuldgevoel, grenzen, hyperwaakzaamheid, herstel-grenzen, het-vertellen]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik maar sorry zeg, praat de ander straks weer met me.'
+  feeling: 'Stilte kan zwaar wegen wanneer je niet weet wanneer die stopt of wat je moet doen om contact terug te krijgen. Je hoeft die last niet alleen te dragen.'
 glossary:
   term: 'Silent treatment'
   definition: 'Bewust zwijgen of negeren als reactie op iets wat jij deed, om ongenoegen te laten voelen of je gedrag bij te sturen.'

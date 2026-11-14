@@ -10,7 +10,12 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related: [fawn-respons, emotionele-uitputting, silent-treatment, herstel, hulp-vinden]
+related:
+  [fawn-respons, emotionele-uitputting, silent-treatment, spanning, herstel-triggers, hulp-vinden]
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik goed oplet, kan ik voorkomen dat het misgaat.'
+  feeling: 'Altijd scannen kost veel energie. Je lichaam kan blijven opletten, ook wanneer je hoofd weet dat het nu anders is.'
 glossary:
   term: 'Hyperwaakzaamheid'
   definition: 'Een toestand van sterk verhoogde alertheid, vooral op mogelijke dreiging. In een onveilige situatie logisch; lastig als het blijft.'
