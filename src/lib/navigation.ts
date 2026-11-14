@@ -55,6 +55,12 @@ const nlSections: Section[] = [
     prefixes: ['nl/wat-voel-ik/'],
   },
   {
+    menu: { href: 'nl/wat-herken-ik/', label: 'Wat herken ik?' },
+    label: 'Binnen Wat herken ik?',
+    tabs: [{ href: 'nl/wat-herken-ik/', label: 'Herkenbare situaties' }],
+    prefixes: ['nl/wat-herken-ik/'],
+  },
+  {
     menu: { href: 'nl/begrijp-het/', label: 'Begrijp het' },
     label: 'Binnen Begrijp het',
     tabs: [
@@ -136,6 +142,7 @@ const byLocale: Partial<Record<Locale, LocaleNavigation>> = {
         heading: 'Ontdek',
         links: [
           { href: 'nl/wat-voel-ik/', label: 'Wat voel ik?' },
+          { href: 'nl/wat-herken-ik/', label: 'Wat herken ik?' },
           { href: 'nl/begrijp-het/', label: 'Begrijp het' },
           { href: 'nl/begrippen/', label: 'Begrippen van A tot Z' },
           { href: 'nl/herstel/', label: 'Herstel' },

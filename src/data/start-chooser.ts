@@ -93,6 +93,7 @@ export const chooserCopy: Record<'default' | 'tools', ChooserCopy> = {
     lead: 'Begin bij wat je nu nodig hebt of kies de situatie die het dichtst bij jouw ervaring komt.',
     needsHeading: 'Waar heb je nu behoefte aan?',
     direct: [
+      { href: 'nl/wat-herken-ik/', label: 'Ik zoek uitleg bij wat er gebeurt' },
       { href: 'nl/wat-voel-ik/ik-twijfel-aan-mezelf/', label: 'Ik twijfel steeds aan mezelf' },
       { href: 'nl/hulpmiddelen/help-me-woorden-vinden/', label: 'Ik wil begrijpen wat ik voel' },
       { href: 'nl/herstel/', label: 'Hoe vind ik weer wat rust?' },
