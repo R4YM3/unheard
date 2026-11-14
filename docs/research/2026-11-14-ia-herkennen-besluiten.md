@@ -130,3 +130,9 @@ kolom ‘Begin bij je vraag’. De bestaande woordenvinder-uitnodiging blijft op
 homepage zichtbaar; de functie zelf is ongewijzigd. De hulpmiddelenvariant
 behoudt haar eigen taakgerichte keuzes. De browseraudit controleert de directe
 routes én de drie contexten met toetsenbord zonder JavaScript.
+
+De tabletcorrectie is inmiddels bevestigd door CI-run 43650391633 (geslaagd).
+De screenshots op 961px (compact menu open) en 1121px (volledig menu) zijn
+visueel bekeken: logo en navigatie hebben eigen ruimte. Deze run is van vóór
+de vereenvoudigde herkenningshub/startkeuze in a1e5b41. Die nieuwe presentatie
+wordt afzonderlijk gecontroleerd in run 43650748408.
