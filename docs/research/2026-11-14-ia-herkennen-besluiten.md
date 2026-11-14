@@ -237,3 +237,19 @@ no-JavaScript-ontdekroutes, axe, print, UX en header. De daaropvolgende
 Hulpmiddelen-wijziging slaagt lokaal voor `npm run check` (35 tests, geen failures)
 en de noindex-productiebuild (109 HTML-pagina’s, distributie-audit geslaagd).
 De browserresultaten van 63936a6 gelden nog niet voor deze laatste hubwijziging.
+
+## Ontdekken vóór het therapieaanbod
+
+De 390px-weergave van therapievormen uit CI 43653670173 liet zien dat de
+ervaringsingang pas na de persoonlijke notitie en het hele aanbod kwam. De
+bestaande ProseSlice kan al Markdown-hoofdstukken verdelen. Via het getypeerde
+hubveld introChapters staat het eerste hoofdstuk nu vóór de lijst en de
+oprichtersnotitie; de overige hoofdstukken blijven erna. Geen nieuwe component
+of gedupliceerde tekst. De bestaande ankers en persoonlijke passages blijven
+behouden. Een echte no-JavaScript-klik op de voorbereidingskaart wordt ook
+voor deze hub gecontroleerd. Nieuwe scherm- en printbeoordeling volgt op CI.
+
+Lokale validatie van de volgorde: check geslaagd (35 tests), build en audit van
+109 HTML-pagina’s geslaagd. In de gebouwde HTML staat het ontdekhoofdstuk één
+keer vóór listing-0-heading; het bestaande contextanker blijft één keer aanwezig.
+Dit bevestigt de DOM-volgorde, niet de nieuwe visuele weergave.

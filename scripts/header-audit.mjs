@@ -480,6 +480,7 @@ try {
 
   /* Both discovery and known-topic routes remain usable without JavaScript. */
   const discoveryRoutes = [
+    ['herstel/therapievormen/', 'nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/'],
     ['hulpmiddelen/', 'nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/'],
     ['hulpmiddelen/', 'nl/begrippen/'],
     ['wat-voel-ik/', 'nl/wat-voel-ik/ik-zoek-steeds-bevestiging/'],

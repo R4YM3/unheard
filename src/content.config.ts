@@ -390,6 +390,8 @@ const hubs = defineCollection({
     eyebrow: z.string().min(2),
     lead: z.string().min(20),
     listings: z.array(listing).default([]),
+    /** Opening Markdown chapters shown before a non-pillar hub’s listings. */
+    introChapters: z.number().int().min(0).max(3).default(0),
     cards: z.array(card).default([]),
     cardsPlacement: z.enum(['related', 'inline']).default('related'),
     scenarios: z.array(scenario).max(8).default([]),

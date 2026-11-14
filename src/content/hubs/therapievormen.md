@@ -23,6 +23,7 @@ hero:
   actions:
     - { href: 'nl/hulp-vinden/', label: 'Hulp en veiligheid', quiet: true }
 summary: 'Er zijn verschillende vormen van therapie en begeleiding. Welke past, hangt af van wat je ervaart en van je situatie, en bespreek je met je huisarts of een bevoegde professional. Per vorm vind je hier algemene uitleg, met mijn persoonlijke ervaring apart gelabeld. Mijn ervaring is geen aanbeveling.'
+introChapters: 1
 listings:
   - collection: therapies
     cardStyle: list
@@ -80,12 +81,6 @@ reviewNotes:
   - "Oprichter: de oude velden kind, therapy.experiences en therapy.closing zijn omgezet naar listings, de body en de aparte therapiepagina's. De persoonlijke zinnen per vorm staan nu in het founder-veld van elke therapiepagina."
 ---
 
-## Dit is persoonlijke ervaring, geen advies
-
-Dit is een persoonlijke ervaring. Het zegt niet welke therapie voor jou passend is. De keuze voor begeleiding hangt af van je situatie en bespreek je bij voorkeur met een deskundige.
-
-Op de pagina's per therapievorm staat de algemene uitleg los van mijn eigen ervaring. Je leest daar waar een vorm zich grofweg op richt, wat je kunt verwachten, wat wel en niet is aangetoond en welke vragen je aan een professional kunt stellen. Mijn ervaring staat er apart en duidelijk gelabeld bij.
-
 ## Je hoeft de naam van een therapie niet te kennen
 
 Misschien herken je vooral een vraag. Dat kan een beginpunt zijn voor een gesprek met een hulpverlener, niet een automatische behandelingskeuze.
@@ -95,6 +90,12 @@ Welke vorm van hulp past, hangt af van wat je ervaart, hoe lang al, wat je eerde
 Wil je eerst woorden voor wat je merkt? Bij [Ik herken mezelf niet meer](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/) gaat het over eigen wensen die op de achtergrond zijn geraakt. [Ik begrijp het, maar het blijft pijn doen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/) geeft ruimte aan gevoelens die naast inzicht blijven bestaan. Deze vragen kun je meenemen naar een gesprek, zonder vooraf een behandeling te kiezen.
 
 Je hoeft daarvoor geen etiket te hebben. Je kunt beginnen met wat je merkt: dat je slecht slaapt, dat je steeds aan iets terugdenkt, dat je jezelf kwijt bent geraakt. Vertel ook wat eerdere hulp je bracht, en wat niet. Een [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je gedachten op een rij te zetten.
+
+## Dit is persoonlijke ervaring, geen advies
+
+Dit is een persoonlijke ervaring. Het zegt niet welke therapie voor jou passend is. De keuze voor begeleiding hangt af van je situatie en bespreek je bij voorkeur met een deskundige.
+
+Op de pagina's per therapievorm staat de algemene uitleg los van mijn eigen ervaring. Je leest daar waar een vorm zich grofweg op richt, wat je kunt verwachten, wat wel en niet is aangetoond en welke vragen je aan een professional kunt stellen. Mijn ervaring staat er apart en duidelijk gelabeld bij.
 
 ## Mijn weg is niet jouw routekaart
 

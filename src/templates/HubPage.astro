@@ -264,6 +264,15 @@ const mainEntityId = termSet
   }
   <div class:list={['hub-bands', `pillar-bands--${pillar}`]} style={`--pillar-band: ${band}`}>
     {data.finder && <WordFinder id={data.finder} locale={data.locale} />}
+    {
+      woven && !pillarIntro && data.introChapters > 0 && (
+        <section class="section">
+          <ProseSlice from={0} to={data.introChapters}>
+            <Content />
+          </ProseSlice>
+        </section>
+      )
+    }
     {data.founderNote?.placement === 'before' && <FounderNote note={data.founderNote} />}
     {
       listings.map((listing, index) => (
@@ -347,7 +356,7 @@ const mainEntityId = termSet
     {
       woven && !pillarIntro && (
         <section class="section">
-          <ProseSlice from={0}>
+          <ProseSlice from={data.introChapters}>
             <Content />
           </ProseSlice>
         </section>
