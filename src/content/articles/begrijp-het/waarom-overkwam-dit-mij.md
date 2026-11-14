@@ -1,6 +1,6 @@
 ---
 title: 'Waarom overkwam dit mij?'
-description: 'Waarom het vaak niet te zien is terwijl het gebeurt, waarom loskomen moeilijk kan zijn en waarom "waarom ik?" geen vraag over jouw tekortkoming is.'
+description: 'Over zelfverwijt na een schadelijke relatie, omstandigheden die loskomen moeilijk maken en het verschil tussen jezelf begrijpen en jezelf de schuld geven.'
 locale: nl
 translationKey: waarom-ik
 slug: begrijp-het/waarom-overkwam-dit-mij
@@ -8,16 +8,16 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-11-04
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
-  thought: 'Hoe kon ik dit niet eerder zien? Wat zegt dat over mij?'
-  feeling: 'Dat je het niet meteen herkende zegt niet dat er iets mis is met jou; patronen kunnen geleidelijk je ruimte en vertrouwen kleiner maken.'
+  thought: 'Ik bleef hopen dat het beter zou worden. Maakt dat wat er gebeurde ook mijn schuld?'
+  feeling: 'Je mag begrijpen wat je in de relatie hield, zonder de verantwoordelijkheid voor het gedrag van de ander over te nemen.'
 order: 35
 cardTitle: 'Waarom overkwam dit mij?'
 cardText: 'Over zelfverwijt achteraf, wat je in de relatie hield en waarom vertrouwen geen tekortkoming is.'
-summary: 'Waarom overkwam dit mij, en waarom zag ik het niet eerder? Die vragen kunnen hard aankomen. Controle kan geleidelijk ontstaan. Hoop, afhankelijkheid en zorgen over veiligheid kunnen loskomen moeilijk maken. Dat je vertrouwde of bleef hopen, maakt jou niet verantwoordelijk voor het gedrag van de ander.'
+summary: 'Dat je vertrouwde, bleef hopen of niet kon vertrekken, maakt jou niet verantwoordelijk voor het gedrag van de ander. Je kunt onderzoeken welke omstandigheden en behoeften meespeelden, zonder van jouw eigenschappen de oorzaak van misbruik te maken. Willen vertrekken en veilig kunnen vertrekken zijn bovendien verschillende dingen.'
 related: [schuldgevoel, traumabinding, dwingende-controle, herstel-erkenning, mannen-in-cijfers]
 sources:
   - label: 'Dwingende controle verwoest levens — signalen in een relatie'
@@ -71,11 +71,9 @@ Het is begrijpelijk dat je zo naar jezelf kijkt. Toch helpt het om de vraag om t
 
 ## Als de verandering stap voor stap gaat
 
-[Patronen van controle](nl/begrippen/dwingende-controle/) kunnen geleidelijk ontstaan. Een opmerking over met wie je omgaat. Meekijken in je telefoon. Een ruzie die eindigt met jouw excuses. Je zoekt voor ieder moment een verklaring, terwijl je nog niet ziet wat die momenten met elkaar verbindt.
+[Controle kan geleidelijk toenemen](nl/begrippen/dwingende-controle/). Je keek toen vanuit de relatie, met de informatie en mogelijkheden die je op dat moment had. Dat je nu meer ziet, betekent niet dat je toen hetzelfde overzicht of dezelfde ruimte had om te handelen.
 
-Veilig Thuis beschrijft hoe de invloed op je persoonlijke ruimte en beslissingen [steeds erger](https://www.veiligthuis.nl/nl/dwingendecontrole) kan worden, en hoe je je steeds meer afgezonderd kunt voelen van vrienden en familie. Bij geleidelijke verandering kun je gaan wennen aan iets wat je eerder niet prettig vond. Je past je aan om spanning te voorkomen en merkt pas later hoeveel ruimte je hebt ingeleverd.
-
-Achteraf kun je verbanden zien die je toen niet zag. Dat betekent niet dat je nu elke herinnering hoeft te kunnen verklaren.
+Je kunt achteraf wensen dat je iets anders had gedaan. Dat maakt jou nog niet verantwoordelijk voor het controleren of kleineren door de ander.
 
 ## Waarom loskomen zo moeilijk kan zijn
 
@@ -101,9 +99,9 @@ Over het gevoel overal verantwoordelijk voor te zijn gaat [Ik voel me overal sch
 
 ## Waarom zag ik het niet eerder?
 
-Als je [minder contact hebt met vrienden of familie](nl/begrippen/isolatie/), zijn er minder gelegenheden om te vertellen wat er gebeurt en te horen hoe een ander ernaar kijkt. Ook mensen om je heen zien niet alles. En als je eigen waarneming steeds ter discussie staat, kun je ook [aan je eigen twijfel gaan twijfelen](nl/begrippen/zelftwijfel/).
+**Voorbeeld — verzonnen:** je leest een oud bericht waarin je je verontschuldigt omdat je met een vriend hebt afgesproken. Nu denk je: waarom zei ik sorry? Toen wilde je vooral voorkomen dat de avond opnieuw in ruzie eindigde.
 
-Dat je het nu anders ziet, betekent niet dat je toen hetzelfde overzicht had. Je mag nieuwe woorden vinden voor wat je meemaakte zonder jezelf te verwijten dat die woorden er eerder niet waren.
+Dat verschil mag je onderzoeken zonder je vroegere zelf te veroordelen. De vraag ‘wat had ik nodig om anders te kunnen kiezen?’ geeft ruimte aan steun, veiligheid en praktische mogelijkheden. Je hoeft jezelf niet eerst dom of zwak te noemen om van je ervaring te leren.
 
 ## Ook als man
 

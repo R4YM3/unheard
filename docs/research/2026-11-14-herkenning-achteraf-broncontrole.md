@@ -150,3 +150,19 @@ reviewer aan voor de kernuitleg. Een veiligheidsreviewer beoordeelt advies bij
 voortgezette controle; een klinische reviewer controleert eventuele uitleg over
 lichamelijke reacties en aanhoudende klachten. Geen van die menselijke akkoorden
 is met deze broncontrole verkregen.
+
+## Overlapreview 15 november 2026
+
+Beide volledige artikelen naast emotioneel misbruik, dwingende controle,
+conflict-of-patroon, zelf-ook-fout en macht/afhankelijkheid gelezen.
+`Waarom overkwam dit mij?` heeft nu een eigen voorbeeldgedachte over blijven
+hopen en verantwoordelijkheid. De dubbele groeiuitleg is ingekort; de tweede
+herkenningssectie behandelt zelfverwijt met een expliciet fictief oud-berichtvoorbeeld.
+Het nieuwe kernartikel houdt de vergelijking tussen toen en achteraf, de
+tijdlijn en het contrast in een nieuwe relatie. Bestaande koppen/ankers en URL's
+blijven behouden. Geen link naar het ongepubliceerde kernartikel toegevoegd;
+contextuele links volgen pas bij goedgekeurde publicatie.
+
+Dit is redactionele afbakening op basis van de bestaande broncontrole, geen
+nieuwe klinische bronverificatie. De menselijke review hierboven blijft open.
+De bestaande oprichtermarkering is niet ingevuld of gewijzigd.
