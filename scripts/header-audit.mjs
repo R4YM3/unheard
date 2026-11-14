@@ -810,7 +810,12 @@ try {
       assert(await hero.$(`#${hash}`), `${href} exists in the timeline`);
     }
     await hero.goto(`${origin}/nl/hulpmiddelen/`, { waitUntil: 'networkidle0' });
-    assert.equal(await visible('.page-hero .cf__card'), 6, 'Six cards in the fan');
+    assert.equal(
+      (await hero.$$('.page-hero .cf__card')).length,
+      0,
+      'No duplicate interactive card fan',
+    );
+    assert.equal(await visible('.hub-article-list a'), 6, 'All six tools remain directly visible');
     await hero.goto(`${origin}/nl/hulp-vinden/`, { waitUntil: 'networkidle0' });
     assert.deepEqual(
       await hero.$$eval('.page-hero .hc a', (nodes) =>
@@ -831,7 +836,6 @@ try {
     'begrijp-het': '[data-lm-deeper], [data-lm-next]',
     herstel: '[data-rl-point]',
     'mijn-verhaal': '[data-sr-dot]',
-    hulpmiddelen: '.cf__card',
   };
   for (const [width, height] of [
     [1280, 900],
