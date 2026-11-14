@@ -633,3 +633,19 @@ klinische beoordeling door een door Raymond aan te wijzen reviewer blijft open.
 Check 35 tests en build/audit 109 pagina’s geslaagd; browser/visuele beoordeling
 van deze versie nog open. Dit vervangt de eerdere notitie dat deze specifieke
 consolidatie nog niet was uitgevoerd; er is nog geen merge of publicatie.
+
+## Derde uitvoering: zelftwijfel als één kernartikel
+
+#112 (`codex/consolidatie-zelftwijfel`, 856cdd4) voert het eerder vastgelegde
+zelftwijfelbesluit uit, bovenop #111. Definitie, aliassen, broncontext en zeven
+oude ankers blijven op de gevoelspagina. De bestaande glossary-metadata zorgt
+voor één A–Z-ingang. Woordenvinder houdt de gevoelsroute en verliest alleen de
+dubbele begripssuggestie. Related-keys en interne links zijn aangepast; de oude
+begripsroute is een redirect, de bron blijft ongepubliceerd bewaard.
+
+Lokale check 35 tests en build/audit 109 pagina’s geslaagd. A–Z, zoekdata,
+sitemap, ankers en gebouwde woordenvinderdata gericht gecontroleerd. Nieuwe
+browser-/visuele controle nog open. Raymond bevestigt de ongewijzigde
+founderNote en wijst klinische review toe voor slaap/somberheid/angst en
+duiding van onderzoeksverbanden. Abstracten zijn gelezen, geen volledige nieuwe
+literatuurreview geclaimd. Dit is uitvoering in een concept-PR, geen publicatie.
