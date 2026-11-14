@@ -88,7 +88,7 @@ helps:
       title: 'Zoek contact',
       text: 'Praat met iemand bij wie je rustig kunt zijn. Je hoeft niet uit te leggen waarom je gespannen bent.',
     }
-related: [hyperwaakzaamheid, herstel-triggers, therapie-meditatie, hulp-vinden]
+related: [hyperwaakzaamheid, herstel-triggers, therapie-meditatie, het-vertellen, hulp-vinden]
 sources:
   - label: 'Thuisarts — Ik wil beter omgaan met stress'
     url: 'https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress'

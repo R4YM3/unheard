@@ -83,7 +83,7 @@ helps:
       title: 'Spreid je steun',
       text: 'Leun niet op één persoon voor alle geruststelling. Een paar mensen bij wie je terechtkunt geeft meer rust.',
     }
-related: [zelftwijfel, gaslighting, herstel-zelfvertrouwen, herstel-steunnetwerk]
+related: [zelftwijfel, gaslighting, herstel-zelfvertrouwen, het-vertellen, herstel-steunnetwerk]
 sources:
   - label: 'Thuisarts — Ik heb lichte psychische klachten. Hoe ga ik me beter voelen?'
     url: 'https://www.thuisarts.nl/psychische-klachten-bij-volwassenen/ik-heb-lichte-psychische-klachten-hoe-ga-ik-me-beter-voelen'

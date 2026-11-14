@@ -84,7 +84,7 @@ helps:
       title: 'Zoek een aanpak die verder gaat dan praten',
       text: 'Sommige therapievormen richten zich op ervaren en verwerken, niet alleen op inzicht. Een huisarts kan meedenken.',
     }
-related: [herstel-rouw, herstel-leren-voelen, therapievormen, kaart-pijn-na-inzicht]
+related: [herstel-rouw, herstel-leren-voelen, therapievormen, het-vertellen, kaart-pijn-na-inzicht]
 sources:
   - label: 'Thuisarts — Ik heb lichte psychische klachten. Hoe ga ik me beter voelen?'
     url: 'https://www.thuisarts.nl/psychische-klachten-bij-volwassenen/ik-heb-lichte-psychische-klachten-hoe-ga-ik-me-beter-voelen'

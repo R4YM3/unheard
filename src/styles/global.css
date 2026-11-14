@@ -690,6 +690,10 @@ mark.review-marker {
 .related-scroller {
   position: relative;
 }
+.related-band__intro {
+  max-width: 43rem;
+  margin: -0.35rem 0 1.25rem;
+}
 .related-scroller > .grid {
   grid-auto-flow: column;
   grid-template-columns: none;

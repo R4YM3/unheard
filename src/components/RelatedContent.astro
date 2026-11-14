@@ -31,6 +31,7 @@ const { items, heading = t.readMore, band, pillar } = Astro.props;
     >
       <div class="wrap">
         <h2 id="related-heading">{heading}</h2>
+        <p class="related-band__intro">{t.relatedIntro}</p>
         <div class="related-scroller" data-related-scroller>
           <CardGrid
             items={items.map((item) => ({

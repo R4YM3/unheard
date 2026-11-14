@@ -88,7 +88,7 @@ helps:
       title: 'Praat met één persoon',
       text: 'Schaamte wordt vaak kleiner zodra je het één keer hardop zegt tegen iemand die niet oordeelt.',
     }
-related: [financieel-misbruik, financieel-signalen, kaart-financieel, hulp-vinden]
+related: [financieel-misbruik, financieel-signalen, kaart-financieel, het-vertellen, hulp-vinden]
 sources:
   - label: 'Schouders Eronder — Van signalering tot hulp: handreiking financieel misbruik (2024)'
     url: 'https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'

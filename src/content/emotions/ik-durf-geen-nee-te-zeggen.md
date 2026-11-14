@@ -87,7 +87,7 @@ helps:
       title: 'Overleg voordat je beslist',
       text: '“Ik ga dit eerst met iemand bespreken” geeft ruimte, zonder dat je in het moment hoeft te kiezen.',
     }
-related: [herstel-grenzen, darvo, dwingende-controle, kaart-partnergesprek]
+related: [herstel-grenzen, darvo, dwingende-controle, het-vertellen, kaart-partnergesprek]
 sources:
   - label: 'Thuisarts — Ik word mishandeld door mijn partner of ex-partner'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'

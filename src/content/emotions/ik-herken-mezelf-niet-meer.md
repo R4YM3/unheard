@@ -84,7 +84,7 @@ helps:
       title: 'Onderzoek met begeleiding',
       text: 'Sommige therapievormen werken niet alleen met praten, maar ook met materiaal of beweging. Dat kan helpen als woorden ontbreken.',
     }
-related: [verlies-van-identiteit, therapie-beeldend, therapie-schematherapie, mijn-verhaal]
+related: [dwingende-controle, herstel-leren-voelen, het-vertellen, mijn-verhaal]
 sources:
   - label: 'Thuisarts — Ik heb psychische klachten. Van wie krijg ik hulp?'
     url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'

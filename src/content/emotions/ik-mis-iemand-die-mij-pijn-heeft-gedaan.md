@@ -87,7 +87,7 @@ helps:
       title: 'Zoek iemand die niet oordeelt',
       text: 'Iemand die niet meteen zegt dat je blij moet zijn, maar ook niet aanspoort om terug te gaan.',
     }
-related: [traumabinding, herstel-rouw, herstel-contact-na-breuk, hulp-vinden]
+related: [traumabinding, herstel-rouw, herstel-contact-na-breuk, het-vertellen, hulp-vinden]
 sources:
   - label: 'Thuisarts — Rouw'
     url: 'https://www.thuisarts.nl/rouw'

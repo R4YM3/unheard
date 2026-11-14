@@ -89,7 +89,7 @@ helps:
       title: 'Neem je spanning serieus',
       text: 'Je hoeft niets meteen op te lossen. Rust en afstand kunnen een eerste stap zijn.',
     }
-related: [gaslighting, darvo, herstel-zelfvertrouwen, kaart-zelfreflectie, hulp-vinden]
+related: [gaslighting, darvo, herstel-zelfvertrouwen, het-vertellen, hulp-vinden]
 sources:
   - label: 'Thuisarts — Ik word mishandeld door mijn partner of ex-partner'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
