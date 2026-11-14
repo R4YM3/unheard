@@ -16,7 +16,12 @@ const routes = [
   {
     id: 'recognition-hub',
     route: '/nl/wat-herken-ik/',
-    required: ['Je hoeft het nog geen naam te geven', 'Beginnen kan ook anders'],
+    required: [
+      'Je hoeft het nog geen naam te geven',
+      'Welke situatie komt je bekend voor?',
+      'Ik zoek een bepaald onderwerp',
+      'Beginnen kan ook anders',
+    ],
   },
   { id: 'home', route: '/nl/', required: ['Wat herken jij?', 'Er mag weer ruimte ontstaan.'] },
   {

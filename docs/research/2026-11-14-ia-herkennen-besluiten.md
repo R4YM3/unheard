@@ -109,3 +109,24 @@ De hub heeft nog een lange reeks van zes kaarten onder de generieke kop ‘Ook g
 om te weten’. In de volgende ontdekkingsronde moet dit de primaire situatiesectie
 worden, met een passende kop en compactere keuzevorm. De huidige screenshot is
 geen bewijs dat de nieuwste eis voor redactionele rust al volledig is gehaald.
+
+### Herkenningsroutes als gewone artikelinhoud
+
+De zes grote situatiekaarten zijn vervangen door zichtbare tekstlinks met korte
+uitleg, gegroepeerd in gesprekken/keuzes, contacten/geld en na de relatie. Dit
+hergebruikt de bestaande Markdown- en hubweergave: geen nieuwe component,
+uitklapper of vragenlijst. De situaties blijven direct aanklikbaar en krijgen
+geen eigen URL. Bekende onderwerpen zijn daarnaast expliciet bereikbaar via een
+aparte sectie met directe begrippen, het onderwerpenoverzicht en A–Z.
+
+De relatiecontext ‘na de relatie’ is een herkenbare groep en geen verplichte
+selectiestap. De zes bestemmingen zijn behouden. De nieuwe presentatie moet nog
+in de browser en op papier worden bekeken; dit is geen afgeronde gebruikerstest.
+
+De algemene startkeuze is teruggebracht van zes gemengde uitklappers naar drie
+contexten: nog in de relatie, na de relatie en zorgen om iemand. Gevoelens,
+gebeurtenissen, bekende begrippen, geld en herstel hebben directe routes in de
+kolom ‘Begin bij je vraag’. De bestaande woordenvinder-uitnodiging blijft op de
+homepage zichtbaar; de functie zelf is ongewijzigd. De hulpmiddelenvariant
+behoudt haar eigen taakgerichte keuzes. De browseraudit controleert de directe
+routes én de drie contexten met toetsenbord zonder JavaScript.

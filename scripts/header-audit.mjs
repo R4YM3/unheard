@@ -328,13 +328,19 @@ try {
     'Without JavaScript every example is listed',
   );
   assert.equal(await home.$('[data-pc-next]:not([hidden])'), null, 'No arrows without JavaScript');
+  for (const route of [
+    'nl/wat-voel-ik/',
+    'nl/wat-herken-ik/',
+    'nl/begrippen/',
+    'nl/begrijp-het/financieel-misbruik/',
+  ]) {
+    assert(
+      await home.$(`#beginnen .start-chooser-direct a[href="${route}"]`),
+      `Direct discovery route: ${route}`,
+    );
+  }
   const options = await home.$$('#beginnen details');
-  const labels = [
-    'Ik twijfel nog',
-    'Ik zit er nog middenin',
-    'De relatie is voorbij',
-    'Ik maak me zorgen om iemand',
-  ];
+  const labels = ['Ik zit er nog middenin', 'De relatie is voorbij', 'Ik maak me zorgen om iemand'];
   for (const [index, label] of labels.entries()) {
     const option = options[index];
     assert(option, `Missing starting route: ${label}`);
