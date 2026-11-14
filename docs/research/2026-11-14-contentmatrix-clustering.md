@@ -622,3 +622,14 @@ Zoekdata, sitemap en de deeper-verwijzing zijn aangepast. Lokale check 35 tests
 en build/distributie-audit 109 HTML-pagina’s geslaagd. Browserredirect en visuele
 controle volgen in CI; nog niet gemergd of gepubliceerd. Overige voorgestelde
 consolidaties zijn nog niet uitgevoerd.
+
+## Tweede uitvoering: herstelintroductie
+
+#111 bevat vanaf 13a9607 ook Wat herstel kan betekenen → Herstel. Vijf oude
+H2-ankers, voorbeeldgedachte, hulpcontext, bronnen en drie niet-invulbare
+reflectievragen zijn opgenomen in de hub. Oude URL is een statische redirect;
+de dubbele bron blijft ongepubliceerd. Twee Thuisarts-bronnen opnieuw gelezen,
+klinische beoordeling door een door Raymond aan te wijzen reviewer blijft open.
+Check 35 tests en build/audit 109 pagina’s geslaagd; browser/visuele beoordeling
+van deze versie nog open. Dit vervangt de eerdere notitie dat deze specifieke
+consolidatie nog niet was uitgevoerd; er is nog geen merge of publicatie.
