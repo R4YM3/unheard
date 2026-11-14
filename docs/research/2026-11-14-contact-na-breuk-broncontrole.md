@@ -123,3 +123,31 @@ geslaagd, 1 overgeslagen), formatter en contentvalidatie geslaagd. `NO_INDEX=tru
 108 HTML-pagina’s en distributie-audit. Browserchecks volgen in CI; deze drie
 nieuwe artikelversies zijn nog niet visueel beoordeeld. Menselijke review blijft open;
 `in_review` betekent geen goedkeuring.
+
+## Aanvulling 15 november: een belastend bericht
+
+Na de volledige overlapreview is `herstel/triggers-en-moeilijke-berichten.md`
+als vierde, verwante pagina herzien. De eigen taak blijft het concrete moment
+van spanning; blijvende contactafspraken horen bij contact-na-een-breuk.
+
+Opnieuw gelezen: [Thuisarts — omgaan met stress](https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress),
+de secties over klachten, omgaan met stress en wanneer de huisarts bellen;
+[Slachtofferhulp — stalking](https://www.slachtofferhulp.nl/gebeurtenissen/stalking/),
+de hoofdinhoud over hulp/veiligheid; en de sectie ‘Zorg voor je veiligheid’ van
+[veiligheid bij stalking](https://www.slachtofferhulp.nl/gebeurtenissen/stalking/tips-veiligheid-bij-stalking/).
+Veilig Thuis Contact bevestigt opnieuw de bestaande adviesroute.
+Thuisarts ondersteunt algemene stressinformatie, niet de verklaring dat iedere
+reactie op een bericht een aangeleerd trauma-alarm is. Slachtofferhulp ondersteunt
+zelf geen contact zoeken en geen bemiddeling via bekenden bij stalking; dat is
+geen algemeen recept voor noodzakelijke communicatie rond kinderen.
+
+Verwijderd: ‘bijna nooit haast’, de vaste wachttijd tot morgen, de lichamelijke
+verklaring in de hero en de algemene claim dat een kort antwoord helpt. Veiligheid
+staat vóór antwoordadviezen. Het voorbeeld betreft expliciet veilig praktisch
+contact, is fictief en zegt niets over een passende reactie bij stalking. Een
+tweede fictieve scène toont een verschil in een nieuwe relatie zonder diagnose,
+garantie op veiligheid of behandeladvies. Bestaande koppen/ankers blijven intact.
+
+De nieuwe scènes zijn redactionele illustraties, geen uit bronnen overgenomen
+casussen. Raymond wijst een klinische/veiligheidsreviewer aan voor de uitleg en
+antwoordvoorwaarden; dit brononderzoek is geen menselijke goedkeuring.
