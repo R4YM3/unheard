@@ -107,6 +107,18 @@ try {
 
   for (const item of routes) {
     await page.goto(`${origin}${item.route}`, { waitUntil: 'networkidle0' });
+    if (['emotion', 'knowledge', 'therapy', 'tool', 'pattern'].includes(item.id)) {
+      await page.emulateMediaType('screen');
+      for (const width of [390, 1440]) {
+        await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+        await page.screenshot({
+          path: `${outputDirectory}/${item.id}-${width}.jpg`,
+          type: 'jpeg',
+          quality: 80,
+          fullPage: true,
+        });
+      }
+    }
     await page.emulateMediaType('print');
 
     const printState = {
