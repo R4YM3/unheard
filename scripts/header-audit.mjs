@@ -478,6 +478,21 @@ try {
     'B-light: four situations, native disclosure, full print with and without JavaScript.',
   );
 
+  // A consolidated article must remain reachable through its former URL.
+  for (const javascript of [true, false]) {
+    const moved = await browser.newPage();
+    await moved.setJavaScriptEnabled(javascript);
+    await moved.setViewport({ width: javascript ? 1440 : 390, height: 1000 });
+    await moved.goto(`${origin}/nl/begrijp-het/woorden-om-te-ordenen/#neem-het-in-je-eigen-tempo`, {
+      waitUntil: 'networkidle0',
+    });
+    await moved.waitForFunction(() => globalThis.location.pathname === '/nl/begrijp-het/');
+    assert(await moved.$('#neem-het-in-je-eigen-tempo'), 'Transferred section exists');
+    if (javascript) assert.equal(new URL(moved.url()).hash, '#neem-het-in-je-eigen-tempo');
+    assert.equal((await moved.$$('h1')).length, 1);
+    await moved.close();
+  }
+
   /* Both discovery and known-topic routes remain usable without JavaScript. */
   const discoveryRoutes = [
     ['herstel/therapievormen/', 'nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/'],

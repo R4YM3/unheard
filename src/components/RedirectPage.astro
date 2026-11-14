@@ -3,8 +3,9 @@
 interface Props {
   to: string;
   label: string;
+  preserveFragment?: boolean;
 }
-const { to, label } = Astro.props;
+const { to, label, preserveFragment = false } = Astro.props;
 const site = Astro.site ?? new URL('https://r4ym3.github.io');
 const basePath = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -19,6 +20,13 @@ const canonical = new URL(target, site).href;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
+    {
+      preserveFragment && (
+        <script is:inline define:vars={{ target }}>
+          location.replace(target + location.hash);
+        </script>
+      )
+    }
     <meta http-equiv="refresh" content={`0; url=${target}`} />
     <base href={basePath} />
     <link rel="canonical" href={canonical} />

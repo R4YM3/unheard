@@ -5,7 +5,7 @@ locale: nl
 translationKey: begrijp-woorden-ordenen
 slug: begrijp-het/woorden-om-te-ordenen
 status: in_review
-published: true
+published: false
 author: editorial
 publishedAt: 2026-11-12
 updatedAt: 2026-11-14

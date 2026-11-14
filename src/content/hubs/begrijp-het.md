@@ -12,9 +12,6 @@ updatedAt: 2026-11-15
 reviewedAt: null
 cardTitle: 'Begrijp het'
 cardText: 'Uitleg over emotioneel en financieel misbruik, patronen van controle en de begrippen die je misschien tegenkomt.'
-deeper:
-  href: 'nl/begrijp-het/woorden-om-te-ordenen/'
-  label: 'Woorden om te ordenen, niet om te oordelen'
 summary: 'Op deze pagina vind je uitleg over emotioneel en financieel misbruik, over het verschil tussen ruzie en een patroon van controle, en over wat zulke ervaringen met je kunnen doen. De begrippen helpen om iets onder woorden te brengen. Ze zijn geen diagnose en geen oordeel over een ander.'
 heading: 'Er bestaan woorden voor wat je meemaakt.'
 eyebrow: 'Begrijp het'
@@ -52,6 +49,16 @@ reviewNotes:
   - 'Redactie: klopt de volgorde van de artikellisting (emotioneel misbruik, conflict of patroon, wat het met je kan doen)? Zo niet, voeg order-waarden toe aan de artikelen.'
 ---
 
+## Woorden om te ordenen, niet om te oordelen
+
+**Voorbeeldgedachte:** “Ik zoek geen etiket voor de ander. Ik wil begrijpen wat er met mij is gebeurd.”
+
+Je kunt lang hebben gedacht dat je te gevoelig was of iets verkeerd had onthouden.
+Achteraf zie je hoeveel je jezelf aanpaste. Woorden kunnen helpen om die ervaring
+te plaatsen. Je hoeft niet eerst te weten hoe het heet om serieus te nemen wat
+het met je doet. Uitleg gaat hier over gedrag en patronen; een diagnose op afstand
+is daarvoor niet nodig.
+
 ## Waar wil je meer over begrijpen?
 
 Je hoeft een begrip nog niet te kennen om uitleg te vinden. Kies de vraag die aansluit bij wat je probeert te plaatsen:
@@ -67,3 +74,10 @@ Een begrip kan woorden geven aan iets wat je al lang probeert uit te leggen. Kij
 Ga rechtstreeks naar [Begrippen van A tot Z](nl/begrippen/), bijvoorbeeld voor [gaslighting](nl/begrippen/gaslighting/) of [DARVO](nl/begrippen/darvo/). Hieronder vind je ook alle achtergrondartikelen en een selectie patronen.
 
 Zoek je vooral woorden voor jezelf, begin dan bij [Wat voel ik?](nl/wat-voel-ik/). Bij [Wat herken ik?](nl/wat-herken-ik/) kun je beginnen met een concrete situatie. Geen van deze ingangen hoeft eerst.
+
+## Neem het in je eigen tempo
+
+Je hoeft niets in een vaste volgorde te lezen. Eén vraag of een halve pagina mag
+genoeg zijn. Je kunt later terugkomen of stoppen als lezen te veel oproept.
+Zoek je steun bij wat je nu voelt, kijk dan bij [Herstel](nl/herstel/).
+Voel je je onveilig of wil je advies, dan kun je direct naar [Hulp vinden](nl/hulp-vinden/).
