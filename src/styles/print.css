@@ -40,7 +40,7 @@
   /* Navigation and interactive chrome */
   .site-header,
   .section-nav-bar,
-  .page-rail,
+  .article-contents,
   .group-pager,
   .read-progress,
   .site-footer,
@@ -181,10 +181,6 @@
   }
   .print-only {
     display: block !important;
-  }
-  .article-layout--rail {
-    display: block !important;
-    width: auto;
   }
 
   /* Links: show destinations for external sources and phone numbers */

@@ -1,0 +1,26 @@
+---
+/** One optional chapter disclosure; sibling articles belong in contextual links below. */
+interface Props {
+  groups: Array<{ label: string; items: Array<{ href: string; label: string }> }>;
+}
+const chapters = Astro.props.groups.find((group) =>
+  group.items.some((item) => item.href.includes('#')),
+);
+---
+
+{
+  chapters && chapters.items.length >= 3 && (
+    <details class="article-contents">
+      <summary>{chapters.label}</summary>
+      <nav aria-label={chapters.label}>
+        <ul>
+          {chapters.items.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </details>
+  )
+}
