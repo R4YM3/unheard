@@ -92,9 +92,16 @@ Gaslighting raakt de basis waarmee je de wereld ordent: vertrouwen in je eigen w
 
 Dat zijn begrijpelijke reacties op een verwarrende situatie, geen bewijs dat er iets mis is met jou.
 
+## Ook wanneer er meer afstand is
+
+Minder contact of een breuk maakt niet altijd meteen een einde aan de twijfel. Je kunt oude gesprekken blijven reconstrueren, vrienden vragen of je het goed hebt gezien of bang zijn dat een nieuwe relatie hetzelfde zal lopen. Dat betekent niet dat je vastzit in het verleden. Vertrouwen op je eigen waarneming kan tijd nodig hebben om terug te komen.
+
+Lees voor het verschil tussen de vraag aan jezelf en de geruststellingslus [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) en [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/). Blijft er contact nodig, dan kan [Contact na een breuk](nl/herstel/contact-na-een-breuk/) helpen om praktische zaken af te bakenen.
+
 ## Wat kan helpen?
 
-- **Schrijf voor jezelf op wat je hebt gezien en gevoeld**, als dat veilig kan. Niet om de ander te overtuigen, maar om je eigen houvast terug te vinden. Bewaar het [niet op een apparaat dat iemand anders kan inzien](nl/veilig-gebruik/).
+- **Vraag eerst vertrouwelijk advies als je twijfelt over veiligheid.** Je hoeft niets te bewijzen, iemand te overtuigen of een confrontatie uit te lokken. Veilig Thuis kan anoniem met je meedenken.
+- **Schrijf alleen iets op als dat veilig kan:** wat je hebt gezien en gevoeld. Niet om de ander te overtuigen, maar om je eigen houvast terug te vinden. Kijk bij [Veilig gebruik](nl/veilig-gebruik/) wat delen, bewaren of veranderen op een apparaat kan betekenen.
 - **Toets bij iemand die je vertrouwt**, die geen partij is en niet voor jou invult wat je moet doen.
 - **Stop met het debat over de feiten** als dat telkens op hetzelfde uitloopt. Je hoeft niet te winnen om te weten wat je hebt meegemaakt.
 - **Merk je dat je bang bent, of dat je steeds meer wordt gecontroleerd?** Dan gaat veiligheid voor uitleggen. Je kunt gratis en anoniem advies vragen bij Veilig Thuis via 0800-2000, dag en nacht. Bij direct gevaar bel je 112. Meer over hulp vind je op [Hulp vinden](nl/hulp-vinden/).
