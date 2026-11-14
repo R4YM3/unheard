@@ -136,3 +136,12 @@ De screenshots op 961px (compact menu open) en 1121px (volledig menu) zijn
 visueel bekeken: logo en navigatie hebben eigen ruimte. Deze run is van vóór
 de vereenvoudigde herkenningshub/startkeuze in a1e5b41. Die nieuwe presentatie
 wordt afzonderlijk gecontroleerd in run 43650748408.
+
+Run 43650748408 is geslaagd voor de vereenvoudigde hub en startkeuze, inclusief
+axe, print, UX en toetsenbord zonder JavaScript. De volledige mobiele hub op
+390px en de eerste twee A4-pagina's zijn bekeken. De gewone links en drie groepen
+zijn leesbaar. De mobiele screenshot liet wel te veel inleidende tekst vóór de
+eerste keuzes zien. Daarom staat de situatiesectie nu direct na het korte
+antwoord; de uitleg ‘Je hoeft het nog geen naam te geven’ volgt erna. De bestaande
+ankernaam blijft behouden. Deze laatste volgordewijziging is nog niet visueel
+beoordeeld. Safari en een echte screenreader blijven open controles.

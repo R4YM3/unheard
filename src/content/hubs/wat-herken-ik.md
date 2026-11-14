@@ -23,12 +23,6 @@ reviewNotes:
   - 'Codex: toets hoofdmenu, mobiel, toetsenbord en 320px na toevoeging van de gelijkwaardige ingang. Geen bestaande URL gewijzigd.'
 ---
 
-## Je hoeft het nog geen naam te geven
-
-Een situatie kan je raken voordat je weet hoe je die moet uitleggen. Je mag daarbij stilstaan. Je kunt hieronder bij één herkenbaar moment beginnen. De artikelen helpen je kijken naar wat er gebeurt en wat dat met je doet.
-
-Kijk in de artikelen naar de context, wat terugkomt, hoeveel ruimte je hebt en wat het met je doet. Herkenning is geen optelsom. Wil je juist het onderscheid onderzoeken, begin dan bij [conflict of een patroon van controle](nl/begrijp-het/conflict-of-patroon/).
-
 ## Welke situatie komt je bekend voor?
 
 Dit zijn voorbeelden van momenten die je kunnen bezighouden. Je hoeft ze niet
@@ -60,6 +54,12 @@ Je kunt ook rechtstreeks naar [gaslighting](nl/begrippen/gaslighting/),
 [Begrijp het](nl/begrijp-het/) laat de hoofdonderwerpen zien. In
 [Begrippen van A tot Z](nl/begrippen/) vind je alle beschikbare begrippen,
 ook wanneer jouw situatie niet tussen de voorbeelden hierboven staat.
+
+## Je hoeft het nog geen naam te geven
+
+Een situatie kan je raken voordat je weet hoe je die moet uitleggen. Je mag daarbij stilstaan. Eén herkenbaar moment kan een begin zijn. De artikelen helpen je kijken naar wat er gebeurt en wat dat met je doet.
+
+Kijk in de artikelen naar de context, wat terugkomt, hoeveel ruimte je hebt en wat het met je doet. Herkenning is geen optelsom. Wil je juist het onderscheid onderzoeken, begin dan bij [conflict of een patroon van controle](nl/begrijp-het/conflict-of-patroon/).
 
 ## Beginnen kan ook anders
 
