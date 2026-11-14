@@ -16,6 +16,10 @@ cardTitle: Beeldende therapie
 cardText: 'Onderzoekt ervaringen via beeldende materialen en een concreet werkstuk, als er nog geen woorden zijn.'
 focus: 'Werken met beeldende materialen en een concreet werkstuk, om ervaringen en gevoelens te onderzoeken die moeilijk in woorden te vatten zijn.'
 summary: 'Beeldende therapie is een vorm van vaktherapie. Je werkt met beeldende materialen en maakt iets concreets, en onderzoekt samen met de therapeut wat dat zegt over wat je ervaart. Het kan helpen als woorden nog ontbreken. Of het past, bespreek je met een bevoegde professional.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet dat er iets zit, maar ik krijg er geen woorden bij.'
+  feeling: 'Als praten niet meteen lukt, kan het helpend zijn om eerst te onderzoeken wat je merkt. Dat is geen test en geen bewijs dat één vorm van therapie bij je past.'
 professionalQuestions:
   - 'Ben je opgeleid als beeldend therapeut, en bij welke beroepsvereniging of welk register ben je aangesloten?'
   - 'Waarom denk je dat beeldende therapie past bij wat ik ervaar, en welke andere mogelijkheden zijn er?'
@@ -28,7 +32,7 @@ founder:
     - '[OPRICHTER REVIEW NODIG] Wat ik daarin ontdekte, beschrijf ik later in eigen woorden.'
     - 'Dit is mijn persoonlijke ervaring. Het zegt niet of beeldende therapie voor jou passend is.'
   needsReview: true
-related: [therapievormen, herstel-leren-voelen, identiteit, mijn-verhaal]
+related: [therapievormen, herstel-leren-voelen, identiteit, het-vertellen, kaart-hulpverlener]
 sources:
   - label: 'Vaktherapie Nederland — Beeldende therapie'
     url: 'https://vaktherapie.nl/beeldende-therapie'
@@ -64,7 +68,7 @@ De opzet verschilt per therapeut en per praktijk of instelling. In grote lijnen 
 - samen kijken naar wat je hebt gemaakt en hoe het maken ging: wat viel je op, wat riep het op?
 - afspraken over hoe vaak je elkaar ziet en hoe lang het ongeveer duurt.
 
-Je hoeft daarvoor niet goed te kunnen tekenen of 'creatief' te zijn. Het gaat om het proces, niet om het resultaat. Het kan wel onwennig voelen, zeker als je gewend bent om dingen met je hoofd op te lossen. Dat mag je benoemen.
+Het kan onwennig voelen, zeker als je gewend bent om dingen met je hoofd op te lossen. Dat mag je benoemen. Vraag vooraf hoe een therapeut aansluit bij wat je prettig vindt en wat je doet als werken met materiaal niet goed voelt.
 
 Het kan gebeuren dat het maken van iets meer oproept dan je verwacht. Bespreek met je therapeut wat je dan kunt doen.
 
@@ -84,4 +88,4 @@ Wil je weten wat bekend is over beeldende therapie bij jouw klachten? Vraag het 
 
 Daar is geen test voor, en deze site geeft geen behandeladvies. Misschien herken je dat je moeilijk kunt zeggen wat je voelt of wilt, of dat je [jezelf een beetje kwijt bent geraakt](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/). Dat zijn goede onderwerpen voor een gesprek, maar geen automatische reden voor beeldende therapie.
 
-Begin bij je huisarts of de praktijkondersteuner (POH-GGZ). Vertel wat je ervaart en zeg het gerust als praten alleen voor jou niet genoeg voelt. Wie met je meedenkt, kan dan ook ervaringsgerichte vormen meenemen.
+Begin bij je huisarts of de praktijkondersteuner (POH-GGZ). Vertel wat je ervaart en zeg het gerust als praten alleen voor jou niet genoeg voelt. Wie met je meedenkt, kan dan ook ervaringsgerichte vormen meenemen. Op [Hoe vertel ik het aan iemand?](nl/herstel/hoe-vertel-ik-het/) staan zinnen om klein te beginnen; de [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) helpt je je vraag te ordenen.

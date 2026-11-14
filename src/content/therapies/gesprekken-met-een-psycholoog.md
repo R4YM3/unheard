@@ -16,6 +16,10 @@ cardTitle: Psycholoog
 cardText: 'Professionele psychologische ondersteuning, afhankelijk van je hulpvraag en de behandelaar.'
 focus: 'Professionele psychologische ondersteuning bij wat je ervaart. De aanpak hangt af van je hulpvraag, de behandelaar en de vorm van zorg.'
 summary: 'Gesprekken met een psycholoog zijn geen vaste methode. Een psycholoog kijkt met je naar wat je ervaart en kan verschillende behandelvormen gebruiken. Je komt er vaak via je huisarts of de praktijkondersteuner (POH-GGZ). In het BIG-register kun je zien of iemand als zorgverlener geregistreerd staat.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik wil erover praten, maar ik weet niet waar ik moet beginnen.'
+  feeling: 'Een eerste gesprek hoeft niet je hele verhaal te bevatten. Eén ervaring, één gevoel of één vraag kan genoeg zijn om te beginnen.'
 professionalQuestions:
   - 'Sta je in het BIG-register, en ben je aangesloten bij een beroepsvereniging zoals het NIP?'
   - 'Met welke aanpak of behandelvorm werk je, en waarom past die bij mijn hulpvraag?'
@@ -29,7 +33,7 @@ founder:
     - '[OPRICHTER REVIEW NODIG] Hier kan ik later beschrijven wat het voor mij betekende om met een psycholoog te praten.'
     - 'Dit is mijn persoonlijke ervaring. Het zegt niet welke hulp voor jou passend is.'
   needsReview: true
-related: [therapievormen, hulp-vinden, kaart-hulpverlener, pijn-na-inzicht]
+related: [therapievormen, hulp-vinden, kaart-hulpverlener, pijn-na-inzicht, het-vertellen]
 sources:
   - label: 'Thuisarts — Ik heb psychische klachten'
     url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'
@@ -88,6 +92,6 @@ Vraag je psycholoog welke aanpak die gebruikt en wat daarover bekend is bij jouw
 
 Daar is geen test voor, en deze site geeft geen behandeladvies. Merk je dat wat je voelt veel invloed heeft op je slaap, je werk, je contact met anderen of je dagelijks leven, dan is dat een goede reden om met je huisarts te praten.
 
-Bereid je gesprek voor met de [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) als je dat prettig vindt. Schrijf op wat je wilt vertellen, ook als je het nog niet precies kunt verwoorden.
+Bereid je gesprek voor met de [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) als je dat prettig vindt. Schrijf op wat je wilt vertellen, ook als je het nog niet precies kunt verwoorden. Op [Hoe vertel ik het aan iemand?](nl/herstel/hoe-vertel-ik-het/) staan woorden voor een eerste zin.
 
 Heb je gedachten aan zelfdoding, bel dan gratis [113](tel:113) of chat via 113.nl.
