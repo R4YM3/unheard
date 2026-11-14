@@ -83,7 +83,7 @@ Vragen die kunnen helpen:
 - het gevoel dat je geen keus hebt, ook als die er formeel wel is;
 - angst voor de gevolgen van een breuk: armoede, dakloosheid, de kinderen minder zien;
 - schaamte over hoe afhankelijk je bent geworden;
-- je eigen kunnen onderschatten, zie [zelftwijfel](nl/begrippen/zelftwijfel/);
+- je eigen kunnen onderschatten, zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/);
 - blijven, omdat de band met de ander sterk is, ondanks alles. Zie [traumabinding](nl/begrippen/traumabinding/).
 
 ## Wat kan helpen?

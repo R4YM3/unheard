@@ -35,7 +35,7 @@ Kies de vraag die nu bij je past. Wil je woorden geven aan twijfel, schuld of sp
 
 - **[Wat is emotioneel misbruik?](nl/begrijp-het/emotioneel-misbruik/)** Een uitleg van het begrip, hoe het eruit kan zien en waarom het vaak lang onzichtbaar blijft. Ook voor mannen, die het soms niet herkennen omdat het niet past bij het beeld dat ze ervan hebben.
 - **[Ongezond conflict of een patroon?](nl/begrijp-het/conflict-of-patroon/)** Iedere relatie kent ruzie. Wat is het verschil tussen een pijnlijk maar gelijkwaardig conflict en een herhaald patroon van controle?
-- **[Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).** Over [zelftwijfel](nl/begrippen/zelftwijfel/), schuld, waakzaamheid, uitputting en schaamte, en over de grenzen van populaire labels.
+- **[Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).** Over [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), schuld, waakzaamheid, uitputting en schaamte, en over de grenzen van populaire labels.
 - **[Financieel misbruik](nl/begrijp-het/financieel-misbruik/).** Een eigen hoofdthema, omdat controle over geld, schulden en documenten ingrijpende gevolgen kan hebben, ook lang na een relatie.
 
 Zoek je steun bij wat je nu voelt of bij het opnieuw opbouwen van vertrouwen? Bij [Herstel](nl/herstel/) kun je lezen over wat daarbij kan helpen.

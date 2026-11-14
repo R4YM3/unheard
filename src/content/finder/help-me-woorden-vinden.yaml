@@ -168,7 +168,7 @@ routes:
     title: 'Twijfel aan jezelf'
     recognition: 'Als je ervaring vaak wordt tegengesproken, kun je gaan twijfelen aan je eigen geheugen. Dat zegt iets over wat er gebeurt, niet over je verstand.'
     feelings: [zelftwijfel]
-    patterns: [gaslighting, begrip-zelftwijfel, framing]
+    patterns: [gaslighting, framing]
     reflections:
       - 'Wanneer vertrouw je je eigen herinnering wel, en wanneer niet?'
       - 'Wat zou je opschrijven als niemand het hoefde te lezen?'

@@ -80,7 +80,7 @@ Deze pagina beschrijft gevolgen die mensen vaak noemen. Het is **geen checklist*
 
 ### Twijfel aan jezelf
 
-Als je lange tijd te horen krijgt dat je het verkeerd ziet, verkeerd onthoudt of overdrijft, kan het [vertrouwen in je eigen waarneming slijten](nl/begrippen/zelftwijfel/). Je gaat gesprekken in je hoofd overdoen en vraagt je af of het misschien toch aan jou lag.
+Als je lange tijd te horen krijgt dat je het verkeerd ziet, verkeerd onthoudt of overdrijft, kan het [vertrouwen in je eigen waarneming slijten](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Je gaat gesprekken in je hoofd overdoen en vraagt je af of het misschien toch aan jou lag.
 
 ### Schuld en verantwoordelijkheid
 

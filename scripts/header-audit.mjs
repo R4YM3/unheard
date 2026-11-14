@@ -480,6 +480,7 @@ try {
 
   // Consolidated introductions retain their old URLs and section links.
   for (const [oldRoute, targetRoute, anchor] of [
+    ['begrippen/zelftwijfel/', 'wat-voel-ik/ik-twijfel-aan-mezelf/', 'wat-is-zelftwijfel'],
     ['begrijp-het/woorden-om-te-ordenen/', 'begrijp-het/', 'neem-het-in-je-eigen-tempo'],
     ['herstel/wat-herstel-kan-betekenen/', 'herstel/', 'van-begrijpen-naar-voelen'],
   ]) {
@@ -496,6 +497,16 @@ try {
       assert(await moved.$(`#${anchor}`), 'Transferred section exists');
       if (javascript) assert.equal(new URL(moved.url()).hash, `#${anchor}`);
       assert.equal((await moved.$$('h1')).length, 1);
+      if (oldRoute === 'begrippen/zelftwijfel/') {
+        await moved.goto(`${origin}/nl/begrippen/`, { waitUntil: 'networkidle0' });
+        const links = await moved.$$(`.glossary-item dt a[href="nl/${targetRoute}"]`);
+        assert.equal(links.length, 1, 'A–Z retains exactly one direct self-doubt entry');
+        await Promise.all([
+          moved.waitForNavigation({ waitUntil: 'networkidle0' }),
+          links[0].click(),
+        ]);
+        assert.equal(new URL(moved.url()).pathname, `/nl/${targetRoute}`);
+      }
       await moved.close();
     }
   }

@@ -83,7 +83,7 @@ Meer over het verschil tussen conflict en patroon in het algemeen lees je in [Co
 
 ## Wat het met je kan doen
 
-Als ruzies over geld steeds op dezelfde manier eindigen, ga je er misschien vanuit dat het aan jou ligt. Je stelt minder vragen, koopt minder voor jezelf en [twijfelt aan je eigen inschatting](nl/begrippen/zelftwijfel/). Voor mannen kan het extra lastig zijn om te zeggen dat ze zich in een gesprek over geld klein of bang voelen. Dat past niet bij wat er vaak van mannen verwacht wordt. Toch is het een begrijpelijke reactie op een situatie waarin je weinig ruimte ervaart.
+Als ruzies over geld steeds op dezelfde manier eindigen, ga je er misschien vanuit dat het aan jou ligt. Je stelt minder vragen, koopt minder voor jezelf en [twijfelt aan je eigen inschatting](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Voor mannen kan het extra lastig zijn om te zeggen dat ze zich in een gesprek over geld klein of bang voelen. Dat past niet bij wat er vaak van mannen verwacht wordt. Toch is het een begrijpelijke reactie op een situatie waarin je weinig ruimte ervaart.
 
 ## Wat kan helpen?
 

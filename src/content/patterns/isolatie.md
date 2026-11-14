@@ -85,7 +85,7 @@ Vragen die helpen om te ordenen:
 ## Impact op de ontvanger
 
 - eenzaamheid, ook als je samen bent;
-- minder mensen om je ervaringen aan te toetsen, waardoor [twijfel aan jezelf](nl/begrippen/zelftwijfel/) kan groeien;
+- minder mensen om je ervaringen aan te toetsen, waardoor [twijfel aan jezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) kan groeien;
 - [het gevoel dat je jezelf kwijt bent](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/);
 - schaamte om na lange tijd weer contact op te nemen;
 - meer afhankelijkheid van de ander, praktisch en emotioneel. Zie [macht en afhankelijkheid](nl/begrippen/macht-en-afhankelijkheid/).

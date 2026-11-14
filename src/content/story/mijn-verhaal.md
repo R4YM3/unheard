@@ -184,7 +184,7 @@ timeline:
       title: Een kleine vraag werd steeds moeilijker.
       theme: emotional
       lenses: []
-      description: Ik [twijfelde steeds meer aan mezelf](nl/begrippen/zelftwijfel/). Als ik iets voor mezelf wilde, kon ik dagen nadenken over [hoe ik het moest brengen](nl/herstel/hoe-vertel-ik-het/). Ik werkte harder en stopte mijn geld in het gezin en het huis. Daarmee verdoofde ik ook mijn pijn.
+      description: Ik [twijfelde steeds meer aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Als ik iets voor mezelf wilde, kon ik dagen nadenken over [hoe ik het moest brengen](nl/herstel/hoe-vertel-ik-het/). Ik werkte harder en stopte mijn geld in het gezin en het huis. Daarmee verdoofde ik ook mijn pijn.
       between:
         - title: Een paar tientjes durven vragen
           text: In het begin ging het om grotere bedragen voor spullen in huis. Later vond ik het al moeilijk om iets van een paar tientjes ter sprake te brengen. Mijn vragen werden afgewezen, genegeerd of beantwoord met zwijgen. Langzaam maar zeker durfde ik niet meer te vragen.

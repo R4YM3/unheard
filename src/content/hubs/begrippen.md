@@ -24,7 +24,7 @@ reviewNotes:
 
 ## Hoe gebruik je deze index?
 
-Je kunt per letter bladeren of, als JavaScript aanstaat, typen om te filteren. Elk begrip linkt naar een pagina met meer uitleg. In de index staan ook woorden voor mogelijke gevolgen, zoals [zelftwijfel](nl/begrippen/zelftwijfel/) of schuldgevoel. Die verwijzen naar de pagina’s bij [Wat voel ik?](nl/wat-voel-ik/).
+Je kunt per letter bladeren of, als JavaScript aanstaat, typen om te filteren. Elk begrip linkt naar een pagina met meer uitleg. In de index staan ook woorden voor mogelijke gevolgen, zoals [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) of schuldgevoel. Die verwijzen naar de pagina’s bij [Wat voel ik?](nl/wat-voel-ik/).
 
 ## Een woord is geen oordeel
 

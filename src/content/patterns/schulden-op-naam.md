@@ -101,7 +101,7 @@ Iets op één naam zetten is niet altijd verkeerd: stellen doen dat vaak om prak
 - een BKR-registratie die het moeilijk maakt om een huis te huren of te kopen;
 - schaamte, vooral als je het gevoel hebt dat je 'zo dom' bent geweest om te tekenen;
 - vastzitten aan de ander, ook na een breuk;
-- verlies van vertrouwen, in de ander en in jezelf. Zie [zelftwijfel](nl/begrippen/zelftwijfel/).
+- verlies van vertrouwen, in de ander en in jezelf. Zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
 Tekenen onder druk, of omdat je de ander vertrouwde, is niet dom. Het is precies hoe dit soort situaties werkt.
 

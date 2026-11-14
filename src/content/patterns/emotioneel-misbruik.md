@@ -99,7 +99,7 @@ Het artikel [Ongezond conflict of een patroon van controle?](nl/begrijp-het/conf
 
 Het LKAH noemt als mogelijke signalen bij wie psychische mishandeling meemaakt: voortdurend alert zijn en op eieren lopen, een laag zelfbeeld, twijfel aan de eigen waarneming, angst, somberheid of spanning, contact met anderen vermijden, en afhankelijk of onderdanig gedrag. Bij emotionele verwaarlozing: je alleen voelen binnen de relatie, je voortdurend aanpassen en je eigen identiteit verliezen.
 
-Op deze site lees je meer over [zelftwijfel](nl/begrippen/zelftwijfel/), [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/), [emotionele uitputting](nl/begrippen/emotionele-uitputting/) en [het gevoel dat je jezelf niet meer herkent](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/).
+Op deze site lees je meer over [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/), [emotionele uitputting](nl/begrippen/emotionele-uitputting/) en [het gevoel dat je jezelf niet meer herkent](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/).
 
 Deze signalen kunnen ook andere oorzaken hebben. Herken je ze, dan zegt dat iets over hoe het met je gaat, niet automatisch iets over wat de ander heeft gedaan.
 

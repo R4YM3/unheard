@@ -101,7 +101,7 @@ Over het gevoel overal verantwoordelijk voor te zijn gaat [Ik voel me overal sch
 
 ## Waarom zag ik het niet eerder?
 
-Van binnenuit mis je vaak het perspectief dat anderen wel hebben. Zeker als je [minder contact hebt met vrienden of familie](nl/begrippen/isolatie/), is er niemand die zegt: dit is niet normaal. En als je eigen waarneming steeds ter discussie staat, ga je ook [aan je eigen twijfel twijfelen](nl/begrippen/zelftwijfel/).
+Van binnenuit mis je vaak het perspectief dat anderen wel hebben. Zeker als je [minder contact hebt met vrienden of familie](nl/begrippen/isolatie/), is er niemand die zegt: dit is niet normaal. En als je eigen waarneming steeds ter discussie staat, ga je ook [aan je eigen twijfel twijfelen](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
 Dat je het niet eerder zag, betekent niet dat je het had moeten zien. Het betekent dat het patroon deed wat zulke patronen doen: het maakte zichzelf moeilijk zichtbaar.
 

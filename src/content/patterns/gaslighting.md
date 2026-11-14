@@ -10,15 +10,7 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related:
-  [
-    begrip-zelftwijfel,
-    darvo,
-    psychische-manipulatie,
-    zelftwijfel,
-    herstel-zelfvertrouwen,
-    het-vertellen,
-  ]
+related: [darvo, psychische-manipulatie, zelftwijfel, herstel-zelfvertrouwen, het-vertellen]
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Misschien klopt er iets niet met mij.'
@@ -96,7 +88,7 @@ Ook als je dit herkent, kun je van buitenaf niet vaststellen wat iemand bedoelt.
 
 Gaslighting raakt de basis waarmee je de wereld ordent: vertrouwen in je eigen waarneming. Mensen die het herkennen, beschrijven bijvoorbeeld:
 
-- [zelftwijfel](nl/begrippen/zelftwijfel/): steeds controleren of je het wel goed hebt;
+- [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/): steeds controleren of je het wel goed hebt;
 - moeite met beslissingen, omdat je je eigen oordeel niet meer vertrouwt;
 - schaamte, of het gevoel dat je 'te veel' bent;
 - terugtrekken uit gesprekken, omdat elke poging uitloopt op een discussie over jouw geheugen;

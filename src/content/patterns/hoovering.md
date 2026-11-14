@@ -87,7 +87,7 @@ Bij gezamenlijke kinderen is contact vaak noodzakelijk. Dan gaat het er niet om 
 
 Steeds weer teruggetrokken worden kan uitputtend zijn. Mensen beschrijven onder meer:
 
-- [twijfel aan je eigen besluit](nl/begrippen/zelftwijfel/), ook als je goede redenen had;
+- [twijfel aan je eigen besluit](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), ook als je goede redenen had;
 - [rouw en verlangen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/) die elke keer opnieuw worden opengebroken;
 - [schuldgevoel als je niet reageert](nl/wat-voel-ik/ik-voel-me-schuldig/), zeker als er een 'crisis' wordt gemeld;
 - schaamte tegenover je omgeving als je toch weer contact hebt gehad;

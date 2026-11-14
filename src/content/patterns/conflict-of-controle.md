@@ -102,7 +102,7 @@ Deze tabel is een hulpmiddel om na te denken, geen beslisboom. Relaties zijn ing
 
 ## Impact op de ontvanger
 
-Zowel een langdurig ongezond conflict als een patroon van controle kan je uitputten. Bij controle komen daar vaak bij: angst, je eigen oordeel niet meer vertrouwen, het gevoel dat je jezelf kwijt bent, en schaamte. Zie [zelftwijfel](nl/begrippen/zelftwijfel/), [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/) en [emotionele uitputting](nl/begrippen/emotionele-uitputting/).
+Zowel een langdurig ongezond conflict als een patroon van controle kan je uitputten. Bij controle komen daar vaak bij: angst, je eigen oordeel niet meer vertrouwen, het gevoel dat je jezelf kwijt bent, en schaamte. Zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/) en [emotionele uitputting](nl/begrippen/emotionele-uitputting/).
 
 ## Wat kan helpen?
 
