@@ -49,8 +49,15 @@ axe en deze steekproef vervangen die niet.
 
 ## Afbakening
 
-Deze PR wijzigt geen artikeltekst, classificatie, URL, canonical of indexering.
+Deze PR wijzigt geen inhoudelijke uitleg over misbruik, classificatie, URL, canonical of indexering. De toegankelijkheidspagina krijgt wel een correctie van de testverantwoording.
 De volledige contentmatrix en clusterkeuzes staan in #109. Pijlers krijgen later
 contextafhankelijke ontdekkingsroutes, voortbouwend op StartChooser en de bestaande
 woordenvinder. De naam 'Verder ontdekken' en de rustige selectie van vervolgitems
 worden in diezelfde navigatieronde meegenomen.
+
+## Testverantwoording op de site
+
+De toegankelijkheidspagina zei dat handmatige schermlezertests al worden uitgevoerd.
+Dat is voor de huidige revisie niet aangetoond. De tekst benoemt nu afzonderlijk
+automatische controles, visuele steekproeven en de nog open volledige handmatige
+schermlezer-, zoom- en Safari-printcontrole. Geen claim van volledige conformiteit.
