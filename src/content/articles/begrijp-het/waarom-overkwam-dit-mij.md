@@ -16,8 +16,8 @@ readerMoment:
   feeling: 'Dat je het niet meteen herkende zegt niet dat er iets mis is met jou; patronen kunnen geleidelijk je ruimte en vertrouwen kleiner maken.'
 order: 35
 cardTitle: 'Waarom overkwam dit mij?'
-cardText: 'Over de vraag die bijna iedereen achteraf stelt, en waarom het antwoord niet bij jouw tekortkoming ligt.'
-summary: 'Bijna iedereen vraagt zich achteraf af waarom het juist hem of haar overkwam, en waarom het zo lang duurde voordat het zichtbaar werd. Controle kan geleidelijk ontstaan. Hoop, afhankelijkheid en zorgen over veiligheid kunnen loskomen moeilijk maken. Dat zegt iets over hoe zulke patronen werken, niet over wat er mis is met jou.'
+cardText: 'Over zelfverwijt achteraf, wat je in de relatie hield en waarom vertrouwen geen tekortkoming is.'
+summary: 'Waarom overkwam dit mij, en waarom zag ik het niet eerder? Die vragen kunnen hard aankomen. Controle kan geleidelijk ontstaan. Hoop, afhankelijkheid en zorgen over veiligheid kunnen loskomen moeilijk maken. Dat je vertrouwde of bleef hopen, maakt jou niet verantwoordelijk voor het gedrag van de ander.'
 related: [schuldgevoel, traumabinding, dwingende-controle, herstel-erkenning, mannen-in-cijfers]
 sources:
   - label: 'Dwingende controle verwoest levens — signalen in een relatie'
@@ -63,19 +63,19 @@ reviewNotes:
   - 'Overweeg een link vanaf Mijn verhaal en vanaf "Ik voel me overal schuldig over" zodra de pagina is goedgekeurd.'
 ---
 
-## Een vraag die bijna iedereen stelt
+## Als je achteraf naar jezelf wijst
 
-Waarom ik? Waarom heb ik het niet eerder gezien? Waarom ben ik gebleven? Veel mensen stellen zich die vragen achteraf, soms jaren lang. Vaak klinkt er een verwijt in door: ik had beter moeten weten, ik was te goed van vertrouwen, het lag aan mij.
+Waarom ik? Waarom heb ik het niet eerder gezien? Waarom ben ik gebleven? Als je terugkijkt, kunnen die vragen blijven terugkomen. Soms klinkt er een verwijt in door: ik had beter moeten weten, ik was te goed van vertrouwen, het lag aan mij.
 
 Het is begrijpelijk dat je zo naar jezelf kijkt. Toch helpt het om de vraag om te draaien. Niet: wat is er mis met mij? Maar: hoe werkt zo'n patroon, dat het zo lang onzichtbaar kon blijven?
 
-## Het begint zelden als iets wat je zou herkennen
+## Als de verandering stap voor stap gaat
 
-[Patronen van controle](nl/begrippen/dwingende-controle/) beginnen meestal klein. Een opmerking over met wie je omgaat. Een keer meekijken in je telefoon. Een ruzie die eindigt met jouw excuses. Los van elkaar lijken het gewone dingen die in elke relatie kunnen gebeuren.
+[Patronen van controle](nl/begrippen/dwingende-controle/) kunnen geleidelijk ontstaan. Een opmerking over met wie je omgaat. Meekijken in je telefoon. Een ruzie die eindigt met jouw excuses. Je zoekt voor ieder moment een verklaring, terwijl je nog niet ziet wat die momenten met elkaar verbindt.
 
-Veilig Thuis beschrijft hoe de invloed op je persoonlijke ruimte en beslissingen [steeds erger](https://www.veiligthuis.nl/nl/dwingendecontrole) kan worden, en hoe je je steeds meer afgezonderd kunt voelen van vrienden en familie. Wat geleidelijk verandert, valt van binnenuit nauwelijks op. Elke stap is maar een klein beetje verder dan de vorige, en je went aan wat gisteren nog vreemd voelde.
+Veilig Thuis beschrijft hoe de invloed op je persoonlijke ruimte en beslissingen [steeds erger](https://www.veiligthuis.nl/nl/dwingendecontrole) kan worden, en hoe je je steeds meer afgezonderd kunt voelen van vrienden en familie. Bij geleidelijke verandering kun je gaan wennen aan iets wat je eerder niet prettig vond. Je past je aan om spanning te voorkomen en merkt pas later hoeveel ruimte je hebt ingeleverd.
 
-Dat is ook waarom het van buitenaf vaak pas zichtbaar wordt als je terugkijkt. Achteraf zie je het hele patroon. Middenin zag je losse momenten.
+Achteraf kun je verbanden zien die je toen niet zag. Dat betekent niet dat je nu elke herinnering hoeft te kunnen verklaren.
 
 ## Waarom loskomen zo moeilijk kan zijn
 
@@ -101,9 +101,9 @@ Over het gevoel overal verantwoordelijk voor te zijn gaat [Ik voel me overal sch
 
 ## Waarom zag ik het niet eerder?
 
-Van binnenuit mis je vaak het perspectief dat anderen wel hebben. Zeker als je [minder contact hebt met vrienden of familie](nl/begrippen/isolatie/), is er niemand die zegt: dit is niet normaal. En als je eigen waarneming steeds ter discussie staat, ga je ook [aan je eigen twijfel twijfelen](nl/begrippen/zelftwijfel/).
+Als je [minder contact hebt met vrienden of familie](nl/begrippen/isolatie/), zijn er minder gelegenheden om te vertellen wat er gebeurt en te horen hoe een ander ernaar kijkt. Ook mensen om je heen zien niet alles. En als je eigen waarneming steeds ter discussie staat, kun je ook [aan je eigen twijfel gaan twijfelen](nl/begrippen/zelftwijfel/).
 
-Dat je het niet eerder zag, betekent niet dat je het had moeten zien. Het betekent dat het patroon deed wat zulke patronen doen: het maakte zichzelf moeilijk zichtbaar.
+Dat je het nu anders ziet, betekent niet dat je toen hetzelfde overzicht had. Je mag nieuwe woorden vinden voor wat je meemaakte zonder jezelf te verwijten dat die woorden er eerder niet waren.
 
 ## Ook als man
 
@@ -121,7 +121,7 @@ Misschien heb je juist wel verteld wat er gebeurde en om hulp gevraagd. Toch kan
 
 Onderzoek naar hulp zoeken door mannen beschrijft zowel steunende als niet-passende professionele reacties. Het gaat om ervaringen uit verschillende studies, niet om een oordeel over alle hulpverlening. Als een eerste gesprek je niet verder hielp, mag je opnieuw steun vragen, bij dezelfde of een andere professional. Op [Hoe vertel ik het?](nl/herstel/hoe-vertel-ik-het/) vind je woorden om te beginnen; de [voorbereidingskaart](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/) kan helpen om je vragen te ordenen.
 
-Ook de weg naar hulp is niet vanzelfsprekend. Van de mensen die in 2024 psychisch geweld in huiselijke kring meemaakten, sprak ongeveer een derde met een zorgverlener zoals de huisarts of een psycholoog, en [2,5 procent met Veilig Thuis](https://www.cbs.nl/nl-nl/longread/rapportages/2024/prevalentiemonitor-huiselijk-geweld-en-seksueel-grensoverschrijdend-gedrag-2024/2-psychisch-geweld-in-huiselijke-kring). Veel mensen zoeken het dus nooit bij een hulporganisatie, en weten vaak niet dat dat kan.
+Ook de weg naar hulp is niet vanzelfsprekend. Van de mensen die in 2024 psychisch geweld in huiselijke kring meemaakten, sprak ongeveer een derde met een zorgverlener zoals de huisarts of een psycholoog, en [2,5 procent met Veilig Thuis](https://www.cbs.nl/nl-nl/longread/rapportages/2024/prevalentiemonitor-huiselijk-geweld-en-seksueel-grensoverschrijdend-gedrag-2024/2-psychisch-geweld-in-huiselijke-kring). Die cijfers vertellen niet waarom iemand wel of niet sprak, en ook niet of iemand later alsnog hulp zocht.
 
 Misschien kon niemand je toen echt helpen. Dat zegt iets over hoe onzichtbaar dit soort ervaringen kunnen zijn, niet over hoeveel je het waard was om geholpen te worden. En het betekent niet dat het nu ook alleen moet.
 
