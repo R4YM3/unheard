@@ -18,6 +18,30 @@ te houden. Zij is geen zelftest, diagnose, veiligheidsplan of juridisch advies.
 | [Rijksoverheid — wetsvoorstel psychisch geweld](https://www.rijksoverheid.nl/actueel/nieuws/2026/06/29/wetsvoorstel-om-psychisch-geweld-strafbaar-te-maken-nu-in-consultatie) | Alleen actuele beleidscontext. In november 2026 betreft dit een voorstel in consultatie; schrijf niet dat dwingende controle als zodanig al strafbaar is.                                                              |
 | [Het Verdwenen Zelf — dagelijkse werkelijkheid](https://professionals.verdwenenzelf.org/de-dagelijkse-werkelijkheid/)                                                         | Alleen inspiratie voor ervarings- en herkenningsthema's rond aanpassen, zelfbeeld en herstel. Niet als medische, juridische of empirische bron; geen tekst of casus overnemen.                                         |
 
+## Diagnosewoorden in relatieverhalen
+
+Voor woorden als _narcisme_, _covert/verborgen narcisme_, _sociopathie_ en
+_psychopathie_ geldt een extra redactionele grens. De actuele
+[GGZ-zorgstandaard](https://www.ggzstandaarden.nl/zorgstandaarden/persoonlijkheidsstoornissen)
+beschrijft diagnostiek als zorgvuldig, contextueel en professioneel onderzoek; de
+[WHO-omschrijving van ICD-11](https://www.who.int/publications/i/item/9789240077263)
+laat zien dat classificatie niet hetzelfde is als een online etiket. Daarom:
+
+- leg uit dat narcistische persoonlijkheidsstoornis en antisociale
+  persoonlijkheidsstoornis klinische diagnoses zijn; _covert narcisme_ en
+  _sociopaat_ zijn geen zelfstandige officiële diagnoses;
+- benoem mogelijke verklarende factoren alleen algemeen en meerfactorieel;
+  een verklaring is nooit een excuus voor schadelijk gedrag;
+- maak relatiepagina's bruikbaar door gedrag, herhaling en effect te benoemen
+  (bijvoorbeeld verdraaien, intimidatie, uitbuiting, controle of isolatie), niet
+  door de lezer een ex-partner te laten diagnosticeren;
+- corrigeer de vraag wie dit "aantrekt": niemand veroorzaakt het gedrag van
+  een ander. Empathie, loyaliteit, zelfreflectie, hoop, praktische afhankelijkheid,
+  eerdere ervaringen en een klein netwerk kunnen wel verklaren waarom aanpassen
+  of blijven hopen begrijpelijk voelt;
+- houd de route open naar veiligheid, steun en herstel. Adviseer geen confrontatie
+  of vertrek als standaardactie bij mogelijke controle of geweld.
+
 ## Paginafamilies: inhoud, verbinding en doubluregrens
 
 | Familie                                                                  | Elke detailpagina heeft nodig                                                                                                             | Richt doelgericht naar                                                                                       | Bewaak doublures                                                                                                                          |

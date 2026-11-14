@@ -8,9 +8,10 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
-related: [narcisme, psychische-manipulatie, dwingende-controle, emotioneel-misbruik, hulp-vinden]
+related:
+  [narcisme, psychische-manipulatie, dwingende-controle, herstel-zelfvertrouwen, het-vertellen]
 glossary:
   term: 'Sociopathie en psychopathie'
   definition: 'De antisociale persoonlijkheidsstoornis is een diagnose; psychopathie is een onderzoeksbegrip; sociopaat is een woord uit de dagelijkse taal, geen diagnose.'
@@ -43,8 +44,16 @@ sources:
     publisher: 'Thuisarts.nl (NHG)'
     url: 'https://www.thuisarts.nl/persoonlijkheids-stoornis/ik-heb-persoonlijkheids-stoornis'
     checkedAt: 2026-10-20
+  - label: 'Clinical descriptions and diagnostic requirements for ICD-11 mental, behavioural and neurodevelopmental disorders'
+    publisher: 'World Health Organization'
+    url: 'https://www.who.int/publications/i/item/9789240077263'
+    checkedAt: 2026-11-14
 reviewNotes:
   - 'Klinische review nodig: controleer het onderscheid ASPS/psychopathie, de DSM-5-criteria en de passages over ontstaan en samenleven door een psychiater of klinisch psycholoog.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Als ik maar begrijp wat er in de ander omgaat, valt het misschien eindelijk op zijn plek.'
+  feeling: 'Een label kan houvast lijken te geven. Voor jouw veiligheid en herstel zijn de feiten, de herhaling en de gevolgen belangrijker.'
 ---
 
 ## Waarom dit artikel anders is
@@ -75,7 +84,7 @@ Er is geen enkele oorzaak. [Thuisarts](https://www.thuisarts.nl/persoonlijkheids
 
 Een verklaring maakt schadelijk gedrag niet goed. En je hoeft de jeugd van een ander niet te kennen om te zien wat er met jou gebeurde.
 
-## Wat je kunt meemaken
+## Patronen in een relatie: benoem wat er gebeurt
 
 Dit is geen portret van een type mens. Het beschrijft wat je kunt meemaken als grenzen, waarheid of gevolgen structureel niet lijken te tellen. In plaats van te vragen "Is de ander een sociopaat?", kan het helpen om concreet te kijken:
 
@@ -90,6 +99,12 @@ Dit is geen portret van een type mens. Het beschrijft wat je kunt meemaken als g
 **Wat het praktisch kan doen.** Geld raakt uit het zicht. Werk of slaap lijdt onder de spanning. Je trekt je terug uit vriendschappen, omdat uitleggen te ingewikkeld voelt. Delen wat er gebeurde kan onveilig zijn als de ander daarop reageert; dan gaat je veiligheid voor een gesprek.
 
 Eén leugen of één gebroken afspraak maakt iemand dit niet. Het gaat om een herhaald patroon, en om het effect op jou. Dat je iemand vertrouwde, is geen fout. Deze gedragingen zijn ook zonder diagnose ernstig genoeg om serieus te nemen.
+
+## Waarom een verklaring zoeken en aanpassen begrijpelijk is
+
+Als gedrag plots omslaat, feiten worden ontkend of beloften en angst elkaar afwisselen, is het logisch dat je probeert te begrijpen wat er gebeurt. Misschien ga je nog zorgvuldiger formuleren, geef je opnieuw het voordeel van de twijfel of probeer je een volgende escalatie voor te zijn. Empathie, loyaliteit en zelfreflectie zijn geen zwakke eigenschappen. In een onveilige of ongelijke dynamiek kunnen ze wel betekenen dat je langer blijft zoeken naar een verklaring voor gedrag dat niet van jou is.
+
+Ook praktische afhankelijkheid, liefde, gedeelde kinderen, schaamte, isolatie of eerdere ervaringen kunnen ruimte om te kiezen kleiner maken. Niets daarvan veroorzaakt of rechtvaardigt intimidatie, uitbuiting of geweld. Lees meer over [de fawn-respons](nl/begrippen/fawn-respons/), [dwingende controle](nl/begrippen/dwingende-controle/) en hoe je stap voor stap weer op je eigen oordeel kunt leren vertrouwen in [zelfvertrouwen herstellen](nl/herstel/zelfvertrouwen/).
 
 > **Illustratief voorbeeld — verzonnen, geen echt gesprek**
 >
@@ -109,5 +124,6 @@ Eén leugen of één gebroken afspraak maakt iemand dit niet. Het gaat om een he
 ## Wat kan helpen?
 
 - **[Beschrijf gedrag en feiten](nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/)**, ook naar hulpverleners en instanties.
+- **Vertel het zonder eerst een diagnose te hoeven bewijzen.** Deze pagina over [het vertellen](nl/herstel/hoe-vertel-ik-het/) helpt je een begin te maken.
 - **Zoek hulp voor jezelf.** Een psycholoog kan je helpen om te verwerken wat er gebeurd is. Zie [therapie](nl/herstel/therapievormen/).
 - **Ben je slachtoffer van een misdrijf**, zoals fraude of bedreiging? [Slachtofferhulp Nederland](https://www.slachtofferhulp.nl/) biedt gratis ondersteuning.

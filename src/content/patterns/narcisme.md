@@ -8,7 +8,7 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
 related:
   [
@@ -16,7 +16,9 @@ related:
     emotioneel-misbruik,
     psychische-manipulatie,
     gaslighting,
-    hulp-vinden,
+    herstel-zelfvertrouwen,
+    herstel-contact-na-breuk,
+    het-vertellen,
   ]
 glossary:
   term: 'Narcisme'
@@ -55,9 +57,17 @@ sources:
   - label: 'Zorgstandaard Persoonlijkheidsstoornissen'
     publisher: 'Akwa GGZ — GGZ Standaarden'
     url: 'https://www.ggzstandaarden.nl/zorgstandaarden/persoonlijkheidsstoornissen/introductie'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-14
+  - label: 'Clinical descriptions and diagnostic requirements for ICD-11 mental, behavioural and neurodevelopmental disorders'
+    publisher: 'World Health Organization'
+    url: 'https://www.who.int/publications/i/item/9789240077263'
+    checkedAt: 2026-11-14
 reviewNotes:
   - 'Klinische review nodig: controleer de weergave van DSM-5, ICD-11, Pincus & Lukowitsky (2010) en de passages over ontstaan en samenleven door een psychiater of klinisch psycholoog.'
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Moet ik eerst weten welk etiket bij de ander past voordat ik mijn ervaring serieus mag nemen?'
+  feeling: 'Je hoeft geen diagnose te kunnen stellen om herhaald gedrag en het effect daarvan op jou serieus te nemen.'
 ---
 
 ## Waarom dit artikel anders is
@@ -88,7 +98,7 @@ Er is geen enkele oorzaak. [Thuisarts](https://www.thuisarts.nl/persoonlijkheids
 
 Een verklaring is geen excuus voor gedrag dat jou schaadt. En je hoeft niet te weten hoe iemands patronen zijn ontstaan om te erkennen wat het met jou deed.
 
-## Wat je kunt meemaken
+## Patronen in een relatie: kijk naar gedrag, niet naar een etiket
 
 Dit is geen beschrijving van een type mens. Dezelfde dingen kunnen gebeuren bij iemand mét en zonder een diagnose. In plaats van te vragen "Is de ander een narcist?", kan het helpen om naar concreet gedrag te kijken:
 
@@ -96,13 +106,22 @@ Dit is geen beschrijving van een type mens. Dezelfde dingen kunnen gebeuren bij 
 - kritiek op de ander wordt omgedraaid tot een aanval op jou, zie [DARVO](nl/begrippen/darvo/) en [schuldverschuiving](nl/begrippen/schuldverschuiving/);
 - er is weinig ruimte voor jouw gevoelens of behoeften;
 - je wordt afwisselend op een voetstuk gezet en afgewezen, zie [love bombing](nl/begrippen/love-bombing/);
-- je wereld wordt kleiner, zie [isolatie](nl/begrippen/isolatie/) en [dwingende controle](nl/begrippen/dwingende-controle/).
+- je wereld wordt kleiner, zie [isolatie](nl/begrippen/isolatie/) en [dwingende controle](nl/begrippen/dwingende-controle/);
+- contact na een breuk wordt opnieuw intens of verwarrend gemaakt, zie [hoovering](nl/begrippen/hoovering/).
+
+Geen van deze gedragingen bewijst een diagnose. Ze kunnen in verschillende relaties en om verschillende redenen voorkomen. Als ze zich herhalen en jouw ruimte, veiligheid of zelfvertrouwen kleiner maken, verdienen ze wél een naam en steun.
 
 **Wat het met je gevoel kan doen.** Je gaat twijfelen aan je herinnering en aan je recht om iets te vinden. Je voelt je schuldig als je een grens noemt, en leeg als je die inslikt. Je mist de ander en je bent bang voor de ander, soms op dezelfde dag. Schaamte kan groot zijn, zeker als je vond dat je 'sterk' hoorde te zijn. Zie ook [zelftwijfel](nl/begrippen/zelftwijfel/), [schuld](nl/wat-voel-ik/ik-voel-me-schuldig/) en [jezelf niet meer herkennen](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/).
 
 **Wat het praktisch kan doen.** Je slaapt slechter of [staat steeds aan](nl/wat-voel-ik/ik-sta-voortdurend-aan/). Werk en het huishouden kosten meer moeite. Geld, telefoon of afspraken met anderen worden een bron van spanning, zie [financieel misbruik](nl/begrijp-het/financieel-misbruik/). Na een breuk kan het contact doorgaan via kinderen, een huis of een rekening. Dat maakt stoppen niet eenvoudig, en het is geen teken dat je het 'niet meende'.
 
 Eén ruzie of één kwetsende zin is dit niet. Het gaat om wat er steeds terugkomt. Die gevolgen bewijzen geen diagnose van de ander, maar ze zijn wel een reden om je eigen situatie serieus te nemen.
+
+## Waarom je kunt blijven hopen of aanpassen
+
+Er bestaat geen soort mens die dit veroorzaakt of die ervoor kiest om hierin terecht te komen. Eigenschappen die waardevol zijn — empathie, loyaliteit, zelfreflectie en de wens om een relatie goed te houden — kunnen in een ongelijke dynamiek maken dat je langer zoekt naar jouw aandeel, nog een kans geeft of je aanpast om rust te bewaren. Ook liefde, gedeelde kinderen, wonen, geld, eerdere ervaringen, schaamte of een klein geworden netwerk kunnen het moeilijk maken om afstand te nemen.
+
+Dat zijn omstandigheden, geen tekortkomingen. Ze verklaren nooit het controlerende of vernederende gedrag van de ander. Zie voor het aanpassen om spanning te dempen ook [de fawn-respons](nl/begrippen/fawn-respons/) en voor het verweven raken van pijn en hoop [traumabinding](nl/begrippen/traumabinding/). Als je na een breuk nog twijfelt of mist, kan [contact na een breuk](nl/herstel/contact-na-een-breuk/) helpen woorden te vinden voor wat er blijft doorwerken.
 
 > **Illustratief voorbeeld — verzonnen, geen echt gesprek**
 >
@@ -121,5 +140,6 @@ Eén ruzie of één kwetsende zin is dit niet. Het gaat om wat er steeds terugko
 ## Wat kan helpen?
 
 - **Beschrijf gedrag in plaats van diagnoses**, ook naar hulpverleners. "Mijn partner controleerde mijn telefoon en dreigde weg te gaan als ik vrienden zag" is sterker dan "mijn partner is narcistisch".
+- **Vertel het aan iemand die zorgvuldig luistert.** Je hoeft niet met een conclusie te komen om [te vertellen wat er gebeurde](nl/herstel/hoe-vertel-ik-het/).
 - **Zoek hulp voor jezelf.** Een psycholoog kan je helpen om te verwerken wat er gebeurd is, los van wat er met de ander aan de hand is. Zie [therapie](nl/herstel/therapievormen/).
 - **Maak je je zorgen om iemand anders?** Lees [Ik maak me zorgen om iemand](nl/ik-maak-me-zorgen-om-iemand/).
