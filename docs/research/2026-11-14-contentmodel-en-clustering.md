@@ -113,6 +113,36 @@ moeten worden aangepast.
 
 ## Open afrondingsvoorwaarden
 
+### Aanvulling: ontdekken vanuit herkenning
+
+De bestaande `StartChooser.astro`, `src/data/start-chooser.ts`, `WordFinder.astro`
+en hun aanroepen in HomePage en HubPage zijn geïnspecteerd. De startkeuze heeft
+al native uitklappers en directe links, met een aparte hulpmiddelenvariant. De
+algemene variant mengt nu gevoel ('Ik twijfel nog'), relatiecontext ('De relatie
+is voorbij'), onderwerp (geld) en rol (naaste) onder één situatieskop. Dat is de
+concrete groepering die verbeterd moet worden, geen reden voor een nieuwe quiz.
+
+De woordenvinder heeft zes bestaande vragen, optionele verdieping en directe
+leesroutes zonder JavaScript. Behoud die functie, privacy en overslaan. Maak de
+vragenlijst niet automatisch langer. De onderstaande richtingen gebruiken
+bestaande tekst, links, kaarten of native uitklappers waar dat helpt:
+
+| Pijler         | Startbehoefte                                                             | Directe route blijft zichtbaar                   |
+| -------------- | ------------------------------------------------------------------------- | ------------------------------------------------ |
+| Wat voel ik?   | Herkennen wat je bij jezelf merkt                                         | Alle gevoelsonderwerpen, met heldere verschillen |
+| Wat herken ik? | Een gebeurtenis of terugkerende situatie                                  | Thematisch overzicht en begrippen                |
+| Begrijp het    | Uitleg bij gedrag, mechanismen en verbanden                               | Kernonderwerpen, A–Z en zoeken                   |
+| Herstel        | Wat nu nodig is: rust, praktische steun, verbinding of professionele hulp | Alle herstelthema's                              |
+| Hulpmiddelen   | Wat iemand wil doen of voorbereiden                                       | Directe kaarten en hulp vinden                   |
+
+Gevoel, gebeurtenis, relatiecontext, informatievraag en gewenste steun worden
+inhoudelijk onderscheiden, zonder de bezoeker eerst een classificatie te laten
+invullen. Toon een beperkte selectie met een volledige overzichtsroute. Vermijd
+identieke lange kaartlijsten, nieuwe invulvelden en dubbele navigatie. Bij de
+definitieve implementatie worden zowel ervaringstaken als rechtstreeks zoeken
+naar bijvoorbeeld gaslighting en financieel misbruik op desktop en mobiel
+gecontroleerd. Dit is toegevoegd aan de acceptatiecriteria, niet al uitgevoerd.
+
 Volledige tekstvergelijking van alle matrixrijen, definitieve clusterbesluiten,
 inhoudsoverdracht waar nodig, implementatie van hubs en artikellay-out,
 route/SEO-controle, browser- en accessibilityvalidatie en de bestaande menselijke
