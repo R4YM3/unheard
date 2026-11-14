@@ -42,7 +42,16 @@ const routes = [
   {
     id: 'emotion-hub',
     route: '/nl/wat-voel-ik/',
-    required: ['Waar kan ik beginnen?', 'Hoe gevoelens elkaar kunnen opvolgen.'],
+    required: [
+      'Wat herken je bij jezelf?',
+      'Zoek je een situatie of een begrip?',
+      'Help me woorden vinden',
+    ],
+  },
+  {
+    id: 'understanding-hub',
+    route: '/nl/begrijp-het/',
+    required: ['Waar wil je meer over begrijpen?', 'Ken je het onderwerp al?'],
   },
   { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
   { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
@@ -125,6 +134,8 @@ try {
       [
         'recognition-hub',
         'recovery-hub',
+        'emotion-hub',
+        'understanding-hub',
         'emotion',
         'knowledge',
         'therapy',

@@ -155,3 +155,25 @@ vragenlijst. Financieel herstel is ook rechtstreeks vanuit deze pijler bereikbaa
 met behoud van de bestaande financiële URL. Therapie en hulp blijven direct
 beschikbaar. De nieuwe herstelintro moet nog visueel op mobiel en desktop worden
 gecontroleerd; de wijziging is niet gedekt door oudere screenshots van de hub.
+
+## Ontdekken vanuit gevoel en uitleg — 15 november
+
+Wat voel ik behoudt alle negen zelfstandige artikelingangen en de bestaande
+woordenvinder. De extra gevoelenstijdlijn herhaalde dezelfde negen links en kon
+ondanks toelichting een vaste volgorde suggereren. Deze is op de hub verwijderd,
+evenals de algemene startkiezer die relatiecontext en behoeften opnieuw mengde.
+Het oude tijdlijnanker blijft bij de korte uitleg dat gevoelens naast elkaar
+kunnen bestaan. De persoonlijke tijdlijn en tijdlijnen in artikelen blijven intact.
+
+De intro helpt nu kiezen tussen twijfel/bevestiging en gemis/pijn na inzicht;
+een bezoeker hoeft geen classificatie te maken. Situaties en bekende begrippen
+hebben expliciete alternatieve links. Begrijp het gebruikt drie korte vraaggroepen
+met bestaande kernartikelen, plus rechtstreekse toegang tot A–Z en alle artikelen.
+Geen nieuwe vragenlijst, kaartcomponent, URL of afhankelijkheid van JavaScript.
+
+De printaudit controleert de nieuwe inhoud en legt beide hubs op 390 en 1440px
+vast. Nieuwe browserbeelden moeten na deze commit nog worden beoordeeld.
+De voorafgaande herkenningshub-volgorde is visueel op 390px bekeken uit succesvolle
+CI-run 43651389538: concrete situaties volgen nu direct op de korte samenvatting;
+de algemene uitleg staat later. Dit is een steekproef, geen Safari- of
+screenreadercontrole.
