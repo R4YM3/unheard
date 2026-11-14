@@ -146,6 +146,8 @@ Op korte termijn kan het frustreren. Je verwijt jezelf dat je nog niet verder be
 
 Op langere termijn kan het je onzeker maken over je herstel. Je vraagt je af of het ooit beter wordt. Of je trekt je terug, omdat je niet steeds hetzelfde verhaal wilt vertellen.
 
+Na een relatie of breuk kan pijn ook samengaan met meer ruimte. Misschien hoef je minder op te letten, maar voelt een gewone avond, een bericht of een eigen keuze nog steeds beladen. Dat is geen teken dat je terug moet of dat je inzicht niet klopt. Het laat zien dat herstel niet alleen gaat over begrijpen wat er gebeurde, maar ook over weer wennen aan wat er nu mogelijk is.
+
 Het kan helpen om terugval anders te zien. Een gevoel dat terugkomt is geen bewijs dat er niets veranderd is. Vaak merk je pas achteraf dat golven minder lang duren, of dat je er anders mee omgaat dan eerst.
 
 ## Wanneer is het iets anders?
