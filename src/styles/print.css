@@ -4,6 +4,17 @@
 }
 
 @media print {
+  .recognition-fragment {
+    break-inside: avoid;
+    margin: 5mm 0;
+    padding: 4mm;
+    background: white !important;
+    color: black !important;
+    border-color: black;
+  }
+  .recognition-fragment p {
+    font-size: 13pt;
+  }
   :root,
   [data-theme] {
     color-scheme: light;

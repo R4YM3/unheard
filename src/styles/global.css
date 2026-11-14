@@ -1641,6 +1641,26 @@ body:has(main > :is(.section--tension, .section--therapy, .section--tint):last-c
 .prose li + li {
   margin-top: 0.4rem;
 }
+.recognition-fragment {
+  margin: clamp(2rem, 5vw, 3rem) 0;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border-inline-start: 3px solid var(--accent);
+  background: var(--tint);
+  color: var(--text);
+}
+.recognition-fragment figcaption {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.recognition-fragment p {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
 
 /* ---------- Cards & grids ---------- */
 .grid {

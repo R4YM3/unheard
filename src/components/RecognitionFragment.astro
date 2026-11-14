@@ -1,0 +1,13 @@
+---
+/** An editorial illustration, never presented as somebody's authentic testimony. */
+interface Props {
+  kind: 'gedachte' | 'gebeurtenis' | 'lichamelijke reactie' | 'inzicht achteraf';
+  text: string;
+}
+const { kind, text } = Astro.props;
+---
+
+<figure class="recognition-fragment">
+  <figcaption>Voorbeeld · {kind} · fictief</figcaption>
+  <p>{text}</p>
+</figure>

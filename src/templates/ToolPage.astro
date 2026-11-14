@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import ArticleBody from '../components/ArticleBody.astro';
 import ToolCard from '../components/ToolCard.astro';
 
 interface Props {
@@ -25,5 +26,5 @@ const { Content } = await render(entry);
     </div>
   </section>
   <ToolCard card={data.card} />
-  <div class="wrap reading prose"><Content /></div>
+  <ArticleBody fragments={data.recognitionFragments}><Content /></ArticleBody>
 </EntryLayout>

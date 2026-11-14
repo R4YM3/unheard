@@ -22,6 +22,14 @@ Het kernartikel is geschreven en inhoudelijk afgezet tegen de [gerichte broncont
 
 Nog te doen: inhoudelijke en veiligheidsreview van het concept (Raymond wijst reviewer aan), gerenderde mobiele/no-JavaScript/printcontrole, betekenisvolle ingangen vanuit de vier pijlers en herbruikbare vormgeving van fragmenten. Publicatie en links naar het concept blijven uit totdat de review is vastgelegd. Dit is geen volledige afronding van een van beide pagina's.
 
+### Implementatie fragmenten en verificatie
+
+`ArticleBody` en `RecognitionFragment` renderen de nieuwe frontmattervelden als statische HTML na een gekozen H2-onderdeel. De vier detailtemplates gebruiken deze gedeelde componenten. Het conceptartikel bevat één fragment. De bestaande voorbeeldgedachte bovenaan blijft apart bestaan, met één zichtbaar label.
+
+Op 14 november: `npm run check` geslaagd (35 tests; Astro zonder fouten, waarschuwingen of hints); productiebuild met `NO_INDEX=true SITE_URL=https://unheard.support` geslaagd (108 HTML-pagina's, distributie-audit). Een tijdelijke lokale preview van het ongepubliceerde artikel bewees in gegenereerde HTML: één fragment, één zichtbaar fictielabel, tekst zonder client-side script en plaatsing tussen de bedoelde H2-onderdelen. De previewroute is daarna verwijderd en de productiebuild opnieuw uitgevoerd.
+
+Visuele browsercontrole is **niet uitgevoerd**: Puppeteer/Chrome faalde met `Failed to launch the browser process: Code: null`, zonder stderr-details. De alternatieve browserkoppeling meldde `The browser access host is unavailable`. Er zijn geen screenshots of PDF-resultaten als bewijs. Codex herhaalt bij beschikbare browsertoegang de 320px/390px/desktop-, licht/donker-, no-JavaScript- en A4-controle. Safari en screenreadercontrole blijven eveneens open. Dit is geen blokkade voor verdere redactie en inventarisatie.
+
 | Bestand                                                                                                                              | Slug                                                            | Gepubliceerd | Voorbeeldgedachte                 | Bronnen in metadata | Volledige review |
 | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- | ------------ | --------------------------------- | ------------------- | ---------------- |
 | [articles/begrijp-het/conflict-of-patroon.md](../../src/content/articles/begrijp-het/conflict-of-patroon.md)                         | begrijp-het/conflict-of-patroon                                 | ja           | aanwezig                          | 2                   | open             |

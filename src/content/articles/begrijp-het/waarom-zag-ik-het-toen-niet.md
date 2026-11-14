@@ -19,6 +19,10 @@ readerMoment:
   thought: 'Ik wist nog precies wat er gebeurde. Waarom begreep ik pas later wat het met mij deed?'
   feeling: 'Een gebeurtenis onthouden en begrijpen waar die bij hoort, zijn niet hetzelfde. Je mag je ervaring opnieuw bekijken.'
 related: [waarom-ik, dwingende-controle, schuldgevoel, herstel-erkenning]
+recognitionFragments:
+  - afterSection: een-ander-moment-geeft-een-ander-zicht
+    kind: inzicht achteraf
+    text: 'Ik dacht dat we ruzie hadden over afspraken. Nu zie ik hoe vaak ik daarna maar thuisbleef.'
 sources:
   - label: 'De aanpak is anders bij intieme terreur'
     publisher: 'Augeo Foundation'
@@ -81,10 +85,6 @@ Loyaliteit en zorgzaamheid zijn geen toestemming om jou te kleineren. En zelfref
 Een gesprek waarin iemand rustig doorvraagt kan een nieuw verband zichtbaar maken. Een woord dat je leest kan passen bij iets wat je al lang probeert uit te leggen. Ook afstand kan ruimte geven om op te merken wat je eerder steeds wegduwde.
 
 Dat inzicht hoeft niet in één keer te komen. Je kunt een gebeurtenis anders gaan begrijpen en over een andere herinnering nog twijfelen. Je hoeft die onzekerheid niet op te lossen door alles goed te praten of door ieder moment dezelfde betekenis te geven.
-
-**Voorbeeldgedachte — fictief**
-
-> “Ik dacht dat we ruzie hadden over afspraken. Nu zie ik hoe vaak ik daarna maar thuisbleef.”
 
 ## Na een breuk, of in een nieuwe relatie
 

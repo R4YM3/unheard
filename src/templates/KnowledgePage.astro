@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import ArticleBody from '../components/ArticleBody.astro';
 import HelpChoices from '../components/heroes/HelpChoices.astro';
 import PageRail from '../components/PageRail.astro';
 import { articleRailGroups } from '../lib/article-rail';
@@ -39,7 +40,7 @@ const pageType = ['over', 'werkwijze'].includes(data.translationKey) ? 'AboutPag
     )
   }
   {railGroups.length > 0 && <PageRail slot="rail" groups={railGroups} />}
-  <div class="wrap reading prose"><Content /></div>
+  <ArticleBody fragments={data.recognitionFragments}><Content /></ArticleBody>
   <Fragment slot="after">
     {darvo && <DarvoGuide guide={darvo} />}
     {
