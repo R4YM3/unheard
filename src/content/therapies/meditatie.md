@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Iedereen zegt dat stilzitten rust geeft. Waarom word ik er juist onrustig van?'
+  feeling: 'Aandachtsoefeningen voelen niet voor iedereen meteen rustig; je mag stoppen en bespreken wat je merkt.'
 order: 90
 name: Meditatie
 cardTitle: Meditatie

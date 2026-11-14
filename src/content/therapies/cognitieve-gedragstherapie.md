@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik weet dat niet elke gedachte waar is. Waarom voelt deze dan toch zo overtuigend?'
+  feeling: 'Gedachten onderzoeken hoeft niet te betekenen dat jouw ervaring wordt ontkend; een behandelaar hoort daar zorgvuldig met je naar te kijken.'
 order: 50
 name: Cognitieve (gedrags)therapie
 cardTitle: Cognitieve (gedrags)therapie

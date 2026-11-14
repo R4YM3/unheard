@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Praten lukt wel, maar ik merk pas in beweging hoeveel spanning ik vasthoud.'
+  feeling: 'Soms merk je via je lichaam eerder wat er speelt; welke vorm van begeleiding past, kun je veilig met een professional verkennen.'
 order: 80
 name: Boksen met emoties
 cardTitle: Boksen met emoties

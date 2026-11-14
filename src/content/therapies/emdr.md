@@ -8,8 +8,12 @@ status: draft
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik wil van die herinnering af, maar ik wil er niet opnieuw alleen doorheen.'
+  feeling: 'Een traumagerichte behandeling werkt onder begeleiding en in een passend tempo; je hoeft zelf niet te beslissen welke vorm bij je past.'
 order: 30
 name: EMDR
 cardTitle: EMDR
