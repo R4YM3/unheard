@@ -63,6 +63,12 @@ Dat is geen tekortkoming. Als gevoelens lange tijd geen ruimte kregen, of tegen 
 
 Wie lang heeft gezorgd, doorgezet of geprobeerd de rust te bewaren, raakt vaak gewend aan eerst doen en nadenken. Ook schaamte, weinig veilige ruimte of eerdere ervaringen kunnen het moeilijk maken om stil te staan bij een gevoel. Empathie, loyaliteit en zelfreflectie zijn geen tekortkomingen en veroorzaken geen grensoverschrijdend gedrag van een ander. Ze kunnen wel maken dat je lang doorgaat voordat je aandacht aan jezelf geeft.
 
+## Wat het met je zelfbeeld kan doen
+
+Als je lang vooral hebt gefunctioneerd, geregeld of uitgelegd, kun je jezelf steeds meer zien in die rol en minder als iemand met eigen verlangens. Dan is het niet vreemd als een vraag als “Wat wil jij?” stil maakt. Je hoeft daar niet meteen een antwoord op te hebben.
+
+Na een relatie of breuk kan de structuur waarop je je had aangepast wegvallen. Wat overblijft kan onbekend voelen: meer ruimte, maar ook een leegte of onrust die je niet direct kunt plaatsen. Dat is geen opdracht om snel weer jezelf te zijn. Het kan beginnen met opmerken wat je nu nodig hebt, of met één kleine keuze die van jou is. Bij [Ik herken mezelf niet meer](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/) lees je meer over dat gevoel.
+
 ## Het lichaam als begin
 
 Emoties beginnen vaak in je lijf, voordat je er woorden voor hebt. Een paar voorbeelden:
