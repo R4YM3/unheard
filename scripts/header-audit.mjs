@@ -478,6 +478,30 @@ try {
     'B-light: four situations, native disclosure, full print with and without JavaScript.',
   );
 
+  /* Both discovery and known-topic routes remain usable without JavaScript. */
+  const discoveryRoutes = [
+    ['wat-voel-ik/', 'nl/wat-voel-ik/ik-zoek-steeds-bevestiging/'],
+    ['wat-voel-ik/', 'nl/begrippen/'],
+    ['wat-herken-ik/', 'nl/begrippen/isolatie/'],
+    ['begrijp-het/', 'nl/begrijp-het/conflict-of-patroon/'],
+    ['begrijp-het/', 'nl/begrippen/gaslighting/'],
+    ['herstel/', 'nl/begrijp-het/financieel-misbruik/veilig-financieel-herstel/'],
+  ];
+  for (const width of [390, 1440]) {
+    const discovery = await browser.newPage();
+    await discovery.setJavaScriptEnabled(false);
+    await discovery.setViewport({ width, height: 1000 });
+    for (const [hub, destination] of discoveryRoutes) {
+      await discovery.goto(`${origin}/nl/${hub}`, { waitUntil: 'networkidle0' });
+      const link = await discovery.$(`main a[href="${destination}"]`);
+      assert(link, `${hub} offers ${destination} in its own content without JavaScript`);
+      await Promise.all([discovery.waitForNavigation({ waitUntil: 'networkidle0' }), link.click()]);
+      assert.equal(new URL(discovery.url()).pathname, `/${destination}`);
+      assert.equal((await discovery.$$('h1')).length, 1, `${destination} opens a real page`);
+    }
+    await discovery.close();
+  }
+
   /* Mobile menu safety: clear of the dock, Escape closes it, one current page, one link each. */
   for (const [width, height] of [
     [320, 200],

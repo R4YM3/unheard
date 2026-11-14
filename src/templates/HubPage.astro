@@ -299,6 +299,19 @@ const mainEntityId = termSet
                     ))}
                   </ul>
                 </>
+              ) : listing.items.length > 0 && listing.cardStyle === 'list' ? (
+                <ul class="hub-article-list" role="list">
+                  {listing.items.map((item) => (
+                    <li>
+                      <h3>
+                        <a class="inline-link" href={item.href}>
+                          {item.title}
+                        </a>
+                      </h3>
+                      {item.text && <p>{item.text}</p>}
+                    </li>
+                  ))}
+                </ul>
               ) : listing.items.length > 0 && listing.cardStyle === 'feeling' ? (
                 <div class="grid grid--3">
                   {listing.items.map((item) => (
@@ -382,6 +395,36 @@ const mainEntityId = termSet
 </EntryLayout>
 
 <style>
+  .hub-article-list {
+    display: grid;
+    gap: 1.5rem 3rem;
+    padding: 0;
+    list-style: none;
+  }
+  .hub-article-list li {
+    break-inside: avoid;
+  }
+  .hub-article-list h3 {
+    margin-block: 0 0.4rem;
+  }
+  .hub-article-list p {
+    margin: 0;
+    max-width: 60ch;
+  }
+  @media (min-width: 45rem) {
+    .hub-article-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media print {
+    .hub-article-list {
+      display: block;
+    }
+    .hub-article-list li {
+      margin-block-end: 1rem;
+    }
+  }
+
   .financial-article-links {
     display: grid;
     gap: 0.5rem 2rem;

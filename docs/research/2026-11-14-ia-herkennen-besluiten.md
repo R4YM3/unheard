@@ -177,3 +177,18 @@ De voorafgaande herkenningshub-volgorde is visueel op 390px bekeken uit succesvo
 CI-run 43651389538: concrete situaties volgen nu direct op de korte samenvatting;
 de algemene uitleg staat later. Dit is een steekproef, geen Safari- of
 screenreadercontrole.
+
+## Compact volledig aanbod na visuele controle
+
+CI 43651739815 slaagde inclusief axe, print, UX en header. Het hersteloverzicht
+is bekeken op 390px en de eerste A4-pagina is als steekproef gerenderd (8 A4-pagina's
+voor het hele overzicht). De nieuwe behoefte-ingangen zijn leesbaar, maar de
+bestaande dertien grote artikelkaarten verlengen de pagina onnodig.
+
+Daarom gebruikt de bestaande HubPage nu een optionele lijstweergave voor het
+volledige artikeloverzicht van Herstel en Begrijp het. Iedere titel blijft een
+gewone link met de bestaande korte omschrijving; geen inklappen, selectie of
+verborgen inhoud. Twee kolommen waar ruimte is, één op mobiel en op papier.
+Andere kaarten en componenten veranderen niet. Dit nieuwe resultaat moet nog
+met de volgende browserbeelden worden gecontroleerd; de eerdere steekproef is
+geen visueel akkoord op deze wijziging.

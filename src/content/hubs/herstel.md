@@ -21,6 +21,7 @@ eyebrow: 'Herstel'
 lead: 'Je kunt weten wat er is gebeurd en het toch nog voelen. Herstel gaat vaak in kleine stappen, met dagen vooruit en dagen terug. Hier vind je onderwerpen die daarbij kunnen helpen, zonder dat je ergens hoeft te beginnen.'
 listings:
   - collection: articles
+    cardStyle: list
     prefix: 'herstel/'
     eyebrow: 'Onderwerpen'
     heading: 'Waar wil je nu over lezen?'

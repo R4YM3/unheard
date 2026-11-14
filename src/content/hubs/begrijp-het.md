@@ -21,6 +21,7 @@ eyebrow: 'Begrijp het'
 lead: 'Soms voel je al lang dat er iets niet klopt, maar kun je niet zeggen wat. Uitleg en begrippen kunnen helpen om het te ordenen. Ze zijn bedoeld om jezelf beter te begrijpen, niet om iemand anders een etiket te geven.'
 listings:
   - collection: articles
+    cardStyle: list
     prefix: 'begrijp-het/'
     heading: 'Waar wil je meer over weten?'
     tape: true
