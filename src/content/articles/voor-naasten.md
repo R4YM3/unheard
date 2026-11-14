@@ -8,8 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
+readerMoment:
+  label: 'Voorbeeldgedachte'
+  thought: 'Ik wil helpen, maar ik ben bang dat ik het erger maak of het verkeerde zeg.'
+  feeling: 'Je hoeft het niet op te lossen; rustig luisteren, contact houden en gevaar serieus nemen zijn al vormen van steun.'
 cardTitle: 'Voor naasten'
 cardText: 'Luister, houd contact en neem gevaar serieus. Forceer geen breuk en geef de partner geen label.'
 summary: 'Je hoeft iemands relatie niet te redden of te verbreken om er te zijn. Luister zonder te oordelen, houd contact en neem direct gevaar serieus. Forceer geen breuk en stel geen diagnose. Bij direct gevaar bel je 112. Voor advies kun je zelf Veilig Thuis bellen.'
