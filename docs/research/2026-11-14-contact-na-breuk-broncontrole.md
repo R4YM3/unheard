@@ -110,9 +110,13 @@ Aanvullend door de hoofduitvoerder gelezen:
 [Thuisarts — Ik heb al heel lang stress](https://www.thuisarts.nl/stress/ik-heb-al-heel-lang-stress),
 14 november 2026. Ondersteunt stress bij aanhoudende onzekerheid, gevolgen voor
 dagelijks functioneren en hulp via huisarts/praktijkondersteuner. Onderbouwt geen
-diagnose op basis van één reactie op een bericht. De financiële handreiking is nog
-niet opnieuw integraal gecontroleerd; de bronreview van dat artikel is daarom
-niet volledig afgerond.
+diagnose op basis van één reactie op een bericht. Daarna zijn de relevante delen over partnermisbruik en schulden uit de
+[handreiking financieel misbruik](https://www.huiselijkgeweld.nl/documenten/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik)
+gelezen (p. 4–9). De bron ondersteunt langdurige geldproblemen en schulden als
+mogelijk gevolg, maar geen uitspraak over hoeveel mensen na een scheiding met
+schulden achterblijven. Die te ruime gevolgtrekking is gecorrigeerd en de PDF-link
+is bijgewerkt. De overige hoofdstukken over onder meer geldezels zijn geen
+onderbouwing voor deze pagina en zijn niet integraal gereviewd.
 
 Validatie: projectcheck geslaagd (Astro 0 fouten/waarschuwingen/hints; 34 tests
 geslaagd, 1 overgeslagen), formatter en contentvalidatie geslaagd. `NO_INDEX=true SITE_URL=https://unheard.support npm run build` geslaagd met

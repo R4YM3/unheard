@@ -36,9 +36,9 @@ sources:
     publisher: Augeo Foundation
     checkedAt: 2026-11-14
   - label: 'Schouders Eronder — Van signalering tot hulp: handreiking financieel misbruik (2024, PDF)'
-    url: 'https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'
+    url: 'https://www.huiselijkgeweld.nl/binaries/huiselijkgeweld/documenten/publicaties/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'
     publisher: 'Schouders Eronder / Huiselijkgeweld.nl'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-14
   - label: 'Het Juridisch Loket — Contact'
     url: 'https://www.juridischloket.nl/contact/'
     publisher: 'Het Juridisch Loket'
@@ -60,7 +60,7 @@ Je dacht dat er na de breuk meer ruimte zou komen. Toch schuif je een envelop op
 
 Economische druk na een scheiding is iets anders. Het gaat om een patroon waarin geld, schulden of procedures steeds worden ingezet om controle te houden, om de ander uit te putten of om keuzes af te dwingen. [Financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) stopt niet altijd bij het einde van een relatie; soms verandert het alleen van vorm.
 
-De [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf) beschrijft dat veel mensen na een relatie met financieel misbruik met schulden achterblijven.
+De [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/binaries/huiselijkgeweld/documenten/publicaties/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf) beschrijft dat financieel misbruik tot langdurige geldproblemen en problematische schulden kan leiden. Dat zegt niet hoeveel mensen na een scheiding hiermee te maken krijgen.
 
 ## Hoe het eruit kan zien
 
