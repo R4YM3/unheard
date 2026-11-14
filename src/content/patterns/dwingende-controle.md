@@ -121,6 +121,12 @@ Praktische afhankelijkheid, kinderen, schaamte, weinig steun of eerdere ervaring
 
 Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft dat mannen vaak moeite hebben zichzelf als slachtoffer te zien, en dat hulpverleners en politie soms afwijzend of bagatelliserend reageren. Dat zegt niets over de ernst van wat je meemaakt.
 
+## Wat het met je zelfbeeld kan doen
+
+Als je lange tijd rekening houdt met regels, reacties of verwachtingen van een ander, kun je jezelf vooral gaan zien in de rol die je moet volhouden: partner, ouder, kostwinner, uitlegger of degene die de rust bewaart. Eigen wensen, grenzen en contacten raken dan op de achtergrond.
+
+Na een relatie of breuk kan dat extra voelbaar worden. De regels of spanning zijn niet meer voortdurend zichtbaar, maar het opletten kan vanbinnen doorgaan. Een vrije avond, een eigen keuze of contact met iemand van vroeger kan daardoor onbekend voelen. Dat betekent niet dat je geen eigen wensen hebt; het kan tijd kosten om ze weer ruimte te geven. Lees ook [Ik herken mezelf niet meer](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/) of [Van begrijpen naar voelen](nl/herstel/leren-voelen/).
+
 ## Digitale controle
 
 **Voorbeeld.** Na een bericht aan een vriend wil je partner steeds weten wat je precies hebt geschreven. Je merkt dat je gesprekken gaat vermijden omdat je bang bent voor de reactie.
