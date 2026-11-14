@@ -31,7 +31,20 @@ try {
     await page.setViewport({ width, height: 1000 });
     await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
     const items = await page.$$('.desktop-nav-item');
-    assert.equal(items.length, 5, 'Every main section needs its own desktop submenu');
+    assert.deepEqual(
+      await page.$$eval('.desktop-nav-item > a', (nodes) =>
+        nodes.map((node) => node.getAttribute('href')),
+      ),
+      [
+        'nl/wat-voel-ik/',
+        'nl/wat-herken-ik/',
+        'nl/begrijp-het/',
+        'nl/herstel/',
+        'nl/mijn-verhaal/',
+        'nl/hulpmiddelen/',
+      ],
+      'Feeling, recognition and understanding remain equal main entrances',
+    );
     const rows = await page.$$eval('.nav > *', (nodes) =>
       nodes
         .filter((node) => node.getBoundingClientRect().height > 0)
@@ -68,7 +81,7 @@ try {
   }
   await page.setViewport({ width: 1440, height: 1000 });
   await page.goto(`${origin}/nl/begrippen/gaslighting/`, { waitUntil: 'networkidle0' });
-  const summary = await page.$('.desktop-nav-item:nth-of-type(2) summary');
+  const summary = await page.$('.desktop-nav-item summary[aria-label="Binnen Begrijp het"]');
   assert(summary);
   await summary.focus();
   await page.keyboard.press('ArrowDown');
