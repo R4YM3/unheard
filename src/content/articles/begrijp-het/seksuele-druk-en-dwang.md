@@ -8,7 +8,7 @@ status: in_review
 published: false
 author: editorial
 publishedAt: 2026-11-14
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 order: 25
 cardTitle: 'Seksuele druk en dwang'
@@ -20,6 +20,15 @@ readerMoment:
   feeling: 'Dat je probeerde de situatie door te komen, geeft een ander geen recht om jouw grenzen te negeren.'
 related: [grenzen, schuldgevoel, dwingende-controle, het-vertellen, hulp-vinden]
 sources:
+  - label: 'Begeleiding bij zwangerschapsafbreking — module reproductieve dwang'
+    publisher: 'Nederlands Genootschap van Abortusartsen'
+    url: 'https://www.ngva.net/application/files/7416/7949/7597/NGvA_Richtlijn_-_Begeleiding_bij_zwangerschapsafbreking_-_Versie_januari_2023.pdf'
+    checkedAt: 2026-11-15
+    note: 'Relevante module gelezen, niet de hele richtlijn. Definitie en zorgcontext; geen eigen medicatie- of anticonceptieadvies.'
+  - label: 'Gezondheid en reproductieve keuzevrijheid'
+    publisher: 'Rutgers'
+    url: 'https://rutgers.nl/themas/gezondheid/'
+    checkedAt: 2026-11-15
   - label: 'Consent'
     publisher: 'Rutgers / Seksualiteit.nl'
     url: 'https://seksualiteit.nl/onderwerpen/relatie-en-seks/consent/'
@@ -49,9 +58,10 @@ sources:
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
     checkedAt: 2026-11-14
 reviewNotes:
+  - 'Klinische/veiligheidsreviewer, aan te wijzen door Raymond: beoordeel reproductieve dwang, anticonceptie en zwangerschap, individuele medische hulp en formulering van lichamelijke autonomie voor alle betrokkenen. Geen behandeladvies of juridische kwalificatie.'
   - 'Ongepubliceerd. Raymond wijst een inhoudelijke/klinische en veiligheidsreviewer aan. Beoordeel instemming onder druk, bevriezen/meegaan, lichamelijke reacties, intimiteit na geweld en de hulproute. Geen juridische beoordeling van individuele situaties.'
   - 'Redactie: toets de passage over voorwaardelijke affectie extra zorgvuldig. Niemand is seks, aanraking of genegenheid verschuldigd; een afwijzing op zichzelf mag niet als mishandeling worden neergezet.'
-  - 'Codex: voeg na goedkeuring gerichte links toe vanaf Herkennen, Begrijp het, dwingende controle, grenzen en Hulp vinden. Reproductieve dwang vereist aanvullende broncontrole en wordt hier nog niet volledig behandeld.'
+  - 'Codex: voeg na goedkeuring gerichte links toe vanaf Herkennen, Begrijp het, dwingende controle, grenzen en Hulp vinden. De reproductieve sectie is als concept uitgewerkt na afzonderlijke broncontrole; medische/veiligheidsreview blijft nodig.'
 ---
 
 ## Als je vooral bezig bent met wat er gebeurt wanneer je weigert
@@ -85,6 +95,16 @@ De ene persoon kan vaker seks willen dan de andere. Iemand kan geen zin hebben, 
 **Voorbeeld — verzonnen situatie.** Je partner maakt je telkens belachelijk om je seksuele wensen en zegt: ‘Pas als jij doet wat ik vraag, behandel ik je weer normaal.’ Je gaat steeds meer doen om een nieuwe vernedering te voorkomen. In dit voorbeeld verdient de druk aandacht, niet de vraag of iemand genoeg seks of affectie geeft. Het recht om geen nabijheid te willen blijft voor allebei gelden.
 
 Bij [dwingende controle](nl/begrippen/dwingende-controle/) lees je hoe druk zich ook kan uitstrekken tot geld, contacten en andere keuzes. Je hoeft niet al die vormen te herkennen voordat jouw eigen ervaring aandacht verdient.
+
+## Keuzes over anticonceptie en zwangerschap
+
+Ook keuzes rond wel of niet zwanger worden kunnen onder druk komen te staan. **Reproductieve dwang** gaat onder meer over anticonceptie saboteren of iemand dwingen een zwangerschap voort te zetten of af te breken. Dat gaat verder dan samen praten over een kinderwens of daar verschillend over denken.
+
+**Voorbeeld — fictief.** Je wilt anticonceptie blijven gebruiken. Telkens krijg je te horen dat je daarmee bewijst dat je niet voor de relatie kiest. Je gaat een gesprek met de huisarts uitstellen omdat je bang bent voor de reactie thuis. Je eigen medische vraag raakt ondergeschikt aan het voorkomen van verwijten.
+
+Een kinderwens geeft niemand beslissingsrecht over het lichaam van een ander. Je eigen seksuele grenzen blijven ook gelden: niet willen vrijen zonder condoom is een grens, geen verplichting voor de ander om seks te hebben. Niemand hoeft een zwangerschap, een ingreep of medicatie toe te staan om liefde te bewijzen.
+
+Staan jouw keuzes onder druk of maak je je zorgen over wat er is gebeurd? Bespreek met een huisarts of passende zorgverlener welke zorg je nodig hebt en wat veilig kan. Je kunt vragen om zonder begeleider te spreken. Bij druk rond toegang tot zorg lees je verder bij [dwingende controle](nl/begrippen/dwingende-controle/#als-rust-of-medische-zorg-niet-vrij-voelt).
 
 ## Waarom kon je het toen anders uitleggen?
 

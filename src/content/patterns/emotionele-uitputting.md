@@ -8,7 +8,7 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 related: [spanning, fawn-respons, herstel, emotioneel-misbruik, herstel-steunnetwerk, het-vertellen]
 readerMoment:
@@ -17,7 +17,7 @@ readerMoment:
   feeling: 'Langdurig doorgaan kan het moeilijk maken om te merken hoeveel je draagt. Uitputting is geen tekort aan wilskracht.'
 glossary:
   term: 'Emotionele uitputting'
-  definition: 'Het gevoel dat je emotioneel leeg bent na langdurige spanning, met een moeheid die niet overgaat na rust. Een beschrijving, geen diagnose.'
+  definition: 'Het gevoel dat je emotioneel leeg bent en weinig energie overhoudt om te voelen, reageren of herstellen. Een beschrijving, geen diagnose.'
   aliases: [uitgeput zijn, opgebrand, leeg voelen, overspannen]
   category: impact
 sources:
@@ -37,11 +37,13 @@ sources:
     publisher: 'Stichting 113'
     url: 'https://www.113.nl/'
     checkedAt: 2026-10-20
+reviewNotes:
+  - 'Raymond wijst een klinische reviewer aan voor de definitie, afbakening met overspannenheid en burn-out, en de nieuwe verwijzing bij verhindering van rust of zorg. De eerdere absolute herstelduur is verwijderd; geen diagnose uit een voorbeeld.'
 ---
 
 ## Wat is emotionele uitputting?
 
-Emotionele uitputting is het gevoel dat je emotioneel leeg bent: je hebt geen energie meer om te voelen, te zorgen, te reageren of te herstellen. Het is meer dan moe zijn na een drukke week. Het is een moeheid die niet overgaat met een nacht slaap of een vrij weekend.
+Emotionele uitputting is het gevoel dat je emotioneel leeg bent: je hebt geen energie meer om te voelen, te zorgen, te reageren of te herstellen. Je merkt het bijvoorbeeld wanneer een gewoon gesprek al veel vraagt of wanneer je zelfs bij iets prettigs weinig ruimte voelt. Hoe lang dit duurt en wat helpt, verschilt per persoon en situatie.
 
 Emotionele uitputting is geen diagnose. Het is een beschrijving van een toestand die kan ontstaan na langdurige spanning, bijvoorbeeld in een relatie waarin je voortdurend op je hoede moet zijn, conflicten moet voorkomen of je eigen gevoelens wegstopt.
 
@@ -88,6 +90,8 @@ Toch kan het helpen om te kijken naar wat je energie kost:
 Juist als je uitgeput bent, is het moeilijk om iets te veranderen. Dat is geen gebrek aan wilskracht, maar een gevolg van de uitputting zelf.
 
 ## Wat kan helpen?
+
+Word je thuis daadwerkelijk wakker gehouden, tegengehouden om te rusten of belemmerd om hulp te zoeken? Dan gaat het niet alleen om beter ontspannen of je dag anders indelen. Bij [dwingende controle](nl/begrippen/dwingende-controle/#als-rust-of-medische-zorg-niet-vrij-voelt) lees je over die beperking van je lichamelijke ruimte. Bespreek met een zorgverlener wat er gebeurt en welke stap veilig is.
 
 - **Neem je moeheid serieus.** Het is een signaal, geen zwakte.
 - **Zoek ontspanning en beweging**, ook al is het klein: een korte wandeling, regelmatige maaltijden, vaste tijden om te slapen. Thuisarts raadt bij overspannenheid aan om te zorgen voor meer ontspanning, gezond te leven en erover te praten.

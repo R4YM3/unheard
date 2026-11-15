@@ -70,9 +70,10 @@ sources:
     url: 'https://doi.org/10.1177/1077801218816191'
     checkedAt: 2026-10-20
   - label: 'Factsheet Intieme terreur'
-    publisher: 'Huiselijkgeweld.nl / programma Geweld hoort nergens thuis'
-    url: 'https://www.huiselijkgeweld.nl/documenten/2022/01/26/factsheet-intieme-terreur'
-    checkedAt: 2026-10-20
+    publisher: 'Programma Geweld hoort nergens thuis / VNG'
+    url: 'https://vng.nl/sites/default/files/2022-01/ghnt_factsheet_intieme_terreur.pdf'
+    checkedAt: 2026-11-15
+    note: 'Volledige tekst gelezen; onder meer controle over slaap, medicatie en doktersbezoek. Geen individuele risicotest.'
   - label: 'Signalen van intieme terreur'
     publisher: 'Augeo Foundation'
     url: 'https://www.augeo.nl/nl-nl/inzicht-in-intieme-terreur/signalen/'
@@ -86,6 +87,7 @@ sources:
     url: 'https://www.movisie.nl/artikel/mannen-slachtoffer-huiselijk-geweld'
     checkedAt: 2026-10-20
 reviewNotes:
+  - 'Raymond wijst een klinische/veiligheidsreviewer aan voor Als rust of medische zorg niet vrij voelt: beoordeel toegang tot zorg, urgentie en medicatieverwijzing. Geen instructie om zelf medicatie te wijzigen.'
   - 'Veiligheidsreview: controleer de voorbeelden en het advies in Digitale controle vóór publicatie van de revisie.'
   - 'Raymond wijst een veiligheids-/inhoudelijke reviewer aan voor Fysieke intimidatie, ook zonder blauwe plekken: beoordeel voorbeelden bij de deur en in de auto, acute onveiligheid en het onderscheid tussen een incident en dwingende controle vóór publicatie van de revisie.'
   - 'Klinische reviewer: beoordeel de nieuwe passage over vrije keuzes en spanning bij een nieuwe partner.'
@@ -135,6 +137,16 @@ Ook je de weg versperren, vlak voor je gaan staan terwijl je wordt bedreigd of s
 Dwingende controle gaat over de samenhang en herhaling van gedrag. Dat maakt een enkele bedreiging of geweldsuitbarsting niet onbelangrijk. Je hoeft geen volledig patroon te bewijzen voordat je hulp vraagt. Beschrijf concreet wat er gebeurde en waar je nu bang voor bent; een deskundige kan met je meedenken over veiligheid.
 
 Ben je bang voor een reactie, probeer dan niet met een confrontatie uit te zoeken hoe ver de ander zal gaan. Bij [Hulp vinden](nl/hulp-vinden/) staan routes voor directe onveiligheid en voor vertrouwelijk advies. Ook als er lichamelijk geweld is geweest, hoef je dit niet alleen te beoordelen. Een huisarts kan je helpen bij lichamelijke of psychische klachten.
+
+## Als rust of medische zorg niet vrij voelt
+
+**Voorbeeld — fictief.** Je zegt dat je wilt slapen. De ander blijft je wakker maken en zegt dat het gesprek pas stopt als je toegeeft. De volgende dag zeg je een afspraak af omdat je uitgeput bent. Het gaat hier niet alleen om slecht slapen door spanning: je krijgt geen ruimte om te rusten.
+
+Controle kan ook gaan over een doktersafspraak niet mogen maken, niet vrij met een zorgverlener kunnen praten of medicatie die wordt achtergehouden. Klachten worden bijvoorbeeld steeds weggewuifd terwijl je juist hulp probeert te krijgen. De factsheet over intieme terreur benoemt slaap, medicatie en doktersbezoek als gebieden waarop autonomie kan worden beperkt.
+
+Jouw klachten verdienen aandacht, ook als de ander ze niet erkent. Ben je afhankelijk van hulp bij vervoer, verzorging of medicijnen, dan kan zelf iets regelen ingewikkeld zijn. Dat geeft niemand het recht om noodzakelijke zorg als drukmiddel te gebruiken. Bespreek met een zorgverlener hoe je hulp kunt krijgen en vertel het als je daarin wordt belemmerd. Bij vragen over onderbroken of beïnvloede medicatie hoort medisch advies; ga niet op basis van dit artikel zelf medicijnen veranderen.
+
+Voor de vermoeidheid en de moeite om nog iets op te brengen kun je verder bij [emotionele uitputting](nl/begrippen/emotionele-uitputting/). Voor onveiligheid blijft [Hulp vinden](nl/hulp-vinden/) een passende ingang. Een ontspanningstip alleen lost belemmering van rust of zorg niet op.
 
 ## Wanneer is het niet zomaar af te leiden?
 

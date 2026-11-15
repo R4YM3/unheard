@@ -13,7 +13,11 @@ const drafts = [
   {
     id: 'sexual-pressure',
     slug: 'seksuele-druk-en-dwang',
-    required: ['Instemming vraagt ruimte', 'Verschil in verlangen is geen mishandeling'],
+    required: [
+      'Instemming vraagt ruimte',
+      'Verschil in verlangen is geen mishandeling',
+      'Keuzes over anticonceptie en zwangerschap',
+    ],
   },
   {
     id: 'digital-control',

@@ -81,6 +81,7 @@ const defaultRoutes = [
     route: '/nl/begrippen/dwingende-controle/',
     required: [
       'Fysieke intimidatie, ook zonder blauwe plekken',
+      'Als rust of medische zorg niet vrij voelt',
       'De volgende keer zeg ik het maar niet',
     ],
     screenshots: true,
