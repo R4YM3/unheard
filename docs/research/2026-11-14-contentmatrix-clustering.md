@@ -649,3 +649,20 @@ browser-/visuele controle nog open. Raymond bevestigt de ongewijzigde
 founderNote en wijst klinische review toe voor slaap/somberheid/angst en
 duiding van onderzoeksverbanden. Abstracten zijn gelezen, geen volledige nieuwe
 literatuurreview geclaimd. Dit is uitvoering in een concept-PR, geen publicatie.
+
+## Vierde uitvoering: aanhoudende alertheid als één kernartikel
+
+#113 (`codex/consolidatie-waakzaamheid`, b397498) bundelt Hyperwaakzaamheid met
+Ik sta voortdurend aan, bovenop #112. De volledige teksten zijn vergeleken;
+definitie, PTSS-afbakening, oude aliassen en zes oude sectieankers blijven
+behouden. De fictieve scène na een breuk en uitleg bij een nieuwe relatie
+maken onderscheid tussen eerdere ervaringen en huidige dreiging. Gevoeligheid
+voor sfeer is geen verantwoordelijkheid voor andermans gedrag.
+
+A–Z, contextlinks, hero en woordenvinder wijzen naar het gevoelsartikel. Geen
+extra vragen; triggers/contact blijft een aparte hulpvraag. De oude begripsroute
+krijgt een statische redirect; bronbestand ongepubliceerd bewaard. APA en drie
+Thuisarts-pagina’s gelezen. Projectcheck en build/audit 109 pagina’s geslaagd;
+na build alle 35 tests geslaagd. Nieuwe browser-, print- en visuele beoordeling
+staan open. Raymond wijst een klinische reviewer aan voor PTSS-afbakening,
+lichamelijke klachten, hulpurgentie en adviezen vóór publicatie. Geen merge.
