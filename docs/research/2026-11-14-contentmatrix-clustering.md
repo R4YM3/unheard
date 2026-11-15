@@ -691,3 +691,14 @@ dreiging, vernieling, fictief onveilig verkeersvoorbeeld en gevolgen voor latere
 keuzes. Geen nieuwe pagina of URL. De [broncontrole en afbakening](2026-11-15-fysieke-intimidatie-broncontrole.md)
 leggen bewijsbeperkingen, de bestaande veiligheidsroute en revieweigenaren vast.
 Dit is verdieping in #115, nog geen gepubliceerde of klinisch goedgekeurde revisie.
+
+### Uitvoering sociaal cluster E, 15 november
+
+Isolatie en Sociale druk zijn verdiept met verschillende vragen, scènes en
+herkenningsfragmenten. Triangulatie is aangescherpt op communicatie via een derde;
+het oude reputatievoorbeeld hoorde inhoudelijk bij Framing. Daar zijn twee
+ononderbouwde formuleringen gecorrigeerd. Praktische steun blijft bij Steunnetwerk.
+Alle routes blijven bestaan; geen extra pagina voor dezelfde herkenningsvraag.
+Zie [broncontrole en uitvoeringsafbakening](2026-11-15-isolatie-en-sociale-druk-broncontrole.md).
+Dit is reviewwerk in #115; menselijke beoordeling en volledige hercontrole van
+de overige framing-/triangulatieclaims zijn niet afgerond.

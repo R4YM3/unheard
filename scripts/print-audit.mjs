@@ -85,6 +85,18 @@ const defaultRoutes = [
     ],
     screenshots: true,
   },
+  {
+    id: 'isolation',
+    route: '/nl/begrippen/isolatie/',
+    required: ['Hoe contact stap voor stap verdwijnt', 'Na de relatie, en bij iemand nieuw'],
+    screenshots: true,
+  },
+  {
+    id: 'social-pressure',
+    route: '/nl/begrippen/sociale-druk/',
+    required: ['Waarom de druk zo zwaar kan wegen', 'Na de breuk, en bij een nieuwe relatie'],
+    screenshots: true,
+  },
   { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
   { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
   {

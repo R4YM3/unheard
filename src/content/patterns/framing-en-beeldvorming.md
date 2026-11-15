@@ -8,7 +8,7 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
@@ -67,7 +67,7 @@ In de factsheet over intieme terreur, een ernstige vorm van controle in relaties
 >
 > Jij, later: _Als ik het uitleg, klink ik precies zoals ze me neerzetten. Als ik niets zeg, blijft het beeld hangen._
 
-Dat dubbele gevoel, 'wat ik ook doe, het bevestigt het beeld', is een veelgenoemde ervaring bij framing.
+In dit voorbeeld raakt de bezoeker klem tussen uitleg willen geven en bang zijn dat die uitleg opnieuw tegen hem wordt gebruikt. Het is een illustratie van die ervaring, geen bewijs over wat er in jouw omgeving is gezegd.
 
 ## Wanneer is het niet zomaar af te leiden?
 
@@ -92,7 +92,7 @@ Dat laatste noemen mannen in onderzoek vaak als reden om geen hulp te zoeken. Ee
 ## Wat kan helpen?
 
 - **Je hoeft niet iedereen te overtuigen.** Kies een paar mensen bij wie je [je verhaal rustig kunt vertellen](nl/herstel/hoe-vertel-ik-het/).
-- **Reageer, als het kan, niet in de hitte van het moment.** Een rustige, korte reactie houdt meer stand dan een uitgebreide verdediging.
+- **Geef jezelf tijd om een reactie te kiezen.** Je hoeft niet onmiddellijk alles uit te leggen. Bedenk wat deze persoon moet weten en wat je liever met iemand anders bespreekt; je kunt niet bepalen hoe de ander reageert.
 - **Leg feiten vast als je met instanties te maken hebt**, bijvoorbeeld data, afspraken en correspondentie. Bewaar dat veilig, [niet op een gedeeld apparaat](nl/veilig-gebruik/).
 - **Zoek [juridisch advies](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/)** als beeldvorming gevolgen heeft voor omgang, werk of andere belangrijke beslissingen. Het Juridisch Loket heeft voor iedereen gratis informatie op de website en geeft gratis persoonlijk advies als je inkomen en spaargeld onder een bepaalde grens liggen.
 - **Zoek steun voor jezelf.** Een huisarts, psycholoog of Veilig Thuis (0800-2000) kan meedenken, ook als je niet weet of het 'erg genoeg' is. Zie [Hulp vinden](nl/hulp-vinden/).
