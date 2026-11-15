@@ -47,7 +47,7 @@ const routes = [
   {
     id: 'alertness',
     route: '/nl/wat-voel-ik/ik-sta-voortdurend-aan/',
-    required: ['Hyperwaakzaamheid', 'Na de relatie, en bij iemand nieuw', 'Een volgende stap'],
+    required: ['Hyperwaakzaamheid', 'Na de relatie, en bij iemand nieuw', 'Een volgende stap', 'Heb je nu hulp nodig?'],
   },
   {
     id: 'emotion-hub',

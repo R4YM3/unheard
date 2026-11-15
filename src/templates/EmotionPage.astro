@@ -6,7 +6,7 @@ import CardGrid from '../components/CardGrid.astro';
 import FounderNote from '../components/FounderNote.astro';
 import MiniReflection from '../components/MiniReflection.astro';
 import GroupPager from '../components/GroupPager.astro';
-import PageRail from '../components/PageRail.astro';
+import ArticleContents from '../components/ArticleContents.astro';
 import PerspectiveSwitch from '../components/PerspectiveSwitch.astro';
 import { cardFor, listCollection, routeFor } from '../lib/content';
 import { ui } from '../i18n/ui';
@@ -28,7 +28,7 @@ const nextStep = entry.body?.includes('## Een vraag voor vandaag')
   ? { id: 'een-vraag-voor-vandaag', label: 'Een vraag voor vandaag' }
   : { id: 'een-volgende-stap', label: 'Een volgende stap' };
 /* Only the chapters of the text itself; the blocks below the text have their own headings.
-   Dutch pages use short rail labels; other locales use their chapter headings as written. */
+   Dutch pages use short chapter labels; other locales use their chapter headings as written. */
 const here =
   data.locale !== 'nl'
     ? headings
@@ -45,9 +45,6 @@ const here =
 const titleFor = (href: string) => feelings.find((feeling) => feeling.href === href)?.title;
 const t = ui(data.locale);
 const group = groupFor(nav?.feelingGroups ?? [], route);
-const siblings = (group?.pages ?? [])
-  .map((href) => ({ href, label: titleFor(href) }))
-  .filter((item): item is { href: string; label: string } => Boolean(item.label));
 const { previous, next } = group ? neighbours(group, route) : {};
 const linkTo = (href?: string) => {
   const label = href ? titleFor(href) : undefined;
@@ -60,23 +57,7 @@ const allFeelings = {
 ---
 
 <EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `${t.feelingsMenu} / ${data.feeling}`}>
-  <PageRail
-    slot="rail"
-    groups={[
-      { label: t.onThisPage, items: here },
-      ...(group
-        ? [
-            {
-              label: group.label,
-              items: [
-                ...siblings.map((item) => ({ ...item, current: item.href === route })),
-                allFeelings,
-              ],
-            },
-          ]
-        : [{ label: t.otherFeelings, items: [allFeelings] }]),
-    ]}
-  />
+  <ArticleContents slot="contents" groups={[{ label: t.onThisPage, items: here }]} />
   <div class="wrap reading prose"><Content /></div>
   {
     /* The small steps belong to "Een volgende stap": straight under it, not in a block of their own. */

@@ -40,7 +40,7 @@
   /* Navigation and interactive chrome */
   .site-header,
   .section-nav-bar,
-  .page-rail,
+  .article-contents,
   .group-pager,
   .read-progress,
   .site-footer,
@@ -124,6 +124,10 @@
     color: #000 !important;
     break-inside: avoid;
   }
+  /* Keep the short help block together instead of orphaning one contact card. */
+  .help-band {
+    break-inside: avoid;
+  }
   .timeline-marker,
   .timeline-toggle,
   .timeline::before,
@@ -181,10 +185,6 @@
   }
   .print-only {
     display: block !important;
-  }
-  .article-layout--rail {
-    display: block !important;
-    width: auto;
   }
 
   /* Links: show destinations for external sources and phone numbers */
