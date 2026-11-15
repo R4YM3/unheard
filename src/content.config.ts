@@ -120,6 +120,16 @@ const base = z.object({
     })
     .optional(),
   order: z.number().int().optional(),
+  recognitionFragments: z
+    .array(
+      z.object({
+        afterSection: key,
+        kind: z.enum(['gedachte', 'gebeurtenis', 'lichamelijke reactie', 'inzicht achteraf']),
+        text: z.string().min(15).max(300),
+      }),
+    )
+    .max(3)
+    .default([]),
 });
 
 /** Slug prefix per collection; a record gives each locale its own (translated) folder. */

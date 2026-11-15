@@ -4,6 +4,27 @@
 }
 
 @media print {
+  .recognition-fragment {
+    break-inside: avoid;
+    margin: 5mm 0;
+    padding: 4mm;
+    background: white !important;
+    color: black !important;
+    border-color: black;
+  }
+  .recognition-fragment p {
+    font-size: 13pt;
+  }
+  .reader-moment {
+    background: white !important;
+    border-color: black;
+  }
+  .reader-moment__label {
+    color: black;
+  }
+  .related-scroller > .grid {
+    mask-image: none !important;
+  }
   :root,
   [data-theme] {
     color-scheme: light;
@@ -47,6 +68,7 @@
   .skip,
   .theme-toggle,
   .safety-dock,
+  .related-scroller__nav,
   .actions,
   .hero-art,
   .home-hero__art,

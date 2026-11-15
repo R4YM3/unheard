@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import ArticleBody from '../components/ArticleBody.astro';
 import CardGrid from '../components/CardGrid.astro';
 import FounderNote from '../components/FounderNote.astro';
 import MiniReflection from '../components/MiniReflection.astro';
@@ -58,7 +59,7 @@ const allFeelings = {
 
 <EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? `${t.feelingsMenu} / ${data.feeling}`}>
   <ArticleContents slot="contents" groups={[{ label: t.onThisPage, items: here }]} />
-  <div class="wrap reading prose"><Content /></div>
+  <ArticleBody fragments={data.recognitionFragments}><Content /></ArticleBody>
   {
     /* The small steps belong to "Een volgende stap": straight under it, not in a block of their own. */
     data.helps.length > 0 && (

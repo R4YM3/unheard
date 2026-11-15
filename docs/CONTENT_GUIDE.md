@@ -283,3 +283,33 @@ parallel branch are pre-registered, see `docs/SCHEMA_CHANGES.md`).
   for review only: always `noindex`, absent from the sitemap, no `hreflang`, and no language
   link from the Dutch edition. Review at `/en/`. The English menu (`src/lib/navigation.ts`) lists
   only pages that exist in English; a test enforces that.
+
+## Herkenningsfragmenten tussen artikelonderdelen
+
+Een kort, fictief fragment kan een gedachte, gebeurtenis, lichamelijke reactie of inzicht
+laten opvallen. Gebruik het alleen waar het iets toevoegt aan de omliggende tekst. Het is
+geen authentiek citaat en geen diagnostisch signaal. De component toont daarom altijd
+één zichtbaar label met **Voorbeeld** en **fictief**.
+
+In de frontmatter van gevoelspagina's, begrippen, uitleg, herstelartikelen,
+therapievormen en kaarten:
+
+```yaml
+recognitionFragments:
+  - afterSection: een-ander-moment-geeft-een-ander-zicht
+    kind: inzicht achteraf
+    text: 'Ik dacht dat we ruzie hadden over afspraken. Nu zie ik hoe vaak ik daarna maar thuisbleef.'
+```
+
+`afterSection` is het gegenereerde anker van een H2 in dezelfde pagina. Het fragment
+verschijnt na de tekst van dat onderdeel, vóór de volgende H2. Bij een ontbrekend
+anker stopt het renderen met een fout, zodat een fragment niet stil verdwijnt na een
+kopwijziging. `kind` is `gedachte`, `gebeurtenis`, `lichamelijke reactie` of
+`inzicht achteraf`. Houd de tekst tussen 15 en 300 tekens; maximaal drie fragmenten
+per artikel, meestal is één genoeg. Gebruik geen links, broncitaten of persoonlijke
+oprichterspassages in dit veld. Die vragen een andere presentatie en bronverantwoording.
+
+De component rendert een `figure` met `figcaption` en gewone tekst. Er zijn geen
+interacties, extra tabstops, client-side tekst of dubbele screenreaderlabels. Print
+gebruikt dezelfde inhoud, zwart op wit. Controleer lange fragmenten ook op 320px en
+in A4-print. Het veld vervangt niet de voorbeeldgedachte bovenaan de pagina.

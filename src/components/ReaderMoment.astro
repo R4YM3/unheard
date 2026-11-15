@@ -8,8 +8,7 @@ const { moment } = Astro.props;
 
 <section class="reader-moment" aria-labelledby="reader-moment-heading">
   <div class="wrap reading">
-    <p class="reader-moment__label">{moment.label}</p>
-    <h2 id="reader-moment-heading" class="sr-only">{moment.label}</h2>
+    <h2 id="reader-moment-heading" class="reader-moment__label">{moment.label}</h2>
     <blockquote class="reader-moment__thought">
       <p>“{moment.thought}”</p>
     </blockquote>

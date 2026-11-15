@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import ArticleBody from '../components/ArticleBody.astro';
 import ArticleContents from '../components/ArticleContents.astro';
 import { articleContentsGroups } from '../lib/article-contents';
 import ToolCard from '../components/ToolCard.astro';
@@ -32,5 +33,5 @@ const contentsGroups = articleContentsGroups(entry, [
     </div>
   </section>
   <ToolCard card={data.card} />
-  <div class="wrap reading prose"><Content /></div>
+  <ArticleBody fragments={data.recognitionFragments}><Content /></ArticleBody>
 </EntryLayout>
