@@ -8,16 +8,20 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Er zijn geen blauwe plekken. Waarom voel ik me dan zo klein en op mijn hoede?'
   feeling: 'Woorden, controle en herhaalde vernedering kunnen diep doorwerken, ook als anderen het niet meteen zien.'
+recognitionFragments:
+  - afterSection: als-je-steeds-minder-ruimte-inneemt
+    kind: inzicht achteraf
+    text: 'Ik dacht dat het beter ging omdat we minder ruzie hadden. Later merkte ik hoeveel ik niet meer vertelde.'
 order: 10
 cardTitle: 'Wat is emotioneel misbruik?'
 cardText: 'Over kleineren, controleren, isoleren en bang maken, en waarom dat vaak pas laat zichtbaar wordt.'
-summary: 'Emotioneel misbruik is een herhaald patroon waarin iemand een ander kleineert, bang maakt, controleert of isoleert. Het gaat niet om één ruzie of één harde opmerking, maar om wat steeds terugkomt en wat het met je doet. Het kan iedereen overkomen, ook mannen, en blijft vaak lang onzichtbaar omdat er geen zichtbare sporen zijn.'
+summary: 'Emotioneel misbruik is een patroon van kleineren, bang maken, controleren of isoleren dat je vrijheid en zelfvertrouwen aantast. Het kan bestaan zonder lichamelijk geweld, maar ook daarmee samengaan. Je hoeft niet alle voorbeelden te herkennen om je ervaring serieus te nemen of hulp te vragen.'
 glossary:
   term: 'Emotioneel misbruik'
   definition: 'Een herhaald patroon van gedrag waarmee iemand een ander kleineert, bang maakt, controleert of isoleert, waardoor diens zelfvertrouwen en vrijheid afnemen. Geen diagnose van een persoon.'
@@ -25,11 +29,19 @@ glossary:
   category: basis
 related: [conflict-of-patroon, dwingende-controle, gaslighting, zelftwijfel, hulp-vinden]
 sources:
+  - label: 'Dwingende controle — negeren, kleineren en controle'
+    url: 'https://www.veiligthuis.nl/nl/dwingendecontrole'
+    publisher: 'Veilig Thuis'
+    checkedAt: 2026-11-15
+  - label: 'Hulp bij geestelijke mishandeling'
+    url: 'https://www.slachtofferhulp.nl/gebeurtenissen/mishandeling/geestelijke-mishandeling/'
+    publisher: 'Slachtofferhulp Nederland'
+    checkedAt: 2026-11-15
   - label: 'CBS/WODC — Prevalentiemonitor Huiselijk Geweld en Seksueel Grensoverschrijdend Gedrag 2024, hoofdstuk 2: Psychisch geweld in huiselijke kring'
     url: 'https://www.cbs.nl/nl-nl/longread/rapportages/2024/prevalentiemonitor-huiselijk-geweld-en-seksueel-grensoverschrijdend-gedrag-2024/2-psychisch-geweld-in-huiselijke-kring'
     publisher: CBS
-    checkedAt: 2026-10-20
-    note: 'Gebruikt voor de definitie van psychisch geweld in huiselijke kring.'
+    checkedAt: 2026-11-15
+    note: 'Onderzoeksafbakening, geen drempel voor erkenning of hulp. Inleiding hoofdstuk 2 gecontroleerd.'
   - label: 'Thuisarts — Ik word mishandeld door mijn partner of ex-partner'
     url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
     publisher: Thuisarts
@@ -39,18 +51,18 @@ sources:
     publisher: Rijksoverheid
     checkedAt: 2026-10-20
 reviewNotes:
-  - 'Clinicus/redactie: klopt de parafrase van de CBS-definitie (structurele verbale agressie, minstens maandelijks, plus vormen van dwingende controle met dreiging en intimidatie, door iemand uit de huiselijke kring)? Graag de exacte formulering in hoofdstuk 2 naast de tekst leggen.'
+  - 'Raymond wijst een inhoudelijke/klinische reviewer aan: beoordeel emotionele verwaarlozing in partnercontext, fictieve scènes, gevolgen na de relatie en de onderzoeksafbakening. CBS-maandfrequentie is geen hulpdrempel.'
   - 'Redactie: welke personen telt het CBS precies tot de huiselijke kring? De tekst zegt nu alleen "breder dan partners" om geen onbevestigde opsomming te geven.'
   - 'Clinicus: is de lijst met mogelijke gevolgen (onder "Wat het met je kan doen") voorzichtig genoeg geformuleerd, zonder medische claims?'
 ---
 
 ## Wat is emotioneel misbruik?
 
-Emotioneel misbruik is een herhaald patroon waarin iemand een ander kleineert, bang maakt, controleert of afsnijdt van anderen. Het gebeurt meestal zonder fysiek geweld en laat geen zichtbare sporen achter. Juist daardoor is het moeilijk te benoemen, ook voor degene die het meemaakt.
+Emotioneel misbruik is een herhaald patroon waarin iemand een ander kleineert, bang maakt, controleert of afsnijdt van anderen. Het kan zonder lichamelijk geweld plaatsvinden, maar er ook mee samengaan. Je hoeft geen zichtbare verwondingen te hebben om ernstig geraakt te zijn.
 
 Het woord "misbruik" kan zwaar voelen. Daarom helpt het om te kijken naar twee dingen: **wat er steeds terugkomt**, en **wat het met je doet**. Eén harde opmerking in een ruzie is pijnlijk, maar nog geen patroon. Het gaat om gedrag dat zich herhaalt en waardoor jouw zelfvertrouwen, vrijheid of veiligheid steeds verder afnemen.
 
-Je komt ook andere woorden tegen, zoals psychisch geweld of psychische mishandeling. Het CBS gebruikt in de Prevalentiemonitor Huiselijk Geweld het begrip **psychisch geweld in huiselijke kring**. Daaronder valt structurele verbale agressie, minstens maandelijks, en vormen van [dwingende controle](nl/begrippen/dwingende-controle/) waarbij dreiging en intimidatie een rol spelen. Het gaat dan om iemand uit de huiselijke kring, en dat is breder dan alleen een partner of ex.
+Je komt ook andere woorden tegen, zoals psychisch geweld of psychische mishandeling. Ze helpen gedrag te beschrijven dat je klein of onveilig laat voelen. Bij [dwingende controle](nl/begrippen/dwingende-controle/) gaat het specifiek om een samenhangend patroon dat je vrijheid steeds verder beperkt.
 
 Emotioneel misbruik is geen diagnose en zegt niets over de persoonlijkheid van de ander. Het beschrijft gedrag en het effect daarvan.
 
@@ -72,22 +84,42 @@ Daarbij spelen **[macht en afhankelijkheid](nl/begrippen/macht-en-afhankelijkhei
 
 **[Isolatie](nl/begrippen/isolatie/)** gaat vaak geleidelijk. Vrienden worden minder welkom, familiebezoek levert steeds spanning op, en uiteindelijk lijkt het makkelijker om niet meer te gaan. Ook **[sociale druk](nl/begrippen/sociale-druk/)** kan meespelen, bijvoorbeeld wanneer de omgeving een eenzijdig beeld krijgt van wat er thuis gebeurt, of wanneer anderen worden ingezet om druk uit te oefenen. Deze begrippen worden apart uitgelegd in de [begrippenlijst](nl/begrippen/).
 
+## Als je steeds minder ruimte inneemt
+
+**Voorbeeld — fictief.** Je vertelt dat je een zware dag hebt gehad. Je partner zegt dat je niet zo moet zeuren. Eerst denk je dat het een slecht moment was. Later gebeurt het opnieuw wanneer je verdriet of een behoefte uitspreekt. Je probeert het korter, zachter, op een ander tijdstip. Uiteindelijk zeg je dat alles goed gaat, ook als dat niet zo is.
+
+Het gaat niet alleen om wat er wordt gezegd, maar ook om wat voortdurend geen plek krijgt. Als jouw gevoelens en behoeften structureel worden genegeerd, kun je je binnen de relatie erg alleen voelen. Dat wordt ook emotionele verwaarlozing genoemd. Niet ieder gemist gesprek is mishandeling: iemand kan moe zijn, ruimte nodig hebben of je niet goed begrijpen. Het verschil zit in de terugkerende afwijzing en de vraag of er later wél ruimte voor jou is.
+
+Je kunt blijven zoeken naar een manier waarop het gesprek lukt, juist omdat je betrokken bent en de ander wilt begrijpen. Die bereidheid maakt jou niet verantwoordelijk voor het kleineren of negeren. Afstand kan zichtbaar maken dat je niet alleen rustiger bent gaan praten, maar steeds minder van jezelf liet zien.
+
 ## Wanneer is het niet zomaar af te leiden?
 
-Herkenning is waardevol, maar het is geen conclusie. Een paar dingen om in gedachten te houden:
+Je hoeft niet elk voorbeeld te herkennen. Kijk naar de samenhang, je ruimte om te kiezen en wat er gebeurt als je iets bespreekt:
 
 - **Elke relatie kent conflict.** Mensen zeggen in ruzie dingen waar ze spijt van krijgen. Dat is niet hetzelfde als een patroon van controle. Het verschil wordt uitgelegd in [Ongezond conflict of een patroon?](nl/begrijp-het/conflict-of-patroon/).
-- **Eén voorbeeld bewijst niets.** Iemand kan zich een gesprek oprecht anders herinneren. Pas als iets steeds terugkomt en jouw ruimte structureel kleiner maakt, wordt het een patroon.
+- **Een incident en een patroon zijn niet hetzelfde.** Iemand kan zich een gesprek anders herinneren. Herhaald verdraaien of kleineren vraagt een andere beoordeling. Ook een afzonderlijke ernstige bedreiging verdient hulp; je hoeft niet op herhaling te wachten.
 - **Beide partners kunnen zich slecht gedragen.** Soms is er geen duidelijke verdeling in wie wat doet. Dan kan het helpen om vooral te kijken naar wie zich steeds aanpast, en wie er bang is.
 - **Je kunt geen bedoelingen op afstand vaststellen.** Gedrag kan schadelijk zijn, ook als iemand dat niet zo bedoelt. En een website kan niet beoordelen wat er in jouw relatie speelt.
 
 ### Ook mannen maken het mee
 
-Emotioneel misbruik kan iedereen overkomen, ongeacht gender. Toch herkennen mannen het soms minder snel. Het beeld van "slachtoffer" past niet bij wat veel mannen over zichzelf hebben geleerd: sterk zijn, niet klagen, het zelf oplossen. Daar komt bij dat emotioneel misbruik geen blauwe plekken geeft. Dan is het verleidelijk om te denken dat het wel meevalt, of dat je het zelf hebt uitgelokt. Ook de angst om niet geloofd of uitgelachen te worden houdt veel mannen stil. Dat stigma maakt het extra belangrijk om je eigen beleving serieus te nemen.
+Emotioneel misbruik kan iedereen overkomen, ongeacht gender. Toch herkennen mannen het soms minder snel. Het beeld van "slachtoffer" past niet bij wat veel mannen over zichzelf hebben geleerd: sterk zijn, niet klagen, het zelf oplossen. Wanneer er geen zichtbare verwondingen zijn, kan erkenning nog moeilijker voelen. Dan is het verleidelijk om te denken dat het wel meevalt, of dat je het zelf hebt uitgelokt. Ook de angst om niet geloofd of uitgelachen te worden houdt veel mannen stil. Dat stigma maakt het extra belangrijk om je eigen beleving serieus te nemen.
 
 ## Wat het met je kan doen
 
 Emotioneel misbruik raakt vaak aan hoe je over jezelf denkt. Mensen beschrijven bijvoorbeeld dat ze [steeds aan zichzelf gingen twijfelen](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), [zich voor alles schuldig voelden](nl/wat-voel-ik/ik-voel-me-schuldig/), voortdurend op hun hoede waren of [zichzelf niet meer herkenden](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/). Niet iedereen ervaart dat, en het kan ook andere oorzaken hebben. Meer daarover staat in [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).
+
+## Na de relatie, en in een nieuwe band
+
+**Voorbeeld — fictief.** Je vertelt iemand dat je ergens tegenop ziet. Diegene luistert en vraagt wat je nodig hebt. Je merkt dat je al klaarzat om je gevoel te verdedigen. Juist doordat dat nu niet hoeft, voel je verdriet over hoe weinig ruimte er eerder was.
+
+Herkenning achteraf kan tegelijk opluchten en pijn doen. Je kunt goede momenten missen en toch zien wat schadelijk was. Begrijpen wat er gebeurde betekent niet dat de oude twijfel meteen verdwijnt. Lees daarover [Ik begrijp het, maar het blijft pijn doen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/).
+
+In een nieuwe relatie mag je je tempo bepalen. Een teleurstelling hoeft geen herhaling van vroeger te zijn; let op of je gevoel bespreekbaar blijft en je grenzen worden gerespecteerd. Je hoeft geen perfecte uitleg van je verleden te geven om nu zorgvuldig behandeld te worden.
+
+## Woorden in onderzoek
+
+Het CBS gebruikt voor zijn Prevalentiemonitor 2024 een afbakening van psychisch geweld: onder meer verbale agressie die maandelijks of vaker voorkomt, naast vormen van dwingende controle met dreiging en intimidatie. Die frequentie dient om ervaringen in onderzoek te tellen. Ze bepaalt niet wanneer jouw ervaring ernstig genoeg is om steun te zoeken. Deze pagina biedt herkenning en context, geen beoordeling van een individuele relatie.
 
 ## Wat kan helpen?
 

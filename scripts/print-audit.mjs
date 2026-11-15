@@ -14,6 +14,25 @@ const chromePath =
 
 const defaultRoutes = [
   {
+    id: 'emotional-abuse',
+    route: '/nl/begrijp-het/emotioneel-misbruik/',
+    required: [
+      'Als je steeds minder ruimte inneemt',
+      'Na de relatie, en in een nieuwe band',
+      'Woorden in onderzoek',
+    ],
+    screenshots: true,
+  },
+  {
+    id: 'psychological-manipulation',
+    route: '/nl/begrippen/psychische-manipulatie/',
+    required: [
+      'Als iets vertrouwelijks tegen je wordt gebruikt',
+      'Na de relatie: weer iets durven delen',
+    ],
+    screenshots: true,
+  },
+  {
     id: 'financial-dependence',
     route: '/nl/begrijp-het/financieel-misbruik/afhankelijkheid/',
     required: [
