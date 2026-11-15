@@ -40,7 +40,7 @@ reviewNotes:
 
 ## Wat herstel kan betekenen
 
-Herstel na emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) is geen vast traject met een eindpunt. Voor de een begint het met eindelijk woorden hebben voor wat er gebeurde. Voor de ander met merken dat het lichaam niet meer de hele dag op scherp staat. Er is geen goede of foute volgorde.
+Herstel na emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) is geen vast traject met een eindpunt. Voor de een begint het met eindelijk woorden hebben voor wat er gebeurde. Voor de ander met merken dat het lichaam niet meer de hele dag op scherp staat. Er is geen goede of foute volgorde.
 
 Een paar dingen komen vaak terug:
 

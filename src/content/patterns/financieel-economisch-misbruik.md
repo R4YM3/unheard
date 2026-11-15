@@ -4,7 +4,7 @@ description: 'Wat de woorden financieel en economisch misbruik betekenen en waar
 locale: nl
 translationKey: economisch-misbruik
 slug: begrippen/financieel-economisch-misbruik
-published: true
+published: false
 status: in_review
 author: editorial
 publishedAt: 2026-10-20

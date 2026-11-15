@@ -78,7 +78,11 @@ const routes = [
     route: '/nl/begrijp-het/conflict-of-patroon/',
     required: ['Je hoort', 'Bronnen'],
   },
-  { id: 'financial-hub', route: '/nl/begrijp-het/financieel-misbruik/', required: ['Wat is het?'] },
+  {
+    id: 'financial-hub',
+    route: '/nl/begrijp-het/financieel-misbruik/',
+    required: ['Wat is het?', 'Signalen', 'Na een breuk, en bij nieuwe afspraken'],
+  },
   {
     id: 'recovery-hub',
     route: '/nl/herstel/',
@@ -160,6 +164,7 @@ try {
         'tools-hub',
         'emotion',
         'alertness',
+        'financial-hub',
         'knowledge',
         'therapy',
         'tool',

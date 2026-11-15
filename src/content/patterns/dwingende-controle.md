@@ -14,7 +14,7 @@ related:
   [
     conflict-of-patroon,
     isolatie,
-    economisch-misbruik,
+    financieel-misbruik,
     emotioneel-misbruik,
     het-vertellen,
     hulp-vinden,
@@ -93,7 +93,7 @@ Dwingende controle zit vaak in kleine, alledaagse dingen. Los bekeken lijken ze 
 - De ander wil altijd weten waar je bent, en wordt boos of ongerust als je niet direct antwoordt.
 - Je telefoon, mail of bankrekening wordt gecontroleerd.
 - Je ziet je vrienden of familie steeds minder, omdat het 'gedoe' geeft. Zie [isolatie](nl/begrippen/isolatie/).
-- Je moet [verantwoording afleggen over uitgaven](nl/begrippen/controle-over-uitgaven/), of hebt geen eigen toegang tot geld. Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- Je moet [verantwoording afleggen over uitgaven](nl/begrippen/controle-over-uitgaven/), of hebt geen eigen toegang tot geld. Zie [financieel en economisch misbruik](nl/begrijp-het/financieel-misbruik/).
 - Er zijn regels over kleding, eten, slaap of wie je spreekt, uitgesproken of onuitgesproken.
 - Je wordt uitgelachen of gekleineerd, ook waar anderen bij zijn.
 - Je merkt dat je vooral bezig bent met het voorkomen van een uitbarsting.

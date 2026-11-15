@@ -99,9 +99,9 @@ timeline:
             perspective: now
             text: Het verlies van mijn financiële onafhankelijkheid ging geleidelijk. Op het moment dat mijn rekening gezamenlijk werd, ervoer ik dat nog niet zo.
       links:
-        - href: nl/begrippen/financieel-economisch-misbruik/
+        - href: nl/begrijp-het/financieel-misbruik/
           label: Financieel en economisch misbruik
-        - href: nl/begrijp-het/financieel-misbruik/signalen/
+        - href: nl/begrijp-het/financieel-misbruik/#signalen
           label: Signalen van financieel misbruik
     - eyebrow: Vader worden
       title: Ik dacht dat zorgen bij liefde hoorde.
@@ -254,7 +254,7 @@ timeline:
       links:
         - href: nl/begrippen/schuldverschuiving/
           label: Schuldverschuiving
-        - href: nl/begrippen/financieel-economisch-misbruik/
+        - href: nl/begrijp-het/financieel-misbruik/
           label: Financieel en economisch misbruik
     - eyebrow: Weggaan en terugkomen
       phase: Weggaan en terugkomen

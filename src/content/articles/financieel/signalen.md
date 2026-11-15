@@ -5,7 +5,7 @@ locale: nl
 translationKey: financieel-signalen
 slug: begrijp-het/financieel-misbruik/signalen
 status: in_review
-published: true
+published: false
 author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-11-14

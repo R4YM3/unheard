@@ -51,7 +51,7 @@ reviewNotes:
 
 ## Wanneer kan advies helpen?
 
-Je hoeft niet eerst zeker te weten dat er sprake is van [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) om advies te vragen. Advies kan al helpen als:
+Je hoeft niet eerst zeker te weten dat er sprake is van [financieel misbruik](nl/begrijp-het/financieel-misbruik/) om advies te vragen. Advies kan al helpen als:
 
 - je niet weet welke schulden, leningen of contracten op jouw naam staan;
 - je overweegt om weg te gaan en wilt weten wat dat financieel betekent;

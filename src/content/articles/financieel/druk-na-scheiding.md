@@ -49,7 +49,7 @@ reviewNotes:
 
 Een scheiding is bijna altijd financieel ingrijpend. Twee huishoudens kosten meer dan één, gezamenlijke bezittingen en schulden moeten worden verdeeld, en afspraken over kinderen hebben vaak ook een financiële kant. Daarover onenigheid hebben is gewoon, hoe zwaar het ook kan zijn.
 
-Economische druk na een scheiding is iets anders. Het gaat om een patroon waarin geld, schulden of procedures steeds worden ingezet om controle te houden, om de ander uit te putten of om keuzes af te dwingen. [Financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) stopt niet altijd bij het einde van een relatie; soms verandert het alleen van vorm.
+Economische druk na een scheiding is iets anders. Het gaat om een patroon waarin geld, schulden of procedures steeds worden ingezet om controle te houden, om de ander uit te putten of om keuzes af te dwingen. [Financieel misbruik](nl/begrijp-het/financieel-misbruik/) stopt niet altijd bij het einde van een relatie; soms verandert het alleen van vorm.
 
 De [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf) beschrijft dat veel mensen na een relatie met financieel misbruik met schulden achterblijven.
 

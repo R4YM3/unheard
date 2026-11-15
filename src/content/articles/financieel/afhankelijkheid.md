@@ -18,7 +18,7 @@ order: 50
 cardTitle: 'Afhankelijkheid'
 cardText: 'Financieel afhankelijk zijn is niet hetzelfde als misbruik. Het wordt zorgelijk als afhankelijkheid wordt gebruikt om je keuzes te beperken.'
 summary: 'Financiële afhankelijkheid betekent dat je voor geld, wonen of bestaanszekerheid op een ander bent aangewezen. Dat komt in veel relaties voor en is op zichzelf geen misbruik. Het wordt zorgelijk als die afhankelijkheid wordt vergroot of gebruikt, bijvoorbeeld door werk of studie tegen te werken. Afhankelijkheid kan het moeilijk maken om weg te gaan, en schaamte maakt praten lastig, zeker voor mannen.'
-related: [financieel-misbruik, geld-praten, financieel-signalen, dwingende-controle, hulp-vinden]
+related: [financieel-misbruik, geld-praten, dwingende-controle, hulp-vinden]
 sources:
   - label: 'Movisie — Financiële kwetsbaarheid en huiselijk geweld en kindermishandeling'
     url: 'https://www.movisie.nl/artikel/financiele-kwetsbaarheid-huiselijk-geweld-kindermishandeling'

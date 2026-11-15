@@ -29,7 +29,7 @@ reviewNotes:
 
 ## Waarom deze pagina er is
 
-Als je over emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) leest, wil je misschien niet dat iemand anders dat kan zien. Daarom staat hier precies wat er gebeurt als je deze site bezoekt: wat er wel wordt vastgelegd, wat niet, en waar de grenzen liggen van wat een website kan beloven.
+Als je over emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) leest, wil je misschien niet dat iemand anders dat kan zien. Daarom staat hier precies wat er gebeurt als je deze site bezoekt: wat er wel wordt vastgelegd, wat niet, en waar de grenzen liggen van wat een website kan beloven.
 
 ## Snel de site verlaten
 

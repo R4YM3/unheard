@@ -222,11 +222,11 @@ routes:
     title: 'Financiële afhankelijkheid'
     recognition: 'Weinig zicht of zeggenschap over geld kan je klem zetten, ook als je zelf werkt. Overzicht krijgen kan in kleine, veilige stappen.'
     feelings: [geld-praten]
-    patterns: [economisch-misbruik, controle-over-uitgaven, schulden-op-naam]
+    patterns: [controle-over-uitgaven, schulden-op-naam]
     reflections:
       - 'Welke informatie over geld of papieren zou je graag zelf hebben?'
       - 'Bij wie zou je veilig een vraag over geld kunnen stellen?'
-    next: [financieel-signalen, kaart-financieel, financieel-advies]
+    next: [financieel-misbruik, kaart-financieel, financieel-advies]
   - id: eenzaamheid
     title: 'Eenzaamheid'
     recognition: 'Je kunt je alleen voelen, ook met mensen om je heen. Vooral als het lastig is om uit te leggen wat er gebeurt.'

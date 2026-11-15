@@ -41,7 +41,7 @@ reviewNotes:
 
 Documenten lijken een praktisch onderwerp, maar ze raken aan iets groters: kun je zelf handelen als dat nodig is? Wie geen toegang heeft tot zijn identiteitsbewijs, bankgegevens of contracten, kan moeilijker een eigen rekening regelen, een huurwoning zoeken, hulp aanvragen of advies vragen.
 
-Bij [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) kan toegang tot documenten bewust of onbewust beperkt zijn. Ook als dat niet zo is, geeft het rust om te weten waar je eigen papieren zijn.
+Bij [financieel misbruik](nl/begrijp-het/financieel-misbruik/) kan toegang tot documenten bewust of onbewust beperkt zijn. Ook als dat niet zo is, geeft het rust om te weten waar je eigen papieren zijn.
 
 ## Welke documenten zijn van jou?
 

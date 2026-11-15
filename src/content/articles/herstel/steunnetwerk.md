@@ -59,7 +59,7 @@ Na een relatie waarin je je terugtrok of [contacten verwaterden](nl/begrippen/is
 
 ## Hulp vragen als man
 
-Veel mannen hebben geleerd dat hulp vragen iets is wat je liever niet doet. Je lost het zelf op. Je wilt niemand lastigvallen. Je bent bang dat je niet serieus genomen wordt, of dat mensen je zwak vinden. Bij emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) kan daar nog bijkomen dat je denkt: dit overkomt mannen niet.
+Veel mannen hebben geleerd dat hulp vragen iets is wat je liever niet doet. Je lost het zelf op. Je wilt niemand lastigvallen. Je bent bang dat je niet serieus genomen wordt, of dat mensen je zwak vinden. Bij emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) kan daar nog bijkomen dat je denkt: dit overkomt mannen niet.
 
 Dat gevoel is begrijpelijk, maar het klopt niet. Iedereen kan te maken krijgen met misbruik, en iedereen mag hulp vragen. Hulp vragen is geen bekentenis van falen. Het is een manier om de last niet in je eentje te dragen.
 

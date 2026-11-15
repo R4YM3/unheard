@@ -10,8 +10,7 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related:
-  [economisch-misbruik, schulden-op-naam, dwingende-controle, financieel-misbruik, hulp-vinden]
+related: [financieel-misbruik, schulden-op-naam, dwingende-controle, hulp-vinden]
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Voor dit kleine bedrag moet ik straks weer uitleg geven.'
@@ -51,7 +50,7 @@ Controle over uitgaven is een situatie waarin één persoon eenzijdig bepaalt wa
 
 Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'toestemming moeten vragen voor uitgaven' als signaal van financieel misbruik, en aan de kant van de pleger: 'controleert inkomen, uitgaven en administratie' en 'gebruikt geld als machtsmiddel'. In het onderzoek van Postmus en collega's (2012) valt dit onder _economische controle_, een van de drie vormen van economisch misbruik die zij onderscheiden.
 
-Controle over uitgaven is een vorm van [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/) en kan onderdeel zijn van [dwingende controle](nl/begrippen/dwingende-controle/).
+Controle over uitgaven is een vorm van [financieel en economisch misbruik](nl/begrijp-het/financieel-misbruik/) en kan onderdeel zijn van [dwingende controle](nl/begrippen/dwingende-controle/).
 
 ## Hoe kan het eruitzien?
 

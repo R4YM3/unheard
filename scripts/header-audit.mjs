@@ -481,6 +481,16 @@ try {
   // Consolidated introductions retain their old URLs and section links.
   for (const [oldRoute, targetRoute, anchor] of [
     [
+      'begrippen/financieel-economisch-misbruik/',
+      'begrijp-het/financieel-misbruik/',
+      'wat-is-financieel-en-economisch-misbruik',
+    ],
+    [
+      'begrijp-het/financieel-misbruik/signalen/',
+      'begrijp-het/financieel-misbruik/',
+      'wat-zijn-signalen',
+    ],
+    [
       'begrippen/hyperwaakzaamheid/',
       'wat-voel-ik/ik-sta-voortdurend-aan/',
       'wat-is-hyperwaakzaamheid',
@@ -502,7 +512,13 @@ try {
       assert(await moved.$(`#${anchor}`), 'Transferred section exists');
       if (javascript) assert.equal(new URL(moved.url()).hash, `#${anchor}`);
       assert.equal((await moved.$$('h1')).length, 1);
-      if (['begrippen/zelftwijfel/', 'begrippen/hyperwaakzaamheid/'].includes(oldRoute)) {
+      if (
+        [
+          'begrippen/zelftwijfel/',
+          'begrippen/hyperwaakzaamheid/',
+          'begrippen/financieel-economisch-misbruik/',
+        ].includes(oldRoute)
+      ) {
         await moved.goto(`${origin}/nl/begrippen/`, { waitUntil: 'networkidle0' });
         const links = await moved.$$(`.glossary-item dt a[href="nl/${targetRoute}"]`);
         assert.equal(links.length, 1, 'A–Z retains exactly one direct consolidated entry');

@@ -39,7 +39,7 @@ Ongehoord heeft voor mij twee kanten. Het gaat over ervaringen die niet gehoord 
 
 ## Voor wie het is
 
-Ik schrijf in de eerste plaats voor mannen die emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) meemaken of hebben meegemaakt, in een relatie, in een gezin of na een breuk. Veel mannen zwijgen erover, of hebben er geen woorden voor.
+Ik schrijf in de eerste plaats voor mannen die emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) meemaken of hebben meegemaakt, in een relatie, in een gezin of na een breuk. Veel mannen zwijgen erover, of hebben er geen woorden voor.
 
 [OPRICHTER REVIEW NODIG] Wil ik hier iets zeggen over hoe dat zwijgen voor mij was?
 

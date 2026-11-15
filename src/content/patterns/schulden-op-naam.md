@@ -14,14 +14,7 @@ readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Mijn naam staat erop. Had ik dit dan moeten tegenhouden?'
   feeling: 'Schaamte en verwarring zijn begrijpelijk als druk, afhankelijkheid of misbruik van gegevens tot schulden hebben geleid.'
-related:
-  [
-    economisch-misbruik,
-    controle-over-uitgaven,
-    financieel-misbruik,
-    macht-en-afhankelijkheid,
-    hulp-vinden,
-  ]
+related: [financieel-misbruik, controle-over-uitgaven, macht-en-afhankelijkheid, hulp-vinden]
 glossary:
   term: 'Schulden op naam'
   definition: 'Schulden op jouw naam die je niet vrijwillig of niet bewust bent aangegaan, bijvoorbeeld door druk om te tekenen of misbruik van je gegevens.'
@@ -64,7 +57,7 @@ reviewNotes:
 
 Met 'schulden op naam' worden hier schulden bedoeld die op jouw naam staan, maar die je niet vrijwillig of niet bewust bent aangegaan. Bijvoorbeeld omdat een (ex-)partner je onder druk zette om te tekenen, of omdat iemand zonder jouw medeweten jouw gegevens gebruikte voor een lening, abonnement of aankoop. In Engelstalig onderzoek wordt hiervoor ook de term _coerced debt_ (afgedwongen schuld) gebruikt.
 
-Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'schulden hebben door toedoen van de partner' als signaal van [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/), net als een partner die de ander 'onder druk zet om schulden aan te gaan'. Movisie beschrijft dat schulden zowel een oorzaak als een gevolg van huiselijk geweld kunnen zijn, en dat [financiële problemen vaak nog lang na de relatie doorwerken](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/).
+Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'schulden hebben door toedoen van de partner' als signaal van [financieel misbruik](nl/begrijp-het/financieel-misbruik/), net als een partner die de ander 'onder druk zet om schulden aan te gaan'. Movisie beschrijft dat schulden zowel een oorzaak als een gevolg van huiselijk geweld kunnen zijn, en dat [financiële problemen vaak nog lang na de relatie doorwerken](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/).
 
 Dit artikel geeft algemene informatie, geen juridisch of financieel advies. Je situatie hangt af van wat je getekend hebt, hoe je samenwoonde of getrouwd was en wat er precies op jouw naam staat.
 

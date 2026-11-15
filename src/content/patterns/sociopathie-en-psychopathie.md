@@ -91,7 +91,7 @@ Dit is geen portret van een type mens. Het beschrijft wat je kunt meemaken als g
 - Werd er herhaaldelijk tegen je gelogen, over geld, contacten of waar iemand was?
 - Werd jouw nee genegeerd, of bestraft met stilte, dreiging of charme die snel weer omsloeg?
 - Was er intimidatie of geweld?
-- Werd je financieel uitgebuit, bijvoorbeeld met [schulden op jouw naam](nl/begrippen/schulden-op-naam/)? Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- Werd je financieel uitgebuit, bijvoorbeeld met [schulden op jouw naam](nl/begrippen/schulden-op-naam/)? Zie [financieel en economisch misbruik](nl/begrijp-het/financieel-misbruik/).
 - Duurde spijt kort, of werd jij juist de schuldige gemaakt? Zie [DARVO](nl/begrippen/darvo/).
 
 **Wat het met je gevoel kan doen.** Je vertrouwt je eigen oordeel minder, omdat de feiten steeds worden herschreven. Je schaamt je dat je iemand geloofde. Je wordt waakzaam en ontspant niet als het even rustig is. Boosheid en medelijden kunnen door elkaar lopen. Zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) en [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/).
