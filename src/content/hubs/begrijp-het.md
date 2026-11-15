@@ -27,6 +27,7 @@ listings:
     tape: true
     lead: 'Achtergrond in gewone taal. Elk artikel staat op zichzelf, dus begin waar je vraag ligt.'
   - collection: patterns
+    cardStyle: list
     prefix: 'begrippen/'
     heading: 'Patronen die je misschien herkent'
     lead: 'Korte uitleg van terugkerend gedrag, met voorbeelden die verzonnen zijn en niemand beschrijven.'
