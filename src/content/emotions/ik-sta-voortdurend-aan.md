@@ -134,8 +134,6 @@ reviewNotes:
 
 Je telefoon trilt en je hart slaat over. Je hoort een sleutel in het slot en scant al het gezicht van wie binnenkomt. Je ligt in bed en je lichaam is moe, maar je hoofd blijft draaien. Zelfs op vakantie of op een rustige zondag zit er iets in je dat niet uitgaat.
 
-> **Voorbeeldgedachte:** Alsof er ergens een alarm aanstaat dat ik niet kan vinden.
-
 Misschien weet je niet eens meer hoe het voelt om echt te ontspannen. Of je merkt pas hoe gespannen je was op het moment dat het even wegvalt, en dan ben je ineens doodmoe.
 
 Veel mannen zijn gewend om door te gaan. Spanning wordt dan iets wat je wegdrukt met werk, sport of een biertje. Van buitenaf ziet niemand het. Maar je lichaam houdt het wel bij.
