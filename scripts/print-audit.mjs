@@ -30,6 +30,11 @@ const routes = [
     required: ['Je hoort', 'Je voelt', 'Een grens aangeven', 'Bevestiging zoeken'],
   },
   {
+    id: 'alertness',
+    route: '/nl/wat-voel-ik/ik-sta-voortdurend-aan/',
+    required: ['Een volgende stap', 'Heb je nu hulp nodig?'],
+  },
+  {
     id: 'emotion-hub',
     route: '/nl/wat-voel-ik/',
     required: ['Waar kan ik beginnen?', 'Hoe gevoelens elkaar kunnen opvolgen.'],

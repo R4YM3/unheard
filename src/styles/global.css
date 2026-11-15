@@ -141,7 +141,7 @@ h4 {
 .reading {
   max-width: var(--reading);
 }
-/* Centre standalone reading blocks; rail layouts keep their own column alignment. */
+/* Centre standalone reading blocks. */
 .wrap.reading {
   margin-inline: auto;
 }
@@ -828,7 +828,7 @@ mark.review-marker {
   gap: clamp(1.5rem, 3vw, 2rem);
 }
 /* On wide screens the end side stays in view while the start side is read: it sticks below
-   the header (with the rail's spacing) and stops at the block's bottom padding, so it never
+   the header and stops at the block's bottom padding, so it never
    runs into the first band. Not on low screens, where it could not fit. */
 @media (min-width: 52.0625rem) and (min-height: 40rem) {
   .intro-block__side {
@@ -2657,108 +2657,54 @@ a.card:focus-visible,
   margin-top: 0.5rem;
 }
 
-/* ---------- Deep-page rail ---------- */
-.article-layout--rail {
-  width: min(calc(100% - 2.5rem), var(--content));
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: 17.5rem minmax(0, 1fr);
-  gap: clamp(1.25rem, 2.5vw, 2.5rem);
-  align-items: start;
-  /* The rail stays with the article and stops a little above the full-width blocks below. */
-  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-}
-.article-layout--rail .wrap {
-  width: 100%;
-  margin-inline: 0;
-}
-/* Coloured bands run to the viewport edge, also beside the rail. border-image paints
-   outside the box without creating scrollable overflow. */
-.article-layout--rail .section {
-  border-image: linear-gradient(var(--section-bg) 0 0) fill 0 / /0 100vw;
-}
+/* ---------- Article contents and reading progress ---------- */
 .article-layout__main {
   min-width: 0;
 }
-.article-layout--rail .article-layout__main {
-  grid-column: 2;
-  grid-row: 1;
+.article-contents {
+  margin-block: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
 }
-/* Quiet rail: no frame, a thin line per link, the current place marked on that line. */
-.page-rail {
-  --read: 0;
-  position: sticky;
-  top: 7rem;
-  grid-column: 1;
-  grid-row: 1;
-  align-self: start;
-  max-height: calc(100dvh - 8rem);
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding-block: 0.25rem;
-  overflow: auto;
-  overscroll-behavior: contain;
-}
-.read-progress {
-  position: absolute;
-  inset-inline-start: 0;
-  top: 0;
-  width: 2px;
-  height: calc(var(--read) * 100%);
-  background: var(--help);
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .read-progress {
-    transition: height 160ms linear;
-  }
-}
-.page-rail nav + nav,
-.page-rail nav + details,
-.page-rail details + nav {
-  margin-top: 1.75rem;
-}
-.page-rail .rail-mobile {
-  display: none;
-}
-.page-rail summary {
-  min-height: 2.75rem;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.8rem;
+.article-contents summary {
+  min-height: 3rem;
+  padding: 0.75rem 3rem 0.75rem 1rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   cursor: pointer;
 }
-.page-rail .eyebrow {
-  margin: 0 0 0.4rem;
-  padding-inline-start: 0.85rem;
-  color: var(--muted);
-}
-.page-rail ul {
-  display: grid;
+.article-contents ul {
   margin: 0;
-  padding: 0;
+  padding: 0 1rem 0.75rem;
   list-style: none;
 }
-.page-rail a {
+.article-contents a {
   display: flex;
   align-items: center;
-  min-height: 2.5rem;
-  padding: 0.25rem 0.5rem 0.25rem 0.85rem;
-  border-inline-start: 2px solid var(--border);
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.3;
+  min-height: 2.75rem;
+  padding-block: 0.35rem;
 }
-.page-rail a:hover {
-  border-inline-start-color: var(--muted);
-  color: var(--text);
+.read-progress {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  height: 3px;
+  background: var(--help);
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
 }
-.page-rail a[aria-current='page'],
-.page-rail a[aria-current='location'] {
-  border-inline-start-color: var(--help);
-  color: var(--text);
-  font-weight: 700;
+[dir='rtl'] .read-progress {
+  transform-origin: right;
+}
+.article-layout .reader-moment {
+  width: min(calc(100% - 2.5rem), var(--reading));
+  margin-inline: auto;
+}
+.article-layout .reader-moment > .wrap {
+  width: 100%;
 }
 /* Previous / next within a reading group. */
 .group-pager {
@@ -2795,9 +2741,31 @@ a.card:focus-visible,
   font-weight: 600;
   line-height: 1.25;
 }
-.article-layout--rail h2,
-.article-layout--rail h3 {
-  scroll-margin-top: 1rem;
+.article-layout h2,
+.article-layout h3 {
+  scroll-margin-top: calc(var(--article-header-height, 6rem) + 1rem);
+}
+
+/* At high zoom or in landscape, a sticky header can consume most of the reading
+   viewport. Let it scroll away; article progress already follows its visible edge. */
+@media screen and (max-height: 30rem) {
+  .site-header {
+    position: relative;
+  }
+  .safety-dock {
+    inset-block-end: max(0.5rem, env(safe-area-inset-bottom));
+    inset-inline-end: max(0.5rem, env(safe-area-inset-right));
+    gap: 0.25rem;
+  }
+  .safety-dock .safe-exit {
+    min-height: 2.75rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  .safety-dock .theme-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
 }
 
 /* ---------- Help me woorden vinden ---------- */
@@ -2984,56 +2952,6 @@ a.card:focus-visible,
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 68rem) {
-  .article-layout--rail {
-    grid-template-columns: 1fr;
-  }
-  .page-rail,
-  .article-layout--rail .article-layout__main {
-    grid-column: 1;
-    position: static;
-    max-height: none;
-  }
-  .page-rail {
-    grid-row: 1;
-    overflow: visible;
-  }
-  /* On narrow screens the rail is one closed "Op deze pagina" button; the group moves to the
-     previous/next links at the end of the page. */
-  .page-rail > nav,
-  .page-rail > details:not(.rail-mobile) {
-    display: none;
-  }
-  .page-rail .rail-mobile {
-    display: block;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-  }
-  .page-rail .rail-mobile summary {
-    min-height: 3rem;
-    padding: 0.75rem 3rem 0.75rem 1rem;
-    font-weight: 700;
-  }
-  .page-rail .rail-mobile ul {
-    padding: 0 0.5rem 0.75rem;
-  }
-  .read-progress {
-    position: fixed;
-    inset-inline: 0 auto;
-    top: 0;
-    z-index: 4;
-    width: calc(var(--read) * 100vw);
-    height: 3px;
-    transition: none;
-  }
-  .article-layout--rail .article-layout__main {
-    grid-row: 2;
-  }
-  .page-rail a {
-    min-height: 2.75rem;
-  }
-}
 @media (max-width: 60rem) {
   .nav {
     gap: 0.9rem;
@@ -3279,8 +3197,7 @@ a.card:focus-visible,
   body {
     overflow-x: clip;
   }
-  .wrap,
-  .article-layout--rail {
+  .wrap {
     width: min(calc(100% - 2.25rem), var(--content));
   }
   .page-hero__grid,
@@ -3342,7 +3259,7 @@ a.card:focus-visible,
 /* Leave room for the disclosure icon alongside longer labels. */
 .start-chooser summary,
 .timeline summary,
-.page-rail summary,
+.article-contents summary,
 .finder-deepening summary {
   padding-inline-end: 2.25rem;
 }
@@ -3368,22 +3285,6 @@ a.card:focus-visible,
   font-weight: 700;
 }
 
-/* ---------- Below the rail ---------- */
-/* The text column already ends with breathing room; a plain block right below it does not
-   add a second gap. */
-.article-layout--rail
-  + .section:not(
-    .section--soft,
-    .section--children,
-    .section--tension,
-    .section--therapy,
-    .section--tint,
-    .section--surface,
-    .section--chapter,
-    .section--chrome
-  ) {
-  padding-top: 0;
-}
 /* A reflection is a card: a card-sized heading and room between the questions. */
 .reflection h2 {
   font-size: clamp(1.45rem, 2.6vw, 1.9rem);
@@ -3391,11 +3292,6 @@ a.card:focus-visible,
 .reflection ol li + li {
   margin-top: 0.5rem;
 }
-/* The text column ends on its own padding; the prose inside does not add more. */
-.article-layout--rail .article-layout__main > .prose:last-child {
-  padding-bottom: 0;
-}
-
 /* Contour lines: a quiet signature on the rest bands (hero, help band, calm bands), never on
    the sand bands, so it returns without being everywhere. The tile repeats across the whole
    band. Decoration only; print.css resets these backgrounds. */

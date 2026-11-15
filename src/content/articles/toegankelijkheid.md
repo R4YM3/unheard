@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 cardTitle: 'Toegankelijkheid'
 cardText: 'Waar de site naar streeft voor leesbaarheid, toetsenbord, schermlezers, contrast en printen, en wat nog beperkingen heeft.'
@@ -41,9 +41,9 @@ Concreet betekent dat:
 
 ## Hoe dit wordt getest
 
-Bij het bouwen van de site worden alle pagina's automatisch gecontroleerd met een toegankelijkheidstest, in het lichte en in het donkere thema. Daarnaast wordt met de hand getest: navigeren met alleen een toetsenbord, sterk inzoomen, een smal scherm, printen naar PDF en voorlezen met een schermlezer.
+De gebouwde pagina’s worden automatisch gecontroleerd op toegankelijkheidsproblemen in het lichte en het donkere thema. Aanvullende browsercontroles bekijken onder meer toetsenbordbediening, smalle schermen en printen naar PDF. Van belangrijke pagina’s worden schermbeelden en afdrukken bekeken. Dat zijn steekproeven, geen volledige controle van iedere pagina in iedere browser.
 
-Automatische tests vinden maar een deel van de problemen. Handmatig testen gebeurt zo zorgvuldig mogelijk, maar door één persoon en niet door een gespecialiseerd bureau.
+Automatische tests vinden maar een deel van de problemen. Een volledige handmatige controle met een schermlezer, van sterk inzoomen en van printen in Safari staat nog open. De huidige controles zijn geen toegankelijkheidskeuring.
 
 ## Bekende beperkingen
 
