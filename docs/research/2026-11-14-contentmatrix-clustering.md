@@ -666,3 +666,20 @@ Thuisarts-pagina’s gelezen. Projectcheck en build/audit 109 pagina’s geslaag
 na build alle 35 tests geslaagd. Nieuwe browser-, print- en visuele beoordeling
 staan open. Raymond wijst een klinische reviewer aan voor PTSS-afbakening,
 lichamelijke klachten, hulpurgentie en adviezen vóór publicatie. Geen merge.
+
+## Vijfde uitvoering: financieel begrip en signalen naar het hoofdartikel
+
+#114 (`codex/consolidatie-financieel`, 4796653), bovenop #113, voert de financiële
+bundeling uit. Drie volledige teksten zijn vergeleken. Het verschil tussen
+financiële uitbuiting en een patroon van economische controle staat nu expliciet
+in de hub. Signalen, fictieve scènes, patroonontwikkeling en de periode na een
+breuk/nieuwe relatie zijn opgenomen. Vijf herhalende kaarten vervallen; gerichte
+praktische artikelen houden hun eigen functie en bereikbaarheid.
+
+Twee oude URL’s krijgen statische redirects; vijftien H2/H3-ankers zijn behouden.
+A–Z-aliassen, contextlinks, related-keys en woordenvinder zijn aangepast. Mijn
+verhaal en Over wijzigen alleen linkbestemmingen. Oude bronbestanden blijven
+ongepubliceerd bewaard. Projectcheck geslaagd; na build 35 tests geslaagd,
+109 pagina’s gebouwd en geaudit. Browser-/printbeelden van deze nieuwe versie
+nog beoordelen. Raymond wijst financiële/juridische review toe vóór publicatie;
+klinische formuleringen blijven onderdeel van de bredere review. Geen merge.
