@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
@@ -67,7 +67,20 @@ sources:
     url: 'https://geldfit.nl/'
     publisher: Geldfit
     checkedAt: 2026-10-20
+  - label: 'LKHA — Ik heb zelf hulp nodig'
+    url: 'https://www.huwelijksdwangenachterlating.nl/ik-heb-hulp-nodig/'
+    publisher: 'Landelijk Knooppunt Huwelijksdwang en Achterlating'
+    checkedAt: 2026-11-15
+  - label: 'Rijksoverheid — Vormen van eergerelateerd geweld'
+    url: 'https://www.rijksoverheid.nl/themas/migratie-en-reizen/eergerelateerd-geweld/vraag-en-antwoord/eergerelateerd-geweld/vormen-van-eergerelateerd-geweld'
+    publisher: Rijksoverheid
+    checkedAt: 2026-11-15
+  - label: 'Veilig Thuis — Als oud zijn onveilig voelt'
+    url: 'https://www.veiligthuis.nl/nl/signalen/ouderen'
+    publisher: 'Veilig Thuis'
+    checkedAt: 2026-11-15
 reviewNotes:
+  - 'Raymond wijst vóór publicatie een veiligheids-/inhoudelijke reviewer aan voor familie-/gemeenschapsdruk en zorgafhankelijkheid: controleer veilige betrokkenheid, huwelijksdwang, verwaarlozing en het onderscheid tussen overbelasting en opzettelijke controle. Broncontrole 2026-11-15-andere-geweldsvormen-hulproutes.md is geen goedkeuring en verifieert de bestaande nummers niet opnieuw.'
   - 'Controleer vóór publicatie alle nummers opnieuw op de officiële websites.'
   - 'Veilig Thuis: de bron noemt de telefoon dag en nacht, gratis en anoniem, en noemt ook een chat. Chat-tijden staan niet in de geverifieerde notitie. Niet als 24 uur gepresenteerd.'
   - '“Ook voor mannen” is een lezing van “voor iedereen” op de contactpagina. Controleer of Veilig Thuis mannen ergens expliciet noemt.'
@@ -105,6 +118,18 @@ Ben je in levensgevaar, bel dan meteen [112](tel:112). Schaamte hoeft je niet te
 De [Rijksoverheid](https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/vraag-en-antwoord/huiselijk-geweld/wat-moet-ik-doen-bij-huiselijk-geweld) legt uit wat je kunt doen als je huiselijk geweld vermoedt. Je hoeft het niet te bewijzen. Twijfel is genoeg om te bellen. Emotionele druk of controle via geld kun je noemen zoals jij het beleeft. Ongehoord beslist niet of het “telt”.
 
 Vraag wat er daarna wel en niet wordt gedeeld. Deze site belooft niet dat een gesprek onzichtbaar blijft. Maak je je zorgen om iemand anders, lees dan [Ik maak me zorgen om iemand](nl/ik-maak-me-zorgen-om-iemand/).
+
+### Als familie of een gemeenschap druk uitoefent
+
+Je eigen partner willen kiezen mag geen reden zijn om je te bedreigen of tot een huwelijk te dwingen. Wanneer dreiging of geweld wordt gebruikt om de eer van een familie te beschermen of te herstellen, heet dat eergerelateerd geweld. Ook mannen kunnen dit meemaken. Niet ieder meningsverschil met familie is zo'n patroon; dwang en bedreiging verdienen wel hulp.
+
+Bij zorgen hierover kun je Veilig Thuis om advies vragen. Ben je bang voor een gedwongen huwelijk of achterlating in het buitenland, of is dat al gebeurd? Het [Landelijk Knooppunt Huwelijksdwang en Achterlating (LKHA)](https://www.huwelijksdwangenachterlating.nl/ik-heb-hulp-nodig/) biedt hiervoor hulp en advies. Betrek familie niet vanzelfsprekend bij het zoeken naar een oplossing wanneer die zelf druk uitoefent. Bespreek met een deskundige wie veilig kan helpen.
+
+### Als je afhankelijk bent van verzorging
+
+Hulp nodig hebben maakt jouw grenzen niet minder belangrijk. Vernedering, misbruik van je geld of het ontbreken van noodzakelijke voeding en verzorging verdienen aandacht. Bij ouderen kan dit ouderenmishandeling zijn. Verwaarlozing kan ook jongere mensen raken die van anderen afhankelijk zijn.
+
+Niet iedere tekortschietende zorg is opzettelijke controle. Ook overbelasting van een mantelzorger kan tot onveilige zorg leiden. Je hoeft de oorzaak niet eerst te kennen om je zorgen te bespreken. [Veilig Thuis](https://www.veiligthuis.nl/nl/signalen/ouderen) beschrijft deze situaties en biedt een ingang voor advies. Dat geldt ook als je je zorgen maakt om iemand die je verzorgt of bezoekt.
 
 ## Andere hulp
 

@@ -118,3 +118,11 @@ en lopende tekst leesbaar; het digitale herkenningsfragment staat correct en
 zwart op wit in de afdruk. Dit is een steekproef, geen handmatige inspectie van
 alle pagina’s. De PDF’s tellen respectievelijk 6, 7 en 7 pagina’s. Geen nieuwe
 Safari- of schermlezercontrole en geen inhoudelijke publicatiegoedkeuring.
+
+## Vervolgdekking E, H en I
+
+- E: isolatie en sociale druk verdiept, triangulatie scherper afgebakend en twee ongefundeerde formuleringen bij framing geschrapt (61ac4b8). CI 43694949158 geslaagd. Visueel bekeken: A4-pagina 4 isolatie (na de relatie/nieuwe relatie) en A4-pagina 3 sociale druk (groei en herkenningsfragment). In deze twee beelden geen afgesneden of overlappende tekst; geen claim van volledige handmatige browsercontrole.
+- H: zorg en lichamelijke autonomie verwerkt in dwingende controle, seksuele druk (ongepubliceerd) en uitputting (7f51c07). Lokale check, gewone build 109 en geïsoleerde conceptbuild 112 geslaagd. CI 43695615994 was bij vastlegging nog actief.
+- I: context en hulproutes toegevoegd aan Hulp vinden en Voor naasten, zonder nieuwe pagina's. Lokale check inclusief 33 tests en build van 109 pagina's geslaagd. Bestaande telefoonnummers niet opnieuw geverifieerd en niet gewijzigd.
+
+Per cluster staan bronbereik, beperkingen en concrete reviewvragen in de bijbehorende bronnotitie en frontmatter. Raymond wijst de inhoudelijke/veiligheidsreviewers aan; H vraagt ook klinische review. Deze wijzigingen zijn geen publicatiegoedkeuring. Safari-toegang ontbreekt nog; de gebruiker heeft instructies gekregen voor de appinstellingen.

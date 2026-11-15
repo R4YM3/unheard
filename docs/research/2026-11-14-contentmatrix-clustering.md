@@ -712,3 +712,7 @@ ongepubliceerde seksuele-dwangconcept krijgt reproductieve dwang. Emotionele
 uitputting blijft de gevolgenvraag en verwijst bij actuele belemmering van rust
 naar het patroon. Geen nieuwe URL of verlies van de onderwerpen. De eerdere
 absolute uitspraak over herstel na slaap/weekend is gecorrigeerd. Review in #115.
+
+## Uitwerking cluster I — 15 november 2026
+
+Hulp vinden bevat twee korte contextblokken over familie-/gemeenschapsdruk en afhankelijkheid van verzorging. Voor naasten verbindt deze met veilig contact en deskundig advies voordat familie wordt betrokken. Bestaande routes behouden; geen nieuwe artikelen. Broncontrole: `2026-11-15-andere-geweldsvormen-hulproutes.md`. Raymond wijst een veiligheids-/inhoudelijke reviewer aan voor deze passages vóór publicatie.
