@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
@@ -55,7 +55,12 @@ sources:
     url: 'https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/alarmnummer-112'
     publisher: Rijksoverheid
     checkedAt: 2026-10-20
+  - label: 'LKHA — Ik maak me zorgen om iemand'
+    url: 'https://www.huwelijksdwangenachterlating.nl/ik-maak-me-zorgen-om-iemand-dat-die-wordt-uitgehuwelijkt-of-achtergelaten/'
+    publisher: 'Landelijk Knooppunt Huwelijksdwang en Achterlating'
+    checkedAt: 2026-11-15
 reviewNotes:
+  - 'Raymond wijst vóór publicatie een veiligheidsreviewer aan: toets contact afstemmen op veiligheid, familie niet vanzelfsprekend betrekken en het onderscheid tussen zelf confronteren en hulp inschakelen. Zie broncontrole andere geweldsvormen van 15 november 2026.'
   - 'Bevestig op Veilig Thuis en op de Rijksoverheid-pagina dat bezorgde naasten expliciet om advies mogen bellen. De tekst leunt op “voor iedereen” en op de pagina over vermoedens van huiselijk geweld.'
   - 'Niet beweren dat een gesprek of melding onzichtbaar blijft voor de persoon om wie het gaat. De lezer wordt gevraagd dat zelf te checken in het gesprek.'
   - 'De drie scenario’s zijn fictief. De oprichter hoeft ze niet als eigen herinnering te herkennen. Geen namen, plaatsen of leeftijden.'
@@ -75,15 +80,17 @@ Vraag of iemand wil dat je luistert, of dat je meedenkt. Advies op een moment da
 
 ## Contact houden
 
-Contact houden is vaak gewoner dan een groot gesprek. Een bericht zonder vraag. Blijven bellen, ook als het antwoord kort is of uitblijft. Doorvragen tot er een bekentenis komt, werkt vaak averechts. Een deur die open blijft, is al steun.
+Contact houden kan klein beginnen: samen wandelen of een kort bericht zonder doorvragen. Vraag hoe en wanneer contact veilig is. Een partner, familielid of verzorger kan meelezen of op een telefoontje reageren. Blijf daarom niet onbeperkt bellen als je niet weet wat dat voor de ander betekent. Je kunt beschikbaar blijven zonder een antwoord of een heel verhaal te eisen.
 
 Houd dat contact ook als de ander nog niet weg wil, of als het verhaal per week verandert. Wisselende verhalen betekenen niet automatisch dat iemand liegt. Angst, loyaliteit en twijfel kunnen naast elkaar staan.
 
 ## Veiligheid serieus nemen
 
-Neem gevaar serieus, ook als er geen blauwe plekken zijn en ook als de ander zegt dat het wel meevalt. Emotionele druk en [controle via geld](nl/begrippen/financieel-economisch-misbruik/) kun je niet vanaf de zijlijn meten. Jij hoeft dat niet te classificeren.
+Neem gevaar serieus, ook als er geen blauwe plekken zijn en ook als de ander zegt dat het wel meevalt. Emotionele druk en [controle via geld](nl/begrijp-het/financieel-misbruik/) kun je niet vanaf de zijlijn meten. Jij hoeft dat niet te classificeren.
 
 Als je huiselijk geweld vermoedt, legt de [Rijksoverheid](https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/vraag-en-antwoord/huiselijk-geweld/wat-moet-ik-doen-bij-huiselijk-geweld) uit wat je kunt doen. Je hoeft niet zeker te zijn. Hoe je zelf advies vraagt, staat hieronder. Deel het verhaal intussen niet verder in een appgroep. Uitzondering: direct gevaar. Dan bel je 112, ook daarover hieronder.
+
+Betrek niet automatisch de partner, familie of verzorger bij je zorgen. Die kan zelf onderdeel zijn van de druk. Bij dreiging rond familie-eer, een huwelijk of achterlating vraagt hulp om een zorgvuldige veiligheidsafweging. Vraag deskundig advies over wie veilig betrokken kan worden. Op [Hulp vinden](nl/hulp-vinden/#als-familie-of-een-gemeenschap-druk-uitoefent) staan passende ingangen, ook bij [afhankelijkheid van verzorging](nl/hulp-vinden/#als-je-afhankelijk-bent-van-verzorging).
 
 ## Niet duwen naar een breuk
 
@@ -131,7 +138,7 @@ Vraag wat er met jouw informatie gebeurt. Deze pagina belooft niet dat een telef
 
 Meelopen met een zwaar verhaal kost iets. Je mag moe of ongeduldig zijn, zonder dat die gevoelens de maat worden voor wat de ander moet doen. Je bent geen therapeut en hoeft niet dag en nacht bereikbaar te zijn.
 
-Het verhaal van de ander is niet van jou. Je mag tegen iemand zeggen dat je ergens mee zit, zonder namen en zonder herkenbare details. Wordt het te zwaar, gebruik dan dezelfde hulplijnen voor je eigen vraag, of maak een afspraak bij je huisarts. Meer over steun staat bij het [steunnetwerk](nl/herstel/steunnetwerk/). Stop op tijd met zoeken naar artikelen over de partner. Ingrijpen is niet jouw taak.
+Het verhaal van de ander is niet van jou. Je mag tegen iemand zeggen dat je ergens mee zit, zonder namen en zonder herkenbare details. Wordt het te zwaar, gebruik dan dezelfde hulplijnen voor je eigen vraag, of maak een afspraak bij je huisarts. Meer over steun staat bij het [steunnetwerk](nl/herstel/steunnetwerk/). Stop op tijd met zoeken naar artikelen over de partner. Je hoeft de situatie niet zelf op te lossen of iemand te confronteren. Deskundige hulp inschakelen kan wel bij jouw rol passen, en bij direct gevaar is hulp nodig.
 
 ## Wanneer je 112 belt
 

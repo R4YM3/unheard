@@ -6,7 +6,7 @@
  * - with JavaScript, the "Wat je hoort. Wat je voelt." component passes axe colour contrast in light and
  *   dark themes, and the tabs respond to the keyboard.
  */
-import { readdir, readFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
@@ -356,6 +356,107 @@ try {
   }
   await intro.close();
   console.log('Overview intro: text side never shorter than the card side, 900 to 1920px');
+
+  // Article navigation is optional; progress ends before sources, discovery and footer.
+  await mkdir('work/print-audit', { recursive: true });
+  const article = await browser.newPage();
+  for (const width of [390, 1440]) {
+    await article.setViewport({ width, height: 900 });
+    await article.goto(`${origin}/nl/wat-voel-ik/ik-twijfel-aan-mezelf/`, {
+      waitUntil: 'networkidle0',
+    });
+    const initial = await article.evaluate(() => ({
+      sidebar: Boolean(globalThis.document.querySelector('.page-rail')),
+      open: globalThis.document.querySelector('.article-contents')?.open,
+      progress: globalThis.document
+        .querySelector('[data-reading-progress]')
+        ?.getBoundingClientRect().width,
+    }));
+    if (initial.sidebar || initial.open !== false || initial.progress !== 0)
+      failures.push(
+        `Article at ${width}px: expected closed contents, no sidebar and zero progress`,
+      );
+    await article.screenshot({ path: `work/print-audit/article-top-${width}.png` });
+    const midpoint = await article.evaluate(() => {
+      const start = globalThis.document
+        .querySelector('[data-reading-start]')
+        .getBoundingClientRect().top;
+      const end = globalThis.document
+        .querySelector('[data-reading-end]')
+        .getBoundingClientRect().top;
+      return (start + end - globalThis.innerHeight) / 2;
+    });
+    await article.evaluate((top) => globalThis.scrollTo({ top, behavior: 'instant' }), midpoint);
+    await article.evaluate(
+      () =>
+        new Promise((resolve) =>
+          globalThis.requestAnimationFrame(() => globalThis.requestAnimationFrame(resolve)),
+        ),
+    );
+    const middle = await article.evaluate(() => {
+      const bar = globalThis.document
+        .querySelector('[data-reading-progress]')
+        .getBoundingClientRect();
+      return {
+        amount: bar.width / globalThis.innerWidth,
+        top: bar.top,
+        height: bar.height,
+        header: globalThis.document.querySelector('.site-header').getBoundingClientRect().bottom,
+      };
+    });
+    if (
+      middle.amount <= 0 ||
+      middle.amount >= 1 ||
+      Math.abs(middle.top - middle.header) > 1 ||
+      middle.height > 4
+    )
+      failures.push(`Article at ${width}px: progress is not a subtle horizontal line under header`);
+    await article.screenshot({ path: `work/print-audit/article-middle-${width}.png` });
+    await article.evaluate(() => {
+      const end =
+        globalThis.document.querySelector('[data-reading-end]').getBoundingClientRect().top +
+        globalThis.scrollY;
+      globalThis.scrollTo({ top: end - globalThis.innerHeight + 2, behavior: 'instant' });
+    });
+    await article.evaluate(
+      () =>
+        new Promise((resolve) =>
+          globalThis.requestAnimationFrame(() => globalThis.requestAnimationFrame(resolve)),
+        ),
+    );
+    const finished = await article.evaluate(() => ({
+      amount:
+        globalThis.document.querySelector('[data-reading-progress]').getBoundingClientRect().width /
+        globalThis.innerWidth,
+      remaining:
+        globalThis.document.documentElement.scrollHeight -
+        globalThis.scrollY -
+        globalThis.innerHeight,
+    }));
+    if (finished.amount < 0.999 || finished.remaining < 200)
+      failures.push(`Article at ${width}px: progress must finish while sources and footer remain`);
+  }
+  await article.setJavaScriptEnabled(false);
+  await article.goto(`${origin}/nl/wat-voel-ik/ik-twijfel-aan-mezelf/`, {
+    waitUntil: 'networkidle0',
+  });
+  await article.focus('.article-contents summary');
+  await article.keyboard.press('Space');
+  const staticContents = await article.evaluate(() => ({
+    open: globalThis.document.querySelector('.article-contents').open,
+    validLinks: [...globalThis.document.querySelectorAll('.article-contents a')].every((link) =>
+      globalThis.document.getElementById(decodeURIComponent(link.hash.slice(1))),
+    ),
+    progressHidden: globalThis.document.querySelector('[data-reading-progress]').hidden,
+  }));
+  if (!staticContents.open || !staticContents.validLinks || !staticContents.progressHidden)
+    failures.push(
+      'Article contents must work by keyboard without JavaScript; progress stays hidden',
+    );
+  await article.close();
+  console.log(
+    'Article navigation: no sidebar, native contents and article-only progress at 390/1440px',
+  );
 } finally {
   await browser?.close();
   server.kill();

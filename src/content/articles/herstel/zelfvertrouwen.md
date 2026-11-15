@@ -89,7 +89,7 @@ Blijft een nieuw contact je vaak terugbrengen naar oude spanning, lees dan ook [
 
 ## Voor mannen die gewend zijn het zelf te weten
 
-Veel mannen zijn opgevoed met het idee dat je moet weten wat je doet en daar niet over hoort te twijfelen. Juist dan kan [zelftwijfel](nl/begrippen/zelftwijfel/) extra schaamte geven: het voelt als falen. Toch is twijfel na een periode waarin je beleving steeds werd betwist een begrijpelijke reactie. Je hoeft het niet weg te poetsen voordat je er iets aan mag doen.
+Veel mannen zijn opgevoed met het idee dat je moet weten wat je doet en daar niet over hoort te twijfelen. Juist dan kan [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) extra schaamte geven: het voelt als falen. Toch is twijfel na een periode waarin je beleving steeds werd betwist een begrijpelijke reactie. Je hoeft het niet weg te poetsen voordat je er iets aan mag doen.
 
 ## Wanneer extra hulp kan helpen
 

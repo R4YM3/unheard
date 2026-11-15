@@ -8,12 +8,12 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
 order: 10
 cardTitle: 'Erkenning'
 cardText: 'Erkenning van anderen en van jezelf, zonder dat de ander hoeft toe te geven wat er gebeurde.'
-summary: 'Erkenning betekent dat wat je meemaakte serieus genomen wordt. Dat kan komen van mensen die luisteren, en van jezelf. Je hoeft niet te wachten tot de ander het erkent; dat gebeurt soms nooit. Erkenning is geen oordeel over de ander, maar ruimte voor jouw ervaring.'
+summary: 'Erkenning betekent dat wat je meemaakte en wat het met je doet serieus genomen worden. Je mag steun krijgen terwijl er nog vragen zijn, en ook als de ander niets toegeeft. Luisteren en schadelijk gedrag benoemen kunnen samengaan zonder een diagnose over iemand te stellen.'
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Als de ander het niet toegeeft, telt mijn verhaal dan wel?'
@@ -33,24 +33,35 @@ reflection:
   writable: true
 related: [zelftwijfel, herstel-zelfvertrouwen, herstel-rouw, herstel-steunnetwerk, mijn-verhaal]
 sources:
+  - label: 'Op een goede manier reageren op wat iemand doormaakt'
+    url: 'https://www.slachtofferhulp.nl/voordehelpers/iemand-ondersteunen/goede-manier-reageren/'
+    publisher: 'Slachtofferhulp Nederland'
+    checkedAt: 2026-11-14
+  - label: 'Hulp en steun vragen'
+    url: 'https://www.slachtofferhulp.nl/emotionele-hulp/hulp-en-steun-vragen/'
+    publisher: 'Slachtofferhulp Nederland'
+    checkedAt: 2026-11-14
   - label: 'Thuisarts — Ik heb psychische klachten'
     url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'
     publisher: Thuisarts
     checkedAt: 2026-10-20
 reviewNotes:
+  - 'Raymond wijst inhoudelijke/klinische en veiligheidsreviewers aan voor erkenning achteraf, de nieuwe-relatiepassage en veilig woorden geven aan ervaringen. De voorbeelden zijn fictief; geen nieuwe persoonlijke oprichterstekst.'
   - 'Clinicus: is de tekst over erkenning van jezelf voldoende voorzichtig, zonder te suggereren dat dit therapie vervangt?'
   - 'Redactie: is de zin over erkenning bij melding of aangifte neutraal genoeg, zonder juridische verwachtingen te wekken?'
 ---
 
 ## Waarom erkenning zo belangrijk kan voelen
 
-Na emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) blijft vaak één vraag hangen: was het echt zo, of overdrijf ik? Als je lang hebt gehoord dat jij het probleem was, of dat het allemaal wel meeviel, kan [je eigen herinnering onbetrouwbaar gaan voelen](nl/begrippen/zelftwijfel/).
+Na emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) blijft vaak één vraag hangen: was het echt zo, of overdrijf ik? Als je lang hebt gehoord dat jij het probleem was, of dat het allemaal wel meeviel, kan [je eigen herinnering onbetrouwbaar gaan voelen](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
-Erkenning helpt die twijfel te verzachten. Het is het gevoel dat wat jij meemaakte er mag zijn, dat het telt. Niet als vonnis over een ander, maar als bevestiging dat jouw ervaring serieus te nemen is.
+Het kan opluchten wanneer iemand luistert en erkent hoe zwaar iets voor je was. Je hoeft niet eerst ieder detail te kunnen verklaren om serieus genomen te worden. Iemand kan zeggen dat vernederen of dreigen niet aanvaardbaar is, zonder een diagnose over de ander te stellen.
 
 Erkenning is iets anders dan gelijk krijgen. Je hoeft niet te bewijzen dat jij de enige was die gelijk had, en het hoeft ook geen definitief etiket op de relatie te plakken. Het gaat om: dit is wat ik heb meegemaakt, en dit is wat het met mij deed.
 
 ## Wachten op de ander
+
+**Voorbeeld — verzonnen situatie.** Je vertelt opnieuw over een pijnlijke avond, in de hoop dat de ander eindelijk begrijpt waarom die je raakte. Het gesprek gaat al snel over jouw toon. Je begint die te verdedigen en raakt kwijt wat je wilde zeggen. Een vriend vraagt later: ‘Wat had jij op dat moment nodig?’ Voor het eerst vertel je daarover, zonder eerst de ander te overtuigen.
 
 Veel mensen hopen dat de ander ooit erkent wat er gebeurde. Een excuus, een gesprek, een moment van inzicht. Dat verlangen is begrijpelijk.
 
@@ -62,7 +73,9 @@ Je kunt het verlangen naar erkenning laten bestaan, zonder dat je herstel erop h
 
 Erkenning kan komen van mensen die gewoon luisteren. Een vriend die zegt: dat klinkt zwaar. Een familielid dat niet meteen de andere kant gaat verdedigen. Een huisarts of hulpverlener die vraagt hoe het met je gaat en de tijd neemt voor het antwoord.
 
-Het hoeft geen groot gesprek te zijn. Soms is één zin genoeg om te merken dat je niet gek bent.
+Het hoeft geen groot gesprek te zijn. Soms geeft één rustige reactie ruimte om verder te vertellen.
+
+Steun en erkenning vragen mag. Merk je dat je dezelfde geruststelling steeds opnieuw nodig hebt en dat die maar kort rust geeft? Dan kan [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/) helpen om die lus te begrijpen. Dat is een andere vraag dan of jouw ervaring serieus genomen mag worden.
 
 Het kan ook helpen om te lezen over patronen of de ervaringen van anderen. Herkenning in andermans woorden is een vorm van erkenning: blijkbaar ben je niet de enige.
 
@@ -70,15 +83,15 @@ Wie meldt of aangifte doet, hoopt soms ook op erkenning. Dat kan een belangrijke
 
 ### Als erkenning uitblijft
 
-Niet iedereen reageert zoals je hoopt. Sommige mensen bagatelliseren, kiezen een kant of weten simpelweg niet wat ze moeten zeggen. Dat doet pijn, en het zegt meestal meer over hun ongemak dan over de waarde van jouw verhaal.
+Niet iedereen reageert zoals je hoopt. Iemand bagatelliseert wat je vertelt, verdedigt meteen de ander of vraagt vooral wat jij anders had moeten doen. Dat kan pijn doen. Je hoeft niet te weten waarom die persoon zo reageert om te merken dat je op dat moment geen steun krijgt. Die reactie bepaalt niet hoeveel aandacht jouw ervaring verdient.
 
-Je hoeft niet iedereen te overtuigen. Het is genoeg als [een paar mensen het wel horen](nl/herstel/steunnetwerk/).
+Je hoeft niet iedereen te overtuigen. Je mag zoeken naar [mensen bij wie je wel steun vindt](nl/herstel/steunnetwerk/), ook als een eerdere reactie tegenviel.
 
 ## Jezelf erkenning geven
 
 Dit klinkt misschien vaag, maar het kan heel concreet zijn:
 
-- **Opschrijven wat er gebeurde, in je eigen woorden.** Niet voor een ander, alleen voor jezelf. Je hoeft het niet te bewaren.
+- **Woorden zoeken voor wat er gebeurde.** Dat mag in gedachten of in een gesprek. Schrijf alleen iets op als dat veilig kan; ook een tijdelijke notitie kan door iemand worden gezien. Meer daarover staat bij [Veilig gebruik](nl/veilig-gebruik/).
 - **Stoppen met wegredeneren.** Merk je dat je zegt "het viel wel mee" of "ik had het zelf ook anders kunnen doen"? Je mag het even laten staan zoals het voelde.
 - **Benoemen wat het je kostte.** Rust, zelfvertrouwen, contact met vrienden, plezier. Dat mag je missen.
 - **Je eigen inspanning zien.** Je hebt het volgehouden, je hebt geprobeerd het goed te doen. Dat is geen falen.
@@ -86,6 +99,10 @@ Dit klinkt misschien vaag, maar het kan heel concreet zijn:
 Juist voor mannen kan dit lastig zijn. Wie heeft geleerd dat je sterk moet zijn en het zelf moet oplossen, ziet erkenning soms als zelfmedelijden. Maar erkennen dat iets je raakte, is iets anders dan jezelf zielig vinden. Het is eerlijk zijn over wat er was.
 
 ## Een volgende stap
+
+Ook achteraf kan er iets verschuiven. Wat je lang ‘een moeilijke periode’ noemde, blijkt in een gesprek uit steeds dezelfde druk te bestaan. Je kunt opgelucht zijn dat iemand het ziet en tegelijk verdrietig worden over wat je hebt moeten dragen. Erkenning hoeft de pijn niet meteen weg te nemen.
+
+In een nieuwe relatie mag je vragen om een luisterend oor, zonder die partner verantwoordelijk te maken voor het oplossen van vroeger. Steun mag van verschillende mensen komen. Een respectvolle nieuwe ervaring wist de eerdere niet uit, maar kan wel laten zien dat jouw wensen ruimte mogen krijgen.
 
 Als je merkt dat twijfel aan je eigen herinnering je blijft achtervolgen, lees dan verder over [vertrouwen in je eigen waarneming](nl/herstel/zelfvertrouwen/). En als het verlies van wat je hoopte te hebben zwaar weegt, kan [rouw](nl/herstel/rouw/) een passend volgend onderwerp zijn.
 

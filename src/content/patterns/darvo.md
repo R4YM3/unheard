@@ -15,15 +15,7 @@ readerMoment:
   thought: 'Ik begon over wat mij pijn deed. Waarom ben ik nu degene die sorry wil zeggen?'
   feeling: 'Wanneer een gesprek steeds omdraait, kan je vertrouwen in je eigen punt en herinnering slijten.'
 related:
-  [
-    gaslighting,
-    schuldverschuiving,
-    begrip-zelftwijfel,
-    zelftwijfel,
-    schuldgevoel,
-    conflict-of-patroon,
-    hulp-vinden,
-  ]
+  [gaslighting, schuldverschuiving, zelftwijfel, schuldgevoel, conflict-of-patroon, hulp-vinden]
 glossary:
   term: DARVO
   definition: 'Deny, Attack, Reverse Victim and Offender: een reactiepatroon waarbij iemand die op schade wordt aangesproken ontkent, aanvalt en de rollen omdraait.'

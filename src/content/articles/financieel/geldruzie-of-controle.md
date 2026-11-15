@@ -31,8 +31,7 @@ scenarios:
     outside: '“Prima, koop het maar. Maar reken niet op mij als het misgaat.”'
     inside: '“Ik wil iets voor mezelf, maar het voelt alsof ik daarvoor gestraft ga worden.”'
     context: 'Teleurstelling uiten is normaal. Het wordt zorgelijk als eigen keuzes structureel gevolgd worden door dreiging, terugtrekken of het inhouden van geld.'
-related:
-  [financieel-misbruik, financieel-signalen, conflict-of-patroon, dwingende-controle, hulp-vinden]
+related: [financieel-misbruik, conflict-of-patroon, dwingende-controle, hulp-vinden]
 sources:
   - label: 'Schouders Eronder — Van signalering tot hulp: handreiking financieel misbruik (2024, PDF)'
     url: 'https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'
@@ -48,7 +47,7 @@ reviewNotes:
 
 ## Wat is het verschil?
 
-Geld is in veel relaties een bron van spanning. Mensen verschillen in hoe ze met geld omgaan: de één spaart graag, de ander geeft makkelijker uit. Inkomens verschillen, tegenvallers komen onverwacht. Ruzie daarover kan pijnlijk, luid en vermoeiend zijn. Dat is nog geen [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/).
+Geld is in veel relaties een bron van spanning. Mensen verschillen in hoe ze met geld omgaan: de één spaart graag, de ander geeft makkelijker uit. Inkomens verschillen, tegenvallers komen onverwacht. Ruzie daarover kan pijnlijk, luid en vermoeiend zijn. Dat is nog geen [financieel misbruik](nl/begrijp-het/financieel-misbruik/).
 
 Financiële controle is iets anders. Dan gaat het niet om een meningsverschil tussen twee mensen met allebei een stem, maar om een patroon waarin één persoon de financiële ruimte van de ander steeds verder inperkt. Volgens de [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf) kan dat geleidelijk gaan, en kan het in het begin op zorg of behulpzaamheid lijken.
 
@@ -83,7 +82,7 @@ Meer over het verschil tussen conflict en patroon in het algemeen lees je in [Co
 
 ## Wat het met je kan doen
 
-Als ruzies over geld steeds op dezelfde manier eindigen, ga je er misschien vanuit dat het aan jou ligt. Je stelt minder vragen, koopt minder voor jezelf en [twijfelt aan je eigen inschatting](nl/begrippen/zelftwijfel/). Voor mannen kan het extra lastig zijn om te zeggen dat ze zich in een gesprek over geld klein of bang voelen. Dat past niet bij wat er vaak van mannen verwacht wordt. Toch is het een begrijpelijke reactie op een situatie waarin je weinig ruimte ervaart.
+Als ruzies over geld steeds op dezelfde manier eindigen, ga je er misschien vanuit dat het aan jou ligt. Je stelt minder vragen, koopt minder voor jezelf en [twijfelt aan je eigen inschatting](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Voor mannen kan het extra lastig zijn om te zeggen dat ze zich in een gesprek over geld klein of bang voelen. Dat past niet bij wat er vaak van mannen verwacht wordt. Toch is het een begrijpelijke reactie op een situatie waarin je weinig ruimte ervaart.
 
 ## Wat kan helpen?
 

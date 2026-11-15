@@ -32,7 +32,6 @@ export const plannedKeys = new Set([
   'isolatie',
   'sociale-druk',
   'traumabinding',
-  'hyperwaakzaamheid',
   'fawn-respons',
   'conflictvermijding',
   'emotionele-uitputting',

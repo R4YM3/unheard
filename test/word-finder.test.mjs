@@ -92,7 +92,8 @@ test('answers become acknowledgements, routes, links and 2–3 reflection questi
     ['zelftwijfel', 'financieel'],
   );
   assert.ok(result.patterns.includes('gaslighting'));
-  assert.ok(result.patterns.includes('economisch-misbruik'));
+  assert.ok(result.patterns.includes('controle-over-uitgaven'));
+  assert.ok(result.next.includes('financieel-misbruik'));
   assert.ok(result.reflections.length >= 2 && result.reflections.length <= limits.reflections);
   assert.ok(result.next.includes('hulp-vinden'));
 });

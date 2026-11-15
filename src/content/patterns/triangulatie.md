@@ -8,13 +8,13 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 related: [framing, sociale-druk, isolatie, identiteit, herstel-steunnetwerk, het-vertellen]
 readerMoment:
   label: 'Voorbeeldgedachte'
-  thought: 'Wie heeft dit allemaal gehoord over mij?'
-  feeling: 'Als anderen ineens een beeld van jou lijken te hebben dat je niet herkent, kan je je alleen voelen in je eigen kring.'
+  thought: 'Waarom hoor ik steeds via iemand anders wat er van mij wordt verwacht?'
+  feeling: 'Wanneer boodschappen en verwijten via anderen blijven komen, kan het voelen alsof je nergens rechtstreeks ruimte krijgt voor jouw antwoord.'
 glossary:
   term: 'Triangulatie'
   definition: 'Een derde persoon, zoals familie, een vriend of een ex, wordt in een conflict betrokken, waardoor jij minder rechtstreeks met de ander kunt praten.'
@@ -24,7 +24,8 @@ sources:
   - label: 'Triangles — Bowen family systems theory'
     publisher: 'The Bowen Center for the Study of the Family'
     url: 'https://www.thebowencenter.org/triangles'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
+    note: 'Theoretische omschrijving van driehoeken; geen bewijs van opzet of misbruik in een individuele situatie.'
   - label: 'Factsheet Intieme terreur — o.a. "foutieve informatie geven of leugens over de partner verzinnen tegen anderen"'
     publisher: 'Huiselijkgeweld.nl / programma Geweld hoort nergens thuis'
     url: 'https://www.huiselijkgeweld.nl/documenten/2022/01/26/factsheet-intieme-terreur'
@@ -37,11 +38,13 @@ sources:
     publisher: 'Veilig Thuis'
     url: 'https://www.veiligthuis.nl/nl/dwingendecontrole'
     checkedAt: 2026-10-20
+reviewNotes:
+  - 'Raymond wijst inhoudelijke/veiligheidsreviewer aan voor de afbakening tussen driehoek, steun zoeken en druk via derden. Het herziene voorbeeld is fictief en gericht op boodschappen, niet op reputatie.'
 ---
 
 ## Wat is triangulatie?
 
-Triangulatie betekent dat er in een spanning tussen twee mensen een derde persoon wordt betrokken. Dat kan een familielid zijn, een vriend, een kind, een ex of een nieuwe partner. In plaats van dat de twee mensen het samen uitpraten, loopt de spanning via die derde.
+Triangulatie betekent dat er in een spanning tussen twee mensen een derde persoon wordt betrokken. Dat kan een familielid zijn, een vriend, een kind, een ex of een nieuwe partner. De communicatie of spanning loopt dan via die derde. Dat is niet automatisch misbruik; de vraag is welke rol die persoon krijgt en welke ruimte er voor ieder overblijft.
 
 Het woord komt uit de gezinstherapie. Psychiater Murray Bowen beschreef de 'driehoek' als de kleinste stabiele relatie-eenheid: als het tussen twee mensen te gespannen wordt, trekken ze vaak een derde erbij. Dat verlicht de spanning, maar lost het onderliggende probleem niet op. In die driehoek staat vaak iemand 'buiten', en dat is een pijnlijke plek.
 
@@ -59,11 +62,15 @@ Triangulatie kan subtiel zijn. Voorbeelden:
 
 > **Illustratief voorbeeld — verzonnen, geen echt gesprek**
 >
-> Je schoonmoeder, op een verjaardag: "Ik hoorde dat het niet zo goed met je gaat. Je moet echt eens hulp zoeken, hoor. Iedereen maakt zich zorgen."
+> Een gezamenlijke vriend: "Je partner vroeg of ik je kon zeggen dat je vanavond moet bellen."
 >
-> Jij, later: _Ik heb haar niets verteld. Wat heeft ze gehoord, en van wie? Wie denkt er nog meer zo over mij?_
+> Jij: "Ik heb gezegd dat ik eerst rust nodig heb."
+>
+> De vriend: "Ja, maar ik zit er nu ook mee. Kun je niet even reageren?"
+>
+> Jij, later: _Nu moet ik niet alleen mijn partner uitleg geven, maar hem ook._
 
-De schoonmoeder in het voorbeeld bedoelt het misschien goed. Juist dat maakt triangulatie verwarrend: de derde persoon weet vaak niet deel te zijn van een patroon.
+De vraag om contact komt in dit voorbeeld via iemand anders terug. Daardoor raakt de vriend betrokken bij een afspraak die niet van hem is. Je hoeft zijn bedoeling niet te kennen om te merken dat jouw ruimte kleiner wordt. Gaat het vooral om verhalen die je geloofwaardigheid aantasten, dan ligt de nadruk bij [framing en beeldvorming](nl/begrippen/framing-en-beeldvorming/).
 
 ## Wanneer is het niet zomaar af te leiden?
 

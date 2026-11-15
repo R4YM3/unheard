@@ -8,20 +8,13 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Mijn naam staat erop. Had ik dit dan moeten tegenhouden?'
   feeling: 'Schaamte en verwarring zijn begrijpelijk als druk, afhankelijkheid of misbruik van gegevens tot schulden hebben geleid.'
-related:
-  [
-    economisch-misbruik,
-    controle-over-uitgaven,
-    financieel-misbruik,
-    macht-en-afhankelijkheid,
-    hulp-vinden,
-  ]
+related: [financieel-misbruik, controle-over-uitgaven, macht-en-afhankelijkheid, hulp-vinden]
 glossary:
   term: 'Schulden op naam'
   definition: 'Schulden op jouw naam die je niet vrijwillig of niet bewust bent aangegaan, bijvoorbeeld door druk om te tekenen of misbruik van je gegevens.'
@@ -35,36 +28,37 @@ sources:
   - label: 'Heb ik ook schulden als mijn (geregistreerde) partner schulden heeft?'
     publisher: 'Rijksoverheid'
     url: 'https://www.rijksoverheid.nl/vraag-en-antwoord/schulden/heb-ik-ook-schulden-als-mijn-geregistreerde-partner-schulden-heeft'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Mijn kredietoverzicht — gratis online inzage in je registraties'
     publisher: 'Stichting BKR (Mijn Kredietregistratie)'
     url: 'https://www.mijnkredietregistratie.nl/nl/mijn-kredietoverzicht'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Ik ben slachtoffer van identiteitsfraude. Wat kan ik doen?'
     publisher: 'Rijksoverheid'
     url: 'https://www.rijksoverheid.nl/vraag-en-antwoord/identiteitsfraude/wat-doe-ik-bij-mogelijke-identiteitsfraude'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Centraal Meldpunt Identiteitsfraude (CMI)'
     publisher: 'Rijksdienst voor Identiteitsgegevens (RvIG)'
     url: 'https://www.rvig.nl/cmi'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Financiële kwetsbaarheid en huiselijk geweld en kindermishandeling'
     publisher: 'Movisie'
     url: 'https://www.movisie.nl/artikel/financiele-kwetsbaarheid-huiselijk-geweld-kindermishandeling'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Geldfit — gratis en anoniem advies over geldzorgen'
     publisher: 'Stichting NSR'
     url: 'https://www.geldfit.nl/'
     checkedAt: 2026-10-20
 reviewNotes:
-  - 'Juridische review nodig: aansprakelijkheid bij gemeenschap van goederen en identiteitsfraude-stappen.'
+  - 'Raymond wijst een financieel/juridische reviewer aan: controleer aansprakelijkheid, onderscheid tussen tekenen onder druk en identiteitsfraude, betwiste vorderingen en BKR. Geen algemeen betaaladvies bedoeld.'
+  - 'Raymond wijst een veiligheidsreviewer aan: beoordeel digitale en papieren sporen bij inzage, kopieën en contact met instanties vóór publicatie.'
 ---
 
 ## Wat zijn schulden op naam?
 
 Met 'schulden op naam' worden hier schulden bedoeld die op jouw naam staan, maar die je niet vrijwillig of niet bewust bent aangegaan. Bijvoorbeeld omdat een (ex-)partner je onder druk zette om te tekenen, of omdat iemand zonder jouw medeweten jouw gegevens gebruikte voor een lening, abonnement of aankoop. In Engelstalig onderzoek wordt hiervoor ook de term _coerced debt_ (afgedwongen schuld) gebruikt.
 
-Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'schulden hebben door toedoen van de partner' als signaal van [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/), net als een partner die de ander 'onder druk zet om schulden aan te gaan'. Movisie beschrijft dat schulden zowel een oorzaak als een gevolg van huiselijk geweld kunnen zijn, en dat [financiële problemen vaak nog lang na de relatie doorwerken](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/).
+Het Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld (LKAH) noemt 'schulden hebben door toedoen van de partner' als signaal van [financieel misbruik](nl/begrijp-het/financieel-misbruik/), net als een partner die de ander 'onder druk zet om schulden aan te gaan'. Geldproblemen kunnen samengaan met spanning en geweld; schulden kunnen ook door misbruik ontstaan. Geldgebrek rechtvaardigt geen geweld. Movisie beschrijft dat [financiële problemen vaak nog lang na de relatie doorwerken](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/).
 
 Dit artikel geeft algemene informatie, geen juridisch of financieel advies. Je situatie hangt af van wat je getekend hebt, hoe je samenwoonde of getrouwd was en wat er precies op jouw naam staat.
 
@@ -91,25 +85,27 @@ Iets op één naam zetten is niet altijd verkeerd: stellen doen dat vaak om prak
 
 ## Wanneer is het niet zomaar af te leiden?
 
-- **Gezamenlijke schulden kunnen ook gewoon gezamenlijk zijn.** Een hypotheek of lening die jullie samen hebben afgesloten voor iets wat jullie allebei gebruikten, is geen misbruik, ook al is het nu lastig.
+- **Gezamenlijke schulden kunnen ook gewoon gezamenlijk zijn.** Een gezamenlijke hypotheek of lening is op zichzelf geen bewijs van misbruik. Maar gezamenlijk gebruik sluit druk of misleiding bij het aangaan van die verplichting niet uit.
 - **Getrouwd of geregistreerd partner?** Dan hangt je aansprakelijkheid af van het huwelijksgoederenregime. Volgens de Rijksoverheid ben je bij een huwelijk in gemeenschap van goederen van vóór 1 januari 2018 ook aansprakelijk voor de schulden van je partner. Voor huwelijken daarna geldt automatisch een beperkte gemeenschap. Met huwelijkse voorwaarden kunnen schulden gescheiden blijven.
 - **Iemand die slecht met geld omgaat**, misbruikt je niet automatisch. Het gaat om druk, misleiding of het patroon waarin de lasten bij jou terechtkomen.
 
 ## Impact op de ontvanger
 
 - stress en angst bij elke brief, mail of telefoontje van een onbekend nummer;
-- een BKR-registratie die het moeilijk maakt om een huis te huren of te kopen;
+- zorgen over kredietregistraties en wat die betekenen voor nieuwe financiering;
 - schaamte, vooral als je het gevoel hebt dat je 'zo dom' bent geweest om te tekenen;
 - vastzitten aan de ander, ook na een breuk;
-- verlies van vertrouwen, in de ander en in jezelf. Zie [zelftwijfel](nl/begrippen/zelftwijfel/).
+- verlies van vertrouwen, in de ander en in jezelf. Zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
 Tekenen onder druk, of omdat je de ander vertrouwde, is niet dom. Het is precies hoe dit soort situaties werkt.
 
 ## Wat kan helpen?
 
+Kijkt iemand mee met je accounts, apparaten of post? Bespreek eerst vertrouwelijk hoe je informatie kunt opvragen of hulp kunt benaderen. Inloggen, een aanvraag doen of kopieën bewaren kan zichtbaar worden. Je hoeft niet eerst een volledig dossier te hebben om hulp te vragen.
+
 - **[Bekijk wat er op jouw naam staat](nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/).** Bij Stichting BKR kun je gratis online je kredietoverzicht inzien via [Mijn Kredietregistratie](https://www.mijnkredietregistratie.nl/nl/mijn-kredietoverzicht). Ondersteunt je bank geen digitale identificatie, dan kun je een aanvraagformulier opsturen en krijg je het overzicht per post. Let op: dit overzicht laat geregistreerde kredieten zien, niet alle contracten en abonnementen.
-- **[Zet je administratie op een veilige plek](nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/).** Bewaar kopieën van contracten, bankafschriften en brieven waar de ander er niet bij kan.
-- **Vermoed je dat je gegevens zonder toestemming zijn gebruikt?** Dan kan het gaan om identiteitsfraude. De Rijksoverheid adviseert om je bank te informeren, bewijs te verzamelen en aangifte te doen bij de politie. Je kunt ook een melding doen bij het [Centraal Meldpunt Identiteitsfraude](https://www.rvig.nl/cmi) (CMI), dat advies geeft en kan bemiddelen met instanties. Betaal niet aan een incassobureau voor kosten waar je niets mee te maken hebt, maar meld het en houd contact.
+- **[Toegang tot documenten](nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/).** Als dat veilig kan, helpen contracten, bankafschriften en brieven om je situatie te bespreken. Bespreek bij controle of dreiging eerst hoe je hiermee omgaat; neem geen risico om bewijs te verzamelen.
+- **Vermoed je dat je gegevens zonder toestemming zijn gebruikt?** Dan kan het gaan om identiteitsfraude. De Rijksoverheid beschrijft stappen voor deze specifieke situatie, waaronder contact met je bank en de politie. Bespreek bij partnercontrole ook hoe je dat veilig kunt doen. Je kunt ook een melding doen bij het [Centraal Meldpunt Identiteitsfraude](https://www.rvig.nl/cmi) (CMI), dat advies geeft en kan bemiddelen met instanties. Een lening waarvoor je onder druk hebt getekend, is niet automatisch identiteitsfraude. Vraag bij een betwiste vordering tijdig juridisch advies over je reactie en eventuele termijnen. Op basis van dit artikel kun je niet bepalen of je moet betalen.
 - **Vraag hulp bij schulden.** Bel [Geldfit](https://www.geldfit.nl/) (0800-8115) voor gratis advies, of meld je bij de schuldhulpverlening van je gemeente.
 - **Vraag [juridisch advies](nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/)** over aansprakelijkheid, zeker bij een scheiding. Het Juridisch Loket geeft gratis informatie, en gratis persoonlijk advies als je inkomen en spaargeld onder een bepaalde grens liggen.
 - **Is geld onderdeel van een breder patroon van controle of dreiging?** Bel Veilig Thuis: 0800-2000, gratis en anoniem, dag en nacht. Zie ook [Hulp vinden](nl/hulp-vinden/).

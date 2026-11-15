@@ -4,7 +4,7 @@ description: 'Wat het begrip zelftwijfel betekent en hoe herhaalde ondermijning 
 locale: nl
 translationKey: begrip-zelftwijfel
 slug: begrippen/zelftwijfel
-published: true
+published: false
 status: in_review
 author: editorial
 publishedAt: 2026-10-20

@@ -84,7 +84,7 @@ Het woord kan helpen als het je verwarring verklaart. Het helpt minder als het e
 
 - schaamte, omdat je 'zou moeten weten beter';
 - [pijn die blijft, ook als je het begrijpt](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/);
-- herhaald teruggaan, met elke keer meer [twijfel aan jezelf](nl/begrippen/zelftwijfel/);
+- herhaald teruggaan, met elke keer meer [twijfel aan jezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/);
 - moeite om je omgeving uit te leggen waarom je blijft of terug wilt;
 - kwetsbaarheid voor toenaderingspogingen, zie [hoovering](nl/begrippen/hoovering/).
 

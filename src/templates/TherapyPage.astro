@@ -2,8 +2,9 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
-import PageRail from '../components/PageRail.astro';
-import { articleRailGroups } from '../lib/article-rail';
+import ArticleBody from '../components/ArticleBody.astro';
+import ArticleContents from '../components/ArticleContents.astro';
+import { articleContentsGroups } from '../lib/article-contents';
 import Marked from '../components/Marked.astro';
 import { REVIEW_MARKER } from '../lib/review-marks';
 
@@ -13,7 +14,7 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content, headings } = await render(entry);
-const railGroups = await articleRailGroups(entry, headings);
+const contentsGroups = articleContentsGroups(entry, headings);
 /* Lower-case the name inside a sentence, but keep acronyms such as EMDR. */
 const inSentence = (name: string) =>
   /^[A-Z]{2,}\b/.test(name) ? name : name.charAt(0).toLowerCase() + name.slice(1);
@@ -23,7 +24,7 @@ const inSentence = (name: string) =>
   entry={entry}
   eyebrow={data.hero?.eyebrow ?? `Herstel / Therapievormen / ${data.name}`}
 >
-  {railGroups.length > 0 && <PageRail slot="rail" groups={railGroups} />}
+  {contentsGroups.length > 0 && <ArticleContents slot="contents" groups={contentsGroups} />}
   {
     /* One summary per page: the focus line only stands in when there is no summary. */
     !data.summary && (
@@ -34,7 +35,7 @@ const inSentence = (name: string) =>
       </div>
     )
   }
-  <div class="wrap reading prose"><Content /></div>
+  <ArticleBody fragments={data.recognitionFragments}><Content /></ArticleBody>
   <Fragment slot="after">
     <section class="section section--block" aria-labelledby="vragen-heading" id="vragen">
       <div class="wrap reading">

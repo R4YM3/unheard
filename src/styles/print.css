@@ -4,6 +4,27 @@
 }
 
 @media print {
+  .recognition-fragment {
+    break-inside: avoid;
+    margin: 5mm 0;
+    padding: 4mm;
+    background: white !important;
+    color: black !important;
+    border-color: black;
+  }
+  .recognition-fragment p {
+    font-size: 13pt;
+  }
+  .reader-moment {
+    background: white !important;
+    border-color: black;
+  }
+  .reader-moment__label {
+    color: black;
+  }
+  .related-scroller > .grid {
+    mask-image: none !important;
+  }
   :root,
   [data-theme] {
     color-scheme: light;
@@ -40,13 +61,14 @@
   /* Navigation and interactive chrome */
   .site-header,
   .section-nav-bar,
-  .page-rail,
+  .article-contents,
   .group-pager,
   .read-progress,
   .site-footer,
   .skip,
   .theme-toggle,
   .safety-dock,
+  .related-scroller__nav,
   .actions,
   .hero-art,
   .home-hero__art,
@@ -124,6 +146,10 @@
     color: #000 !important;
     break-inside: avoid;
   }
+  /* Keep the short help block together instead of orphaning one contact card. */
+  .help-band {
+    break-inside: avoid;
+  }
   .timeline-marker,
   .timeline-toggle,
   .timeline::before,
@@ -181,10 +207,6 @@
   }
   .print-only {
     display: block !important;
-  }
-  .article-layout--rail {
-    display: block !important;
-    width: auto;
   }
 
   /* Links: show destinations for external sources and phone numbers */

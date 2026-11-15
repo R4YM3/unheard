@@ -2,9 +2,10 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import ArticleBody from '../components/ArticleBody.astro';
 import HelpChoices from '../components/heroes/HelpChoices.astro';
-import PageRail from '../components/PageRail.astro';
-import { articleRailGroups } from '../lib/article-rail';
+import ArticleContents from '../components/ArticleContents.astro';
+import { articleContentsGroups } from '../lib/article-contents';
 import CardGrid from '../components/CardGrid.astro';
 import DarvoGuide from '../components/DarvoGuide.astro';
 import FounderNote from '../components/FounderNote.astro';
@@ -18,7 +19,7 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content, headings } = await render(entry);
-const railGroups = await articleRailGroups(entry, headings);
+const contentsGroups = articleContentsGroups(entry, headings);
 const cards = 'cards' in data ? data.cards : [];
 const founderNote = 'founderNote' in data ? data.founderNote : undefined;
 const darvo = 'darvo' in data ? data.darvo : undefined;
@@ -38,8 +39,8 @@ const pageType = ['over', 'werkwijze'].includes(data.translationKey) ? 'AboutPag
       <HelpChoices slot="hero-copy" />
     )
   }
-  {railGroups.length > 0 && <PageRail slot="rail" groups={railGroups} />}
-  <div class="wrap reading prose"><Content /></div>
+  {contentsGroups.length > 0 && <ArticleContents slot="contents" groups={contentsGroups} />}
+  <ArticleBody fragments={data.recognitionFragments}><Content /></ArticleBody>
   <Fragment slot="after">
     {darvo && <DarvoGuide guide={darvo} />}
     {

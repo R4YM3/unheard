@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 order: 10
 feeling: Zelftwijfel
@@ -30,7 +30,7 @@ hero:
 glossary:
   term: Zelftwijfel
   definition: 'Steeds minder vertrouwen in wat je waarneemt, onthoudt, voelt of nodig hebt. Een ervaring, geen diagnose; zelftwijfel zegt op zichzelf niets over de oorzaak.'
-  aliases: ['Twijfel aan jezelf']
+  aliases: ['Twijfel aan jezelf', 'twijfel aan je eigen waarneming', 'onzekerheid', 'je gek voelen']
   category: impact
 scenarios:
   - label: 'Een gesprek begrijpen'
@@ -103,6 +103,16 @@ sources:
     url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'
     publisher: Thuisarts
     checkedAt: 2026-10-20
+  - label: 'Sweet, P. L. (2019). The Sociology of Gaslighting.'
+    publisher: SAGE Journals
+    url: 'https://doi.org/10.1177/0003122419874843'
+    checkedAt: 2026-11-15
+    note: 'Abstract gelezen; beschrijft gaslighting in de context van machtsongelijkheid. Geen individuele diagnose.'
+  - label: 'Harsey, Zurbriggen & Freyd (2017). DARVO and Victim Self-Blame.'
+    publisher: 'University of Oregon — publicatieoverzicht Jennifer J. Freyd'
+    url: 'https://dynamic.uoregon.edu/jjf/traumapapers.html'
+    checkedAt: 2026-11-15
+    note: 'Abstract gelezen op de publicatiepagina van Freyd, University of Oregon; samenhang bij studenten, geen vastgestelde oorzaak bij een individuele lezer.'
 founderNote:
   eyebrow: 'Waarom Ongehoord bestaat'
   heading: 'Ook ik bleef bevestiging zoeken.'
@@ -112,6 +122,8 @@ founderNote:
     - 'Daarom deel ik mijn ervaringen: niet om voor een ander te bepalen wat die meemaakt, maar om ruimte te geven aan herkenning.'
   needsReview: true
 reviewNotes:
+  - 'Raymond: bevestig de bestaande passage Ook ik bleef bevestiging zoeken; bij consolidatie niet veranderd of als goedgekeurd aangemerkt.'
+  - 'Klinische reviewer: beoordeel slaap/somberheid/angst en onderscheid tussen zelftwijfel, zelfbeschuldiging en geheugenbetrouwbaarheid. Abstractcontrole vervangt geen volledige literatuurreview.'
   - 'Oprichter: de founderNote is de goedgekeurde prototypetekst. Klopt die nog zo, of wil je de tweede alinea aanvullen?'
   - 'Redactie: de drie voorbeeldsituaties komen uit het goedgekeurde prototype. Bevestig dat ze fictief zijn en niet herleidbaar tot echte gesprekken.'
   - 'Clinicus: controleer of de alinea over slaap, somberheid en angst onder “Wanneer is het iets anders?” voldoende voorzichtig is en niet als diagnose leest.'
@@ -123,19 +135,23 @@ reviewNotes:
 
 Je zoekt naar het ene zinnetje waarmee je het anders had kunnen zeggen. Je vraagt iemand anders of je reactie normaal was. Of je zegt uiteindelijk maar niets meer, omdat je bang bent opnieuw verkeerd begrepen te worden.
 
-> Misschien ligt het aan mij. Waarom denk ik dat steeds?
+> **Voorbeeldgedachte:** Misschien ligt het aan mij. Waarom denk ik dat steeds?
 
-[Zelftwijfel](nl/begrippen/zelftwijfel/) hoort soms bij het leven en bij relaties. Maar als je merkt dat je steeds minder vertrouwen hebt in wat je waarneemt, voelt of nodig hebt, verdient dat aandacht.
+<span id="wat-is-zelftwijfel"></span>
+
+Zelftwijfel is minder vertrouwen hebben in je eigen oordeel, waarneming, herinnering of gevoel. Twijfelen hoort soms bij het leven en bij relaties. Maar als je merkt dat je steeds minder vertrouwen hebt in wat je waarneemt, voelt of nodig hebt, verdient dat aandacht.
 
 Het kan klein beginnen. Je leest een bericht vijf keer voordat je het verstuurt. Je begint zinnen met “misschien zie ik het verkeerd, maar…”. Je weet na afloop van een gesprek niet meer precies waar het over ging, alleen dat jij het weer verkeerd leek te hebben. Je herinnering voelt eerst helder, en later niet meer.
 
 Misschien heb je ook geleerd dat je je niet zo moet aanstellen, dat je sterk moet zijn of het zelf moet oplossen. Veel mannen herkennen dat. Dan voelt twijfel al snel als zwakte, en praat je er nog minder over. Maar twijfel is geen karakterfout. Het is een signaal dat iets je bezighoudt.
 
+<span id="voorbeeld-wanneer-je-bewijs-gaat-zoeken"></span>
+
 ## Welke vraag stel je jezelf na het gesprek?
 
 _Voorbeeld_
 
-Je wilde vertellen dat een opmerking je raakte. Als het gesprek voorbij is, blader je oude berichten door om te zien of je je de woorden goed herinnert. Misschien herken je vooral dat je pas durft te praten als je het kunt bewijzen. Lees [hoe zelftwijfel kan groeien](nl/begrippen/zelftwijfel/) of [hoe je weer op je eigen waarneming kunt leren vertrouwen](nl/herstel/zelfvertrouwen/).
+Je wilde vertellen dat een opmerking je raakte. Als het gesprek voorbij is, blader je oude berichten door om te zien of je je de woorden goed herinnert. Misschien herken je vooral dat je pas durft te praten als je het kunt bewijzen. Lees [hoe zelftwijfel kan groeien](#hoe-zulke-twijfel-gevoed-kan-worden) of [hoe je weer op je eigen waarneming kunt leren vertrouwen](nl/herstel/zelfvertrouwen/).
 
 ## Wat gebeurt er om je heen?
 
@@ -149,6 +165,9 @@ Zelftwijfel ontstaat zelden uit het niets. Vaak gaat er een gesprek of een reeks
 
 Elk van deze dingen kan gebeuren in een gewone ruzie of op een slechte dag. Mensen onthouden dingen verschillend, en niemand reageert altijd zorgvuldig. Wat het verschil kan maken is herhaling: gebeurt het één keer, of merk je dat jouw beleving steeds opnieuw minder telt?
 
+<span id="hoe-zulke-twijfel-gevoed-kan-worden"></span>
+<span id="welke-patronen-kunnen-erbij-passen"></span>
+
 ## Wat kan dit verklaren?
 
 Soms gaat het om een misverstand of een moeilijk gesprek. Soms herken je een terugkerend patroon waarin jouw beleving steeds minder ruimte krijgt.
@@ -156,6 +175,10 @@ Soms gaat het om een misverstand of een moeilijk gesprek. Soms herken je een ter
 Als iemand gebeurtenissen herhaaldelijk ontkent, verdraait of jouw waarneming ondermijnt, kan dat je vertrouwen in jezelf raken. Dat wordt soms [gaslighting](nl/begrippen/gaslighting/) genoemd. Eén verschil in herinnering is niet genoeg om daar een conclusie aan te verbinden, en het woord zegt niets over wat iemand bedoelt of wie iemand is.
 
 Een ander patroon is dat een gesprek ongemerkt kantelt: je begint over jouw pijn en eindigt met excuses. Daar bestaat een begrip voor, [DARVO](nl/begrippen/darvo/), dat beschrijft hoe ontkennen, aanvallen en de rollen omdraaien op elkaar kunnen volgen.
+
+Bij [schuldverschuiving](nl/begrippen/schuldverschuiving/) raakt jouw oorspronkelijke zorg uit beeld en gaat het gesprek steeds meer over jouw vermeende fout. Het uitgebreide verschil tussen deze patronen staat op de betreffende begrippenpagina’s.
+
+De bronnen onderaan beschrijven verschillende verbanden: Sweet onderzoekt hoe gaslighting iemands werkelijkheid ondermijnt; Harsey en collega’s vonden bij studenten een samenhang tussen meegemaakt DARVO en zelfbeschuldiging. Dat is geen bewijs van de oorzaak van jouw twijfel en geen beoordeling van een individuele partner.
 
 Zelftwijfel kan ook andere wortels hebben. Stress, weinig slaap of een zware periode maken het moeilijker om helder te denken. Vaak spelen meerdere dingen tegelijk. Je hoeft niet te kiezen welke verklaring de juiste is om te merken wat het met je doet.
 
@@ -165,6 +188,8 @@ Wie zorgvuldig wil zijn, loyaal is of veel zelfreflectie heeft, zoekt vaak eerst
 
 Schaamte, weinig steun, afhankelijkheid, werkdruk of eerdere ervaringen kunnen het daarnaast moeilijk maken om je eigen waarneming weer ruimte te geven. Dat verklaart niet waarom een ander grensoverschrijdend gedrag vertoont. Het helpt wel begrijpen waarom vertrouwen op jezelf na zo'n periode niet meteen vanzelf terugkomt.
 
+<span id="wat-kan-zelftwijfel-met-je-doen"></span>
+
 ## Wat het met je kan doen
 
 Op korte termijn kost twijfel vooral energie. Je piekert, slaapt slechter of blijft een gesprek terugspoelen. Je stelt beslissingen uit, omdat je niet zeker weet of je eigen oordeel klopt.
@@ -173,6 +198,8 @@ Op langere termijn kan twijfel zich nestelen in hoe je naar jezelf kijkt. Je gaa
 
 Na een relatie of breuk kan de twijfel blijven doorwerken, ook wanneer je meer afstand hebt. Je kijkt terug op gesprekken en vraagt je af of je het wel goed hebt gezien. Dat je die vragen hebt, maakt je ervaring niet minder echt. Het kan tijd kosten om weer te merken wat jij denkt, voelt en nodig hebt.
 
+Ook in een nieuwe relatie kan twijfel opkomen, bijvoorbeeld wanneer je tijd of ruimte nodig hebt en je afvraagt of dat wel redelijk is. Je hoeft niet terug naar de oude situatie om die vraag serieus te nemen.
+
 Het goede nieuws is voorzichtig, maar echt: vertrouwen in je eigen waarneming kan stap voor stap terugkomen. Op [Zelfvertrouwen terugvinden](nl/herstel/zelfvertrouwen/) lees je hoe dat eruit kan zien.
 
 ## Wanneer is het iets anders?
@@ -180,6 +207,9 @@ Het goede nieuws is voorzichtig, maar echt: vertrouwen in je eigen waarneming ka
 Niet elke twijfel wijst op een patroon. Twijfelen of je iets goed hebt aangepakt, of je iemand pijn hebt gedaan, of je herinnering klopt: dat hoort bij een eerlijk mens. Gezonde zelfreflectie voelt meestal als nieuwsgierigheid. Zelftwijfel die schuurt voelt eerder als het kwijtraken van je grond.
 
 Het kan ook zijn dat de twijfel vooral uit jezelf komt, los van een ander. Bijvoorbeeld omdat je in een periode zit waarin alles zwaar voelt. Als twijfel samengaat met aanhoudende somberheid, angst, slecht slapen of het gevoel dat je niet meer goed functioneert, is je huisarts een goede eerste stap. Die kan met je kijken welke hulp past.
+
+<span id="wat-kan-helpen"></span>
+<span id="verder-lezen"></span>
 
 ## Een volgende stap
 

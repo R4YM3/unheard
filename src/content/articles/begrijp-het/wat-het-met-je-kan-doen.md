@@ -49,7 +49,7 @@ cards:
     text: 'Als een grens aangeven zoveel spanning geeft dat je het liever niet meer doet.'
     href: 'nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/'
     label: 'Lees over grenzen'
-related: [traumabinding, fawn-respons, hyperwaakzaamheid, pijn-na-inzicht, herstel]
+related: [traumabinding, fawn-respons, spanning, pijn-na-inzicht, herstel]
 sources:
   - label: 'Thuisarts — Ik wil beter omgaan met stress'
     url: 'https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress'
@@ -80,7 +80,7 @@ Deze pagina beschrijft gevolgen die mensen vaak noemen. Het is **geen checklist*
 
 ### Twijfel aan jezelf
 
-Als je lange tijd te horen krijgt dat je het verkeerd ziet, verkeerd onthoudt of overdrijft, kan het [vertrouwen in je eigen waarneming slijten](nl/begrippen/zelftwijfel/). Je gaat gesprekken in je hoofd overdoen en vraagt je af of het misschien toch aan jou lag.
+Als je lange tijd te horen krijgt dat je het verkeerd ziet, verkeerd onthoudt of overdrijft, kan het [vertrouwen in je eigen waarneming slijten](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Je gaat gesprekken in je hoofd overdoen en vraagt je af of het misschien toch aan jou lag.
 
 ### Schuld en verantwoordelijkheid
 
@@ -88,7 +88,7 @@ Veel mensen [voelen zich verantwoordelijk voor de stemming van de ander](nl/wat-
 
 ### Voortdurend op je hoede zijn
 
-Wie lang moest inschatten hoe de ander zou reageren, kan blijven scannen: op toon, gezichtsuitdrukkingen, het geluid van een sleutel in het slot. Dit wordt ook wel [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/) genoemd. Het kan zich lichamelijk laten merken, bijvoorbeeld in slecht slapen, gespannen spieren of schrikken bij kleine dingen. Zulke klachten kunnen ook andere oorzaken hebben. Thuisarts beschrijft wat langdurige stress met je kan doen en wanneer je hulp kunt vragen.
+Wie lang moest inschatten hoe de ander zou reageren, kan blijven scannen: op toon, gezichtsuitdrukkingen, het geluid van een sleutel in het slot. Dit wordt ook wel [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/) genoemd. Het kan zich lichamelijk laten merken, bijvoorbeeld in slecht slapen, gespannen spieren of schrikken bij kleine dingen. Zulke klachten kunnen ook andere oorzaken hebben. Thuisarts beschrijft wat langdurige stress met je kan doen en wanneer je hulp kunt vragen.
 
 ### Uitputting
 

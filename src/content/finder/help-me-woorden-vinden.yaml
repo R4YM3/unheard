@@ -168,7 +168,7 @@ routes:
     title: 'Twijfel aan jezelf'
     recognition: 'Als je ervaring vaak wordt tegengesproken, kun je gaan twijfelen aan je eigen geheugen. Dat zegt iets over wat er gebeurt, niet over je verstand.'
     feelings: [zelftwijfel]
-    patterns: [gaslighting, begrip-zelftwijfel, framing]
+    patterns: [gaslighting, framing]
     reflections:
       - 'Wanneer vertrouw je je eigen herinnering wel, en wanneer niet?'
       - 'Wat zou je opschrijven als niemand het hoefde te lezen?'
@@ -213,7 +213,7 @@ routes:
     title: 'Spanning'
     recognition: 'Als je lang op je hoede moet zijn, blijft je lichaam alert. Dat is geen overdrijving, maar een lichaam dat zich probeert te beschermen.'
     feelings: [spanning]
-    patterns: [hyperwaakzaamheid, emotionele-uitputting]
+    patterns: [emotionele-uitputting]
     reflections:
       - 'Op welke momenten word je rustiger, al is het maar even?'
       - 'Waar let je op als je thuiskomt?'
@@ -222,11 +222,11 @@ routes:
     title: 'Financiële afhankelijkheid'
     recognition: 'Weinig zicht of zeggenschap over geld kan je klem zetten, ook als je zelf werkt. Overzicht krijgen kan in kleine, veilige stappen.'
     feelings: [geld-praten]
-    patterns: [economisch-misbruik, controle-over-uitgaven, schulden-op-naam]
+    patterns: [controle-over-uitgaven, schulden-op-naam]
     reflections:
       - 'Welke informatie over geld of papieren zou je graag zelf hebben?'
       - 'Bij wie zou je veilig een vraag over geld kunnen stellen?'
-    next: [financieel-signalen, kaart-financieel, financieel-advies]
+    next: [financieel-misbruik, kaart-financieel, financieel-advies]
   - id: eenzaamheid
     title: 'Eenzaamheid'
     recognition: 'Je kunt je alleen voelen, ook met mensen om je heen. Vooral als het lastig is om uit te leggen wat er gebeurt.'

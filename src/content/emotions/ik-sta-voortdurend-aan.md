@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 order: 80
 feeling: Spanning
@@ -31,9 +31,19 @@ hero:
         quiet: true,
       }
 glossary:
-  term: Waakzaamheid
-  definition: 'Voortdurend alert zijn op signalen van spanning of gevaar, ook als er op dat moment niets aan de hand is. Een beschrijving van een ervaring, geen medische diagnose.'
-  aliases: ['Altijd aan staan', 'Alertheid', 'Spanning']
+  term: Hyperwaakzaamheid
+  definition: 'Sterk verhoogde alertheid op mogelijke dreiging. Je blijft bijvoorbeeld letten op toon, berichten of geluiden. Het woord beschrijft een ervaring en is op zichzelf geen diagnose.'
+  aliases:
+    [
+      'Waakzaamheid',
+      'Altijd aan staan',
+      'Alertheid',
+      'Spanning',
+      'Hypervigilantie',
+      'Altijd alert',
+      'Op eieren lopen',
+      'Op je hoede zijn',
+    ]
   category: impact
 scenarios:
   - label: 'Een kort bericht'
@@ -92,35 +102,43 @@ helps:
       title: 'Zoek contact',
       text: 'Praat met iemand bij wie je rustig kunt zijn. Je hoeft niet uit te leggen waarom je gespannen bent.',
     }
-related: [hyperwaakzaamheid, herstel-triggers, therapie-meditatie, het-vertellen, hulp-vinden]
+related: [emotionele-uitputting, herstel-triggers, fawn-respons, het-vertellen, hulp-vinden]
 sources:
+  - label: 'Hypervigilance'
+    publisher: 'APA Dictionary of Psychology'
+    url: 'https://dictionary.apa.org/hypervigilance'
+    checkedAt: 2026-11-15
+  - label: 'Ik heb PTSS'
+    publisher: 'Thuisarts (NHG)'
+    url: 'https://www.thuisarts.nl/ptss-post-traumatische-stress-stoornis/ik-heb-ptss'
+    checkedAt: 2026-11-15
   - label: 'Thuisarts — Ik wil beter omgaan met stress'
     url: 'https://www.thuisarts.nl/stress/ik-wil-beter-omgaan-met-stress'
     publisher: Thuisarts
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Thuisarts — Ik heb al heel lang stress'
     url: 'https://www.thuisarts.nl/stress/ik-heb-al-heel-lang-stress'
     publisher: Thuisarts
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Thuisarts — Ik wil me beter kunnen ontspannen'
     url: 'https://www.thuisarts.nl/stress/ik-wil-me-beter-kunnen-ontspannen'
     publisher: Thuisarts
     checkedAt: 2026-10-20
 reviewNotes:
   - 'Clinicus: de lichamelijke beschrijvingen (snelle hartslag, gespannen schouders, schrikken) zijn als herkenning bedoeld, niet als symptoomlijst. De stressklachten en adviezen zijn gebaseerd op Thuisarts (moe, slecht slapen, piekeren, prikkelbaar; bewegen, structuur, contact, piekertijd). Graag controleren of dit niet als diagnose of PTSS-signalering leest.'
-  - 'Clinicus: “hyperwaakzaamheid” staat als related key; de pagina gebruikt zelf de neutralere term waakzaamheid. Akkoord?'
-  - 'Oprichter: meditatie staat in related omdat het deel uitmaakte van je traject. Wil je hier een korte, gelabelde ik-passage over meditatie of over boksen met emoties en energie? Zo ja: welke formulering, zonder specifieke oefeningen of uitkomsten?'
+  - 'Raymond wijst een klinische reviewer aan voor de samengevoegde definitie, afbakening tegenover PTSS, lichamelijke klachten en praktische adviezen. Controleer ook de uitleg over aanhoudende alertheid na een breuk. Niet als medisch gereviewd publiceren vóór deze controle.'
+  - 'Geen persoonlijke passage toegevoegd. De voorbeelden zijn fictief; deze consolidatie vereist geen nieuwe oprichterservaring.'
 ---
 
 ## Herken je dit?
 
 Je telefoon trilt en je hart slaat over. Je hoort een sleutel in het slot en scant al het gezicht van wie binnenkomt. Je ligt in bed en je lichaam is moe, maar je hoofd blijft draaien. Zelfs op vakantie of op een rustige zondag zit er iets in je dat niet uitgaat.
 
-> Alsof er ergens een alarm aanstaat dat ik niet kan vinden.
-
 Misschien weet je niet eens meer hoe het voelt om echt te ontspannen. Of je merkt pas hoe gespannen je was op het moment dat het even wegvalt, en dan ben je ineens doodmoe.
 
 Veel mannen zijn gewend om door te gaan. Spanning wordt dan iets wat je wegdrukt met werk, sport of een biertje. Van buitenaf ziet niemand het. Maar je lichaam houdt het wel bij.
+
+<span id="hoe-kan-het-eruitzien"></span>
 
 ## Waar merk je dat je nog steeds oplet?
 
@@ -141,13 +159,31 @@ Het kan ook zonder een andere persoon: door een zware baan, ziekte in de familie
 
 Wat opvalt is dat de spanning vaak blijft, ook als de situatie al veranderd is. Je woont misschien al een tijd ergens anders, het contact is minder of anders geworden, en toch reageert je lichaam nog alsof het elk moment mis kan gaan.
 
+<span id="wat-is-hyperwaakzaamheid"></span>
+
 ## Wat kan dit verklaren?
 
-Je lichaam is gemaakt om te reageren op dreiging. Als je vaak spanning hebt meegemaakt, leert het om alert te blijven. Dat is een slimme aanpassing: wie de signalen vroeg ziet, kan zich voorbereiden. Maar die alertheid gaat niet vanzelf uit wanneer de situatie verandert.
+Bij spanning kun je sneller reageren: je hartslag gaat omhoog en je spieren spannen zich aan. Wanneer de sfeer thuis telkens omslaat, kan opletten een vaste taak worden. Je probeert een ruzie vóór te zijn of zoekt naar een moment waarop je iets kunt vragen. Steeds moeten inschatten hoe een ander reageert, laat weinig ruimte voor jezelf.
 
-Dit wordt soms waakzaamheid of [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/) genoemd. Dat zijn beschrijvende woorden, geen diagnose. Ze helpen om te zien dat je niet gek of overgevoelig bent, maar dat je lichaam doet wat het heeft geleerd.
+**Hyperwaakzaamheid** betekent sterk verhoogde alertheid op mogelijke dreiging. Dat is de kern van de definitie van de American Psychological Association. Het woord kan helpen beschrijven wat je merkt; het verklaart niet op zichzelf waardoor dat komt.
+
+<span id="wat-het-begrip-wel-en-niet-zegt"></span>
+
+Alertheid kan bij verschillende klachten of omstandigheden horen. Bij PTSS kunnen onder meer hevig schrikken, concentratieproblemen en slecht slapen voorkomen. Alleen aan staan betekent niet dat je PTSS hebt. Bespreek aanhoudende klachten met je huisarts; samen kun je kijken welke beoordeling of hulp past.
 
 Stress kan zich op veel manieren laten zien: moe zijn, slecht slapen, piekeren, prikkelbaar zijn. Iedereen heeft weleens stress. Het wordt zwaar als het lang duurt en je weinig momenten hebt waarop het zakt. Over hoe herinneringen en berichten spanning kunnen oproepen, lees je op [Triggers en moeilijke berichten](nl/herstel/triggers-en-moeilijke-berichten/).
+
+## Na de relatie, en bij iemand nieuw
+
+_Voorbeeld — fictief_
+
+Je bent al maanden uit elkaar. Een collega vraagt waarom je steeds op je telefoon kijkt. Je zegt dat je niets wilt missen, maar merkt dat je vooral bang bent voor een reactie die je moet opvangen. Pas bij die vraag valt je op hoeveel aandacht het nog kost.
+
+In een nieuwe relatie kan een korte stilte dezelfde verwachting oproepen: straks komt er verwijt. Je hoeft jezelf daar niet om af te keuren. Kijk tegelijk naar wat er nu gebeurt: kun je een vraag stellen, wordt een grens gerespecteerd, is er ruimte voor jouw antwoord? Als er opnieuw druk of dreiging is, verdient die aandacht. Niet iedere onrust is alleen een herinnering aan vroeger.
+
+Je gevoeligheid voor sfeer of je zorg voor anderen maakt je niet verantwoordelijk voor hun gedrag. Toen leek vooruitdenken misschien de manier om de dag rustig door te komen. Achteraf kun je beter zien hoeveel je daarvoor opzijzette. Over gedrag dat je ruimte steeds kleiner maakt, lees je bij [dwingende controle](nl/begrippen/dwingende-controle/). Over steun bij contact dat doorgaat, bij [contact na een breuk](nl/herstel/contact-na-een-breuk/).
+
+<span id="impact-op-de-ontvanger"></span>
 
 ## Wat het met je kan doen
 
@@ -155,7 +191,9 @@ Op korte termijn kost aan staan vooral energie. Je bent sneller moe, je concentr
 
 Op langere termijn kan het je slaap, je stemming en je relaties raken. Je merkt misschien dat je kortaf bent tegen de mensen die je het meest dierbaar zijn. Of dat je dingen vermijdt waar je vroeger plezier in had, omdat alles te veel voelt. Je lichaam kan protesteren met klachten waar je eerst geen verband mee legt.
 
-Dat klinkt zwaar, maar het werkt ook andersom: kleine momenten van rust tellen. Elke keer dat je lichaam merkt dat het even veilig is, leert het iets nieuws. Sommige mensen vinden daarbij steun in [meditatie](nl/herstel/therapievormen/meditatie/) of ontspanningsoefeningen; anderen juist in bewegen. Wat helpt is persoonlijk.
+Je hoeft rust niet af te dwingen. Zoek wat op dit moment haalbaar is, zonder van ontspannen een nieuwe opdracht te maken. Sommige mensen vinden daarbij steun in [meditatie](nl/herstel/therapievormen/meditatie/) of ontspanningsoefeningen; anderen juist in bewegen. Wat helpt is persoonlijk.
+
+<span id="wanneer-is-het-niet-zomaar-af-te-leiden"></span>
 
 ## Wanneer is het iets anders?
 
@@ -165,6 +203,10 @@ Lichamelijke klachten zoals hartkloppingen, benauwdheid, pijn op de borst of lan
 
 Bij direct gevaar bel je [112](tel:112). Maak je je zorgen over je veiligheid thuis, dan kun je gratis en anoniem advies vragen bij Veilig Thuis via 0800-2000.
 
+<span id="wat-kan-helpen"></span>
+
 ## Een volgende stap
+
+Als er nog dreiging of controle is, hoef je dat niet op te lossen door beter te ontspannen. Bespreek via [Hulp vinden](nl/hulp-vinden/) welke steun bij jouw situatie past.
 
 Je hoeft het alarm niet in één keer uit te zetten. Begin bij één ding: een vaste bedtijd, een dagelijkse wandeling, of een kort moment waarop je merkt [waar in je lichaam de spanning zit](nl/herstel/leren-voelen/). Meer over hulp staat op [Hulp vinden](nl/hulp-vinden/).

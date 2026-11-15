@@ -2,6 +2,9 @@
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import EntryLayout from '../layouts/EntryLayout.astro';
+import ArticleBody from '../components/ArticleBody.astro';
+import ArticleContents from '../components/ArticleContents.astro';
+import { articleContentsGroups } from '../lib/article-contents';
 import ToolCard from '../components/ToolCard.astro';
 
 interface Props {
@@ -9,10 +12,15 @@ interface Props {
 }
 const { entry } = Astro.props;
 const { data } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const contentsGroups = articleContentsGroups(entry, [
+  { depth: 2, slug: 'gebruik-heading', text: 'Waarvoor en hoe' },
+  ...headings,
+]);
 ---
 
 <EntryLayout entry={entry} eyebrow={data.hero?.eyebrow ?? 'Hulpmiddelen / Vragenkaart'}>
+  {contentsGroups.length > 0 && <ArticleContents slot="contents" groups={contentsGroups} />}
   <section class="section section--tight" aria-labelledby="gebruik-heading">
     <div class="wrap reading">
       <h2 id="gebruik-heading">Waarvoor en hoe</h2>
@@ -25,5 +33,5 @@ const { Content } = await render(entry);
     </div>
   </section>
   <ToolCard card={data.card} />
-  <div class="wrap reading prose"><Content /></div>
+  <ArticleBody fragments={data.recognitionFragments}><Content /></ArticleBody>
 </EntryLayout>

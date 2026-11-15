@@ -43,7 +43,7 @@ export const feelingWords: Array<{ word: string; sentence: string; key: string; 
     {
       word: 'de sfeer aftasten',
       sentence: 'Als je voortdurend de sfeer aftast.',
-      key: 'hyperwaakzaamheid',
+      key: 'spanning',
     },
     {
       word: 'alleen',

@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-11-12
+updatedAt: 2026-11-15
 reviewedAt: null
 cardTitle: 'Wat voel ik?'
 cardText: 'Begin bij wat je voelt, zonder dat je meteen een naam hoeft te hebben voor wat je meemaakt.'
@@ -20,33 +20,7 @@ deeper:
   eyebrow: 'Weet je nog niet welke pagina bij je past?'
   label: 'Help me woorden vinden'
   text: 'Zes korte vragen die je mag overslaan.'
-summary: 'Op deze pagina staan negen gevoelens die mensen kunnen herkennen na of tijdens een relatie waarin ze zichzelf kwijtraakten. Kies wat het dichtst bij jou komt. Een gevoel bewijst niets over een ander, maar het verdient wel aandacht.'
-chooser: true
-feelingTimeline:
-  eyebrow: 'Geen vaste volgorde'
-  heading: 'Hoe gevoelens elkaar kunnen opvolgen.'
-  lead: 'Dit is geen route die iedereen aflegt. Het is een lijn om woorden naast elkaar te zetten. Je mag overal instappen, een stap overslaan, of alleen de pagina openen die nu past.'
-  label: 'Mogelijke lijn van gevoelens'
-  note: 'De volgorde is een leeslijn. Gevoelens lopen vaak door elkaar, en ze kunnen ook naast elkaar bestaan. Herken je een stap, dan zegt dat iets over wat je draagt, niet over wie je bent of over wat een ander bedoelt.'
-  steps:
-    - key: zelftwijfel
-      text: 'Soms is het eerste wat je merkt twijfel aan je eigen herinnering of oordeel, nog voor je een naam hebt voor wat er gebeurt.'
-    - key: schuldgevoel
-      text: 'Die twijfel kan schuld worden, alsof jij de oorzaak bent van de onrust.'
-    - key: spanning
-      text: 'Als je lang op je hoede bent, kan je lichaam aan blijven staan, ook op momenten dat er niets gebeurt.'
-    - key: grenzen
-      text: 'Nee zeggen kan zwaarder gaan wegen dan de rust bewaren, en dan pas je je steeds vaker aan.'
-    - key: identiteit
-      text: 'Door dat aanpassen kun je jezelf op een dag minder herkennen dan vroeger.'
-    - key: bevestiging
-      text: 'Je zoekt bij anderen bevestiging voor iets wat je zelf al voelde.'
-    - key: geld-praten
-      text: 'Over geld, papieren of schulden durf je steeds minder te beginnen.'
-    - key: gemis
-      text: 'Je kunt iemand missen, ook als diegene je pijn heeft gedaan.'
-    - key: pijn-na-inzicht
-      text: 'Begrijpen maakt het gevoel niet meteen weg. Het kan blijven, naast wat je nu weet.'
+summary: 'Je hoeft nog niet te weten hoe je ervaring heet. Begin bij wat je bij jezelf merkt: twijfel, spanning, schuldgevoel of gemis. Elke pagina helpt je woorden te vinden en laat zien wat een passende volgende stap kan zijn.'
 listings:
   - collection: emotions
     prefix: 'wat-voel-ik/'
@@ -57,15 +31,22 @@ listings:
     tone: neutral
 related: [begrijp-het, herstel, hulp-vinden]
 reviewNotes:
-  - 'Redactie: de zin over Help me woorden vinden staat nu als groene kaart in het introblok ("Zes korte vragen die je mag overslaan."). Klopt deze inkorting?'
-  - 'Controleer of de volgorde van de negen gevoelens klopt met de prioriteit die de oprichter wil geven.'
-  - 'Redactie: de tijdlijn is een leeslijn, geen verloop. Klopt de volgorde, en is elke zin algemeen genoeg?'
+  - 'De negen gevoelspagina’s blijven rechtstreeks bereikbaar. De dubbele gevoelenstijdlijn en algemene startkiezer zijn hier verwijderd; de woordenvinder blijft een aanvullende ingang.'
+  - 'Zelftwijfel versus bevestiging en gemis versus pijn na inzicht zijn bewust verschillende vragen. Geen nieuwe routes of diagnosevragen toegevoegd.'
 ---
 
-Veel mensen zoeken eerst naar een woord voor wat de ander doet. Dat is begrijpelijk: je wilt weten wat er aan de hand is. Maar vaak is het eerste wat je zeker weet niet wat de ander bedoelt, maar wat het met jou doet. Je twijfelt meer aan jezelf. Je voelt je schuldig zonder te weten waarom. Je bent moe van het steeds opletten.
+## Wat herken je bij jezelf?
 
-Twijfel je vooral aan je herinnering of oordeel? Begin bij [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Merk je vooral dat je anderen steeds om geruststelling vraagt? Lees [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/).
+Je controleert je herinnering opnieuw. Je zegt sorry terwijl je niet weet wat je verkeerd deed. Of je merkt dat je steeds op een reactie wacht. Je mag beginnen bij zo'n ervaring, zonder eerst te verklaren waarom je die hebt.
 
-Weet je nog niet welke pagina past? [Help me woorden vinden](nl/hulpmiddelen/help-me-woorden-vinden/) biedt korte vragen die je mag overslaan.
+Twijfel je aan je herinnering of oordeel? Begin bij [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Merk je vooral dat je anderen herhaaldelijk om geruststelling vraagt? [Ik zoek steeds bevestiging](nl/wat-voel-ik/ik-zoek-steeds-bevestiging/) gaat over dat zoeken en wat je eraan hebt.
 
-Daarom begint Ongehoord bij jou. Elke pagina hieronder beschrijft een gevoel, wat er om je heen kan gebeuren, wat het kan verklaren en wat kan helpen. Er staan fictieve voorbeelden bij en vragen die je vrijblijvend kunt beantwoorden.
+Mis je iemand of de goede momenten ondanks de pijn? Lees [Ik mis iemand die mij pijn heeft gedaan](nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/). Heb je al woorden voor wat er gebeurde, maar doet het nog pijn? Dan sluit [Ik begrijp het, maar het blijft pijn doen](nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/) bij een andere vraag aan.
+
+<span id="tijdlijn"></span>
+
+Gevoelens hoeven geen vaste volgorde te hebben. Je kunt meerdere dingen tegelijk herkennen, tijdens de relatie en erna. Kies hieronder wat je nu het meest bezighoudt; je hoeft niet alle pagina's te lezen.
+
+## Zoek je een situatie of een begrip?
+
+Bij [Wat herken ik?](nl/wat-herken-ik/) begin je bij gebeurtenissen, zoals een gesprek dat steeds wordt omgedraaid. Weet je al welk onderwerp je zoekt, dan kun je rechtstreeks naar [Begrippen van A tot Z](nl/begrippen/). Beide ingangen staan naast wat je voelt; je hoeft niet eerst een bepaalde route af te leggen.

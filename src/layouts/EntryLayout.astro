@@ -27,7 +27,7 @@ interface Props {
   /** Set false when the template renders its own hero (home, story). */
   hero?: boolean;
   /** A pillar hero's layout (see PageHero). */
-  heroLayout?: 'words' | 'layers' | 'quote' | 'fan' | 'help';
+  heroLayout?: 'words' | 'layers' | 'quote' | 'fan' | 'help' | 'plain';
   heading?: string;
   lead?: string;
   eyebrow?: string;
@@ -64,7 +64,7 @@ const {
   actions: fallbackActions = [],
   subpage,
 } = Astro.props;
-const hasRail = Astro.slots.has('rail');
+const hasContents = Astro.slots.has('contents');
 const hasAfter = Astro.slots.has('after');
 const hasSources = showSources && entry.data.sources.length > 0;
 const { data } = entry;
@@ -209,18 +209,16 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
       </PageHero>
     )
   }
-  <div
-    class:list={['article-layout', { 'article-layout--rail': hasRail }]}
-    style={`--pillar-band: ${pillarColour}`}
-  >
-    {
-      hasRail && (
-        <aside class="page-rail" aria-label={ui(data.locale).pageNavigation}>
-          <slot name="rail" />
-        </aside>
-      )
-    }
-    <div class="article-layout__main">
+  {articleType && <div class="read-progress" data-reading-progress hidden aria-hidden="true" />}
+  <div class="article-layout" style={`--pillar-band: ${pillarColour}`}>
+    <div class="article-layout__main" data-reading-start={articleType ? '' : undefined}>
+      {
+        hasContents && (
+          <div class="wrap reading">
+            <slot name="contents" />
+          </div>
+        )
+      }
       <slot name="before-summary" />
       {
         showSummary && (data.summary || data.glossary) && (
@@ -256,11 +254,7 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
       }
     </div>
   </div>
-  {
-    /* The rail stays beside the running text. Bands (examples, questions, reflection, a
-      personal note) and everything after them run full width, so the rail never floats
-      over a coloured band. */
-  }
+  {articleType && !hasAfter && <div data-reading-end />}
   {
     /* Below the article, every block is a band: the pillar's colour (with its pattern) and
        the page colour in turn, the sources included. */
@@ -270,6 +264,7 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
         style={`--pillar-band: ${pillarColour}`}
       >
         <slot name="after" />
+        {articleType && hasAfter && <div data-reading-end />}
         {hasSources && <SourceList sources={data.sources} />}
       </div>
     )
@@ -277,3 +272,8 @@ const relatedPillar = pillarColour === 'var(--safe)' ? 'tools' : pillarName(data
   <RelatedContent items={related} band={relatedBand} pillar={relatedPillar} />
   {showHelp && <HelpBlock />}
 </BaseLayout>
+
+<script>
+  import { enhanceArticleProgress } from '../scripts/article-progress';
+  enhanceArticleProgress();
+</script>

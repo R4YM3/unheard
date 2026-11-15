@@ -1,4 +1,4 @@
-import { mkdir, stat } from 'node:fs/promises';
+import { mkdir, readFile, stat } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 import puppeteer from 'puppeteer-core';
@@ -12,7 +12,69 @@ const chromePath =
     ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
     : '/usr/bin/google-chrome');
 
-const routes = [
+const defaultRoutes = [
+  {
+    id: 'emotional-abuse',
+    route: '/nl/begrijp-het/emotioneel-misbruik/',
+    required: [
+      'Als je steeds minder ruimte inneemt',
+      'Na de relatie, en in een nieuwe band',
+      'Woorden in onderzoek',
+    ],
+    screenshots: true,
+  },
+  {
+    id: 'psychological-manipulation',
+    route: '/nl/begrippen/psychische-manipulatie/',
+    required: [
+      'Als iets vertrouwelijks tegen je wordt gebruikt',
+      'Na de relatie: weer iets durven delen',
+    ],
+    screenshots: true,
+  },
+  {
+    id: 'financial-dependence',
+    route: '/nl/begrijp-het/financieel-misbruik/afhankelijkheid/',
+    required: [
+      'Als werk of opleiding steeds moet wijken',
+      'Als wonen of bezit wordt gebruikt als druk',
+      'Na de relatie: opnieuw ruimte voor eigen plannen',
+    ],
+    screenshots: true,
+  },
+  {
+    id: 'financial-documents',
+    route: '/nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/',
+    required: ['Welke documenten gaan over jouw situatie?', 'Als iemand meekijkt'],
+    screenshots: true,
+  },
+  {
+    id: 'silent-treatment',
+    route: '/nl/begrippen/silent-treatment/',
+    required: ['Hoe je steeds minder gaat vragen', 'Na de relatie, en bij iemand nieuw'],
+    screenshots: true,
+  },
+  {
+    id: 'love-bombing',
+    route: '/nl/begrippen/love-bombing/',
+    required: ['Wanneer aandacht een verplichting gaat voelen', 'Wat weten we over het begrip?'],
+    screenshots: true,
+  },
+  {
+    id: 'recognition-hub',
+    route: '/nl/wat-herken-ik/',
+    required: [
+      'Je hoeft het nog geen naam te geven',
+      'Welke situatie komt je bekend voor?',
+      'Ik zoek een bepaald onderwerp',
+      'Beginnen kan ook anders',
+    ],
+  },
+  {
+    id: 'tools-hub',
+    route: '/nl/hulpmiddelen/',
+    required: ['Waar kan ik je mee helpen?', 'Alle kaarten, zonder vaste volgorde'],
+  },
   { id: 'home', route: '/nl/', required: ['Wat herken jij?', 'Er mag weer ruimte ontstaan.'] },
   {
     id: 'story',
@@ -30,9 +92,59 @@ const routes = [
     required: ['Je hoort', 'Je voelt', 'Een grens aangeven', 'Bevestiging zoeken'],
   },
   {
+    id: 'alertness',
+    route: '/nl/wat-voel-ik/ik-sta-voortdurend-aan/',
+    required: [
+      'Hyperwaakzaamheid',
+      'Na de relatie, en bij iemand nieuw',
+      'Een volgende stap',
+      'Heb je nu hulp nodig?',
+    ],
+  },
+  {
     id: 'emotion-hub',
     route: '/nl/wat-voel-ik/',
-    required: ['Waar kan ik beginnen?', 'Hoe gevoelens elkaar kunnen opvolgen.'],
+    required: [
+      'Wat herken je bij jezelf?',
+      'Zoek je een situatie of een begrip?',
+      'Help me woorden vinden',
+    ],
+  },
+  {
+    id: 'understanding-hub',
+    route: '/nl/begrijp-het/',
+    required: ['Waar wil je meer over begrijpen?', 'Ken je het onderwerp al?'],
+  },
+  {
+    id: 'therapy-hub',
+    route: '/nl/herstel/therapievormen/',
+    required: [
+      'Je hoeft de naam van een therapie niet te kennen',
+      'zonder vooraf een behandeling te kiezen',
+    ],
+  },
+  {
+    id: 'coercive-control',
+    route: '/nl/begrippen/dwingende-controle/',
+    required: [
+      'Fysieke intimidatie, ook zonder blauwe plekken',
+      'Als rust of medische zorg niet vrij voelt',
+      'Als dreiging met zelfdoding je keuze bepaalt',
+      'De volgende keer zeg ik het maar niet',
+    ],
+    screenshots: true,
+  },
+  {
+    id: 'isolation',
+    route: '/nl/begrippen/isolatie/',
+    required: ['Hoe contact stap voor stap verdwijnt', 'Na de relatie, en bij iemand nieuw'],
+    screenshots: true,
+  },
+  {
+    id: 'social-pressure',
+    route: '/nl/begrippen/sociale-druk/',
+    required: ['Waarom de druk zo zwaar kan wegen', 'Na de breuk, en bij een nieuwe relatie'],
+    screenshots: true,
   },
   { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
   { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
@@ -41,8 +153,16 @@ const routes = [
     route: '/nl/begrijp-het/conflict-of-patroon/',
     required: ['Je hoort', 'Bronnen'],
   },
-  { id: 'financial-hub', route: '/nl/begrijp-het/financieel-misbruik/', required: ['Wat is het?'] },
-  { id: 'recovery-hub', route: '/nl/herstel/', required: ['Herstel'] },
+  {
+    id: 'financial-hub',
+    route: '/nl/begrijp-het/financieel-misbruik/',
+    required: ['Wat is het?', 'Signalen', 'Na een breuk, en bij nieuwe afspraken'],
+  },
+  {
+    id: 'recovery-hub',
+    route: '/nl/herstel/',
+    required: ['Herstel', 'Wat heb je op dit moment nodig?', 'financieel herstel'],
+  },
   {
     id: 'therapy',
     route: '/nl/herstel/therapievormen/schematherapie/',
@@ -72,6 +192,10 @@ const routes = [
   { id: 'stats', route: '/nl/mannen-in-cijfers/', required: ['Beperkingen', '4,9%'] },
   { id: 'search', route: '/nl/zoeken/', required: ['Alle pagina’s'] },
 ];
+
+const routes = process.env.PRINT_REVIEW_ROUTES
+  ? JSON.parse(await readFile(process.env.PRINT_REVIEW_ROUTES, 'utf8'))
+  : defaultRoutes;
 
 const startServer = () =>
   spawn('python3', ['-m', 'http.server', `${port}`, '--bind', '127.0.0.1', '--directory', 'dist'], {
@@ -106,13 +230,50 @@ try {
   await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
 
   for (const item of routes) {
+    // Load each route as a screen page; the preceding PDF leaves print media active.
+    await page.emulateMediaType('screen');
     await page.goto(`${origin}${item.route}`, { waitUntil: 'networkidle0' });
+    if (
+      [
+        'recognition-hub',
+        'recovery-hub',
+        'emotion-hub',
+        'understanding-hub',
+        'therapy-hub',
+        'tools-hub',
+        'emotion',
+        'alertness',
+        'financial-hub',
+        'knowledge',
+        'therapy',
+        'tool',
+        'pattern',
+      ].includes(item.id) ||
+      item.screenshots
+    ) {
+      await page.emulateMediaType('screen');
+      for (const width of [390, 1440]) {
+        await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+        await page.screenshot({
+          path: `${outputDirectory}/${item.id}-${width}.jpg`,
+          type: 'jpeg',
+          quality: 80,
+          fullPage: true,
+        });
+      }
+    }
     await page.emulateMediaType('print');
 
     const printState = {
       headerHidden: !(await visibility(page, '.site-header')),
       footerHidden: !(await visibility(page, '.site-footer')),
       themeHidden: !(await visibility(page, '.theme-toggle')),
+      relatedControlsHidden: !(await visibility(page, '[data-related-nav]')),
+      relatedCardsUnmasked: await page.evaluate(() =>
+        [...globalThis.document.querySelectorAll('.related-scroller > .grid')].every(
+          (element) => globalThis.getComputedStyle(element).maskImage === 'none',
+        ),
+      ),
       hiddenPanelsVisible: await page.evaluate(() =>
         [
           ...globalThis.document.querySelectorAll(
@@ -134,6 +295,8 @@ try {
     };
     if (!printState.headerHidden || !printState.footerHidden || !printState.themeHidden)
       throw new Error(`${item.route}: print UI must hide site navigation and fixed controls.`);
+    if (!printState.relatedControlsHidden || !printState.relatedCardsUnmasked)
+      throw new Error(`${item.route}: printed related articles must not have controls or fading.`);
     if (!printState.hiddenPanelsVisible)
       throw new Error(`${item.route}: print must reveal tab panel content.`);
     if (!printState.privateInputHidden)

@@ -1,6 +1,6 @@
 ---
 title: 'Financieel misbruik herkennen en begrijpen'
-description: 'Herken signalen van financiële controle en ontdek welke veilige vervolgstappen je kunt overwegen.'
+description: 'Over financiële uitbuiting, controle over geld en tegenwerking bij werk of studie. Herken situaties en vind een veilige volgende stap, ook na een breuk.'
 locale: nl
 translationKey: financieel-misbruik
 slug: begrijp-het/financieel-misbruik
@@ -8,11 +8,11 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-11-10
+updatedAt: 2026-11-15
 reviewedAt: null
 cardTitle: 'Financieel misbruik'
 cardText: 'Wanneer geld, schulden of documenten je keuzevrijheid beperken. Over het verschil met gewone geldzorgen en veilige eerste stappen.'
-summary: 'Financieel misbruik is een patroon waarin iemand via geld, schulden, inkomen of documenten de financiële keuzevrijheid van een ander structureel beperkt. Meningsverschillen over geld of een verschil in inkomen zijn op zichzelf geen misbruik. Het gaat om dwang, misleiding, bedreiging of controle die terugkomt, ook na een scheiding.'
+summary: 'Geld kan een middel worden om je uit te buiten of je keuzes te beperken. Denk aan geld gebruiken zonder toestemming, informatie achterhouden of werk en studie tegenwerken. Financiële uitbuiting en een patroon van economische controle zijn niet precies hetzelfde. Beide verdienen aandacht; een verschil in inkomen of een ruzie over geld is op zichzelf geen misbruik.'
 heading: 'Wanneer geld ook je vrijheid raakt.'
 eyebrow: 'Begrijp het / Financieel misbruik'
 lead: 'Misschien betaal je je eigen rekeningen, maar voel je weinig vrijheid om financiële keuzes te maken. Misschien zijn er verplichtingen waarover je nooit echt kon meebeslissen.'
@@ -31,32 +31,25 @@ hero:
       }
 glossary:
   term: 'Financieel misbruik'
-  definition: 'Een patroon waarin iemand via geld, schulden, inkomen of documenten de financiële keuzevrijheid van een ander structureel beperkt, door dwang, misleiding of controle. Eén ruzie over geld is het niet.'
-  aliases: ['Economisch misbruik', 'Financiële controle']
+  definition: 'Misbruik van iemands geld of bezittingen, of controle over diens financiële mogelijkheden. Economisch misbruik kan ook werk of studie belemmeren. De concrete situatie bepaalt welke uitleg en hulp passen.'
+  aliases:
+    [
+      'Economisch misbruik',
+      'Financieel en economisch misbruik',
+      'Financiële controle',
+      'Economisch geweld',
+      'Financieel geweld',
+      'Financiële uitbuiting',
+      'Economische controle',
+    ]
   category: financieel
+introChapters: 1
 listings:
   - collection: articles
     prefix: 'begrijp-het/financieel-misbruik/'
     eyebrow: 'Verdieping'
     heading: 'Praktische deelartikelen'
     lead: 'Kies een onderwerp dat bij je vraag past of lees hieronder verder.'
-cardsPlacement: inline
-cards:
-  - title: 'Ik moet voor elke uitgave toestemming vragen'
-    href: 'nl/begrippen/controle-over-uitgaven/'
-    text: 'Weinig zeggenschap over geld kan je zelfstandigheid beperken. Kijk naar afspraken, vrijheid en eventuele gevolgen wanneer je nee zegt.'
-  - title: 'Ik weet niet welke schulden of verplichtingen er zijn'
-    href: 'nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/'
-    text: 'Onduidelijkheid over gezamenlijke financiën kan onzekerheid en risico’s veroorzaken. Onderzoek veilig welke informatie toegankelijk is.'
-  - title: 'Ik voel me schuldig als ik iets voor mezelf koop'
-    href: 'nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/'
-    text: 'Schaamte en schuld kunnen blijven hangen wanneer geld herhaaldelijk onderwerp van druk of verwijt is.'
-  - title: 'Ik ben bang voor de financiële gevolgen van weggaan'
-    href: 'nl/begrijp-het/financieel-misbruik/afhankelijkheid/'
-    text: 'Afhankelijkheid en dreiging met geld kunnen keuzes beperken. Maak niet impulsief grote wijzigingen; vraag vertrouwelijk advies.'
-  - title: 'Ik draag steeds kosten waarover ik niet kon meebeslissen'
-    href: 'nl/begrippen/schulden-op-naam/'
-    text: 'Beslissingen over verplichtingen zonder vrijwillige instemming verdienen aandacht; bewaar feiten waar dat veilig en toegestaan is.'
 scenarios:
   - label: 'Ik regel alles'
     outside: '“Je hoeft die bankrekening niet te bekijken. Ik regel alles.”'
@@ -79,16 +72,16 @@ reflection:
     - 'Wat zou ik van een onafhankelijke hulpverlener willen weten?'
   note: 'Je hoeft niets in te vullen. Wat je hier eventueel typt, wordt niet opgeslagen of verstuurd.'
   writable: true
-related: [geld-praten, financieel-signalen, kaart-financieel, hulp-vinden, dwingende-controle]
+related: [geld-praten, kaart-financieel, hulp-vinden, dwingende-controle]
 sources:
   - label: 'Movisie — Financiële kwetsbaarheid en huiselijk geweld en kindermishandeling'
     url: 'https://www.movisie.nl/artikel/financiele-kwetsbaarheid-huiselijk-geweld-kindermishandeling'
     publisher: Movisie
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Schouders Eronder — Van signalering tot hulp: handreiking financieel misbruik (2024, PDF)'
     url: 'https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'
     publisher: 'Schouders Eronder / Huiselijkgeweld.nl'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Rijksoverheid — Wat moet ik doen bij huiselijk geweld?'
     url: 'https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/huiselijk-geweld/vraag-en-antwoord/huiselijk-geweld/wat-moet-ik-doen-bij-huiselijk-geweld'
     publisher: Rijksoverheid
@@ -101,26 +94,80 @@ reviewNotes:
   - 'Juridische/inhoudelijke review: klopt de afbakening “dwang, misleiding, bedreiging of structurele controle” met de definities in de Schouders Eronder-handreiking, inclusief hun onderscheid tussen economisch en financieel misbruik?'
   - 'Oprichter: het prototype had een sectie “Mijn ervaringen met financiële druk”. Wil je hier later een eigen passage (founderNote) over financiële druk en zelfstandigheid terugvinden? Zo ja: welke emoties en lessen wil je delen, zonder bedragen, namen of procesdetails? [OPRICHTER REVIEW NODIG]'
   - 'Controleer vóór publicatie of het hulpmiddel nl/hulpmiddelen/financieel-overzicht-en-veiligheid/ live staat en dat de reflectievragen werkelijk niet worden opgeslagen.'
-  - 'Controleer de zin dat er weinig Nederlandse cijfers zijn over financieel misbruik in relaties tegen de actuele handreiking; geen cijfers toevoegen zonder bron op /nl/mannen-in-cijfers/.'
+  - 'Raymond wijst een financieel/juridische reviewer aan voor definitie en onderscheid uitbuiting/economische controle, signalen, veilige vervolgstappen en bestaande hulpverwijzingen vóór publicatie. Geen persoonlijke passage toegevoegd.'
 ---
 
 ## Wat is het?
 
-Partners kunnen oneens zijn over geld of verschillende inkomens hebben. Dat is op zichzelf geen [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/). Het wordt zorgelijk wanneer iemand door dwang, misleiding, bedreiging of structurele controle de financiële keuzevrijheid van een ander aantast.
+**Voorbeeldgedachte:** “Ik verdien mijn eigen geld. Waarom voelt het dan niet alsof ik iets kan kiezen?”
 
-Financieel misbruik kan veel vormen hebben. Iemand [bepaalt bijvoorbeeld alle uitgaven](nl/begrippen/controle-over-uitgaven/), houdt inkomsten of bankgegevens buiten je zicht, sluit [verplichtingen af op jouw naam](nl/begrippen/schulden-op-naam/) of maakt het moeilijk om te werken of te studeren. Het hoeft niet groot of plotseling te beginnen. Volgens de [handreiking financieel misbruik van Schouders Eronder](https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf) kan controle geleidelijk ontstaan en in het begin zelfs op zorg lijken, zoals het aanbod om de geldzaken te regelen.
+Een eigen inkomen betekent niet automatisch dat je vrij bent om het te gebruiken. Het raakt je zelfstandigheid als iemand geld gebruikt zonder jouw toestemming, informatie voor je achterhoudt of bepaalt welke financiële keuzes je mag maken.
 
-Ook [na een scheiding kan financiële druk een rol blijven spelen](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/). Bij gezamenlijke schulden en eigendom zijn de feiten, toestemming en juridische afspraken belangrijk.
+<span id="wat-is-financieel-en-economisch-misbruik"></span>
 
-Over financieel misbruik tussen partners bestaan in Nederland weinig cijfers. Dat zegt niets over hoe zwaar het voor jou kan zijn. Voor mannen kan het extra moeilijk zijn om erover te praten. Wie gewend is de kostwinner of de sterke te zijn, schaamt zich er soms voor dat hij geen grip heeft op zijn eigen geld. Die schaamte is begrijpelijk, en je bent er niet alleen in. Deze pagina is er voor iedereen, van welk gender ook.
+De handreiking van Schouders Eronder maakt onderscheid tussen **financieel misbruik**, waarbij financiële grenzen en middelen worden geschonden, en **economisch misbruik**, waarbij financiële mogelijkheden worden beperkt om controle uit te oefenen. Financiële uitbuiting hoeft dus niet onderdeel te zijn van een langdurig controlepatroon. Economische controle kan juist verder gaan dan de bankrekening: ook werk of studie tegenwerken kan je zelfstandigheid beperken. Op deze pagina vind je beide vormen.
+
+Een verschil in inkomen of een taakverdeling maakt een relatie niet onveilig. Belangrijk is of je instemt, toegang houdt tot informatie en vrij kunt meebeslissen. Je hoeft niet eerst de juiste term te kennen om steun te vragen.
+
+<span id="wat-zijn-signalen"></span>
+<span id="hoe-kan-het-eruitzien"></span>
+
+## Signalen
+
+Kijk naar toegang, zeggenschap en ruimte voor jouw keuzes. Dit zijn herkenningsvoorbeelden, geen test:
+
+<span id="rond-toegang-tot-geld"></span>
+
+- **Toegang:** je inkomen komt binnen, maar je kunt de rekening niet bekijken of zelf over geld beschikken. Of je moet [elke uitgave verantwoorden](nl/begrippen/controle-over-uitgaven/), terwijl de ander dat niet hoeft.
+
+<span id="rond-beslissingen-en-verplichtingen"></span>
+
+- **Beslissingen:** je ontdekt [verplichtingen op jouw naam](nl/begrippen/schulden-op-naam/) waarover je niet kon meebeslissen, of krijgt geen tijd om te begrijpen waarvoor je tekent.
+
+<span id="rond-werk-studie-en-inkomen"></span>
+
+- **Werk en studie:** je wordt tegengewerkt wanneer je wilt werken, meer uren wilt maken of een opleiding wilt volgen. Dat kan je kansen op een eigen inkomen verkleinen. [Afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/) gaat over hoe die beperkte ruimte doorwerkt.
+
+<span id="rond-hoe-het-voelt"></span>
+
+- **Wat je merkt bij jezelf:** je stelt vragen uit, biedt bij voorbaat excuses aan of durft niets voor jezelf te kopen. Op [Ik durf niet over geld te praten](nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/) begint de uitleg bij dat gevoel.
+
+<span id="voorbeeld-een-vraag-die-niet-meer-gewoon-voelt"></span>
+
+## Een vraag die steeds meer kost
+
+_Voorbeeld — fictief_
+
+Je vraagt welke automatische incasso’s nog komen. De ander antwoordt dat je blijkbaar geen vertrouwen hebt. Eerst leg je nog uit waarom je het wilt weten. Later laat je de vraag rusten om de avond niet te laten ontsporen. Je hebt nog steeds geen overzicht, maar voelt je wel verantwoordelijk voor de spanning.
+
+<span id="hoe-kan-het-patroon-groter-worden"></span>
+
+## Hoe je ruimte kleiner wordt
+
+Een aanbod om de administratie te doen kan eerst verlichting geven. Als informatie daarna wordt afgeschermd en eigen keuzes telkens gedoe opleveren, verandert die taakverdeling. Je gaat minder vragen en meer rekening houden met de reactie. Achteraf wordt soms zichtbaar dat je niet alleen geld, maar ook beslissingsruimte kwijtraakte.
+
+Vertrouwen en willen bijdragen zijn geen fouten. Je bent niet verantwoordelijk voor uitbuiting doordat je de ander vertrouwde. [Dwingende controle](nl/begrippen/dwingende-controle/) legt uit hoe financiële beperkingen kunnen samengaan met druk op andere delen van je leven.
+
+## Na een breuk, en bij nieuwe afspraken
+
+Een relatie beëindigen maakt gezamenlijke rekeningen of schulden niet vanzelf los. Ook de spanning rond vragen stellen kan blijven. Bij [druk na een scheiding](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/) lees je over contact en afspraken die opnieuw onder druk komen te staan.
+
+_Voorbeeld — fictief_
+
+Een nieuwe partner vraagt hoe je samen de boodschappen wilt betalen. Je zegt meteen dat jij alles wel betaalt. Pas later merk je dat je bang was voor verwijt als je een andere verdeling zou voorstellen. Een afspraak mag onderwerp van overleg zijn. Je hoeft je vertrouwen niet te bewijzen door inzicht of zeggenschap op te geven.
+
+<span id="wat-kan-het-met-je-doen"></span>
 
 ## Wat het met je kan doen
 
 Financiële druk kan uitmonden in chronische stress, schaamte, besluiteloosheid, verlies van zelfstandigheid en het gevoel dat je geen eigen toekomst kunt plannen. Soms ga je jezelf overal verantwoordelijk voor voelen, ook als je niet over de beslissing mocht meebeslissen.
 
-> “Ik zocht niet alleen duidelijkheid over geld. Ik wilde mijn eigen keuzes weer durven maken.”
+> **Voorbeeldgedachte:** “Ik zocht niet alleen duidelijkheid over geld. Ik wilde mijn eigen keuzes weer durven maken.”
 
 Geld raakt aan bijna alles: waar je woont, wat je je kinderen kunt geven, of je durft weg te gaan, of je een plan voor later kunt maken. [Movisie](https://www.movisie.nl/artikel/financiele-kwetsbaarheid-huiselijk-geweld-kindermishandeling) beschrijft hoe [economische afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/) het lastig kan maken om een onveilige relatie te verlaten. Dat is geen zwakte. Het is een praktische en emotionele drempel die serieus genomen mag worden.
+
+<span id="wat-kan-helpen"></span>
+<span id="wat-kan-een-veilige-eerste-stap-zijn"></span>
 
 ## Een veilige eerste stap is genoeg
 
@@ -133,10 +180,16 @@ Twijfel je of wat je meemaakt financieel misbruik is, dan kun je gratis en anoni
 
 Wil je rustig ordenen wat je weet en wat nog niet? De printbare [financiële overzichts- en veiligheidschecklist](nl/hulpmiddelen/financieel-overzicht-en-veiligheid/) helpt daarbij, zonder dat je iets hoeft op te slaan.
 
+<span id="waarom-één-signaal-geen-bewijs-is"></span>
+
 ## Wanneer is het iets anders?
 
 Niet elke spanning over geld wijst op misbruik. Stellen maken ruzie over sparen of uitgeven, hebben een krappe maand, lopen samen tegen schulden aan door pech of ziekte, of spreken af dat één van beiden de administratie doet. Dat kan pijnlijk en vermoeiend zijn, en het kan helpen om er samen of met een budgetcoach naar te kijken. Het maakt iemand nog niet tot iemand die controleert.
 
 Het verschil zit meestal in het patroon. Kun je meepraten en meekijken? Kun je nee zeggen zonder dat daar straf, dreiging of wekenlange spanning op volgt? Wordt informatie gedeeld, of juist afgeschermd? Komt verantwoording van twee kanten, of alleen van jou?
 
-Eén voorbeeld, één gesprek of één herkenbare kaart op deze pagina is geen bewijs. Het kan wel een reden zijn om beter te kijken, of om het met iemand te bespreken die onafhankelijk meedenkt. In [Geldruzie of controle?](nl/begrijp-het/financieel-misbruik/geldruzie-of-controle/) lees je meer over dat verschil, en in [Signalen van financieel misbruik](nl/begrijp-het/financieel-misbruik/signalen/) over waar je op kunt letten.
+Je hoeft niet alle voorbeelden te herkennen. Een losse situatie vertelt niet het hele verhaal; kijk ook naar toestemming, toegang, gevolgen en wat er gebeurt wanneer je een grens aangeeft. Het kan wel een reden zijn om beter te kijken, of om het met iemand te bespreken die onafhankelijk meedenkt. In [Geldruzie of controle?](nl/begrijp-het/financieel-misbruik/geldruzie-of-controle/) lees je meer over dat verschil.
+
+<span id="verder-lezen"></span>
+
+Voor een concrete vraag kun je rechtstreeks kiezen uit de praktische deelartikelen hierboven: overzicht, documenten, afhankelijkheid, advies en herstel hebben elk een eigen functie.

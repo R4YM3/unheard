@@ -8,13 +8,13 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 related:
   [
     conflict-of-patroon,
     isolatie,
-    economisch-misbruik,
+    financieel-misbruik,
     emotioneel-misbruik,
     het-vertellen,
     hulp-vinden,
@@ -23,12 +23,36 @@ readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Als ik maar voorkom dat het escaleert, blijft het rustig.'
   feeling: 'Wanneer je dag steeds meer draait om iemands reactie voorkomen, kan je eigen ruimte ongemerkt kleiner worden. Dat is een reden om het patroon serieus te nemen.'
+recognitionFragments:
+  - afterSection: fysieke-intimidatie-ook-zonder-blauwe-plekken
+    kind: gedachte
+    text: 'De volgende keer zeg ik het maar niet. Ik weet nog hoe het voelde toen ik niet weg kon.'
 glossary:
   term: 'Dwingende controle'
   definition: 'Een patroon waarin iemand een ander stelselmatig vernedert, bang maakt of in de vrijheid beperkt om macht te houden. Geen losstaand incident, maar patroonmatig gedrag.'
   aliases: [coercive control, intieme terreur, controlerend gedrag]
   category: controle
 sources:
+  - label: 'Signalen van huiselijk geweld'
+    publisher: 'Slachtofferhulp Nederland'
+    url: 'https://www.slachtofferhulp.nl/gebeurtenissen/huiselijk-geweld/signalen-van-huiselijk-geweld/'
+    checkedAt: 2026-11-15
+    note: 'Signalen voor naasten, waaronder angst en spullen kapotmaken; geen diagnostische checklist.'
+  - label: 'Signalen: (ex-)partnergeweld'
+    publisher: 'Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld'
+    url: 'https://www.lkah.nl/signalen/'
+    checkedAt: 2026-11-15
+    note: 'Het onderdeel partnergeweld beschrijft onder meer fysiek blokkeren en beperking van bewegingsvrijheid.'
+  - label: 'Ik word mishandeld door mijn partner of ex-partner'
+    publisher: 'Thuisarts'
+    url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
+    checkedAt: 2026-11-15
+    note: 'Bedreiging, geweld en hulp bij lichamelijke of psychische klachten.'
+  - label: 'Wetsvoorstel tot strafbaarstelling van vormen van psychisch geweld'
+    publisher: 'Overheid.nl — Wetgevingskalender'
+    url: 'https://wetgevingskalender.overheid.nl/Regeling/WGK029006'
+    checkedAt: 2026-11-15
+    note: 'Bij controle vermeldde de kalender voorbereiding en consultatie van 29 juni tot 7 september 2026; geen latere mijlpaal vermeld.'
   - label: 'Veilig Thuis — Advies bij zorgen of twijfel'
     url: 'https://www.veiligthuis.nl/nl/over-ons/de-adviesfunctie-van-veilig-thuis'
     publisher: Veilig Thuis
@@ -40,15 +64,16 @@ sources:
   - label: 'Dwingende controle verwoest levens — signalen in een relatie'
     publisher: 'Veilig Thuis'
     url: 'https://www.veiligthuis.nl/nl/dwingendecontrole'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Stark, E. & Hester, M. (2019). Coercive Control: Update and Review. Violence Against Women, 25(1), 81–104.'
     publisher: 'SAGE Journals'
     url: 'https://doi.org/10.1177/1077801218816191'
     checkedAt: 2026-10-20
   - label: 'Factsheet Intieme terreur'
-    publisher: 'Huiselijkgeweld.nl / programma Geweld hoort nergens thuis'
-    url: 'https://www.huiselijkgeweld.nl/documenten/2022/01/26/factsheet-intieme-terreur'
-    checkedAt: 2026-10-20
+    publisher: 'Programma Geweld hoort nergens thuis / VNG'
+    url: 'https://vng.nl/sites/default/files/2022-01/ghnt_factsheet_intieme_terreur.pdf'
+    checkedAt: 2026-11-15
+    note: 'Volledige tekst gelezen; onder meer controle over slaap, medicatie en doktersbezoek. Geen individuele risicotest.'
   - label: 'Signalen van intieme terreur'
     publisher: 'Augeo Foundation'
     url: 'https://www.augeo.nl/nl-nl/inzicht-in-intieme-terreur/signalen/'
@@ -61,9 +86,18 @@ sources:
     publisher: 'Movisie'
     url: 'https://www.movisie.nl/artikel/mannen-slachtoffer-huiselijk-geweld'
     checkedAt: 2026-10-20
+  - label: 'Vragen uit het webinar Een goed gesprek is ook luisteren — vragen 8–10'
+    publisher: '113 Zelfmoordpreventie'
+    url: "https://www.113.nl/sites/default/files/113/infomateriaal_2025/Beantwoording%20van%20vragen%20webinar%20'Een%20goed%20gesprek%20is%20ook%20luisteren'.pdf"
+    checkedAt: 2026-11-15
+    note: 'Dreiging met zelfdoding als druk: luisteren, eigen grenzen en hulp inschakelen; geen individuele risico-inschatting.'
 reviewNotes:
-  - 'Veiligheidsreview: controleer de voorbeelden en het advies in Digitale controle vóór publicatie.'
-  - 'Het wetsvoorstel strafbaarstelling psychisch geweld is bij schrijven een voorstel (consultatie juni 2026). Bijwerken zodra de status verandert.'
+  - 'Raymond wijst vóór publicatie een klinische/veiligheidsreviewer aan voor Als dreiging met zelfdoding je keuze bepaalt: controleer acute hulp, eigen veiligheid en geen verantwoordelijkheid voor het leven van de ander. Bronvragen 8–10 gaan specifiek over zelfdoding; overige zelfbeschadiging is niet hiermee klinisch gereviewd.'
+  - 'Raymond wijst een klinische/veiligheidsreviewer aan voor Als rust of medische zorg niet vrij voelt: beoordeel toegang tot zorg, urgentie en medicatieverwijzing. Geen instructie om zelf medicatie te wijzigen.'
+  - 'Veiligheidsreview: controleer de voorbeelden en het advies in Digitale controle vóór publicatie van de revisie.'
+  - 'Raymond wijst een veiligheids-/inhoudelijke reviewer aan voor Fysieke intimidatie, ook zonder blauwe plekken: beoordeel voorbeelden bij de deur en in de auto, acute onveiligheid en het onderscheid tussen een incident en dwingende controle vóór publicatie van de revisie.'
+  - 'Klinische reviewer: beoordeel de nieuwe passage over vrije keuzes en spanning bij een nieuwe partner.'
+  - 'Juridische status opnieuw gecontroleerd op 15 november 2026 via Wetgevingskalender WGK029006: vermeldt voorbereiding en consultatie juni–september. Controleer opnieuw bij publicatie; geen individueel juridisch oordeel.'
 ---
 
 ## Herken je dit?
@@ -93,10 +127,40 @@ Dwingende controle zit vaak in kleine, alledaagse dingen. Los bekeken lijken ze 
 - De ander wil altijd weten waar je bent, en wordt boos of ongerust als je niet direct antwoordt.
 - Je telefoon, mail of bankrekening wordt gecontroleerd.
 - Je ziet je vrienden of familie steeds minder, omdat het 'gedoe' geeft. Zie [isolatie](nl/begrippen/isolatie/).
-- Je moet [verantwoording afleggen over uitgaven](nl/begrippen/controle-over-uitgaven/), of hebt geen eigen toegang tot geld. Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- Je moet [verantwoording afleggen over uitgaven](nl/begrippen/controle-over-uitgaven/), of hebt geen eigen toegang tot geld. Zie [financieel en economisch misbruik](nl/begrijp-het/financieel-misbruik/).
 - Er zijn regels over kleding, eten, slaap of wie je spreekt, uitgesproken of onuitgesproken.
 - Je wordt uitgelachen of gekleineerd, ook waar anderen bij zijn.
 - Je merkt dat je vooral bezig bent met het voorkomen van een uitbarsting.
+
+## Fysieke intimidatie, ook zonder blauwe plekken
+
+**Voorbeeld — fictief.** Je wilt een gesprek onderbreken en naar een andere kamer gaan. De ander blijft in de deuropening staan en zegt dat je nergens heen gaat voordat je hebt toegegeven. Je gaat weer zitten. Later zeg je tegen jezelf dat je niet bent geslagen. Toch kon je op dat moment niet vrij weg.
+
+Ook je de weg versperren, vlak voor je gaan staan terwijl je wordt bedreigd of spullen kapotmaken kan je bang maken en je bewegingsruimte beperken. Wat er met je gebeurt, wordt niet pas belangrijk wanneer je een verwonding kunt laten zien. Dreiging kan ook doorwerken op rustige dagen: je laat een onderwerp liggen of zegt eerder toe, omdat je een herhaling wilt voorkomen.
+
+**Voorbeeld — fictief.** Tijdens een ruzie in de auto gaat de bestuurder steeds harder rijden. Je vraagt om langzamer te rijden, maar die vraag wordt genegeerd. Je zegt niets meer en wacht tot de rit voorbij is. Ook zo kan een situatie onveilig voelen zonder dat iemand je aanraakt.
+
+Dwingende controle gaat over de samenhang en herhaling van gedrag. Dat maakt een enkele bedreiging of geweldsuitbarsting niet onbelangrijk. Je hoeft geen volledig patroon te bewijzen voordat je hulp vraagt. Beschrijf concreet wat er gebeurde en waar je nu bang voor bent; een deskundige kan met je meedenken over veiligheid.
+
+Ben je bang voor een reactie, probeer dan niet met een confrontatie uit te zoeken hoe ver de ander zal gaan. Bij [Hulp vinden](nl/hulp-vinden/) staan routes voor directe onveiligheid en voor vertrouwelijk advies. Ook als er lichamelijk geweld is geweest, hoef je dit niet alleen te beoordelen. Een huisarts kan je helpen bij lichamelijke of psychische klachten.
+
+## Als rust of medische zorg niet vrij voelt
+
+**Voorbeeld — fictief.** Je zegt dat je wilt slapen. De ander blijft je wakker maken en zegt dat het gesprek pas stopt als je toegeeft. De volgende dag zeg je een afspraak af omdat je uitgeput bent. Het gaat hier niet alleen om slecht slapen door spanning: je krijgt geen ruimte om te rusten.
+
+Controle kan ook gaan over een doktersafspraak niet mogen maken, niet vrij met een zorgverlener kunnen praten of medicatie die wordt achtergehouden. Klachten worden bijvoorbeeld steeds weggewuifd terwijl je juist hulp probeert te krijgen. De factsheet over intieme terreur benoemt slaap, medicatie en doktersbezoek als gebieden waarop autonomie kan worden beperkt.
+
+Jouw klachten verdienen aandacht, ook als de ander ze niet erkent. Ben je afhankelijk van hulp bij vervoer, verzorging of medicijnen, dan kan zelf iets regelen ingewikkeld zijn. Dat geeft niemand het recht om noodzakelijke zorg als drukmiddel te gebruiken. Bespreek met een zorgverlener hoe je hulp kunt krijgen en vertel het als je daarin wordt belemmerd. Bij vragen over onderbroken of beïnvloede medicatie hoort medisch advies; ga niet op basis van dit artikel zelf medicijnen veranderen.
+
+Voor de vermoeidheid en de moeite om nog iets op te brengen kun je verder bij [emotionele uitputting](nl/begrippen/emotionele-uitputting/). Voor onveiligheid blijft [Hulp vinden](nl/hulp-vinden/) een passende ingang. Een ontspanningstip alleen lost belemmering van rust of zorg niet op.
+
+## Als dreiging met zelfdoding je keuze bepaalt
+
+**Voorbeeld — fictief.** Je zegt dat je afstand wilt. De ander dreigt zichzelf van het leven te beroven als je vertrekt. Je voelt je bang en verantwoordelijk, en durft je keuze niet meer uit te spreken.
+
+Neem zo'n dreiging serieus. Druk en werkelijk gevaar kunnen tegelijk bestaan; je hoeft niet eerst uit te zoeken of iemand het “echt meent”. Je kunt hulp inschakelen zonder de verantwoordelijkheid voor het leven van de ander over te nemen. Luisteren betekent niet dat je moet toegeven, terugkeren of een relatie moet voortzetten.
+
+Bij direct gevaar voor jou of de ander is [acute hulp](nl/hulp-vinden/#bij-direct-gevaar) nodig. Breng jezelf niet in gevaar om beschikbaar te blijven. Bespreek met een hulpverlener wat er wordt gezegd en wat dat voor jouw veiligheid betekent. Op [Hulp vinden](nl/hulp-vinden/#bij-gedachten-aan-zelfdoding) staat ook ondersteuning bij zorgen over zelfdoding. Je hoeft dit niet alleen te dragen.
 
 ## Wanneer is het niet zomaar af te leiden?
 
@@ -125,8 +189,8 @@ Praktische afhankelijkheid, kinderen, schaamte, weinig steun of eerdere ervaring
 
 ## Impact op de ontvanger
 
-- je eigen oordeel minder vertrouwen, zie [zelftwijfel](nl/begrippen/zelftwijfel/);
-- voortdurend alert zijn op de stemming van de ander, zie [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/);
+- je eigen oordeel minder vertrouwen, zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/);
+- voortdurend alert zijn op de stemming van de ander, zie [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/);
 - [jezelf niet meer herkennen](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/);
 - schaamte, waardoor je er met niemand over praat;
 - moeite om het te benoemen, omdat er geen duidelijk 'incident' is.
@@ -138,6 +202,10 @@ Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft da
 Als je lange tijd rekening houdt met regels, reacties of verwachtingen van een ander, kun je jezelf vooral gaan zien in de rol die je moet volhouden: partner, ouder, kostwinner, uitlegger of degene die de rust bewaart. Eigen wensen, grenzen en contacten raken dan op de achtergrond.
 
 Na een relatie of breuk kan dat extra voelbaar worden. De regels of spanning zijn niet meer voortdurend zichtbaar, maar het opletten kan vanbinnen doorgaan. Een vrije avond, een eigen keuze of contact met iemand van vroeger kan daardoor onbekend voelen. Dat betekent niet dat je geen eigen wensen hebt; het kan tijd kosten om ze weer ruimte te geven. Lees ook [Ik herken mezelf niet meer](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/) of [Van begrijpen naar voelen](nl/herstel/leren-voelen/).
+
+**Voorbeeld — fictief.** Bij een nieuwe partner wil je na een lastig gesprek even naar buiten. Je wacht op toestemming, terwijl die ander je niet tegenhoudt. Je merkt hoe ongewoon het voelt om zelf te kiezen wanneer je ruimte nodig hebt. Je hoeft jezelf niet te verwijten dat die vrijheid nog niet vanzelfsprekend voelt.
+
+Word je in je huidige situatie wél tegengehouden of bedreigd, dan gaat het niet alleen over herstellen van vroeger. Bespreek je veiligheid met iemand die deskundig kan meedenken.
 
 ## Digitale controle
 

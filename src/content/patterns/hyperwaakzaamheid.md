@@ -4,7 +4,7 @@ description: 'Wat hyperwaakzaamheid is, waarom je lichaam alert blijft na een pe
 locale: nl
 translationKey: hyperwaakzaamheid
 slug: begrippen/hyperwaakzaamheid
-published: true
+published: false
 status: in_review
 author: editorial
 publishedAt: 2026-10-20

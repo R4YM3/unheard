@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
 order: 50
 cardTitle: 'Rouw'
@@ -16,12 +16,12 @@ cardText: 'Rouw om een relatie, om wie je was en om de toekomst die je voor ogen
 summary: 'Na een relatie waarin je pijn is gedaan, kun je toch rouwen. Om de ander, om wie je zelf was, om plannen die niet uitkwamen. Opluchting en verdriet kunnen naast elkaar bestaan. Rouw heeft geen vaste volgorde en geen vaste duur.'
 readerMoment:
   label: 'Voorbeeldgedachte'
-  thought: 'Ik weet dat het voorbij moest zijn, maar ik mis het toch.'
-  feeling: 'Verdriet en opluchting sluiten elkaar niet uit. Je hoeft het verlies niet kleiner te maken om te weten dat iets je pijn deed.'
+  thought: 'Ik mis ook het leven dat we nooit hebben gekregen.'
+  feeling: 'Een gezamenlijk plan kan verdwijnen terwijl het voor jou nog veel betekent. Ook om die toekomst mag je verdriet hebben.'
 hero:
   eyebrow: 'Herstel / Rouw'
   paragraphs:
-    - 'Je weet dat het niet goed was. Toch mis je iets. Soms de ander, soms de persoon die je zelf was voordat het begon, soms het leven dat je had gepland.'
+    - 'Een relatie kan eindigen, terwijl de plannen die erbij hoorden nog overal opduiken. Een huis, een gezin, een reis of meer tijd voor jezelf: ook om wat niet kwam kun je verdriet hebben.'
     - 'Ook dat is rouw, en het mag er zijn.'
 reflection:
   heading: 'Waar rouw ik om?'
@@ -32,13 +32,17 @@ reflection:
   writable: false
 related: [gemis, pijn-na-inzicht, identiteit, herstel-erkenning, herstel-leren-voelen]
 sources:
-  - label: 'Thuisarts — Rouw'
-    url: 'https://www.thuisarts.nl/rouw'
+  - label: 'Thuisarts — Ik rouw'
+    url: 'https://www.thuisarts.nl/rouw/ik-rouw'
     publisher: Thuisarts
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-14
+    note: 'De definitie omvat ook verlies van een partner na een relatie. Diagnostische informatie over langdurige rouw wordt hier niet toegepast op een relatiebreuk.'
+  - label: 'Slachtofferhulp Nederland — Huiselijk geweld'
+    url: 'https://www.slachtofferhulp.nl/gebeurtenissen/huiselijk-geweld/'
+    publisher: 'Slachtofferhulp Nederland'
+    checkedAt: 2026-11-14
 reviewNotes:
-  - 'Clinicus: is de beschrijving van rouw na een relatie (zonder overlijden) passend, en klopt de verwijzing naar Thuisarts Rouw voor deze situatie?'
-  - 'Redactie: is "ambivalentie" voldoende uitgelegd in gewone taal?'
+  - 'Klinische reviewer, aan te wijzen door Raymond: controleer aanhoudende somberheid, hulp zoeken en de passage over een nieuwe relatie. Thuisarts Ik rouw noemt relatieverlies expliciet; er wordt geen rouwstoornis of behandeltermijn afgeleid.'
 ---
 
 ## Rouw zonder overlijden
@@ -49,9 +53,11 @@ Na een relatie waarin je pijn is gedaan, voelt rouw soms ongepast. Je zou toch b
 
 ## Waar je om kunt rouwen
 
+**Voorbeeld — verzonnen situatie.** Je ziet in je agenda de week waarin jullie samen op reis zouden gaan. De reis gaat niet door. Je wilt niet terug naar de relatie, maar de lege week raakt je: je had gehoopt dat jullie daar eindelijk tijd voor elkaar zouden hebben. Wat je mist is niet alleen een vakantie, maar ook het leven waar je naartoe werkte.
+
 ### Om de relatie en de ander
 
-Er waren waarschijnlijk ook goede momenten. Warmte, lachen, gewoonten samen. Het kan pijn doen om die te missen, juist omdat ze verweven waren met momenten die je kwetsten. Iemand missen die je pijn deed, betekent niet dat je de pijn goedpraat. Lees ook [Ik mis iemand die mij pijn heeft gedaan](nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/).
+Als er ook goede momenten waren, kun je die missen: warmte, lachen of gewoonten samen. Goede herinneringen wissen de pijnlijke gebeurtenissen niet uit. Je hoeft ook geen goede momenten te vinden als die er voor jou niet waren. Over verlangen naar de persoon of het contact gaat [Ik mis iemand die mij pijn heeft gedaan](nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/).
 
 ### Om wie je was
 
@@ -63,28 +69,36 @@ Een huis, een gezin, samen oud worden, een plan dat je deelde. Ook als die toeko
 
 ### Om tijd en kansen
 
-Sommige mensen voelen spijt over jaren die "verloren" voelen, of over kansen die ze lieten liggen. Dat is een begrijpelijk gevoel. Probeer jezelf daarvoor niet te veroordelen. Je deed wat je toen kon, met wat je toen wist.
+Je kunt spijt voelen over jaren die verloren lijken, of kansen die je liet liggen. Achteraf zie je bijvoorbeeld hoe vaak je een opleiding, hobby of ontmoeting uitstelde omdat er telkens iets anders voorging. Tijdens de relatie leken dat losse keuzes. Nu zie je wat je bij elkaar hebt gemist.
+
+Dat kan boosheid en verdriet oproepen. Je hoeft die gevoelens niet weg te redeneren. Tegelijk had je toen andere informatie, hoop en omstandigheden dan nu. Terugkijken hoeft geen aanklacht tegen je vroegere zelf te worden.
 
 ## Tegenstrijdige gevoelens
 
 Ambivalentie betekent dat je twee dingen tegelijk voelt die niet bij elkaar lijken te passen. Opluchting en verdriet. Boosheid en verlangen. De wens om contact en de wens om nooit meer iets te horen.
 
-Dat is geen teken van verwarring of zwakte. Het is wat er vaak gebeurt na een relatie die zowel goede als pijnlijke kanten had. Je hoeft niet te kiezen welk gevoel klopt. Ze kunnen allebei waar zijn.
+Dat maakt je niet zwak of onbetrouwbaar. Je hoeft niet te kiezen welk gevoel klopt. Verdriet om wat je verliest en opluchting over wat stopt kunnen allebei bestaan.
 
 Soms schuift de ene dag het verlangen naar voren en de volgende dag de boosheid. Dat hoort erbij.
 
 ## Rouw heeft geen schema
 
-Er bestaat geen vaste volgorde en geen vaste duur. Soms lijkt het beter te gaan en komt het verdriet ineens terug, bijvoorbeeld op een datum, bij een liedje of als je iets ziet dat jullie samen deden. Dat is geen terugval. Rouw beweegt vaak in golven.
+Er bestaat geen verplichte volgorde waarin je gevoelens moet doorlopen. Verdriet kan op een ander moment weer naar voren komen, bijvoorbeeld bij een datum, een liedje of iets wat jullie samen deden. Een moeilijke dag betekent niet dat alles wat je hebt opgebouwd verdwenen is. Als het verdriet je leven blijft overheersen, hoef je niet te wachten met hulp vragen.
 
-Voor mannen kan rouw extra stil verlopen. Wie gewend is om door te gaan en "er niet over te zeuren", rouwt soms door harder te werken, meer te sporten of zich terug te trekken. Dat kan even helpen, maar verdriet dat geen plek krijgt, blijft vaak ergens zitten. Het mag ook gezien en uitgesproken worden.
+Als je gewend bent door te gaan en er niet over te praten, kan het moeilijk zijn om verdriet aan iemand te laten zien. Je hoeft niet op een bepaalde manier te rouwen om serieus genomen te worden. Ook als man mag je zeggen dat het verlies je raakt, zonder jezelf eerst groot te houden.
+
+## Als er iemand nieuw in je leven komt
+
+Een nieuwe relatie hoeft het verdriet om een eerdere relatie niet meteen weg te nemen. Je kunt blij zijn met nieuw contact en toch geraakt worden door wat je eerder miste. Dat hoeft geen opdracht te worden om sneller te herstellen of je verleden te verbergen.
+
+**Voorbeeld:** iemand vraagt wat jij graag wilt doen en laat de keuze bij jou. Dat voelt prettig, maar roept ook verdriet op over hoe weinig ruimte je eerder ervoer. Je mag daar even bij stilstaan. Je hoeft de nieuwe partner niet met de vorige te vergelijken om te kunnen zeggen wat je nu nodig hebt.
 
 ## Wat kan helpen
 
 - **Ruimte maken voor het gemis.** Een moment op de dag waarop je toestaat dat het er is, in plaats van het steeds weg te duwen.
 - **[Erover praten met iemand die niet oordeelt](nl/herstel/hoe-vertel-ik-het/).** Iemand die niet meteen zegt dat je blij moet zijn dat het voorbij is.
-- **Opschrijven waar je om rouwt.** Een lijstje kan helpen om het verlies concreter te maken. Je hoeft het niet te bewaren.
-- **Kleine rituelen.** Een wandeling op een plek die belangrijk voor je is, een brief die je niet verstuurt, iets wat je opruimt als je eraan toe bent.
+- **Woorden geven aan het verlies.** Hardop, in gedachten of op papier als dat veilig kan. Je hoeft geen overzicht te maken; één ding dat je vandaag mist is ook genoeg.
+- **Iets kleins doen dat bij je past.** Een wandeling op een rustige plek of een gewoonte die je zelf kiest. Je hoeft geen oude plek op te zoeken, iets op te ruimen of contact te maken met de ander om afscheid te mogen nemen.
 - **Geduld.** Niet met de bedoeling dat het vanzelf overgaat, maar zodat je niet steeds hoeft te forceren.
 
 Blijft het verdriet je dagelijks leven zwaar beïnvloeden, slaap je slecht of voel je je langdurig somber, bespreek het dan met je huisarts. Heb je gedachten aan zelfdoding, bel dan [113](tel:113), gratis en dag en nacht bereikbaar, of chat via 113.nl.

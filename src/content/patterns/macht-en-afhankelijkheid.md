@@ -14,7 +14,7 @@ readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Ik wil weg uit dit gesprek, maar waar moet ik heen met de kinderen, het huis en het geld?'
   feeling: 'Afhankelijkheid kan je ruimte om te kiezen kleiner maken, zonder dat jij verantwoordelijk bent voor hoe iemand daarmee omgaat.'
-related: [dwingende-controle, economisch-misbruik, traumabinding, isolatie, hulp-vinden]
+related: [dwingende-controle, financieel-misbruik, traumabinding, isolatie, hulp-vinden]
 glossary:
   term: 'Macht en afhankelijkheid'
   definition: 'Macht speelt in elke relatie een rol. Het wordt ongezond als macht structureel aan één kant ligt en wordt gebruikt om de ander afhankelijk te houden.'
@@ -49,7 +49,7 @@ Onderzoek naar [traumabinding](nl/begrippen/traumabinding/) (Dutton en Painter, 
 
 Afhankelijkheid ontstaat zelden in één keer. Vaak is het een optelsom van keuzes die op het moment zelf logisch voelden.
 
-- **Geld.** Eén inkomen, de rekening op naam van de ander, [schulden op jouw naam](nl/begrippen/schulden-op-naam/). Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
+- **Geld.** Eén inkomen, de rekening op naam van de ander, [schulden op jouw naam](nl/begrippen/schulden-op-naam/). Zie [financieel en economisch misbruik](nl/begrijp-het/financieel-misbruik/).
 - **Wonen.** Het huis is van de ander, of je woont ver van je eigen netwerk.
 - **Kinderen.** Zorgen over omgang, of de angst dat de ander de kinderen tegen je opzet.
 - **Status en verblijf.** Een verblijfsvergunning die afhangt van de relatie, of werk in het bedrijf van de ander.
@@ -83,7 +83,7 @@ Vragen die kunnen helpen:
 - het gevoel dat je geen keus hebt, ook als die er formeel wel is;
 - angst voor de gevolgen van een breuk: armoede, dakloosheid, de kinderen minder zien;
 - schaamte over hoe afhankelijk je bent geworden;
-- je eigen kunnen onderschatten, zie [zelftwijfel](nl/begrippen/zelftwijfel/);
+- je eigen kunnen onderschatten, zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/);
 - blijven, omdat de band met de ander sterk is, ondanks alles. Zie [traumabinding](nl/begrippen/traumabinding/).
 
 ## Wat kan helpen?

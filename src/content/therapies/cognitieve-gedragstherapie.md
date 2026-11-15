@@ -68,7 +68,7 @@ De opzet verschilt per behandelaar, maar CGT is meestal vrij concreet en praktis
 - oefeningen en huiswerk tussen de sessies, bijvoorbeeld iets bijhouden of iets nieuws uitproberen;
 - duidelijke doelen en regelmatig terugkijken of het helpt.
 
-Een belangrijke kanttekening voor wie in een relatie veel [twijfel aan zichzelf heeft ontwikkeld](nl/begrippen/zelftwijfel/): werken met gedachten betekent niet dat jouw beleving 'fout' is. Een goede behandelaar neemt je ervaring serieus. Voelt het alsof je ervaring wordt weggeredeneerd, dan mag je dat zeggen.
+Een belangrijke kanttekening voor wie in een relatie veel [twijfel aan zichzelf heeft ontwikkeld](nl/wat-voel-ik/ik-twijfel-aan-mezelf/): werken met gedachten betekent niet dat jouw beleving 'fout' is. Een goede behandelaar neemt je ervaring serieus. Voelt het alsof je ervaring wordt weggeredeneerd, dan mag je dat zeggen.
 
 ## Wat is wel en niet aangetoond?
 

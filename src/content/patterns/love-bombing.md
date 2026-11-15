@@ -8,13 +8,17 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'In het begin voelde alle aandacht als liefde. Waarom voelt die nu als iets waar ik aan vastzit?'
   feeling: 'Een intense start kan achteraf verwarrend zijn, vooral als warmte later samenvalt met druk of controle.'
 related: [dwingende-controle, hoovering, isolatie, traumabinding, hulp-vinden]
+recognitionFragments:
+  - afterSection: wanneer-aandacht-een-verplichting-gaat-voelen
+    kind: gedachte
+    text: 'Ik was blij dat iemand zo graag bij me wilde zijn. Ik merkte pas later hoeveel ik daarvoor afzegde.'
 glossary:
   term: 'Love bombing'
   definition: 'Populaire term voor een overweldigend begin van een relatie met veel aandacht, cadeaus en snelle stappen, die later kan omslaan in controle.'
@@ -36,16 +40,18 @@ sources:
   - label: 'Signalen van intieme terreur'
     publisher: 'Augeo Foundation'
     url: 'https://www.augeo.nl/nl-nl/inzicht-in-intieme-terreur/signalen/'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
+reviewNotes:
+  - 'Raymond wijst een inhoudelijke/veiligheidsreviewer aan: toets de groei van aandacht naar verplichting, de scènes na de relatie en autonomie zonder intentietoeschrijving. Het abstract uit 2017 is geen diagnostisch profiel; volledige studie deze ronde niet gelezen. Zie broncontrole 2026-11-15-stilte-en-voorwaardelijke-aandacht.md.'
 ---
 
 ## Wat is love bombing?
 
-'Love bombing' is een populaire term voor een begin van een relatie waarin iemand je overlaadt met aandacht, complimenten, cadeaus, berichten en grote toekomstplannen, in een tempo dat overweldigend is. Het woord wordt vooral gebruikt wanneer die intensiteit achteraf een manier blijkt te zijn geweest om snel dichtbij te komen, invloed te krijgen of iemand afhankelijk te maken.
+Veel aandacht kan je het gevoel geven dat je eindelijk wordt gezien. Het wordt verwarrend wanneer die aandacht later samengaat met eisen: je moet altijd bereikbaar zijn, sneller samenwonen dan je wilt of je vrienden minder zien.
 
-Er is weinig onderzoek naar love bombing als afzonderlijk verschijnsel. Een vaak geciteerde studie (Strutzenberg e.a., 2017) is een verkennend onderzoek onder 484 Amerikaanse studenten. De onderzoekers omschreven love bombing als overmatige communicatie aan het begin van een relatie om macht en controle te krijgen. Ze vonden een samenhang met [narcistische trekken](nl/begrippen/narcisme/), onzekere hechting en een lager zelfbeeld. Het is één studie bij jongvolwassenen, op basis van zelfrapportage; je kunt er geen conclusies uit trekken over een specifiek persoon.
+'Love bombing' is een populaire term voor overweldigende toenadering met veel complimenten, berichten, cadeaus en toekomstplannen. Het woord wordt vooral gebruikt wanneer naast die intensiteit druk en controle zichtbaar worden. Dat bewijst niet dat alle aandacht gespeeld was. Het helpt om te kijken hoeveel ruimte er voor jouw tempo en keuzes overblijft.
 
-Nederlandse organisaties beschrijven iets vergelijkbaars vanuit de hulpverlening. De factsheet over intieme terreur noemt het 'versnellen van de honeymoonfase': iemand inpalmen en verleiden om snel te gaan samenwonen of trouwen, vaak samen met het afsluiten van vrienden en familie. Augeo stelt de vraag hardop: overladen worden met cadeautjes en altijd bij elkaar willen zijn is vaak gewoon leuk, maar wanneer slaat het door naar controle?
+Augeo en de factsheet over intieme terreur beschrijven hoe snelle toenadering kan samengaan met isolatie of controle. De losse gebaren zijn geen test: verliefdheid mag intens zijn.
 
 ## Hoe kan het eruitzien?
 
@@ -56,13 +62,13 @@ Nederlandse organisaties beschrijven iets vergelijkbaars vanuit de hulpverlening
 - Kritiek op mensen die twijfels uiten: "Je vrienden gunnen ons dit gewoon niet."
 - Een plotselinge omslag als je ruimte voor jezelf neemt: kilte, verwijten of stilte.
 
-> **Illustratief voorbeeld — verzonnen, geen echt gesprek**
->
-> Week drie: "Ik heb een weekend Parijs geboekt. Zeg je voetbal maar af, dit is belangrijker toch?"
->
-> Week zes: "Waarom wil je per se met je vrienden weg? Ik dacht dat wij iets bijzonders hadden."
->
-> Jij, later: _Het voelde als liefde. Wanneer werd het een verplichting?_
+## Wanneer aandacht een verplichting gaat voelen
+
+**Voorbeeld — fictief.** Eerst vind je het fijn dat iemand je na je werk komt ophalen. Later wordt er boos gereageerd als je zelf naar een vriend wilt gaan. Je zegt af, omdat je het mooie begin niet wilt verpesten. Na een tijd plan je niets meer zonder eerst te vragen of het goed is.
+
+Op het moment zelf zie je een teleurstelling, een ruzie of een gebaar waar je dankbaar voor wilt zijn. Pas achteraf valt op hoeveel keuzes steeds dezelfde kant op gingen. Vertrouwen, hoop en loyaliteit zijn geen fouten. De verantwoordelijkheid voor druk of controle ligt bij degene die die uitoefent.
+
+Een eigen leven naast de relatie behouden is geen afwijzing van liefde. Over het kleiner worden van je netwerk lees je bij [isolatie](nl/begrippen/isolatie/); over terugkerend contact na afstand bij [hoovering](nl/begrippen/hoovering/).
 
 ## Wanneer is het niet zomaar af te leiden?
 
@@ -87,10 +93,20 @@ Augeo noemt in een leermodule voor professionals onder meer 'overladen met liefd
 
 Achteraf is het makkelijk om te zeggen dat je het had moeten zien. Op het moment zelf voelde het als liefde, en dat is precies wat het zo verwarrend maakt.
 
+## Na de relatie, en bij iemand nieuw
+
+Je kunt de aandacht uit het begin missen en tegelijk weten dat je later weinig ruimte had. Dat gemis maakt de druk niet minder werkelijk. Je hoeft niet te beslissen dat alles onecht was om serieus te nemen wat je pijn deed. Over die twee gevoelens naast elkaar gaat [Ik mis iemand die mij pijn heeft gedaan](nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/).
+
+**Voorbeeld — fictief.** In een nieuwe relatie vraagt iemand wanneer jij weer wilt afspreken. Je zoekt naar het antwoord dat diegene graag hoort. Dan merk je dat “volgende week” ook mag. Zo'n moment kan het verschil voelbaar maken tussen aandacht krijgen en steeds beschikbaar moeten zijn. Het is geen garantie over de hele relatie; je mag blijven kijken naar hoe jouw keuzes worden ontvangen.
+
+## Wat weten we over het begrip?
+
+Een verkennende studie van Strutzenberg en collega's uit 2017 onderzocht zelfgerapporteerde gedragingen bij Amerikaanse studenten. De gevonden samenhangen zijn geen bewijs van een vast persoonlijkheidstype, oorzaak of bedoeling. Je kunt er niet uit afleiden wie dit gedrag zal vertonen of wie het zou “aantrekken”. Voor jouw situatie is concreet gedrag bruikbaarder dan een diagnose op afstand.
+
 ## Wat kan helpen?
 
 - **[Neem je eigen tempo serieus](nl/herstel/grenzen-leren-stellen/).** Een relatie die goed is, kan ook rustig.
 - **Houd contact met je eigen mensen**, juist in een verliefde periode.
-- **Let op hoe een 'nee' wordt ontvangen.** Dat zegt vaak meer dan de grootste gebaren.
+- **Neem je aarzeling serieus.** Je hoeft geen grens uit te proberen om te bewijzen dat er controle is. Ben je bang voor een reactie, vraag dan eerst veilig advies.
 - **Kijk terug zonder jezelf te veroordelen.** Wat je toen niet kon zien, kun je nu wel benoemen.
 - **Herken je het begin van controle of isolatie?** Lees over [dwingende controle](nl/begrippen/dwingende-controle/) en [isolatie](nl/begrippen/isolatie/), en vraag eventueel advies bij Veilig Thuis (0800-2000). Zie ook [Hulp vinden](nl/hulp-vinden/).

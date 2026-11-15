@@ -107,28 +107,28 @@ Behouden betekent de bezoekersfunctie voorlopig behouden, niet dat de tekst al i
 
 ## Gepland: geen automatische nieuwe URL's
 
-| Onderwerp of herkenningsvraag                                                  | Werkhypothese                   | Bestemming / reden                                                                           | Te bewijzen vóór uitvoering                                                           |
-| ------------------------------------------------------------------------------ | ------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| Wat herken ik? (#104)                                                          | Nieuw ontwikkelen               | Categorie met situaties en uitleg, gebruikt bestaande kernartikelen                          | Groepen en taken toetsen tegen deze matrix; geen detailduplicaten                     |
-| Waarom zag ik het toen niet? (#103)                                            | Nieuw ontwikkelen               | Eén centraal kernartikel over latere herkenning                                              | Afbakening tegenover Waarom overkwam dit mij? en traumabinding                        |
-| Waarom herkende ik het niet / puzzelstukjes vallen op hun plaats               | Omzetten naar herkenningsingang | Kaarten en fragmenten naar hetzelfde centrale artikel                                        | Passende introductie per pijler                                                       |
-| Ik gaf steeds vaker toe / mijn grenzen verschoven                              | Omzetten naar herkenningsingang | Grenzencluster, geen drie nieuwe artikelen                                                   | Volledige vergelijking gevoel, schuldverschuiving en herstel                          |
-| Waarom heb ik geen vrienden meer / mijn wereld werd kleiner                    | Omzetten naar herkenningsingang | Isolatie als kernartikel, steunnetwerk voor handelen                                         | Isolatie versus triangulatie/framing/sociale druk afbakenen                           |
-| Mijn woorden werden verdraaid / kan ik mijn herinnering vertrouwen             | Omzetten naar herkenningsingang | Twijfel en gaslighting, afhankelijk van de vraag                                             | Geen automatische classificatie vanuit één voorbeeld                                  |
-| Seksuele druk en dwang (#105)                                                  | Nieuw ontwikkelen               | Zelfstandige consent- en veiligheidsvraag; concept ongepubliceerd                            | Afbakenen tegen intimiteit als controle; klinische/veiligheidsreview                  |
-| Seksuele afwijzing, voorwaardelijke affectie, onthouden van nabijheid          | Verdiepen                       | Eerst passende secties in seksualiteit/silent treatment; geen automatische tweede pagina     | Autonomie in beide richtingen behouden, intenties niet invullen                       |
-| Voortgezette controle na de relatie (B)                                        | Herpositioneren                 | Samenhang in categorie; contact, economische druk en ouderschap behouden waar unieke taak    | Geen vierde artikel dat bestaande drie navertelt                                      |
-| Kinderen als boodschapper, informatiebron of drukmiddel (C)                    | Verdiepen                       | Ouderschapsartikel en gerichte herkenningskaarten                                            | Kindperspectief, geen diagnose van gezin of omgangsadvies                             |
-| Digitaal misbruik, monitoring, locatie, beelden en stalking (D)                | Nieuw ontwikkelen               | Kandidaat kernartikel voor eigen digitale veiligheidsvraag                                   | Vergelijk eerst dwingende-controle-sectie en veilig-gebruik; veilige broncontrole     |
-| Druk via familie, vrienden en derden (E)                                       | Verdiepen                       | Isolatie/triangulatie/framing/sociale druk; consolideer overlap na lezing                    | Wat verklaart elke pagina dat de andere niet verklaart?                               |
-| Fysieke intimidatie: uitgang, spullen, auto, bedreiging (F)                    | Verdiepen                       | Eerst samenhangende sectie bij dwingende controle en hulp                                    | Veiligheid en incident versus patroon; aparte pagina alleen bij eigen vraag           |
-| Werk/studie saboteren, schulden, toegang tot geld (G)                          | Verdiepen                       | Financiële afhankelijkheid, documenten, schulden en kernhub                                  | Economische sabotage niet wegdrukken onder alleen uitgavencontrole                    |
-| Slaap, medische zorg, reproductieve dwang, anticonceptie (H)                   | Nieuw ontwikkelen               | Kandidaat kernartikel lichamelijke autonomie; reproductieve dwang verbinden met seksualiteit | Zelfstandige vraag en overlap eerst toetsen; medische/veiligheidsreview               |
-| Eergerelateerd geweld, ouderenmishandeling, verwaarlozing (I)                  | Herpositioneren                 | Betrouwbare hulpverwijzingen en korte context binnen passende categorie                      | Geen oppervlakkige aparte encyclopedie; hiaten inventariseren                         |
-| Schuld als druk, publieke/private werkelijkheid, vertrouwelijke informatie (J) | Verdiepen                       | Bestaande mechanismen; herkenningsfragmenten waar voldoende                                  | Controleer alle subonderwerpen uit oorspronkelijke goal, geen verlies door clustering |
-| Dreigen met zelfbeschadiging om druk te zetten (J)                             | Verdiepen                       | Bestaande controle-uitleg met veilige hulpcontext                                            | Bronnen en specialistische review; geen lezer verantwoordelijk maken                  |
-| Durven hulp vragen                                                             | Verdiepen                       | Hoe vertel ik het?, steunnetwerk en hulp vinden                                              | Drempel benoemen in herkenningsingang; niet automatisch vierde hulp-artikel           |
-| Contact                                                                        | Nieuw ontwikkelen               | Alleen als werkelijk contactkanaal en verantwoordelijk beheer bestaan                        | Geen fictief formulier of contactadres publiceren                                     |
+| Onderwerp of herkenningsvraag                                                  | Werkhypothese                   | Bestemming / reden                                                                        | Te bewijzen vóór uitvoering                                                                                                     |
+| ------------------------------------------------------------------------------ | ------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Wat herken ik? (#104)                                                          | Nieuw ontwikkelen               | Categorie met situaties en uitleg, gebruikt bestaande kernartikelen                       | Groepen en taken toetsen tegen deze matrix; geen detailduplicaten                                                               |
+| Waarom zag ik het toen niet? (#103)                                            | Nieuw ontwikkelen               | Eén centraal kernartikel over latere herkenning                                           | Afbakening tegenover Waarom overkwam dit mij? en traumabinding                                                                  |
+| Waarom herkende ik het niet / puzzelstukjes vallen op hun plaats               | Omzetten naar herkenningsingang | Kaarten en fragmenten naar hetzelfde centrale artikel                                     | Passende introductie per pijler                                                                                                 |
+| Ik gaf steeds vaker toe / mijn grenzen verschoven                              | Omzetten naar herkenningsingang | Grenzencluster, geen drie nieuwe artikelen                                                | Volledige vergelijking gevoel, schuldverschuiving en herstel                                                                    |
+| Waarom heb ik geen vrienden meer / mijn wereld werd kleiner                    | Omzetten naar herkenningsingang | Isolatie als kernartikel, steunnetwerk voor handelen                                      | Isolatie versus triangulatie/framing/sociale druk afbakenen                                                                     |
+| Mijn woorden werden verdraaid / kan ik mijn herinnering vertrouwen             | Omzetten naar herkenningsingang | Twijfel en gaslighting, afhankelijk van de vraag                                          | Geen automatische classificatie vanuit één voorbeeld                                                                            |
+| Seksuele druk en dwang (#105)                                                  | Nieuw ontwikkelen               | Zelfstandige consent- en veiligheidsvraag; concept ongepubliceerd                         | Afbakenen tegen intimiteit als controle; klinische/veiligheidsreview                                                            |
+| Seksuele afwijzing, voorwaardelijke affectie, onthouden van nabijheid          | Verdiepen                       | Eerst passende secties in seksualiteit/silent treatment; geen automatische tweede pagina  | Autonomie in beide richtingen behouden, intenties niet invullen                                                                 |
+| Voortgezette controle na de relatie (B)                                        | Herpositioneren                 | Samenhang in categorie; contact, economische druk en ouderschap behouden waar unieke taak | Geen vierde artikel dat bestaande drie navertelt                                                                                |
+| Kinderen als boodschapper, informatiebron of drukmiddel (C)                    | Verdiepen                       | Ouderschapsartikel en gerichte herkenningskaarten                                         | Kindperspectief, geen diagnose van gezin of omgangsadvies                                                                       |
+| Digitaal misbruik, monitoring, locatie, beelden en stalking (D)                | Nieuw ontwikkelen               | Kandidaat kernartikel voor eigen digitale veiligheidsvraag                                | Vergelijk eerst dwingende-controle-sectie en veilig-gebruik; veilige broncontrole                                               |
+| Druk via familie, vrienden en derden (E)                                       | Verdiepen                       | Isolatie/triangulatie/framing/sociale druk; consolideer overlap na lezing                 | Wat verklaart elke pagina dat de andere niet verklaart?                                                                         |
+| Fysieke intimidatie: uitgang, spullen, auto, bedreiging (F)                    | Verdiepen                       | Eerst samenhangende sectie bij dwingende controle en hulp                                 | Veiligheid en incident versus patroon; aparte pagina alleen bij eigen vraag                                                     |
+| Werk/studie saboteren, schulden, toegang tot geld (G)                          | Verdiepen                       | Financiële afhankelijkheid, documenten, schulden en kernhub                               | Economische sabotage niet wegdrukken onder alleen uitgavencontrole                                                              |
+| Slaap, medische zorg, reproductieve dwang, anticonceptie (H)                   | Omzetten naar herkenningsingang | Secties bij Dwingende controle en Seksuele druk; uitputting behoudt de gevolgenvraag      | Broncontrole 15 november: nog geen voldoende zelfstandige brede vraag voor extra URL; medische/veiligheidsreview blijft vereist |
+| Eergerelateerd geweld, ouderenmishandeling, verwaarlozing (I)                  | Herpositioneren                 | Betrouwbare hulpverwijzingen en korte context binnen passende categorie                   | Geen oppervlakkige aparte encyclopedie; hiaten inventariseren                                                                   |
+| Schuld als druk, publieke/private werkelijkheid, vertrouwelijke informatie (J) | Verdiepen                       | Bestaande mechanismen; herkenningsfragmenten waar voldoende                               | Controleer alle subonderwerpen uit oorspronkelijke goal, geen verlies door clustering                                           |
+| Dreigen met zelfbeschadiging om druk te zetten (J)                             | Verdiepen                       | Bestaande controle-uitleg met veilige hulpcontext                                         | Bronnen en specialistische review; geen lezer verantwoordelijk maken                                                            |
+| Durven hulp vragen                                                             | Verdiepen                       | Hoe vertel ik het?, steunnetwerk en hulp vinden                                           | Drempel benoemen in herkenningsingang; niet automatisch vierde hulp-artikel                                                     |
+| Contact                                                                        | Nieuw ontwikkelen               | Alleen als werkelijk contactkanaal en verantwoordelijk beheer bestaan                     | Geen fictief formulier of contactadres publiceren                                                                               |
 
 ## Vervolgcontrole per cluster
 
@@ -683,3 +683,44 @@ ongepubliceerd bewaard. Projectcheck geslaagd; na build 35 tests geslaagd,
 109 pagina’s gebouwd en geaudit. Browser-/printbeelden van deze nieuwe versie
 nog beoordelen. Raymond wijst financiële/juridische review toe vóór publicatie;
 klinische formuleringen blijven onderdeel van de bredere review. Geen merge.
+
+### Uitvoering lacune F, 15 november
+
+Fysieke intimidatie is in review uitgewerkt binnen Dwingende controle: blokkeren,
+dreiging, vernieling, fictief onveilig verkeersvoorbeeld en gevolgen voor latere
+keuzes. Geen nieuwe pagina of URL. De [broncontrole en afbakening](2026-11-15-fysieke-intimidatie-broncontrole.md)
+leggen bewijsbeperkingen, de bestaande veiligheidsroute en revieweigenaren vast.
+Dit is verdieping in #115, nog geen gepubliceerde of klinisch goedgekeurde revisie.
+
+### Uitvoering sociaal cluster E, 15 november
+
+Isolatie en Sociale druk zijn verdiept met verschillende vragen, scènes en
+herkenningsfragmenten. Triangulatie is aangescherpt op communicatie via een derde;
+het oude reputatievoorbeeld hoorde inhoudelijk bij Framing. Daar zijn twee
+ononderbouwde formuleringen gecorrigeerd. Praktische steun blijft bij Steunnetwerk.
+Alle routes blijven bestaan; geen extra pagina voor dezelfde herkenningsvraag.
+Zie [broncontrole en uitvoeringsafbakening](2026-11-15-isolatie-en-sociale-druk-broncontrole.md).
+Dit is reviewwerk in #115; menselijke beoordeling en volledige hercontrole van
+de overige framing-/triangulatieclaims zijn niet afgerond.
+
+### Uitvoering lichamelijke autonomie H, 15 november
+
+Na volledige vergelijking en [gerichte broncontrole](2026-11-15-lichamelijke-autonomie-broncontrole.md)
+is de kandidaat voor een brede nieuwe pagina vervangen door gerichte secties.
+Dwingende controle behandelt belemmering van rust en medische hulp; het bestaande
+ongepubliceerde seksuele-dwangconcept krijgt reproductieve dwang. Emotionele
+uitputting blijft de gevolgenvraag en verwijst bij actuele belemmering van rust
+naar het patroon. Geen nieuwe URL of verlies van de onderwerpen. De eerdere
+absolute uitspraak over herstel na slaap/weekend is gecorrigeerd. Review in #115.
+
+## Uitwerking cluster I — 15 november 2026
+
+Hulp vinden bevat twee korte contextblokken over familie-/gemeenschapsdruk en afhankelijkheid van verzorging. Voor naasten verbindt deze met veilig contact en deskundig advies voordat familie wordt betrokken. Bestaande routes behouden; geen nieuwe artikelen. Broncontrole: `2026-11-15-andere-geweldsvormen-hulproutes.md`. Raymond wijst een veiligheids-/inhoudelijke reviewer aan voor deze passages vóór publicatie.
+
+## Uitwerking aandacht en stilte — 15 november 2026
+
+Silent treatment blijft de vraag naar negeren/pauze en toegeven beantwoorden; love bombing de vraag naar tempo, aandacht en eigen ruimte. Beide zijn verdiept met specifieke groei, herkenningsfragment en een fictief moment bij een nieuwe relatie. Voorwaardelijke aandacht is hierin opgenomen zonder nieuwe URL. Stonewalling is in de tekst onderscheiden en niet langer een synoniem van stilte als straf. Onderzoeksclaims zijn begrensd op het geverifieerde bronbereik; geen persoonlijkheidsprofiel uit het love-bombingonderzoek. Bronnotitie: `2026-11-15-stilte-en-voorwaardelijke-aandacht.md`. Dreiging met zelfbeschadiging/zelfdoding en overige J-onderdelen blijven afzonderlijk open.
+
+## Cluster G — uitwerking bestaande routes, 15 november
+
+Afhankelijkheid bevat nu een fictieve opleidingsscène met drie momenten, een herkenningsfragment, context over wonen/bezit als druk en een sectie over de periode na de relatie en nieuwe afspraken. Documenten bevat een korte scène over beperkte toegang en een kop zonder juridische eigendomssuggestie; het oude kopanker blijft bestaan. Geen nieuwe URL of verdubbeling van de financiële hub. Schuldenadvies is eerder gecorrigeerd in a14ec3c. De printaudit neemt afhankelijkheid en documenten nu expliciet mee; nieuwe beelden zijn nog niet handmatig beoordeeld. Raymond wijst financieel/juridische en veiligheidsreviewers aan; geen publicatiegoedkeuring.

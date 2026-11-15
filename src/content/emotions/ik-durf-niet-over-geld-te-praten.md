@@ -92,7 +92,7 @@ helps:
       title: 'Praat met één persoon',
       text: 'Schaamte wordt vaak kleiner zodra je het één keer hardop zegt tegen iemand die niet oordeelt.',
     }
-related: [financieel-misbruik, financieel-signalen, kaart-financieel, het-vertellen, hulp-vinden]
+related: [financieel-misbruik, kaart-financieel, het-vertellen, hulp-vinden]
 sources:
   - label: 'Schouders Eronder — Van signalering tot hulp: handreiking financieel misbruik (2024)'
     url: 'https://www.huiselijkgeweld.nl/site/binaries/site-content/collections/documents/2024/06/01/van-signalering-tot-hulp-handreiking-voor-financieel-misbruik/2024-Van-signalering-tot-hulp-handreiking-voor-financieel-misbruik-Schouders-Eonder.pdf'
@@ -146,7 +146,7 @@ Eén van deze dingen zegt nog weinig. Stellen maken heel verschillende afspraken
 
 ## Wat kan dit verklaren?
 
-Als geld stelselmatig wordt gebruikt om iemand te beperken, afhankelijk te houden of onder druk te zetten, spreken hulpverleners van financieel of [economisch misbruik](nl/begrippen/financieel-economisch-misbruik/). Dat kan geleidelijk ontstaan en eruitzien als zorg, bijvoorbeeld wanneer iemand aanbiedt “de financiën wel te regelen” en jij gaandeweg geen zicht meer hebt. [Economische afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/) kan het ook moeilijk maken om een relatie te verlaten. Meer over herkenbare signalen staat op [Signalen van financieel misbruik](nl/begrijp-het/financieel-misbruik/signalen/), en het grotere verhaal op [Financieel misbruik](nl/begrijp-het/financieel-misbruik/).
+Als geld stelselmatig wordt gebruikt om iemand te beperken, afhankelijk te houden of onder druk te zetten, spreken hulpverleners van financieel of [economisch misbruik](nl/begrijp-het/financieel-misbruik/). Dat kan geleidelijk ontstaan en eruitzien als zorg, bijvoorbeeld wanneer iemand aanbiedt “de financiën wel te regelen” en jij gaandeweg geen zicht meer hebt. [Economische afhankelijkheid](nl/begrijp-het/financieel-misbruik/afhankelijkheid/) kan het ook moeilijk maken om een relatie te verlaten. Meer over herkenbare signalen staat op [Signalen van financieel misbruik](nl/begrijp-het/financieel-misbruik/#signalen), en het grotere verhaal op [Financieel misbruik](nl/begrijp-het/financieel-misbruik/).
 
 [Ook na een relatie kan geld een bron van spanning blijven](nl/begrijp-het/financieel-misbruik/druk-na-scheiding/), bijvoorbeeld rond alimentatie, de woning of gezamenlijke schulden. Dat is niet automatisch misbruik, maar kan wel heel zwaar voelen.
 

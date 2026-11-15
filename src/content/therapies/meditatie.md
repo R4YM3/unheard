@@ -83,7 +83,7 @@ Wat wel vaststaat:
 
 Wat níet uit deze bronnen volgt:
 
-- dat meditatie helpt bij de nasleep van emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) in het algemeen;
+- dat meditatie helpt bij de nasleep van emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) in het algemeen;
 - dat meditatie een vervanging is voor andere hulp;
 - dat losse oefeningen of apps hetzelfde doen als een begeleide training zoals MBCT.
 

@@ -8,7 +8,7 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 related:
   [dwingende-controle, triangulatie, sociale-druk, identiteit, herstel-steunnetwerk, het-vertellen]
@@ -16,12 +16,26 @@ readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Thuisblijven geeft minder gedoe.'
   feeling: 'Wanneer contact steeds een prijs lijkt te hebben, kan terugtrekken als de makkelijkste keuze voelen. Intussen wordt je wereld kleiner.'
+recognitionFragments:
+  - afterSection: hoe-contact-stap-voor-stap-verdwijnt
+    kind: inzicht achteraf
+    text: 'Ik dacht dat ik gewoon minder zin had om af te spreken. Nu zie ik hoeveel ik vooraf moest afwegen.'
 glossary:
   term: 'Isolatie'
   definition: 'Stap voor stap afgesneden raken van vrienden, familie, werk of eigen geld, vaak geleidelijk en soms verpakt als liefde of bezorgdheid.'
   aliases: [isoleren, afsluiten van vrienden en familie, sociaal isolement]
   category: controle
 sources:
+  - label: 'Hulp en steun vragen'
+    publisher: 'Slachtofferhulp Nederland'
+    url: 'https://www.slachtofferhulp.nl/emotionele-hulp/hulp-en-steun-vragen/'
+    checkedAt: 2026-11-15
+    note: 'Verschillende vormen van steun, eigen behoeften en grenzen bij hulp.'
+  - label: 'Op een goede manier reageren op wat iemand doormaakt'
+    publisher: 'Slachtofferhulp Nederland'
+    url: 'https://www.slachtofferhulp.nl/voordehelpers/iemand-ondersteunen/goede-manier-reageren/'
+    checkedAt: 2026-11-15
+    note: 'Luisteren naar wat iemand zelf nodig heeft; beschuldigende reacties kunnen schuld en schaamte versterken.'
   - label: 'Dwingende controle verwoest levens — signaal "isoleren"'
     publisher: 'Veilig Thuis'
     url: 'https://www.veiligthuis.nl/nl/dwingendecontrole'
@@ -38,6 +52,9 @@ sources:
     publisher: 'Annual Reviews'
     url: 'https://doi.org/10.1146/annurev.psych.58.110405.085641'
     checkedAt: 2026-10-20
+reviewNotes:
+  - 'Raymond wijst een veiligheidsreviewer aan voor contact herstellen bij dreiging of gedeelde contacten. Geen automatisch contactadvies bij actuele onveiligheid.'
+  - 'Klinische/inhoudelijke reviewer: beoordeel nieuwe passages over afhankelijkheid, verlies na de breuk en vrije contacten in een nieuwe relatie. Voorbeelden zijn fictief.'
 ---
 
 ## Wat is isolatie?
@@ -71,6 +88,12 @@ Isolatie kan open en direct zijn, maar is vaak subtiel:
 
 Niemand verbiedt iets in dit voorbeeld. En toch is de prijs van weggaan zo hoog gemaakt dat thuisblijven de 'vrije keuze' lijkt.
 
+## Hoe contact stap voor stap verdwijnt
+
+Eerst sla je één afspraak over om de avond rustig te houden. Daarna nodig je iemand niet meer uit omdat je vooraf al weet hoeveel uitleg het vraagt. Op den duur vragen vrienden minder vaak of je meegaat. Dan lijkt het alsof jij het contact zelf niet meer wilde, terwijl iedere afspraak steeds meer spanning met zich meebracht.
+
+Je wilt rekening houden met iemand van wie je houdt, of je wilt niet dat familie en partner tegenover elkaar komen te staan. Die zorgzaamheid is geen oorzaak van isolatie. Het knelt wanneer rekening houden steeds betekent dat jouw contacten verdwijnen. Ook geldgebrek, zorgtaken of afhankelijkheid van vervoer kunnen de ruimte om anderen te zien beperken. Dat maakt jouw behoefte aan gezelschap niet minder belangrijk.
+
 ## Wanneer is het niet zomaar af te leiden?
 
 Relaties veranderen je sociale leven. Mensen trekken samen, krijgen kinderen, verhuizen voor werk, of groeien weg van oude vrienden. Soms is kritiek op een vriend of familielid terecht. Minder sociaal contact is op zichzelf geen isolatie.
@@ -85,21 +108,26 @@ Vragen die helpen om te ordenen:
 ## Impact op de ontvanger
 
 - eenzaamheid, ook als je samen bent;
-- minder mensen om je ervaringen aan te toetsen, waardoor [twijfel aan jezelf](nl/begrippen/zelftwijfel/) kan groeien;
+- minder mensen om je ervaringen aan te toetsen, waardoor [twijfel aan jezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) kan groeien;
 - [het gevoel dat je jezelf kwijt bent](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/);
 - schaamte om na lange tijd weer contact op te nemen;
 - meer afhankelijkheid van de ander, praktisch en emotioneel. Zie [macht en afhankelijkheid](nl/begrippen/macht-en-afhankelijkheid/).
 
 Sociaal-psychologisch onderzoek naar buitensluiten laat zien dat het gemis aan verbinding basisbehoeften raakt, zoals erbij horen en het gevoel dat je ertoe doet.
 
+## Na de relatie, en bij iemand nieuw
+
+**Voorbeeld — fictief.** De relatie is voorbij. Je hebt een vrije zaterdag, maar niemand meer met wie je vanzelf iets afspreekt. Je opent een oud gesprek met een vriend en sluit het weer: hoe leg je uit dat je zolang stil was? Je kunt tegelijk opgelucht zijn over de afstand en verdriet hebben om de contacten die je mist.
+
+Achteraf kan duidelijker worden hoeveel keuzes om het voorkomen van gedoe draaiden. Dat inzicht hoeft geen nieuwe reden te worden om jezelf te veroordelen. Het verlies verdient aandacht, ook als contact herstellen tijd kost of sommige mensen niet meer beschikbaar zijn.
+
+In een nieuwe relatie mag er ruimte blijven voor mensen buiten die relatie. Je hoeft niet iedere afspraak te verantwoorden om betrokken te zijn. Een eigen netwerk opbouwen is iets anders dan je nieuwe partner buitensluiten. Op [Een steunnetwerk opbouwen](nl/herstel/steunnetwerk/) lees je hoe je klein kunt beginnen; dit artikel helpt begrijpen hoe je contacten eerder kleiner werden.
+
 ## Wat kan helpen?
 
-- **[Neem klein contact op](nl/herstel/steunnetwerk/).** Een kort bericht aan één persoon is genoeg om te beginnen. Je hoeft niet alles uit te leggen.
-- **Je hoeft je niet te verontschuldigen** voor de afstand van de afgelopen tijd. Veel mensen begrijpen meer dan je denkt.
-- **Zoek ook nieuwe verbinding** als oude contacten niet meer passen: een cursus, sport, vrijwilligerswerk, een lotgenotengroep.
-- **Let op je veiligheid.** Als contact met anderen thuis tot dreiging leidt, bespreek dat met Veilig Thuis (0800-2000, gratis en anoniem, dag en nacht).
-- **Praat met je huisarts** als je je eenzaam, somber of vastgelopen voelt. Zie ook [Hulp vinden](nl/hulp-vinden/).
+- **Kijk eerst wat veilig kan.** Leidt contact met anderen tot dreiging, of ben je bang dat iemand meeleest? Vraag dan eerst vertrouwelijk advies via [Hulp vinden](nl/hulp-vinden/). Je hoeft geen confrontatie aan te gaan of een bericht te sturen om te bewijzen dat je vrij bent.
+- **[Begin bij één veilige persoon](nl/herstel/steunnetwerk/).** Het mag gaan om gezelschap of praktische hulp. Je hoeft niet meteen je hele verhaal te vertellen.
+- **Laat ruimte voor verschillende reacties.** Sommige contacten kun je herstellen, andere niet. Een moeilijke reactie maakt je behoefte aan steun niet verkeerd. Je mag elders beginnen.
+- **Vraag professionele steun als je niemand weet.** Je hoeft niet eerst een netwerk te hebben. Je huisarts kan meedenken bij eenzaamheid, somberheid of het gevoel vast te lopen.
 
-**Voorbeeld.** Je hoort: “Ga maar hoor. Dan zit ik hier wel weer alleen.”
-
-Je voelt: _Ik heb zin om te gaan, maar ik voel me nu al schuldig._
+Blijft je omgeving aandringen op verzoenen of zwijgen? Bij [sociale druk](nl/begrippen/sociale-druk/) staat die vraag centraal. Als vooral een eenzijdig verhaal over jou rondgaat, lees dan [framing en beeldvorming](nl/begrippen/framing-en-beeldvorming/).

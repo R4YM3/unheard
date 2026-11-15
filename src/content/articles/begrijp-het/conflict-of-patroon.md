@@ -107,7 +107,7 @@ Iedereen past zich weleens aan in een relatie. Maar als jij voortdurend inschat 
 
 ## Wat het met je kan doen
 
-Leven met een patroon van controle kan ervoor zorgen dat je [aan jezelf gaat twijfelen](nl/begrippen/zelftwijfel/), je schuldig voelt of [voortdurend op je hoede bent](nl/begrippen/hyperwaakzaamheid/). Ook in een relatie met veel ongezond conflict kun je uitgeput raken. Meer daarover staat in [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).
+Leven met een patroon van controle kan ervoor zorgen dat je [aan jezelf gaat twijfelen](nl/wat-voel-ik/ik-twijfel-aan-mezelf/), je schuldig voelt of [voortdurend op je hoede bent](nl/wat-voel-ik/ik-sta-voortdurend-aan/). Ook in een relatie met veel ongezond conflict kun je uitgeput raken. Meer daarover staat in [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/).
 
 ## Wat kan helpen?
 

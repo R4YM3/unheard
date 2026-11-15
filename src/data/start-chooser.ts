@@ -10,12 +10,6 @@ export interface ChooserOption {
 
 export const startChooser: ChooserOption[] = [
   {
-    question: 'Ik twijfel nog',
-    intro:
-      'Je hoeft het nog geen naam te geven. Lees wat zelftwijfel met je kan doen, vergelijk een conflict met een terugkerend patroon en kies een vraag die je voor jezelf wilt verkennen.',
-    keys: ['zelftwijfel', 'conflict-of-patroon', 'kaart-zelfreflectie', 'hulp-vinden'],
-  },
-  {
     question: 'Ik zit er nog middenin',
     intro:
       'Lees hoe herhaalde druk kan werken en wat die met je kan doen. Je vindt ook stappen die je nu al kunt zetten: een grens oefenen waar het veilig is, of het aan iemand vertellen.',
@@ -32,17 +26,6 @@ export const startChooser: ChooserOption[] = [
     intro:
       'Lees hoe je iemand kunt steunen zonder te duwen. Gebruik de steunkaart voor een gesprek of vraag zelf advies als je je zorgen maakt.',
     keys: ['voor-naasten', 'kaart-naaste', 'hulp-vinden'],
-  },
-  {
-    question: 'Het gaat (ook) over geld',
-    intro:
-      'Financiële controle is een eigen onderwerp. Er zijn veilige eerste stappen die niets forceren.',
-    keys: ['geld-praten', 'financieel-misbruik', 'kaart-financieel'],
-  },
-  {
-    question: 'Ik ben altijd gespannen of op mijn hoede',
-    intro: 'Langdurige spanning kan veel energie kosten. Je mag ook naar je lichaam luisteren.',
-    keys: ['spanning', 'grenzen', 'hulp-vinden'],
   },
 ];
 
@@ -90,14 +73,19 @@ export interface ChooserCopy {
 
 export const chooserCopy: Record<'default' | 'tools', ChooserCopy> = {
   default: {
-    lead: 'Begin bij wat je nu nodig hebt of kies de situatie die het dichtst bij jouw ervaring komt.',
-    needsHeading: 'Waar heb je nu behoefte aan?',
+    lead: 'Je kunt direct naar een vraag die je bezighoudt, of beginnen bij jouw situatie. Je hoeft niets in te vullen.',
+    needsHeading: 'Begin bij je vraag',
     direct: [
-      { href: 'nl/wat-voel-ik/ik-twijfel-aan-mezelf/', label: 'Ik twijfel steeds aan mezelf' },
-      { href: 'nl/hulpmiddelen/help-me-woorden-vinden/', label: 'Ik wil begrijpen wat ik voel' },
+      { href: 'nl/wat-herken-ik/', label: 'Ik zoek uitleg bij wat er gebeurt' },
+      { href: 'nl/wat-voel-ik/', label: 'Ik zoek herkenning in wat ik voel' },
+      { href: 'nl/begrippen/', label: 'Ik zoek uitleg bij een begrip' },
+      {
+        href: 'nl/begrijp-het/financieel-misbruik/',
+        label: 'Mijn vraag gaat over geld en afhankelijkheid',
+      },
       { href: 'nl/herstel/', label: 'Hoe vind ik weer wat rust?' },
     ],
-    situationsHeading: 'Welke situatie past bij jou?',
+    situationsHeading: 'Of begin bij je situatie',
     options: startChooser,
   },
   tools: {

@@ -1,5 +1,6 @@
 /** Browser regression checks for desktop dropdowns, slow font loading and home entry points. */
 import assert from 'node:assert/strict';
+import { mkdir } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 import puppeteer from 'puppeteer-core';
@@ -27,17 +28,45 @@ try {
   }
   browser = await puppeteer.launch({ executablePath: chromePath, headless: true });
   const page = await browser.newPage();
-  for (const width of [961, 1024, 1120, 1280, 1440]) {
+  await mkdir('work/print-audit', { recursive: true });
+  for (const width of [961, 1024, 1120]) {
+    await page.setViewport({ width, height: 1000 });
+    await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    assert.equal(await page.$eval('.nav', (node) => node.getBoundingClientRect().width), 0);
+    await page.click('.mobile-menu > summary');
+    assert(await page.$eval('.mobile-menu', (node) => node.open));
+    const destination = await page.$('.mobile-menu a[href="nl/wat-herken-ik/"]');
+    assert(destination, 'Recognition stays directly reachable in the compact menu');
+    await page.screenshot({ path: `work/print-audit/header-${width}.png` });
+  }
+  for (const width of [1121, 1280, 1440]) {
     await page.setViewport({ width, height: 1000 });
     await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
     const items = await page.$$('.desktop-nav-item');
-    assert.equal(items.length, 5, 'Every main section needs its own desktop submenu');
+    assert.deepEqual(
+      await page.$$eval('.desktop-nav-item > a', (nodes) =>
+        nodes.map((node) => node.getAttribute('href')),
+      ),
+      [
+        'nl/wat-voel-ik/',
+        'nl/wat-herken-ik/',
+        'nl/begrijp-het/',
+        'nl/herstel/',
+        'nl/mijn-verhaal/',
+        'nl/hulpmiddelen/',
+      ],
+      'Feeling, recognition and understanding remain equal main entrances',
+    );
+    const brandRight = await page.$eval('.brand', (node) => node.getBoundingClientRect().right);
+    const firstLinkLeft = await page.$eval('.nav > *', (node) => node.getBoundingClientRect().left);
+    assert(firstLinkLeft >= brandRight + 8, `Navigation overlaps the brand at ${width}px`);
     const rows = await page.$$eval('.nav > *', (nodes) =>
       nodes
         .filter((node) => node.getBoundingClientRect().height > 0)
         .map((node) => node.getBoundingClientRect().y),
     );
     assert(Math.max(...rows) - Math.min(...rows) < 2, `Header wraps at ${width}px`);
+    await page.screenshot({ path: `work/print-audit/header-${width}.png` });
     const mainTop = await page.$eval('main', (node) => node.getBoundingClientRect().y);
     for (const item of items) {
       await item.hover();
@@ -52,7 +81,11 @@ try {
         left: node.getBoundingClientRect().left,
         right: node.getBoundingClientRect().right,
       }));
-      assert(bounds.left >= 0 && bounds.right <= width, `Submenu overflows at ${width}px`);
+      const destination = await item.$eval('a', (node) => node.getAttribute('href'));
+      assert(
+        bounds.left >= 0 && bounds.right <= width,
+        `Submenu ${destination} overflows at ${width}px: ${JSON.stringify(bounds)}`,
+      );
       assert.equal(
         await page.$eval('main', (node) => node.getBoundingClientRect().y),
         mainTop,
@@ -68,7 +101,7 @@ try {
   }
   await page.setViewport({ width: 1440, height: 1000 });
   await page.goto(`${origin}/nl/begrippen/gaslighting/`, { waitUntil: 'networkidle0' });
-  const summary = await page.$('.desktop-nav-item:nth-of-type(2) summary');
+  const summary = await page.$('.desktop-nav-item summary[aria-label="Binnen Begrijp het"]');
   assert(summary);
   await summary.focus();
   await page.keyboard.press('ArrowDown');
@@ -295,13 +328,19 @@ try {
     'Without JavaScript every example is listed',
   );
   assert.equal(await home.$('[data-pc-next]:not([hidden])'), null, 'No arrows without JavaScript');
+  for (const route of [
+    'nl/wat-voel-ik/',
+    'nl/wat-herken-ik/',
+    'nl/begrippen/',
+    'nl/begrijp-het/financieel-misbruik/',
+  ]) {
+    assert(
+      await home.$(`#beginnen .start-chooser-direct a[href="${route}"]`),
+      `Direct discovery route: ${route}`,
+    );
+  }
   const options = await home.$$('#beginnen details');
-  const labels = [
-    'Ik twijfel nog',
-    'Ik zit er nog middenin',
-    'De relatie is voorbij',
-    'Ik maak me zorgen om iemand',
-  ];
+  const labels = ['Ik zit er nog middenin', 'De relatie is voorbij', 'Ik maak me zorgen om iemand'];
   for (const [index, label] of labels.entries()) {
     const option = options[index];
     assert(option, `Missing starting route: ${label}`);
@@ -438,6 +477,92 @@ try {
   console.log(
     'B-light: four situations, native disclosure, full print with and without JavaScript.',
   );
+
+  // Consolidated introductions retain their old URLs and section links.
+  for (const [oldRoute, targetRoute, anchor] of [
+    [
+      'begrippen/financieel-economisch-misbruik/',
+      'begrijp-het/financieel-misbruik/',
+      'wat-is-financieel-en-economisch-misbruik',
+    ],
+    [
+      'begrijp-het/financieel-misbruik/signalen/',
+      'begrijp-het/financieel-misbruik/',
+      'wat-zijn-signalen',
+    ],
+    [
+      'begrippen/hyperwaakzaamheid/',
+      'wat-voel-ik/ik-sta-voortdurend-aan/',
+      'wat-is-hyperwaakzaamheid',
+    ],
+    ['begrippen/zelftwijfel/', 'wat-voel-ik/ik-twijfel-aan-mezelf/', 'wat-is-zelftwijfel'],
+    ['begrijp-het/woorden-om-te-ordenen/', 'begrijp-het/', 'neem-het-in-je-eigen-tempo'],
+    ['herstel/wat-herstel-kan-betekenen/', 'herstel/', 'van-begrijpen-naar-voelen'],
+  ]) {
+    for (const javascript of [true, false]) {
+      const moved = await browser.newPage();
+      await moved.setJavaScriptEnabled(javascript);
+      await moved.setViewport({ width: javascript ? 1440 : 390, height: 1000 });
+      await moved.goto(`${origin}/nl/${oldRoute}#${anchor}`, { waitUntil: 'networkidle0' });
+      await moved.waitForFunction(
+        (path) => globalThis.location.pathname === path,
+        {},
+        `/nl/${targetRoute}`,
+      );
+      assert(await moved.$(`#${anchor}`), 'Transferred section exists');
+      if (javascript) assert.equal(new URL(moved.url()).hash, `#${anchor}`);
+      assert.equal((await moved.$$('h1')).length, 1);
+      if (
+        [
+          'begrippen/zelftwijfel/',
+          'begrippen/hyperwaakzaamheid/',
+          'begrippen/financieel-economisch-misbruik/',
+        ].includes(oldRoute)
+      ) {
+        await moved.goto(`${origin}/nl/begrippen/`, { waitUntil: 'networkidle0' });
+        const links = await moved.$$(`.glossary-item dt a[href="nl/${targetRoute}"]`);
+        assert.equal(links.length, 1, 'A–Z retains exactly one direct consolidated entry');
+        await Promise.all([
+          moved.waitForNavigation({ waitUntil: 'networkidle0' }),
+          links[0].click(),
+        ]);
+        assert.equal(new URL(moved.url()).pathname, `/nl/${targetRoute}`);
+      }
+      await moved.close();
+    }
+  }
+
+  /* Both discovery and known-topic routes remain usable without JavaScript. */
+  const discoveryRoutes = [
+    ['herstel/therapievormen/', 'nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/'],
+    ['hulpmiddelen/', 'nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/'],
+    ['hulpmiddelen/', 'nl/begrippen/'],
+    ['wat-voel-ik/', 'nl/wat-voel-ik/ik-zoek-steeds-bevestiging/'],
+    ['wat-voel-ik/', 'nl/begrippen/'],
+    ['wat-herken-ik/', 'nl/begrippen/isolatie/'],
+    ['begrijp-het/', 'nl/begrijp-het/conflict-of-patroon/'],
+    ['begrijp-het/', 'nl/begrippen/gaslighting/'],
+    ['herstel/', 'nl/begrijp-het/financieel-misbruik/veilig-financieel-herstel/'],
+  ];
+  for (const width of [390, 1440]) {
+    const discovery = await browser.newPage();
+    await discovery.setJavaScriptEnabled(false);
+    await discovery.setViewport({ width, height: 1000 });
+    for (const [hub, destination] of discoveryRoutes) {
+      await discovery.goto(`${origin}/nl/${hub}`, { waitUntil: 'networkidle0' });
+      const link = await discovery.$(`main .prose a[href="${destination}"]`);
+      assert(link, `${hub} offers ${destination} in its own content without JavaScript`);
+      assert(
+        await link.evaluate((node) => node.getClientRects().length > 0),
+        `${hub} discovery link must be visible at ${width}px`,
+      );
+      console.log(`No-JS discovery ${width}px: ${hub} -> ${destination}`);
+      await Promise.all([discovery.waitForNavigation({ waitUntil: 'networkidle0' }), link.click()]);
+      assert.equal(new URL(discovery.url()).pathname, `/${destination}`);
+      assert.equal((await discovery.$$('h1')).length, 1, `${destination} opens a real page`);
+    }
+    await discovery.close();
+  }
 
   /* Mobile menu safety: clear of the dock, Escape closes it, one current page, one link each. */
   for (const [width, height] of [
@@ -706,7 +831,12 @@ try {
       assert(await hero.$(`#${hash}`), `${href} exists in the timeline`);
     }
     await hero.goto(`${origin}/nl/hulpmiddelen/`, { waitUntil: 'networkidle0' });
-    assert.equal(await visible('.page-hero .cf__card'), 6, 'Six cards in the fan');
+    assert.equal(
+      (await hero.$$('.page-hero .cf__card')).length,
+      0,
+      'No duplicate interactive card fan',
+    );
+    assert.equal(await visible('.hub-article-list a'), 6, 'All six tools remain directly visible');
     await hero.goto(`${origin}/nl/hulp-vinden/`, { waitUntil: 'networkidle0' });
     assert.deepEqual(
       await hero.$$eval('.page-hero .hc a', (nodes) =>
@@ -727,7 +857,6 @@ try {
     'begrijp-het': '[data-lm-deeper], [data-lm-next]',
     herstel: '[data-rl-point]',
     'mijn-verhaal': '[data-sr-dot]',
-    hulpmiddelen: '.cf__card',
   };
   for (const [width, height] of [
     [1280, 900],

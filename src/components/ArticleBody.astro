@@ -1,0 +1,35 @@
+---
+import RecognitionFragment from './RecognitionFragment.astro';
+import type { RoutedEntry } from '../lib/content';
+
+interface Props {
+  fragments: RoutedEntry['data']['recognitionFragments'];
+}
+const { fragments } = Astro.props;
+const html = await Astro.slots.render('default');
+// Markdown chapters are siblings. Keep the original HTML and anchors intact.
+const chapters = html.split(/(?=<h2[\s>])/).map((content) => ({
+  content,
+  id: content.match(/^<h2\b[^>]*\bid="([^"]+)"/)?.[1],
+}));
+for (const fragment of fragments) {
+  if (!chapters.some((chapter) => chapter.id === fragment.afterSection)) {
+    throw new Error(`Recognition fragment references missing section: ${fragment.afterSection}`);
+  }
+}
+---
+
+<div class="wrap reading prose">
+  {
+    chapters.map((chapter) => (
+      <>
+        <Fragment set:html={chapter.content} />
+        {fragments
+          .filter((fragment) => fragment.afterSection === chapter.id)
+          .map((fragment) => (
+            <RecognitionFragment {...fragment} />
+          ))}
+      </>
+    ))
+  }
+</div>

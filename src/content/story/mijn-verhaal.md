@@ -99,9 +99,9 @@ timeline:
             perspective: now
             text: Het verlies van mijn financiële onafhankelijkheid ging geleidelijk. Op het moment dat mijn rekening gezamenlijk werd, ervoer ik dat nog niet zo.
       links:
-        - href: nl/begrippen/financieel-economisch-misbruik/
+        - href: nl/begrijp-het/financieel-misbruik/
           label: Financieel en economisch misbruik
-        - href: nl/begrijp-het/financieel-misbruik/signalen/
+        - href: nl/begrijp-het/financieel-misbruik/#signalen
           label: Signalen van financieel misbruik
     - eyebrow: Vader worden
       title: Ik dacht dat zorgen bij liefde hoorde.
@@ -184,7 +184,7 @@ timeline:
       title: Een kleine vraag werd steeds moeilijker.
       theme: emotional
       lenses: []
-      description: Ik [twijfelde steeds meer aan mezelf](nl/begrippen/zelftwijfel/). Als ik iets voor mezelf wilde, kon ik dagen nadenken over [hoe ik het moest brengen](nl/herstel/hoe-vertel-ik-het/). Ik werkte harder en stopte mijn geld in het gezin en het huis. Daarmee verdoofde ik ook mijn pijn.
+      description: Ik [twijfelde steeds meer aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/). Als ik iets voor mezelf wilde, kon ik dagen nadenken over [hoe ik het moest brengen](nl/herstel/hoe-vertel-ik-het/). Ik werkte harder en stopte mijn geld in het gezin en het huis. Daarmee verdoofde ik ook mijn pijn.
       between:
         - title: Een paar tientjes durven vragen
           text: In het begin ging het om grotere bedragen voor spullen in huis. Later vond ik het al moeilijk om iets van een paar tientjes ter sprake te brengen. Mijn vragen werden afgewezen, genegeerd of beantwoord met zwijgen. Langzaam maar zeker durfde ik niet meer te vragen.
@@ -254,7 +254,7 @@ timeline:
       links:
         - href: nl/begrippen/schuldverschuiving/
           label: Schuldverschuiving
-        - href: nl/begrippen/financieel-economisch-misbruik/
+        - href: nl/begrijp-het/financieel-misbruik/
           label: Financieel en economisch misbruik
     - eyebrow: Weggaan en terugkomen
       phase: Weggaan en terugkomen

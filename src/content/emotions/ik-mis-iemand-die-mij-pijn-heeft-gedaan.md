@@ -145,7 +145,7 @@ Soms wordt het begrip [traumabinding](nl/begrippen/traumabinding/) gebruikt. Daa
 
 Op korte termijn kan gemis je onrustig maken. Je leest oude berichten terug, kijkt naar foto's of profielen, of overweegt contact op te nemen. Achteraf voel je je misschien dom of beschaamd.
 
-Op langere termijn kan het je laten twijfelen aan je eigen beslissingen of herinneringen. Als je de ander zo mist, was het dan misschien toch niet zo erg? Die vraag kan je terugbrengen naar [zelftwijfel](nl/begrippen/zelftwijfel/), waarover meer staat op [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
+Op langere termijn kan het je laten twijfelen aan je eigen beslissingen of herinneringen. Als je de ander zo mist, was het dan misschien toch niet zo erg? Die vraag kan je terugbrengen naar zelftwijfel. Daarover gaat [Ik twijfel aan mezelf](nl/wat-voel-ik/ik-twijfel-aan-mezelf/).
 
 Gemis kan ook zachter worden. Niet doordat je de ander vergeet, maar doordat de goede en de pijnlijke herinneringen allebei een plek krijgen.
 

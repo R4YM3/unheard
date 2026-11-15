@@ -14,7 +14,7 @@ readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Ik word beschuldigd van precies wat ik zelf zie gebeuren. Waarom ga ik dan toch aan mezelf twijfelen?'
   feeling: 'Beschuldigingen die niet passen bij wat jij meemaakt kunnen je in een eindeloze verdediging trekken.'
-related: [schuldverschuiving, darvo, begrip-zelftwijfel, hulp-vinden]
+related: [schuldverschuiving, darvo, zelftwijfel, hulp-vinden]
 glossary:
   term: 'Projectie'
   definition: 'Het toeschrijven van je eigen gevoelens, eigenschappen of impulsen aan een ander. In populaire taal: iemand beschuldigt jou van wat diegene zelf doet.'
@@ -77,7 +77,7 @@ Telkens beschuldigd worden van iets wat je niet doet, is vermoeiend en verwarren
 
 - steeds bewijzen dat je onschuldig bent, ook bij kleine dingen;
 - je gedrag aanpassen om geen aanleiding te geven, zoals je telefoon niet meer gebruiken als de ander erbij is;
-- [twijfelen aan je eigen beeld](nl/begrippen/zelftwijfel/) van wie je bent;
+- [twijfelen aan je eigen beeld](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) van wie je bent;
 - het gevoel dat je nergens 'goed' in kunt zijn.
 
 ## Wat kan helpen?
