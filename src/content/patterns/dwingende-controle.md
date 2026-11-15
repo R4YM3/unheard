@@ -8,7 +8,7 @@ published: true
 status: in_review
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-15
 reviewedAt: null
 related:
   [
@@ -23,12 +23,36 @@ readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Als ik maar voorkom dat het escaleert, blijft het rustig.'
   feeling: 'Wanneer je dag steeds meer draait om iemands reactie voorkomen, kan je eigen ruimte ongemerkt kleiner worden. Dat is een reden om het patroon serieus te nemen.'
+recognitionFragments:
+  - afterSection: fysieke-intimidatie-ook-zonder-blauwe-plekken
+    kind: gedachte
+    text: 'De volgende keer zeg ik het maar niet. Ik weet nog hoe het voelde toen ik niet weg kon.'
 glossary:
   term: 'Dwingende controle'
   definition: 'Een patroon waarin iemand een ander stelselmatig vernedert, bang maakt of in de vrijheid beperkt om macht te houden. Geen losstaand incident, maar patroonmatig gedrag.'
   aliases: [coercive control, intieme terreur, controlerend gedrag]
   category: controle
 sources:
+  - label: 'Signalen van huiselijk geweld'
+    publisher: 'Slachtofferhulp Nederland'
+    url: 'https://www.slachtofferhulp.nl/gebeurtenissen/huiselijk-geweld/signalen-van-huiselijk-geweld/'
+    checkedAt: 2026-11-15
+    note: 'Signalen voor naasten, waaronder angst en spullen kapotmaken; geen diagnostische checklist.'
+  - label: 'Signalen: (ex-)partnergeweld'
+    publisher: 'Landelijk Kenniscentrum Aandachtsfunctionarissen Huiselijk geweld'
+    url: 'https://www.lkah.nl/signalen/'
+    checkedAt: 2026-11-15
+    note: 'Het onderdeel partnergeweld beschrijft onder meer fysiek blokkeren en beperking van bewegingsvrijheid.'
+  - label: 'Ik word mishandeld door mijn partner of ex-partner'
+    publisher: 'Thuisarts'
+    url: 'https://www.thuisarts.nl/geweld-door-iemand-die-je-kent/partner-ex-partner-mishandelt-mij'
+    checkedAt: 2026-11-15
+    note: 'Bedreiging, geweld en hulp bij lichamelijke of psychische klachten.'
+  - label: 'Wetsvoorstel tot strafbaarstelling van vormen van psychisch geweld'
+    publisher: 'Overheid.nl — Wetgevingskalender'
+    url: 'https://wetgevingskalender.overheid.nl/Regeling/WGK029006'
+    checkedAt: 2026-11-15
+    note: 'Bij controle vermeldde de kalender voorbereiding en consultatie van 29 juni tot 7 september 2026; geen latere mijlpaal vermeld.'
   - label: 'Veilig Thuis — Advies bij zorgen of twijfel'
     url: 'https://www.veiligthuis.nl/nl/over-ons/de-adviesfunctie-van-veilig-thuis'
     publisher: Veilig Thuis
@@ -40,7 +64,7 @@ sources:
   - label: 'Dwingende controle verwoest levens — signalen in een relatie'
     publisher: 'Veilig Thuis'
     url: 'https://www.veiligthuis.nl/nl/dwingendecontrole'
-    checkedAt: 2026-10-20
+    checkedAt: 2026-11-15
   - label: 'Stark, E. & Hester, M. (2019). Coercive Control: Update and Review. Violence Against Women, 25(1), 81–104.'
     publisher: 'SAGE Journals'
     url: 'https://doi.org/10.1177/1077801218816191'
@@ -62,8 +86,10 @@ sources:
     url: 'https://www.movisie.nl/artikel/mannen-slachtoffer-huiselijk-geweld'
     checkedAt: 2026-10-20
 reviewNotes:
-  - 'Veiligheidsreview: controleer de voorbeelden en het advies in Digitale controle vóór publicatie.'
-  - 'Het wetsvoorstel strafbaarstelling psychisch geweld is bij schrijven een voorstel (consultatie juni 2026). Bijwerken zodra de status verandert.'
+  - 'Veiligheidsreview: controleer de voorbeelden en het advies in Digitale controle vóór publicatie van de revisie.'
+  - 'Raymond wijst een veiligheids-/inhoudelijke reviewer aan voor Fysieke intimidatie, ook zonder blauwe plekken: beoordeel voorbeelden bij de deur en in de auto, acute onveiligheid en het onderscheid tussen een incident en dwingende controle vóór publicatie van de revisie.'
+  - 'Klinische reviewer: beoordeel de nieuwe passage over vrije keuzes en spanning bij een nieuwe partner.'
+  - 'Juridische status opnieuw gecontroleerd op 15 november 2026 via Wetgevingskalender WGK029006: vermeldt voorbereiding en consultatie juni–september. Controleer opnieuw bij publicatie; geen individueel juridisch oordeel.'
 ---
 
 ## Herken je dit?
@@ -97,6 +123,18 @@ Dwingende controle zit vaak in kleine, alledaagse dingen. Los bekeken lijken ze 
 - Er zijn regels over kleding, eten, slaap of wie je spreekt, uitgesproken of onuitgesproken.
 - Je wordt uitgelachen of gekleineerd, ook waar anderen bij zijn.
 - Je merkt dat je vooral bezig bent met het voorkomen van een uitbarsting.
+
+## Fysieke intimidatie, ook zonder blauwe plekken
+
+**Voorbeeld — fictief.** Je wilt een gesprek onderbreken en naar een andere kamer gaan. De ander blijft in de deuropening staan en zegt dat je nergens heen gaat voordat je hebt toegegeven. Je gaat weer zitten. Later zeg je tegen jezelf dat je niet bent geslagen. Toch kon je op dat moment niet vrij weg.
+
+Ook je de weg versperren, vlak voor je gaan staan terwijl je wordt bedreigd of spullen kapotmaken kan je bang maken en je bewegingsruimte beperken. Wat er met je gebeurt, wordt niet pas belangrijk wanneer je een verwonding kunt laten zien. Dreiging kan ook doorwerken op rustige dagen: je laat een onderwerp liggen of zegt eerder toe, omdat je een herhaling wilt voorkomen.
+
+**Voorbeeld — fictief.** Tijdens een ruzie in de auto gaat de bestuurder steeds harder rijden. Je vraagt om langzamer te rijden, maar die vraag wordt genegeerd. Je zegt niets meer en wacht tot de rit voorbij is. Ook zo kan een situatie onveilig voelen zonder dat iemand je aanraakt.
+
+Dwingende controle gaat over de samenhang en herhaling van gedrag. Dat maakt een enkele bedreiging of geweldsuitbarsting niet onbelangrijk. Je hoeft geen volledig patroon te bewijzen voordat je hulp vraagt. Beschrijf concreet wat er gebeurde en waar je nu bang voor bent; een deskundige kan met je meedenken over veiligheid.
+
+Ben je bang voor een reactie, probeer dan niet met een confrontatie uit te zoeken hoe ver de ander zal gaan. Bij [Hulp vinden](nl/hulp-vinden/) staan routes voor directe onveiligheid en voor vertrouwelijk advies. Ook als er lichamelijk geweld is geweest, hoef je dit niet alleen te beoordelen. Een huisarts kan je helpen bij lichamelijke of psychische klachten.
 
 ## Wanneer is het niet zomaar af te leiden?
 
@@ -138,6 +176,10 @@ Voor mannen kan het extra moeilijk zijn om dit te herkennen. Movisie schrijft da
 Als je lange tijd rekening houdt met regels, reacties of verwachtingen van een ander, kun je jezelf vooral gaan zien in de rol die je moet volhouden: partner, ouder, kostwinner, uitlegger of degene die de rust bewaart. Eigen wensen, grenzen en contacten raken dan op de achtergrond.
 
 Na een relatie of breuk kan dat extra voelbaar worden. De regels of spanning zijn niet meer voortdurend zichtbaar, maar het opletten kan vanbinnen doorgaan. Een vrije avond, een eigen keuze of contact met iemand van vroeger kan daardoor onbekend voelen. Dat betekent niet dat je geen eigen wensen hebt; het kan tijd kosten om ze weer ruimte te geven. Lees ook [Ik herken mezelf niet meer](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/) of [Van begrijpen naar voelen](nl/herstel/leren-voelen/).
+
+**Voorbeeld — fictief.** Bij een nieuwe partner wil je na een lastig gesprek even naar buiten. Je wacht op toestemming, terwijl die ander je niet tegenhoudt. Je merkt hoe ongewoon het voelt om zelf te kiezen wanneer je ruimte nodig hebt. Je hoeft jezelf niet te verwijten dat die vrijheid nog niet vanzelfsprekend voelt.
+
+Word je in je huidige situatie wél tegengehouden of bedreigd, dan gaat het niet alleen over herstellen van vroeger. Bespreek je veiligheid met iemand die deskundig kan meedenken.
 
 ## Digitale controle
 

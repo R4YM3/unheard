@@ -76,6 +76,15 @@ const defaultRoutes = [
       'zonder vooraf een behandeling te kiezen',
     ],
   },
+  {
+    id: 'coercive-control',
+    route: '/nl/begrippen/dwingende-controle/',
+    required: [
+      'Fysieke intimidatie, ook zonder blauwe plekken',
+      'De volgende keer zeg ik het maar niet',
+    ],
+    screenshots: true,
+  },
   { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
   { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
   {

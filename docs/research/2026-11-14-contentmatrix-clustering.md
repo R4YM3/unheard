@@ -683,3 +683,11 @@ ongepubliceerd bewaard. Projectcheck geslaagd; na build 35 tests geslaagd,
 109 pagina’s gebouwd en geaudit. Browser-/printbeelden van deze nieuwe versie
 nog beoordelen. Raymond wijst financiële/juridische review toe vóór publicatie;
 klinische formuleringen blijven onderdeel van de bredere review. Geen merge.
+
+### Uitvoering lacune F, 15 november
+
+Fysieke intimidatie is in review uitgewerkt binnen Dwingende controle: blokkeren,
+dreiging, vernieling, fictief onveilig verkeersvoorbeeld en gevolgen voor latere
+keuzes. Geen nieuwe pagina of URL. De [broncontrole en afbakening](2026-11-15-fysieke-intimidatie-broncontrole.md)
+leggen bewijsbeperkingen, de bestaande veiligheidsroute en revieweigenaren vast.
+Dit is verdieping in #115, nog geen gepubliceerde of klinisch goedgekeurde revisie.

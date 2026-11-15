@@ -106,3 +106,15 @@ A4-PDF’s plus mobiele/desktopbeelden als `draft-browser-review`. Deze job heef
 alleen leesrechten op de repository, uploadt geen Pages-artifact en kan niet
 deployen. De tijdelijke HTML wordt opgeruimd. De preview geeft reviewers zicht
 op de concepten; zij is geen inhoudelijke goedkeuring of publicatieroute.
+
+### Eerste conceptbeelden beoordeeld
+
+CI 43693728200 op 187b8a2: job `draft-review` geslaagd, inclusief print, axe in
+licht/donker en UX met/zonder JavaScript. Visueel bekeken: bovenkant van alle
+drie mobiele conceptartikelen (390px), desktopbovenkant digitale controle
+(1440px), A4-pagina 1 seksuele druk, A4-pagina 2 digitale controle en A4-pagina 2
+herkenning achteraf. In die beelden zijn titel, kort antwoord, voorbeeldgedachte
+en lopende tekst leesbaar; het digitale herkenningsfragment staat correct en
+zwart op wit in de afdruk. Dit is een steekproef, geen handmatige inspectie van
+alle pagina’s. De PDF’s tellen respectievelijk 6, 7 en 7 pagina’s. Geen nieuwe
+Safari- of schermlezercontrole en geen inhoudelijke publicatiegoedkeuring.
