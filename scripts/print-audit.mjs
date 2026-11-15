@@ -94,6 +94,7 @@ const defaultRoutes = [
     required: [
       'Fysieke intimidatie, ook zonder blauwe plekken',
       'Als rust of medische zorg niet vrij voelt',
+      'Als dreiging met zelfdoding je keuze bepaalt',
       'De volgende keer zeg ik het maar niet',
     ],
     screenshots: true,

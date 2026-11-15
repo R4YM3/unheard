@@ -119,6 +119,12 @@ Dezelfde of een passende inhoudelijke reviewer beoordeelt het onderscheid pauze/
 
 Silent treatment en love bombing zijn redactioneel verdiept. Beide behouden hun URL en bestaande sectieankers; nieuwe secties voegen groei, eigen ruimte en een fictief moment bij een nieuwe relatie toe. Elk artikel krijgt één herkenningsfragment. Stonewalling is uit de synoniemen verwijderd en in de tekst onderscheiden. De onvolledig geverifieerde genderclaim bij demand/withdraw is versmald; onderzoeksuitleg staat later in de tekst. Het love-bombingonderzoek wordt niet meer gebruikt voor een persoonlijkheidsprofiel.
 
-De dreiging-met-zelfdoding-sectie is nog niet geïmplementeerd. Ook de overige J-subonderwerpen zijn hiermee niet afgetekend. Revieweigenaren en bronbeperkingen hierboven blijven gelden. Printaudit uitgebreid met beide bestaande routes voor A4 en mobiele/desktopbeelden; nieuwe beelden moeten na CI nog bekeken worden.
+Vervolgrevisie: een korte sectie over dreiging met zelfdoding is toegevoegd aan Dwingende controle, met een fictief voorbeeld, acute hulp en eigen veiligheid. Overige zelfbeschadiging en de overige J-subonderwerpen zijn hiermee niet afgetekend. Revieweigenaren en bronbeperkingen hierboven blijven gelden. Printaudit uitgebreid met beide bestaande routes voor A4 en mobiele/desktopbeelden; nieuwe beelden moeten na CI nog bekeken worden.
 
 Lokale eindcontrole: `npm run check` geslaagd met Astro 0 fouten/waarschuwingen/hints, lint, formatter, contentvalidatie en 33 tests. Noindex-build 109 pagina's en distributie-audit geslaagd. Geen nieuwe menselijke inhoudelijke goedkeuring of visuele beoordeling geclaimd.
+
+### Vervolgcontrole dreiging met zelfdoding
+
+Vragen 8–10 van de eigen 113-webinarvragen rechtstreeks opnieuw gelezen. Hotline-tool geraadpleegd voor de Nederlandse hulpingang; geen nieuwe telefoon- of chatgegevens toegevoegd, bestaande interne hulproutes gebruikt. Geen methodebeschrijving, opdracht om persoonlijk te blijven of oordeel dat gevaar niet echt is. De printaudit controleert aanwezigheid van de nieuwe sectie. Klinische/veiligheidsreview blijft verplicht en is niet door deze broncontrole vervangen.
+
+Lokale controle na toevoeging van de dreigingspassage: projectcheck geslaagd, 33 tests; noindex-build en distributie-audit geslaagd voor 109 pagina's. De nieuwe passage is nog niet visueel of klinisch gereviewd.

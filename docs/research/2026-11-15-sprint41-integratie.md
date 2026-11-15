@@ -126,3 +126,11 @@ Safari- of schermlezercontrole en geen inhoudelijke publicatiegoedkeuring.
 - I: context en hulproutes toegevoegd aan Hulp vinden en Voor naasten, zonder nieuwe pagina's. Lokale check inclusief 33 tests en build van 109 pagina's geslaagd. Bestaande telefoonnummers niet opnieuw geverifieerd en niet gewijzigd.
 
 Per cluster staan bronbereik, beperkingen en concrete reviewvragen in de bijbehorende bronnotitie en frontmatter. Raymond wijst de inhoudelijke/veiligheidsreviewers aan; H vraagt ook klinische review. Deze wijzigingen zijn geen publicatiegoedkeuring. Safari-toegang ontbreekt nog; de gebruiker heeft instructies gekregen voor de appinstellingen.
+
+## Aanvullende verificatie — 15 november
+
+CI 43696560066 op layoutcommit d44d18a en integratie-CI 43696593281 op bac5005 zijn geslaagd. Chrome-zoomfix dus ook geïntegreerd gecontroleerd; de CI vervangt de open schermlezercontrole niet.
+
+H: A4-pagina 4 Dwingende controle (11 pagina's totaal) en A4-pagina 3 Seksuele druk (7 pagina's totaal) uit CI 43695615994 visueel bekeken. De zorg-/rustsectie en reproductieve-autonomiesectie staan leesbaar in zwart op wit, zonder afgesneden tekst in deze beelden. Dit zijn specifieke pagina's, geen volledige handmatige audit en geen inhoudelijke goedkeuring.
+
+J: stilte en aandacht verdiept in c6dba72; korte sectie over dreiging met zelfdoding voorbereid in Dwingende controle. Lokale check/33 tests en 109-pagina-build geslaagd. Raymond wijst een klinische/veiligheidsreviewer aan voor acute hulp, eigen veiligheid en het vermijden van verantwoordelijkheid voor het leven van de ander. Overige zelfbeschadiging is daarmee niet automatisch afgedekt. Bronbereik staat in de notitie over stilte en voorwaardelijke aandacht.

@@ -86,7 +86,13 @@ sources:
     publisher: 'Movisie'
     url: 'https://www.movisie.nl/artikel/mannen-slachtoffer-huiselijk-geweld'
     checkedAt: 2026-10-20
+  - label: 'Vragen uit het webinar Een goed gesprek is ook luisteren — vragen 8–10'
+    publisher: '113 Zelfmoordpreventie'
+    url: "https://www.113.nl/sites/default/files/113/infomateriaal_2025/Beantwoording%20van%20vragen%20webinar%20'Een%20goed%20gesprek%20is%20ook%20luisteren'.pdf"
+    checkedAt: 2026-11-15
+    note: 'Dreiging met zelfdoding als druk: luisteren, eigen grenzen en hulp inschakelen; geen individuele risico-inschatting.'
 reviewNotes:
+  - 'Raymond wijst vóór publicatie een klinische/veiligheidsreviewer aan voor Als dreiging met zelfdoding je keuze bepaalt: controleer acute hulp, eigen veiligheid en geen verantwoordelijkheid voor het leven van de ander. Bronvragen 8–10 gaan specifiek over zelfdoding; overige zelfbeschadiging is niet hiermee klinisch gereviewd.'
   - 'Raymond wijst een klinische/veiligheidsreviewer aan voor Als rust of medische zorg niet vrij voelt: beoordeel toegang tot zorg, urgentie en medicatieverwijzing. Geen instructie om zelf medicatie te wijzigen.'
   - 'Veiligheidsreview: controleer de voorbeelden en het advies in Digitale controle vóór publicatie van de revisie.'
   - 'Raymond wijst een veiligheids-/inhoudelijke reviewer aan voor Fysieke intimidatie, ook zonder blauwe plekken: beoordeel voorbeelden bij de deur en in de auto, acute onveiligheid en het onderscheid tussen een incident en dwingende controle vóór publicatie van de revisie.'
@@ -147,6 +153,14 @@ Controle kan ook gaan over een doktersafspraak niet mogen maken, niet vrij met e
 Jouw klachten verdienen aandacht, ook als de ander ze niet erkent. Ben je afhankelijk van hulp bij vervoer, verzorging of medicijnen, dan kan zelf iets regelen ingewikkeld zijn. Dat geeft niemand het recht om noodzakelijke zorg als drukmiddel te gebruiken. Bespreek met een zorgverlener hoe je hulp kunt krijgen en vertel het als je daarin wordt belemmerd. Bij vragen over onderbroken of beïnvloede medicatie hoort medisch advies; ga niet op basis van dit artikel zelf medicijnen veranderen.
 
 Voor de vermoeidheid en de moeite om nog iets op te brengen kun je verder bij [emotionele uitputting](nl/begrippen/emotionele-uitputting/). Voor onveiligheid blijft [Hulp vinden](nl/hulp-vinden/) een passende ingang. Een ontspanningstip alleen lost belemmering van rust of zorg niet op.
+
+## Als dreiging met zelfdoding je keuze bepaalt
+
+**Voorbeeld — fictief.** Je zegt dat je afstand wilt. De ander dreigt zichzelf van het leven te beroven als je vertrekt. Je voelt je bang en verantwoordelijk, en durft je keuze niet meer uit te spreken.
+
+Neem zo'n dreiging serieus. Druk en werkelijk gevaar kunnen tegelijk bestaan; je hoeft niet eerst uit te zoeken of iemand het “echt meent”. Je kunt hulp inschakelen zonder de verantwoordelijkheid voor het leven van de ander over te nemen. Luisteren betekent niet dat je moet toegeven, terugkeren of een relatie moet voortzetten.
+
+Bij direct gevaar voor jou of de ander is [acute hulp](nl/hulp-vinden/#bij-direct-gevaar) nodig. Breng jezelf niet in gevaar om beschikbaar te blijven. Bespreek met een hulpverlener wat er wordt gezegd en wat dat voor jouw veiligheid betekent. Op [Hulp vinden](nl/hulp-vinden/#bij-gedachten-aan-zelfdoding) staat ook ondersteuning bij zorgen over zelfdoding. Je hoeft dit niet alleen te dragen.
 
 ## Wanneer is het niet zomaar af te leiden?
 
