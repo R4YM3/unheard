@@ -124,6 +124,10 @@
     color: #000 !important;
     break-inside: avoid;
   }
+  /* Keep the short help block together instead of orphaning one contact card. */
+  .help-band {
+    break-inside: avoid;
+  }
   .timeline-marker,
   .timeline-toggle,
   .timeline::before,

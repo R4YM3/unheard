@@ -61,3 +61,14 @@ De toegankelijkheidspagina zei dat handmatige schermlezertests al worden uitgevo
 Dat is voor de huidige revisie niet aangetoond. De tekst benoemt nu afzonderlijk
 automatische controles, visuele steekproeven en de nog open volledige handmatige
 schermlezer-, zoom- en Safari-printcontrole. Geen claim van volledige conformiteit.
+
+## Printcontrole hulpblok op 15 november
+
+CI 43656646786 van de alertheidsbundeling (#113, b397498) slaagde technisch,
+maar de bekeken A4-uitvoer had elf pagina’s en op de laatste stond alleen de
+laatste hulpkaart. De algemene printregels hielden kaarten afzonderlijk bijeen,
+niet hun korte gezamenlijke hulpblok. Daarom krijgt .help-band break-inside:
+avoid. Contactgegevens en zichtbare inhoud veranderen niet. De printaudit van
+de layoutbranch neemt nu ook Ik sta voortdurend aan mee. Nieuwe PDF-uitvoer
+moet nog visueel bevestigen dat dit helpt; Safari blijft open. De bronbranch
+van de gevonden PDF bevat de nieuwe content, deze layoutbranch nog niet.
