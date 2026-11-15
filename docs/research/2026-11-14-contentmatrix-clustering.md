@@ -1,0 +1,685 @@
+# Contentmatrix: clustering en overlap
+
+Peildatum 14 november 2026, main 09590d8. 96 Nederlandse contentbestanden, inclusief ongepubliceerd bronmateriaal. Open PR-ontwerpen en de overige geplande onderwerpen staan apart onderaan. Technische routes (zoeken, redirects en Mijn verhaal/tijdlijn) staan daarnaast in de bestaande routekaart; een contentbestand is niet automatisch een openbare route.
+
+**Werkdocument, geen afgeronde overlapreview.** De zes besliscategorieën zijn werkhypothesen. Waar alleen metadata is bekeken, is de keuze voorlopig: unieke titel of samenvatting bewijst nog geen unieke volledige inhoud. Alle open tekstvergelijkingen worden afgerond vóór grote nieuwe artikelreeksen. Geen URL is door deze matrix veranderd.
+
+Behouden betekent de bezoekersfunctie voorlopig behouden, niet dat de tekst al inhoudelijk goedgekeurd is. Verdiepen behoudt de vraag maar vraagt redactie. Samenvoegen en herpositioneren zijn voorstellen totdat tekstoverdracht en routegevolgen zijn gecontroleerd. De korte huidige omschrijving komt uit de content zelf en is geen geverifieerde bronclaim.
+
+| Huidige route / bestand                                                                                                                                                                  | Cluster                     | Werkhypothese   | Vraag / huidige inhoudelijke bijdrage                                                                                                                                                                                                                                                      | Overlap of reden                                                                                                                                                                                         | Bewijsstatus                                                                                                                                                                                           |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Gepubliceerd: `/nl/begrijp-het/`<br>[begrijp-het](../../src/content/hubs/begrijp-het.md)                                                                                                 | Categorie en ontdekking     | Behouden        | Waar vind ik uitleg voor terugkerend gedrag, gevolgen en bekende termen?                                                                                                                                                                                                                   | Gelijkwaardige categorie-ingang; #104 biedt vraaggroepen en A–Z naast volledig aanbod. Kan uitleg uit Woorden om te ordenen opnemen.                                                                     | Volledig gelezen; actuele #104-ontdekroutes afzonderlijk getest. Geen tweede inhoudsverzameling naast Voelen/Herkennen.                                                                                |
+| Gepubliceerd: `/nl/begrijp-het/conflict-of-patroon/`<br>[conflict-of-patroon](../../src/content/articles/begrijp-het/conflict-of-patroon.md)                                             | Conflict en controle        | Behouden        | **Ongezond conflict of een patroon van controle?** — Iedere relatie kent ruzie. Wat is het verschil tussen een pijnlijk maar gelijkwaardig conflict en een herhaald patroon van controle?                                                                                                  | Vergelijkingsvraag: ruzie en herstel versus vrijheid, angst en aanpassing. Kernuitleg over controle blijft bij dwingende controle; geen tweede algemene definitiepagina.                                 | Volledige tekstvergelijking met zes verwante artikelen; bron-/veiligheidsreview apart open                                                                                                             |
+| Gepubliceerd: `/nl/begrijp-het/emotioneel-misbruik/`<br>[emotioneel-misbruik](../../src/content/articles/begrijp-het/emotioneel-misbruik.md)                                             | Emotioneel misbruik         | Verdiepen       | **Wat is emotioneel misbruik?** — Wat emotioneel misbruik is, hoe het eruit kan zien, waarom het vaak lang onzichtbaar blijft en wat kan helpen. Ook voor mannen die het moeilijk herkennen.                                                                                               | Overzicht van de mishandelingsvorm en toegang tot mechanismen; onderscheiden van controle als samenhangend vrijheidsbeperkend patroon.                                                                   | Volledige tekstvergelijking met zes verwante artikelen; bron-/veiligheidsreview apart open                                                                                                             |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/`<br>[financieel-misbruik](../../src/content/hubs/financieel-misbruik.md)                                                             | Geld en afhankelijkheid     | Verdiepen       | **Financieel misbruik herkennen en begrijpen** — Herken signalen van financiële controle en ontdek welke veilige vervolgstappen je kunt overwegen.                                                                                                                                         | Centrale categorie met eigen uitleg: herkenning, definitie, toegang/zeggenschap en gerichte praktische routes. Ontvangt signalen en termuitleg.                                                          | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/afhankelijkheid/`<br>[financieel-afhankelijkheid](../../src/content/articles/financieel/afhankelijkheid.md)                           | Geld en afhankelijkheid     | Verdiepen       | **Financiële afhankelijkheid en schaamte** — Als je financieel afhankelijk bent van een partner, of als je inkomen niet van jou voelt. Over afhankelijkheid, de rol van kostwinner en tegenwerking bij werk.                                                                               | Eigen vraag: waarom lijken wonen/inkomen/werk mijn keuzes onmogelijk te maken? Werk- en studiesabotage specifiek verdiepen, niet automatisch een extra artikel.                                          | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/druk-na-scheiding/`<br>[financieel-na-scheiding](../../src/content/articles/financieel/druk-na-scheiding.md)                          | Na de relatie / geld        | Verdiepen       | **Economische druk na een scheiding** — Na een breuk kan geld een nieuw strijdtoneel worden: gezamenlijke schulden, verdeling, alimentatie. Algemene uitleg zonder juridisch oordeel.                                                                                                      | Geld en juridische verplichtingen; ander praktisch antwoord dan contact en ouderschap.                                                                                                                   | Volledige redactie en relevante broncontrole in #108; menselijke review open                                                                                                                           |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/geldruzie-of-controle/`<br>[financieel-geldruzie-of-controle](../../src/content/articles/financieel/geldruzie-of-controle.md)         | Geld en afhankelijkheid     | Behouden        | **Geldruzie of controle? Het verschil begrijpen** — Ruzie over geld komt in veel relaties voor. Wanneer wordt het een patroon van controle? Uitleg over het verschil, met fictieve voorbeelden.                                                                                            | Zelfstandige vergelijkingsvraag: wanneer is verschil over geld controle? Behoud concrete vergelijking; beperk de signalenlijst en generieke gevolgen tot contextlinks.                                   | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/juridisch-en-financieel-advies/`<br>[financieel-advies](../../src/content/articles/financieel/juridisch-en-financieel-advies.md)      | Geld en afhankelijkheid     | Behouden        | **Wanneer juridisch of financieel advies kan helpen** — Wie doet wat bij geldzorgen, schulden of financiële controle? Over Het Juridisch Loket, schuldhulp, Geldfit, Veilig Thuis, advocaat en mediator.                                                                                   | Eigen taak: passende juridische financiële of veiligheidssteun vinden en vragen voorbereiden. Niet samenvoegen met algemene uitleg over misbruik.                                                        | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/overzicht-inkomsten-en-schulden/`<br>[financieel-overzicht](../../src/content/articles/financieel/overzicht-inkomsten-en-schulden.md) | Geld en afhankelijkheid     | Behouden        | **Een overzicht maken van inkomsten, kosten en schulden** — Weten wat er binnenkomt, wat eruit gaat en wat op jouw naam staat geeft houvast. Zo begin je klein, in je eigen tempo en op een veilige manier.                                                                                | Eigen taak: inkomsten kosten verplichtingen en onbekende informatie ordenen. Verschilt van toegang krijgen en van een compacte invulkaart.                                                               | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/signalen/`<br>[financieel-signalen](../../src/content/articles/financieel/signalen.md)                                                | Geld en afhankelijkheid     | Samenvoegen     | **Signalen van financieel misbruik** — Waar kun je op letten als geld in je relatie steeds over controle lijkt te gaan? Rustige uitleg over signalen, zonder checklist of oordeel.                                                                                                         | Toegang, zeggenschap, werk/studie en afbakening staan ook in de hub en geldruziepagina. Opnemen als herkenningssectie in de hub, geen afzonderlijke checklistpagina.                                     | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/`<br>[financieel-documenten](../../src/content/articles/financieel/toegang-tot-documenten.md)                  | Geld en afhankelijkheid     | Behouden        | **Toegang tot je eigen documenten** — Weet je waar je identiteitsbewijs, bankgegevens, contracten en loonstroken zijn? Over overzicht houden op een manier die veilig blijft.                                                                                                              | Eigen praktische blokkade: ontbrekende of afgeschermde documenten/toegang. Veiligheid en hulp vóór verzamelen; geen algemene budgetpagina.                                                               | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/financieel-misbruik/veilig-financieel-herstel/`<br>[financieel-herstel](../../src/content/articles/financieel/veilig-financieel-herstel.md)               | Geld en afhankelijkheid     | Herpositioneren | **Veilig financieel herstel: weer vertrouwen krijgen in geld** — Na financiële controle of druk kan geld lang spanning geven. Over kleine stappen, schaamte, terugval en hulp bij schulden.                                                                                                | Praktische en emotionele zelfstandigheid terugvinden; ook vanuit Herstel toegankelijk maken met behoud van bestaande URL.                                                                                | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrijp-het/waarom-overkwam-dit-mij/`<br>[waarom-ik](../../src/content/articles/begrijp-het/waarom-overkwam-dit-mij.md)                                               | Herkenning achteraf         | Herpositioneren | **Waarom overkwam dit mij?** — Waarom het vaak niet te zien is terwijl het gebeurt, waarom loskomen moeilijk kan zijn en waarom "waarom ik?" geen vraag over jouw tekortkoming is.                                                                                                         | Zelfverwijt, verantwoordelijkheid en belemmeringen bij loskomen; dubbele groeiuitleg in #103 ingekort. Nieuwe herkenning-achterafpagina draagt de vergelijking tussen toen en nu.                        | Volledige tekstvergelijking met zes verwante artikelen; bron-/veiligheidsreview apart open                                                                                                             |
+| Gepubliceerd: `/nl/begrijp-het/wat-als-ik-zelf-ook-fout-zat/`<br>[zelf-ook-fout](../../src/content/articles/begrijp-het/wat-als-ik-zelf-ook-fout-zat.md)                                 | Grenzen en schuld           | Verdiepen       | **Wat als ik zelf ook fout zat?** — Over het verschil tussen fouten maken, samen escaleren en een patroon van controle, en hoe je eerlijk naar jezelf kijkt zonder jezelf alle schuld te geven.                                                                                            | Eigen verantwoordelijkheid beoordelen zonder andermans gedrag over te nemen. Onderscheiden van alleen schuld voelen en van conflict herkennen; therapieadvies en zelfreflectievragen veiliger afbakenen. | Volledige tekstvergelijking met zes verwante artikelen; bron-/veiligheidsreview apart open                                                                                                             |
+| Gepubliceerd: `/nl/begrijp-het/wat-het-met-je-kan-doen/`<br>[wat-het-met-je-kan-doen](../../src/content/articles/begrijp-het/wat-het-met-je-kan-doen.md)                                 | Begrijpen en herstel        | Verdiepen       | Hoe hangen verschillende gevolgen samen, ook na de relatie? Een overzicht over meerdere gevoelspagina’s heen.                                                                                                                                                                              | Behouden als samenhangend gevolgenartikel; beperk uitgebreide herhaling van gevoelspagina’s en begripsdefinities.                                                                                        | Volledig gelezen; geen zichtbare sporen en schaamte blijft langst zijn te absoluut; klinische bronreview voor klachten, hulp en causaliteit.                                                           |
+| Gepubliceerd: `/nl/begrijp-het/woorden-om-te-ordenen/`<br>[begrijp-woorden-ordenen](../../src/content/articles/begrijp-het/woorden-om-te-ordenen.md)                                     | Begrijpen en herstel        | Samenvoegen     | Hoe gebruik ik woorden voor mijn ervaring? Dezelfde toelichting en navigatie als de Begrijp het-hub.                                                                                                                                                                                       | Neem bruikbare erkenning en leestempo op in Begrijp het; geen zelfstandige kernvraag voor deze tweede introductie. Behoud URL via redirect, werk deeper/related/ankers bij.                              | Volledig gelezen met hub; uitgevoerd als concept in #111 (7f1660f), nog niet gemergd/gepubliceerd. Erkenning behouden, bewijsdisclaimer herschreven.                                                   |
+| Gepubliceerd: `/nl/begrippen/`<br>[begrippen](../../src/content/hubs/begrippen.md)                                                                                                       | Categorie en ontdekking     | Herpositioneren | Ik ken een woord en zoek betekenis of een bijpassend artikel.                                                                                                                                                                                                                              | Behoud directe A–Z-naslag binnen Begrijpen en via alle pijlers; een term mag naar sectie of kernartikel verwijzen zonder eigen duplicaat.                                                                | Volledig gelezen; huidige claim dat elk begrip eigen pagina heeft moet bij consolidatie veranderen; klinische term/diagnose-afbakening te grof.                                                        |
+| Ongepubliceerd: `/nl/begrippen/conflict-of-controle/`<br>[conflict-of-controle](../../src/content/patterns/conflict-of-controle.md)                                                      | Conflict en controle        | Samenvoegen     | **Ongezond conflict of een patroon van controle?** — Niet elke ruzie is misbruik. Zo zie je het verschil tussen een vastgelopen conflict en een herhaald patroon van controle, zonder iemand een label te geven.                                                                           | Reeds ongepubliceerd bronmateriaal voor conflict-of-patroon; migratie-notities controleren.                                                                                                              | Frontmatterbesluit bevestigd; overdrachtreview nog open                                                                                                                                                |
+| Gepubliceerd: `/nl/begrippen/controle-over-uitgaven/`<br>[controle-over-uitgaven](../../src/content/patterns/controle-over-uitgaven.md)                                                  | Geld en afhankelijkheid     | Verdiepen       | **Controle over uitgaven: als je verantwoording moet afleggen voor elke euro** — Het verschil tussen samen afspraken maken over geld en eenzijdige controle over wat jij mag uitgeven, hoe dat eruit kan zien, wat het met je doet en welke kleine stappen kunnen helpen.                  | Eigen mechanisme: eenzijdige toestemming/bonnen/limieten en dagelijkse zeggenschap. Brede definitie en signalen niet herhalen.                                                                           | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrippen/darvo/`<br>[darvo](../../src/content/patterns/darvo.md)                                                                                                     | Twijfel en werkelijkheid    | Behouden        | **Waarom moet ik mezelf ineens verdedigen?** — Een heldere uitleg van DARVO, de mogelijke impact en veilige manieren om bij je eigen ervaring stil te staan.                                                                                                                               | Eigen mechanisme: ontkennen, aanvallen en omkeren van rollen na aanspreken. Afzonderlijke volgorde en effect op buitenstaanders; geen synoniem voor gaslighting.                                         | Volledige tekst en frontmatter vergeleken in twijfelcluster; zie beslisnotitie. Bron- en menselijke review blijven afzonderlijk.                                                                       |
+| Gepubliceerd: `/nl/begrippen/dwingende-controle/`<br>[dwingende-controle](../../src/content/patterns/dwingende-controle.md)                                                              | Controle en afhankelijkheid | Behouden        | **Dwingende controle: als je vrijheid stap voor stap kleiner wordt** — Wat dwingende controle is, waarom het om een patroon gaat en niet om één incident, hoe het eruit kan zien in het dagelijks leven, wat het met je doet en waar je in Nederland terechtkunt.                          | Samenhang tussen gedragingen en steeds minder vrijheid. Eigen vraag naast emotioneel misbruik; digitale voorbeelden zijn herkenningsingangen, nog geen reden voor extra losse URL’s.                     | Volledige tekstvergelijking met zes verwante artikelen; bron-/veiligheidsreview apart open                                                                                                             |
+| Ongepubliceerd: `/nl/begrippen/emotioneel-misbruik/`<br>[begrip-emotioneel-misbruik](../../src/content/patterns/emotioneel-misbruik.md)                                                  | Emotioneel misbruik         | Samenvoegen     | **Emotioneel misbruik: geweld zonder blauwe plekken** — Wat emotioneel of psychisch misbruik is, welke vormen er zijn, waarom het zo moeilijk te benoemen is, wat het met je kan doen en waar je in Nederland terechtkunt voor advies.                                                     | Reeds ongepubliceerd bronmateriaal voor begrijp-het/emotioneel-misbruik; geen tweede publicatie.                                                                                                         | Beide teksten volledig naast elkaar gelezen                                                                                                                                                            |
+| Gepubliceerd: `/nl/begrippen/emotionele-uitputting/`<br>[emotionele-uitputting](../../src/content/patterns/emotionele-uitputting.md)                                                     | Spanning en lichaam         | Verdiepen       | **Emotionele uitputting: als je niets meer over hebt** — Wat emotionele uitputting is, hoe langdurige spanning in een relatie je energie kan opslokken, het verschil met overspannenheid en burn-out, en wat kan helpen om weer op krachten te komen.                                      | Eigen vraag: waarom is mijn energie op en wat kan ik nog dragen? Onderscheid van alertheid behouden; geen nieuwe moeheidspagina nodig.                                                                   | Volledige tekstvergelijking van vijf pagina’s en eerder gelezen verwante routes; bron-/klinische review apart open                                                                                     |
+| Gepubliceerd: `/nl/begrippen/fawn-respons/`<br>[fawn-respons](../../src/content/patterns/fawn-respons.md)                                                                                | Grenzen en schuld           | Herpositioneren | **Fawn-respons: pleasen om veilig te blijven** — Wat de fawn-respons is, waarom het geen officieel wetenschappelijk begrip is en wat helpt als je je steeds aanpast om spanning te voorkomen.                                                                                              | Begripsnaslag voor aanpassing uit angst, met bronstatus van Walkers visie. Herkenning en oefenen vooral via geen-nee/grenzen; geen extra pleasen-artikel.                                                | Volledige tekstvergelijking van vijf pagina’s en eerder gelezen verwante routes; bron-/klinische review apart open                                                                                     |
+| Gepubliceerd: `/nl/begrippen/financieel-economisch-misbruik/`<br>[economisch-misbruik](../../src/content/patterns/financieel-economisch-misbruik.md)                                     | Geld en afhankelijkheid     | Samenvoegen     | **Financieel en economisch misbruik: wat betekenen die woorden?** — Wat de woorden financieel en economisch misbruik betekenen en waarin ze verschillen. Met een verwijzing naar het hoofdartikel over financieel misbruik.                                                                | Definitie en onderscheid financieel/economisch opnemen in centrale hub; voorbeelden en gevolgen herhalen die hub. A–Z-term en bronnen behouden.                                                          | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrippen/framing-en-beeldvorming/`<br>[framing](../../src/content/patterns/framing-en-beeldvorming.md)                                                               | Isolatie en verbinding      | Verdiepen       | **Framing en beeldvorming: als anderen een ander beeld van jou krijgen** — Hoe het beeld dat anderen van jou hebben kan worden gestuurd, het verschil tussen je eigen verhaal vertellen en iemand bewust zwartmaken, wat het met je doet en hoe je er rustig mee om kunt gaan.             | Eigen vraag: wat als anderen een eenzijdig beeld van mij krijgen? Geloofwaardigheid en reputatie, niet alleen betrokkenheid van een derde.                                                               | Volledig vergeleken in sociaal cluster; steunnetwerk in #106. Bron-/veiligheidsreview afzonderlijk.                                                                                                    |
+| Gepubliceerd: `/nl/begrippen/gaslighting/`<br>[gaslighting](../../src/content/patterns/gaslighting.md)                                                                                   | Twijfel en werkelijkheid    | Behouden        | **Gaslighting: als je gaat twijfelen aan wat je zelf hebt meegemaakt** — Wat gaslighting is, hoe het eruit kan zien, waarom één verschil in herinnering nog geen gaslighting is en wat kan helpen om weer op je eigen waarneming te vertrouwen.                                            | Eigen mechanisme: herhaalde ondermijning van waarneming binnen machtscontext. Niet gelijk aan zelftwijfel als gevolg of de reactievolgorde van DARVO.                                                    | Volledige tekst en frontmatter vergeleken in twijfelcluster; zie beslisnotitie. Bron- en menselijke review blijven afzonderlijk.                                                                       |
+| Gepubliceerd: `/nl/begrippen/hoovering/`<br>[hoovering](../../src/content/patterns/hoovering.md)                                                                                         | Na de relatie / contact     | Verdiepen       | **Hoovering: als iemand je steeds terug probeert te trekken** — Wat hoovering betekent, waarom het geen wetenschappelijk begrip is en wat kan helpen om bij je eigen keuze te blijven als iemand steeds weer contact zoekt.                                                                | Eigen vraag: hoe weeg ik hoop en druk bij hernieuwd contact? Verschilt van structurele contactafspraken. Veiligheidsvoorwaarden en niet-veroordelende taal aangepast in #108.                            | Zeven begrippenteksten volledig gelezen en onderling vergeleken; actuele bron-/klinische review afzonderlijk open                                                                                      |
+| Gepubliceerd: `/nl/begrippen/hyperwaakzaamheid/`<br>[hyperwaakzaamheid](../../src/content/patterns/hyperwaakzaamheid.md)                                                                 | Spanning en lichaam         | Samenvoegen     | **Hyperwaakzaamheid: als je voortdurend de sfeer aftast** — Wat hyperwaakzaamheid is, waarom je lichaam alert blijft na een periode van spanning of onveiligheid, wanneer het samenhangt met PTSS en wanneer niet, en wat kan helpen om weer tot rust te komen.                            | Definitie en PTSS-afbakening opnemen bij ik-sta-voortdurend-aan; beide behandelen dezelfde alertheid, voorbeelden, gevolgen en hulp. A–Z-term, bronnen, ankers en redirects behouden bij migratie.       | Volledige tekstvergelijking van vijf pagina’s en eerder gelezen verwante routes; bron-/klinische review apart open                                                                                     |
+| Gepubliceerd: `/nl/begrippen/isolatie/`<br>[isolatie](../../src/content/patterns/isolatie.md)                                                                                            | Isolatie en verbinding      | Verdiepen       | **Isolatie: als je wereld steeds kleiner wordt** — Hoe isolatie in een relatie geleidelijk kan ontstaan, soms verpakt als liefde of zorg, wat het met je doet en hoe je weer verbinding kunt maken.                                                                                        | Eigen vraag: hoe werd mijn contact met anderen kleiner? Verlies van verbinding centraal; steun opbouwen krijgt een gerichte vervolgroute.                                                                | Volledig vergeleken in sociaal cluster; steunnetwerk in #106. Bron-/veiligheidsreview afzonderlijk.                                                                                                    |
+| Gepubliceerd: `/nl/begrippen/love-bombing/`<br>[love-bombing](../../src/content/patterns/love-bombing.md)                                                                                | Controle en afhankelijkheid | Verdiepen       | **Love bombing: als aandacht overweldigend wordt** — Wat er met love bombing wordt bedoeld, waarom een intense verliefde start niet verdacht is, wanneer overweldigende aandacht samengaat met controle en wat er over het begrip bekend is.                                               | Eigen vraag over overweldigende aandacht en ruimte voor tempo aan het begin; onderscheiden van terugkeer na afstand. Vermijd intentieafleiding en universele fasen.                                      | Zeven begrippenteksten volledig gelezen en onderling vergeleken; actuele bron-/klinische review afzonderlijk open                                                                                      |
+| Gepubliceerd: `/nl/begrippen/macht-en-afhankelijkheid/`<br>[macht-en-afhankelijkheid](../../src/content/patterns/macht-en-afhankelijkheid.md)                                            | Controle en afhankelijkheid | Verdiepen       | **Macht en afhankelijkheid in relaties** — Wanneer een ongelijke verdeling van macht ongezond wordt, hoe afhankelijkheid via geld, wonen, kinderen of emoties ontstaat en wat kan helpen.                                                                                                  | Eigen praktische vraag: welke afhankelijkheden beperken mijn keuzes? Inkomen, zorg, wonen, kinderen en verblijf onderscheiden; geen tweede volledige controleverklaring.                                 | Volledige tekstvergelijking met zes verwante artikelen; bron-/veiligheidsreview apart open                                                                                                             |
+| Gepubliceerd: `/nl/begrippen/narcisme/`<br>[narcisme](../../src/content/patterns/narcisme.md)                                                                                            | Diagnostische naslag        | Verdiepen       | **Narcisme, narcistische persoonlijkheidsstoornis en "covert narcisme": wat betekenen die woorden?** — Het verschil tussen narcisme in de dagelijkse taal, narcistische trekken en de diagnose NPS, wat covert narcisme betekent en waarom je gedrag benoemt, geen diagnose.               | Eigen vraag over dagelijks woord, trekken en diagnose; covert/kwetsbaar blijft sectie op dezelfde URL. Generieke relatiescènes en gevolgen inkorten met contextuele links.                               | Zeven begrippenteksten volledig gelezen en onderling vergeleken; actuele bron-/klinische review afzonderlijk open                                                                                      |
+| Gepubliceerd: `/nl/begrippen/projectie/`<br>[projectie](../../src/content/patterns/projectie.md)                                                                                         | Psychologische naslag       | Herpositioneren | **Projectie: als iemand eigen gevoelens bij jou neerlegt** — Wat projectie betekent in de psychologie, waarom het woord in populaire taal vaak breder wordt gebruikt, hoe het in een relatie kan voelen en waarom je het bij een ander niet kunt vaststellen.                              | Gerichte uitleg van een innerlijk afweerbegrip versus observeerbare beschuldigingen. Routes vanuit ervaringen vooral naar schuldverschuiving/DARVO, niet naar een verondersteld motief.                  | Zeven begrippenteksten volledig gelezen en onderling vergeleken; actuele bron-/klinische review afzonderlijk open                                                                                      |
+| Gepubliceerd: `/nl/begrippen/psychische-manipulatie/`<br>[psychische-manipulatie](../../src/content/patterns/psychische-manipulatie.md)                                                  | Begrippenoverzicht          | Herpositioneren | **Psychische manipulatie: beïnvloeden of sturen achter je rug om?** — Het verschil tussen gewone beïnvloeding en manipulatie, welke vormen vaak beschreven worden en wat helpt om weer op je eigen oordeel te vertrouwen.                                                                  | Verzamelbegrip en korte afbakening van beïnvloeding; toegang tot specifieke mechanismen. Geen tweede volledige mishandelings- of controlehub.                                                            | Zeven begrippenteksten volledig gelezen en onderling vergeleken; actuele bron-/klinische review afzonderlijk open                                                                                      |
+| Gepubliceerd: `/nl/begrippen/schulden-op-naam/`<br>[schulden-op-naam](../../src/content/patterns/schulden-op-naam.md)                                                                    | Geld en afhankelijkheid     | Verdiepen       | **Schulden op jouw naam: als een ander leningen of contracten op jou laat staan** — Wat het betekent als een (ex-)partner schulden op jouw naam laat maken of je onder druk zet om te tekenen, hoe je overzicht krijgt over wat er op jouw naam staat en waar je in Nederland terechtkunt. | Eigen vraag: verplichtingen door druk of gebruik van gegevens. Juridische verantwoordelijkheid en hulp verschillen van dagelijkse uitgavencontrole.                                                      | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/begrippen/schuldverschuiving/`<br>[schuldverschuiving](../../src/content/patterns/schuldverschuiving.md)                                                              | Twijfel en werkelijkheid    | Behouden        | **Schuldverschuiving: als het altijd bij jou terechtkomt** — Wat schuldverschuiving is, hoe het zich kan herhalen in een relatie, hoe je het onderscheidt van een gewone ruzie over wie wat fout deed en wat kan helpen.                                                                   | Eigen mechanisme: verantwoordelijkheid voor gedrag bij de ander leggen, ook buiten een confrontatie; breder dan de specifieke DARVO-volgorde.                                                            | Volledige tekstvergelijking grenzen/schuld; gevoel-grenzen beoordeeld in revisie #105. Zie beslisnotitie; bronnenreview apart.                                                                         |
+| Gepubliceerd: `/nl/begrippen/silent-treatment/`<br>[silent-treatment](../../src/content/patterns/silent-treatment.md)                                                                    | Gesprekken en grenzen       | Verdiepen       | **Silent treatment: als zwijgen een straf wordt** — Het verschil tussen even afstand nemen en iemand straffen met stilte, wat langdurig genegeerd worden met je kan doen en wat kan helpen als zwijgen steeds terugkomt in je relatie.                                                     | Eigen onderscheid tussen pauze/terugtrekken en stilte waarmee een keuze wordt afgedwongen. Niet samenvoegen met algemene grenzen of schuld.                                                              | Zeven begrippenteksten volledig gelezen en onderling vergeleken; actuele bron-/klinische review afzonderlijk open                                                                                      |
+| Gepubliceerd: `/nl/begrippen/sociale-druk/`<br>[sociale-druk](../../src/content/patterns/sociale-druk.md)                                                                                | Isolatie en verbinding      | Verdiepen       | **Sociale druk: als je omgeving je ongemerkt terugduwt** — Hoe familie, vrienden of verwachtingen over mannelijkheid druk kunnen zetten om te blijven of te zwijgen, en hoe je je eigen koers houdt.                                                                                       | Eigen vraag: waarom dringt mijn omgeving aan op blijven, zwijgen of verzoenen? Kan zonder aansturing door de partner ontstaan.                                                                           | Volledig vergeleken in sociaal cluster; steunnetwerk in #106. Bron-/veiligheidsreview afzonderlijk.                                                                                                    |
+| Gepubliceerd: `/nl/begrippen/sociopathie-en-psychopathie/`<br>[antisociale-persoonlijkheidsstoornis](../../src/content/patterns/sociopathie-en-psychopathie.md)                          | Diagnostische naslag        | Verdiepen       | **Sociopathie, psychopathie en de antisociale persoonlijkheidsstoornis: wat is het verschil?** — Het verschil tussen de antisociale persoonlijkheidsstoornis, psychopathie en het alledaagse woord sociopaat, en waarom je gedrag benoemt in plaats van een etiket.                        | Eigen vergelijking tussen ASPS, psychopathie en sociopathie. Geen drie aparte artikelen; scheid diagnostische uitleg van brede lijsten relationeel schadelijk gedrag.                                    | Zeven begrippenteksten volledig gelezen en onderling vergeleken; actuele bron-/klinische review afzonderlijk open                                                                                      |
+| Gepubliceerd: `/nl/begrippen/traumabinding/`<br>[traumabinding](../../src/content/patterns/traumabinding.md)                                                                             | Controle en afhankelijkheid | Verdiepen       | **Traumabinding: waarom loskomen zo moeilijk kan zijn** — Wat traumabinding betekent, wat het oorspronkelijke onderzoek wel en niet laat zien, waarom een sterke band met iemand die je pijn deed geen zwakte is en wat kan helpen bij het losmaken.                                       | Eigen verklaringsvraag over verbondenheid bij machtsverschil en wisselende mishandeling. Niet iedere gehechtheid of gemis valt hieronder.                                                                | Volledig vergeleken in cluster verlies/inzicht; rouw en erkenning in #106. Bron- en klinische review afzonderlijk.                                                                                     |
+| Gepubliceerd: `/nl/begrippen/triangulatie/`<br>[triangulatie](../../src/content/patterns/triangulatie.md)                                                                                | Isolatie en verbinding      | Herpositioneren | **Triangulatie: als er steeds een derde tussen jullie in staat** — Wat triangulatie is, hoe een derde persoon zoals familie, vrienden of een nieuwe partner in een conflict kan worden betrokken, wanneer dat gewoon steun zoeken is en wat kan helpen.                                    | Termuitleg over de rol van een derde; onderscheid oorspronkelijke driehoek van druk via anderen. Voorbeeld nu te dicht bij framing; afbakenen op doorgegeven boodschappen/vergelijkingen.                | Volledig vergeleken in sociaal cluster; steunnetwerk in #106. Bron-/veiligheidsreview afzonderlijk.                                                                                                    |
+| Gepubliceerd: `/nl/begrippen/zelftwijfel/`<br>[begrip-zelftwijfel](../../src/content/patterns/zelftwijfel.md)                                                                            | Twijfel en werkelijkheid    | Samenvoegen     | **Zelftwijfel: als je je eigen waarneming niet meer vertrouwt** — Wat het begrip zelftwijfel betekent en hoe herhaalde ondermijning het vertrouwen in je eigen waarneming kan aantasten. Met een verwijzing naar de gevoelspagina.                                                         | Samenvoegen met gevoelspagina: vrijwel dezelfde bewijszoekscène, verklaringen, gevolgen en hulp. Behoud bronnen, nieuwe-relatiepassage en A–Z-ingang; redirect en oude ankers apart migreren.            | Volledige tekst en frontmatter vergeleken in twijfelcluster; zie beslisnotitie. Bron- en menselijke review blijven afzonderlijk.                                                                       |
+| Gepubliceerd: `/nl/herstel/`<br>[herstel](../../src/content/hubs/herstel.md)                                                                                                             | Categorie en ontdekking     | Behouden        | Wat heb ik nu nodig om verder te kunnen, tijdens of na een relatie?                                                                                                                                                                                                                        | Behouden als categorie met behoefte-ingangen; kan Wat herstel kan betekenen opnemen, therapieaanbod blijft aparte taak.                                                                                  | Volledige actuele #104-hub gelezen; compacte lijst en directe financiële herstelroute geïmplementeerd, visuele steekproeven afzonderlijk vermeld.                                                      |
+| Gepubliceerd: `/nl/herstel/contact-na-een-breuk/`<br>[herstel-contact-na-breuk](../../src/content/articles/herstel/contact-na-een-breuk.md)                                              | Na de relatie               | Verdiepen       | **Contact houden na een breuk, als het niet anders kan** — Blijvend contact na een relatiebreuk, bijvoorbeeld rond kinderen of gedeelde zaken: structuur, schriftelijk contact, grenzen en steun.                                                                                          | Noodzakelijk contact en veiligheid; geen dubbel algemeen artikel over na de scheiding.                                                                                                                   | Volledige redactie en broncontrole in #108; menselijke review open                                                                                                                                     |
+| Gepubliceerd: `/nl/herstel/erkenning/`<br>[herstel-erkenning](../../src/content/articles/herstel/erkenning.md)                                                                           | Verlies en verbinding       | Verdiepen       | **Erkenning vinden, ook als de ander die niet geeft** — Over erkenning krijgen van anderen en jezelf erkenning geven, zonder te wachten tot de ander toegeeft wat er gebeurde.                                                                                                             | Eigen vraag: telt mijn ervaring zonder erkenning van de ander? Steun en serieus genomen worden onderscheiden van de geruststellingslus.                                                                  | Volledig vergeleken in cluster verlies/inzicht; rouw en erkenning in #106. Bron- en klinische review afzonderlijk.                                                                                     |
+| Gepubliceerd: `/nl/herstel/grenzen-leren-stellen/`<br>[herstel-grenzen](../../src/content/articles/herstel/grenzen-leren-stellen.md)                                                     | Grenzen en schuld           | Verdiepen       | **Grenzen leren stellen, eerst waar het veilig is** — Grenzen voelen en uitspreken na een relatie waarin dat niet kon. Oefen eerst bij mensen bij wie het veilig is, niet bij wie je pijn deed.                                                                                            | Eigen praktische vraag: hoe ontdek en oefen ik grenzen waar dat veilig is? Verkort dubbele verklaring en behoud veiligheidsafbakening.                                                                   | Volledige tekstvergelijking grenzen/schuld; gevoel-grenzen beoordeeld in revisie #105. Zie beslisnotitie; bronnenreview apart.                                                                         |
+| Gepubliceerd: `/nl/herstel/herstel-als-ouder/`<br>[herstel-ouderschap](../../src/content/articles/herstel/herstel-als-ouder.md)                                                          | Na de relatie / kinderen    | Verdiepen       | **Herstellen terwijl je er voor je kinderen bent** — Herstel als ouder of vader: aanwezig zijn terwijl je zelf herstelt, je kinderen niet belasten en zelf steun zoeken.                                                                                                                   | Eigen draagkracht en beschikbaarheid als ouder tijdens herstel. Verschilt van contact met een controlerende ex; kindveiligheid en leeftijdspassende uitleg scherper afbakenen.                           | Volledige tekst gelezen en vergeleken met verwante herstelroutes; bron-/veiligheidscontrole afzonderlijk open                                                                                          |
+| Gepubliceerd: `/nl/herstel/hoe-vertel-ik-het/`<br>[het-vertellen](../../src/content/articles/herstel/hoe-vertel-ik-het.md)                                                               | Isolatie en verbinding      | Verdiepen       | **Hoe vertel ik het aan iemand?** — Over de drempel om te vertellen wat er gebeurde, aan wie je het kunt vertellen, zinnen om mee te beginnen en wat je kunt doen als iemand niet goed reageert.                                                                                           | Eigen taak: een eerste gesprek beginnen, passende luisteraar kiezen en omgaan met een pijnlijke reactie. Steunnetwerk gaat over duurzame steun; geen aparte pagina durven hulp vragen nodig.             | Volledige tekst gelezen en vergeleken met verwante herstelroutes; bron-/veiligheidscontrole afzonderlijk open                                                                                          |
+| Gepubliceerd: `/nl/herstel/leren-voelen/`<br>[herstel-leren-voelen](../../src/content/articles/herstel/leren-voelen.md)                                                                  | Verlies en verbinding       | Verdiepen       | **Van begrijpen naar voelen** — Weten wat er gebeurde is iets anders dan voelen wat het met je deed. Over lichaamssignalen, emoties benoemen en mannen en gevoel.                                                                                                                          | Eigen praktische vraag: hoe merk en benoem ik mijn gevoel? Weinig kunnen voelen is iets anders dan pijn blijven voelen na inzicht.                                                                       | Volledig vergeleken in cluster verlies/inzicht; rouw en erkenning in #106. Bron- en klinische review afzonderlijk.                                                                                     |
+| Gepubliceerd: `/nl/herstel/ouder-blijven-met-een-ex-die-controle-zoekt/`<br>[ouderschap-na-controle](../../src/content/articles/herstel/ouderschap-met-een-controlerende-ex.md)          | Na de relatie / kinderen    | Verdiepen       | **Ouder blijven met een ex die controle zoekt** — Hoe je samen ouder blijft als overleg steeds misloopt: duidelijke afspraken, één kanaal voor contact, parallel ouderschap en waar je advies kunt vragen.                                                                                 | Kinderen en veilige ouderschapsafspraken; ander antwoord dan algemene contactpagina.                                                                                                                     | Volledige redactie en broncontrole in #108; menselijke review open                                                                                                                                     |
+| Gepubliceerd: `/nl/herstel/praktische-stappen-na-een-breuk/`<br>[praktisch-na-breuk](../../src/content/articles/herstel/praktische-stappen-na-een-breuk.md)                              | Na de relatie / kinderen    | Verdiepen       | **Praktische stappen na een breuk** — Wat je praktisch kunt regelen na een relatie met controle: veilig vastleggen wat er gebeurt, advies vragen, afspraken over kinderen en wanneer de politie of Veilig Thuis helpt.                                                                     | Prioriteiten bij wonen, documenten, geld, kinderen en veiligheid; taakgerichte overzichtspagina met korte uitleg en gerichte routes. Geen herhaling van ieder specialistisch advies.                     | Volledige tekst gelezen en vergeleken met verwante herstelroutes; bron-/veiligheidscontrole afzonderlijk open                                                                                          |
+| Gepubliceerd: `/nl/herstel/rouw/`<br>[herstel-rouw](../../src/content/articles/herstel/rouw.md)                                                                                          | Verlies en verbinding       | Verdiepen       | **Rouwen om wat er was, en om wat er niet kwam** — Rouw om een relatie, om wie je was en om toekomstplannen. Ook als je opgelucht bent, of iemand mist die je pijn deed.                                                                                                                   | Eigen vraag: hoe geef ik ruimte aan verlies van relatie, rol, toekomst en kansen? Opening in #106 aangescherpt tegenover gemis.                                                                          | Volledig vergeleken in cluster verlies/inzicht; rouw en erkenning in #106. Bron- en klinische review afzonderlijk.                                                                                     |
+| Gepubliceerd: `/nl/herstel/steunnetwerk/`<br>[herstel-steunnetwerk](../../src/content/articles/herstel/steunnetwerk.md)                                                                  | Isolatie en verbinding      | Verdiepen       | **Een steunnetwerk opbouwen, ook als vragen moeilijk is** — Mensen om je heen verzamelen die je kunt vertrouwen. Over hulp vragen als man, veilige mensen kiezen en professionele steun.                                                                                                   | Eigen gebruiksvraag: bij wie kan ik terecht en hoe vraag ik steun? Praktische herverbinding, geen herhaling van de verklaring van isolatie.                                                              | Volledig vergeleken in sociaal cluster; steunnetwerk in #106. Bron-/veiligheidsreview afzonderlijk.                                                                                                    |
+| Gepubliceerd: `/nl/herstel/therapievormen/`<br>[therapievormen](../../src/content/hubs/therapievormen.md)                                                                                | Categorie en ontdekking     | Verdiepen       | **Therapie en begeleiding: verschillende wegen naar herstel** — Vormen van therapie en begeleiding in gewone taal uitgelegd, met mijn persoonlijke ervaring apart gelabeld. Schematherapie en de groepsvorm staan op één pagina. Geen ranglijst en geen behandeladvies.                    | Oriëntatie op professionele hulp en bekende behandelvormen. Ervaring-naar-therapiekaarten verwijderd in #104; eigen ervaring apart houden, geen impliciete behandelkeuze.                                | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/beeldende-therapie/`<br>[therapie-beeldend](../../src/content/therapies/beeldende-therapie.md)                                                 | Therapie en begeleiding     | Verdiepen       | **Beeldende therapie: werken met materiaal in plaats van alleen woorden** — Wat beeldende therapie grofweg is, wat je kunt verwachten, wat wel en niet vaststaat en welke vragen je aan een vaktherapeut kunt stellen. Algemene uitleg, geen advies.                                       | Eigen vraag over werken met materiaal en een vaktherapeut; effectclaims onderscheiden van beroepsbeschrijving en ervaring.                                                                               | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/boksen-met-emoties/`<br>[therapie-boksen](../../src/content/therapies/boksen-met-emoties.md)                                                   | Aandacht en begeleiding     | Herpositioneren | **Boksen met emoties: beweging en gevoel onderzoeken** — Wat er grofweg bedoeld wordt met boksen met emoties, wat je kunt verwachten, wat niet is aangetoond en welke vragen je aan een begeleider kunt stellen. Geen advies.                                                              | Beschrijvende begeleidingservaring, geen gelijkstelling met PMT of gestandaardiseerde behandeling. Bestaande URL behouden; positionering en oprichterscontext laten bevestigen.                          | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/cognitieve-gedragstherapie/`<br>[therapie-cgt](../../src/content/therapies/cognitieve-gedragstherapie.md)                                      | Therapie en begeleiding     | Verdiepen       | **Cognitieve gedragstherapie: werken met gedachten en gedrag** — Wat cognitieve (gedrags)therapie grofweg is, wat je kunt verwachten, wat wel en niet vaststaat en welke vragen je aan een behandelaar kunt stellen. Geen advies.                                                          | Eigen uitleg over gedachten/gedrag en verwachtingen bij behandeling; geen tweede artikel cognitieve therapie. Afbakening van werkzaamheid brongebonden formuleren.                                       | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/emdr/`<br>[therapie-emdr](../../src/content/therapies/emdr.md)                                                                                 | Therapie en begeleiding     | Verdiepen       | **EMDR: een traumagerichte behandeling uitgelegd** — Wat EMDR grofweg is, wat je in een sessie kunt verwachten, wat wel en niet vaststaat en welke vragen je aan een behandelaar kunt stellen. Algemene uitleg, geen advies.                                                               | Eigen vraag over traumagerichte herinneringsbehandeling en sessies; vergelijk met exposure zonder ranglijst of oprichterstraject als standaard.                                                          | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/exposuretherapie/`<br>[therapie-exposure](../../src/content/therapies/exposuretherapie.md)                                                     | Therapie en begeleiding     | Verdiepen       | **Exposuretherapie: onder begeleiding werken met wat spanning oproept** — Wat exposuretherapie grofweg is, wat je kunt verwachten, wat wel en niet vaststaat en welke vragen je aan een behandelaar kunt stellen. Algemene uitleg, geen advies.                                            | Eigen behandelvraag over blootstelling en vermijden; onderscheiden van EMDR. Niet suggereren dat veilige begeleiding inhoudt dat elke behandeling geleidelijk verloopt.                                  | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/gesprekken-met-een-psycholoog/`<br>[therapie-psycholoog](../../src/content/therapies/gesprekken-met-een-psycholoog.md)                         | Professionele ondersteuning | Herpositioneren | **Gesprekken met een psycholoog: wat kun je verwachten?** — Wat gesprekken met een psycholoog kunnen inhouden, hoe je er komt, hoe je registratie controleert en welke vragen je kunt stellen. Algemene uitleg, geen advies.                                                               | Eerste gesprek, hulpvraag, toegang en kwalificatie: professional/route, geen therapievorm. Direct via hulp en herstel aanbieden, URL kan blijven.                                                        | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Ongepubliceerd: `/nl/herstel/therapievormen/groepsschematherapie/`<br>[therapie-groepsschematherapie](../../src/content/therapies/groepsschematherapie.md)                               | Therapie en begeleiding     | Samenvoegen     | **Groepsschematherapie: patronen onderzoeken samen met anderen** — Wat groepsschematherapie grofweg inhoudt, wat je in een groep kunt verwachten, wat wel en niet vaststaat en wat je een behandelaar kunt vragen. Geen advies.                                                            | Blijft ongepubliceerd bronmateriaal voor schematherapie; groepssetting heeft hier geen eigen algemene bezoekersvraag. Controleer overdracht van intake, individuele ruimte en vertrouwelijkheid.         | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/meditatie/`<br>[therapie-meditatie](../../src/content/therapies/meditatie.md)                                                                  | Aandacht en begeleiding     | Herpositioneren | **Meditatie: aandacht voor wat je ervaart** — Wat meditatie grofweg is, wat je kunt verwachten, wat wel en niet is aangetoond (onder meer over MBCT) en welke vragen je aan een professional kunt stellen.                                                                                 | Algemene aandachtsoefening onderscheiden van specifieke MBCT-behandeling. Geen gelijkwaardige werkzaamheid suggereren doordat beide naast behandelmethoden staan.                                        | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/therapievormen/schematherapie/`<br>[therapie-schematherapie](../../src/content/therapies/schematherapie.md)                                                   | Therapie en begeleiding     | Verdiepen       | **Schematherapie: patronen en behoeften onderzoeken** — Wat schematherapie grofweg is, wat je kunt verwachten, wat wel en niet vaststaat en welke vragen je aan een behandelaar kunt stellen. Algemene uitleg, geen advies.                                                                | Eigen methode voor patronen/behoeften; groepssetting blijft sectie op dezelfde pagina. Behoud concrete vragen over groep en vertrouwelijkheid.                                                           | Volledige therapiehub en alle negen therapieteksten onderling gelezen; actuele bron-/klinische review nog open                                                                                         |
+| Gepubliceerd: `/nl/herstel/triggers-en-moeilijke-berichten/`<br>[herstel-triggers](../../src/content/articles/herstel/triggers-en-moeilijke-berichten.md)                                | Spanning en lichaam         | Verdiepen       | **Als een bericht je uit balans brengt** — Over triggers en berichten die je onrustig maken: niet meteen antwoorden, een pauze nemen, iemand laten meelezen en je veiligheid bewaken.                                                                                                      | Een concreet moment van ontregeling hanteren, onderscheiden van aanhoudende alertheid en contactafspraken. Scheid oude spanning van actuele dreiging; geen algemeen advies om berichten uit te stellen.  | Volledige tekst gelezen en vergeleken met verwante herstelroutes; bron-/veiligheidscontrole afzonderlijk open                                                                                          |
+| Gepubliceerd: `/nl/herstel/wat-herstel-kan-betekenen/`<br>[herstel-betekenis](../../src/content/articles/herstel/wat-herstel-kan-betekenen.md)                                           | Hersteloverzicht            | Samenvoegen     | **Wat herstel kan betekenen** — Herstel na emotioneel of financieel misbruik is geen vast traject. Over wat herstel kan zijn, van begrijpen naar voelen, en wanneer hulp verstandig is.                                                                                                    | Algemene betekenis, steun en hulp horen op herstelhub; pijn na inzicht heeft al een zelfstandige pagina. Behoud geen extra tussenpagina voor dezelfde oriëntatievraag; migratie nog uitvoeren.           | Volledige tekst gelezen en vergeleken met verwante herstelroutes; bron-/veiligheidscontrole afzonderlijk open                                                                                          |
+| Gepubliceerd: `/nl/herstel/zelfvertrouwen/`<br>[herstel-zelfvertrouwen](../../src/content/articles/herstel/zelfvertrouwen.md)                                                            | Twijfel en werkelijkheid    | Verdiepen       | **Weer vertrouwen op wat je zelf ziet en voelt** — Na lang twijfelen aan je eigen herinnering en oordeel: kleine, haalbare manieren om vertrouwen in je eigen waarneming terug te vinden.                                                                                                  | Oefenen met voorkeuren en keuzes, onderscheiden van uitleg over zelftwijfel en bevestigingsgedrag. Niet afhankelijk maken van steeds gelijk krijgen; veiligheid bij noteren en beslissen voorop.         | Volledige tekst gelezen en vergeleken met verwante herstelroutes; bron-/veiligheidscontrole afzonderlijk open                                                                                          |
+| Gepubliceerd: `/nl/`<br>[home](../../src/content/hubs/home.md)                                                                                                                           | Categorie en ontdekking     | Behouden        | Waar kan ik beginnen, zonder te weten hoe mijn ervaring heet?                                                                                                                                                                                                                              | Behouden als eerste oriëntatie met verschillende ingangen; scenario’s leiden naar bestaande kernartikelen, geen nieuwe URL per uitspraak.                                                                | Volledig gelezen; persoonlijke passages Raymond, CBS-cijfers actuele bronreview. Voorkom te veel herhaalde woordenvinder-/verhaalpromotie.                                                             |
+| Gepubliceerd: `/nl/hulp-vinden/`<br>[hulp-vinden](../../src/content/articles/hulp-vinden.md)                                                                                             | Begrijpen en herstel        | Behouden        | Waar kan ik terecht bij gevaar, zorgen, klachten of praktische hulpvragen?                                                                                                                                                                                                                 | Behouden als direct bereikbare hulproute; hulp durven vragen hierin en bij Hoe vertel ik het, geen extra overlappend artikel.                                                                            | Volledig gelezen; nummers, kosten en beschikbaarheid opnieuw verifiëren; digitaal advies contextueel houden. Geen nieuwe broncheck geclaimd.                                                           |
+| Gepubliceerd: `/nl/hulpmiddelen/`<br>[hulpmiddelen](../../src/content/hubs/hulpmiddelen.md)                                                                                              | Categorie en ontdekking     | Behouden        | Welk bestaand hulpmiddel helpt bij mijn concrete vraag of gesprek?                                                                                                                                                                                                                         | Behouden als taakgerichte categorie; #104 vervangt dubbele keuzehulp en kaartenpromotie door tekstingangen en volledig compact aanbod.                                                                   | Volledige actuele #104-hub gelezen; partnergesprek gescheiden van hulpverlenersgesprek, woordenvinder behouden, browsercontrole van laatste versie apart.                                              |
+| Gepubliceerd: `/nl/hulpmiddelen/financieel-overzicht-en-veiligheid/`<br>[kaart-financieel](../../src/content/tools/kaart-financieel.md)                                                  | Geld en afhankelijkheid     | Behouden        | **Financieel overzicht en veiligheid** — Een checklist voor geld en papieren, alleen als dat veilig is. Kijk eerst wie je mail en apparaten kan zien.                                                                                                                                      | Optioneel hulpmiddel voor veiligheid en ordenen wat al bekend is; eigen print/gebruikstaak. Geen tweede mechanisme-artikel.                                                                              | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/hulpmiddelen/help-me-woorden-vinden/`<br>[woorden-vinden](../../src/content/hubs/help-me-woorden-vinden.md)                                                           | Categorie en ontdekking     | Behouden        | Welke bestaande pagina’s passen bij woorden en situaties die ik herken?                                                                                                                                                                                                                    | Behouden als optionele ontdekroute; geen nieuwe vragenlijst per pijler. De vrije zelfreflectiekaart heeft een andere taak.                                                                               | Hub en volledige YAML gelezen; zes vragen en routegroepen. Privacybelofte weggaan wist alles te absoluut; lichaamsbescherming/causele duiding klinische review; routes mee migreren bij consolidatie.  |
+| Gepubliceerd: `/nl/hulpmiddelen/iemand-steunen/`<br>[kaart-naaste](../../src/content/tools/kaart-naaste.md)                                                                              | Isolatie en verbinding      | Behouden        | Voorbereiden hoe ik iemand steun zonder diens keuzes over te nemen; andere gebruiker en taak dan zelf steun zoeken.                                                                                                                                                                        | Behouden als optioneel hulpmiddel naast Voor naasten; geen extra artikel over durven helpen.                                                                                                             | Volledig gelezen; veiligheidsreview: bericht kan worden meegelezen, slotzin over alleen delen bij direct gevaar te absoluut.                                                                           |
+| Gepubliceerd: `/nl/hulpmiddelen/ik-begrijp-het-maar-het-blijft-pijn-doen/`<br>[kaart-pijn-na-inzicht](../../src/content/tools/kaart-pijn-na-inzicht.md)                                  | Verlies en verbinding       | Behouden        | **Vragen voor als het blijft pijn doen** — Voor als inzicht het verdriet niet wegneemt. Vragen zonder de opdracht om al verder te zijn dan je bent.                                                                                                                                        | Zelfstandige gebruikstaak: optioneel naast elkaar schrijven wat je weet en voelt, met printbare lege ruimte; geen tweede uitlegartikel.                                                                  | Volledig vergeleken in cluster verlies/inzicht; rouw en erkenning in #106. Bron- en klinische review afzonderlijk.                                                                                     |
+| Gepubliceerd: `/nl/hulpmiddelen/over-de-kaarten/`<br>[hulpmiddelen-over-de-kaarten](../../src/content/articles/hulpmiddelen/over-de-kaarten.md)                                          | Begrijpen en herstel        | Behouden        | Hoe werken invullen, privacy en printen? Functionele uitleg die voor alle kaarten geldt.                                                                                                                                                                                                   | Behouden als gedeelde gebruiksuitleg; beperk herhaling in hub en individuele kaarten, behoud lokale veiligheidscontext.                                                                                  | Volledig gelezen; controleer A4-belofte en browserherstel tegenover werkelijke implementatie; geen veiligheidsgarantie door tab sluiten.                                                               |
+| Gepubliceerd: `/nl/hulpmiddelen/voorbereiding-gesprek-huisarts-of-therapeut/`<br>[kaart-hulpverlener](../../src/content/tools/kaart-hulpverlener.md)                                     | Optionele hulpmiddelen      | Behouden        | Wat wil ik bij een concrete afspraak zeggen en vragen? Voorbereiding, geen behandelkeuze.                                                                                                                                                                                                  | Behouden; onderscheid van Hoe vertel ik het en therapieoverzicht is de concrete afspraak. Geen nieuwe hulp-durven-vragenpagina nodig.                                                                    | Volledig gelezen; huisarts/POH-claims blijven klinische review; papier thuis laten is niet vanzelf veilig.                                                                                             |
+| Gepubliceerd: `/nl/hulpmiddelen/vragen-voor-een-gesprek-met-je-partner/`<br>[kaart-partnergesprek](../../src/content/tools/kaart-partnergesprek.md)                                      | Optionele hulpmiddelen      | Behouden        | Wil en kan ik veilig iets zeggen tegen mijn partner? Afzien van gesprek is een volledige uitkomst.                                                                                                                                                                                         | Behouden met duidelijke veiligheidsgrens; niet samenvoegen met hulpverlenerskaart of als vanzelfsprekende vervolgstap aanbieden.                                                                         | Volledig gelezen; veiligheidsreview van veilig voelen versus werkelijke risico’s, stopadvies en papier bewaren.                                                                                        |
+| Gepubliceerd: `/nl/hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig/`<br>[kaart-zelfreflectie](../../src/content/tools/kaart-zelfreflectie.md)                                               | Optionele hulpmiddelen      | Behouden        | Eén eigen zin over gevoel en behoefte opschrijven; geen selectie van artikelen.                                                                                                                                                                                                            | Behouden naast woordenvinder: vrije reflectie versus navigatie. Niet als extra verplicht ontdekpad presenteren.                                                                                          | Volledig gelezen; herhaalde disclaimers kunnen rustiger, privacy en standaard lege print technisch blijven bewaken.                                                                                    |
+| Gepubliceerd: `/nl/ik-maak-me-zorgen-om-iemand/`<br>[voor-naasten](../../src/content/articles/voor-naasten.md)                                                                           | Isolatie en verbinding      | Behouden        | Hoe steun ik iemand die mogelijk geweld of controle meemaakt, zonder diens regie over te nemen?                                                                                                                                                                                            | Behouden naast steunkaart: inhoudelijke context en contact over tijd versus één voorbereiding. Linken vanuit relatiecontext, niet als extra gevoelspagina.                                               | Volledig gelezen; blijven bellen/berichten en ingrijpen is niet jouw taak vragen veiligheidsnuance; vermijd herhaalde bewijsdisclaimers.                                                               |
+| Gepubliceerd: `/nl/mannen-in-cijfers/`<br>[mannen-in-cijfers](../../src/content/hubs/mannen-in-cijfers.md)                                                                               | Categorie en ontdekking     | Behouden        | Wat zeggen bevolkingscijfers over mannen, geweld en praten?                                                                                                                                                                                                                                | Centrale statistische naslag, geen bewijs voor individuele ervaring; geen cijfers overnemen in alle kernartikelen.                                                                                       | Hub volledig gelezen; gegenereerde statistiekdata en actuele primaire CBS-bronnen nog afzonderlijk te controleren. Geen causaliteit zelfdoding/misbruik suggereren.                                    |
+| Gepubliceerd: `/nl/mijn-verhaal/`<br>[mijn-verhaal](../../src/content/story/mijn-verhaal.md)                                                                                             | Begrijpen en herstel        | Behouden        | Hoe beleefde de oprichter zijn eigen geschiedenis en herstel?                                                                                                                                                                                                                              | Behouden als persoonlijk verhaal; tijdlijn is een weergave van hetzelfde bronbestand, geen tweede verklarend kernartikel. Niet consolideren met algemene patronenuitleg.                                 | Volledig bestand inclusief tijdlijn, therapie en brief gelezen. Raymond bewaakt persoonlijke feiten/toestemming; geen nieuwe ervaringen ingevuld. Relevante hyperlinks meenemen bij routeconsolidatie. |
+| Gepubliceerd: `/nl/over/`<br>[over](../../src/content/articles/over.md)                                                                                                                  | Begrijpen en herstel        | Behouden        | Wie maakt Ongehoord en waarom bestaat het?                                                                                                                                                                                                                                                 | Initiatief en afzender, onderscheiden van persoonlijk levensverhaal en redactionele werkwijze.                                                                                                           | Volledig gelezen; Raymond bevestigt naamverklaring en persoonlijke tekst; geen contactkanaal of biografie verzinnen.                                                                                   |
+| Gepubliceerd: `/nl/toegankelijkheid/`<br>[toegankelijkheid](../../src/content/articles/toegankelijkheid.md)                                                                              | Begrijpen en herstel        | Verdiepen       | Hoe werkt de site met hulpmiddelen en welke beperkingen zijn bekend?                                                                                                                                                                                                                       | Eigen gebruiks- en verantwoordingspagina, geen extra herstelartikel.                                                                                                                                     | Volledig gelezen; claim handmatige schermlezertests is sterker dan beschikbare huidige evidence; beperk tot werkelijk uitgevoerde controles en expliciete open punten.                                 |
+| Gepubliceerd: `/nl/veilig-gebruik/`<br>[veilig-gebruik](../../src/content/articles/veilig-gebruik.md)                                                                                    | Begrijpen en herstel        | Behouden        | Welke sporen laat gebruik, invullen, kopiëren en printen achter?                                                                                                                                                                                                                           | Sitegebonden privacy en veiligheidsuitleg; aanvullend op inhoud over digitale controle, geen duplicaat daarvan.                                                                                          | Volledig gelezen; tab sluiten geeft geen zekerheid; daadwerkelijke opslag/hosting/analytics/print en privacyclaims blijven technische/juridische review.                                               |
+| Gepubliceerd: `/nl/wat-voel-ik/`<br>[wat-voel-ik](../../src/content/hubs/wat-voel-ik.md)                                                                                                 | Categorie en ontdekking     | Behouden        | Welke van de negen zelfstandige gevoelsvragen sluit bij mij aan?                                                                                                                                                                                                                           | Behouden als gelijkwaardige ingang met context; onderscheid twijfel/bevestiging en gemis/pijn blijft. Geen nieuwe URL voor elke herkenningszin.                                                          | Volledige actuele #104-hub gelezen; dubbele tijdlijn/algemene kiezer verwijderd, bestaande tijdlijnanker en woordenvinder behouden.                                                                    |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-begrijp-het-maar-het-blijft-pijn-doen/`<br>[pijn-na-inzicht](../../src/content/emotions/ik-begrijp-het-maar-het-blijft-pijn-doen.md)                   | Verlies en verbinding       | Verdiepen       | **Ik begrijp het, maar het blijft pijn doen** — Begrijpen wat je hebt meegemaakt neemt gevoelens niet altijd weg. Waarom inzicht en emotioneel herstel niet gelijk oplopen, en hoe je ruimte maakt.                                                                                        | Eigen vraag: waarom blijft verdriet of spanning terwijl ik begrijp wat gebeurde? Geen voorwaarde dat iemand de ex mist.                                                                                  | Volledig vergeleken in cluster verlies/inzicht; rouw en erkenning in #106. Bron- en klinische review afzonderlijk.                                                                                     |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/`<br>[grenzen](../../src/content/emotions/ik-durf-geen-nee-te-zeggen.md)                                                       | Grenzen en schuld           | Verdiepen       | **Waarom durf ik geen nee te zeggen?** — Verken waarom grenzen aangeven spannend of onveilig kan voelen, waarom je conflict vermijdt en welke kleine stap voor jou veilig is.                                                                                                              | Eigen vraag: waarom zeg ik ja terwijl ik nee wil? Verklaring van aanpassen en angst; praktische oefenreeks hoort bij herstel-grenzen.                                                                    | Volledige tekstvergelijking grenzen/schuld; gevoel-grenzen beoordeeld in revisie #105. Zie beslisnotitie; bronnenreview apart.                                                                         |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-durf-niet-over-geld-te-praten/`<br>[geld-praten](../../src/content/emotions/ik-durf-niet-over-geld-te-praten.md)                                       | Geld en afhankelijkheid     | Verdiepen       | **Waarom durf ik niet over geld te praten?** — Over schaamte, afhankelijkheid en spanning rond geld: wanneer geldzorgen gewoon zwaar zijn en wanneer er een patroon van controle kan spelen.                                                                                               | Eigen vraag: waarom durf ik niet te vragen of hulp te zoeken? Schaamte/angst centraal; uitgebreide signalen en definities naar de centrale hub.                                                          | Volledige tekst/frontmatter vergeleken in financieel cluster; bron- en juridische review apart.                                                                                                        |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-herken-mezelf-niet-meer/`<br>[identiteit](../../src/content/emotions/ik-herken-mezelf-niet-meer.md)                                                    | Identiteit                  | Behouden        | **Waarom herken ik mezelf niet meer?** — Over het gevoel jezelf kwijt te zijn: hoe aanpassing je eigen wensen kan verdringen, en hoe je voorzichtig terugvindt wat van jou is.                                                                                                             | Eigen voorkeuren en zelfbeeld kwijtraken, onderscheiden van oordeel vertrouwen, energieverlies en meegaand gedrag. Tijdlijn, gevolgen en eigen kleine keuze vormen een samenhangend verhaal.             | Volledige tekstvergelijking van vijf pagina’s en eerder gelezen verwante routes; bron-/klinische review apart open                                                                                     |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-mis-iemand-die-mij-pijn-heeft-gedaan/`<br>[gemis](../../src/content/emotions/ik-mis-iemand-die-mij-pijn-heeft-gedaan.md)                               | Verlies en verbinding       | Verdiepen       | **Waarom mis ik iemand die mij pijn heeft gedaan?** — Over gemis, rouw en dubbele gevoelens: waarom je iemand kunt missen die je pijn deed, en waarom dat niet betekent dat je je vergist.                                                                                                 | Eigen vraag: waarom verlang ik naar iemand of goede momenten ondanks de pijn? Niet hetzelfde als verlies verwerken of pijn na inzicht.                                                                   | Volledig vergeleken in cluster verlies/inzicht; rouw en erkenning in #106. Bron- en klinische review afzonderlijk.                                                                                     |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-sta-voortdurend-aan/`<br>[spanning](../../src/content/emotions/ik-sta-voortdurend-aan.md)                                                              | Spanning en lichaam         | Verdiepen       | **Waarom sta ik voortdurend aan?** — Over altijd alert zijn: waarom je lichaam en hoofd niet tot rust komen, wat langdurige spanning met je kan doen en welke kleine stappen helpen.                                                                                                       | Centrale ervaring van aanhoudend opletten; neem bruikbare termuitleg over zonder diagnose. Triggers blijft voor een concreet ontregelend moment; behandel actuele veiligheid vóór ontspanningsadvies.    | Volledige tekstvergelijking van vijf pagina’s en eerder gelezen verwante routes; bron-/klinische review apart open                                                                                     |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-twijfel-aan-mezelf/`<br>[zelftwijfel](../../src/content/emotions/ik-twijfel-aan-mezelf.md)                                                             | Twijfel en werkelijkheid    | Behouden        | **Waarom twijfel ik steeds aan mezelf?** — Verken herkenbare zelftwijfel na moeilijke gesprekken, zonder dat je iemand een etiket hoeft te geven.                                                                                                                                          | Eigen vraag: kan ik mijn herinnering of oordeel vertrouwen? Neem unieke context uit begrip-zelftwijfel over; verklaring van mechanismen blijft bij gaslighting en DARVO.                                 | Volledige tekst en frontmatter vergeleken in twijfelcluster; zie beslisnotitie. Bron- en menselijke review blijven afzonderlijk.                                                                       |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-voel-me-schuldig/`<br>[schuldgevoel](../../src/content/emotions/ik-voel-me-schuldig.md)                                                                | Grenzen en schuld           | Verdiepen       | **Waarom voel ik me zo schuldig?** — Verken waarom je je overal schuldig over kunt voelen, waarom je zo vaak excuses maakt en welke verantwoordelijkheid echt van jou is.                                                                                                                  | Eigen vraag: welke verantwoordelijkheid draag ik werkelijk? Schuld kan ook zonder een uitgesproken grens spelen; niet samenvoegen met nee zeggen.                                                        | Volledige tekstvergelijking grenzen/schuld; gevoel-grenzen beoordeeld in revisie #105. Zie beslisnotitie; bronnenreview apart.                                                                         |
+| Gepubliceerd: `/nl/wat-voel-ik/ik-zoek-steeds-bevestiging/`<br>[bevestiging](../../src/content/emotions/ik-zoek-steeds-bevestiging.md)                                                   | Twijfel en werkelijkheid    | Behouden        | **Waarom zoek ik steeds bevestiging?** — Over steeds geruststelling nodig hebben: waarom bevestiging van anderen maar kort rust geeft en hoe je stap voor stap meer op je eigen oordeel leunt.                                                                                             | Eigen vraag: waarom geeft geruststelling maar kort rust? Behoud de lus en steunvraag; beperk herhaling van gaslighting tot een contextlink.                                                              | Volledige tekst en frontmatter vergeleken in twijfelcluster; zie beslisnotitie. Bron- en menselijke review blijven afzonderlijk.                                                                       |
+| Gepubliceerd: `/nl/werkwijze/`<br>[werkwijze](../../src/content/articles/werkwijze.md)                                                                                                   | Begrijpen en herstel        | Behouden        | Hoe worden uitleg, voorbeelden, persoonlijke ervaring en bronnen gecontroleerd?                                                                                                                                                                                                            | Eigen verantwoordingsfunctie; kruisverwijzen naar Over en bronnen, niet dezelfde disclaimers in ieder artikel herhalen.                                                                                  | Volledig gelezen; universele claim alle feiten vooraf gecontroleerd en status In review is af vraagt aansluiting op feitelijke revisiestatus.                                                          |
+| Gepubliceerd: `/nl/zoeken/`<br>[zoeken](../../src/content/hubs/zoeken.md)                                                                                                                | Categorie en ontdekking     | Behouden        | Ik zoek rechtstreeks op een bekend woord of een zin.                                                                                                                                                                                                                                       | Zelfstandige vindfunctie naast ontdekken en A–Z; geen nieuw verklarend artikel.                                                                                                                          | Volledige hub gelezen; werking van gegenereerde zoekindex apart technisch verifiëren bij routewijzigingen.                                                                                             |
+
+## Gepland: geen automatische nieuwe URL's
+
+| Onderwerp of herkenningsvraag                                                  | Werkhypothese                   | Bestemming / reden                                                                           | Te bewijzen vóór uitvoering                                                           |
+| ------------------------------------------------------------------------------ | ------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Wat herken ik? (#104)                                                          | Nieuw ontwikkelen               | Categorie met situaties en uitleg, gebruikt bestaande kernartikelen                          | Groepen en taken toetsen tegen deze matrix; geen detailduplicaten                     |
+| Waarom zag ik het toen niet? (#103)                                            | Nieuw ontwikkelen               | Eén centraal kernartikel over latere herkenning                                              | Afbakening tegenover Waarom overkwam dit mij? en traumabinding                        |
+| Waarom herkende ik het niet / puzzelstukjes vallen op hun plaats               | Omzetten naar herkenningsingang | Kaarten en fragmenten naar hetzelfde centrale artikel                                        | Passende introductie per pijler                                                       |
+| Ik gaf steeds vaker toe / mijn grenzen verschoven                              | Omzetten naar herkenningsingang | Grenzencluster, geen drie nieuwe artikelen                                                   | Volledige vergelijking gevoel, schuldverschuiving en herstel                          |
+| Waarom heb ik geen vrienden meer / mijn wereld werd kleiner                    | Omzetten naar herkenningsingang | Isolatie als kernartikel, steunnetwerk voor handelen                                         | Isolatie versus triangulatie/framing/sociale druk afbakenen                           |
+| Mijn woorden werden verdraaid / kan ik mijn herinnering vertrouwen             | Omzetten naar herkenningsingang | Twijfel en gaslighting, afhankelijk van de vraag                                             | Geen automatische classificatie vanuit één voorbeeld                                  |
+| Seksuele druk en dwang (#105)                                                  | Nieuw ontwikkelen               | Zelfstandige consent- en veiligheidsvraag; concept ongepubliceerd                            | Afbakenen tegen intimiteit als controle; klinische/veiligheidsreview                  |
+| Seksuele afwijzing, voorwaardelijke affectie, onthouden van nabijheid          | Verdiepen                       | Eerst passende secties in seksualiteit/silent treatment; geen automatische tweede pagina     | Autonomie in beide richtingen behouden, intenties niet invullen                       |
+| Voortgezette controle na de relatie (B)                                        | Herpositioneren                 | Samenhang in categorie; contact, economische druk en ouderschap behouden waar unieke taak    | Geen vierde artikel dat bestaande drie navertelt                                      |
+| Kinderen als boodschapper, informatiebron of drukmiddel (C)                    | Verdiepen                       | Ouderschapsartikel en gerichte herkenningskaarten                                            | Kindperspectief, geen diagnose van gezin of omgangsadvies                             |
+| Digitaal misbruik, monitoring, locatie, beelden en stalking (D)                | Nieuw ontwikkelen               | Kandidaat kernartikel voor eigen digitale veiligheidsvraag                                   | Vergelijk eerst dwingende-controle-sectie en veilig-gebruik; veilige broncontrole     |
+| Druk via familie, vrienden en derden (E)                                       | Verdiepen                       | Isolatie/triangulatie/framing/sociale druk; consolideer overlap na lezing                    | Wat verklaart elke pagina dat de andere niet verklaart?                               |
+| Fysieke intimidatie: uitgang, spullen, auto, bedreiging (F)                    | Verdiepen                       | Eerst samenhangende sectie bij dwingende controle en hulp                                    | Veiligheid en incident versus patroon; aparte pagina alleen bij eigen vraag           |
+| Werk/studie saboteren, schulden, toegang tot geld (G)                          | Verdiepen                       | Financiële afhankelijkheid, documenten, schulden en kernhub                                  | Economische sabotage niet wegdrukken onder alleen uitgavencontrole                    |
+| Slaap, medische zorg, reproductieve dwang, anticonceptie (H)                   | Nieuw ontwikkelen               | Kandidaat kernartikel lichamelijke autonomie; reproductieve dwang verbinden met seksualiteit | Zelfstandige vraag en overlap eerst toetsen; medische/veiligheidsreview               |
+| Eergerelateerd geweld, ouderenmishandeling, verwaarlozing (I)                  | Herpositioneren                 | Betrouwbare hulpverwijzingen en korte context binnen passende categorie                      | Geen oppervlakkige aparte encyclopedie; hiaten inventariseren                         |
+| Schuld als druk, publieke/private werkelijkheid, vertrouwelijke informatie (J) | Verdiepen                       | Bestaande mechanismen; herkenningsfragmenten waar voldoende                                  | Controleer alle subonderwerpen uit oorspronkelijke goal, geen verlies door clustering |
+| Dreigen met zelfbeschadiging om druk te zetten (J)                             | Verdiepen                       | Bestaande controle-uitleg met veilige hulpcontext                                            | Bronnen en specialistische review; geen lezer verantwoordelijk maken                  |
+| Durven hulp vragen                                                             | Verdiepen                       | Hoe vertel ik het?, steunnetwerk en hulp vinden                                              | Drempel benoemen in herkenningsingang; niet automatisch vierde hulp-artikel           |
+| Contact                                                                        | Nieuw ontwikkelen               | Alleen als werkelijk contactkanaal en verantwoordelijk beheer bestaan                        | Geen fictief formulier of contactadres publiceren                                     |
+
+## Vervolgcontrole per cluster
+
+Lees complete teksten naast elkaar, wijs één eigenaarartikel per uitleg aan en registreer unieke secties die bij consolidatie behouden moeten blijven. Noteer daarna per definitieve beslissing de toegangen vanuit Voelen, Herkennen en Begrijpen, eventuele categorie, contextlinks en URL/anker/SEO-gevolgen. De bestaande routekaart is het technische vertrekpunt, geen bewijs van inhoudelijke uniciteit.
+
+## Beslisnotitie: twijfel, geruststelling en omkering
+
+Volledig vergeleken op 14 november 2026: de twee gevoelspagina's zelftwijfel en
+bevestiging, begrippen-zelftwijfel, gaslighting en DARVO, inclusief frontmatter,
+voorbeelden, hulpblokken en bronnenlijsten. Dit is een tekstuele overlapreview;
+het is geen nieuwe verificatie van alle wetenschappelijke claims.
+
+De gevoelspagina zelftwijfel en het begrippenartikel vertellen beide over oude
+berichten teruglezen om de eigen herinnering te geloven, herhaald ontkennen,
+zelfreflectie/loyaliteit, minder durven bespreken en veilig steun zoeken. De
+begrippenpagina verwijst voor gevoel, gevolgen én hulp weer naar de gevoelspagina.
+Het verschil in toon rechtvaardigt geen tweede volledig artikel. Besluit:
+samenvoegen naar de bestaande gevoelroute, met behoud van de definitie en een
+rechtstreekse termingang in Begrippen. Nog niet uitgevoerd: bronnen zorgvuldig
+overdragen, de specifieke nieuwe-relatiecontext behouden, alle verwijzingen en
+translationKeys migreren en oude URL plus ankers afvangen. De bronclaim over DARVO
+hoort primair bij het mechanisme; de gevoelspagina hoeft geen tweede
+onderzoeksuitleg te krijgen.
+
+Bevestiging zoeken blijft zelfstandig: het probleem is dat geruststelling kort
+werkt en de vraag terugkomt, ook bij gewone beslissingen. Zelftwijfel gaat over
+het houvast in waarneming en oordeel. Advies of steun vragen is geen probleem op
+zich; de praktische hulp mag geen opdracht worden om noodzakelijke steun te
+vermijden. De huidige zinnen ‘Een compliment landt pas als je het jezelf ook een
+beetje gunt’, ‘geleend vertrouwen niet blijft’ en ‘elke keer ... minder oefening’
+vragen herredactie en broncontrole: ze zijn te absoluut of leggen te veel bij de
+lezer. Het hulpblok ‘Stel één keer de vraag’ vraagt klinische beoordeling en
+veiligheidscontext. Eigenaar: Codex voor broncontrole en herredactie; Raymond
+wijst een klinische reviewer aan vóór publicatie van de inhoudelijke wijziging.
+
+Gaslighting en DARVO blijven apart. De eerste pagina beschrijft herhaalde
+ondermijning van werkelijkheid en machtscontext; de tweede een reactievolgorde
+bij aanspreken en beïnvloeding van buitenstaanders. Het gedeelde gevolg
+zelftwijfel is geen grond om mechanismen samen te voegen. De passages over
+schuldverschuiving, sociale druk en framing worden pas definitief afgebakend na
+vergelijking met die eigen artikelen; die clusterreview staat nog open.
+
+De oprichterspassage ‘Ook ik bleef bevestiging zoeken’ blijft bij Raymond ter
+bevestiging. Geen nieuwe persoonlijke ervaring toevoegen of afleiden uit dit
+clusterbesluit. De zelftwijfelpassage over aanhoudende somberheid, angst en slaap
+blijft een concreet punt voor de klinische reviewer.
+
+## Beslisnotitie: grenzen, schuld en verantwoordelijkheid
+
+Volledig gelezen en vergeleken: schuldgevoel, schuldverschuiving en
+herstel-grenzen op main, plus de gevoelspagina grenzen in de revisie van #105.
+DARVO is ook volledig gelezen in het twijfelcluster. De vier routes hebben
+verschillende vragen: schuld ervaren, verantwoordelijk gemaakt worden, niet
+durven weigeren en opnieuw oefenen. Ze worden niet tot één lang artikel
+samengevoegd. ‘Ik gaf steeds vaker toe’ is een ingang bij gevoel-grenzen;
+‘mijn grenzen werden niet gerespecteerd’ verwijst naar het patroon, zonder nieuwe
+URL. De volledige vergelijking met dwingende controle staat nog open.
+
+Schuldverschuiving beschrijft ook verantwoordelijkheid afschuiven buiten een
+confrontatie; DARVO vraagt de specifieke combinatie van ontkennen, aanvallen en
+rollen omkeren. Niet iedere verschuiving is DARVO. Schuldgevoel hoeft bovendien
+niet te beginnen bij een uitgesproken nee. Die verschillen blijven zichtbaar
+in de introductie en contextlinks.
+
+Herstel-grenzen heeft zelfstandige praktische waarde, maar de huidige opening
+herhaalt veel van de gevoelspagina. Daar kan de verklaring korter en het veilig
+opmerken/oefenen centraler. Voor inhoudelijke herredactie en broncontrole door
+Codex zijn genoteerd: ‘leer je om die grens niet meer te voelen’ (te algemeen),
+‘Je lichaam leert’ (verklaring zonder passende bron), ‘Na een tijdje wordt dat
+ongemak meestal minder’ (onvoldoende onderbouwde verwachting) en het latere
+terugkomen op een ja (veiligheid ook daar expliciet bewaken). Raymond wijst de
+klinische/veiligheidsreviewer aan vóór publicatie van gewijzigde adviezen.
+
+Bij schuldgevoel verdienen ‘verklaringen die bij jezelf liggen’ en ‘mooie
+eigenschap die kan doorschieten’ een herschrijving die zorgzaamheid niet als
+verantwoordelijkheid voor mishandeling laat lezen. Het hulpkaartje ‘Wacht even
+met sorry’ moet ook zichtbaar rekening houden met dreiging; een veiligheidszin
+onderaan de pagina is onvoldoende voor iemand die alleen de kaart leest.
+De vier reflectievragen staan onder ‘Drie rustige vragen’; dat is een concrete
+redactionele fout voor de volgende inhoudelijke wijziging. Er worden geen
+nieuwe persoonlijke ik-passages toegevoegd op grond van oude reviewvragen.
+
+## Beslisnotitie: gemis, rouw, inzicht en erkenning
+
+Volledig vergeleken inclusief frontmatter: gemis, pijn na inzicht, de bijbehorende
+vragenkaart, leren voelen en traumabinding op main; rouw en erkenning in #106.
+De functies verschillen voldoende om de bestaande routes te behouden. Er komen
+geen extra artikelen voor ‘ik mis de goede momenten’, ‘ik zou eroverheen moeten
+zijn’ of ‘de toekomst die niet kwam’: dit zijn herkenningsingangen of secties.
+
+- Gemis erkent verlangen naar de persoon/contact ondanks pijn. Beperk de
+  algemene rouwuitleg tot context en een link, en laat het inzicht-artikel niet
+  dezelfde zondagse herinnering uitwerken.
+- Rouw biedt ruimte aan meerdere verliezen: toekomst, rol, tijd en kansen,
+  ook zonder terugverlangen. De fictieve scène en opening in #106 zijn daarom
+  gewijzigd naar een geplande reis die niet doorgaat. De eerdere ontbijtscène
+  lag te dicht bij het zondagse ontbijt uit gemis.
+- Pijn na inzicht gaat over aanhoudend gevoel ondanks begrijpen, niet alleen
+  over verlangen of verlies. Leren voelen gaat juist over opmerken en benoemen
+  wanneer voelen moeilijk is. Verbind ze, maar maak er niet één artikel met
+  tegengestelde startvragen van.
+- De vragenkaart blijft als optionele gebruikstaak, met privacy en printfunctie.
+  Geen extra verklaring toevoegen die de gevoelspagina opnieuw vertelt.
+- Erkenning gaat over serieus genomen worden zonder instemming van de ander.
+  Bevestiging zoeken gaat over een terugkerende geruststellingslus. #106 heeft
+  nu een contextlink die dit onderscheid expliciet maakt, zonder steun vragen
+  als ongezond te beschrijven.
+- Traumabinding houdt een eigen termingang en beperkte mechanisme-uitleg. Niet
+  ieder gemis is traumabinding; het huidige onderzoek wordt in het artikel zelf
+  begrensd tot een kleine groep vrouwen. De bronclaims zijn met deze
+  tekstvergelijking niet opnieuw wetenschappelijk geverifieerd.
+
+Gerichte vervolgpunten voor Codex: gemis adviseert een ongestuurde brief zonder
+veiligheidscontext; traumabinding adviseert schrijven en zakelijk/schriftelijk
+contact zonder die voorwaarden bij het advies zelf. Stem dat af op de veilige
+contactrevisie #108. Bij pijn na inzicht vragen de scheiding ‘inzicht in je hoofd’
+versus ‘gevoel in je lichaam’, de zekerheid dat een verdrietgolf weer zakt en de
+therapiekaart ‘verder dan praten’ broncontrole/herredactie. Bij leren voelen
+vragen uitspraken over lichamelijke signalen, mannen en het effect van oefenen
+zorgvuldige broncontrole. Raymond wijst de klinische/veiligheidsreviewer aan;
+Codex levert gerichte passages en verwerkt feedback. Bestaande menselijke
+reviewpunten in #106 blijven open. Geen persoonlijke passage toevoegen op basis
+van de oude verzoeken in frontmatter.
+
+## Beslisnotitie: contact verliezen, druk en beeldvorming
+
+Volledig gelezen inclusief frontmatter: isolatie, sociale druk, triangulatie en
+framing op main; steunnetwerk in #106. De vijf vragen verschillen. De behoefte
+‘ik heb bijna geen vrienden meer’ en ‘mijn wereld werd kleiner’ krijgt toegang
+tot isolatie; ‘ik durf geen hulp te vragen’ tot steunnetwerk en hoe-vertel-ik-het.
+Geen extra eenzaamheid-, vriendenverlies- of hulpdurvenvragenartikel op basis van
+deze ingangen. Vergelijking van hoe-vertel-ik-het zelf volgt nog.
+
+Isolatie beschrijft hoe contact verdwijnt of een prijs krijgt. Sociale druk gaat
+over aandringen van de omgeving, ook zonder dat een partner iemand heeft
+benaderd. Beeldvorming gaat over het beeld dat anderen krijgen en gevolgen voor
+geloofwaardigheid. Triangulatie wordt scherper gepositioneerd als termuitleg van
+een derde in de interactie; het is geen synoniem van alle sociale manipulatie.
+Het artikel maakt de oorspronkelijke systeemtheoretische betekenis en het
+populaire gebruik al expliciet. Die zelfstandige uitleg blijft bereikbaar via
+A–Z, maar hoeft geen extra prominente route naast iedere situatie te zijn.
+
+De triangulatiescène met een bezorgde schoonmoeder en onbekende geruchten vertelt
+nu bijna hetzelfde als de framing-scène met een bezorgde vriend. Bij herredactie
+hoort triangulatie een fictieve situatie rond het doorgeven van boodschappen of
+voortdurende vergelijking te krijgen, terwijl framing de reputatievraag houdt.
+Een nieuwe voorbeeldscène is geen bewijs van intentie. Bij isolatie staat onder
+‘Wat kan helpen?’ bovendien nog een los voorbeeld dat de eerdere schuldzin en
+keuze om thuis te blijven herhaalt; samenbrengen in de bestaande scène.
+
+Bron-/veiligheidswerk voor Codex: de stellige uitspraak ‘Veel mensen begrijpen
+meer dan je denkt’ bij isolatie, ‘Zij hebben geen belang in de uitkomst’ bij
+sociale druk en ‘Een rustige, korte reactie houdt meer stand’ bij framing vragen
+herredactie. Veilig advies over contact en documenteren moet bij de aanwijzing
+zelf staan, niet alleen in een laatste bullet. De Bowen-uitleg mag niet als
+algemene verklaring voor de intenties van familieleden worden gebruikt.
+Raymond wijst een inhoudelijke/veiligheidsreviewer aan; Codex verzorgt gerichte
+broncontrole en verwerking. De huidige tekstvergelijking verifieert de bronnen
+niet opnieuw en wijzigt geen URL's.
+
+## Beslisnotitie: financieel overzicht, herkenning en praktische hulp
+
+Volledig vergeleken: de financiële hub, begrippen-financieel/economisch misbruik,
+signalen, geldruzie/controle, afhankelijkheid, documenten, overzicht, financieel
+herstel, advies, gevoel-geld, financiële kaart, controle over uitgaven en
+schulden op naam. Druk na scheiding is eerder volledig geredigeerd in #108 en
+houdt zijn specifieke context van blijvende verplichtingen en druk na de breuk.
+Deze vergelijking is geen nieuwe bronverificatie of juridisch oordeel.
+
+**Samenbrengen:** Signalen en het algemene begrippenartikel worden onderdelen
+van de centrale financiële hub. De drie teksten herhalen toegang, zeggenschap,
+vragen die als wantrouwen worden opgevat, gevolgen en advies. Behoud in de hub
+alleen betekenisvolle herkenningsgroepen en het brononderbouwde verschil tussen
+financieel en economisch misbruik. Behoud de A–Z-termingang. Routewijzigingen zijn
+nog niet uitgevoerd: inhoudsoverdracht, oude ankers, related-keys, interne links,
+zoekdata, canonicals, sitemap en redirects moeten samen worden gemigreerd.
+
+**Wel zelfstandig:** Geldruzie/controle beantwoordt een expliciete vergelijkingsvraag
+met eigen fictieve gesprekken. Documententoegang is een andere blokkade dan
+bekende cijfers ordenen. De financiële kaart is een optionele gebruikstaak, geen
+extra artikelverklaring. Uitgavencontrole en afgedwongen schulden verschillen in
+mechanisme, gevolgen en de benodigde adviesroute. Afhankelijkheid biedt ruimte
+voor werk/studiesabotage en bestaanszekerheid; geen nieuwe sabotagepagina voordat
+de bestaande uitleg inhoudelijk is verdiept. Financieel herstel hoort ook bij de
+herstelontdekking zonder dat de waardevolle URL daarvoor hoeft te veranderen.
+
+**Inconsistenties voor herredactie en broncontrole:** de hub definieert alle
+financieel misbruik als structurele controle, terwijl het begrippenartikel
+expliciet zegt dat de handreiking financieel misbruik ruimer definieert dan dwang.
+Dit moet vóór samenvoeging tegen de primaire bron worden opgelost. De oude PDF-URL
+staat nog op veel pagina's; #108 heeft de actuele bronroute al gecontroleerd.
+Afhankelijkheid herhaalt de niet aangetoonde claim dat ‘veel mensen na zo'n relatie
+met schulden achterblijven’; #108 verving die claim al op de postscheidingspagina.
+Het hubcitaat ‘Ik zocht niet alleen duidelijkheid over geld’ mist een expliciete
+fictielabel en mag niet als oprichterservaring worden behandeld.
+
+Bij geldruzie/controle suggereert ‘ze worden zorgelijk wanneer ze samen en
+herhaaldelijk voorkomen’ een verplichte combinatie van kenmerken. Bij
+schulden-op-naam verdienen de stellige aansprakelijkheidsuitleg, BKR-gevolgen,
+advies om niet te betalen, bewijs te verzamelen en kopieën te bewaren afzonderlijke
+juridische/veiligheidscontrole. Bij uitgavencontrole mag algemene Nibud-informatie
+over een eigen rekening niet ongemerkt een veiligheidsadvies bij dwang worden.
+Bij overzicht en financieel herstel moeten veiligheidsvoorwaarden vóór de
+opdracht om te zoeken, in te loggen of te ordenen staan. Een voorspelling dat een
+vast ritme ‘meer rust geeft’ is geen gegarandeerd resultaat.
+
+Eigenaar: Codex voor broncontrole, samenhang en technische migratie. Raymond wijst
+een financieel/juridisch reviewer en veiligheidsreviewer aan voor de concrete
+passages; medische stressclaims gaan naar een klinische reviewer. Geen nieuwe
+persoonlijke ervaring op grond van oude frontmatter-verzoeken toevoegen.
+
+## Beslisnotitie: misbruik, controle, verantwoordelijkheid en herkenning achteraf
+
+Volledig vergeleken: emotioneel misbruik, dwingende controle, conflict-of-patroon,
+zelf-ook-fout, macht/afhankelijkheid en de twee artikelen in #103: waarom-ik en
+het nog ongepubliceerde herkenning-achteraf. Dit is een tekstvergelijking, geen
+nieuwe verificatie van alle medische of juridische bronnen.
+
+De pagina's houden verschillende vragen: wat is deze mishandelingsvorm; hoe
+beperkt een patroon mijn vrijheid; hoe onderscheid ik dit van ruzie; hoe kijk ik
+naar mijn eigen gedrag; wat maakt kiezen praktisch moeilijk; waarom geef ik
+mezelf de schuld; waarom zie ik nu verbanden die ik toen niet zag. Toegang vanuit
+Voelen, Herkennen en Begrijpen vereist geen drie versies van iedere uitleg.
+
+**Uitgevoerd in #103:** waarom-ik toegespitst op verantwoordelijkheid en
+omstandigheden. Voorbeeldgedachte over blijven hopen vervangt de dubbele
+herkenningsvraag. Groeiuitleg ingekort en een expliciet fictief oud-berichtvoorbeeld
+laat zelfverwijt zien. Bestaande koppen/ankers en URL behouden. De nieuwe centrale
+pagina blijft ongepubliceerd tot menselijke review; geen live verwijzingen naar
+een niet-bestaande route toegevoegd.
+
+**Gerichte vervolgcorrecties:** conflict-of-patroon zegt ‘Eén voorbeeld bewijst
+niets’ en presenteert herhaling soms als voorwaarde voor iedere ernstige
+ervaring. Formuleer dat één zin onvoldoende context geeft zonder een ernstig
+incident te bagatelliseren. De losse ik-quote moet expliciet een fictief voorbeeld
+worden. Emotioneel misbruik koppelt een maandelijkse onderzoeksdefinitie aan de
+uitleg: onderscheid onderzoeksmeting van het recht op hulp en erkenning. Controleer
+de brede claim ‘meestal zonder fysiek geweld’ en actualiseer de juridische
+bronpassage bij dwingende controle voordat een gewijzigde versie wordt gepubliceerd.
+
+Bij zelf-ook-fout zijn ‘wie dat vaak meemaakt, gaat ... vanzelf’ en de conclusie
+over wat schuldgevoel ‘waarschijnlijk’ betekent te stellig. Vragen als ‘kan ik
+mijn eigen fouten zien?’ mogen geen bewijs worden dat iemand geen schade doet.
+Het advies over relatietherapie bij wederzijdse pijn vereist expliciete aandacht
+voor dreiging en controle; pijn aan beide kanten sluit onveiligheid niet uit.
+Bij macht/afhankelijkheid hoeft afhankelijkheid door ziekte of zorg niet vrijwillig
+te zijn om respectvol te kunnen worden gedragen. Niet het bestaan van zorgbehoefte,
+maar het gebruik ervan als drukmiddel moet de uitleg dragen.
+
+Eigenaar Codex: broncontrole, herredactie en contextuele routes. Raymond wijst
+klinische/veiligheidsreviewers aan voor therapieadvies, afhankelijkheid en de
+herkenningsuitleg; juridisch reviewer voor uitspraken over wetgeving. Raymond
+bevestigt uitsluitend zelf eventuele persoonlijke passages. Deze vergelijking
+levert geen menselijke reviewakkoorden en verandert geen publicatiestatus.
+
+## Beslisnotitie: hersteloriëntatie en concrete hersteltaken
+
+Volledig gelezen: hoe-vertel-ik-het, zelfvertrouwen, triggers-en-moeilijke-berichten,
+herstel-als-ouder, praktische-stappen-na-een-breuk en wat-herstel-kan-betekenen.
+Vergeleken met de eerder gelezen gevoelspagina's en de revisies van steunnetwerk
+(#106), contact/ouderschap (#108) en herstelhub (#104).
+
+**Samenbrengen:** wat-herstel-kan-betekenen herhaalt het hersteloverzicht,
+de betekenis van erkenning/grenzen/steun en de kloof tussen begrijpen en voelen.
+De hub moet de algemene uitleg, hulpverwijzing en het onderscheid tussen eigen
+ervaring en professioneel advies zelfstandig bieden. De detailpagina pijn na
+inzicht blijft voor die eigen bezoekersvraag. Behoud bij daadwerkelijke migratie
+waardevolle tekst, bronnen, bestaande ankers, verwijzingen, related-keys en
+redirect; die migratie is nog niet uitgevoerd. De verwijzing ‘onderwerpen
+hieronder’ in de huidige detailtekst is achtergebleven na de eerdere verplaatsing.
+
+**Zelfstandig houden:** hoe-vertel-ik-het is gespreksvoorbereiding, niet hetzelfde
+als een steunnetwerk opbouwen of erkenning krijgen. ‘Ik durf geen hulp te vragen’
+is een waardevolle herkenningsingang hier, geen extra URL. Zelfvertrouwen gaat om
+ruimte voor voorkeuren en beslissingen; oefenen hoeft niet te bewijzen dat je
+steeds gelijk hebt. Triggers gaat om een specifiek ontregelend moment; contact
+na een breuk om blijvende communicatie en veiligheid. Ouderschap/herstel gaat om
+je draagkracht met kinderen, ouderschap-na-controle om druk en contact tussen
+ouders. Praktische-stappen is de taakgerichte oriëntatie na een breuk en moet
+specialistische document-, geld- en hulpvragen via korte routes bereikbaar maken.
+
+**Concrete bron-/veiligheidsvragen:** bij triggers zijn ‘bijna nooit haast’,
+uitstellen tot morgen, een vast kort antwoord en niet antwoorden nu te algemeen.
+Een bericht kan een actuele bedreiging of tijdgebonden praktische vraag bevatten;
+sterke spanning mag niet automatisch worden verklaard als iets van vroeger.
+De verklaring ‘lichaam heeft geleerd’ vraagt klinische broncontrole. Bij
+zelfvertrouwen zijn herhaalde juistheid en ‘vraag minder snel bevestiging’ geen
+universele herstelmethode; steun vragen mag niet als mislukking worden neergezet.
+Bij vertellen is ‘moeilijkste stap, zeker voor mannen’ niet bewezen door een
+verschil in contactpercentages. ‘Meestal meer over het onderwerp dan over jou’
+verklaart de reactie van een ander zonder bewijs; erken het effect rechtstreeks.
+
+Bij praktische-stappen is ‘helpen het meest’ ongefundeerd; toestemming voor
+gegevensdeling door Veilig Thuis mag niet als absolute garantie worden beschreven.
+Controleer de precieze bevoegdheden en het onderscheid advies/melding. Ook
+mediation en de algemene ouderschapsplanplicht vragen dezelfde afbakening als
+#108. Bij herstel-als-ouder is ‘hun relatie zelf ontdekken’ zonder eerdere
+veiligheidscontext te breed; pedagogische passages vereisen gerichte bronnen.
+De open oprichtermarkering blijft van Raymond en wordt niet redactioneel ingevuld.
+
+Codex verzorgt herredactie, broncontrole en migratie. Raymond wijst een klinische
+reviewer aan voor ontregeling/zelfvertrouwen, een veiligheidsreviewer voor
+communicatieadvies en een pedagogisch/familierechtelijk reviewer voor kinderen
+waar nodig. Deze tekstvergelijking is geen bronverificatie of menselijke goedkeuring.
+
+## Beslisnotitie: alertheid, uitputting, aanpassen en identiteit
+
+Volledig gelezen: hyperwaakzaamheid, ik-sta-voortdurend-aan, emotionele-uitputting,
+fawn-respons en ik-herken-mezelf-niet-meer. Vergeleken met de eerder gelezen
+zelftwijfel/bevestiging, grenzen, zelfvertrouwen en herziene berichtenpagina (#108).
+
+Hyperwaakzaamheid en aan-staan herhalen de telefoonreactie, sfeer scannen,
+blijvende alertheid, slaap/concentratie, uitleg en hulp. Er is voldoende ruimte
+voor de specifieke definitie en afbakening tegenover PTSS binnen één sterk
+gevoelsartikel. Behoud het zoekwoord en de A–Z-ingang, bronverantwoording en
+klinische afbakening; maak geen tweede artikel alleen vanwege de begrippenpijler.
+Deze samenvoeging is een redactioneel besluit, nog geen uitgevoerde migratie.
+Controleer bij uitvoering ook de verwijzing vanuit de bestaande hero-woorden.
+
+Uitputting blijft zelfstandig: energie en dagelijks functioneren zijn een andere
+vraag dan dreiging blijven volgen. Fawn blijft gerichte naslag voor het bekende
+woord, met duidelijke herkomst en beperkingen, terwijl herkenning via geen-nee,
+schuld en identiteit loopt. Identiteit blijft gaan over eigen voorkeuren en
+zelfbeeld: de drie momenten afzeggen/vooraf aanpassen/vrije middag verbinden zich
+met de gevolgen na een breuk en de kleine eigen keuze als vervolgstap. Geen
+extra artikel voor ‘wie ben ik zonder de relatie’ nodig.
+
+Voor broncontrole/herredactie: beide alertheidspagina's verklaren individuele
+reacties te zeker als aangeleerd lichaamsgedrag. ‘Dat is een slimme aanpassing’
+en ‘elke keer leert het iets nieuws’ zijn geen door de tekst bewezen medische
+feiten. Bij hyperwaakzaamheid zijn ‘gezonde reactie’ en ‘het probleem ontstaat
+als het blijft’ te absoluut: ook actuele onveiligheid en belasting verdienen hulp.
+Bij uitputting is ‘overspannen’ als alias niet hetzelfde als een beschrijving van
+emotionele leegte; maak dit geen diagnose via de index. Bij fawn zijn ‘geen
+wetenschappelijk getoetst begrip’ en ‘veel mensen herkennen’ brede claims die
+meer vereisen dan alleen het lezen van Walker. Behoud het onderscheid tussen
+klinische visie, diagnose en empirische onderbouwing zonder afwezigheid van
+onderzoek te claimen op grond van één bron.
+
+Identiteit: ‘gebeurt dat sneller’ is een onbewezen vergelijking, de formulering
+‘ze worden stil’ een beeldspraak en geen garantie over voorkeuren. Keuze-,
+contact- en reflectieadviezen moeten hun veiligheidsvoorwaarde bij zich dragen.
+Het therapieadvies mag geen werkzaamheidsclaim worden op basis van uitsluitend
+beschrijvende beroepsinformatie. De aanhoudende somberheid/vlakheid en lichamelijke
+reacties blijven concrete klinische reviewpunten; geen ik-passage toevoegen.
+Codex verzorgt broncontrole en migratie. Raymond wijst klinische/veiligheidsreview
+voor deze passages toe en bevestigt eventuele eigen ervaring uitsluitend zelf.
+
+## Beslisnotitie: therapie, professional en aandachtsoefening
+
+Volledig gelezen en onderling vergeleken: de therapiehub, CGT, exposure, EMDR,
+schematherapie, ongepubliceerde groepsschematherapie, psycholoog, meditatie,
+beeldende therapie en boksen-met-emoties. Dit onderscheidt hun bezoekersfunctie;
+het is geen actuele verificatie van medische richtlijnen of werkzaamheid.
+
+Methodepagina's blijven zelfstandige naslag voor iemand die een voorstel of
+naam wil begrijpen. De grotendeels identieke alinea's ‘geen behandeling voor
+misbruik’, ‘geen test’ en ‘wat wel/niet vaststaat’ leveren weinig eigen waarde.
+Behoud per pagina een korte passende afbakening en meer concrete uitleg over
+wat een bezoeker kan vragen/verwachten, zonder algemeen onderzoeksoverzicht te
+suggereren. Groepsschematherapie blijft in de bestaande gecombineerde pagina:
+geen tweede publicatie. Controleer vooral intake, ruimte voor individuele
+begeleiding en vertrouwelijkheid als unieke overdrachtspunten.
+
+Een psycholoog is een professional, meditatie een verzamelnaam en boksen-met-emoties
+een niet eenduidig omschreven activiteit; ze zijn niet dezelfde soort keuze als
+EMDR of CGT. De hub moet dat zichtbaar onderscheiden zonder bestaande URL's te
+verliezen. In #104 zijn alvast de vier kaarten die losse ervaringen rechtstreeks
+aan behandelvormen koppelden verwijderd. Ervaringsroutes en gespreksvoorbereiding
+vervangen die koppeling; alle bestaande behandelpagina's blijven vindbaar.
+
+Broncontrole nodig: de CGT-zin ‘geen behandeling voor de gevolgen van emotioneel
+misbruik als zodanig’ kan ten onrechte behandeling van klachten uitsluiten.
+De opsommingen onder EMDR/exposure verwarren de begrenzing van geraadpleegde
+bronnen met afwezigheid van bewijs voor andere indicaties. De meditatiezin
+‘één erkende vorm’ suggereert een volledigheid die de twee aangehaalde bronnen
+niet bewijzen. ‘Geen geverifieerd bewijs’ moet expliciet slaan op deze sitecontrole,
+niet op de stand van alle wetenschap. Vaktherapiebeschrijvingen bewijzen geen
+specifiek effect bij deze bezoekers. De registratievraag ‘BIG of beroepsvereniging’
+mag verschillende bevoegdheden/kwalificaties niet gelijkstellen; controleer
+professionele titels en registers tegen primaire informatie.
+
+Raymond bevestigt uitsluitend zelf de bestaande persoonlijke uitspraken en open
+invulmarkeringen. Codex verzint geen uitkomsten of behandelvolgorde. Raymond wijst
+een klinische reviewer aan voor de methode-uitleg, indicaties en grenzen; zo nodig
+een juridisch deskundige voor titel-/registratie-uitleg. Codex voert gerichte
+broncontrole, redactionele inkorting en de navigatieverbetering uit. De menselijke
+review is niet verkregen door deze overlapreview.
+
+## Beslisnotitie: aandacht, terugkeer, stilte en verklarende labels
+
+Volledig vergeleken: love-bombing, hoovering, silent-treatment, projectie,
+psychische-manipulatie, narcisme en sociopathie-en-psychopathie. Vergelijking met
+reeds gelezen dwingende controle, emotioneel misbruik, schuldverschuiving/DARVO,
+gemis en de contactrevisies in #108. Geen nieuwe medische bronverificatie.
+
+Love-bombing en hoovering houden hun verschillende tijd/contextvraag: tempo en
+ruimte bij toenadering versus hoop en grenzen na afstand. Silent-treatment
+verklaart een eigen communicatiepatroon en onderscheidt dit van tijd nodig hebben.
+Projectie blijft naslag voor wie het woord kent; de innerlijke verklaring mag
+niet worden vastgesteld uit een beschuldiging. Psychische manipulatie hoort een
+korte verzamelbegrip-ingang te zijn, met specifieke mechanismen elders. Narcisme
+behoudt covert/kwetsbaar als sectie; sociopathie/psychopathie/ASPS blijven één
+vergelijkingsartikel. Geen nieuwe URL's voor deze varianten nodig.
+
+**Concrete verdieping:** love-bombing begint met bronnen en schrijft achteraf
+invloed krijgen als bedoeling toe; begin bij ervaren tempo en de reactie op
+ruimte vragen. Eén studentenstudie is geen bewijs van een persoonstype of een
+universele relatiecyclus. Bij hoovering zijn de ongefundeerde afwezigheidsclaim
+over onderzoek, de vaste dag wachttijd en ‘terugvallen’ aangepakt in #108.
+Een fictieve scène verbindt vriendelijke woorden met terugkerende druk nadat
+geen afspraak wordt gemaakt. Crisis en noodzakelijke contactafspraken vragen
+passende hulp, geen beoordeling van echtheid door de bezoeker.
+
+Silent-treatment moet de termen stonewalling, demand-withdraw en doelgericht
+straffen niet als synoniemen behandelen. Bij projectie is ‘misschien eerder iets
+naars meegemaakt’ een speculatieve verklaring die herkenning onderbreekt; beschrijf
+wat observeerbaar is. Bij manipulatie passen veilige voorwaarden vóór advies om
+te vertragen of concrete informatie te vragen. De scène laat een vermoeden van
+ziekteverzinnen zien, maar geen vastgestelde misleiding; houd dat onderscheid.
+
+De twee diagnosepagina's herhalen uitvoerig algemene gevolgen, eigenschappen,
+afhankelijkheid en hulp. Maak dat kort en specifiek met routes naar het centrale
+waarom-ik-/controle-/herstelartikel. Beweringen over wat rechters/politie wel of
+niet meewegen zijn geen onderbouwd juridisch advies. Vermijd formuleringen die
+één ernstig incident wegzetten doordat het geen herhaald patroon is. De
+classificatie-uitleg over DSM/ICD, ontstaan, empathie en psychopathie vraagt
+actuele primaire broncontrole. ‘Welke mensen trekken zulke mensen aan’ wordt
+niet als profiel uitgewerkt: omstandigheden en waardevolle eigenschappen zijn
+geen oorzaak of schuld van misbruik.
+
+Codex voert herredactie en gerichte broncontrole uit. Raymond wijst een klinische
+reviewer toe voor diagnostische begrippen en een veiligheidsreviewer voor
+contact-/grensadvies; juridische passages moeten worden onderbouwd of geschrapt.
+Geen routes gewijzigd en geen menselijke goedkeuring afgeleid uit de tekstreview.
+
+## Volledige lezing: vier vragenkaarten en gedeelde uitleg
+
+De zelfreflectie-, naasten-, partnergespreks- en hulpverlenerskaart en Over de kaarten
+zijn volledig gelezen. De vier taken rechtvaardigen afzonderlijke hulpmiddelen,
+geen vier nieuwe uitlegseries. De woordenvinder zoekt passende inhoud; de vrije
+zelfreflectiekaart helpt één eigen zin formuleren. Steun durven vragen hoort bij
+Hoe vertel ik het, Hulp vinden en concrete gespreksvoorbereiding, zonder nieuwe URL.
+
+De hub wordt in #104 vereenvoudigd: tekstingangen plus een compact volledig aanbod,
+geen herhaling van de tools-keuzehulp, woordenvinderkaart en grote kaartencollectie.
+Bestaande kaarten en URL’s blijven bereikbaar. Raymond wijst een veiligheidsreviewer
+aan voor partnergesprek, berichten aan naasten en veilig omgaan met papier; klinische
+reviewer controleert huisarts/POH-formulering. De technische privacy- en printbeloftes
+vragen verificatie tegen de werkelijke component, niet alleen redactionele lezing.
+
+## Volledige lezing: uitleg, naslag en verantwoording
+
+Wat het met je kan doen behoudt de samenhang tussen gevolgen als eigen functie;
+de afzonderlijke gevoelsvragen blijven waar ze een eigen behoefte beantwoorden.
+Woorden om te ordenen herhaalt daarentegen vrijwel volledig de introductie en
+navigatie van Begrijp het. Besluit: samenvoegen in die hub, met behoud van bruikbare
+herkenning en zorgvuldig omzetten van URL, ankers en relaties. Nog geen redirect
+of verwijdering uitgevoerd.
+
+Begrippen, Zoeken en Mannen in cijfers hebben verschillende vind- of naslagfuncties.
+Van Mannen in cijfers is de volledige hubtekst gelezen, niet opnieuw alle data en
+CBS-bronnen; dat verschil blijft expliciet. Over, Werkwijze, Veilig gebruik en
+Toegankelijkheid blijven afzonderlijk: afzender, inhoudelijke verantwoording,
+privacy en bedienbaarheid zijn geen uitwisselbare bezoekersvragen.
+
+Raymond bevestigt persoonlijke Over-tekst en regelt privacy-/klinische review waar
+nodig. Codex corrigeert aantoonbaar te stellige technische testclaims, verifieert
+sitegedrag en maakt de consolidatie reviewbaar zonder inhoud stilzwijgend te verliezen.
+
+## Ontdekroutes en persoonlijk verhaal
+
+Ook home, de volledige woordenvinder-YAML en Mijn verhaal (inclusief tijdlijn,
+therapie en brief) zijn volledig gelezen. De actuele Voelen-, Herstel- en
+Hulpmiddelen-hubs zijn beoordeeld op #104, waar de uitvoerbare vereenvoudiging
+staat. De matrix beschrijft hun functie; een volledige bron-, menselijke en
+visuele beoordeling blijft een afzonderlijke eis. Een gelezen bestand is geen
+klinisch akkoord en een automatisch gegenereerde route geen extra kernartikel.
+
+De woordenvinder behoudt zes optionele vragen. De uitkomsten verwijzen naar
+bestaande content, waaronder de termen die kandidaat voor consolidatie zijn.
+Bij elke samenvoeging moeten ook deze translationKeys en uitkomstlinks worden
+omgezet, zonder selectie te laten verdwijnen of de vragenlijst uit te breiden.
+
+## Eerste uitvoering: #111
+
+Woorden om te ordenen is op `codex/consolidatie-woorden` (7f1660f) opgenomen in
+de actuele Begrijp het-hub van #104. De oude URL is een statische doorverwijzing,
+de drie H2-ankers staan op de hub en de dubbele bron is ongepubliceerd bewaard.
+Zoekdata, sitemap en de deeper-verwijzing zijn aangepast. Lokale check 35 tests
+en build/distributie-audit 109 HTML-pagina’s geslaagd. Browserredirect en visuele
+controle volgen in CI; nog niet gemergd of gepubliceerd. Overige voorgestelde
+consolidaties zijn nog niet uitgevoerd.
+
+## Tweede uitvoering: herstelintroductie
+
+#111 bevat vanaf 13a9607 ook Wat herstel kan betekenen → Herstel. Vijf oude
+H2-ankers, voorbeeldgedachte, hulpcontext, bronnen en drie niet-invulbare
+reflectievragen zijn opgenomen in de hub. Oude URL is een statische redirect;
+de dubbele bron blijft ongepubliceerd. Twee Thuisarts-bronnen opnieuw gelezen,
+klinische beoordeling door een door Raymond aan te wijzen reviewer blijft open.
+Check 35 tests en build/audit 109 pagina’s geslaagd; browser/visuele beoordeling
+van deze versie nog open. Dit vervangt de eerdere notitie dat deze specifieke
+consolidatie nog niet was uitgevoerd; er is nog geen merge of publicatie.
+
+## Derde uitvoering: zelftwijfel als één kernartikel
+
+#112 (`codex/consolidatie-zelftwijfel`, 856cdd4) voert het eerder vastgelegde
+zelftwijfelbesluit uit, bovenop #111. Definitie, aliassen, broncontext en zeven
+oude ankers blijven op de gevoelspagina. De bestaande glossary-metadata zorgt
+voor één A–Z-ingang. Woordenvinder houdt de gevoelsroute en verliest alleen de
+dubbele begripssuggestie. Related-keys en interne links zijn aangepast; de oude
+begripsroute is een redirect, de bron blijft ongepubliceerd bewaard.
+
+Lokale check 35 tests en build/audit 109 pagina’s geslaagd. A–Z, zoekdata,
+sitemap, ankers en gebouwde woordenvinderdata gericht gecontroleerd. Nieuwe
+browser-/visuele controle nog open. Raymond bevestigt de ongewijzigde
+founderNote en wijst klinische review toe voor slaap/somberheid/angst en
+duiding van onderzoeksverbanden. Abstracten zijn gelezen, geen volledige nieuwe
+literatuurreview geclaimd. Dit is uitvoering in een concept-PR, geen publicatie.
+
+## Vierde uitvoering: aanhoudende alertheid als één kernartikel
+
+#113 (`codex/consolidatie-waakzaamheid`, b397498) bundelt Hyperwaakzaamheid met
+Ik sta voortdurend aan, bovenop #112. De volledige teksten zijn vergeleken;
+definitie, PTSS-afbakening, oude aliassen en zes oude sectieankers blijven
+behouden. De fictieve scène na een breuk en uitleg bij een nieuwe relatie
+maken onderscheid tussen eerdere ervaringen en huidige dreiging. Gevoeligheid
+voor sfeer is geen verantwoordelijkheid voor andermans gedrag.
+
+A–Z, contextlinks, hero en woordenvinder wijzen naar het gevoelsartikel. Geen
+extra vragen; triggers/contact blijft een aparte hulpvraag. De oude begripsroute
+krijgt een statische redirect; bronbestand ongepubliceerd bewaard. APA en drie
+Thuisarts-pagina’s gelezen. Projectcheck en build/audit 109 pagina’s geslaagd;
+na build alle 35 tests geslaagd. Nieuwe browser-, print- en visuele beoordeling
+staan open. Raymond wijst een klinische reviewer aan voor PTSS-afbakening,
+lichamelijke klachten, hulpurgentie en adviezen vóór publicatie. Geen merge.
+
+## Vijfde uitvoering: financieel begrip en signalen naar het hoofdartikel
+
+#114 (`codex/consolidatie-financieel`, 4796653), bovenop #113, voert de financiële
+bundeling uit. Drie volledige teksten zijn vergeleken. Het verschil tussen
+financiële uitbuiting en een patroon van economische controle staat nu expliciet
+in de hub. Signalen, fictieve scènes, patroonontwikkeling en de periode na een
+breuk/nieuwe relatie zijn opgenomen. Vijf herhalende kaarten vervallen; gerichte
+praktische artikelen houden hun eigen functie en bereikbaarheid.
+
+Twee oude URL’s krijgen statische redirects; vijftien H2/H3-ankers zijn behouden.
+A–Z-aliassen, contextlinks, related-keys en woordenvinder zijn aangepast. Mijn
+verhaal en Over wijzigen alleen linkbestemmingen. Oude bronbestanden blijven
+ongepubliceerd bewaard. Projectcheck geslaagd; na build 35 tests geslaagd,
+109 pagina’s gebouwd en geaudit. Browser-/printbeelden van deze nieuwe versie
+nog beoordelen. Raymond wijst financiële/juridische review toe vóór publicatie;
+klinische formuleringen blijven onderdeel van de bredere review. Geen merge.
