@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-10-20
+updatedAt: 2026-11-14
 reviewedAt: null
 order: 90
 cardTitle: 'Steunnetwerk'
@@ -33,6 +33,18 @@ reflection:
   writable: true
 related: [voor-naasten, kaart-naaste, herstel-erkenning, herstel-ouderschap, hulp-vinden]
 sources:
+  - label: 'Hulp en steun vragen'
+    url: 'https://www.slachtofferhulp.nl/emotionele-hulp/hulp-en-steun-vragen/'
+    publisher: 'Slachtofferhulp Nederland'
+    checkedAt: 2026-11-14
+  - label: 'Op een goede manier reageren op wat iemand doormaakt'
+    url: 'https://www.slachtofferhulp.nl/voordehelpers/iemand-ondersteunen/goede-manier-reageren/'
+    publisher: 'Slachtofferhulp Nederland'
+    checkedAt: 2026-11-14
+  - label: 'De adviesfunctie van Veilig Thuis'
+    url: 'https://www.veiligthuis.nl/nl/over-ons/de-adviesfunctie-van-veilig-thuis'
+    publisher: 'Veilig Thuis'
+    checkedAt: 2026-11-14
   - label: 'Thuisarts — Somber of depressief? Zo helpt de praktijkondersteuner'
     url: 'https://www.thuisarts.nl/depressie/somber-depressief-hulp-praktijkondersteuner'
     publisher: Thuisarts
@@ -46,6 +58,7 @@ sources:
     publisher: 113 Zelfmoordpreventie
     checkedAt: 2026-10-20
 reviewNotes:
+  - 'Veiligheidsreviewer, aan te wijzen door Raymond: beoordeel contact herstellen, afspraken over vertrouwelijkheid en ruimte voor professionele steun zonder bestaand netwerk. Klinische reviewer: nieuwe-relatiepassage en professionele hulproute.'
   - 'Redactie: is de verwijzing naar de vragenkaart voor naasten (kaart-naaste) en de pagina voor naasten de juiste combinatie?'
   - 'Clinicus: klopt de korte omschrijving van de praktijkondersteuner (POH-GGZ) met de Thuisarts-pagina?'
   - 'Redactie: een opmerking over lotgenotengroepen is bewust weggelaten omdat er geen geverifieerde bron is. Wil je die toevoegen?'
@@ -53,15 +66,15 @@ reviewNotes:
 
 ## Waarom steun ertoe doet
 
-Herstellen doe je zelden helemaal alleen. Mensen om je heen kunnen luisteren, meedenken, afleiden of gewoon aanwezig zijn. Ze kunnen je eraan herinneren wie je bent, op momenten dat je dat zelf even kwijt bent.
+Mensen om je heen kunnen luisteren, meedenken, afleiden of gewoon aanwezig zijn. Je hoeft niet pas contact te zoeken wanneer je precies weet wat er gebeurde of welke hulp je nodig hebt. Ook gezelschap zonder uitleg kan welkom zijn.
 
 Na een relatie waarin je je terugtrok of [contacten verwaterden](nl/begrippen/isolatie/), kan dat netwerk kleiner zijn geworden. Misschien schaam je je om na lange tijd weer contact te zoeken. Misschien weet je niet wat mensen hebben gehoord. Dat is begrijpelijk. Een netwerk kun je opnieuw opbouwen, stap voor stap.
 
 ## Hulp vragen als man
 
-Veel mannen hebben geleerd dat hulp vragen iets is wat je liever niet doet. Je lost het zelf op. Je wilt niemand lastigvallen. Je bent bang dat je niet serieus genomen wordt, of dat mensen je zwak vinden. Bij emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) kan daar nog bijkomen dat je denkt: dit overkomt mannen niet.
+Als je vindt dat je het als man zelf moet oplossen, kan hulp vragen voelen alsof je tekortschiet. Of je vreest dat mensen je niet geloven. Bij emotioneel of [financieel misbruik](nl/begrijp-het/financieel-misbruik/) kan daar de gedachte bij komen: dit overkomt mannen niet.
 
-Dat gevoel is begrijpelijk, maar het klopt niet. Iedereen kan te maken krijgen met misbruik, en iedereen mag hulp vragen. Hulp vragen is geen bekentenis van falen. Het is een manier om de last niet in je eentje te dragen.
+Je hoeft je niet te schamen voor die drempel. Ook mannen maken misbruik mee en mogen steun krijgen. Hulp vragen is geen bekentenis van falen. Het is een manier om de last niet in je eentje te dragen.
 
 Dit geldt net zo goed voor vrouwen en non-binaire mensen. Iedereen die dit leest, mag steun zoeken.
 
@@ -75,6 +88,10 @@ Je hoeft niet meteen [je hele verhaal te vertellen](nl/herstel/hoe-vertel-ik-het
 
 Je bepaalt zelf hoeveel je deelt en met wie.
 
+**Voorbeeld — verzonnen situatie.** Je hebt een vriend maanden niet gesproken. Eerst kwam dat door drukte; later vermeed je afspraken omdat er thuis gedoe over kwam. Nu wil je opnieuw contact, maar je schaamt je. Je stuurt: ‘Ik ben een tijd stil geweest. Ik zou graag eens wandelen, als je daarvoor openstaat.’ Je hoeft in dat eerste bericht nog niet alles te verklaren.
+
+Pas wanneer je weer iemand buiten de relatie spreekt, kan opvallen hoe weinig ruimte er voor die contacten was. Dat inzicht kan pijn doen. Je hoeft verloren contact niet in één keer goed te maken en je kunt niet bepalen hoe iemand reageert. Als deze persoon niet beschikbaar is, mag je ook elders beginnen.
+
 ## Veilige mensen kiezen
 
 Niet iedereen is even geschikt om op te leunen. Kijk naar hoe je je voelt na contact met iemand.
@@ -82,14 +99,16 @@ Niet iedereen is even geschikt om op te leunen. Kijk naar hoe je je voelt na con
 Een veilig persoon:
 
 - laat je uitpraten en vraagt door;
-- oordeelt niet meteen of kiest geen kant;
-- houdt voor zich wat je in vertrouwen vertelt;
+- neemt jouw ervaring serieus zonder jou te ondervragen of de ander automatisch te verdedigen;
+- bespreekt met je wat vertrouwelijk blijft en deelt niet zomaar jouw verhaal;
 - duwt je niet in een richting, bijvoorbeeld om de ander te confronteren;
 - respecteert het als je even niet wilt praten.
 
-Wees voorzichtiger bij mensen die nog nauw contact hebben met de ander, die snel doorvertellen, of bij wie je je na een gesprek kleiner of schuldiger voelt.
+Bij gedeelde vrienden kan het verstandig zijn eerst te bespreken wat zij met informatie doen. Iemand kan jullie allebei kennen en toch zorgvuldig luisteren. Ga niet alleen af op een belofte: let ook op of die persoon je keuzes respecteert en niet op eigen initiatief contact met de ander zoekt.
 
 Het hoeft niet één persoon te zijn die alles kan. Iemand om mee te praten, iemand voor praktische hulp en iemand om gewoon mee te sporten of koffie te drinken: samen vormen ze een netwerk.
+
+Ook in een nieuwe relatie blijft eigen contact met anderen waardevol. Je nieuwe partner hoeft niet je enige luisteraar of hulpverlener te worden. Je mag daarnaast vrienden, familie of professionele steun hebben.
 
 ## Professionele steun
 
@@ -103,4 +122,4 @@ Ben je zelf een vriend, familielid of collega van iemand die het moeilijk heeft?
 
 ## Een volgende stap
 
-Kies één persoon bij wie je je redelijk veilig voelt, en neem deze week contact op. Het hoeft geen groot gesprek te zijn. Een bericht, een kop koffie of een wandeling is genoeg om te beginnen.
+Als je eraan toe bent, kies één persoon bij wie je je veilig genoeg voelt voor een kleine vraag. Een bericht, een kop koffie of een wandeling kan een begin zijn. Ken je nu niemand bij wie dat kan, dan mag je beginnen bij professionele steun. Je hoeft niet eerst een netwerk te hebben om hulp te krijgen.
