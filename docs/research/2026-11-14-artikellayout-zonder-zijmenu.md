@@ -72,3 +72,11 @@ avoid. Contactgegevens en zichtbare inhoud veranderen niet. De printaudit van
 de layoutbranch neemt nu ook Ik sta voortdurend aan mee. Nieuwe PDF-uitvoer
 moet nog visueel bevestigen dat dit helpt; Safari blijft open. De bronbranch
 van de gevonden PDF bevat de nieuwe content, deze layoutbranch nog niet.
+
+## Handmatige Chrome-controle — 15 november
+
+Op lokale build van deze branch, directe route `nl/wat-voel-ik/ik-twijfel-aan-mezelf/`: inhoudsopgave met spatie geopend/gesloten, Tab bereikt de eerste inhoudslink en Enter springt naar `#herken-je-dit`. Screenshot bevestigt zichtbare sectiekop en horizontale voortgang. Dit is een toetsenbordsteekproef, geen volledige schermlezercontrole.
+
+Bij 200% zoom schakelt het hoofdmenu naar de compacte variant. Bij 400% nam de vaste header te veel leeshoogte in. Aanpassing: bij een schermhoogte tot 30rem scrolt de header mee weg en worden de zwevende knoppen compacter, met minstens 2.75rem bedieningshoogte. De voortgang volgt de zichtbare onderrand van de header en komt bovenaan wanneer deze uit beeld is. Handmatig opnieuw bekeken in Chrome op 400%: header blijft niet boven de artikeltekst staan en de voortgang blijft zichtbaar. Zoom daarna teruggezet op 100%.
+
+`npm run check` geslaagd (33 tests); noindex-build en distributie-audit geslaagd, 108 pagina’s op deze afzonderlijke layoutbranch. CI op de vervolgcommit moet de bestaande mobiele/menu-, axe-, print- en UX-regressiechecks opnieuw uitvoeren. Safari is op verzoek van de gebruiker vervangen door Chrome als browser voor de huidige handmatige controles; er is geen Safari- of schermlezerresultaat geclaimd.

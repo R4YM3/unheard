@@ -2746,6 +2746,28 @@ a.card:focus-visible,
   scroll-margin-top: calc(var(--article-header-height, 6rem) + 1rem);
 }
 
+/* At high zoom or in landscape, a sticky header can consume most of the reading
+   viewport. Let it scroll away; article progress already follows its visible edge. */
+@media screen and (max-height: 30rem) {
+  .site-header {
+    position: relative;
+  }
+  .safety-dock {
+    inset-block-end: max(0.5rem, env(safe-area-inset-bottom));
+    inset-inline-end: max(0.5rem, env(safe-area-inset-right));
+    gap: 0.25rem;
+  }
+  .safety-dock .safe-exit {
+    min-height: 2.75rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  .safety-dock .theme-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
 /* ---------- Help me woorden vinden ---------- */
 .finder .wrap > * + * {
   margin-top: clamp(1.5rem, 4vw, 2.5rem);
