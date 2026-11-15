@@ -1,4 +1,4 @@
-import { mkdir, stat } from 'node:fs/promises';
+import { mkdir, readFile, stat } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { setTimeout as delay } from 'node:timers/promises';
 import puppeteer from 'puppeteer-core';
@@ -12,7 +12,7 @@ const chromePath =
     ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
     : '/usr/bin/google-chrome');
 
-const routes = [
+const defaultRoutes = [
   {
     id: 'recognition-hub',
     route: '/nl/wat-herken-ik/',
@@ -123,6 +123,10 @@ const routes = [
   { id: 'search', route: '/nl/zoeken/', required: ['Alle pagina’s'] },
 ];
 
+const routes = process.env.PRINT_REVIEW_ROUTES
+  ? JSON.parse(await readFile(process.env.PRINT_REVIEW_ROUTES, 'utf8'))
+  : defaultRoutes;
+
 const startServer = () =>
   spawn('python3', ['-m', 'http.server', `${port}`, '--bind', '127.0.0.1', '--directory', 'dist'], {
     stdio: 'ignore',
@@ -174,7 +178,8 @@ try {
         'therapy',
         'tool',
         'pattern',
-      ].includes(item.id)
+      ].includes(item.id) ||
+      item.screenshots
     ) {
       await page.emulateMediaType('screen');
       for (const width of [390, 1440]) {

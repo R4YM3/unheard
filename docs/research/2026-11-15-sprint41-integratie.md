@@ -91,3 +91,18 @@ accessibilitycontrole van die conceptartikelen in een geïsoleerde preview.
 Na samenvoeging met actuele main en #116: `npm run check` opnieuw geslaagd
 (Astro 0 fouten/waarschuwingen/hints en 33 tests); noindex-productiebuild
 109 HTML-pagina’s met geslaagde distributie-audit.
+
+## Geïsoleerde conceptpreview
+
+`scripts/audit-draft-previews.mjs` kopieert de checkout naar een tijdelijke map,
+activeert daar uitsluitend de drie genoemde conceptartikelen en forceert noindex.
+De echte Markdown-bestanden en normale dist blijven onaangeraakt. De tijdelijke
+build levert 112 pagina’s en passeert de distributie-audit; de gewone build
+behoudt 109 pagina’s. Een lokale `--build-only`-controle bevestigde dit.
+
+Een apart PR-only CI-job voert op die tijdelijke build de bestaande print-,
+axe- en UX-audits uit. De printaudit krijgt drie expliciete routes en bewaart
+A4-PDF’s plus mobiele/desktopbeelden als `draft-browser-review`. Deze job heeft
+alleen leesrechten op de repository, uploadt geen Pages-artifact en kan niet
+deployen. De tijdelijke HTML wordt opgeruimd. De preview geeft reviewers zicht
+op de concepten; zij is geen inhoudelijke goedkeuring of publicatieroute.

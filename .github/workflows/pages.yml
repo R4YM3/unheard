@@ -39,6 +39,24 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         if: github.event_name != 'pull_request'
         with: { path: dist }
+  draft-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: node scripts/audit-draft-previews.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: draft-browser-review
+          path: work/draft-review/
+          if-no-files-found: ignore
+          retention-days: 7
   deploy:
     if: github.event_name != 'pull_request'
     needs: check
