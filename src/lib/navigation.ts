@@ -67,7 +67,7 @@ const nlSections: Section[] = [
       { href: 'nl/begrijp-het/emotioneel-misbruik/', label: 'Emotioneel misbruik' },
       { href: 'nl/begrijp-het/financieel-misbruik/', label: 'Financieel misbruik' },
       { href: 'nl/begrippen/', label: 'Begrippen A–Z' },
-      { href: 'nl/mannen-in-cijfers/', label: 'In cijfers' },
+      { href: 'nl/begrippen/dwingende-controle/', label: 'Dwingende controle' },
     ],
     prefixes: ['nl/begrijp-het/', 'nl/begrippen/', 'nl/mannen-in-cijfers/'],
   },
@@ -95,7 +95,7 @@ const nlSections: Section[] = [
     menu: { href: 'nl/hulpmiddelen/', label: 'Hulpmiddelen' },
     label: 'Binnen Hulpmiddelen',
     tabs: [
-      { href: 'nl/hulpmiddelen/', label: 'Vragenkaarten' },
+      { href: 'nl/hulpmiddelen/', label: 'Alle hulpmiddelen' },
       { href: 'nl/ik-maak-me-zorgen-om-iemand/', label: 'Voor naasten' },
       { href: 'nl/veilig-gebruik/', label: 'Veilig gebruik' },
     ],
