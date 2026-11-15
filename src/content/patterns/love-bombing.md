@@ -62,14 +62,6 @@ Augeo en de factsheet over intieme terreur beschrijven hoe snelle toenadering ka
 - Kritiek op mensen die twijfels uiten: "Je vrienden gunnen ons dit gewoon niet."
 - Een plotselinge omslag als je ruimte voor jezelf neemt: kilte, verwijten of stilte.
 
-> **Illustratief voorbeeld — verzonnen, geen echt gesprek**
->
-> Week drie: "Ik heb een weekend Parijs geboekt. Zeg je voetbal maar af, dit is belangrijker toch?"
->
-> Week zes: "Waarom wil je per se met je vrienden weg? Ik dacht dat wij iets bijzonders hadden."
->
-> Jij, later: _Het voelde als liefde. Wanneer werd het een verplichting?_
-
 ## Wanneer aandacht een verplichting gaat voelen
 
 **Voorbeeld — fictief.** Eerst vind je het fijn dat iemand je na je werk komt ophalen. Later wordt er boos gereageerd als je zelf naar een vriend wilt gaan. Je zegt af, omdat je het mooie begin niet wilt verpesten. Na een tijd plan je niets meer zonder eerst te vragen of het goed is.

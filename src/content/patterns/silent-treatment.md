@@ -63,18 +63,6 @@ Veilig Thuis noemt het voortdurend negeren van je behoeften en gevoelens als sig
 - De stilte stopt pas als jij het onderwerp laat vallen.
 - Je weet vaak niet precies wat je 'fout' deed, en gaat zelf zoeken.
 
-> **Illustratief voorbeeld — verzonnen, geen echt gesprek**
->
-> Jij, 's avonds: "Ik zou het fijn vinden als we het over het weekend kunnen hebben."
->
-> De ander: geen antwoord. Ook niet de volgende ochtend. Of de dag daarna.
->
-> Jij, op dag drie: "Sorry als ik je gekwetst heb. Laten we het gewoon vergeten."
->
-> De ander: "Prima." En alles lijkt weer normaal.
-
-In het voorbeeld is niet het zwijgen zelf het punt, maar wat het oplevert: jij laat je vraag vallen, en het onderwerp komt niet meer terug.
-
 ## Hoe je steeds minder gaat vragen
 
 **Voorbeeld — fictief.** Eerst denk je dat je de ander tijd moet geven. Na twee dagen zonder antwoord zeg je sorry en laat je je vraag over het weekend vallen. Er wordt weer gewoon gepraat. De volgende keer begin je niet meer over je eigen plannen: je wilt niet opnieuw dagen naast elkaar leven zonder contact.

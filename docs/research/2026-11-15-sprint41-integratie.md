@@ -41,14 +41,16 @@ geen bewijs van juiste werking.
 
 ## Resterende grenzen
 
-De nieuwe kernartikelen over herkenning achteraf en seksuele druk blijven
-ongepubliceerd. De build test hun zichtbare artikeluitvoer daarom nog niet.
+De nieuwe kernartikelen over herkenning achteraf, seksuele druk en digitale controle blijven
+ongepubliceerd. De gewone build bevat ze niet; de afzonderlijke geïsoleerde conceptaudit
+test hun tijdelijke uitvoer zonder publicatie (zie hieronder).
 Bronchecks zijn geen klinische of juridische goedkeuring. Raymond bevestigt de
 bestaande persoonlijke passages en wijst gekwalificeerde reviewers toe aan de
 medische, juridische en veiligheidsvragen in de afzonderlijke PR’s.
 
-Nieuwe gecombineerde browser-/printuitvoer, Safari, handmatige screenreader en
-zoomcontrole blijven te beoordelen. De matrix bevat ook nog niet uitgewerkte
+De nieuwste gecombineerde browser-/printuitvoer en de handmatige screenreadercontrole
+blijven te beoordelen. Chrome-zoom is gericht gecontroleerd (zie hieronder); Safari
+is niet getest. De gebruiker heeft Chrome als testbrowser aangewezen. De matrix bevat ook nog niet uitgewerkte
 A–J-lacunes en redactionele vervolgwerkzaamheden. Deze integratie sluit #44 of de
 brede goal niet af. Niet automatisch mergen of publiceren als CI groen wordt.
 
@@ -59,9 +61,8 @@ is en worden dubbele reviewbranches niet onbeperkt open gehouden. #109 is naar
 main gemerged (3b10e7e); deze integratie bevat die actuele main. #104 (ingangen) en
 #110 (artikellayout) blijven afzonderlijk beoordeelbaar voor een technische
 release. De inhoudelijke wijzigingen van #103, #105, #106, #108, #111, #112,
-#113, #114 en #116 zijn volledig opgenomen in deze branch. Hun oude PR’s kunnen
-na het pushen van deze integratie als vervangen worden gesloten, zonder branches
-of werkbomen te verwijderen. Dat is geen publicatie of inhoudelijke goedkeuring.
+#113, #114 en #116 zijn volledig opgenomen in deze branch. Hun oude PR’s zijn als vervangen gesloten; #116 is in de integratiebranch gemerged,
+zonder branches of werkbomen te verwijderen. Dat is geen publicatie of inhoudelijke goedkeuring.
 
 De reviewopvolging staat voortaan in #115 en issue #44:
 
@@ -125,7 +126,7 @@ Safari- of schermlezercontrole en geen inhoudelijke publicatiegoedkeuring.
 - H: zorg en lichamelijke autonomie verwerkt in dwingende controle, seksuele druk (ongepubliceerd) en uitputting (7f51c07). Lokale check, gewone build 109 en geïsoleerde conceptbuild 112 geslaagd. CI 43695615994 was bij vastlegging nog actief.
 - I: context en hulproutes toegevoegd aan Hulp vinden en Voor naasten, zonder nieuwe pagina's. Lokale check inclusief 33 tests en build van 109 pagina's geslaagd. Bestaande telefoonnummers niet opnieuw geverifieerd en niet gewijzigd.
 
-Per cluster staan bronbereik, beperkingen en concrete reviewvragen in de bijbehorende bronnotitie en frontmatter. Raymond wijst de inhoudelijke/veiligheidsreviewers aan; H vraagt ook klinische review. Deze wijzigingen zijn geen publicatiegoedkeuring. Safari-toegang ontbreekt nog; de gebruiker heeft instructies gekregen voor de appinstellingen.
+Per cluster staan bronbereik, beperkingen en concrete reviewvragen in de bijbehorende bronnotitie en frontmatter. Raymond wijst de inhoudelijke/veiligheidsreviewers aan; H vraagt ook klinische review. Deze wijzigingen zijn geen publicatiegoedkeuring. Safari is niet getest; de gebruiker heeft Chrome aangewezen. Laatste native Chrome-poging gaf cgWindowNotFound; de browserhost was eveneens niet beschikbaar.
 
 ## Aanvullende verificatie — 15 november
 
@@ -134,3 +135,11 @@ CI 43696560066 op layoutcommit d44d18a en integratie-CI 43696593281 op bac5005 z
 H: A4-pagina 4 Dwingende controle (11 pagina's totaal) en A4-pagina 3 Seksuele druk (7 pagina's totaal) uit CI 43695615994 visueel bekeken. De zorg-/rustsectie en reproductieve-autonomiesectie staan leesbaar in zwart op wit, zonder afgesneden tekst in deze beelden. Dit zijn specifieke pagina's, geen volledige handmatige audit en geen inhoudelijke goedkeuring.
 
 J: stilte en aandacht verdiept in c6dba72; korte sectie over dreiging met zelfdoding voorbereid in Dwingende controle. Lokale check/33 tests en 109-pagina-build geslaagd. Raymond wijst een klinische/veiligheidsreviewer aan voor acute hulp, eigen veiligheid en het vermijden van verantwoordelijkheid voor het leven van de ander. Overige zelfbeschadiging is daarmee niet automatisch afgedekt. Bronbereik staat in de notitie over stilte en voorwaardelijke aandacht.
+
+## Gerichte visuele controle J — 15 november
+
+CI 43697130640 op d29c9be is geslaagd. Uit het artifact browser-review zijn A4-pagina 2 silent treatment, A4-pagina 2 love bombing en A4-pagina 5 dwingende controle daadwerkelijk als PNG bekeken. De getoonde tekst is leesbaar, zonder afgesneden regels of overlap. Het stiltevoorbeeld loopt door naar de volgende pagina; die vervolgpagina is in deze ronde niet visueel beoordeeld. Mobiele volledige screenshots op 390px van stilte en love bombing zijn bekeken: tekstkolom en herkenningsfragmenten blijven binnen de viewport. De vaste verlaatknop ligt bij de beginpositie over een deel van de voorbeeldgedachte; dit blijft een UX-aandachtspunt, geen afgetekende volledige mobiele controle.
+
+De controle maakte een redactionele doublure zichtbaar: beide pagina's hadden een oud dialoogvoorbeeld direct vóór een nieuw voorbeeld met dezelfde ontwikkeling. Het oude dialoogblok is verwijderd; de concrete groei, herkenningsfragmenten en afzonderlijke nieuwe-relatiescènes blijven. De beelden hierboven bewijzen de versie vóór die inkorting, niet de definitieve paginering erna. Nieuwe printuitvoer moet opnieuw worden bekeken.
+
+Recente inhoudscorrecties a14ec3c, 942d68f, 894fcde en 4517a70 hebben elk lokale check/33 tests en gewone build/109-pagina-audit doorlopen. Dat is geen nieuwe handmatige visuele of inhoudelijke goedkeuring. De integratie blijft in review.
