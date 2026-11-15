@@ -14,6 +14,18 @@ const chromePath =
 
 const defaultRoutes = [
   {
+    id: 'silent-treatment',
+    route: '/nl/begrippen/silent-treatment/',
+    required: ['Hoe je steeds minder gaat vragen', 'Na de relatie, en bij iemand nieuw'],
+    screenshots: true,
+  },
+  {
+    id: 'love-bombing',
+    route: '/nl/begrippen/love-bombing/',
+    required: ['Wanneer aandacht een verplichting gaat voelen', 'Wat weten we over het begrip?'],
+    screenshots: true,
+  },
+  {
     id: 'recognition-hub',
     route: '/nl/wat-herken-ik/',
     required: [

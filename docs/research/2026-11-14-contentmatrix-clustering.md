@@ -716,3 +716,7 @@ absolute uitspraak over herstel na slaap/weekend is gecorrigeerd. Review in #115
 ## Uitwerking cluster I — 15 november 2026
 
 Hulp vinden bevat twee korte contextblokken over familie-/gemeenschapsdruk en afhankelijkheid van verzorging. Voor naasten verbindt deze met veilig contact en deskundig advies voordat familie wordt betrokken. Bestaande routes behouden; geen nieuwe artikelen. Broncontrole: `2026-11-15-andere-geweldsvormen-hulproutes.md`. Raymond wijst een veiligheids-/inhoudelijke reviewer aan voor deze passages vóór publicatie.
+
+## Uitwerking aandacht en stilte — 15 november 2026
+
+Silent treatment blijft de vraag naar negeren/pauze en toegeven beantwoorden; love bombing de vraag naar tempo, aandacht en eigen ruimte. Beide zijn verdiept met specifieke groei, herkenningsfragment en een fictief moment bij een nieuwe relatie. Voorwaardelijke aandacht is hierin opgenomen zonder nieuwe URL. Stonewalling is in de tekst onderscheiden en niet langer een synoniem van stilte als straf. Onderzoeksclaims zijn begrensd op het geverifieerde bronbereik; geen persoonlijkheidsprofiel uit het love-bombingonderzoek. Bronnotitie: `2026-11-15-stilte-en-voorwaardelijke-aandacht.md`. Dreiging met zelfbeschadiging/zelfdoding en overige J-onderdelen blijven afzonderlijk open.
