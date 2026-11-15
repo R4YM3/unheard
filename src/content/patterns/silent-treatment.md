@@ -10,8 +10,7 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related:
-  [emotioneel-misbruik, schuldgevoel, grenzen, hyperwaakzaamheid, herstel-grenzen, het-vertellen]
+related: [emotioneel-misbruik, schuldgevoel, grenzen, spanning, herstel-grenzen, het-vertellen]
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Als ik maar sorry zeg, praat de ander straks weer met me.'
@@ -86,7 +85,7 @@ Vragen die kunnen helpen:
 - onrust en een gevoel van onveiligheid in je eigen huis;
 - piekeren over wat je fout deed, en [schuldgevoel](nl/wat-voel-ik/ik-voel-me-schuldig/);
 - je gedrag steeds aanpassen om nieuwe stilte te voorkomen;
-- voortdurend de stemming van de ander aflezen, wat kan uitgroeien tot [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/);
+- voortdurend de stemming van de ander aflezen, wat kan uitgroeien tot [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/);
 - [moeite om nog iets te vragen of een grens aan te geven](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/).
 
 ## Wat kan helpen?

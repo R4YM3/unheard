@@ -94,7 +94,7 @@ Dit is geen portret van een type mens. Het beschrijft wat je kunt meemaken als g
 - Werd je financieel uitgebuit, bijvoorbeeld met [schulden op jouw naam](nl/begrippen/schulden-op-naam/)? Zie [financieel en economisch misbruik](nl/begrippen/financieel-economisch-misbruik/).
 - Duurde spijt kort, of werd jij juist de schuldige gemaakt? Zie [DARVO](nl/begrippen/darvo/).
 
-**Wat het met je gevoel kan doen.** Je vertrouwt je eigen oordeel minder, omdat de feiten steeds worden herschreven. Je schaamt je dat je iemand geloofde. Je wordt waakzaam en ontspant niet als het even rustig is. Boosheid en medelijden kunnen door elkaar lopen. Zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) en [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/).
+**Wat het met je gevoel kan doen.** Je vertrouwt je eigen oordeel minder, omdat de feiten steeds worden herschreven. Je schaamt je dat je iemand geloofde. Je wordt waakzaam en ontspant niet als het even rustig is. Boosheid en medelijden kunnen door elkaar lopen. Zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/) en [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/).
 
 **Wat het praktisch kan doen.** Geld raakt uit het zicht. Werk of slaap lijdt onder de spanning. Je trekt je terug uit vriendschappen, omdat uitleggen te ingewikkeld voelt. Delen wat er gebeurde kan onveilig zijn als de ander daarop reageert; dan gaat je veiligheid voor een gesprek.
 

@@ -91,7 +91,7 @@ Of iemand bewust manipuleert, kun je van buitenaf meestal niet vaststellen. Gelu
 - verwarring en twijfel aan je eigen oordeel, zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/);
 - [schuldgevoel](nl/wat-voel-ik/ik-voel-me-schuldig/) dat niet in verhouding staat tot wat je deed;
 - [moeite om nee te zeggen](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/);
-- het gevoel dat je [steeds op je hoede moet zijn](nl/begrippen/hyperwaakzaamheid/).
+- het gevoel dat je [steeds op je hoede moet zijn](nl/wat-voel-ik/ik-sta-voortdurend-aan/).
 
 ## Wat kan helpen?
 

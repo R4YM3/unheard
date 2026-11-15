@@ -10,15 +10,7 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related:
-  [
-    hyperwaakzaamheid,
-    fawn-respons,
-    herstel,
-    emotioneel-misbruik,
-    herstel-steunnetwerk,
-    het-vertellen,
-  ]
+related: [spanning, fawn-respons, herstel, emotioneel-misbruik, herstel-steunnetwerk, het-vertellen]
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Er is niks aan de hand. Ik ben alleen altijd moe.'
@@ -83,7 +75,7 @@ Uitputting kan veel oorzaken hebben: werkdruk, zorg voor kinderen of een ziek fa
 Toch kan het helpen om te kijken naar wat je energie kost:
 
 - **Wordt het beter als je even weg bent** van een bepaalde persoon of situatie?
-- **Gaat veel van je energie naar het voorkomen van conflict**, het aftasten van de sfeer of het verbergen van wat je voelt? Zie [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/) en [fawn-respons](nl/begrippen/fawn-respons/).
+- **Gaat veel van je energie naar het voorkomen van conflict**, het aftasten van de sfeer of het verbergen van wat je voelt? Zie [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/) en [fawn-respons](nl/begrippen/fawn-respons/).
 - **Is er ruimte om bij te tanken**, of wordt rust nemen afgekeurd?
 
 ## Impact op de ontvanger

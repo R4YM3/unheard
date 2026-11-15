@@ -213,7 +213,7 @@ routes:
     title: 'Spanning'
     recognition: 'Als je lang op je hoede moet zijn, blijft je lichaam alert. Dat is geen overdrijving, maar een lichaam dat zich probeert te beschermen.'
     feelings: [spanning]
-    patterns: [hyperwaakzaamheid, emotionele-uitputting]
+    patterns: [emotionele-uitputting]
     reflections:
       - 'Op welke momenten word je rustiger, al is het maar even?'
       - 'Waar let je op als je thuiskomt?'

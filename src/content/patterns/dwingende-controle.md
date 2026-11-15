@@ -126,7 +126,7 @@ Praktische afhankelijkheid, kinderen, schaamte, weinig steun of eerdere ervaring
 ## Impact op de ontvanger
 
 - je eigen oordeel minder vertrouwen, zie [zelftwijfel](nl/wat-voel-ik/ik-twijfel-aan-mezelf/);
-- voortdurend alert zijn op de stemming van de ander, zie [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/);
+- voortdurend alert zijn op de stemming van de ander, zie [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/);
 - [jezelf niet meer herkennen](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/);
 - schaamte, waardoor je er met niemand over praat;
 - moeite om het te benoemen, omdat er geen duidelijk 'incident' is.

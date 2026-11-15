@@ -52,7 +52,7 @@ Na een breuk willen veel mensen afstand. Maar soms kan dat niet helemaal. Je dee
 
 Als de relatie werd gekenmerkt door verwijten, verdraaiingen of druk, kan dat na de breuk doorgaan. Berichten over een simpele afspraak kunnen uitlopen op discussies over vroeger. Een overdracht van de kinderen kan elke keer een gespannen moment zijn. Thuisarts beschrijft dat langdurige stress vaak voortkomt uit onzekerheid, bijvoorbeeld over geld, familie of een relatie.
 
-Niet elke moeizame samenwerking na een scheiding is een teken van misbruik. Veel ex-partners hebben het lastig met elkaar. Maar als je merkt dat je [bij elk contact op je hoede bent](nl/begrippen/hyperwaakzaamheid/), mag je jezelf daarbij helpen.
+Niet elke moeizame samenwerking na een scheiding is een teken van misbruik. Veel ex-partners hebben het lastig met elkaar. Maar als je merkt dat je [bij elk contact op je hoede bent](nl/wat-voel-ik/ik-sta-voortdurend-aan/), mag je jezelf daarbij helpen.
 
 ## Wat het na een breuk nog met je kan doen
 

@@ -45,6 +45,11 @@ const routes = [
     required: ['Je hoort', 'Je voelt', 'Een grens aangeven', 'Bevestiging zoeken'],
   },
   {
+    id: 'alertness',
+    route: '/nl/wat-voel-ik/ik-sta-voortdurend-aan/',
+    required: ['Hyperwaakzaamheid', 'Na de relatie, en bij iemand nieuw', 'Een volgende stap'],
+  },
+  {
     id: 'emotion-hub',
     route: '/nl/wat-voel-ik/',
     required: [
@@ -154,6 +159,7 @@ try {
         'therapy-hub',
         'tools-hub',
         'emotion',
+        'alertness',
         'knowledge',
         'therapy',
         'tool',

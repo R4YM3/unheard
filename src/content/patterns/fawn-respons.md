@@ -10,8 +10,7 @@ author: editorial
 publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
-related:
-  [grenzen, hyperwaakzaamheid, identiteit, schuldgevoel, herstel-grenzen, herstel-leren-voelen]
+related: [grenzen, spanning, identiteit, schuldgevoel, herstel-grenzen, herstel-leren-voelen]
 readerMoment:
   label: 'Voorbeeldgedachte'
   thought: 'Als ik het maar goed doe, blijft het rustig.'
@@ -76,7 +75,7 @@ Een fawn-respons zegt ook niets over de ander. Je kunt dit patroon hebben door v
 - [moeite om nee te zeggen](nl/wat-voel-ik/ik-durf-geen-nee-te-zeggen/);
 - [jezelf niet meer herkennen](nl/wat-voel-ik/ik-herken-mezelf-niet-meer/), omdat je zo lang op anderen gericht was;
 - vermoeidheid, zie [emotionele uitputting](nl/begrippen/emotionele-uitputting/);
-- voortdurend de sfeer aftasten, zie [hyperwaakzaamheid](nl/begrippen/hyperwaakzaamheid/);
+- voortdurend de sfeer aftasten, zie [hyperwaakzaamheid](nl/wat-voel-ik/ik-sta-voortdurend-aan/);
 - [schuldgevoel](nl/wat-voel-ik/ik-voel-me-schuldig/) als je toch iets voor jezelf kiest.
 
 Voor mannen kan dit extra verwarrend zijn, omdat het botst met het beeld van de man die zijn mannetje staat. Aanpassen om veilig te blijven is een overlevingsstrategie, geen zwakte.
