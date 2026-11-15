@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-14
+updatedAt: 2026-11-15
 reviewedAt: null
 readerMoment:
   label: 'Voorbeeldgedachte'
@@ -43,7 +43,9 @@ Documenten lijken een praktisch onderwerp, maar ze raken aan iets groters: kun j
 
 Bij [financieel misbruik](nl/begrijp-het/financieel-misbruik/) kan toegang tot documenten bewust of onbewust beperkt zijn. Ook als dat niet zo is, geeft het rust om te weten waar je eigen papieren zijn.
 
-## Welke documenten zijn van jou?
+<span id="welke-documenten-zijn-van-jou"></span>
+
+## Welke documenten gaan over jouw situatie?
 
 Het gaat om stukken die over jou gaan of op jouw naam staan, bijvoorbeeld:
 
@@ -64,6 +66,10 @@ Je hoeft niet alles te hebben. Het gaat om weten wat er bestaat en waar het is.
 - Wachtwoorden van jouw bank of andere online omgevingen zijn alleen bij de ander bekend.
 - Je weet niet welke [contracten of leningen op jouw naam lopen](nl/begrippen/schulden-op-naam/).
 - Als je ernaar vraagt, volgt er een verwijt of een reactie waar je bang voor bent.
+
+**Voorbeeld — fictief.** Je wilt weten wat je verdient om een opleiding te kunnen plannen. De loonstroken komen binnen op een account waarvan alleen je partner het wachtwoord kent. Eerst wacht je tot het “een beter moment” is. Als je opnieuw vraagt, krijg je te horen dat je wantrouwig bent. Je laat het onderwerp vallen; de inschrijving blijft liggen.
+
+Samen de administratie verdelen kan rust geven. In dit voorbeeld gaat het om iets anders: informatie over je eigen situatie wordt onbereikbaar en vragen ernaar heeft gevolgen. Vertrouwen op de ander maakt jou daar niet verantwoordelijk voor.
 
 ## Wanneer het niet zomaar af te leiden is
 

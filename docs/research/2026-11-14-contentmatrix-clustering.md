@@ -720,3 +720,7 @@ Hulp vinden bevat twee korte contextblokken over familie-/gemeenschapsdruk en af
 ## Uitwerking aandacht en stilte — 15 november 2026
 
 Silent treatment blijft de vraag naar negeren/pauze en toegeven beantwoorden; love bombing de vraag naar tempo, aandacht en eigen ruimte. Beide zijn verdiept met specifieke groei, herkenningsfragment en een fictief moment bij een nieuwe relatie. Voorwaardelijke aandacht is hierin opgenomen zonder nieuwe URL. Stonewalling is in de tekst onderscheiden en niet langer een synoniem van stilte als straf. Onderzoeksclaims zijn begrensd op het geverifieerde bronbereik; geen persoonlijkheidsprofiel uit het love-bombingonderzoek. Bronnotitie: `2026-11-15-stilte-en-voorwaardelijke-aandacht.md`. Dreiging met zelfbeschadiging/zelfdoding en overige J-onderdelen blijven afzonderlijk open.
+
+## Cluster G — uitwerking bestaande routes, 15 november
+
+Afhankelijkheid bevat nu een fictieve opleidingsscène met drie momenten, een herkenningsfragment, context over wonen/bezit als druk en een sectie over de periode na de relatie en nieuwe afspraken. Documenten bevat een korte scène over beperkte toegang en een kop zonder juridische eigendomssuggestie; het oude kopanker blijft bestaan. Geen nieuwe URL of verdubbeling van de financiële hub. Schuldenadvies is eerder gecorrigeerd in a14ec3c. De printaudit neemt afhankelijkheid en documenten nu expliciet mee; nieuwe beelden zijn nog niet handmatig beoordeeld. Raymond wijst financieel/juridische en veiligheidsreviewers aan; geen publicatiegoedkeuring.

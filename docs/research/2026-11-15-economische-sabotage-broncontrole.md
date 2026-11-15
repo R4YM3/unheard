@@ -114,3 +114,7 @@ De broncontrole onderbouwt de redactionele richting, maar tekent die menselijke 
 ## Uitgevoerde eerste correctie
 
 De schuldenpagina is op 15 november aangescherpt: geen algemeen niet-betalenadvies, geen uitsluiting van dwang bij gezamenlijk gebruik, geen onbewezen algemene huurclaim en veiligheid vóór inzage of kopieën. Root heeft de volledige inhoudelijke Rijksoverheid-pagina over identiteitsfraude en BKR-overzicht opnieuw gelezen. De financiële afhankelijkheid en documentenpagina moeten nog volgens bovenstaande gap-map worden verdiept. Dit is geen menselijke juridische of veiligheidsgoedkeuring.
+
+## Cluster G — uitwerking bestaande routes, 15 november
+
+Afhankelijkheid bevat nu een fictieve opleidingsscène met drie momenten, een herkenningsfragment, context over wonen/bezit als druk en een sectie over de periode na de relatie en nieuwe afspraken. Documenten bevat een korte scène over beperkte toegang en een kop zonder juridische eigendomssuggestie; het oude kopanker blijft bestaan. Geen nieuwe URL of verdubbeling van de financiële hub. Schuldenadvies is eerder gecorrigeerd in a14ec3c. De printaudit neemt afhankelijkheid en documenten nu expliciet mee; nieuwe beelden zijn nog niet handmatig beoordeeld. Raymond wijst financieel/juridische en veiligheidsreviewers aan; geen publicatiegoedkeuring.

@@ -14,6 +14,22 @@ const chromePath =
 
 const defaultRoutes = [
   {
+    id: 'financial-dependence',
+    route: '/nl/begrijp-het/financieel-misbruik/afhankelijkheid/',
+    required: [
+      'Als werk of opleiding steeds moet wijken',
+      'Als wonen of bezit wordt gebruikt als druk',
+      'Na de relatie: opnieuw ruimte voor eigen plannen',
+    ],
+    screenshots: true,
+  },
+  {
+    id: 'financial-documents',
+    route: '/nl/begrijp-het/financieel-misbruik/toegang-tot-documenten/',
+    required: ['Welke documenten gaan over jouw situatie?', 'Als iemand meekijkt'],
+    screenshots: true,
+  },
+  {
     id: 'silent-treatment',
     route: '/nl/begrippen/silent-treatment/',
     required: ['Hoe je steeds minder gaat vragen', 'Na de relatie, en bij iemand nieuw'],
