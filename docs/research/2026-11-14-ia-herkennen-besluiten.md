@@ -264,3 +264,17 @@ blijven gewone links in het compacte overzicht; de woordenvinder verandert niet.
 De derde Over de kaarten-promotie is verwijderd; de contextuele tekstlink blijft.
 Browsercontrole controleert dat alle zes hulpmiddelen zonder JavaScript zichtbaar
 blijven. Visuele bevestiging van deze vereenvoudiging volgt nog.
+
+## Visuele vereenvoudiging na browsercontrole (15 november)
+
+Het 390px-beeld van Hulpmiddelen op 5b4ab3a liet boven de tekstingangen nog
+een kaartwaaier zien. Die herhaalde het aanbod en vereiste op touch een extra
+tik. In a80a10c is deze laag verwijderd; de zes hulpmiddelen blijven direct
+bereikbaar in de bestaande compacte lijst. Geen nieuwe component of vragen.
+
+Het 390px-beeld van Begrijp het uit CI 43655671661 (856cdd4, gestapelde
+consolidatiebranch) toont leesbare vraaggroepen, maar nog zes grote identieke
+patroonkaarten. Ook die selectie gebruikt nu de bestaande lijstweergave: titel
+en uitleg blijven behouden, evenals de directe A–Z-route. Dit verandert geen
+bestemmingen, selectie of inhoudelijke afbakening. Nieuw browserbeeld nog
+beoordelen; geen claim van Safari- of handmatige screenreadervalidatie.
