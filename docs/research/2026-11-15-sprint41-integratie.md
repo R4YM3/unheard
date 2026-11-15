@@ -143,3 +143,9 @@ CI 43697130640 op d29c9be is geslaagd. Uit het artifact browser-review zijn A4-p
 De controle maakte een redactionele doublure zichtbaar: beide pagina's hadden een oud dialoogvoorbeeld direct vóór een nieuw voorbeeld met dezelfde ontwikkeling. Het oude dialoogblok is verwijderd; de concrete groei, herkenningsfragmenten en afzonderlijke nieuwe-relatiescènes blijven. De beelden hierboven bewijzen de versie vóór die inkorting, niet de definitieve paginering erna. Nieuwe printuitvoer moet opnieuw worden bekeken.
 
 Recente inhoudscorrecties a14ec3c, 942d68f, 894fcde en 4517a70 hebben elk lokale check/33 tests en gewone build/109-pagina-audit doorlopen. Dat is geen nieuwe handmatige visuele of inhoudelijke goedkeuring. De integratie blijft in review.
+
+## Hoofdmenu inhoudelijk — eerste correctie
+
+Op verzoek van Raymond blijft de inhoudelijke hoofdmenuherziening onderdeel van de goal. Eerste correctie: Begrijp het biedt emotioneel misbruik, financieel misbruik, begrippen A–Z en dwingende controle. Dwingende controle vervangt In cijfers; cijfers blijven via de footer bereikbaar. De selectie blijft vier bestemmingen en biedt zowel kernuitleg als rechtstreeks zoeken naar een bekend begrip. Geen ongepubliceerde seksuele/digitale concepten in het menu.
+
+Bij Hulpmiddelen wordt Vragenkaarten vervangen door Alle hulpmiddelen: de bestaande bestemming bevat ook de woordenvinder. Voelen en Herkennen blijven gelijkwaardige hoofdingangen. Dit is een concrete correctie, geen afgetekende volledige menuherziening. De definitieve selectie en labels moeten nog tegen alle categorieën, mobiele presentatie en realistische zoektaken worden getoetst. Deze correctie staat in de integratiebranch; de afzonderlijke technische PR #104 moet bij verdere oplevering hiermee worden afgestemd.
