@@ -474,13 +474,6 @@ const hubs = defineCollection({
           href: internalHref,
           label: z.string().min(2),
         }),
-        timelineTeaser: z.object({
-          eyebrow: z.string().min(2),
-          heading: z.string().min(4),
-          description: z.string().min(20),
-          href: internalHref,
-          label: z.string().min(2),
-        }),
         resources: z.object({
           eyebrow: z.string().min(2),
           heading: z.string().min(8),
@@ -512,26 +505,6 @@ const hubs = defineCollection({
   }),
 });
 
-const lens = z.object({ heading: z.string().min(4), text: z.string().min(10) });
-
-const timelineTheme = z.enum(['money', 'connection', 'boundaries', 'emotional', 'care', 'life']);
-const timelineReflection = z.object({
-  perspective: z.enum(['then', 'now', 'felt']),
-  text: z.string().min(10),
-});
-const timelineMoment = z
-  .object({
-    title: z.string().min(4),
-    text: z.string().min(10),
-    placement: z.enum(['card', 'rail']).default('card'),
-    theme: timelineTheme.optional(),
-    reflection: timelineReflection.optional(),
-  })
-  .refine((moment) => !moment.reflection || moment.placement === 'rail', {
-    message: 'A standalone reflection must follow a rail moment.',
-    path: ['reflection'],
-  });
-
 const story = defineCollection({
   loader: glob({ base: './src/content/story', pattern: '**/*.{md,mdx}', generateId: idFromPath }),
   schema: base.extend({
@@ -544,46 +517,6 @@ const story = defineCollection({
       heading: z.string().min(8),
       lead: z.string().min(20),
       paragraphs: z.array(z.string().min(20)).min(1),
-      note: z.string().min(20),
-    }),
-    timeline: z.object({
-      eyebrow: z.string().min(2),
-      heading: z.string().min(8),
-      lead: z.string().min(20),
-      label: z.string().min(4),
-      /** While set, the page shows this note instead of the timeline (e.g. during legal review). */
-      withheld: z.string().min(20).optional(),
-      preview: z
-        .object({
-          heading: z.string().min(8),
-          text: z.string().min(20),
-          moments: z.array(z.object({ title: z.string().min(4), text: z.string().min(10) })).min(1),
-        })
-        .optional(),
-      context: z
-        .object({
-          eyebrow: z.string().min(2),
-          title: z.string().min(8),
-          description: z.string().min(20),
-          moments: z.array(timelineMoment).default([]),
-        })
-        .optional(),
-      milestones: z
-        .array(
-          z.object({
-            eyebrow: z.string().min(2),
-            phase: z.string().min(3).optional(),
-            title: z.string().min(8),
-            description: z.string().min(20),
-            lenses: z.array(lens).refine((items) => items.length === 0 || items.length === 4),
-            theme: timelineTheme.optional(),
-            between: z.array(timelineMoment).default([]),
-            reflection: timelineReflection.optional(),
-            /** Site pages a reader can go to next when they recognise this chapter. */
-            links: z.array(z.object({ href: internalHref, label: z.string().min(3) })).default([]),
-          }),
-        )
-        .default([]),
       note: z.string().min(20),
     }),
     therapy: z.object({

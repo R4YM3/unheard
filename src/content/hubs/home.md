@@ -149,12 +149,6 @@ home:
       - 'Herkenning en erkenning hielpen mij om serieus te nemen wat ik voelde. Daarom begon ik Ongehoord. Ik wil anderen geven wat ik toen zelf miste: woorden voor wat je voelt, uitleg en een plek om je te oriënteren op herstel.'
     href: 'nl/mijn-verhaal/'
     label: 'Lees mijn verhaal'
-  timelineTeaser:
-    eyebrow: 'Een verhaal in lagen'
-    heading: 'Van toen tot nu.'
-    description: 'Een persoonlijke tijdlijn met per moment vier lagen: wat gebeurde er, wat voelde ik, wie werd ik en wat begrijp ik nu.'
-    href: 'nl/mijn-verhaal/tijdlijn/'
-    label: 'Ontdek de tijdlijn'
   resources:
     eyebrow: 'Herstel & hulpmiddelen'
     heading: 'Er mag weer ruimte ontstaan.'

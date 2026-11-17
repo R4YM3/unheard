@@ -131,43 +131,6 @@ try {
   await noJs.close();
   console.log('No-JS checks done');
 
-  // Timeline disclosures must show exactly one sign in both native states.
-  const timelinePage = await browser.newPage();
-  await timelinePage.setJavaScriptEnabled(false);
-  await timelinePage.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, { waitUntil: 'networkidle0' });
-  /* While the timeline is withheld (legal review), there are no disclosures to check. */
-  const withheld = await timelinePage.$('.timeline-withheld');
-  for (const selector of withheld
-    ? []
-    : [
-        '.st__row--context details.st__card',
-        '#moment-1 .st__moments details',
-        'details.st__rail',
-      ]) {
-    const summary = await timelinePage.$(`${selector} > summary`);
-    if (!summary) throw new Error(`Missing timeline disclosure: ${selector}`);
-    await summary.focus();
-    for (const [key, expected] of [
-      ['', '+'],
-      ['Enter', '−'],
-      ['Space', '+'],
-    ]) {
-      if (key) await timelinePage.keyboard.press(key);
-      const signs = await summary.evaluate((element) => {
-        const content = (node) => globalThis.getComputedStyle(node, '::after').content;
-        return [element, element.querySelector('.timeline-toggle')]
-          .filter(Boolean)
-          .map(content)
-          .map((value) => value.replaceAll('"', ''))
-          .filter((value) => value && !['none', 'normal'].includes(value));
-      });
-      if (signs.length !== 1 || signs[0] !== expected)
-        failures.push(`${selector}: expected one ${expected}, got ${JSON.stringify(signs)}`);
-    }
-  }
-  await timelinePage.close();
-  console.log('Timeline disclosures: one +/− sign and native keyboard toggling');
-
   // 3. Perspective: both sides visible, example buttons work, contrast in both themes.
   const pvRoutes = [];
   for (const route of routes) {

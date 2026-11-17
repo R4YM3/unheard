@@ -105,12 +105,6 @@ home:
       - 'I am a father. I am rebuilding my life. And some things are still hard. That is why I write here about what I have experienced and learned, so that others may recognise themselves and find words for what they feel.'
     href: 'nl/mijn-verhaal/'
     label: 'Read my story (in Dutch)'
-  timelineTeaser:
-    eyebrow: 'A story in layers'
-    heading: 'From then to now.'
-    description: 'A personal timeline with four layers for each moment: what happened, what I felt, who I became and what I understand now.'
-    href: 'nl/mijn-verhaal/tijdlijn/'
-    label: 'Explore the timeline (in Dutch)'
   resources:
     eyebrow: 'Recovery & tools'
     heading: 'There can be room again.'
