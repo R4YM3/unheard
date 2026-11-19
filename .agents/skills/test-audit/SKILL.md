@@ -1,6 +1,6 @@
 ---
 name: test-audit
-description: "Writing/changing/reviewing/sweeping tests: reject duplicate or implementation-coupled proof; remove test-only production seams."
+description: 'Writing/changing/reviewing/sweeping tests: reject duplicate or implementation-coupled proof; remove test-only production seams.'
 ---
 
 # Test Audit
