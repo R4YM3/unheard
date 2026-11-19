@@ -13,6 +13,21 @@ const chromePath =
     : '/usr/bin/google-chrome');
 
 const routes = [
+  {
+    id: 'recognition-hub',
+    route: '/nl/wat-herken-ik/',
+    required: [
+      'Je hoeft het nog geen naam te geven',
+      'Welke situatie komt je bekend voor?',
+      'Ik zoek een bepaald onderwerp',
+      'Beginnen kan ook anders',
+    ],
+  },
+  {
+    id: 'tools-hub',
+    route: '/nl/hulpmiddelen/',
+    required: ['Waar kan ik je mee helpen?', 'Alle kaarten, zonder vaste volgorde'],
+  },
   { id: 'home', route: '/nl/', required: ['Wat herken jij?', 'Er mag weer ruimte ontstaan.'] },
   {
     id: 'story',
@@ -37,7 +52,24 @@ const routes = [
   {
     id: 'emotion-hub',
     route: '/nl/wat-voel-ik/',
-    required: ['Waar kan ik beginnen?', 'Hoe gevoelens elkaar kunnen opvolgen.'],
+    required: [
+      'Wat herken je bij jezelf?',
+      'Zoek je een situatie of een begrip?',
+      'Help me woorden vinden',
+    ],
+  },
+  {
+    id: 'understanding-hub',
+    route: '/nl/begrijp-het/',
+    required: ['Waar wil je meer over begrijpen?', 'Ken je het onderwerp al?'],
+  },
+  {
+    id: 'therapy-hub',
+    route: '/nl/herstel/therapievormen/',
+    required: [
+      'Je hoeft de naam van een therapie niet te kennen',
+      'zonder vooraf een behandeling te kiezen',
+    ],
   },
   { id: 'pattern', route: '/nl/begrippen/darvo/', required: ['Wat betekent DARVO?'] },
   { id: 'glossary', route: '/nl/begrippen/', required: ['Alle begrippen', 'DARVO'] },
@@ -47,7 +79,11 @@ const routes = [
     required: ['Je hoort', 'Bronnen'],
   },
   { id: 'financial-hub', route: '/nl/begrijp-het/financieel-misbruik/', required: ['Wat is het?'] },
-  { id: 'recovery-hub', route: '/nl/herstel/', required: ['Herstel'] },
+  {
+    id: 'recovery-hub',
+    route: '/nl/herstel/',
+    required: ['Herstel', 'Wat heb je op dit moment nodig?', 'financieel herstel'],
+  },
   {
     id: 'therapy',
     route: '/nl/herstel/therapievormen/schematherapie/',
@@ -111,7 +147,35 @@ try {
   await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
 
   for (const item of routes) {
+    // Load each route as a screen page; the preceding PDF leaves print media active.
+    await page.emulateMediaType('screen');
     await page.goto(`${origin}${item.route}`, { waitUntil: 'networkidle0' });
+    if (
+      [
+        'recognition-hub',
+        'recovery-hub',
+        'emotion-hub',
+        'understanding-hub',
+        'therapy-hub',
+        'tools-hub',
+        'emotion',
+        'knowledge',
+        'therapy',
+        'tool',
+        'pattern',
+      ].includes(item.id)
+    ) {
+      await page.emulateMediaType('screen');
+      for (const width of [390, 1440]) {
+        await page.setViewport({ width, height: 1000, deviceScaleFactor: 1 });
+        await page.screenshot({
+          path: `${outputDirectory}/${item.id}-${width}.jpg`,
+          type: 'jpeg',
+          quality: 80,
+          fullPage: true,
+        });
+      }
+    }
     await page.emulateMediaType('print');
 
     const printState = {

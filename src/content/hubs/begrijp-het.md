@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-20
-updatedAt: 2026-11-12
+updatedAt: 2026-11-15
 reviewedAt: null
 cardTitle: 'Begrijp het'
 cardText: 'Uitleg over emotioneel en financieel misbruik, patronen van controle en de begrippen die je misschien tegenkomt.'
@@ -21,11 +21,13 @@ eyebrow: 'Begrijp het'
 lead: 'Soms voel je al lang dat er iets niet klopt, maar kun je niet zeggen wat. Uitleg en begrippen kunnen helpen om het te ordenen. Ze zijn bedoeld om jezelf beter te begrijpen, niet om iemand anders een etiket te geven.'
 listings:
   - collection: articles
+    cardStyle: list
     prefix: 'begrijp-het/'
     heading: 'Waar wil je meer over weten?'
     tape: true
     lead: 'Achtergrond in gewone taal. Elk artikel staat op zichzelf, dus begin waar je vraag ligt.'
   - collection: patterns
+    cardStyle: list
     prefix: 'begrippen/'
     heading: 'Patronen die je misschien herkent'
     lead: 'Korte uitleg van terugkerend gedrag, met voorbeelden die verzonnen zijn en niemand beschrijven.'
@@ -51,6 +53,18 @@ reviewNotes:
   - 'Redactie: klopt de volgorde van de artikellisting (emotioneel misbruik, conflict of patroon, wat het met je kan doen)? Zo niet, voeg order-waarden toe aan de artikelen.'
 ---
 
-Misschien heb je lang gedacht dat het aan jou lag. Dat je te gevoelig was, te moeilijk, of dat je het verkeerd had onthouden. Misschien merk je pas achteraf hoeveel je jezelf hebt aangepast. Het kan dan helpen om te lezen dat anderen iets vergelijkbaars hebben meegemaakt, en dat er woorden voor bestaan.
+## Waar wil je meer over begrijpen?
 
-Die woorden zijn hulpmiddelen. Een begrip als [gaslighting](nl/begrippen/gaslighting/) of [dwingende controle](nl/begrippen/dwingende-controle/) beschrijft gedrag en het effect daarvan. Het zegt niets over wie iemand is, en het is geen diagnose. Herken je iets, dan betekent dat niet automatisch dat er sprake is van misbruik. Eén voorbeeld of één gevoel bewijst niets. Wat telt, is wat er steeds opnieuw gebeurt en wat het met je doet.
+Je hoeft een begrip nog niet te kennen om uitleg te vinden. Kies de vraag die aansluit bij wat je probeert te plaatsen:
+
+- **Wat gebeurt er tussen ons?** [Emotioneel misbruik](nl/begrijp-het/emotioneel-misbruik/) beschrijft schadelijk gedrag en de gevolgen. [Conflict of een patroon?](nl/begrijp-het/conflict-of-patroon/) helpt je kijken naar ruzie, ruimte om nee te zeggen en wat er daarna gebeurt.
+- **Waarom wordt mijn ruimte steeds kleiner?** [Dwingende controle](nl/begrippen/dwingende-controle/) gaat over de samenhang tussen gedragingen. Bij [financieel misbruik](nl/begrijp-het/financieel-misbruik/) lees je specifiek over geld, zeggenschap en afhankelijkheid.
+- **Wat betekent dit voor mij?** [Wat het met je kan doen](nl/begrijp-het/wat-het-met-je-kan-doen/) beschrijft gevolgen. [Waarom overkwam dit mij?](nl/begrijp-het/waarom-overkwam-dit-mij/) gaat over zelfverwijt en omstandigheden die loskomen moeilijk maken.
+
+Een begrip kan woorden geven aan iets wat je al lang probeert uit te leggen. Kijk daarbij naar het gedrag, de context en de gevolgen voor jou. Je hoeft niet ieder beschreven kenmerk te herkennen om je ervaring serieus te nemen.
+
+## Ken je het onderwerp al?
+
+Ga rechtstreeks naar [Begrippen van A tot Z](nl/begrippen/), bijvoorbeeld voor [gaslighting](nl/begrippen/gaslighting/) of [DARVO](nl/begrippen/darvo/). Hieronder vind je ook alle achtergrondartikelen en een selectie patronen.
+
+Zoek je vooral woorden voor jezelf, begin dan bij [Wat voel ik?](nl/wat-voel-ik/). Bij [Wat herken ik?](nl/wat-herken-ik/) kun je beginnen met een concrete situatie. Geen van deze ingangen hoeft eerst.

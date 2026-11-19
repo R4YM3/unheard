@@ -365,7 +365,7 @@ const listing = z.object({
   heading: z.string().min(4),
   lead: z.string().min(10).optional(),
   tone: z.enum(['neutral', 'safe', 'tension']).default('neutral'),
-  cardStyle: z.enum(['default', 'feeling']).default('default'),
+  cardStyle: z.enum(['default', 'feeling', 'list']).default('default'),
   /** Show only these translation keys, in this order (the full list lives elsewhere). */
   featured: z.array(z.string().min(2)).optional(),
   /** Link under the list, for example to the full index. */
@@ -390,6 +390,8 @@ const hubs = defineCollection({
     eyebrow: z.string().min(2),
     lead: z.string().min(20),
     listings: z.array(listing).default([]),
+    /** Opening Markdown chapters shown before a non-pillar hub’s listings. */
+    introChapters: z.number().int().min(0).max(3).default(0),
     cards: z.array(card).default([]),
     cardsPlacement: z.enum(['related', 'inline']).default('related'),
     scenarios: z.array(scenario).max(8).default([]),

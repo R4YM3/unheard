@@ -8,7 +8,7 @@ status: in_review
 published: true
 author: editorial
 publishedAt: 2026-10-19
-updatedAt: 2026-11-12
+updatedAt: 2026-11-15
 reviewedAt: null
 cardTitle: 'Herstel'
 cardText: 'Erkenning, leren voelen, grenzen, rouw en steun: onderwerpen voor de tijd na het begrijpen.'
@@ -21,6 +21,7 @@ eyebrow: 'Herstel'
 lead: 'Je kunt weten wat er is gebeurd en het toch nog voelen. Herstel gaat vaak in kleine stappen, met dagen vooruit en dagen terug. Hier vind je onderwerpen die daarbij kunnen helpen, zonder dat je ergens hoeft te beginnen.'
 listings:
   - collection: articles
+    cardStyle: list
     prefix: 'herstel/'
     eyebrow: 'Onderwerpen'
     heading: 'Waar wil je nu over lezen?'
@@ -45,3 +46,17 @@ reviewNotes:
 ---
 
 Herstel na emotioneel of [financieel misbruik](nl/begrippen/financieel-economisch-misbruik/) is geen vast traject met een eindpunt. Voor de een begint het met eindelijk woorden hebben voor wat er gebeurde. Voor de ander met merken dat het lichaam niet meer de hele dag op scherp staat. Er is geen goede of foute volgorde.
+
+## Wat heb je op dit moment nodig?
+
+Je hoeft niet eerst alle onderwerpen te kennen. Je kunt beginnen bij wat vandaag
+het meest op de voorgrond staat:
+
+- **Ruimte voor wat je voelt.** Lees over [rouw om wat je verloor](nl/herstel/rouw/) of [gevoelens leren opmerken](nl/herstel/leren-voelen/).
+- **Weer eigen keuzes maken.** Begin bij [grenzen oefenen waar het veilig is](nl/herstel/grenzen-leren-stellen/). Gaat het om geld, bekijk dan [financieel herstel](nl/begrijp-het/financieel-misbruik/veilig-financieel-herstel/).
+- **Omgaan met contact dat blijft.** Lees over [contact na een breuk](nl/herstel/contact-na-een-breuk/) of [ouderschap wanneer een ex controle zoekt](nl/herstel/ouder-blijven-met-een-ex-die-controle-zoekt/).
+- **Iemand naast je.** Lees over [steun vragen en opbouwen](nl/herstel/steunnetwerk/) of bekijk [hulp vinden](nl/hulp-vinden/).
+
+Hieronder staan alle herstelonderwerpen. Je kunt ook rechtstreeks naar het
+[overzicht van therapie en begeleiding](nl/herstel/therapievormen/). Je hoeft
+deze routes niet in een bepaalde volgorde te volgen.
