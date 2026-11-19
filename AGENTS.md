@@ -40,3 +40,8 @@ Implement roadmap phase by phase. At the end of each phase, run `npm run build`,
 4. Mobile viewports and print-to-PDF visual QA for all content templates.
 5. Documented content editing workflow: add Markdown file -> validate -> build -> route appears with nav/search relation when published.
 6. Deploy only after user's explicit approval.
+
+## Writing for readers
+
+- Use ASD-STE100 principles in messages, progress updates, interface text, and documents. Write in the requested language. Use short, active sentences and consistent terms. Give one action per numbered step. For errors, state what happened and give a next action when known.
+- Keep Ongehoord articles warm and empathetic. Preserve the meaning, quotations, necessary technical terms, and the founder’s voice. Follow `EDITORIAL_POLICY.md` for public content.
