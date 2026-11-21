@@ -10,7 +10,6 @@ const routes = [
   '/nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
   '/nl/begrippen/darvo/',
   '/nl/financieel-misbruik/',
-  '/nl/mijn-verhaal/',
   '/nl/herstel/therapie/',
 ];
 const chromePath =

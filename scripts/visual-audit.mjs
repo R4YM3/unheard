@@ -14,7 +14,6 @@ const chromePath =
 
 const pages = [
   { id: 'home', reference: 'references/homepage.html', route: '/nl/' },
-  { id: 'story', reference: 'references/mijn-verhaal.html', route: '/nl/mijn-verhaal/' },
   {
     id: 'self-doubt',
     reference: 'references/zelftwijfel.html',

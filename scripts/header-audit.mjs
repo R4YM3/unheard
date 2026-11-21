@@ -659,7 +659,6 @@ try {
     'wat-voel-ik': '.fw-word',
     'begrijp-het': '[data-lm-deeper], [data-lm-next]',
     herstel: '[data-rl-point]',
-    'mijn-verhaal': '[data-sr-dot]',
     hulpmiddelen: '.cf__card',
   };
   for (const [width, height] of [

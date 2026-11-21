@@ -300,7 +300,7 @@ try {
 
   /* Overview intro: the text side is always at least as long as the card side. */
   const intro = await browser.newPage();
-  const overviews = ['wat-voel-ik', 'begrijp-het', 'herstel', 'hulpmiddelen', 'mijn-verhaal'];
+  const overviews = ['wat-voel-ik', 'begrijp-het', 'herstel', 'hulpmiddelen'];
   for (const width of [900, 1100, 1280, 1440, 1920]) {
     await intro.setViewport({ width, height: 1000 });
     for (const slug of overviews) {
