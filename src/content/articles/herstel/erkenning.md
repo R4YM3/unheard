@@ -31,7 +31,7 @@ reflection:
     - 'Wat kan ik vandaag over mezelf zeggen dat klopt, zonder het groter of kleiner te maken?'
   note: 'Wat je hier typt, wordt niet verstuurd of opgeslagen. Gebruik het alleen op een apparaat waarop je je veilig voelt.'
   writable: true
-related: [zelftwijfel, herstel-zelfvertrouwen, herstel-rouw, herstel-steunnetwerk, mijn-verhaal]
+related: [zelftwijfel, herstel-zelfvertrouwen, herstel-rouw, herstel-steunnetwerk]
 sources:
   - label: 'Thuisarts — Ik heb psychische klachten'
     url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'

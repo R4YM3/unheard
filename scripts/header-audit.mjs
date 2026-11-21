@@ -29,7 +29,7 @@ try {
   const page = await browser.newPage();
   for (const width of [961, 1024, 1120, 1280, 1440]) {
     await page.setViewport({ width, height: 1000 });
-    await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    await page.goto(`${origin}/nl/over/`, { waitUntil: 'networkidle0' });
     const items = await page.$$('.desktop-nav-item');
     assert.equal(items.length, 5, 'Every main section needs its own desktop submenu');
     const rows = await page.$$eval('.nav > *', (nodes) =>
@@ -143,14 +143,14 @@ try {
     const mobile = await browser.newPage();
     await mobile.setJavaScriptEnabled(javascript);
     await mobile.setViewport({ width: 375, height: 850 });
-    await mobile.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    await mobile.goto(`${origin}/nl/over/`, { waitUntil: 'networkidle0' });
     await mobile.click('.mobile-menu > summary');
     assert.deepEqual(
       await mobile.$$eval('.mobile-menu__sub', (nodes) =>
         nodes.map((node) => node.textContent.trim()),
       ),
-      /* 'Het verhaal' is the section link itself: one link per destination. */
-      ['Tijdlijn', 'Waarom Ongehoord', 'Werkwijze'],
+      /* 'Over Ongehoord' is the section link itself: one link per destination. */
+      ['Werkwijze'],
     );
     await mobile.goto(`${origin}/nl/`, { waitUntil: 'networkidle0' });
     assert.equal(
@@ -219,11 +219,10 @@ try {
     assert(await home.$(target), `Home section ${target} exists`);
   }
   assert(await home.$('.nav a[href="nl/begrijp-het/"]'), 'Begrijp het stays in the navigation');
-  assert(await home.$('#verhaal a[href="nl/over/#waarom-ik-hiermee-begon"]'));
+  assert.equal(await home.$('#verhaal'), null, 'The founder story promotion is absent');
   assert(await home.$('#hulp a[href="nl/hulp-vinden/"]'));
-  /* Six chapters, one per pillar: hero, Herkennen, Hulpmiddelen, Begrijpen, Mijn verhaal,
-     Herstel, Hulp. */
-  const chapters = ['gevoelens', 'beginnen', 'perspectief', 'verhaal', 'herstel', 'hulp'];
+  /* Five chapters: hero, Herkennen, Hulpmiddelen, Begrijpen, Herstel and Hulp. */
+  const chapters = ['gevoelens', 'beginnen', 'perspectief', 'herstel', 'hulp'];
   const homeOrder = await home.$$eval(
     'main section[id]',
     (nodes, wanted) => nodes.map((node) => node.id).filter((id) => wanted.includes(id)),
@@ -552,74 +551,6 @@ try {
     'Mobile menu: help visible when closed, clear of the dock, Escape closes and returns focus, one current page, one search link, 44px targets at 320x200, 320x568, 360, 390, 430 and landscape; every focused item visible, repeated Escape stays.',
   );
 
-  /* The story timeline in layers: phases as links, labels on the line, the line behind the
-     circles, layers as tabs, milestones that open with their reflection. */
-  const story = await browser.newPage();
-  await story.setViewport({ width: 1280, height: 850 });
-  await story.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, { waitUntil: 'networkidle0' });
-  const phaseLinks = await story.$$eval('.st__phases a', (nodes) =>
-    nodes.map((node) => node.getAttribute('href')),
-  );
-  assert.equal(phaseLinks.length, 3, 'Three phases to jump to');
-  for (const href of phaseLinks) assert(await story.$(href), `${href} exists`);
-  const layering = await story.evaluate(() => {
-    const line = globalThis.getComputedStyle(
-      globalThis.document.querySelector('.st__list'),
-      '::before',
-    );
-    const node = globalThis.getComputedStyle(globalThis.document.querySelector('.st__node'));
-    const marker = globalThis.getComputedStyle(
-      globalThis.document.querySelector('.st__node .timeline-marker'),
-    );
-    return { line: Number(line.zIndex), node: Number(node.zIndex), bg: marker.backgroundColor };
-  });
-  assert(layering.node > layering.line, 'Circles sit above the line');
-  assert.notEqual(layering.bg, 'rgba(0, 0, 0, 0)', 'Circles have their own background');
-  const firstCard = '#moment-1 .st__card';
-  assert(await story.$eval(firstCard, (node) => node.open), 'The first moment starts open');
-  const tabs = await story.$$(`${firstCard} [role="tab"]`);
-  assert(tabs.length >= 2, 'Layers become tabs');
-  await tabs[0].focus();
-  await story.keyboard.press('ArrowRight');
-  assert.equal(
-    await story.evaluate(() => globalThis.document.activeElement.getAttribute('aria-selected')),
-    'true',
-    'Arrow keys move between layers',
-  );
-  const height = await story.$eval(firstCard, (node) => node.getBoundingClientRect().height);
-  await tabs[0].click();
-  assert.equal(
-    await story.$eval(firstCard, (node) => node.getBoundingClientRect().height),
-    height,
-    'Switching a layer keeps the card height',
-  );
-  const quoted = await story.$$eval(
-    'details.st__rail',
-    (nodes) => nodes.filter((node) => node.querySelector('.st__quote')).length,
-  );
-  assert(quoted > 0, 'Milestones carry their reflection');
-  await story.setViewport({ width: 375, height: 850 });
-  assert.equal(
-    await story.$eval(
-      '.st__row--moment',
-      (row) => globalThis.getComputedStyle(row).gridTemplateColumns.split(' ').length,
-    ),
-    2,
-    'Small screens: the line on the start side and one reading column',
-  );
-  await story.setJavaScriptEnabled(false);
-  await story.reload();
-  assert(
-    await story.$$eval('#moment-1 .st__panel', (nodes) =>
-      nodes.every((node) => node.querySelector('.st__panel-title').getClientRects().length > 0),
-    ),
-    'Without JavaScript every layer is listed under its heading',
-  );
-  await story.close();
-  console.log(
-    'Story timeline: phases, labels, circles above the line, layers as steady tabs, milestones with reflections.',
-  );
-
   for (const width of [960, 1440]) {
     const slow = await browser.newPage();
     await slow.setViewport({ width, height: 1000 });
@@ -630,7 +561,7 @@ try {
         ? setTimeout(() => request.continue(), 1800)
         : request.continue(),
     );
-    await slow.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'domcontentloaded' });
+    await slow.goto(`${origin}/nl/over/`, { waitUntil: 'domcontentloaded' });
     await delay(150);
     const geometry = () =>
       ['.site-header', '.nav', 'h1', 'main', 'body'].map((selector) => {
@@ -693,18 +624,20 @@ try {
         /grens/,
       );
     }
-    await hero.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
-    const ridge = await hero.$$eval('.page-hero [data-sr-dot]', (nodes) =>
-      nodes.map((node) => node.getAttribute('href')),
+    const story = await hero.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    assert.equal(story?.status(), 404, 'The founder story route is withdrawn');
+    assert.equal(
+      await hero.$$eval(
+        'header a[href*="mijn-verhaal"], header a[href*="tijdlijn"]',
+        (nodes) => nodes.length,
+      ),
+      0,
+      'The header no longer links to the founder story or timeline',
     );
-    assert.equal(ridge.length, 8);
-    /* The ridge points go to the moments on the timeline's own page. */
-    await hero.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, { waitUntil: 'networkidle0' });
-    for (const href of ridge) {
-      const [path, hash] = href.split('#');
-      assert.equal(path, 'nl/mijn-verhaal/tijdlijn/', `${href} points at the timeline page`);
-      assert(await hero.$(`#${hash}`), `${href} exists in the timeline`);
-    }
+    const timeline = await hero.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, {
+      waitUntil: 'networkidle0',
+    });
+    assert.equal(timeline?.status(), 404, 'The personal timeline route is withdrawn');
     await hero.goto(`${origin}/nl/hulpmiddelen/`, { waitUntil: 'networkidle0' });
     assert.equal(await visible('.page-hero .cf__card'), 6, 'Six cards in the fan');
     await hero.goto(`${origin}/nl/hulp-vinden/`, { waitUntil: 'networkidle0' });
@@ -726,7 +659,6 @@ try {
     'wat-voel-ik': '.fw-word',
     'begrijp-het': '[data-lm-deeper], [data-lm-next]',
     herstel: '[data-rl-point]',
-    'mijn-verhaal': '[data-sr-dot]',
     hulpmiddelen: '.cf__card',
   };
   for (const [width, height] of [

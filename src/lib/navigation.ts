@@ -75,15 +75,13 @@ const nlSections: Section[] = [
     prefixes: ['nl/herstel/'],
   },
   {
-    menu: { href: 'nl/mijn-verhaal/', label: 'Mijn verhaal' },
-    label: 'Binnen Mijn verhaal',
+    menu: { href: 'nl/over/', label: 'Over' },
+    label: 'Over deze site',
     tabs: [
-      { href: 'nl/mijn-verhaal/', label: 'Het verhaal' },
-      { href: 'nl/mijn-verhaal/tijdlijn/', label: 'Tijdlijn' },
-      { href: 'nl/over/', label: 'Waarom Ongehoord' },
+      { href: 'nl/over/', label: 'Over Ongehoord' },
       { href: 'nl/werkwijze/', label: 'Werkwijze' },
     ],
-    prefixes: ['nl/mijn-verhaal/', 'nl/over/', 'nl/werkwijze/'],
+    prefixes: ['nl/over/', 'nl/werkwijze/'],
   },
   {
     menu: { href: 'nl/hulpmiddelen/', label: 'Hulpmiddelen' },

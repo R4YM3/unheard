@@ -10,7 +10,6 @@ import { navigationFor, sectionFor } from './navigation';
 const chapterByMenu: Record<string, string> = {
   'nl/begrijp-het/': 'chapter--understanding',
   'nl/herstel/': 'chapter--recovery',
-  'nl/mijn-verhaal/': 'chapter--story',
   'nl/hulpmiddelen/': 'chapter--tools',
 };
 

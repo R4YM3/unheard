@@ -37,7 +37,7 @@ cards:
     text: 'Printbare kaarten om te ordenen wat je voelt, een gesprek voor te bereiden of iemand in vertrouwen te nemen. Er wordt niets opgeslagen.'
     href: 'nl/hulpmiddelen/'
     label: 'Bekijk de hulpmiddelen'
-related: [pijn-na-inzicht, therapievormen, mijn-verhaal, hulp-vinden]
+related: [pijn-na-inzicht, therapievormen, hulp-vinden]
 reviewNotes:
   - 'Clinicus: klopt de beschrijving van wanneer je naar de huisarts of POH-GGZ gaat, zonder dat het als medisch advies leest?'
   - 'Oprichter: past de neutrale verwijzing naar je eigen therapie-ervaringen bij hoe je die wilt delen?'

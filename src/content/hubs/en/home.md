@@ -31,15 +31,15 @@ home:
   hero:
     eyebrow: 'Emotional & financial abuse · Recognition · Recovery'
     lead: 'Sometimes you slowly lose yourself in a relationship. You doubt yourself, keep adjusting more and more, or don’t understand why you are always on edge.'
-    description: 'I share my experiences to put words to emotional and financial abuse. Unheard pays special attention to men and the stigma that often keeps them silent. Everyone is welcome.'
-    primary: { href: 'nl/mijn-verhaal/', label: 'Read my story (in Dutch)' }
+    description: 'Unheard offers words, explanations and tools for emotional and financial abuse. It pays special attention to men and the stigma that can make it hard to talk. Everyone is welcome.'
+    primary: { href: 'nl/hulpmiddelen/help-me-woorden-vinden/', label: 'Find words (in Dutch)' }
     secondary: { href: 'en/what-do-i-feel/', label: 'What do I feel?' }
   introduction:
     eyebrow: 'Welcome to Unheard'
     heading: 'You don’t have to call it abuse yet.'
     paragraphs:
       - 'Maybe you don’t have words yet for what you are going through. That does not mean your feelings don’t count. Here you can recognise, explore and understand, without anyone deciding for you what you have experienced.'
-      - 'I am building Unheard from my own experiences and recovery. I am one person, not a support organisation. Here you will find my story, explanations of patterns and their effects, and tools to explore your feelings. The focus is mainly on men, because stigma can make it hard to talk. Everyone is welcome.'
+      - 'Unheard is an independent information project, not a support organisation. Here you will find explanations of patterns and their effects, tools to explore your feelings, and routes to support. The focus is mainly on men, because stigma can make it hard to talk. Everyone is welcome.'
   feelings:
     eyebrow: 'Start with yourself'
     heading: 'What do you recognise?'
@@ -97,20 +97,6 @@ home:
     eyebrow: 'Two sides of one conversation'
     heading: 'What you hear. What you feel.'
     lead: 'The same moment, from two sides: what is said, and what it does to you inside. These are fictional examples, not diagnoses.'
-  storyTeaser:
-    eyebrow: 'Why Unheard exists'
-    heading: 'I too was looking for words for what I felt.'
-    paragraphs:
-      - 'For a long time I didn’t understand why I doubted myself and kept looking for reassurance. By exploring my experiences, going to therapy and learning to listen to myself better, I began to understand more.'
-      - 'I am a father. I am rebuilding my life. And some things are still hard. That is why I write here about what I have experienced and learned, so that others may recognise themselves and find words for what they feel.'
-    href: 'nl/mijn-verhaal/'
-    label: 'Read my story (in Dutch)'
-  timelineTeaser:
-    eyebrow: 'A story in layers'
-    heading: 'From then to now.'
-    description: 'A personal timeline with four layers for each moment: what happened, what I felt, who I became and what I understand now.'
-    href: 'nl/mijn-verhaal/tijdlijn/'
-    label: 'Explore the timeline (in Dutch)'
   resources:
     eyebrow: 'Recovery & tools'
     heading: 'There can be room again.'

@@ -13,11 +13,10 @@ reviewedAt: null
 cardTitle: 'Over Ongehoord'
 cardText: 'Waarom ik Ongehoord ben begonnen, voor wie het is en wat het nadrukkelijk niet is.'
 summary: 'Ongehoord is een informatie- en herkenningsplek over emotioneel en financieel misbruik, de nasleep ervan en herstel. Ik ben er in mijn eentje aan begonnen, vanuit mijn eigen ervaring en herstel. Er is geen team en geen organisatie. Ongehoord is geen zorginstelling en geeft geen therapie, diagnose of juridisch advies.'
-related: [mijn-verhaal, werkwijze, veilig-gebruik, hulp-vinden]
+related: [werkwijze, veilig-gebruik, hulp-vinden]
 reviewNotes:
   - 'Oprichter: wil je onder "Voor wie het is" iets zeggen over hoe het zwijgen voor jou was? Zo niet, haal die placeholder weg.'
   - 'Oprichter: klopt de uitleg van de naam Ongehoord, of had je een andere betekenis in gedachten?'
-  - 'Oprichter: wil je iets zeggen over je vaderschap op deze pagina, of laat je dat alleen in Mijn verhaal?'
   - 'Oprichter: er is nog geen werkend contactkanaal. Welk kanaal komt er, en wanneer? Tot die tijd belooft de tekst niets.'
 ---
 
@@ -29,7 +28,7 @@ Ik twijfelde aan bijna alles. Lag het aan mij? Kon ik mijn herinneringen vertrou
 
 Wat mij enorm hielp, was herkenning en erkenning. Het hielp me om woorden te vinden en serieus te nemen wat ik voelde. Daarom heb ik Ongehoord gemaakt. Ik wil anderen die iets vergelijkbaars meemaken geven wat ik toen zelf miste: woorden voor wat je voelt, herkenning, uitleg en een plek om je te oriënteren op herstel.
 
-In mijn herstel heb ik verschillende [vormen van therapie en begeleiding](nl/herstel/therapievormen/) geprobeerd. Ik ben vader, en ik bouw mijn leven opnieuw op. Over die weg vertel ik meer in [Mijn verhaal](nl/mijn-verhaal/).
+Meer over algemene informatie en de bronnen op deze site staat op [Werkwijze](nl/werkwijze/). Informatie over therapievormen vind je op [Therapievormen](nl/herstel/therapievormen/).
 
 ## Wat de naam betekent
 

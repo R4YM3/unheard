@@ -37,7 +37,7 @@ const requiredDutchNavigation = [
   ['Wat voel ik?', 'nl/wat-voel-ik/'],
   ['Begrijp het', 'nl/begrijp-het/'],
   ['Herstel', 'nl/herstel/'],
-  ['Mijn verhaal', 'nl/mijn-verhaal/'],
+  ['Over', 'nl/over/'],
   ['Hulpmiddelen', 'nl/hulpmiddelen/'],
   ['Hulp vinden', 'nl/hulp-vinden/'],
 ];

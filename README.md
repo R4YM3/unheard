@@ -53,9 +53,9 @@ The build fails on duplicate keys or routes and on `related` keys that do not re
 
 Every page shows its author role, status (`draft`, `in_review` or `approved`), update date and review date. A per-route review overview for the founder is in `CONTENT_REVIEW.md`.
 
-## Editing the personal timeline
+## Withheld founder story
 
-Edit `timeline.milestones` in `src/content/story/mijn-verhaal.md`. Each milestone has a visible `eyebrow`, `title` and `description`. Its `between` list contains individually expandable stories (`title` and `text`), rendered in HTML and expanded when printing. Set `placement: rail` to show a smaller standalone point after the milestone card; omit it (or use `card`) to keep the story inside the card. Standalone points follow their milestone in their listed order. Add optional `reflection: { perspective: then | now | felt, text: ... }` to a rail moment for an always-visible personal thought or reflection immediately afterwards. These have no marker or disclosure, and distinguish recalled thoughts, feelings and present-day reflection. Milestones also accept a reflection, rendered after their standalone moments. Use `lenses: []` until the author supplies the four perspectives; otherwise provide exactly four lenses. Use optional `timeline.context` (`eyebrow`, `title`, `description`, `moments`) for personal background preceding the relationship timeline. It renders outside the ordered list with a dashed connector. Optional `theme` values on milestones and moments are `money`, `connection`, `boundaries`, `emotional`, `care` and `life`; they produce a descriptive footer under the paragraph and an icon in the marker for points on the line. Use the optional `timeline.preview` (`heading`, `text`, `moments`) for later memories whose chronology is still open; it renders separately below the timeline, not as a dated or sequential milestone. There is no fixed limit on smaller moments.
+The founder story and its timeline have been withdrawn from the published site. Do not restore the story content, routes, homepage links or navigation entries without the founder's explicit request.
 
 ## Publishing
 

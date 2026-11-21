@@ -15,16 +15,6 @@ const chromePath =
 const routes = [
   { id: 'home', route: '/nl/', required: ['Wat herken jij?', 'Er mag weer ruimte ontstaan.'] },
   {
-    id: 'story',
-    route: '/nl/mijn-verhaal/',
-    required: ['Waarom ik dit deel', 'Hoe mijn wereld steeds kleiner werd.', 'Voor mijn kinderen.'],
-  },
-  {
-    id: 'story-timeline',
-    route: '/nl/mijn-verhaal/tijdlijn/',
-    required: ['Hoe mijn wereld steeds kleiner werd.', 'Ik tekende zonder alles te overzien.'],
-  },
-  {
     id: 'emotion',
     route: '/nl/wat-voel-ik/ik-twijfel-aan-mezelf/',
     required: ['Je hoort', 'Je voelt', 'Een grens aangeven', 'Bevestiging zoeken'],

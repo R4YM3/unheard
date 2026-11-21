@@ -69,15 +69,15 @@ home:
   hero:
     eyebrow: 'Emotioneel & financieel misbruik · Herkenning · Herstel'
     lead: 'Soms raak je jezelf langzaam kwijt in een relatie. Je twijfelt aan jezelf, past je steeds meer aan of begrijpt niet waarom je voortdurend gespannen bent.'
-    description: 'Ik begon Ongehoord vanuit mijn eigen zoektocht naar herkenning en houvast. Ik schrijf met bijzondere aandacht voor mannen. Iedereen is welkom.'
+    description: 'Ongehoord biedt woorden, uitleg en hulpmiddelen bij emotioneel en financieel misbruik. De aandacht gaat vooral uit naar mannen. Iedereen is welkom.'
     primary: { href: 'nl/hulpmiddelen/help-me-woorden-vinden/', label: 'Help me woorden vinden' }
-    secondary: { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal' }
+    secondary: { href: 'nl/hulp-vinden/', label: 'Hulp vinden' }
   introduction:
     eyebrow: 'Welkom bij Ongehoord'
     heading: 'Je hoeft het nog geen misbruik te noemen.'
     paragraphs:
       - 'Misschien heb je nog geen woorden voor wat je meemaakt. Dat betekent niet dat je gevoel er niet mag zijn. Hier kun je herkennen, onderzoeken en begrijpen, zonder dat iemand voor jou bepaalt wat je hebt ervaren.'
-      - 'Ik bouw Ongehoord vanuit mijn eigen ervaringen en herstel. Ik ben één persoon, geen hulporganisatie. Je vindt hier mijn verhaal, uitleg over patronen en gevolgen, en hulpmiddelen om je gevoelens te onderzoeken. De aandacht gaat vooral uit naar mannen, omdat het stigma het moeilijk kan maken om te praten. Iedereen is welkom.'
+      - 'Ongehoord is een persoonlijk initiatief, geen hulporganisatie. Je vindt hier uitleg over patronen en gevolgen, hulpmiddelen om je gevoelens te onderzoeken en routes naar ondersteuning. De aandacht gaat vooral uit naar mannen, omdat stigma het moeilijk kan maken om te praten. Iedereen is welkom.'
   wordFinder:
     heading: 'Weet je nog niet wat je voelt of waar je moet beginnen?'
     text: 'Met een paar korte vragen kun je verkennen wat je voelt. Je krijgt suggesties voor pagina’s die aansluiten bij je antwoorden.'
@@ -141,20 +141,6 @@ home:
     eyebrow: 'Twee kanten van één gesprek'
     heading: 'Wat je hoort. Wat je voelt.'
     lead: 'Hetzelfde moment, van twee kanten: wat er gezegd wordt en wat het vanbinnen met je doet.'
-  storyTeaser:
-    eyebrow: 'Waarom Ongehoord bestaat'
-    heading: 'Ook ik zocht woorden voor wat ik voelde.'
-    paragraphs:
-      - 'Ik zocht houvast om te begrijpen wat er was gebeurd en hoe ik verder kon.'
-      - 'Herkenning en erkenning hielpen mij om serieus te nemen wat ik voelde. Daarom begon ik Ongehoord. Ik wil anderen geven wat ik toen zelf miste: woorden voor wat je voelt, uitleg en een plek om je te oriënteren op herstel.'
-    href: 'nl/mijn-verhaal/'
-    label: 'Lees mijn verhaal'
-  timelineTeaser:
-    eyebrow: 'Een verhaal in lagen'
-    heading: 'Van toen tot nu.'
-    description: 'Een persoonlijke tijdlijn met per moment vier lagen: wat gebeurde er, wat voelde ik, wie werd ik en wat begrijp ik nu.'
-    href: 'nl/mijn-verhaal/tijdlijn/'
-    label: 'Ontdek de tijdlijn'
   resources:
     eyebrow: 'Herstel & hulpmiddelen'
     heading: 'Er mag weer ruimte ontstaan.'

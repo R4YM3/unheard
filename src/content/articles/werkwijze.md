@@ -1,6 +1,6 @@
 ---
 title: 'Werkwijze: hoe de inhoud van Ongehoord tot stand komt'
-description: 'Het verschil tussen ervaringsverhaal, algemene uitleg en gecontroleerde cijfers, hoe bronnen worden gekozen, wat de status op elke pagina betekent en hoe fouten worden hersteld.'
+description: 'Het verschil tussen persoonlijke ervaringspassages, algemene uitleg en gecontroleerde cijfers, hoe bronnen worden gekozen, wat de status op elke pagina betekent en hoe fouten worden hersteld.'
 locale: nl
 translationKey: werkwijze
 slug: werkwijze
@@ -11,8 +11,8 @@ publishedAt: 2026-10-20
 updatedAt: 2026-10-20
 reviewedAt: null
 cardTitle: 'Werkwijze'
-cardText: 'Hoe ervaringsverhaal, uitleg en cijfers van elkaar gescheiden blijven, en wat de status en datums op elke pagina betekenen.'
-summary: 'Op Ongehoord staan drie soorten inhoud: het persoonlijke verhaal van de oprichter, algemene uitleg en gecontroleerde cijfers. Elke pagina laat zien wie hem schreef, wanneer hij is bijgewerkt en of hij al is gecontroleerd. Feiten komen alleen uit bronnen die rechtstreeks zijn nagelezen. Er is nog geen contactkanaal om fouten te melden.'
+cardText: 'Hoe persoonlijke ervaringspassages, uitleg en cijfers van elkaar gescheiden blijven, en wat de status en datums op elke pagina betekenen.'
+summary: 'Op Ongehoord staan drie soorten inhoud: gemarkeerde persoonlijke ervaringspassages, algemene uitleg en gecontroleerde cijfers. Elke pagina laat zien wie hem schreef, wanneer hij is bijgewerkt en of hij al is gecontroleerd. Feiten komen alleen uit bronnen die rechtstreeks zijn nagelezen. Er is nog geen contactkanaal om fouten te melden.'
 related: [over, mannen-in-cijfers, veilig-gebruik, toegankelijkheid]
 reviewNotes:
   - 'Oprichter: klopt de beschrijving van het reviewproces? Wie doet de inhoudelijke controle (clinicus, jurist) voordat een pagina op "Gecontroleerd" komt, en kan dat genoemd worden zonder namen?'
@@ -25,7 +25,7 @@ reviewNotes:
 
 Op Ongehoord staan drie soorten tekst naast elkaar. Ze hebben elk een ander doel, en ze worden bewust uit elkaar gehouden.
 
-**Het ervaringsverhaal.** In [Mijn verhaal](nl/mijn-verhaal/) en in apart gemarkeerde passages vertelt de oprichter in de ik-vorm over zijn eigen ervaring en herstel. Dat is zijn beleving. Het is geen advies en geen bewijs dat iets voor iedereen zo werkt. Bovenaan zulke pagina's staat als auteur "De oprichter van Ongehoord (persoonlijke ervaring)".
+**Persoonlijke ervaringspassages.** Op enkele pagina's staan apart gemarkeerde passages in de ik-vorm. Dat is persoonlijke beleving, geen advies en geen bewijs dat iets voor iedereen zo werkt. Zulke passages staan los van de algemene uitleg.
 
 **Algemene uitleg.** De meeste pagina's leggen in gewone taal uit wat een begrip betekent, hoe iets eruit kan zien en wat kan helpen. Die teksten zijn neutraal geschreven en worden ondertekend met "Ongehoord (algemene uitleg)". Het label ‘Voorbeeld’ staat bij samengestelde gesprekssituaties die laten zien hoe iets kan klinken en voelen. Ook de korte voorbeeldcitaten in de ik-vorm op uitlegpagina’s zijn geschreven om herkenbare gevoelens onder woorden te brengen. Voorbeelden en voorbeeldcitaten beschrijven geen specifieke persoon.
 
