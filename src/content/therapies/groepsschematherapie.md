@@ -28,7 +28,7 @@ founder:
     - '[OPRICHTER REVIEW NODIG] Hier kan ik later beschrijven hoe het voor mij was om in een groep aan mijn patronen te werken.'
     - 'Dit is mijn persoonlijke ervaring. Het zegt niet of een groep voor jou passend is.'
   needsReview: true
-related: [therapievormen, therapie-schematherapie, herstel-steunnetwerk, mijn-verhaal]
+related: [therapievormen, therapie-schematherapie, herstel-steunnetwerk]
 sources:
   - label: 'Vereniging voor Schematherapie — Schematherapie'
     url: 'https://www.schematherapie.nl/schematherapie'

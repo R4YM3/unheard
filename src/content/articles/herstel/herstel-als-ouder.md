@@ -27,7 +27,6 @@ related:
   [
     herstel-contact-na-breuk,
     herstel-steunnetwerk,
-    mijn-verhaal,
     hulp-vinden,
     ouderschap-na-controle,
   ]
@@ -98,5 +97,3 @@ Moet je blijvend contact houden met de andere ouder? Lees dan [contact na een br
 ## Een persoonlijke noot
 
 [OPRICHTER REVIEW NODIG]
-
-De oprichter van Ongehoord is zelf vader en bouwt zijn leven opnieuw op. Wat hij daarover wil delen, staat in [Mijn verhaal](nl/mijn-verhaal/).

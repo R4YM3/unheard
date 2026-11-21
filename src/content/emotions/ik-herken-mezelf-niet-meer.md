@@ -25,7 +25,6 @@ hero:
     - 'Misschien merk je dat je minder ruimte inneemt, contacten vermijdt of niet meer goed weet wat je zelf wilt. Je kijkt in de spiegel en denkt: wanneer ben ik zo geworden?'
   actions:
     - { href: '#herken-je-dit', label: 'Herken je dit? ↓' }
-    - { href: 'nl/mijn-verhaal/', label: 'Lees mijn verhaal', quiet: true }
 glossary:
   term: Identiteitsverlies
   definition: 'Het gevoel dat je eigen voorkeuren, interesses en grenzen op de achtergrond zijn geraakt, vaak na langdurig aanpassen. Een beleving, geen diagnose.'
@@ -88,7 +87,7 @@ helps:
       title: 'Onderzoek met begeleiding',
       text: 'Sommige therapievormen werken niet alleen met praten, maar ook met materiaal of beweging. Dat kan helpen als woorden ontbreken.',
     }
-related: [dwingende-controle, herstel-leren-voelen, het-vertellen, mijn-verhaal]
+related: [dwingende-controle, herstel-leren-voelen, het-vertellen]
 sources:
   - label: 'Thuisarts — Ik heb psychische klachten. Van wie krijg ik hulp?'
     url: 'https://www.thuisarts.nl/psychische-klachten/ik-heb-psychische-klachten'
@@ -103,7 +102,6 @@ sources:
     publisher: 'Vereniging voor Schematherapie'
     checkedAt: 2026-10-20
 reviewNotes:
-  - 'Oprichter: de pagina noemt in algemene zin dat beeldende therapie en schematherapie kunnen helpen bij het verkennen van eigen wensen en patronen, en linkt naar Mijn verhaal. Wil je hier een korte ik-passage over beeldende therapie, en zo ja: wat wil je delen over hoe je je eigen verlangens weer leerde ontdekken (zonder oefeningen of uitkomsten te noemen die je niet wilt publiceren)?'
   - 'Clinicus: controleer de nuance over somberheid en vlakheid onder “Wanneer is het iets anders?” en of de verwijzing naar de huisarts voldoende is.'
   - 'Redactie: glossary-term “Identiteitsverlies” kan overlappen met het begrip verlies-van-identiteit van de begrippenbranch. Afstemmen welke pagina de definitie in de index draagt.'
 ---
@@ -163,4 +161,4 @@ Soms hoort het gevoel van leegte of vlakheid bij iets wat meer aandacht vraagt. 
 
 Je hoeft niet in één keer te weten wie je bent of wat je wilt. Misschien kun je beginnen bij iets kleins: een persoon bij wie je rustig kunt zijn, een activiteit die vroeger goed voelde, of een moment waarop je lichaam iets ontspant.
 
-Vraag jezelf eens af wat je met tien vrije minuten zou doen als niemand iets van je nodig had. Je mag het antwoord laten liggen of iets kleins proberen. Wil je meer woorden voor wat je merkt, lees dan [Van begrijpen naar voelen](nl/herstel/leren-voelen/). In [Mijn verhaal](nl/mijn-verhaal/) beschrijft de oprichter van Ongehoord hoe hij zelf zocht naar woorden voor wat hij voelde.
+Vraag jezelf eens af wat je met tien vrije minuten zou doen als niemand iets van je nodig had. Je mag het antwoord laten liggen of iets kleins proberen. Wil je meer woorden voor wat je merkt, lees dan [Van begrijpen naar voelen](nl/herstel/leren-voelen/).

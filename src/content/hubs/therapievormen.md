@@ -64,7 +64,7 @@ founderNote:
     - 'Ik heb EMDR gevolgd en daarna exposuretherapie, omdat EMDR voor mij niet voldoende voelde. Dat is mijn persoonlijke ervaring; het betekent niet dat de ene behandeling in het algemeen beter is dan de andere.'
     - '“Ik wilde niet alleen begrijpen wat ik voelde. Ik wilde ook ontdekken wat het met me deed.”'
   needsReview: true
-related: [herstel, pijn-na-inzicht, mijn-verhaal, hulp-vinden]
+related: [herstel, pijn-na-inzicht, hulp-vinden]
 sources:
   - label: 'Thuisarts — Ik krijg een behandeling voor PTSS'
     url: 'https://www.thuisarts.nl/ptss-post-traumatische-stress-stoornis/ik-krijg-behandeling-voor-ptss'
@@ -112,7 +112,7 @@ Je hoeft daarvoor geen etiket te hebben. Je kunt beginnen met wat je merkt: dat 
 
 ## Mijn weg is niet jouw routekaart
 
-Wat ik heb meegemaakt en geprobeerd, is één persoonlijk verhaal. Dat ik een bepaalde vorm volgde, is geen aanbeveling. Dat iets voor mij niet voldoende voelde, zegt niets over hoe het voor jou zou zijn. Je mag onderzoeken wat voor jou helpt, op jouw tempo. Wil je meer weten over mijn achtergrond, lees dan [mijn verhaal](nl/mijn-verhaal/).
+Ervaringen met therapie zijn persoonlijk. Dat iemand een bepaalde vorm volgde of er iets aan had, is geen aanbeveling en zegt niet wat voor jou passend is. Je mag onderzoeken wat bij jou aansluit, op jouw tempo.
 
 ## Inzicht is geen eindpunt
 

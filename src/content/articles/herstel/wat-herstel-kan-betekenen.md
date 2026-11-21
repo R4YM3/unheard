@@ -71,4 +71,4 @@ Voel je je onveilig, of maak je je zorgen over huiselijk geweld? Veilig Thuis is
 
 ## Over de ervaringen van de oprichter
 
-De oprichter van Ongehoord vertelt elders op de site over zijn eigen weg, waaronder verschillende vormen van therapie. Die ervaringen staan in [Mijn verhaal](nl/mijn-verhaal/) en, per therapievorm apart gelabeld, bij [de therapievormen](nl/herstel/therapievormen/). Ze zijn bedoeld als herkenning, niet als advies of ranglijst. Wat bij jou past, bespreek je het best met een bevoegde professional.
+De informatie over therapieën is algemene uitleg, geen persoonlijke aanbeveling of ranglijst. Wat bij jou past, bespreek je het best met een bevoegde professional.
