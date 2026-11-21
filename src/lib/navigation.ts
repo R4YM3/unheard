@@ -75,6 +75,15 @@ const nlSections: Section[] = [
     prefixes: ['nl/herstel/'],
   },
   {
+    menu: { href: 'nl/over/', label: 'Over' },
+    label: 'Over deze site',
+    tabs: [
+      { href: 'nl/over/', label: 'Over Ongehoord' },
+      { href: 'nl/werkwijze/', label: 'Werkwijze' },
+    ],
+    prefixes: ['nl/over/', 'nl/werkwijze/'],
+  },
+  {
     menu: { href: 'nl/hulpmiddelen/', label: 'Hulpmiddelen' },
     label: 'Binnen Hulpmiddelen',
     tabs: [

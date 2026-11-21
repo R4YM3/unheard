@@ -22,7 +22,7 @@ test('every page lights up under the section it belongs to', () => {
   assert.equal(sectionOf('nl/begrijp-het/financieel-misbruik/signalen/'), 'Begrijp het');
   assert.equal(sectionOf('nl/mannen-in-cijfers/'), 'Begrijp het');
   assert.equal(sectionOf('nl/herstel/therapievormen/emdr/'), 'Herstel');
-  assert.equal(sectionOf('nl/over/'), 'Mijn verhaal');
+  assert.equal(sectionOf('nl/over/'), 'Over');
   // Tool pages used to show "Binnen Herstel".
   assert.equal(sectionOf('nl/hulpmiddelen/wat-voel-ik-en-wat-heb-ik-nodig/'), 'Hulpmiddelen');
   assert.equal(sectionOf('nl/veilig-gebruik/'), 'Hulpmiddelen');
@@ -40,7 +40,7 @@ test('the main menu marks one entry at a time', () => {
   const menu = mainMenu(nav).map((link) => link.href);
   const current = (path) => menu.filter((href) => isMenuCurrent(nav, href, path));
   assert.deepEqual(current('nl/'), ['nl/']);
-  assert.deepEqual(current('nl/werkwijze/'), ['nl/mijn-verhaal/']);
+  assert.deepEqual(current('nl/werkwijze/'), ['nl/over/']);
   assert.deepEqual(current('nl/hulp-vinden/'), ['nl/hulp-vinden/']);
   assert.deepEqual(current('nl/herstel/therapievormen/emdr/'), ['nl/herstel/']);
 });

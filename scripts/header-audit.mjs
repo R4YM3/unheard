@@ -29,7 +29,7 @@ try {
   const page = await browser.newPage();
   for (const width of [961, 1024, 1120, 1280, 1440]) {
     await page.setViewport({ width, height: 1000 });
-    await page.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    await page.goto(`${origin}/nl/over/`, { waitUntil: 'networkidle0' });
     const items = await page.$$('.desktop-nav-item');
     assert.equal(items.length, 5, 'Every main section needs its own desktop submenu');
     const rows = await page.$$eval('.nav > *', (nodes) =>
@@ -143,14 +143,14 @@ try {
     const mobile = await browser.newPage();
     await mobile.setJavaScriptEnabled(javascript);
     await mobile.setViewport({ width: 375, height: 850 });
-    await mobile.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    await mobile.goto(`${origin}/nl/over/`, { waitUntil: 'networkidle0' });
     await mobile.click('.mobile-menu > summary');
     assert.deepEqual(
       await mobile.$$eval('.mobile-menu__sub', (nodes) =>
         nodes.map((node) => node.textContent.trim()),
       ),
-      /* 'Het verhaal' is the section link itself: one link per destination. */
-      ['Tijdlijn', 'Waarom Ongehoord', 'Werkwijze'],
+      /* 'Over Ongehoord' is the section link itself: one link per destination. */
+      ['Werkwijze'],
     );
     await mobile.goto(`${origin}/nl/`, { waitUntil: 'networkidle0' });
     assert.equal(
@@ -219,11 +219,10 @@ try {
     assert(await home.$(target), `Home section ${target} exists`);
   }
   assert(await home.$('.nav a[href="nl/begrijp-het/"]'), 'Begrijp het stays in the navigation');
-  assert(await home.$('#verhaal a[href="nl/over/#waarom-ik-hiermee-begon"]'));
+  assert.equal(await home.$('#verhaal'), null, 'The founder story promotion is absent');
   assert(await home.$('#hulp a[href="nl/hulp-vinden/"]'));
-  /* Six chapters, one per pillar: hero, Herkennen, Hulpmiddelen, Begrijpen, Mijn verhaal,
-     Herstel, Hulp. */
-  const chapters = ['gevoelens', 'beginnen', 'perspectief', 'verhaal', 'herstel', 'hulp'];
+  /* Five chapters: hero, Herkennen, Hulpmiddelen, Begrijpen, Herstel and Hulp. */
+  const chapters = ['gevoelens', 'beginnen', 'perspectief', 'herstel', 'hulp'];
   const homeOrder = await home.$$eval(
     'main section[id]',
     (nodes, wanted) => nodes.map((node) => node.id).filter((id) => wanted.includes(id)),
@@ -562,7 +561,7 @@ try {
         ? setTimeout(() => request.continue(), 1800)
         : request.continue(),
     );
-    await slow.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'domcontentloaded' });
+    await slow.goto(`${origin}/nl/over/`, { waitUntil: 'domcontentloaded' });
     await delay(150);
     const geometry = () =>
       ['.site-header', '.nav', 'h1', 'main', 'body'].map((selector) => {
@@ -625,12 +624,20 @@ try {
         /grens/,
       );
     }
-    await hero.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    const story = await hero.goto(`${origin}/nl/mijn-verhaal/`, { waitUntil: 'networkidle0' });
+    assert.equal(story?.status(), 404, 'The founder story route is withdrawn');
     assert.equal(
-      await hero.$$eval('a[href*="tijdlijn"]', (nodes) => nodes.length),
+      await hero.$$eval(
+        'header a[href*="mijn-verhaal"], header a[href*="tijdlijn"]',
+        (nodes) => nodes.length,
+      ),
       0,
-      'The founder story page does not link to a personal timeline',
+      'The header no longer links to the founder story or timeline',
     );
+    const timeline = await hero.goto(`${origin}/nl/mijn-verhaal/tijdlijn/`, {
+      waitUntil: 'networkidle0',
+    });
+    assert.equal(timeline?.status(), 404, 'The personal timeline route is withdrawn');
     await hero.goto(`${origin}/nl/hulpmiddelen/`, { waitUntil: 'networkidle0' });
     assert.equal(await visible('.page-hero .cf__card'), 6, 'Six cards in the fan');
     await hero.goto(`${origin}/nl/hulp-vinden/`, { waitUntil: 'networkidle0' });
